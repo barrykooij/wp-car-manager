@@ -2,68 +2,57 @@
 
 namespace Never5\WPCarManager;
 
-final class Plugin {
-
-	/**
-	 * @var Pimple\Container
-	 */
-	private $container = null;
+final class Plugin extends Pimple\Container {
 
 	/**
 	 * Constructor
+	 *
+	 * @string main file
 	 */
-	public function __construct() {
+	public function __construct( $file ) {
+
+		$this['file'] = function () use ( $file ) {
+			return new File( $file );
+		};
+
+		parent::__construct();
+
+		// register services early since some add-ons need 'm
+		$this->register_services();
+
+		// load rest of classes on a later hook
+		$this->load();
 
 
-		$this->setup_container();
+	}
 
+	private function register_services() {
+		$provider = new PluginServiceProvider();
+		$provider->register( $this );
+	}
 
-		// add post type
-		/*
-		add_action( 'init', function() {
-			$this->container['post_type']->register();
-		});
-		*/
+	public function service( $key ) {
+		return $this[ $key ];
+	}
+
+	/**
+	 * Start loading classes on `plugins_loaded`, priority 20.
+	 */
+	private function load() {
+		$container = $this;
 
 		// register post type
 		add_action( 'init', function () {
 			PostType::register();
 		} );
 
-	}
-
-	/**
-	 * @param $key
-	 *
-	 * @return mixed
-	 */
-	public function fetch( $key ) {
-		return $this->container[ $key ];
-	}
-
-	/**
-	 * @param $key
-	 * @param $val
-	 */
-	public function attach( $key, $val ) {
-		$this->container[$key] = $val;
-	}
-
-
-	/**
-	 * Setup Pimple container
-	 */
-	private function setup_container() {
-
-		// new Pimple container
-		$this->container = new Pimple\Container();
-
-		// add post type to pimple container
-		/*
-		$this->container['post_type'] = function() {
-			return new PostType();
-		};
-		*/
+		if ( is_admin() ) {
+			// add meta box
+			add_action( 'admin_init', function () use ( $container ) {
+				$container['meta_box.car_data']->init();
+			} );
+		}
+		
 	}
 
 }
