@@ -24,15 +24,30 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-// Autoload
+// autoloader
 require 'vendor/autoload.php';
 
-// Check PHP version
+// check PHP version
 $updatePhp = new WPUpdatePhp( '5.3.0' );
 if ( $updatePhp->does_it_meet_required_php_version( PHP_VERSION ) ) {
 
 	define( 'WP_CAR_MANAGER_FILE', __FILE__ );
 
-	// Create plugin object
-	$GLOBALS['wp-car-manager'] = new Never5\WPCarManager\Plugin();
+	// create plugin object
+	add_action( 'plugins_loaded', function () {
+
+		// create instance
+		$plugin = new Never5\WPCarManager\Plugin();
+
+		// create & attach file object
+		$plugin->attach( 'file', function () {
+			return new Never5\WPCarManager\File( __FILE__ );
+		} );
+
+		error_log( $plugin->fetch('file')->plugin_path(), 0 );
+
+		// I feel dirty
+		$GLOBALS['wp-car-manager'] = $plugin;
+	} );
+
 }
