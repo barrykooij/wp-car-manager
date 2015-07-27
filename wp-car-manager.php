@@ -44,8 +44,6 @@ if ( $updatePhp->does_it_meet_required_php_version( PHP_VERSION ) ) {
 			return new Never5\WPCarManager\File( __FILE__ );
 		} );
 
-		error_log( $plugin->fetch('file')->plugin_path(), 0 );
-
 		// I feel dirty
 		$GLOBALS['wp-car-manager'] = $plugin;
 	} );
