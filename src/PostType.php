@@ -4,7 +4,7 @@ namespace Never5\WPCarManager;
 
 class PostType {
 
-	public function register() {
+	public static function register() {
 
 		$labels = array(
 			'name'                => _x( 'Cars', 'Post Type General Name', 'wp-car-manager' ),
