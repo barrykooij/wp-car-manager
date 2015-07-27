@@ -24,28 +24,47 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+
+if ( ! defined( 'ABSPATH' ) ) {
+	header( 'Status: 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	exit;
+}
+
 // autoloader
 require 'vendor/autoload.php';
+
+/**
+ * @return \Never5\WPCarManager\Plugin
+ */
+function wp_car_manager() {
+
+	static $instance;
+	if ( is_null( $instance ) ) {
+		/*
+		$id       = 0;
+		$file     = __FILE__;
+		$dir      = dirname( __FILE__ );
+		$name     = 'WP Car Manager';
+		$version  = '1.0.0';
+		*/
+
+		$instance = new \Never5\WPCarManager\Plugin( __FILE__ );
+	}
+
+	return $instance;
+
+}
+
+function __load_wp_car_manager() {
+	// fetch instance and store in global
+	$GLOBALS['wp-car-manager'] = wp_car_manager();
+}
 
 // check PHP version
 $updatePhp = new WPUpdatePhp( '5.3.0' );
 if ( $updatePhp->does_it_meet_required_php_version( PHP_VERSION ) ) {
-
-	define( 'WP_CAR_MANAGER_FILE', __FILE__ );
-
 	// create plugin object
-	add_action( 'plugins_loaded', function () {
-
-		// create instance
-		$plugin = new Never5\WPCarManager\Plugin();
-
-		// create & attach file object
-		$plugin->attach( 'file', function () {
-			return new Never5\WPCarManager\File( __FILE__ );
-		} );
-
-		// I feel dirty
-		$GLOBALS['wp-car-manager'] = $plugin;
-	} );
+	add_action( 'plugins_loaded', '__load_wp_car_manager', 20 );
 
 }
