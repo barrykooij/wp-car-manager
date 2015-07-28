@@ -1,0 +1,19 @@
+/** Car Data Meta Box **/
+#wpcm-car-data {
+  label {
+    display: block;
+    width: 100%;
+    padding-bottom: 10px;
+    line-height: 30px;
+    span {
+      display: block;
+      width: 40%;
+      font-weight: bold;
+      float: left;
+    }
+    input, select {
+      width: 50%;
+    }
+  }
+
+}
