@@ -49,7 +49,7 @@ function wp_car_manager() {
 		$version  = '1.0.0';
 		*/
 
-		$instance = new \Never5\WPCarManager\Plugin( __FILE__ );
+		$instance = new \Never5\WPCarManager\Plugin( '0.0.1', __FILE__ );
 	}
 
 	return $instance;
