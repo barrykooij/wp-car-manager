@@ -25,9 +25,78 @@ class CarData {
 
 	/**
 	 * Actual meta box output
+	 *
+	 * @parem \WP_Post $post
 	 */
-	public function meta_box_output() {
-		wp_car_manager()->service( 'view_manager' )->display( 'mb-car-data', array() );
+	public function meta_box_output( $post ) {
+		wp_car_manager()->service( 'view_manager' )->display( 'mb-car-data', array(
+			'fields' => array(
+				array(
+					'type'  => 'text',
+					'label' => __( 'Make', 'wp-car-manager' ),
+					'key'   => 'make',
+					'value' => get_post_meta( $post->ID, 'wpcm_cd_make', true )
+				),
+				array(
+					'type'  => 'text',
+					'label' => __( 'Model', 'wp-car-manager' ),
+					'key'   => 'model',
+					'value' => get_post_meta( $post->ID, 'wpcm_cd_model', true )
+				),
+				array(
+					'type'  => 'text',
+					'label' => __( 'Year', 'wp-car-manager' ),
+					'key'   => 'year',
+					'value' => get_post_meta( $post->ID, 'wpcm_cd_year', true )
+				),
+				array(
+					'type'  => 'text',
+					'label' => __( 'Price', 'wp-car-manager' ),
+					'key'   => 'price',
+					'value' => get_post_meta( $post->ID, 'wpcm_cd_price', true )
+				),
+				array(
+					'type'  => 'text',
+					'label' => __( 'Mileage', 'wp-car-manager' ),
+					'key'   => 'mileage',
+					'value' => get_post_meta( $post->ID, 'wpcm_cd_mileage', true )
+				),
+				array(
+					'type'  => 'text',
+					'label' => __( 'Fuel Type', 'wp-car-manager' ),
+					'key'   => 'fuel_type',
+					'value' => get_post_meta( $post->ID, 'wpcm_cd_fuel_type', true )
+				),
+				array(
+					'type'  => 'text',
+					'label' => __( 'Color', 'wp-car-manager' ),
+					'key'   => 'color',
+					'value' => get_post_meta( $post->ID, 'wpcm_cd_color', true )
+				),
+				array(
+					'type'  => 'text',
+					'label' => __( 'Body Style', 'wp-car-manager' ),
+					'key'   => 'body_style',
+					'value' => get_post_meta( $post->ID, 'wpcm_cd_body_style', true )
+				),
+				array(
+					'type'  => 'select',
+					'options' => array(
+						'automatic' => 'Automatic',
+						'manual' => 'Manual'
+					),
+					'label' => __( 'Transmission', 'wp-car-manager' ),
+					'key'   => 'transmission',
+					'value' => get_post_meta( $post->ID, 'wpcm_cd_transmission', true )
+				),
+				array(
+					'type'  => 'text',
+					'label' => __( 'Engine', 'wp-car-manager' ),
+					'key'   => 'engine',
+					'value' => get_post_meta( $post->ID, 'wpcm_cd_engine', true )
+				),
+			)
+		) );
 	}
 
 	/**
