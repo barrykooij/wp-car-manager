@@ -4,23 +4,13 @@ namespace Never5\WPCarManager\MetaBox;
 
 use Never5\WPCarManager;
 
-class CarData {
+class CarData extends MetaBox {
 
 	/**
-	 * Setup meta box
+	 * Constructor
 	 */
-	public function init() {
-		add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
-		add_action( 'save_post', array( $this, 'save_meta_box' ), 10, 2 );
-	}
-
-	/**
-	 * Add meta box
-	 */
-	public function add_meta_box() {
-		// add meta box
-		add_meta_box( 'wpcm-car-data', __( 'Car Data', 'wp-car-manager' ),
-			array( $this, 'meta_box_output' ), WPCarManager\PostType::PT, 'normal', 'high' );
+	public function __construct() {
+		parent::__construct( 'car-data', __( 'Car Data', 'wp-car-manager' ), 'side' );
 	}
 
 	/**
