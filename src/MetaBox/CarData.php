@@ -53,7 +53,7 @@ class CarData {
 		}
 
 		// post type check
-		if ( 'dlm_download' != $post->post_type ) {
+		if ( WPCarManager\PostType::PT != $post->post_type ) {
 			return;
 		}
 
