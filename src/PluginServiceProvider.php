@@ -23,6 +23,11 @@ class PluginServiceProvider implements Pimple\ServiceProviderInterface {
 		$container['meta_box.car_data'] = function ( $c ) {
 			return new MetaBox\CarData( $c );
 		};
+
+		$container['vehicle_factory'] = function () {
+			return new Vehicle\VehicleFactory( new Vehicle\WordPressRepository() );
+		};
+
 	}
 
 }
