@@ -51,6 +51,12 @@ class PostType {
 			'exclude_from_search' => true,
 			'publicly_queryable'  => true,
 			'capability_type'     => 'page',
+			'rewrite'             => array(
+				'slug'       => 'vehicle',
+				'with_front' => true,
+				'pages'      => true,
+				'feeds'      => true,
+			)
 		);
 
 		register_post_type( self::PT, $args );
