@@ -81,6 +81,13 @@ final class Plugin extends Pimple\Container {
 				$container['meta_box.car_data']->init();
 			} );
 
+			if ( function_exists( 'wp_editor' ) ) {
+				add_action( 'admin_init', function () {
+					$short_description = new MetaBox\ShortDescription();
+					$short_description->init();
+				} );
+			}
+
 			// assets
 			add_action( 'admin_enqueue_scripts', array( 'Never5\\WPCarManager\\Assets', 'enqueue_backend' ) );
 		}
