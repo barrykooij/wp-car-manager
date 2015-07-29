@@ -96,7 +96,6 @@ abstract class MetaBox implements iMetaBox {
 	protected function should_save( $post ) {
 		//  check nonce
 		if ( ! $this->check_nonce() ) {
-			die('nonce false');
 			return false;
 		}
 
