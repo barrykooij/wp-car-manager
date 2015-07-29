@@ -14,6 +14,15 @@ class CarData extends MetaBox {
 	public function __construct() {
 
 		$this->fields = array(
+			'condition' => array(
+				'type'    => 'select',
+				'options' => array(
+					'new' => 'New',
+					'used'    => 'Used'
+				),
+				'label'   => __( 'Condition', 'wp-car-manager' ),
+				'key'     => 'condition'
+			),
 			'make'         => array(
 				'type'  => 'text',
 				'label' => __( 'Make', 'wp-car-manager' ),
@@ -67,6 +76,11 @@ class CarData extends MetaBox {
 				'type'  => 'text',
 				'label' => __( 'Engine', 'wp-car-manager' ),
 				'key'   => 'engine'
+			),
+			'doors'       => array(
+				'type'  => 'text',
+				'label' => __( 'Doors', 'wp-car-manager' ),
+				'key'   => 'doors'
 			),
 		);
 
