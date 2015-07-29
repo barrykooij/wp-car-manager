@@ -1,7 +1,15 @@
 <?php
 namespace Never5\WPCarManager\Vehicle;
 
+use Never5\WPCarManager\Helper;
+
 abstract class Vehicle {
+
+	/** @var int */
+	private $id = null;
+
+	/** @var String */
+	private $condition;
 
 	/** @var String */
 	private $make;
@@ -9,7 +17,7 @@ abstract class Vehicle {
 	/** @var String */
 	private $model;
 
-	/** @var String */
+	/** @var int */
 	private $year;
 
 	/** @var String */
@@ -17,6 +25,34 @@ abstract class Vehicle {
 
 	/** @var String */
 	private $color;
+
+	/**
+	 * @return int
+	 */
+	public function get_id() {
+		return $this->id;
+	}
+
+	/**
+	 * @param int $id
+	 */
+	public function set_id( $id ) {
+		$this->id = $id;
+	}
+
+	/**
+	 * @return String
+	 */
+	public function get_condition() {
+		return $this->condition;
+	}
+
+	/**
+	 * @param String $condition
+	 */
+	public function set_condition( $condition ) {
+		$this->condition = $condition;
+	}
 
 	/**
 	 * @return String
@@ -72,6 +108,15 @@ abstract class Vehicle {
 	 */
 	public function set_price( $price ) {
 		$this->price = $price;
+	}
+
+	/**
+	 * Returns formatted price
+	 *
+	 * @return String
+	 */
+	public function get_formatted_price() {
+		return Helper\Format::price( $this->get_price() );
 	}
 
 	/**
