@@ -7,7 +7,7 @@ interface VehicleRepository {
 	/**
 	 * @param int $id
 	 *
-	 * @return Vehicle
+	 * @return \stdClass
 	 */
 	public function retrieve( $id );
 
