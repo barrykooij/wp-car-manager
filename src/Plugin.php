@@ -77,19 +77,31 @@ final class Plugin extends Pimple\Container {
 		if ( is_admin() ) {
 
 			// add meta box
-			add_action( 'admin_init', function () use ( $container ) {
-				$container['meta_box.car_data']->init();
-			} );
+			add_action( 'admin_init', function () {
 
-			if ( function_exists( 'wp_editor' ) ) {
-				add_action( 'admin_init', function () {
+				// car data
+				$car_data = new MetaBox\CarData();
+				$car_data->init();
+
+				// short description
+				if ( function_exists( 'wp_editor' ) ) {
 					$short_description = new MetaBox\ShortDescription();
 					$short_description->init();
-				} );
-			}
+				}
+
+			} );
 
 			// assets
 			add_action( 'admin_enqueue_scripts', array( 'Never5\\WPCarManager\\Assets', 'enqueue_backend' ) );
+		} else {
+
+			// Include template functions
+			require_once( $container['file']->plugin_path() . '/includes/template-hooks.php' );
+			require_once( $container['file']->plugin_path() . '/includes/template-functions.php' );
+
+			// init template manager to enable template overrides
+			$container['template_manager']->init();
+
 		}
 
 	}
