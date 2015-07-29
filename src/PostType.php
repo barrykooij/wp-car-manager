@@ -36,7 +36,6 @@ class PostType {
 				'author',
 				'thumbnail',
 				'revisions',
-				'custom-fields',
 			),
 			'hierarchical'        => false,
 			'public'              => true,
