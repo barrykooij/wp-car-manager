@@ -4,7 +4,7 @@ namespace Never5\WPCarManager\Vehicle;
 
 abstract class MotorVehicle extends Vehicle {
 
-	/** @var String */
+	/** @var int */
 	private $mileage;
 
 	/** @var String */
@@ -17,14 +17,14 @@ abstract class MotorVehicle extends Vehicle {
 	private $engine;
 
 	/**
-	 * @return String
+	 * @return int
 	 */
 	public function get_mileage() {
 		return $this->mileage;
 	}
 
 	/**
-	 * @param String $mileage
+	 * @param int $mileage
 	 */
 	public function set_mileage( $mileage ) {
 		$this->mileage = $mileage;
