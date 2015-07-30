@@ -13,6 +13,7 @@ class TemplateManager {
 	 */
 	public function init() {
 		add_filter( 'template_include', array( $this, 'override_template' ) );
+		add_filter( 'post_class', array( $this, 'filter_post_class' ), 20, 3 );
 	}
 
 	/**
@@ -22,6 +23,27 @@ class TemplateManager {
 	 */
 	public function get_template_path() {
 		return apply_filters( 'wpcm_template_path', 'wp-car-manager/' );
+	}
+
+	/**
+	 * Filter post class
+	 *
+	 * @param array $classes
+	 * @param string $class
+	 * @param string $post_id
+	 *
+	 * @return array
+	 */
+	public function filter_post_class( $classes, $class = '', $post_id = '' ) {
+		if ( ! $post_id || PostType::PT !== get_post_type( $post_id ) ) {
+			return $classes;
+		}
+
+		if ( false !== ( $key = array_search( 'hentry', $classes ) ) ) {
+			unset( $classes[ $key ] );
+		}
+
+		return $classes;
 	}
 
 	/**
