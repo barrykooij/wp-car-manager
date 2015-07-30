@@ -42,6 +42,18 @@
 
     .wpcm-vehicle-content {
       clear: both;
+
+      .wpcm-content-block {
+        table {
+          tr {
+            width: 50%;
+            float: left;
+            th {
+              width: 30%;
+            }
+          }
+        }
+      }
     }
   }
 
