@@ -16,34 +16,42 @@ print_r($vehicle);
 echo '</pre>';
 
 ?>
-	<div itemscope id="vehicle-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div id="vehicle-<?php the_ID(); ?>" itemprop="itemOffered" itemscope itemtype="http://schema.org/Car" <?php post_class(); ?>>
 
 		<?php
 		/**
 		 * vehicle_before_single_product_summary hook
 		 *
+		 * @hooked vehicle_template_single_title - 5
 		 * @hooked wpcm_show_vehicle_images - 20
 		 */
-		do_action( 'wpcm_before_single_vehicle_summary' );
+		do_action( 'wpcm_before_single_vehicle_head' );
 		?>
 
 
 		<div class="summary entry-summary">
-
 			<?php
 			/**
 			 * vehicle_single_vehicle_summary hook
 			 *
-			 * @hooked vehicle_template_single_title - 5
-			 * @hooked vehicle_template_single_rating - 10
-			 * @hooked vehicle_template_single_price - 10
-			 * @hooked vehicle_template_single_excerpt - 20
-			 * @hooked vehicle_template_single_meta - 40
-			 * @hooked vehic  le_template_single_sharing - 50
+			 * @hooked wpcm_template_single_price - 10
+			 * @hooked wpcm_template_single_summary_data - 20
 			 */
 			do_action( 'wpcm_single_vehicle_summary' );
 			?>
+		</div>
 
+		<div class="">
+			<?php
+			/**
+			 * vehicle_single_vehicle_summary hook
+			 *
+			 * @hooked vehicle_template_single_content - 5
+			 * @hooked vehicle_template_single_features - 10
+			 * @hooked vehicle_template_single_seller_comments - 10
+			 */
+			do_action( 'wpcm_single_vehicle_content' );
+			?>
 		</div>
 
 		<?php
