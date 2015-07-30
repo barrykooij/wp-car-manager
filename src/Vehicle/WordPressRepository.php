@@ -30,8 +30,8 @@ class WordPressRepository implements VehicleRepository {
 		$data->color        = get_post_meta( $post->ID, $pm_prefix . 'color', true );
 		$data->mileage      = get_post_meta( $post->ID, $pm_prefix . 'mileage', true );
 		$data->fuel_type    = get_post_meta( $post->ID, $pm_prefix . 'fuel_type', true );
-		$data->transmission = get_post_meta( $post->ID, $pm_prefix . 'engine', true );
-		$data->engine       = get_post_meta( $post->ID, $pm_prefix . 'transmission', true );
+		$data->transmission = get_post_meta( $post->ID, $pm_prefix . 'transmission', true );
+		$data->engine       = get_post_meta( $post->ID, $pm_prefix . 'engine', true );
 		$data->body_style   = get_post_meta( $post->ID, $pm_prefix . 'body_style', true );
 		$data->doors        = get_post_meta( $post->ID, $pm_prefix . 'doors', true );
 
