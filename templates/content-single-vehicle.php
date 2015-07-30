@@ -11,37 +11,46 @@ global $vehicle;
  */
 do_action( 'wpcm_before_single_vehicle' );
 
-echo '<pre>';
-print_r($vehicle);
-echo '</pre>';
+//echo '<pre>';
+//print_r($vehicle);
+//echo '</pre>';
 
 ?>
 	<div id="vehicle-<?php the_ID(); ?>" itemprop="itemOffered" itemscope itemtype="http://schema.org/Car" <?php post_class(); ?>>
 
-		<?php
-		/**
-		 * vehicle_before_single_product_summary hook
-		 *
-		 * @hooked vehicle_template_single_title - 5
-		 * @hooked wpcm_show_vehicle_images - 20
-		 */
-		do_action( 'wpcm_before_single_vehicle_head' );
-		?>
-
-
-		<div class="summary entry-summary">
+		<header class="entry-header">
 			<?php
 			/**
-			 * vehicle_single_vehicle_summary hook
+			 * wpcm_vehicle_header hook
+			 *
+			 * @hooked vehicle_template_single_title - 5
+			 */
+			do_action( 'wpcm_vehicle_header' );
+			?>
+		</header>
+
+		<?php
+		/**
+		 * wpcm_after_vehicle_summary hook
+		 *
+		 * @hooked wpcm_show_vehicle_images - 10
+		 */
+		do_action( 'wpcm_before_vehicle_summary' );
+		?>
+
+		<div class="wpcm-summary entry-summary">
+			<?php
+			/**
+			 * wpcm_vehicle_summary hook
 			 *
 			 * @hooked wpcm_template_single_price - 10
 			 * @hooked wpcm_template_single_summary_data - 20
 			 */
-			do_action( 'wpcm_single_vehicle_summary' );
+			do_action( 'wpcm_vehicle_summary' );
 			?>
 		</div>
 
-		<div class="">
+		<div class="wpcm-vehicle-content">
 			<?php
 			/**
 			 * vehicle_single_vehicle_summary hook
@@ -56,13 +65,13 @@ echo '</pre>';
 
 		<?php
 		/**
-		 * vehicle_after_single_product_summary hook
+		 * wpcm_after_vehicle_summary hook
 		 *
 		 * @hooked vehicle_output_product_data_tabs - 10
 		 * @hooked vehicle_upsell_display - 15
 		 * @hooked vehicle_output_related_products - 20
 		 */
-		do_action( 'wpcm_after_single_vehicle_summary' );
+		do_action( 'wpcm_after_vehicle_summary' );
 		?>
 
 		<meta itemprop="url" content="<?php the_permalink(); ?>"/>
