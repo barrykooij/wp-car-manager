@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 } // Exit if accessed directly
 
 ?>
-<div class="images">
+<div class="wpcm-images">
 
 	<?php
 
@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		*/
 		$gallery = ''; // no gallery support yet
 
-		$image_html = sprintf( '<a href="%s" itemprop="image" class="wpcm-main-image zoom" title="%s" data-rel="prettyPhoto%s">%s</a>', $image_link, $image_caption, $gallery, $image );
+		$image_html = sprintf( '<a href="%s" itemprop="image" class="wpcm-main-image zoom" title="%s" data-rel="prettyPhoto%s">%s</a>', $image_link, $image_caption, $gallery, $image ); // use itemprop="image"
 
 	} else {
 
