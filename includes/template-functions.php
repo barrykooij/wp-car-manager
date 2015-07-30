@@ -67,3 +67,15 @@ if ( ! function_exists( 'wpcm_template_single_price' ) ) {
 		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/price' );
 	}
 }
+
+if ( ! function_exists( 'wpcm_template_single_summary_data' ) ) {
+	/**
+	 * Output the product title.
+	 *
+	 * @subpackage	Product
+	 */
+	function wpcm_template_single_summary_data() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/summary-data' );
+	}
+}
+
