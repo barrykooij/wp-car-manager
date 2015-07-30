@@ -1,0 +1,57 @@
+/** SINGLE **/
+.single-wpcm_vehicle {
+
+  .wpcm_vehicle {
+
+    .entry-header {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .wpcm-images {
+      float: left;
+      width: 55%;
+    }
+
+    .wpcm-price-wrapper {
+      padding-bottom: 10px;
+      .wpcm-price {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+    }
+
+    .wpcm-summary {
+      float: right;
+      width: 41%;
+      font-size: .9em;
+
+      table {
+        border: 0;
+        th, td {
+          padding: 3px 0;
+          border: 0;
+          border-bottom: 1px dotted #F1F1F1;
+        }
+        th {
+          font-weight: bold;
+          padding-right: 10px;
+        }
+      }
+    }
+
+    .wpcm-vehicle-content {
+      clear: both;
+    }
+  }
+
+  /** twentyfifteen compatibility **/
+  .twentyfifteen {
+    .wpcm_vehicle {
+      .wpcm-summary {
+        padding: 0;
+      }
+    }
+  }
+
+}
