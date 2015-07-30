@@ -26,6 +26,14 @@ class Settings {
 			'currency_pos'       => 'left',
 			'decimal_separator'  => '.',
 			'thousand_separator' => ',',
+			'distance_unit'      => 'miles',
+			'summary_data'       => array(
+				'condition',
+				'mileage',
+				'year',
+				'engine',
+				'fuel_type'
+			)
 		);
 	}
 
