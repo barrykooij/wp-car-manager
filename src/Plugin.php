@@ -102,6 +102,9 @@ final class Plugin extends Pimple\Container {
 			// init template manager to enable template overrides
 			$container['template_manager']->init();
 
+			// assets
+			add_action( 'wp_enqueue_scripts', array( 'Never5\\WPCarManager\\Assets', 'enqueue_frontend' ) );
+
 		}
 
 	}
