@@ -50,19 +50,6 @@ do_action( 'wpcm_before_single_vehicle' );
 			?>
 		</div>
 
-		<div class="wpcm-vehicle-content">
-			<?php
-			/**
-			 * vehicle_single_vehicle_summary hook
-			 *
-			 * @hooked vehicle_template_single_content - 5
-			 * @hooked vehicle_template_single_features - 10
-			 * @hooked vehicle_template_single_seller_comments - 10
-			 */
-			do_action( 'wpcm_single_vehicle_content' );
-			?>
-		</div>
-
 		<?php
 		/**
 		 * wpcm_after_vehicle_summary hook
@@ -73,6 +60,19 @@ do_action( 'wpcm_before_single_vehicle' );
 		 */
 		do_action( 'wpcm_after_vehicle_summary' );
 		?>
+
+		<div class="wpcm-vehicle-content">
+			<?php
+			/**
+			 * vehicle_single_vehicle_summary hook
+			 *
+			 * @hooked vehicle_template_single_content - 5
+			 * @hooked vehicle_template_single_features - 10
+			 * @hooked vehicle_template_single_seller_comments - 10
+			 */
+			do_action( 'wpcm_vehicle_content' );
+			?>
+		</div>
 
 		<meta itemprop="url" content="<?php the_permalink(); ?>"/>
 

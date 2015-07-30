@@ -39,3 +39,8 @@ add_action( 'wpcm_vehicle_thumbnails', 'wpcm_show_vehicle_thumbnails', 20 );
  */
 add_action( 'wpcm_vehicle_summary', 'wpcm_template_single_price', 10 );
 add_action( 'wpcm_vehicle_summary', 'wpcm_template_single_summary_data', 20 );
+
+/**
+ * Vehicle Content Box
+ */
+add_action( 'wpcm_vehicle_content', 'wpcm_template_single_data', 10 );
