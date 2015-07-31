@@ -16,7 +16,7 @@
     .wpcm-price-wrapper {
       padding-bottom: 10px;
       .wpcm-price {
-        font-size: 1.5em;
+        font-size: 1.8em;
         font-weight: bold;
       }
     }
@@ -29,13 +29,13 @@
       table {
         border: 0;
         th, td {
-          padding: 3px 0;
+          padding: .857em 1.387em;
           border: 0;
           border-bottom: 1px dotted #F1F1F1;
         }
         th {
           font-weight: bold;
-          padding-right: 10px;
+          padding-left: 0;
         }
       }
     }
@@ -50,20 +50,42 @@
         margin: 1em 0;
         padding: 1em 0;
         overflow: hidden;
+
         h2 {
           border-bottom: 1px solid rgba(0,0,0,.1);
           padding-bottom: .5em;
         }
-        table {
-          width: 50%;
-          margin: 0;
-          float: left;
-          tr {
-            th {
-              width: 35%;
+
+        &#wpcm-vehicle-data {
+          table {
+            width: 50%;
+            margin: 0;
+            float: left;
+            tr {
+              th {
+                width: 35%;
+                //padding-left: 0;
+              }
             }
           }
         }
+
+        &#wpcm-vehicle-features {
+          ul {
+            width: 100%;
+            margin: 0;
+            list-style: none;
+            float: left;
+            li {
+              width: 50%;
+              padding: .2em 0 .2em 22px;
+              background: url('../images/frontend-sprite.png') center left no-repeat;
+              box-sizing: border-box;
+              float: left;
+            }
+          }
+        }
+
       }
     }
   }
