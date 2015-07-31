@@ -2,6 +2,8 @@
 
 namespace Never5\WPCarManager\Vehicle;
 
+use Never5\WPCarManager\Taxonomies;
+
 class WordPressRepository implements VehicleRepository {
 
 	/**
@@ -34,6 +36,7 @@ class WordPressRepository implements VehicleRepository {
 		$data->engine       = get_post_meta( $post->ID, $pm_prefix . 'engine', true );
 		$data->body_style   = get_post_meta( $post->ID, $pm_prefix . 'body_style', true );
 		$data->doors        = get_post_meta( $post->ID, $pm_prefix . 'doors', true );
+		$data->features     = wp_get_post_terms( $post->ID, Taxonomies::FEATURES, array( 'fields' => 'names' ) );
 
 		return $data;
 
