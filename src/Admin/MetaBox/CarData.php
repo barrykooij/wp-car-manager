@@ -1,6 +1,6 @@
 <?php
 
-namespace Never5\WPCarManager\MetaBox;
+namespace Never5\WPCarManager\Admin\MetaBox;
 
 use Never5\WPCarManager;
 use Never5\WPCarManager\Vehicle;
@@ -11,7 +11,6 @@ class CarData extends MetaBox {
 	 * Constructor
 	 */
 	public function __construct() {
-
 		parent::__construct( 'car-data', __( 'Car Data', 'wp-car-manager' ), 'side' );
 	}
 
@@ -25,14 +24,8 @@ class CarData extends MetaBox {
 		// nonce
 		$this->output_nonce();
 
-		// add values to fields
-//		$fields = Vehicle\Data::get_fields();
-//		foreach ( $fields as $key => $val ) {
-//			$fields[ $key ] = array_merge( $val, array( 'value' => get_post_meta( $post->ID, 'wpcm_' . $val['key'], true ) ) );
-//		}
-
 		// view
-		wp_car_manager()->service( 'view_manager' )->display( 'mb-car-data', array(
+		wp_car_manager()->service( 'view_manager' )->display( 'meta-box/car-data', array(
 			'mb_prefix' => 'wpcm-cd',
 			'fields'    => Vehicle\Data::get_fields(),
 			'vehicle'   => wp_car_manager()->service( 'vehicle_factory' )->make( $post->ID )

@@ -1,6 +1,6 @@
 <?php
 
-namespace Never5\WPCarManager\MetaBox;
+namespace Never5\WPCarManager\Admin\MetaBox;
 
 interface iMetaBox {
 	public function meta_box_output( $post );
