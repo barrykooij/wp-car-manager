@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2015 by original authors @ fontello.com</metadata>
+<defs>
+<font id="wp-car-manager" horiz-adv-x="1000" >
+<font-face font-family="wp-car-manager" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="cab" unicode="&#xe800;" d="m268 243q0 37-26 63t-63 26-63-26-27-63 27-63 63-26 63 26 26 63z m20 178h567l-50 200q-1 4-8 9t-11 6h-429q-5 0-12-6t-7-9z m766-178q0 37-27 63t-63 26-63-26-26-63 26-63 63-26 63 26 27 63z m89 53v-214q0-8-5-13t-13-5h-54v-71q0-45-31-76t-76-31-76 31-31 76v71h-571v-71q0-45-32-76t-75-31-76 31-32 76v71h-53q-8 0-13 5t-5 13v214q0 52 37 89t88 36h16l58 234q13 53 58 88t100 36h429q54 0 100-36t58-88l58-234h16q52 0 88-36t37-89z" horiz-adv-x="1142.9" />
+</font>
+</defs>
+</svg>
