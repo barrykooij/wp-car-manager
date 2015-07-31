@@ -72,21 +72,28 @@ final class Plugin extends Pimple\Container {
 		// register post type & taxonomies
 		add_action( 'init', function () {
 			PostType::register();
-			Taxonomies::register();
+			Taxonomies::register_model_make();
+			Taxonomies::register_features();
 		} );
 
 		if ( is_admin() ) {
+
+			// add admin menu
+			add_action('admin_menu', function() {
+				$page_makes = new Admin\Page\Makes();
+				$page_makes->init();
+			});
 
 			// add meta box
 			add_action( 'admin_init', function () {
 
 				// car data
-				$car_data = new MetaBox\CarData();
+				$car_data = new Admin\MetaBox\CarData();
 				$car_data->init();
 
 				// short description
 				if ( function_exists( 'wp_editor' ) ) {
-					$short_description = new MetaBox\ShortDescription();
+					$short_description = new Admin\MetaBox\ShortDescription();
 					$short_description->init();
 				}
 
