@@ -26,6 +26,9 @@ abstract class Vehicle {
 	/** @var String */
 	private $color;
 
+	/** @var array */
+	private $features = array();
+
 	/**
 	 * @return int
 	 */
@@ -131,6 +134,20 @@ abstract class Vehicle {
 	 */
 	public function set_color( $color ) {
 		$this->color = $color;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function get_features() {
+		return $this->features;
+	}
+
+	/**
+	 * @param array $features
+	 */
+	public function set_features( $features ) {
+		$this->features = $features;
 	}
 
 }
