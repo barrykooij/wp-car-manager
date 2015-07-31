@@ -69,9 +69,10 @@ final class Plugin extends Pimple\Container {
 	private function load() {
 		$container = $this;
 
-		// register post type
+		// register post type & taxonomies
 		add_action( 'init', function () {
 			PostType::register();
+			Taxonomies::register();
 		} );
 
 		if ( is_admin() ) {
