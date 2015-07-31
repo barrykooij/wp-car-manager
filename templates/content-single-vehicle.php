@@ -23,7 +23,7 @@ do_action( 'wpcm_before_single_vehicle' );
 			/**
 			 * wpcm_vehicle_header hook
 			 *
-			 * @hooked vehicle_template_single_title - 5
+			 * @hooked wpcm_template_single_title - 5
 			 */
 			do_action( 'wpcm_vehicle_header' );
 			?>
@@ -53,10 +53,6 @@ do_action( 'wpcm_before_single_vehicle' );
 		<?php
 		/**
 		 * wpcm_after_vehicle_summary hook
-		 *
-		 * @hooked vehicle_output_product_data_tabs - 10
-		 * @hooked vehicle_upsell_display - 15
-		 * @hooked vehicle_output_related_products - 20
 		 */
 		do_action( 'wpcm_after_vehicle_summary' );
 		?>
@@ -66,9 +62,9 @@ do_action( 'wpcm_before_single_vehicle' );
 			/**
 			 * vehicle_single_vehicle_summary hook
 			 *
-			 * @hooked vehicle_template_single_content - 5
-			 * @hooked vehicle_template_single_features - 10
-			 * @hooked vehicle_template_single_seller_comments - 10
+			 * @hooked wpcm_template_single_data - 10
+			 * @hooked wpcm_template_single_content - 20
+			 * @hooked wpcm_template_single_features - 30
 			 */
 			do_action( 'wpcm_vehicle_content' );
 			?>
