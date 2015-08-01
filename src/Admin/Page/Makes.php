@@ -2,6 +2,8 @@
 
 namespace Never5\WPCarManager\Admin\Page;
 
+use Never5\WPCarManager\Taxonomies;
+
 class Makes {
 
 	public function init() {
@@ -12,7 +14,28 @@ class Makes {
 	}
 
 	public function output() {
-		echo 'hallo';
+
+		$items = array();
+
+		$terms = get_terms( Taxonomies::MAKE_MODEL, array(
+			'hide_empty'   => false,
+			'hierarchical' => false,
+		) );
+
+		if ( count( $terms ) > 0 ) {
+			foreach ( $terms as $term ) {
+				$items[] = array(
+					'id'   => $term->term_id,
+					'name' => $term->name,
+					'slug' => $term->slug
+				);
+			}
+		}
+		// load view
+		wp_car_manager()->service( 'view_manager' )->display( 'page/makes-models', array(
+			'title' => __( 'Makes', 'wp-car-manager' ),
+			'items' => $items,
+		) );
 	}
 
 }
