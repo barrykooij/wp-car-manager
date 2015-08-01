@@ -15,11 +15,47 @@
     .wp-menu-image:before {
       font-family: "wp-car-manager" !important;
       content: "\e800";
-      font-size: 1.1em!important;
+      font-size: 1.1em !important;
       line-height: 1.3em;
     }
   }
 }
+
+.wpcm-page-makes {
+  #col-right {
+    table {
+      thead {
+        #actions {
+          width: 10%;
+        }
+      }
+      th {
+        span {
+          padding: 7px 7px 8px 10px;
+        }
+      }
+      tbody {
+        .wpcm-btn-configure {
+          border: 1px solid #cccccc;
+          background-color: #f7f7f7;
+          padding: 4px;
+          line-height: .9em;
+          border-radius: 5px;
+          &:before {
+            color: #555555;
+            font-size: .9em;
+          }
+          &:hover {
+            border-color: #828282;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+//content: "\f111";
 
 /** Car Data Meta Box **/
 #wpcm-car-data {
