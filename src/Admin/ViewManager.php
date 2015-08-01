@@ -1,14 +1,14 @@
 <?php
 
-namespace Never5\WPCarManager;
+namespace Never5\WPCarManager\Admin;
 
 class ViewManager {
 
-	/** @var  Pimple\Container */
+	/** @var  \Never5\WPCarManager\Pimple\Container */
 	private $container;
 
 	/**
-	 * @param Pimple\Container $c
+	 * @param  \Never5\WPCarManager\Pimple\Container $c
 	 */
 	public function __construct( $c ) {
 		$this->container = $c;

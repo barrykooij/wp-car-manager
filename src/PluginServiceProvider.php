@@ -16,7 +16,7 @@ class PluginServiceProvider implements Pimple\ServiceProviderInterface {
 
 		// view manager
 		$container['view_manager'] = function ( $c ) {
-			return new ViewManager( $c );
+			return new Admin\ViewManager( $c );
 		};
 
 		// vehicle factory
