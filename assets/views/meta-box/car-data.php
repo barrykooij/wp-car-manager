@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+} // Exit if accessed directly
+
 if ( isset( $fields ) && count( $fields ) > 0 ) {
 	foreach ( $fields as $field ) {
 
