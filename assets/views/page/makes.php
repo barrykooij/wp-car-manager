@@ -27,7 +27,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 									<br>
 
 									<div class="row-actions">
-										<span class="edit"><a href="#">Edit</a> | </span></span>
+										<span class="edit">
+											<a href="<?php echo add_query_arg( array( 'edit' => $item['id'] ), admin_url( 'edit.php?post_type=wpcm_vehicle&page=wpcm-makes' ) ); ?>">Edit</a> |
+										</span>
 										<span class="delete"><a class="delete-tag" href="#">Delete</a></span>
 									</div>
 								</td>
@@ -61,12 +63,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<form id="add-make" method="post"
 					      action="<?php echo admin_url( 'edit.php?post_type=wpcm_vehicle&page=wpcm-makes' ) ?>">
 
-						<?php
-						wp_nonce_field( 'wpcm_make_nonce_wow_much_security', 'wpcm_make_nonce' );
-						?>
+						<?php wp_nonce_field( 'wpcm_make_nonce_wow_much_security', 'wpcm_make_nonce' ); ?>
+
+						<input type="hidden" name="wpcm_action" value="add_make"/>
+
 						<div class="form-field form-required term-name-wrap">
 							<label for="tag-name"><?php _e( 'Name' ); ?></label>
-							<input name="tag-name" id="tag-name" type="text" value="" size="40" aria-required="true">
+							<input name="name" id="tag-name" type="text" value="" size="40" aria-required="true">
 
 							<p><?php _e( 'The name is how it appears on your site.' ); ?></p>
 						</div>
@@ -77,8 +80,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<p><?php _e( 'The “slug” is the URL-friendly version of the name. It is usually all lowercase and contains only letters, numbers, and hyphens.' ); ?></p>
 						</div>
 
-						<p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary"
-						                         value="<?php _e( 'Add New Make', 'wp-car-manager' ); ?>"></p>
+						<p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e( 'Add New Make', 'wp-car-manager' ); ?>"></p>
 					</form>
 
 				</div>
