@@ -17,10 +17,21 @@ class Makes {
 	}
 
 	/**
-	 * Handle the post
+	 * Handle action if set
 	 */
-	private function handle_post() {
+	private function handle_action() {
 		if ( isset( $_POST['wpcm_action'] ) ) {
+
+			// check if nonce exists
+			if ( ! isset( $_POST['wpcm_make_nonce'] ) ) {
+				return;
+			}
+
+			// verify nonce
+			if ( ! wp_verify_nonce( $_POST['wpcm_make_nonce'], 'wpcm_make_nonce_wow_much_security' ) ) {
+				return;
+			}
+
 			switch ( $_POST['wpcm_action'] ) {
 
 				case 'edit_term':
@@ -67,6 +78,41 @@ class Makes {
 					break;
 			}
 
+		} else if ( isset( $_GET['action'] ) ) {
+			if ( 'delete' === $_GET['action'] ) {
+				// check if nonce exists
+				if ( ! isset( $_GET['wpcm_nonce'] ) ) {
+					return;
+				}
+
+				// verify nonce
+				if ( ! wp_verify_nonce( $_GET['wpcm_nonce'], 'wpcm_make_nonce_wow_much_security' ) ) {
+					return;
+				}
+
+				// check if term id is set
+				if ( isset( $_GET['term_id'] ) ) {
+
+					$term_id = absint( $_GET['term_id'] );
+
+					// look for child terms
+					$child_terms = get_terms( Taxonomies::MAKE_MODEL, array(
+						'hide_empty'   => false,
+						'hierarchical' => false,
+						'parent'       => $term_id
+
+					) );
+
+					if ( count( $child_terms ) > 0 ) {
+						foreach ( $child_terms as $child_term ) {
+							wp_delete_term( $child_term->term_id, Taxonomies::MAKE_MODEL );
+						}
+					}
+
+					// delete term
+					wp_delete_term( $term_id, Taxonomies::MAKE_MODEL );
+				}
+			}
 		}
 	}
 
@@ -152,7 +198,7 @@ class Makes {
 	public function page_cb() {
 
 		// handle post
-		$this->handle_post();
+		$this->handle_action();
 
 		// load correct view
 		$this->load_view();
