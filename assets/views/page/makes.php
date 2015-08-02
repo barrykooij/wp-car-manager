@@ -33,7 +33,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 										<span class="edit">
 											<a href="<?php echo add_query_arg( array( 'edit' => $item['id'] ), admin_url( 'edit.php?post_type=wpcm_vehicle&page=wpcm-makes' ) ); ?>">Edit</a> |
 										</span>
-										<span class="delete"><a class="delete-tag" href="#">Delete</a></span>
+										<span class="delete">
+											<a class="delete-tag" href="<?php echo add_query_arg( array(
+												'action'     => 'delete',
+												'term_id'    => $item['id'],
+												'wpcm_nonce' => wp_create_nonce( 'wpcm_make_nonce_wow_much_security' )
+											), admin_url( 'edit.php?post_type=wpcm_vehicle&page=wpcm-makes' ) ); ?>">Delete</a>
+										</span>
 									</div>
 								</td>
 								<td class="slug column-slug"><?php echo $item['slug']; ?></td>
