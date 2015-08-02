@@ -4,7 +4,12 @@
 	<form method="post" action="<?php echo admin_url( 'edit.php?post_type=wpcm_vehicle&page=wpcm-makes' ); ?>">
 		<?php wp_nonce_field( 'wpcm_make_nonce_wow_much_security', 'wpcm_make_nonce' ); ?>
 		<input type="hidden" name="term_id" value="<?php echo $item['id']; ?>"/>
-		<input type="hidden" name="wpcm_action" value="edit_make"/>
+
+		<?php if ( isset( $_GET['make'] ) ): ?>
+			<input type="hidden" name="make_id" value="<?php echo $_GET['make']; ?>"/>
+		<? endif; ?>
+
+		<input type="hidden" name="wpcm_action" value="edit_term"/>
 		<table class="form-table">
 			<tbody>
 			<tr class="form-field form-required term-name-wrap">
@@ -23,8 +28,8 @@
 			</tr>
 			</tbody>
 		</table>
-		<p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary"
-		                         value="<?php _e( 'Update' ); ?>">
+		<p class="submit">
+			<input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e( 'Update' ); ?>">
 		</p>
 	</form>
 </div>

@@ -16,7 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<span><?php _e( 'Name' ); ?></span></th>
 						<th scope="col" id="slug" class="manage-column column-slug desc">
 							<span><?php _e( 'Slug' ); ?></span></th>
-						<th scope="col" id="actions" class="manage-column column-configure">&nbsp;</th>
 					</tr>
 					</thead>
 
@@ -25,8 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php foreach ( $items as $item ): ?>
 							<tr>
 								<td class="name column-name">
-									<strong><a class="row-title"
-									           href="<?php echo add_query_arg( array( 'make' => $item['id'] ), admin_url( 'edit.php?post_type=wpcm_vehicle&page=wpcm-makes' ) ); ?>"><?php echo $item['name']; ?></a></strong>
+									<strong><a class="row-title" href="#"><?php echo $item['name']; ?></a></strong>
 									<br>
 
 									<div class="row-actions">
@@ -37,11 +35,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 									</div>
 								</td>
 								<td class="slug column-slug"><?php echo $item['slug']; ?></td>
-								<td class="posts column-configure">
-									<a href="<?php echo add_query_arg( array( 'make' => $item['id'] ), admin_url( 'edit.php?post_type=wpcm_vehicle&page=wpcm-makes' ) ); ?>"
-									   class="dashicons dashicons-admin-generic wpcm-btn-configure"
-									   title="Configure Models"></a>
-								</td>
 							</tr>
 						<?php endforeach; ?>
 					<?php endif; ?>
@@ -49,10 +42,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					<tfoot>
 					<tr>
-						<th scope="col" class="manage-column column-name sortable desc">
+						<th scope="col" class="manage-column sortable column-name desc">
 							<span><?php _e( 'Name' ); ?></span></th>
 						<th scope="col" class="manage-column column-slug desc"><span><?php _e( 'Slug' ); ?></span></th>
-						<th scope="col" id="actions" class="manage-column column-configure">&nbsp;</th>
 					</tr>
 					</tfoot>
 
@@ -62,14 +54,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div id="col-left">
 			<div class="col-wrap">
 				<div class="form-wrap">
-					<h3><?php _e( 'Add New Make', 'wp-car-manager' ); ?></h3>
+					<h3><?php _e( 'Add New Model', 'wp-car-manager' ); ?></h3>
 
 					<form id="add-make" method="post"
-					      action="<?php echo admin_url( 'edit.php?post_type=wpcm_vehicle&page=wpcm-makes' ) ?>">
+					      action="<?php echo admin_url( 'edit.php?post_type=wpcm_vehicle&page=wpcm-makes&make=24' ) ?>">
 
 						<?php wp_nonce_field( 'wpcm_make_nonce_wow_much_security', 'wpcm_make_nonce' ); ?>
 
 						<input type="hidden" name="wpcm_action" value="add_term"/>
+
+						<input type="hidden" name="make_id" value="<?php echo $_GET['make']; ?>"/>
 
 						<div class="form-field form-required term-name-wrap">
 							<label for="tag-name"><?php _e( 'Name' ); ?></label>
@@ -85,7 +79,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</div>
 
 						<p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary"
-						                         value="<?php _e( 'Add New Make', 'wp-car-manager' ); ?>"></p>
+						                         value="<?php _e( 'Add New Model', 'wp-car-manager' ); ?>"></p>
 					</form>
 
 				</div>
