@@ -25,6 +25,10 @@
   #col-right {
     table {
       thead {
+        th,td {
+          height: 22px;
+          padding-left: 0;
+        }
         #actions {
           width: 10%;
         }
@@ -35,6 +39,9 @@
         }
       }
       tbody {
+        th,td {
+          height: 41px;
+        }
         .wpcm-btn-configure {
           border: 1px solid #cccccc;
           background-color: #f7f7f7;
@@ -51,11 +58,25 @@
         }
 
       }
+
+      thead,tfoot {
+        th,td {
+          height: 22px;
+          padding-left: 0;
+        }
+      }
+
     }
   }
 }
 
-//content: "\f111";
+.wpcm_vehicle_page_wpcm-models {
+  .wp-submenu {
+    li.current {
+      display: none;
+    }
+  }
+}
 
 /** Car Data Meta Box **/
 #wpcm-car-data {
