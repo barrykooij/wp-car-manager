@@ -126,10 +126,20 @@ class Makes {
 
 			$term = get_term( absint( $_GET['edit'] ), 'wpcm_make_model' );
 
+			// form action URL
+			$form_action_url = admin_url( 'edit.php?post_type=wpcm_vehicle&page=wpcm-makes' );
+
+			// check if make is set
+			if ( isset( $_GET['make'] ) ) {
+				// add make to form action URL
+				$form_action_url = add_query_arg( array( 'make' => absint( $_GET['make'] ) ), $form_action_url );
+			}
+
 			// load view
 			wp_car_manager()->service( 'view_manager' )->display( 'page/edit-make-model', array(
-				'title' => sprintf( __( 'Edit %s', 'wp-car-manager' ), $term->name ),
-				'item'  => array(
+				'form_action' => $form_action_url,
+				'title'       => sprintf( __( 'Edit %s', 'wp-car-manager' ), $term->name ),
+				'item'        => array(
 					'id'   => $term->term_id,
 					'name' => $term->name,
 					'slug' => $term->slug
