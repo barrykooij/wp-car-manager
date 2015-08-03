@@ -80,7 +80,7 @@ class Taxonomies {
 			'labels'                     => $labels,
 			'hierarchical'               => true,
 			'public'                     => true,
-			'show_ui'                    => true,
+			'show_ui'                    => false,
 			'show_admin_column'          => true,
 			'show_in_nav_menus'          => false,
 			'show_tagcloud'              => false,
