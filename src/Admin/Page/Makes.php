@@ -148,55 +148,20 @@ class Makes {
 
 		} elseif ( isset( $_GET['make'] ) ) {
 
+			// get make
 			$make = get_term( absint( $_GET['make'] ), 'wpcm_make_model' );
-
-			$items = array();
-
-			$terms = get_terms( Taxonomies::MAKE_MODEL, array(
-				'hide_empty'   => false,
-				'hierarchical' => false,
-				'parent'       => $make->term_id
-
-			) );
-
-			if ( count( $terms ) > 0 ) {
-				foreach ( $terms as $term ) {
-					$items[] = array(
-						'id'   => $term->term_id,
-						'name' => $term->name,
-						'slug' => $term->slug
-					);
-				}
-			}
 
 			// load view
 			wp_car_manager()->service( 'view_manager' )->display( 'page/models', array(
 				'title' => sprintf( __( '%s Models', 'wp-car-manager' ), $make->name ),
-				'items' => $items,
+				'items' => wp_car_manager()->service( 'make_model_manager' )->get_models( $make->term_id ),
 			) );
 		} else {
-			$items = array();
-
-			$terms = get_terms( Taxonomies::MAKE_MODEL, array(
-				'hide_empty'   => false,
-				'hierarchical' => false,
-				'parent'       => 0
-			) );
-
-			if ( count( $terms ) > 0 ) {
-				foreach ( $terms as $term ) {
-					$items[] = array(
-						'id'   => $term->term_id,
-						'name' => $term->name,
-						'slug' => $term->slug
-					);
-				}
-			}
 
 			// load view
 			wp_car_manager()->service( 'view_manager' )->display( 'page/makes', array(
 				'title' => __( 'Makes', 'wp-car-manager' ),
-				'items' => $items,
+				'items' => wp_car_manager()->service( 'make_model_manager' )->get_makes(),
 			) );
 		}
 
