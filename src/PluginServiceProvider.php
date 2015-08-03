@@ -25,13 +25,18 @@ class PluginServiceProvider implements Pimple\ServiceProviderInterface {
 		};
 
 		// template manger
-		$container['template_manager'] = function() {
+		$container['template_manager'] = function () {
 			return new TemplateManager();
 		};
 
 		// settings
-		$container['settings'] = function() {
+		$container['settings'] = function () {
 			return new Settings();
+		};
+
+		// MakeModelManager
+		$container['make_model_manager'] = function () {
+			return new MakeModelManager();
 		};
 
 	}
