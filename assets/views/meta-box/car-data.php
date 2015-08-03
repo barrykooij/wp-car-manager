@@ -3,6 +3,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
+wp_nonce_field( 'wpcm-dat-ajax-nonce', 'wpcm-ajax-nonce' );
+
 if ( isset( $fields ) && count( $fields ) > 0 ) {
 	foreach ( $fields as $field ) {
 

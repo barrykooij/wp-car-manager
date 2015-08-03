@@ -12,12 +12,15 @@ class CarData extends MetaBox {
 	 */
 	public function __construct() {
 		parent::__construct( 'car-data', __( 'Car Data', 'wp-car-manager' ), 'side' );
+
+		// Add AJAX endpoint
+		add_action( 'wp_ajax_wpcm_admin_get_models', array( $this, 'ajax_get_models' ) );
 	}
 
 	/**
 	 * Actual meta box output
 	 *
-	 * @parem \WP_Post $post
+	 * @param \WP_Post $post
 	 */
 	public function meta_box_output( $post ) {
 
@@ -55,6 +58,44 @@ class CarData extends MetaBox {
 			}
 		}
 
+	}
+
+	/**
+	 * AJAX 'get_models' callback
+	 */
+	public function ajax_get_models() {
+
+		// check nonce
+		check_ajax_referer( 'wpcm-dat-ajax-nonce', 'nonce' );
+
+		// check if make is set
+		if ( ! isset( $_POST['make'] ) ) {
+			return;
+		}
+
+		// make
+		$make = absint( $_POST['make'] );
+
+		// models array
+		$models = array();
+
+		// get raw models
+		$models_raw = wp_car_manager()->service( 'make_model_manager' )->get_models( $make );
+
+		// check & loop
+		if ( count( $models_raw ) > 0 ) {
+			foreach ( $models_raw as $model_raw ) {
+
+				// add to $models array
+				$models[] = array( 'id' => $model_raw['id'], 'name' => $model_raw['name'] );
+			}
+		}
+
+		// send JSON
+		wp_send_json( $models );
+
+		// bye
+		exit;
 	}
 
 }
