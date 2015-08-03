@@ -24,14 +24,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php foreach ( $items as $item ): ?>
 							<tr>
 								<td class="name column-name">
-									<strong><a class="row-title" href="#"><?php echo $item['name']; ?></a></strong>
+									<strong><a class="row-title" href="<?php echo add_query_arg( array(
+											'make' => absint( $_GET['make'] ),
+											'edit' => $item['id']
+										), admin_url( 'edit.php?post_type=wpcm_vehicle&page=wpcm-makes' ) ); ?>"><?php echo $item['name']; ?></a></strong>
 									<br>
 
 									<div class="row-actions">
 										<span class="edit">
-											<a href="<?php echo add_query_arg( array( 'edit' => $item['id'] ), admin_url( 'edit.php?post_type=wpcm_vehicle&page=wpcm-makes' ) ); ?>">Edit</a> |
+											<a href="<?php echo add_query_arg( array(
+												'make' => absint( $_GET['make'] ),
+												'edit' => $item['id']
+											), admin_url( 'edit.php?post_type=wpcm_vehicle&page=wpcm-makes' ) ); ?>">Edit</a> |
 										</span>
-										<span class="delete"><a class="delete-tag" href="#">Delete</a></span>
+										<span class="delete">
+											<a class="delete-tag" href="<?php echo add_query_arg( array(
+												'make'       => absint( $_GET['make'] ),
+												'action'     => 'delete',
+												'term_id'    => $item['id'],
+												'wpcm_nonce' => wp_create_nonce( 'wpcm_make_nonce_wow_much_security' )
+											), admin_url( 'edit.php?post_type=wpcm_vehicle&page=wpcm-makes' ) ); ?>">Delete</a>
+										</span>
 									</div>
 								</td>
 								<td class="slug column-slug"><?php echo $item['slug']; ?></td>
