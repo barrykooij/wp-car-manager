@@ -17,7 +17,7 @@ class ShortDescription extends MetaBox {
 	 * Override init to remove default excerpt meta box
 	 */
 	public function init() {
-		remove_meta_box( 'postexcerpt', WPCarManager\PostType::PT, 'normal' );
+		remove_meta_box( 'postexcerpt', WPCarManager\PostType::VEHICLE, 'normal' );
 		parent::init();
 	}
 

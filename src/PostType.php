@@ -4,7 +4,7 @@ namespace Never5\WPCarManager;
 
 class PostType {
 
-	const PT = 'wpcm_vehicle';
+	const VEHICLE = 'wpcm_vehicle';
 
 	public static function register() {
 
@@ -58,7 +58,7 @@ class PostType {
 			)
 		);
 
-		register_post_type( self::PT, $args );
+		register_post_type( self::VEHICLE, $args );
 	}
 
 }
