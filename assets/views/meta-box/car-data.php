@@ -13,7 +13,8 @@ if ( isset( $fields ) && count( $fields ) > 0 ) {
 		wp_car_manager()->service( 'view_manager' )->display( 'meta-box/input/' . $field['type'], array(
 			'mb_prefix' => $mb_prefix,
 			'field'     => $field,
-			'value'     => $vehicle->$get_method()
+			'value'     => $vehicle->$get_method(),
+			'vehicle'   => $vehicle
 		) );
 	}
 }
