@@ -1,20 +1,12 @@
-@font-face {
-  font-family: 'wp-car-manager';
-  src: url('../fonts/wp-car-manager.eot?25344333');
-  src: url('../fonts/wp-car-manager.eot?25344333#iefix') format('embedded-opentype'),
-  url('../fonts/wp-car-manager.woff?25344333') format('woff'),
-  url('../fonts/wp-car-manager.ttf?25344333') format('truetype'),
-  url('../fonts/wp-car-manager.svg?25344333#wp-car-manager') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+@import "mixins";
+@import "fonts";
 
 /* Menu */
 #adminmenu {
   #menu-posts-wpcm_vehicle {
     .wp-menu-image:before {
       font-family: "wp-car-manager" !important;
-      content: "\e800";
+      content: "\e800" ;
       font-size: 1.1em !important;
       line-height: 1.3em;
     }
@@ -25,7 +17,7 @@
   #col-right {
     table {
       thead {
-        th,td {
+        th, td {
           height: 22px;
           padding-left: 0;
         }
@@ -39,7 +31,7 @@
         }
       }
       tbody {
-        th,td {
+        th, td {
           height: 41px;
         }
         .wpcm-btn-configure {
@@ -59,8 +51,8 @@
 
       }
 
-      thead,tfoot {
-        th,td {
+      thead, tfoot {
+        th, td {
           height: 22px;
           padding-left: 0;
         }
