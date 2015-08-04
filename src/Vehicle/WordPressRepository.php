@@ -38,6 +38,15 @@ class WordPressRepository implements VehicleRepository {
 		$data->doors        = get_post_meta( $post->ID, $pm_prefix . 'doors', true );
 		$data->features     = wp_get_post_terms( $post->ID, Taxonomies::FEATURES, array( 'fields' => 'names' ) );
 
+		// get product gallery
+		$product_image_gallery = '';
+		if ( metadata_exists( 'post', $post->ID, '_car_gallery' ) ) {
+			$product_image_gallery = get_post_meta( $post->ID, '_car_gallery', true );
+		}
+
+		// set attachments ids
+		$data->gallery_attachment_ids = array_filter( explode( ',', $product_image_gallery ) );
+
 		return $data;
 
 	}

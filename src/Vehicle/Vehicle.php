@@ -29,6 +29,9 @@ abstract class Vehicle {
 	/** @var array */
 	private $features = array();
 
+	/** @var String */
+	private $gallery_attachment_ids;
+
 	/**
 	 * @return int
 	 */
@@ -148,6 +151,20 @@ abstract class Vehicle {
 	 */
 	public function set_features( $features ) {
 		$this->features = $features;
+	}
+
+	/**
+	 * @return String
+	 */
+	public function get_gallery_attachment_ids() {
+		return $this->gallery_attachment_ids;
+	}
+
+	/**
+	 * @param String $gallery_attachment_ids
+	 */
+	public function set_gallery_attachment_ids( $gallery_attachment_ids ) {
+		$this->gallery_attachment_ids = $gallery_attachment_ids;
 	}
 
 }
