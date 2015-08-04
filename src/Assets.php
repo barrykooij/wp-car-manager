@@ -7,6 +7,7 @@ abstract class Assets {
 	 * Enqueue frontend assets
 	 */
 	public static function enqueue_frontend() {
+
 		// frontend CSS
 		wp_enqueue_style(
 			'wpcm_frontend',
@@ -14,6 +15,17 @@ abstract class Assets {
 			array(),
 			wp_car_manager()->get_version()
 		);
+
+		// load vehicle singular assets
+		if ( is_singular( PostType::VEHICLE ) ) {
+			// enqueue edit vehicle script
+			wp_enqueue_script(
+				'wpcm_pretty_photo',
+				wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/lib/jquery.prettyPhoto.min.js' ),
+				array( 'jquery' ),
+				wp_car_manager()->get_version()
+			);
+		}
 	}
 
 	/**

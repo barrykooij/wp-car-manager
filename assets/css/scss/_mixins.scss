@@ -38,3 +38,7 @@
   text-align: center;
   content: $glyph;
 }
+
+@mixin transition($selector: all, $animation: ease-in-out, $duration: .2s) {
+  transition: $selector $animation $duration;
+}

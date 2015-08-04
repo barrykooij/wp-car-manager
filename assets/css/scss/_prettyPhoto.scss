@@ -1,0 +1,372 @@
+/** PRETTYPHOTO STYLING **/
+/**
+ * prettyPhoto.scss
+ * Styles for the prettyPhoto lightbox script. Includes a custom WooCommerce theme.
+ * http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/
+ */
+
+
+@import "mixins";
+@import "fonts";
+
+/**
+ * Mixins
+ */
+
+@mixin button() {
+  border-radius: 100%;
+  height: 1em;
+  width: 1em;
+  background-color: #444;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1em;
+  @include transition();
+  &:hover {
+    background-color: #000;
+  }
+}
+
+/** WP Car Manager PP CSS **/
+.pp_previous,
+.pp_next {
+  &:before {
+    @include button();
+    font-family: 'wp-car-manager';
+    content: "\e803";
+    text-indent: 0;
+    display: none;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    text-align: center;
+  }
+
+  &:hover {
+    &:before {
+      display: block;
+    }
+  }
+}
+
+.pp_previous {
+  &:before {
+    left: 1em;
+  }
+}
+
+.pp_next {
+  &:before {
+    right: 1em;
+    font-family: 'wp-car-manager';
+    content: "\e801";
+  }
+}
+
+/**
+ * Default prettyPhoto css
+ * Do not edit!
+ */
+div.pp_pic_holder a:focus {
+  outline: none;
+}
+
+div.pp_overlay {
+  background: #000;
+  display: none;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+div.pp_pic_holder {
+  display: none;
+  position: absolute;
+  width: 100px;
+  z-index: 10000;
+}
+
+.pp_top {
+  height: 20px;
+  position: relative;
+}
+
+* html .pp_top {
+  padding: 0 20px;
+}
+
+.pp_top .pp_left {
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 20px;
+}
+
+.pp_top .pp_middle {
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  right: 20px;
+}
+
+* html .pp_top .pp_middle {
+  left: 0;
+  position: static;
+}
+
+.pp_top .pp_right {
+  height: 20px;
+  left: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+}
+
+.pp_content {
+  height: 40px;
+  min-width: 40px;
+}
+
+* html .pp_content {
+  width: 40px;
+}
+
+.pp_fade {
+  display: none;
+}
+
+.pp_content_container {
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+.pp_content_container .pp_left {
+  padding-left: 20px;
+}
+
+.pp_content_container .pp_right {
+  padding-right: 20px;
+}
+
+.pp_content_container .pp_details {
+  float: left;
+  margin: 10px 0 2px 0;
+}
+
+.pp_description {
+  display: none;
+  margin: 0;
+}
+
+.pp_social {
+  float: left;
+  margin: 0;
+}
+
+.pp_social .facebook {
+  float: left;
+  margin-left: 5px;
+  width: 55px; overflow: hidden;
+}
+
+.pp_social .twitter {
+  float: left;
+}
+
+.pp_nav {
+  clear: right;
+  float: left;
+  margin: 3px 10px 0 0;
+}
+
+.pp_nav p {
+  float: left;
+  margin: 2px 4px;
+  white-space: nowrap;
+}
+
+.pp_nav .pp_play,
+.pp_nav .pp_pause {
+  float: left;
+  margin-right: 4px;
+  text-indent: -10000px;
+}
+
+a.pp_arrow_previous,
+a.pp_arrow_next {
+  display: block;
+  float: left;
+  height: 15px;
+  margin-top: 3px;
+  text-indent: -100000px;
+  width: 14px;
+}
+
+.pp_hoverContainer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
+}
+
+.pp_gallery {
+  display: none;
+  left: 50%;
+  margin-top: -50px;
+  position: absolute;
+  z-index: 10000;
+}
+
+.pp_gallery div {
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+.pp_gallery ul {
+  float: left;
+  height: 35px;
+  margin: 0 0 0 5px;
+  padding: 0;
+  position: relative;
+  white-space: nowrap;
+}
+
+.pp_gallery ul a {
+  border: 1px #000 solid;
+  border: 1px rgba(0,0,0,0.5) solid;
+  display: block;
+  float: left;
+  height: 33px;
+  overflow: hidden;
+}
+
+.pp_gallery ul a:hover,
+.pp_gallery li.selected a {
+  border-color: #fff;
+}
+
+.pp_gallery ul a img {
+  border: 0;
+}
+
+.pp_gallery li {
+  display: block;
+  float: left;
+  margin: 0 5px 0 0;
+  padding: 0;
+}
+
+.pp_gallery li.default a {
+  display: block;
+  height: 33px;
+  width: 50px;
+}
+
+.pp_gallery li.default a img {
+  display: none;
+}
+
+.pp_gallery .pp_arrow_previous,
+.pp_gallery .pp_arrow_next {
+  margin-top: 7px !important;
+}
+
+a.pp_next {
+  display: block;
+  float: right;
+  height: 100%;
+  text-indent: -10000px;
+  width: 49%;
+}
+
+a.pp_previous {
+  display: block;
+  float: left;
+  height: 100%;
+  text-indent: -10000px;
+  width: 49%;
+}
+
+a.pp_expand,
+a.pp_contract {
+  cursor: pointer;
+  display: none;
+  height: 20px;
+  position: absolute;
+  right: 30px;
+  text-indent: -10000px;
+  top: 10px;
+  width: 20px;
+  z-index: 20000;
+}
+
+a.pp_close {
+  position: absolute; right: 0; top: 0;
+  display: block;
+  text-indent: -10000px;
+}
+
+.pp_bottom {
+  height: 20px;
+  position: relative;
+}
+
+* html .pp_bottom {
+  padding: 0 20px;
+}
+
+.pp_bottom .pp_left {
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 20px;
+}
+
+.pp_bottom .pp_middle {
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  right: 20px;
+}
+
+* html .pp_bottom .pp_middle {
+  left: 0;
+  position: static;
+}
+
+.pp_bottom .pp_right {
+  height: 20px;
+  left: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+}
+
+.pp_loaderIcon {
+  display: block;
+  height: 24px;
+  left: 50%;
+  margin: -12px 0 0 -12px;
+  position: absolute;
+  top: 50%;
+  width: 24px;
+}
+
+#pp_full_res .pp_inline {
+  text-align: left;
+}
+
+div.ppt {
+  color: #fff !important;
+  font-weight: 700;
+  display: none;
+  font-size: 17px;
+  margin: 0 0 5px 15px;
+  z-index: 9999;
+}
