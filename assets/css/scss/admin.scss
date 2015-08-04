@@ -97,3 +97,103 @@
   }
 
 }
+
+#wpcm-car-gallery {
+
+  .inside {
+    padding: 0;
+    margin: 0;
+
+    #car_images_container {
+
+      padding: 0 0 0 9px;
+
+      ul.car_images {
+        padding: 0;
+        margin: 0;
+
+        @include clearfix();
+
+        &>li {
+          width: 80px;
+          float: left;
+          cursor: move;
+          border: 1px solid #d5d5d5;
+          margin: 9px 9px 0 0;
+          background: #f7f7f7;
+          border-radius: 2px;
+          position: relative;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+
+          img {
+            width: 100%;
+            height: auto;
+            display: block;
+          }
+
+          ul.actions {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            padding: 2px;
+            display: none;
+
+            li {
+              float: right;
+              margin: 0 0 0 2px;
+              background: none;
+              border: 0;
+
+              a {
+                width: 1em;
+                height: 1em;
+                margin: 0;
+                padding: 0;
+                display: block;
+                overflow: hidden;
+
+                position: relative;
+
+
+              }
+
+              a.delete {
+                @include ir();
+                font-size: 1.4em;
+
+                &:before {
+                  @include icon( "\e802" );
+                  color: white;
+                  background-color: #000;
+                  border-radius:100%;
+                  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+                  font-size: 12px;
+                  line-height: 18px;
+                }
+              }
+
+            }
+
+          }
+
+        }
+
+        li:hover {
+          ul.actions {
+            display: block;
+          }
+        }
+
+      }
+
+    }
+
+    p.add_car_images {
+      padding: 0 12px 12px;
+    }
+
+  }
+
+}

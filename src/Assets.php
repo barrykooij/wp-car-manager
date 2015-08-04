@@ -29,7 +29,7 @@ abstract class Assets {
 			wp_enqueue_script(
 				'wpcm_edit_download',
 				wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/edit-vehicle' . ( ( ! SCRIPT_DEBUG ) ? '.min' : '' ) . '.js' ),
-				array( 'jquery' ),
+				array( 'jquery', 'jquery-ui-sortable' ),
 				wp_car_manager()->get_version()
 			);
 		}

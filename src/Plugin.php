@@ -91,6 +91,10 @@ final class Plugin extends Pimple\Container {
 				$car_data = new Admin\MetaBox\CarData();
 				$car_data->init();
 
+				// car gallery
+				$gallery = new Admin\MetaBox\Gallery();
+				$gallery->init();
+
 				// short description
 				if ( function_exists( 'wp_editor' ) ) {
 					$short_description = new Admin\MetaBox\ShortDescription();
