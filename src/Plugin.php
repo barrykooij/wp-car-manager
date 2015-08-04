@@ -76,13 +76,19 @@ final class Plugin extends Pimple\Container {
 			Taxonomies::register_features();
 		} );
 
+		// register image size
+		add_action( 'init', function () {
+			add_image_size( 'wpcm_vehicle_single', 600, 400, true );
+			add_image_size( 'wpcm_vehicle_thumbnail', 150, 150, true );
+		} );
+
 		if ( is_admin() ) {
 
 			// add admin menu
-			add_action('admin_menu', function() {
+			add_action( 'admin_menu', function () {
 				$page_makes = new Admin\Page\Makes();
 				$page_makes->init();
-			});
+			} );
 
 			// add meta box
 			add_action( 'admin_init', function () {
