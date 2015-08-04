@@ -10,9 +10,7 @@ jQuery( function ( $ ) {
             make: selected_make,
             nonce: $( '#wpcm-ajax-nonce' ).val()
         }, function ( response ) {
-
-            console.log( response.length );
-
+            
             if ( undefined != response && '' != response && 0 != response && response.length > 0 ) {
 
                 for ( var i = 0; i < response.length; i++ ) {
@@ -20,7 +18,7 @@ jQuery( function ( $ ) {
                 }
 
             }
-            console.log( response );
+
         } );
     } );
 
