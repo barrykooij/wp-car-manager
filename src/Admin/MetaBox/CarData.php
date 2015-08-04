@@ -27,12 +27,30 @@ class CarData extends MetaBox {
 		// nonce
 		$this->output_nonce();
 
-		// view
-		wp_car_manager()->service( 'view_manager' )->display( 'meta-box/car-data', array(
-			'mb_prefix' => 'wpcm-cd',
-			'fields'    => Vehicle\Data::get_fields(),
-			'vehicle'   => wp_car_manager()->service( 'vehicle_factory' )->make( $post->ID )
-		) );
+		// vehicle
+		$vehicle = wp_car_manager()->service( 'vehicle_factory' )->make( $post->ID );
+
+		// get fields
+		$fields = Vehicle\Data::get_fields();
+
+		// split fields into 2 arrays
+		$tables = array_chunk( $fields, ( ceil( count( $fields ) / 2 ) ) );
+
+		// AJAX NONCE
+		wp_nonce_field( 'wpcm-dat-ajax-nonce', 'wpcm-ajax-nonce' );
+
+		if ( count( $tables ) > 0 ) {
+			foreach ( $tables as $table ) {
+				// view
+				wp_car_manager()->service( 'view_manager' )->display( 'meta-box/car-data', array(
+					'mb_prefix' => 'wpcm-cd',
+					'fields'    => $table,
+					'vehicle'   => $vehicle
+				) );
+			}
+		}
+
+
 	}
 
 	/**
