@@ -11,7 +11,7 @@ class Gallery extends MetaBox {
 	 * Constructor
 	 */
 	public function __construct() {
-		parent::__construct( 'car-gallery', __( 'Car Gallery', 'wp-car-manager' ), 'normal' );
+		parent::__construct( 'car-gallery', __( 'Car Gallery', 'wp-car-manager' ), 'side', 'low' );
 	}
 
 	/**

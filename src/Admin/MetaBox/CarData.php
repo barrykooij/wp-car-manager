@@ -11,7 +11,7 @@ class CarData extends MetaBox {
 	 * Constructor
 	 */
 	public function __construct() {
-		parent::__construct( 'car-data', __( 'Car Data', 'wp-car-manager' ), 'side' );
+		parent::__construct( 'car-data', __( 'Car Data', 'wp-car-manager' ), 'normal', 'high' );
 
 		// Add AJAX endpoint
 		add_action( 'wp_ajax_wpcm_admin_get_models', array( $this, 'ajax_get_models' ) );
