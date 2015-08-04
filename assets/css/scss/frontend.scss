@@ -11,6 +11,62 @@
     .wpcm-images {
       float: left;
       width: 55%;
+
+      .wpcm-thumbnails {
+        width: 100%;
+        padding: 10px 0;
+
+        &.wpcm-columns-1 a {
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        &.wpcm-columns-2 a {
+          width: 47%;
+          margin-left: 3%;
+          margin-right: 3%;
+        }
+
+        &.wpcm-columns-3 a {
+          width: 30%;
+          margin-left: 2.5%;
+          margin-right: 2.5%;
+        }
+
+        &.wpcm-columns-4 a {
+          width: 22%;
+          margin-left: 2%;
+          margin-right: 2%;
+        }
+
+        &.wpcm-columns-5 a {
+          width: 17%;
+          margin-left: 1.875%;
+          margin-right: 1.875%;
+        }
+
+        a {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          float: left;
+          img {
+            width: 100%;
+          }
+        }
+
+        a.first {
+          margin-left: 0;
+        }
+        
+        a.last {
+          margin-right: 0;
+        }
+
+
+
+
+      }
     }
 
     .wpcm-price-wrapper {
