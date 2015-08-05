@@ -5,6 +5,31 @@ namespace Never5\WPCarManager;
 class MakeModelManager {
 
 	/**
+	 * Get make by ID
+	 *
+	 * @param int $make_id
+	 *
+	 * @return array
+	 */
+	public function get_make( $make_id ) {
+
+		$make = array( 'id' => 0, 'name' => '', 'slug' => '' );
+
+		// get terms
+		$term = get_term( $make_id, Taxonomies::MAKE_MODEL );
+
+		if ( ! is_wp_error( $term ) && null !== $term ) {
+			$make = array(
+				'id'   => $term->term_id,
+				'name' => $term->name,
+				'slug' => $term->slug
+			);
+		}
+
+		return $make;
+	}
+
+	/**
 	 * Get makes
 	 *
 	 * @return array
@@ -37,6 +62,31 @@ class MakeModelManager {
 
 		// return makes
 		return $makes;
+	}
+
+	/**
+	 * Get model by ID
+	 *
+	 * @param int $model_id
+	 *
+	 * @return array
+	 */
+	public function get_model( $model_id ) {
+
+		$model = array( 'id' => 0, 'name' => '', 'slug' => '' );
+
+		// get terms
+		$term = get_term( $model_id, Taxonomies::MAKE_MODEL );
+
+		if ( ! is_wp_error( $term ) && null !== $term ) {
+			$model = array(
+				'id'   => $term->term_id,
+				'name' => $term->name,
+				'slug' => $term->slug
+			);
+		}
+
+		return $model;
 	}
 
 	/**
