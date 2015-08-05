@@ -10,5 +10,5 @@ global $vehicle;
 	<span class="wpcm-price"><?php echo $vehicle->get_formatted_price(); ?></span>
 
 	<meta itemprop="price" content="<?php echo $vehicle->get_price(); ?>"/>
-	<meta itemprop="priceCurrency" content="<?php echo wp_car_manager()->service( 'settings' )->get( 'currency' ); ?>"/>
+	<meta itemprop="priceCurrency" content="<?php echo wp_car_manager()->service( 'settings' )->get_option( 'currency' ); ?>"/>
 </div>

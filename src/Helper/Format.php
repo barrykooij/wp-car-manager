@@ -22,8 +22,8 @@ abstract class Format {
 		$args = apply_filters( 'wpcm_format_price_args', wp_parse_args( $args, array(
 			'ex_tax_label'       => false,
 			'currency'           => '',
-			'decimal_separator'  => $wpcm->service( 'settings' )->get( 'decimal_separator' ),
-			'thousand_separator' => $wpcm->service( 'settings' )->get( 'thousand_separator' ),
+			'decimal_separator'  => $wpcm->service( 'settings' )->get_option( 'decimal_separator' ),
+			'thousand_separator' => $wpcm->service( 'settings' )->get_option( 'thousand_separator' ),
 			'decimals'           => 0,
 			'price_format'       => Price::get_price_format()
 		) ) );
@@ -49,7 +49,7 @@ abstract class Format {
 		/** @var Settings $settings */
 		$settings = wp_car_manager()->service( 'settings' );
 
-		return number_format( $mileage, 0, $settings->get( 'decimal_separator' ), $settings->get( 'thousand_separator' ) ) . ' ' . $settings->get( 'distance_unit' );
+		return number_format( $mileage, 0, $settings->get_option( 'decimal_separator' ), $settings->get_option( 'thousand_separator' ) ) . ' ' . $settings->get_option( 'distance_unit' );
 	}
 
 }
