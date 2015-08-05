@@ -98,17 +98,13 @@
     .wpcm-contact {
       .wpcm-contact-button {
         display: block;
-        width: 45%;
+        width: 100%;
+        margin-bottom: 15px;
         float: left;
-        margin-right: 10%;
         padding: 1em 0;
         color: #fff;
         text-align: center;
         background: #428dcb;
-
-        &:last-child {
-          margin-right: 0;
-        }
       }
     }
 
