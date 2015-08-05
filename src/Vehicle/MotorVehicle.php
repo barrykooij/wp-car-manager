@@ -2,6 +2,8 @@
 
 namespace Never5\WPCarManager\Vehicle;
 
+use Never5\WPCarManager\Helper;
+
 abstract class MotorVehicle extends Vehicle {
 
 	/** @var int */
@@ -31,6 +33,15 @@ abstract class MotorVehicle extends Vehicle {
 	}
 
 	/**
+	 * Return formatted mileage
+	 *
+	 * @return string
+	 */
+	public function get_formatted_mileage() {
+		return Helper\Format::mileage( $this->get_mileage() );
+	}
+
+	/**
 	 * @return String
 	 */
 	public function get_fuel_type() {
@@ -56,6 +67,21 @@ abstract class MotorVehicle extends Vehicle {
 	 */
 	public function set_transmission( $transmission ) {
 		$this->transmission = $transmission;
+	}
+
+	/**
+	 * Get formatted transmission
+	 *
+	 * @return String
+	 */
+	public function get_formatted_transmission() {
+		$transmissions = Data::get_transmissions();
+		$transmission  = $this->get_transmission();
+		if ( isset( $transmissions[ $transmission ] ) ) {
+			$transmission = $transmissions[ $transmission ];
+		}
+
+		return $transmission;
 	}
 
 	/**
