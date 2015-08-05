@@ -23,7 +23,7 @@ abstract class Currency {
 
 		// use default currency if currency arg not given
 		if ( ! $currency ) {
-			$currency = wp_car_manager()->service( 'settings' )->get( 'currency' );
+			$currency = wp_car_manager()->service( 'settings' )->get_option( 'currency' );
 		}
 
 		switch ( $currency ) {
@@ -162,7 +162,68 @@ abstract class Currency {
 	 * @return String
 	 */
 	public static function get_currency_position() {
-		return wp_car_manager()->service('settings')->get('currency_position');
+		return wp_car_manager()->service( 'settings' )->get_option( 'currency_position' );
+	}
+
+	/**
+	 * Return available currencies
+	 * 
+	 * @return array
+	 */
+	public static function get_currencies() {
+		return array_unique(
+			apply_filters( 'wpcm_currencies',
+				array(
+					'AED' => __( 'United Arab Emirates Dirham', 'wp-car-manager' ),
+					'ARS' => __( 'Argentine Peso', 'wp-car-manager' ),
+					'AUD' => __( 'Australian Dollars', 'wp-car-manager' ),
+					'BDT' => __( 'Bangladeshi Taka', 'wp-car-manager' ),
+					'BRL' => __( 'Brazilian Real', 'wp-car-manager' ),
+					'BGN' => __( 'Bulgarian Lev', 'wp-car-manager' ),
+					'CAD' => __( 'Canadian Dollars', 'wp-car-manager' ),
+					'CLP' => __( 'Chilean Peso', 'wp-car-manager' ),
+					'CNY' => __( 'Chinese Yuan', 'wp-car-manager' ),
+					'COP' => __( 'Colombian Peso', 'wp-car-manager' ),
+					'CZK' => __( 'Czech Koruna', 'wp-car-manager' ),
+					'DKK' => __( 'Danish Krone', 'wp-car-manager' ),
+					'DOP' => __( 'Dominican Peso', 'wp-car-manager' ),
+					'EUR' => __( 'Euros', 'wp-car-manager' ),
+					'HKD' => __( 'Hong Kong Dollar', 'wp-car-manager' ),
+					'HRK' => __( 'Croatia kuna', 'wp-car-manager' ),
+					'HUF' => __( 'Hungarian Forint', 'wp-car-manager' ),
+					'ISK' => __( 'Icelandic krona', 'wp-car-manager' ),
+					'IDR' => __( 'Indonesia Rupiah', 'wp-car-manager' ),
+					'INR' => __( 'Indian Rupee', 'wp-car-manager' ),
+					'NPR' => __( 'Nepali Rupee', 'wp-car-manager' ),
+					'ILS' => __( 'Israeli Shekel', 'wp-car-manager' ),
+					'JPY' => __( 'Japanese Yen', 'wp-car-manager' ),
+					'KIP' => __( 'Lao Kip', 'wp-car-manager' ),
+					'KRW' => __( 'South Korean Won', 'wp-car-manager' ),
+					'MYR' => __( 'Malaysian Ringgits', 'wp-car-manager' ),
+					'MXN' => __( 'Mexican Peso', 'wp-car-manager' ),
+					'NGN' => __( 'Nigerian Naira', 'wp-car-manager' ),
+					'NOK' => __( 'Norwegian Krone', 'wp-car-manager' ),
+					'NZD' => __( 'New Zealand Dollar', 'wp-car-manager' ),
+					'PYG' => __( 'Paraguayan Guaraní', 'wp-car-manager' ),
+					'PHP' => __( 'Philippine Pesos', 'wp-car-manager' ),
+					'PLN' => __( 'Polish Zloty', 'wp-car-manager' ),
+					'GBP' => __( 'Pounds Sterling', 'wp-car-manager' ),
+					'RON' => __( 'Romanian Leu', 'wp-car-manager' ),
+					'RUB' => __( 'Russian Ruble', 'wp-car-manager' ),
+					'SGD' => __( 'Singapore Dollar', 'wp-car-manager' ),
+					'ZAR' => __( 'South African rand', 'wp-car-manager' ),
+					'SEK' => __( 'Swedish Krona', 'wp-car-manager' ),
+					'CHF' => __( 'Swiss Franc', 'wp-car-manager' ),
+					'TWD' => __( 'Taiwan New Dollars', 'wp-car-manager' ),
+					'THB' => __( 'Thai Baht', 'wp-car-manager' ),
+					'TRY' => __( 'Turkish Lira', 'wp-car-manager' ),
+					'UAH' => __( 'Ukrainian Hryvnia', 'wp-car-manager' ),
+					'USD' => __( 'US Dollars', 'wp-car-manager' ),
+					'VND' => __( 'Vietnamese Dong', 'wp-car-manager' ),
+					'EGP' => __( 'Egyptian Pound', 'wp-car-manager' )
+				)
+			)
+		);
 	}
 
 }
