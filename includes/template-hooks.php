@@ -41,6 +41,14 @@ add_action( 'wpcm_vehicle_summary', 'wpcm_template_single_price', 10 );
 add_action( 'wpcm_vehicle_summary', 'wpcm_template_single_summary_data', 20 );
 
 /**
+ * After Summary Box
+ *
+ * @see wpcm_show_vehicle_images()
+ * @see wpcm_show_vehicle_thumbnails()
+ */
+add_action( 'wpcm_after_vehicle_summary', 'wpcm_template_single_contact', 10 );
+
+/**
  * Vehicle Content Box
  */
 add_action( 'wpcm_vehicle_content', 'wpcm_template_single_data', 10 );

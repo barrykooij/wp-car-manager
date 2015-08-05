@@ -78,6 +78,17 @@ class Settings {
 								'km'    => __( 'Kilometers', 'wp-car-manager' ),
 							)
 						),
+						array(
+							'name'  => 'contact_email',
+							'label' => __( 'Contact Email Address', 'wp-car-manager' ),
+							'desc'  => __( 'The email address people can send an email to.', 'wp-car-manager' )
+						),
+						array(
+							'name'  => 'contact_phone',
+							'label' => __( 'Contact Phone Number', 'wp-car-manager' ),
+							'desc'  => __( 'The phone number people can call to.', 'wp-car-manager' )
+						),
+
 					),
 				),
 			)
@@ -108,6 +119,8 @@ class Settings {
 			'decimal_separator'  => '.',
 			'thousand_separator' => ',',
 			'distance_unit'      => 'miles',
+			'contact_email'      => get_option( 'admin_email', '' ),
+			'contact_phone'      => '',
 			'summary_data'       => apply_filters( 'wpcm_summary_data_fields', array(
 				'condition',
 				'mileage',

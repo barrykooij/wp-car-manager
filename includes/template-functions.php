@@ -65,3 +65,9 @@ if ( ! function_exists( 'wpcm_template_single_features' ) ) {
 		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/features' );
 	}
 }
+
+if ( ! function_exists( 'wpcm_template_single_contact' ) ) {
+	function wpcm_template_single_contact() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/contact' );
+	}
+}

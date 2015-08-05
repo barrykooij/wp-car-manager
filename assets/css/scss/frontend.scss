@@ -58,7 +58,7 @@
         a.first {
           margin-left: 0;
         }
-        
+
         a.last {
           margin-right: 0;
         }
@@ -74,11 +74,13 @@
       }
     }
 
-    .wpcm-summary {
+    .wpcm-summary, .wpcm-contact {
       float: right;
       width: 41%;
-      font-size: .9em;
+    }
 
+    .wpcm-summary {
+      font-size: .9em;
       table {
         border: 0;
         th, td {
@@ -93,19 +95,36 @@
       }
     }
 
+    .wpcm-contact {
+      .wpcm-contact-button {
+        display: block;
+        width: 45%;
+        float: left;
+        margin-right: 10%;
+        padding: 1em 0;
+        color: #fff;
+        text-align: center;
+        background: #428dcb;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
     .wpcm-vehicle-content {
       clear: both;
       overflow: hidden;
 
       .wpcm-content-block {
         border: 0;
-        border-bottom: 1px solid rgba(0,0,0,.1);
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
         margin: 1em 0;
         padding: 1em 0;
         overflow: hidden;
 
         h2 {
-          border-bottom: 1px solid rgba(0,0,0,.1);
+          border-bottom: 1px solid rgba(0, 0, 0, .1);
           padding-bottom: .5em;
         }
 
@@ -153,7 +172,7 @@
         border: 0;
         tr {
           border: 0;
-          th,td {
+          th, td {
             border: 0;
             border-bottom: 1px dotted #F1F1F1;
           }
