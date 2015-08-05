@@ -61,10 +61,36 @@ abstract class Vehicle {
 	}
 
 	/**
+	 * Get formatted condition
+	 *
+	 * @return String
+	 */
+	public function get_formatted_condition() {
+		$conditions = Data::get_conditions();
+		$condition  = $this->get_condition();
+		if ( isset( $conditions[ $condition ] ) ) {
+			$condition = $conditions[ $condition ];
+		}
+
+		return $condition;
+	}
+
+	/**
 	 * @return String
 	 */
 	public function get_make() {
 		return $this->make;
+	}
+
+	/**
+	 * Get make name
+	 *
+	 * @return string
+	 */
+	public function get_make_name() {
+		$make = wp_car_manager()->service( 'make_model_manager' )->get_make( $this->get_make() );
+
+		return $make['name'];
 	}
 
 	/**
@@ -79,6 +105,17 @@ abstract class Vehicle {
 	 */
 	public function get_model() {
 		return $this->model;
+	}
+
+	/**
+	 * Get model name
+	 *
+	 * @return string
+	 */
+	public function get_model_name() {
+		$model = wp_car_manager()->service( 'make_model_manager' )->get_model( $this->get_model() );
+
+		return $model['name'];
 	}
 
 	/**
