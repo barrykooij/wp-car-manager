@@ -25,10 +25,7 @@ class Data {
 		return array(
 			'condition'    => array(
 				'type'    => 'select',
-				'options' => array(
-					'new'  => 'New',
-					'used' => 'Used'
-				),
+				'options' => self::get_conditions(),
 				'label'   => __( 'Condition', 'wp-car-manager' ),
 				'key'     => 'condition'
 			),
@@ -75,10 +72,7 @@ class Data {
 			),
 			'transmission' => array(
 				'type'    => 'select',
-				'options' => array(
-					'automatic' => 'Automatic',
-					'manual'    => 'Manual'
-				),
+				'options' => self::get_transmissions(),
 				'label'   => __( 'Transmission', 'wp-car-manager' ),
 				'key'     => 'transmission'
 			),
@@ -92,6 +86,30 @@ class Data {
 				'label' => __( 'Doors', 'wp-car-manager' ),
 				'key'   => 'doors'
 			),
+		);
+	}
+
+	/**
+	 * Return condition possibilities
+	 *
+	 * @return array
+	 */
+	public static function get_conditions() {
+		return array(
+			'new'  => __( 'New', 'wp-car-manager' ),
+			'used' => __( 'Used', 'wp-car-manager' )
+		);
+	}
+
+	/**
+	 * Get transmission possibilities
+	 *
+	 * @return array
+	 */
+	public static function get_transmissions() {
+		return array(
+			'automatic' => __( 'Automatic', 'wp-car-manager' ),
+			'manual'    => __( 'Manual', 'wp-car-manager' )
 		);
 	}
 
