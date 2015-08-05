@@ -7,5 +7,5 @@ global $vehicle;
 ?>
 <tr>
 	<th><?php _e( 'Condition', 'wp-car-manager' ); ?></th>
-	<td><span itemprop="itemCondition" class="wpcm-vehicle-data"><?php echo $vehicle->get_condition(); ?></span></td>
+	<td><span itemprop="itemCondition" class="wpcm-vehicle-data"><?php echo $vehicle->get_formatted_condition(); ?></span></td>
 </tr>
