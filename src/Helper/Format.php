@@ -2,6 +2,7 @@
 namespace Never5\WPCarManager\Helper;
 
 use Never5\WPCarManager\Plugin;
+use Never5\WPCarManager\Settings;
 
 abstract class Format {
 
@@ -35,6 +36,20 @@ abstract class Format {
 		$return          = '<span class="amount">' . $formatted_price . '</span>';
 
 		return $return;
+	}
+
+	/**
+	 * Formats mileage
+	 *
+	 * @param $mileage
+	 *
+	 * @return string
+	 */
+	public static function mileage( $mileage ) {
+		/** @var Settings $settings */
+		$settings = wp_car_manager()->service( 'settings' );
+
+		return number_format( $mileage, 0, $settings->get( 'decimal_separator' ), $settings->get( 'thousand_separator' ) ) . ' ' . $settings->get( 'distance_unit' );
 	}
 
 }
