@@ -86,8 +86,14 @@ final class Plugin extends Pimple\Container {
 
 			// add admin menu
 			add_action( 'admin_menu', function () {
+
+				// admin page Makes
 				$page_makes = new Admin\Page\Makes();
 				$page_makes->init();
+
+				// admin page Settings
+				$page_settings = new Admin\Page\Settings();
+				$page_settings->init();
 			} );
 
 			// add meta box
@@ -109,7 +115,12 @@ final class Plugin extends Pimple\Container {
 
 			} );
 
-			// assets
+			// admin settings
+			add_action( 'admin_init', function () use ( $container ) {
+				$container['settings']->register_settings();
+			} );
+
+			// admin assets
 			add_action( 'admin_enqueue_scripts', array( 'Never5\\WPCarManager\\Assets', 'enqueue_backend' ) );
 		} else {
 

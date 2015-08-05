@@ -46,6 +46,18 @@ abstract class Assets {
 			);
 		}
 
+		if ( 'edit.php' == $pagenow && isset( $_GET['page'] ) && ( 'wpcm-settings' === $_GET['page'] || 'wpcm-extensions' === $_GET['page'] ) ) {
+
+			// enqueue settings and extensions script
+			wp_enqueue_script(
+				'wpcm_settings',
+				wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/settings' . ( ( ! SCRIPT_DEBUG ) ? '.min' : '' ) . '.js' ),
+				array( 'jquery' ),
+				wp_car_manager()->get_version()
+			);
+
+		}
+
 		// admin CSS
 		wp_enqueue_style(
 			'wpcm_admin',
