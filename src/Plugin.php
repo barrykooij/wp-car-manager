@@ -2,6 +2,8 @@
 
 namespace Never5\WPCarManager;
 
+use Never5\WPCarManager\Shortcode;
+
 final class Plugin extends Pimple\Container {
 
 	/** @var string */
@@ -134,6 +136,10 @@ final class Plugin extends Pimple\Container {
 			// assets
 			add_action( 'wp_enqueue_scripts', array( 'Never5\\WPCarManager\\Assets', 'enqueue_frontend' ) );
 
+			// setup shortcode
+			add_action( 'init', function () use ( $container ) {
+				$shortcode_cars = new Shortcode\Cars();
+			} );
 		}
 
 	}
