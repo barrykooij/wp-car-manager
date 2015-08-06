@@ -78,6 +78,12 @@ class Settings {
 								'km'    => __( 'Kilometers', 'wp-car-manager' ),
 							)
 						),
+
+					),
+				),
+				'contact' => array(
+					__( 'Contact', 'wp-car-manager' ),
+					array(
 						array(
 							'name'  => 'contact_email',
 							'label' => __( 'Contact Email Address', 'wp-car-manager' ),
