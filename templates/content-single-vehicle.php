@@ -10,11 +10,6 @@ global $vehicle;
  * wpcm_before_single_vehicle hook
  */
 do_action( 'wpcm_before_single_vehicle' );
-
-//echo '<pre>';
-//print_r($vehicle);
-//echo '</pre>';
-
 ?>
 	<div id="vehicle-<?php the_ID(); ?>" itemprop="itemOffered" itemscope itemtype="http://schema.org/Car" <?php post_class(); ?>>
 

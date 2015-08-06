@@ -54,3 +54,8 @@ add_action( 'wpcm_after_vehicle_summary', 'wpcm_template_single_contact', 10 );
 add_action( 'wpcm_vehicle_content', 'wpcm_template_single_data', 10 );
 add_action( 'wpcm_vehicle_content', 'wpcm_template_single_content', 20 );
 add_action( 'wpcm_vehicle_content', 'wpcm_template_single_features', 30 );
+
+/**
+ * Vehicle Archive Listings
+ */
+add_action( 'wpcm_archive_vehicle_listings', 'wpcm_template_vehicle_listings', 10 );
