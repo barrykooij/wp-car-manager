@@ -18,14 +18,14 @@ if ( ! function_exists( 'wpcm_output_content_wrapper_end' ) ) {
 /**
  * SINGLE VEHICLE
  */
-if ( ! function_exists( 'wpcm_show_vehicle_images' ) ) {
-	function wpcm_show_vehicle_images() {
+if ( ! function_exists( 'wpcm_template_vehicle_images' ) ) {
+	function wpcm_template_vehicle_images() {
 		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/image' );
 	}
 }
 
-if ( ! function_exists( 'wpcm_show_vehicle_thumbnails' ) ) {
-	function wpcm_show_vehicle_thumbnails() {
+if ( ! function_exists( 'wpcm_template_vehicle_thumbnails' ) ) {
+	function wpcm_template_vehicle_thumbnails() {
 		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/thumbnails' );
 	}
 }

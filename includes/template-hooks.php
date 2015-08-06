@@ -26,8 +26,8 @@ add_action( 'wpcm_vehicle_header', 'wpcm_template_single_title', 5 );
  * @see wpcm_show_vehicle_images()
  * @see wpcm_show_vehicle_thumbnails()
  */
-add_action( 'wpcm_before_vehicle_summary', 'wpcm_show_vehicle_images', 10 );
-add_action( 'wpcm_vehicle_thumbnails', 'wpcm_show_vehicle_thumbnails', 20 );
+add_action( 'wpcm_before_vehicle_summary', 'wpcm_template_vehicle_images', 10 );
+add_action( 'wpcm_vehicle_thumbnails', 'wpcm_template_vehicle_thumbnails', 20 );
 
 /**
  * Vehicle Summary Box
