@@ -40,10 +40,10 @@ class Data {
 				'label' => __( 'Model', 'wp-car-manager' ),
 				'key'   => 'model'
 			),
-			'year'         => array(
+			'frdate'         => array(
 				'type'  => 'text',
-				'label' => __( 'Year', 'wp-car-manager' ),
-				'key'   => 'year'
+				'label' => __( 'First Registration Date', 'wp-car-manager' ),
+				'key'   => 'frdate'
 			),
 			'price'        => array(
 				'type'  => 'text',

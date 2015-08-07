@@ -130,7 +130,7 @@ class Settings {
 			'summary_data'       => apply_filters( 'wpcm_summary_data_fields', array(
 				'condition',
 				'mileage',
-				'year',
+				'frdate',
 				'engine',
 				'fuel_type'
 			) )

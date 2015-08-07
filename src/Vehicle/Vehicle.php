@@ -17,8 +17,8 @@ abstract class Vehicle {
 	/** @var String */
 	private $model;
 
-	/** @var int */
-	private $year;
+	/** @var string */
+	private $frdate;
 
 	/** @var String */
 	private $price;
@@ -126,17 +126,17 @@ abstract class Vehicle {
 	}
 
 	/**
-	 * @return String
+	 * @return string
 	 */
-	public function get_year() {
-		return $this->year;
+	public function get_frdate() {
+		return $this->frdate;
 	}
 
 	/**
-	 * @param String $year
+	 * @param string $frdate
 	 */
-	public function set_year( $year ) {
-		$this->year = $year;
+	public function set_frdate( $frdate ) {
+		$this->frdate = $frdate;
 	}
 
 	/**
