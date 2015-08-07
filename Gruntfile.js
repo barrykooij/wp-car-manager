@@ -43,24 +43,6 @@ module.exports = function ( grunt ) {
             }
         },
 
-        clean: {
-            configurator: [ "<%= dirs.js %>/configurator/configurator.min.js" ]
-        },
-
-        concat: {
-            configurator: {
-                src: [
-                    '<%= dirs.js %>/configurator/lodash.min.js',
-                    '<%= dirs.js %>/configurator/gridstack.js',
-                    '<%= dirs.js %>/configurator/sweet-alert.min.js',
-                    '<%= dirs.js %>/configurator/Configurator.js',
-                    '<%= dirs.js %>/configurator/Component.js',
-                    '<%= dirs.js %>/configurator/main.js'
-                ],
-                dest: '<%= dirs.js %>/configurator/configurator.min.js'
-            }
-        },
-
         // Minify .js files.
         uglify: {
             options: {
@@ -77,12 +59,6 @@ module.exports = function ( grunt ) {
                     ],
                     dest: '<%= dirs.js %>/',
                     ext: '.min.js'
-                } ]
-            },
-            configurator: {
-                files: [ {
-                    src: '<%= dirs.js %>/configurator/configurator.min.js',
-                    dest: '<%= dirs.js %>/configurator/configurator.min.js'
                 } ]
             }
         },
@@ -152,15 +128,11 @@ module.exports = function ( grunt ) {
     grunt.loadNpmTasks( 'grunt-wp-i18n' );
     grunt.loadNpmTasks( 'grunt-checktextdomain' );
     grunt.loadNpmTasks( 'grunt-po2mo' );
-    grunt.loadNpmTasks( 'grunt-contrib-concat' );
-    grunt.loadNpmTasks( 'grunt-contrib-clean' );
 
     // Register tasks
     grunt.registerTask( 'default', [
         'sass',
         'cssmin',
-        'clean',
-        'concat',
         'uglify'
     ] );
 
