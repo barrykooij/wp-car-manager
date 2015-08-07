@@ -72,8 +72,14 @@ if ( ! function_exists( 'wpcm_template_single_contact' ) ) {
 	}
 }
 
-if ( ! function_exists( 'wpcm_template_vehicle_listings' ) ) {
-	function wpcm_template_vehicle_listings() {
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'archive-vehicle/listings' );
+if ( ! function_exists( 'wpcm_template_vehicle_listings_start' ) ) {
+	function wpcm_template_vehicle_listings_start() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/start' );
+	}
+}
+
+if ( ! function_exists( 'wpcm_template_vehicle_listings_end' ) ) {
+	function wpcm_template_vehicle_listings_end() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/end' );
 	}
 }
