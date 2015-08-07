@@ -10,7 +10,7 @@ abstract class Assets {
 
 		// frontend CSS
 		wp_enqueue_style(
-			'wpcm_frontend',
+			'wpcm_css_frontend',
 			wp_car_manager()->service( 'file' )->plugin_url( '/assets/css/frontend.css' ),
 			array(),
 			wp_car_manager()->get_version()
@@ -18,14 +18,32 @@ abstract class Assets {
 
 		// load vehicle singular assets
 		if ( is_singular( PostType::VEHICLE ) ) {
-			// enqueue edit vehicle script
+			// enqueue prettyPhoto lib
 			wp_enqueue_script(
-				'wpcm_pretty_photo',
+				'wpcm_js_pretty_photo',
 				wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/lib/jquery.prettyPhoto.min.js' ),
 				array( 'jquery' ),
 				wp_car_manager()->get_version()
 			);
 		}
+
+		// load listings assets on listings page
+		if ( get_the_ID() == wp_car_manager()->service( 'settings' )->get_option( 'listings_page' ) ) {
+			// enqueue edit vehicle script
+			wp_enqueue_script(
+				'wpcm_js_listings',
+				wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/listings' . ( ( ! SCRIPT_DEBUG ) ? '.min' : '' ) . '.js' ),
+				array( 'jquery' ),
+				wp_car_manager()->get_version()
+			);
+
+			wp_localize_script( 'wpcm_js_listings', 'wpcm', array(
+				'ajax_url' => get_site_url(),
+				'ajax_endpoint' => Ajax\Manager::ENDPOINT
+			) );
+		}
+
+
 	}
 
 	/**
