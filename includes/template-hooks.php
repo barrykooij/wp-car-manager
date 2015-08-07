@@ -58,4 +58,5 @@ add_action( 'wpcm_vehicle_content', 'wpcm_template_single_features', 30 );
 /**
  * Vehicle Archive Listings
  */
-add_action( 'wpcm_archive_vehicle_listings', 'wpcm_template_vehicle_listings', 10 );
+add_action( 'wpcm_archive_vehicle_listings', 'wpcm_template_vehicle_listings_start', 10 );
+add_action( 'wpcm_archive_vehicle_listings', 'wpcm_template_vehicle_listings_end', 15 );
