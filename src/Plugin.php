@@ -140,6 +140,10 @@ final class Plugin extends Pimple\Container {
 			add_action( 'init', function () use ( $container ) {
 				$shortcode_cars = new Shortcode\Cars();
 			} );
+
+			// Setup custom AJAX
+			$ajax_manager = new Ajax\Manager();
+			$ajax_manager->setup();
 		}
 
 	}
