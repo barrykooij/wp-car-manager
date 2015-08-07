@@ -19,7 +19,7 @@ do_action( 'wpcm_before_archive_vehicle' );
 			?>
 		</div>
 
-		<div class="wpcm-vehicle-listings">
+		<div class="wpcm-vehicle-listings-wrapper">
 			<?php
 			/**
 			 * wpcm_archive_vehicle_listings hook
