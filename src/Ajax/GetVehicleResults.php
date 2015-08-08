@@ -62,6 +62,8 @@ class GetVehicleResults extends Ajax {
 					'frdate'      => $vehicle->get_frdate()
 				) );
 			}
+		} else {
+			wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/no-results', '', array() );
 		}
 
 		// bye
