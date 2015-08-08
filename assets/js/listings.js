@@ -107,12 +107,39 @@ WPCM_Listings.prototype.load_vehicles = function () {
 
     args [ wpcm.ajax_endpoint ] = 'get_vehicle_results';
 
-    // todo set loading spinner
+    // add spinner
+    this.listings.parent().append( jQuery( '<div>' ).addClass( 'wpcm-results-load-overlay' ) );
+    this.listings.parent().append( new WPCM_Spinner().getDOM() );
 
     jQuery.get( wpcm.ajax_url, args, function ( response ) {
 
+        // set response
         listings.html( response );
+
+        // remove spinner
+        listings.parent().find( '.wpcm-results-load-overlay' ).remove();
+        listings.parent().find( '.wpcm-results-spinner' ).remove();
 
     } );
 
 };
+
+var WPCM_Spinner = function () {
+    this.el = jQuery( '<div>' ).addClass( 'wpcm-results-spinner' ).fadeIn( 400, WPCM_Spinner.prototype.fadeOut );
+
+    jQuery( this.el ).bind( 'fade', function () {
+        jQuery( this ).fadeOut( 'slow', function () {
+            jQuery( this ).fadeIn( 'slow', function () {
+                jQuery( this ).trigger( 'fade' );
+            } );
+        } );
+    } );
+
+    jQuery( this.el ).trigger( 'fade' );
+
+    return this;
+};
+
+WPCM_Spinner.prototype.getDOM = function () {
+    return this.el;
+}
