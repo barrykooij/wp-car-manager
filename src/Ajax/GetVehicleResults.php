@@ -26,6 +26,13 @@ class GetVehicleResults extends Ajax {
 		// @todo set filters
 		$filters = array();
 
+		// get filters from get vars
+		foreach ( $_GET as $get_key => $get_var ) {
+			if ( 0 === strpos( $get_key, 'filter_' ) ) {
+				$filters[ str_ireplace( 'filter_', '', $get_key ) ] = absint( $get_var );
+			}
+		}
+
 		// get vehicles
 		$vehicle_manager = new Vehicle\Manager();
 		$vehicles        = $vehicle_manager->get_vehicles( $filters );
