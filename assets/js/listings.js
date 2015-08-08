@@ -7,6 +7,7 @@ jQuery( function ( $ ) {
 
 var WPCM_Listings = function ( tgt ) {
 
+    this.nonce = jQuery( tgt ).find( '#wpcm-listings-nonce' ).val();
     this.filters = jQuery( tgt ).find( '.wpcm-vehicle-filters:first' );
     this.listings = jQuery( tgt ).find( '.wpcm-vehicle-results-wrapper>.wpcm-vehicle-results:first' );
 
@@ -15,8 +16,6 @@ var WPCM_Listings = function ( tgt ) {
 
     // always load vehicles on init for now
     this.load_vehicles();
-
-    // todo hook into filter change - reload vehicles
 };
 
 WPCM_Listings.prototype.init_filters = function () {
@@ -51,14 +50,14 @@ WPCM_Listings.prototype.updateModels = function () {
     if ( make_id > 0 ) {
         // args
         var args = {
-            nonce: 'die komt nog wel',
+            nonce: this.nonce,
             make: make_id
         };
 
         // add endpoint
         args [ wpcm.ajax_endpoint ] = 'get_models';
 
-        // todo set loading spinner
+        // todo add spinner
 
         jQuery.get( wpcm.ajax_url, args, function ( response ) {
 
@@ -94,7 +93,7 @@ WPCM_Listings.prototype.load_vehicles = function () {
 
     // ajax args
     var args = {
-        nonce: 'die komt nog wel',
+        nonce: this.nonce
     };
 
     // todo load filters
