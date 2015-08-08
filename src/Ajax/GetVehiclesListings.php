@@ -2,6 +2,8 @@
 
 namespace Never5\WPCarManager\Ajax;
 
+use Never5\WPCarManager\Vehicle;
+
 class GetVehiclesListings extends Ajax {
 
 	/**
@@ -22,15 +24,32 @@ class GetVehiclesListings extends Ajax {
 		$filters = array();
 
 		// get vehicles
-		$vehicles = wp_car_manager()->service( 'vehicle_manager' )->get_vehicles( $filters );
+		$vehicle_manager = new Vehicle\Manager();
+		$vehicles        = $vehicle_manager->get_vehicles( $filters );
 
 		// check & loop
 		if ( count( $vehicles ) > 0 ) {
 			foreach ( $vehicles as $vehicle ) {
 
+				// title
+				$title = get_the_title( $vehicle->get_id() );
+
+				// get image
+				$image = get_the_post_thumbnail( $vehicle->get_id(), apply_filters( 'single_vehicle_listings_thumbnail_size', 'wpcm_vehicle_listings_item' ), array(
+					'title' => $title,
+					'alt'   => $title,
+					'class' => 'wpcm-listings-item-image'
+				) );
+
 				// load template
 				wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/item', '', array(
-					'title' => get_the_title( $vehicle->get_id() ),
+					'url'         => get_permalink( $vehicle->get_id() ),
+					'title'       => $title,
+					'image'       => $image,
+					'description' => $vehicle->get_short_description(),
+					'price'       => $vehicle->get_formatted_price(),
+					'mileage'     => $vehicle->get_formatted_mileage(),
+					'frdate'      => $vehicle->get_frdate()
 				) );
 			}
 		}
@@ -38,6 +57,5 @@ class GetVehiclesListings extends Ajax {
 		// bye
 		exit;
 	}
-
 
 }
