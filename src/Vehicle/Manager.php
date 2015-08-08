@@ -10,8 +10,8 @@ class Manager {
 	 * Get vehicles
 	 *
 	 * Filter possibilities:
-	 * - make (string)
-	 * - model (string)
+	 * - make (int)
+	 * - model (int)
 	 * - price_from (int)
 	 * - price_to (int)
 	 * - mileage_from (int)
@@ -34,6 +34,60 @@ class Manager {
 			'posts_per_page' => - 1
 		);
 
+		// base meta query
+		$meta_query = array();
+
+		// check for make
+		if ( is_array( $filters ) && count( $filters ) > 0 ) {
+			foreach ( $filters as $filter_key => $filter_val ) {
+
+				// var that will contain new filter
+				$compare = '';
+
+				switch ( $filter_key ) {
+
+					// check for make and model filter
+					case 'make':
+					case 'model':
+						$compare = '=';
+						break;
+					case 'price_from':
+					case 'mileage_from':
+					case 'frdate_from':
+						$compare = '>=';
+						break;
+					case 'price_to':
+					case 'mileage_to':
+					case 'frdate_to':
+						$compare = '<=';
+						break;
+					default:
+						break;
+
+				}
+
+				// check if we've got a new filter
+				if ( '' !== $compare ) {
+
+					// add new filter
+					$meta_query[] = array(
+						'key'     => 'wpcm_' . $filter_key,
+						'value'   => $filter_val,
+						'compare' => $compare,
+					);;
+				}
+
+			}
+		}
+
+		// check if there's a meta query
+		if ( count( $meta_query ) > 0 ) {
+
+			// add meta query
+			$args['meta_query'] = $meta_query;
+
+		}
+
 		// do new \WP_Query
 		$vehicle_query = new \WP_Query( $args );
 
@@ -41,7 +95,7 @@ class Manager {
 		if ( $vehicle_query->have_posts() ) {
 
 			/** @var VehicleFactory $vehicle_factory */
-			$vehicle_factory = wp_car_manager()->service('vehicle_factory');
+			$vehicle_factory = wp_car_manager()->service( 'vehicle_factory' );
 
 			// loop
 			while ( $vehicle_query->have_posts() ) {
