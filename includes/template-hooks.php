@@ -56,7 +56,12 @@ add_action( 'wpcm_vehicle_content', 'wpcm_template_single_content', 20 );
 add_action( 'wpcm_vehicle_content', 'wpcm_template_single_features', 30 );
 
 /**
- * Vehicle Archive Listings
+ * Vehicle Listings Filters
  */
-add_action( 'wpcm_archive_vehicle_listings', 'wpcm_template_vehicle_listings_start', 10 );
-add_action( 'wpcm_archive_vehicle_listings', 'wpcm_template_vehicle_listings_end', 15 );
+add_action( 'wpcm_listings_vehicle_filters', 'wpcm_template_vehicle_listings_filters', 10 );
+
+/**
+ * Vehicle Listings Results
+ */
+add_action( 'wpcm_listings_vehicle_results', 'wpcm_template_vehicle_listings_start', 10 );
+add_action( 'wpcm_listings_vehicle_results', 'wpcm_template_vehicle_listings_end', 15 );

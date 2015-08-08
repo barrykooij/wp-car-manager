@@ -72,6 +72,12 @@ if ( ! function_exists( 'wpcm_template_single_contact' ) ) {
 	}
 }
 
+if ( ! function_exists( 'wpcm_template_vehicle_listings_filters' ) ) {
+	function wpcm_template_vehicle_listings_filters() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/filters' );
+	}
+}
+
 if ( ! function_exists( 'wpcm_template_vehicle_listings_start' ) ) {
 	function wpcm_template_vehicle_listings_start() {
 		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/start' );
