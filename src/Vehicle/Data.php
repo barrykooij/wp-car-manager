@@ -13,15 +13,6 @@ class Data {
 	 */
 	public static function get_fields( $type = 'car' ) {
 
-		// get en prep makes for select box
-		$makes        = wp_car_manager()->service( 'make_model_manager' )->get_makes();
-		$makes_select = array( 0 => __( 'Select Make', 'wp-car-manager' ) );
-		if ( count( $makes ) > 0 ) {
-			foreach ( $makes as $make ) {
-				$makes_select[ $make['id'] ] = $make['name'];
-			}
-		}
-
 		return array(
 			'condition'    => array(
 				'type'    => 'select',
@@ -31,7 +22,7 @@ class Data {
 			),
 			'make'         => array(
 				'type'    => 'select',
-				'options' => $makes_select,
+				'options' => wp_car_manager()->service('make_model_manager')->get_makes_map(),
 				'label'   => __( 'Make', 'wp-car-manager' ),
 				'key'     => 'make'
 			),
