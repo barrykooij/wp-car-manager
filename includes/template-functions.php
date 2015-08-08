@@ -72,9 +72,39 @@ if ( ! function_exists( 'wpcm_template_single_contact' ) ) {
 	}
 }
 
-if ( ! function_exists( 'wpcm_template_vehicle_listings_filters' ) ) {
-	function wpcm_template_vehicle_listings_filters() {
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/filters' );
+if ( ! function_exists( 'wpcm_template_vehicle_listings_filters_make' ) ) {
+	function wpcm_template_vehicle_listings_filters_make() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/filters/make' );
+	}
+}
+
+if ( ! function_exists( 'wpcm_template_vehicle_listings_filters_model' ) ) {
+	function wpcm_template_vehicle_listings_filters_model() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/filters/model' );
+	}
+}
+
+if ( ! function_exists( 'wpcm_template_vehicle_listings_filters_price' ) ) {
+	function wpcm_template_vehicle_listings_filters_price() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/filters/price' );
+	}
+}
+
+if ( ! function_exists( 'wpcm_template_vehicle_listings_filters_frdate' ) ) {
+	function wpcm_template_vehicle_listings_filters_frdate() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/filters/frdate' );
+	}
+}
+
+if ( ! function_exists( 'wpcm_template_vehicle_listings_filters_mileage' ) ) {
+	function wpcm_template_vehicle_listings_filters_mileage() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/filters/mileage' );
+	}
+}
+
+if ( ! function_exists( 'wpcm_template_vehicle_listings_filters_button' ) ) {
+	function wpcm_template_vehicle_listings_filters_button() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/filters/button' );
 	}
 }
 
