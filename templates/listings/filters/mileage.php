@@ -1,7 +1,7 @@
 <div class="wpcm-filter wpcm-filter-mileage">
 	<label><?php _e( 'Max Mileage', 'wp-car-manager' ); ?></label>
-	<select name="mileage_to" data-placeholder="<?php _e( 'Max Mileage', 'wp-car-manager' ); ?>">
-		<option value="0"><?php _e('Max Mileage', 'wp-car-manager'); ?></option>
+	<select name="mileage_to" data-placeholder="<?php _e( 'All', 'wp-car-manager' ); ?>">
+		<option value="0"><?php _e('All', 'wp-car-manager'); ?></option>
 		<?php foreach (
 			apply_filters( 'wpcm_filter_mileage', array(
 				2500,

@@ -1,7 +1,7 @@
 <div class="wpcm-filter wpcm-filter-price">
 	<label for=""><?php _e( 'Max Price', 'wp-car-manager' ); ?></label>
-	<select name="price_to" data-placeholder="<?php _e( 'Max Price', 'wp-car-manager' ); ?>">
-		<option value="0"><?php _e('Max Price', 'wp-car-manager'); ?></option>
+	<select name="price_to" data-placeholder="<?php _e( 'All', 'wp-car-manager' ); ?>">
+		<option value="0"><?php _e('All', 'wp-car-manager'); ?></option>
 		<?php foreach (
 			apply_filters( 'wpcm_filter_price', array(
 				500,
