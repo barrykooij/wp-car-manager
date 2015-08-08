@@ -87,8 +87,6 @@ class Manager {
 		// check if there's a meta query
 		if ( count( $meta_query ) > 0 ) {
 
-			error_log( print_r( $meta_query, 1 ), 0 );
-
 			// add meta query
 			$args['meta_query'] = $meta_query;
 
@@ -96,8 +94,6 @@ class Manager {
 
 		// do new \WP_Query
 		$vehicle_query = new \WP_Query( $args );
-
-		error_log( print_r( $vehicle_query, 1 ), 0 );
 
 		// check
 		if ( $vehicle_query->have_posts() ) {
