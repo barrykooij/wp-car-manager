@@ -1,1 +1,1 @@
-<ul class="wpcm-vehicle-listings">
+<ul class="wpcm-vehicle-results">
