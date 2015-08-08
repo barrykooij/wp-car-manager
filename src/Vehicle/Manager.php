@@ -41,24 +41,27 @@ class Manager {
 		if ( is_array( $filters ) && count( $filters ) > 0 ) {
 			foreach ( $filters as $filter_key => $filter_val ) {
 
-				// var that will contain new filter
-				$compare = '';
+				// var that will contain filter specific values
+				$key     = '';
+				$compare = '=';
 
 				switch ( $filter_key ) {
 
 					// check for make and model filter
 					case 'make':
 					case 'model':
-						$compare = '=';
+						$key = 'wpcm_' . $filter_key;
 						break;
 					case 'price_from':
 					case 'mileage_from':
 					case 'frdate_from':
+						$key     = 'wpcm_' . str_ireplace( '_from', '', $filter_key );
 						$compare = '>=';
 						break;
 					case 'price_to':
 					case 'mileage_to':
 					case 'frdate_to':
+						$key     = 'wpcm_' . str_ireplace( '_to', '', $filter_key );
 						$compare = '<=';
 						break;
 					default:
@@ -67,14 +70,15 @@ class Manager {
 				}
 
 				// check if we've got a new filter
-				if ( '' !== $compare ) {
+				if ( '' !== $key ) {
 
 					// add new filter
 					$meta_query[] = array(
-						'key'     => 'wpcm_' . $filter_key,
+						'key'     => $key,
 						'value'   => $filter_val,
 						'compare' => $compare,
-					);;
+						'type'    => 'NUMERIC'
+					);
 				}
 
 			}
@@ -83,6 +87,8 @@ class Manager {
 		// check if there's a meta query
 		if ( count( $meta_query ) > 0 ) {
 
+			error_log( print_r( $meta_query, 1 ), 0 );
+
 			// add meta query
 			$args['meta_query'] = $meta_query;
 
@@ -90,6 +96,8 @@ class Manager {
 
 		// do new \WP_Query
 		$vehicle_query = new \WP_Query( $args );
+
+		error_log( print_r( $vehicle_query, 1 ), 0 );
 
 		// check
 		if ( $vehicle_query->have_posts() ) {
