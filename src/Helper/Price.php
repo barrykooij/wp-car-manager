@@ -9,8 +9,8 @@ abstract class Price {
 	 * @return String
 	 */
 	public static function get_price_format() {
-		$currency_pos = get_option( 'woocommerce_currency_pos' );
-		$format = '%1$s%2$s';
+		$currency_pos = wp_car_manager()->service( 'settings' )->get_option( 'currency_pos' );
+		$format       = '%1$s%2$s';
 
 		switch ( $currency_pos ) {
 			case 'left' :
