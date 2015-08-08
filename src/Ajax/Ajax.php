@@ -21,6 +21,13 @@ abstract class Ajax {
 	}
 
 	/**
+	 * Checks AJAX nonce
+	 */
+	protected function check_nonce() {
+		check_ajax_referer( 'wpcm_secret_listings_nonce', 'nonce' );
+	}
+
+	/**
 	 * AJAX callback method, must be overridden
 	 *
 	 * @return void
