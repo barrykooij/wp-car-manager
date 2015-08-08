@@ -29,4 +29,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 **Credits**
 Dependency Injection is done by [Pimple](https://github.com/silexphp/Pimple).
 Template structure heavily inspired by [WooCommerce](https://github.com/woothemes/woocommerce).
+Improved select experience by [Select2](https://github.com/select2/select2).
 PHP version compatibility checks done by [WPupdatePHP](https://github.com/WPupdatePHP/wp-update-php).
