@@ -29,16 +29,25 @@ abstract class Assets {
 
 		// load listings assets on listings page
 		if ( get_the_ID() == wp_car_manager()->service( 'settings' )->get_option( 'listings_page' ) ) {
-			// enqueue edit vehicle script
+
+			// enqueue select2 script
 			wp_enqueue_script(
-				'wpcm_js_listings',
-				wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/listings' . ( ( ! SCRIPT_DEBUG ) ? '.min' : '' ) . '.js' ),
+				'wpcm_js_select2',
+				wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/lib/select2.min.js' ),
 				array( 'jquery' ),
 				wp_car_manager()->get_version()
 			);
 
+			// enqueue listings script
+			wp_enqueue_script(
+				'wpcm_js_listings',
+				wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/listings' . ( ( ! SCRIPT_DEBUG ) ? '.min' : '' ) . '.js' ),
+				array( 'jquery', 'wpcm_js_select2' ),
+				wp_car_manager()->get_version()
+			);
+
 			wp_localize_script( 'wpcm_js_listings', 'wpcm', array(
-				'ajax_url' => get_site_url(),
+				'ajax_url'      => get_site_url(),
 				'ajax_endpoint' => Ajax\Manager::ENDPOINT
 			) );
 		}
