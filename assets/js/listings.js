@@ -95,7 +95,6 @@ WPCM_Listings.prototype.load_vehicles = function () {
     // ajax args
     var args = {
         nonce: 'die komt nog wel',
-        filters : filters
     };
 
     // todo load filters
@@ -103,13 +102,11 @@ WPCM_Listings.prototype.load_vehicles = function () {
     jQuery.each( this.filters.find( '.wpcm-filter select' ), function ( k, v ) {
         var filter_val = jQuery( v ).find( 'option:selected' ).val();
         if ( filter_val != 0 ) {
-            args[ jQuery( v ).attr( 'name' ) ] = filter_val;
+            args[ 'filter_' + jQuery( v ).attr( 'name' ) ] = filter_val;
         }
     } );
 
     args [ wpcm.ajax_endpoint ] = 'get_vehicle_results';
-
-    console.log(wpcm.ajax_url);
 
     // todo set loading spinner
 
