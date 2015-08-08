@@ -45,7 +45,7 @@ class GetVehicleResults extends Ajax {
 				$title = get_the_title( $vehicle->get_id() );
 
 				// get image
-				$image = get_the_post_thumbnail( $vehicle->get_id(), apply_filters( 'single_vehicle_listings_thumbnail_size', 'wpcm_vehicle_listings_item' ), array(
+				$image = get_the_post_thumbnail( $vehicle->get_id(), apply_filters( 'wpcm_listings_vehicle_thumbnail_size', 'wpcm_vehicle_listings_item' ), array(
 					'title' => $title,
 					'alt'   => $title,
 					'class' => 'wpcm-listings-item-image'
