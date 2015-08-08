@@ -16,6 +16,10 @@
       padding: .5em 1em;
       float: left;
 
+      label {
+        font-size: .8em;
+      }
+
       select {
         width: 100%;
       }
@@ -25,7 +29,8 @@
         background: #fff;
         border: 1px solid #ccc;
         border-radius: 3px;
-        padding: .6em;
+        padding: .4em;
+
       }
     }
 
@@ -34,12 +39,16 @@
     }
 
     .wpcm-filter-button {
+      padding-top: 1.5em;
       float: right;
-
       input {
-        //padding: .8em;
-        padding: .6em;
+        padding: .8em;
+        line-height: .9em;
         background-color: #428dcb;
+
+        &:hover, &:active, &:focus, &:visited {
+          outline: 0;
+        }
       }
     }
   }
