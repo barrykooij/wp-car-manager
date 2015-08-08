@@ -49,7 +49,7 @@ class Cars extends Shortcode {
 //		echo '</pre>';
 
 		// load template
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'archive-vehicle', '', array(
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings-vehicle', '', array(
 			'atts'     => $atts,
 		) );
 
