@@ -7,6 +7,7 @@ jQuery( function ( $ ) {
 
 var WPCM_Listings = function ( tgt ) {
 
+    this.is_updating = false;
     this.nonce = jQuery( tgt ).find( '#wpcm-listings-nonce' ).val();
     this.filters = jQuery( tgt ).find( '.wpcm-vehicle-filters:first' );
     this.listings = jQuery( tgt ).find( '.wpcm-vehicle-results-wrapper>.wpcm-vehicle-results:first' );
@@ -88,6 +89,17 @@ WPCM_Listings.prototype.updateModels = function () {
 
 WPCM_Listings.prototype.load_vehicles = function () {
 
+    // don't do anything if we're already updating
+    if ( this.is_updating == true ) {
+        return;
+    }
+
+    // listings is updating
+    this.is_updating = true;
+
+    // meh
+    var instance = this;
+
     // listings var
     var listings = this.listings;
 
@@ -119,6 +131,9 @@ WPCM_Listings.prototype.load_vehicles = function () {
         // remove spinner
         listings.parent().find( '.wpcm-results-load-overlay' ).remove();
         listings.parent().find( '.wpcm-results-spinner' ).remove();
+
+        // set is_updating to false
+        instance.is_updating = false;
 
     } );
 
