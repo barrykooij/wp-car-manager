@@ -1,3 +1,141 @@
+/** OVERVIEW **/
+.select2-search__field {
+  background-color: #fff !important;
+}
+
+.wpcm-vehicle-listings {
+
+  .wpcm-vehicle-filters {
+    padding: .5em 0;
+    background: #eee;
+    border-bottom: 1px solid #e5e5e5;
+    overflow: hidden;
+
+    .wpcm-filter {
+      width: 25%;
+      padding: .5em 1em;
+      float: left;
+
+      select {
+        width: 100%;
+      }
+
+      input {
+        width: 100%;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: .6em;
+      }
+    }
+
+    .wpcm-filter-make, .wpcm-filter-model {
+      width: 50%;
+    }
+
+    .wpcm-filter-button {
+      float: right;
+
+      input {
+        //padding: .8em;
+        padding: .6em;
+        background-color: #428dcb;
+      }
+    }
+  }
+  .wpcm-vehicle-results-wrapper {
+    .wpcm-vehicle-results {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      li.wpcm-listings-item {
+        list-style: none outside;
+        padding: 0;
+        margin: 0;
+        border-bottom: 1px solid #eee;
+        a {
+          display: block;
+          padding: 1em 1em 1em 2em;
+          border: 0;
+          overflow: hidden;
+          zoom: 1;
+          position: relative;
+          line-height: 1.5em;
+          text-decoration: none;
+          font-weight: normal;
+          min-height: 100px;
+          box-sizing: content-box;
+
+          &:hover {
+            background-color: #f3f3f3;
+          }
+
+          &:active, &:focus, &:visited {
+            border: 0;
+            outline: 0;
+          }
+
+          img.wpcm-listings-item-image {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 1em;
+            float: left;
+            margin-right: 1em;
+            vertical-align: middle;
+            box-shadow: none;
+          }
+
+          .wpcm-listings-item-description {
+            float: left;
+            width: 80%;
+            padding: 0 0 0 100px;
+            line-height: 1.5em;
+            h3 {
+              margin: 0;
+              padding: 0;
+              line-height: inherit;
+              font-size: inherit;
+            }
+            p {
+              color: #999;
+            }
+          }
+
+          .wpcm-listings-item-price {
+            float: left;
+            text-align: left;
+            width: 25%;
+            padding: 0 0 0 1em;
+            color: #999;
+            line-height: 1.5em;
+          }
+
+          .wpcm-listings-item-meta {
+            float: right;
+            text-align: right;
+            width: 20%;
+            padding: 0 0 0 1em;
+            margin: 0;
+            line-height: 1.5em;
+            color: #999;
+            list-style: none outside;
+            ul {
+              list-style: none;
+              .wpcm-price {
+                font-weight: bold;
+                font-size: 1.1em;
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+}
+
 /** SINGLE **/
 .single-wpcm_vehicle {
 
