@@ -1,0 +1,1 @@
+<?php wp_nonce_field( 'wpcm_secret_listings_nonce', 'wpcm-listings-nonce' ) ?>
