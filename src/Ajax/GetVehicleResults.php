@@ -4,13 +4,13 @@ namespace Never5\WPCarManager\Ajax;
 
 use Never5\WPCarManager\Vehicle;
 
-class GetVehiclesListings extends Ajax {
+class GetVehicleResults extends Ajax {
 
 	/**
 	 * Constructor
 	 */
 	public function __construct() {
-		parent::__construct( 'get_vehicles_listings' );
+		parent::__construct( 'get_vehicle_results' );
 	}
 
 	/**
@@ -19,6 +19,9 @@ class GetVehiclesListings extends Ajax {
 	 * @return void
 	 */
 	public function run() {
+
+		// check nonce
+		$this->check_nonce();
 
 		// @todo set filters
 		$filters = array();

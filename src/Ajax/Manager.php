@@ -29,9 +29,13 @@ class Manager {
 	 */
 	private function add_ajax_actions() {
 
-		// register GetVehicles
-		$get_vehicles_listings = new GetVehiclesListings();
-		$get_vehicles_listings->register();
+		// register GetVehicleResults
+		$get_vehicle_results = new GetVehicleResults();
+		$get_vehicle_results->register();
+
+		// register GetModels
+		$get_models = new GetModels();
+		$get_models->register();
 	}
 
 	/**
