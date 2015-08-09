@@ -28,7 +28,7 @@ class WordPressRepository implements VehicleRepository {
 		$data->condition         = get_post_meta( $post->ID, $pm_prefix . 'condition', true );
 		$data->make              = get_post_meta( $post->ID, $pm_prefix . 'make', true );
 		$data->model             = get_post_meta( $post->ID, $pm_prefix . 'model', true );
-		$data->frdate            = get_post_meta( $post->ID, $pm_prefix . 'frdate', true );
+		$data->frdate            = new \DateTime( get_post_meta( $post->ID, $pm_prefix . 'frdate', true ) );
 		$data->price             = get_post_meta( $post->ID, $pm_prefix . 'price', true );
 		$data->color             = get_post_meta( $post->ID, $pm_prefix . 'color', true );
 		$data->mileage           = get_post_meta( $post->ID, $pm_prefix . 'mileage', true );

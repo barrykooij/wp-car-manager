@@ -7,5 +7,5 @@ global $vehicle;
 ?>
 <tr>
 	<th><?php _e( 'Year', 'wp-car-manager' ); ?></th>
-	<td><span itemprop="dateVehicleFirstRegistered" class="wpcm-vehicle-data"><?php echo $vehicle->get_frdate(); ?></span></td>
+	<td><span itemprop="dateVehicleFirstRegistered" class="wpcm-vehicle-data"><?php echo $vehicle->get_formatted_frdate(); ?></span></td>
 </tr>

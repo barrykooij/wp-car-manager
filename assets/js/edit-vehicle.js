@@ -23,6 +23,12 @@ jQuery( function ( $ ) {
         } );
     } );
 
+    $( '#frdate' ).datepicker( {
+        dateFormat: 'yy-mm-dd',
+        changeMonth: true,
+        changeYear: true
+    } );
+
     // car gallery file uploads
     var car_gallery_frame;
     var $image_gallery_ids = $( '#car_gallery' );

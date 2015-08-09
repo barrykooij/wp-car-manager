@@ -66,11 +66,15 @@ abstract class Assets {
 		// Enqueue Downloadable Files Metabox JS
 		if ( ( $pagenow == 'post.php' && isset( $post ) && PostType::VEHICLE === $post->post_type ) || ( $pagenow == 'post-new.php' && isset( $_GET['post_type'] ) && PostType::VEHICLE == $_GET['post_type'] ) ) {
 
+			// datepicker
+			wp_enqueue_script( 'jquery-ui-datepicker' );
+			wp_enqueue_style( 'jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css' );
+
 			// enqueue edit vehicle script
 			wp_enqueue_script(
 				'wpcm_edit_download',
 				wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/edit-vehicle' . ( ( ! SCRIPT_DEBUG ) ? '.min' : '' ) . '.js' ),
-				array( 'jquery', 'jquery-ui-sortable' ),
+				array( 'jquery', 'jquery-ui-sortable', 'jquery-ui-datepicker' ),
 				wp_car_manager()->get_version()
 			);
 		}

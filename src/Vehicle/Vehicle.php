@@ -8,7 +8,7 @@ abstract class Vehicle {
 	/** @var int */
 	private $id = null;
 
-	/** @var string  */
+	/** @var string */
 	private $short_description = '';
 
 	/** @var String */
@@ -20,7 +20,7 @@ abstract class Vehicle {
 	/** @var String */
 	private $model;
 
-	/** @var string */
+	/** @var \Date */
 	private $frdate;
 
 	/** @var String */
@@ -143,14 +143,23 @@ abstract class Vehicle {
 	}
 
 	/**
-	 * @return string
+	 * @return \Date
 	 */
 	public function get_frdate() {
 		return $this->frdate;
 	}
 
 	/**
-	 * @param string $frdate
+	 * Returns formatted date string
+	 *
+	 * @return string
+	 */
+	public function get_formatted_frdate() {
+		return $this->get_frdate()->format( Helper\Date::get_date_format() );
+	}
+
+	/**
+	 * @param \Date $frdate
 	 */
 	public function set_frdate( $frdate ) {
 		$this->frdate = $frdate;

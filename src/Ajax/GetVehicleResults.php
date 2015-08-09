@@ -3,6 +3,7 @@
 namespace Never5\WPCarManager\Ajax;
 
 use Never5\WPCarManager\Vehicle;
+use Never5\WPCarManager\Helper;
 
 class GetVehicleResults extends Ajax {
 
@@ -59,7 +60,7 @@ class GetVehicleResults extends Ajax {
 					'description' => $vehicle->get_short_description(),
 					'price'       => $vehicle->get_formatted_price(),
 					'mileage'     => $vehicle->get_formatted_mileage(),
-					'frdate'      => $vehicle->get_frdate()
+					'frdate'      => $vehicle->get_formatted_frdate()
 				) );
 			}
 		} else {
