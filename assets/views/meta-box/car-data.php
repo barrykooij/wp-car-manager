@@ -15,11 +15,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 					// getter method for value
 					$get_method = 'get_' . $field['key'];
 
+					if('frdate'===$field['key']) {
+						$get_method = 'get_formatted_frdate';
+					}
+
+					$value = $vehicle->$get_method();
+
 					// load template part
 					wp_car_manager()->service( 'view_manager' )->display( 'meta-box/input/' . $field['type'], array(
 						'mb_prefix' => $mb_prefix,
 						'field'     => $field,
-						'value'     => $vehicle->$get_method(),
+						'value'     => $value,
 						'vehicle'   => $vehicle
 					) );
 					?>
