@@ -14,11 +14,12 @@
     overflow: hidden;
 
     .wpcm-filter {
-      width: 25%;
+      width: 100%;
       padding: .5em 1em;
       float: left;
 
       label {
+        display: block;
         font-size: .8em;
       }
 
@@ -34,10 +35,6 @@
         padding: .4em;
 
       }
-    }
-
-    .wpcm-filter-make, .wpcm-filter-model {
-      width: 50%;
     }
 
     .wpcm-filter-button {
@@ -100,6 +97,7 @@
           }
 
           .wpcm-listings-item-description {
+            display: none;
             float: left;
             width: 80%;
             padding: 0 0 0 100px;
@@ -115,29 +113,25 @@
             }
           }
 
-          .wpcm-listings-item-price {
-            float: left;
-            text-align: left;
-            width: 25%;
-            padding: 0 0 0 1em;
-            color: #999;
-            line-height: 1.5em;
-          }
-
           .wpcm-listings-item-meta {
-            float: right;
-            text-align: right;
-            width: 20%;
-            padding: 0 0 0 1em;
+            float: left;
+            width: 100%;
+            padding: 0 0 0 100px;
             margin: 0;
             line-height: 1.5em;
             color: #999;
             list-style: none outside;
             ul {
+              margin: 0;
               list-style: none;
-              .wpcm-price {
+              .wpcm-title {
+                color: #484c51;
                 font-weight: bold;
                 font-size: 1.1em;
+              }
+              .wpcm-price {
+                //font-weight: bold;
+                //font-size: 1.1em;
               }
             }
           }
@@ -318,13 +312,11 @@
 
         &#wpcm-vehicle-data {
           table {
-            width: 50%;
+            width: 100%;
             margin: 0;
-            float: left;
             tr {
               th {
                 width: 35%;
-                //padding-left: 0;
               }
             }
           }
@@ -335,13 +327,10 @@
             width: 100%;
             margin: 0;
             list-style: none;
-            float: left;
             li {
-              width: 50%;
               padding: .2em 0 .2em 22px;
               background: url('../images/frontend-sprite.png') center left no-repeat;
               box-sizing: border-box;
-              float: left;
             }
           }
         }
@@ -373,4 +362,5 @@
 
 @import "prettyPhoto";
 @import "select2";
+@import "frontendMedia";
 

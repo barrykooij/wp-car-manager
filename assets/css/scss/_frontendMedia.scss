@@ -1,0 +1,78 @@
+@media (min-width: 768px) {
+
+  // Single
+  .single-wpcm_vehicle {
+    .wpcm_vehicle {
+      .wpcm-vehicle-content {
+        .wpcm-content-block {
+
+          &#wpcm-vehicle-data {
+            table {
+              width: 50%;
+              float: left;
+            }
+          }
+
+          &#wpcm-vehicle-features {
+            ul {
+              float: left;
+              li {
+                width: 50%;
+                float: left;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+}
+
+@media (min-width: 992px) {
+
+  // Listings
+  .wpcm-vehicle-listings {
+
+    // filters
+    .wpcm-vehicle-filters {
+      .wpcm-filter {
+        width: 25%;
+      }
+      .wpcm-filter-make, .wpcm-filter-model {
+        width: 50%;
+      }
+    }
+
+    // results
+    .wpcm-vehicle-results-wrapper {
+      .wpcm-vehicle-results {
+        li.wpcm-listings-item {
+          a {
+
+            .wpcm-listings-item-description {
+              display: block;
+            }
+
+            .wpcm-listings-item-meta {
+              width: 20%;
+              padding-left: 1em;
+              text-align: right;
+              float: right;
+              li.wpcm-title {
+                display: none;
+              }
+              li.wpcm-price {
+                font-weight: bold;
+                font-size: 1.1em;
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+}

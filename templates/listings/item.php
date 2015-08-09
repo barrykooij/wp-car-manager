@@ -7,6 +7,7 @@
 		</div>
 		<div class="wpcm-listings-item-meta">
 			<ul>
+				<li class="wpcm-title"><?php echo $title; ?></li>
 				<li class="wpcm-price"><?php echo $price; ?></li>
 				<li><?php echo $mileage; ?></li>
 				<li><?php echo $frdate; ?></li>
