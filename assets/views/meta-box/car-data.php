@@ -14,13 +14,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php
 					// getter method for value
 					$get_method = 'get_' . $field['key'];
-
-					if('frdate'===$field['key']) {
-						$get_method = 'get_formatted_frdate';
-					}
-
 					$value = $vehicle->$get_method();
 
+					if('frdate'===$field['key']) {
+						$value = $value->format('Y-m-d');
+					}
+					
 					// load template part
 					wp_car_manager()->service( 'view_manager' )->display( 'meta-box/input/' . $field['type'], array(
 						'mb_prefix' => $mb_prefix,
