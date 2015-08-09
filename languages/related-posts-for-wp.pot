@@ -1,0 +1,780 @@
+# Copyright (C) 2015 Never5
+# This file is distributed under the GPL v2.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Car Manager 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/barrykooij/wp-car-manager/issues\n"
+"POT-Creation-Date: 2015-08-09 19:18:51+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"X-Generator: grunt-wp-i18n 0.4.9\n"
+
+#: assets/views/meta-box/gallery.php:15 assets/views/meta-box/gallery.php:30
+msgid "Delete image"
+msgstr ""
+
+#: assets/views/meta-box/gallery.php:15 assets/views/meta-box/gallery.php:31
+msgid "Delete"
+msgstr ""
+
+#: assets/views/meta-box/gallery.php:28
+msgid "Add Images to Gallery"
+msgstr ""
+
+#: assets/views/meta-box/gallery.php:29
+msgid "Add to gallery"
+msgstr ""
+
+#: assets/views/meta-box/gallery.php:31
+msgid "Add gallery images"
+msgstr ""
+
+#: assets/views/meta-box/input/select-model.php:4
+#: templates/listings/filters/model.php:3
+msgid "Select Model"
+msgstr ""
+
+#: assets/views/page/edit-make-model.php:16 assets/views/page/makes.php:16
+#: assets/views/page/makes.php:59 assets/views/page/makes.php:81
+#: assets/views/page/models.php:16 assets/views/page/models.php:59
+#: assets/views/page/models.php:82
+msgid "Name"
+msgstr ""
+
+#: assets/views/page/edit-make-model.php:19 assets/views/page/makes.php:84
+#: assets/views/page/models.php:85
+msgid "The name is how it appears on your site."
+msgstr ""
+
+#: assets/views/page/edit-make-model.php:23 assets/views/page/makes.php:18
+#: assets/views/page/makes.php:60 assets/views/page/makes.php:87
+#: assets/views/page/models.php:18 assets/views/page/models.php:60
+#: assets/views/page/models.php:88
+msgid "Slug"
+msgstr ""
+
+#: assets/views/page/edit-make-model.php:26 assets/views/page/makes.php:90
+#: assets/views/page/models.php:91
+msgid ""
+"The “slug” is the URL-friendly version of the name. It is usually all "
+"lowercase and contains only letters, numbers, and hyphens."
+msgstr ""
+
+#: assets/views/page/edit-make-model.php:32
+msgid "Update"
+msgstr ""
+
+#: assets/views/page/makes.php:71 assets/views/page/makes.php:94
+#: src/Taxonomies.php:63
+msgid "Add New Make"
+msgstr ""
+
+#: assets/views/page/models.php:70 assets/views/page/models.php:95
+msgid "Add New Model"
+msgstr ""
+
+#: assets/views/page/settings.php:7 src/Admin/Page/Settings.php:11
+msgid "Settings"
+msgstr ""
+
+#: assets/views/page/settings.php:25
+msgid "Settings successfully saved"
+msgstr ""
+
+#: assets/views/page/settings.php:95
+msgid "Save Changes"
+msgstr ""
+
+#: src/Admin/MetaBox/CarData.php:14
+msgid "Car Data"
+msgstr ""
+
+#: src/Admin/MetaBox/Gallery.php:14
+msgid "Car Gallery"
+msgstr ""
+
+#: src/Admin/MetaBox/ShortDescription.php:13
+msgid "Short Description"
+msgstr ""
+
+#: src/Admin/Page/Extensions.php:11
+msgid "Extensions"
+msgstr ""
+
+#: src/Admin/Page/Extensions.php:11
+msgid "<span style=\"color:#428dcb;font-weight:bold;\">Extensions</span>"
+msgstr ""
+
+#: src/Admin/Page/Extensions.php:46
+msgid "WP Car Manager Extensions"
+msgstr ""
+
+#: src/Admin/Page/Extensions.php:79
+msgid ""
+"Extend WP Car Manager with its powerful free and paid extensions. %sClick "
+"here to browse all extensions%s"
+msgstr ""
+
+#: src/Admin/Page/Extensions.php:164
+msgid "Couldn't load extensions, please try again later."
+msgstr ""
+
+#: src/Admin/Page/Makes.php:13 src/Taxonomies.php:58
+msgid "Makes & Models"
+msgstr ""
+
+#: src/Admin/Page/Makes.php:141
+msgid "Edit %s"
+msgstr ""
+
+#: src/Admin/Page/Makes.php:156
+msgid "%s Models"
+msgstr ""
+
+#: src/Admin/Page/Makes.php:163
+msgid "Makes"
+msgstr ""
+
+#: src/Assets.php:52
+msgid "No models found"
+msgstr ""
+
+#: src/Assets.php:53 templates/listings/filters/model.php:4
+msgid "Select make first"
+msgstr ""
+
+#: src/Helper/Currency.php:177
+msgid "United Arab Emirates Dirham"
+msgstr ""
+
+#: src/Helper/Currency.php:178
+msgid "Argentine Peso"
+msgstr ""
+
+#: src/Helper/Currency.php:179
+msgid "Australian Dollars"
+msgstr ""
+
+#: src/Helper/Currency.php:180
+msgid "Bangladeshi Taka"
+msgstr ""
+
+#: src/Helper/Currency.php:181
+msgid "Brazilian Real"
+msgstr ""
+
+#: src/Helper/Currency.php:182
+msgid "Bulgarian Lev"
+msgstr ""
+
+#: src/Helper/Currency.php:183
+msgid "Canadian Dollars"
+msgstr ""
+
+#: src/Helper/Currency.php:184
+msgid "Chilean Peso"
+msgstr ""
+
+#: src/Helper/Currency.php:185
+msgid "Chinese Yuan"
+msgstr ""
+
+#: src/Helper/Currency.php:186
+msgid "Colombian Peso"
+msgstr ""
+
+#: src/Helper/Currency.php:187
+msgid "Czech Koruna"
+msgstr ""
+
+#: src/Helper/Currency.php:188
+msgid "Danish Krone"
+msgstr ""
+
+#: src/Helper/Currency.php:189
+msgid "Dominican Peso"
+msgstr ""
+
+#: src/Helper/Currency.php:190
+msgid "Euros"
+msgstr ""
+
+#: src/Helper/Currency.php:191
+msgid "Hong Kong Dollar"
+msgstr ""
+
+#: src/Helper/Currency.php:192
+msgid "Croatia kuna"
+msgstr ""
+
+#: src/Helper/Currency.php:193
+msgid "Hungarian Forint"
+msgstr ""
+
+#: src/Helper/Currency.php:194
+msgid "Icelandic krona"
+msgstr ""
+
+#: src/Helper/Currency.php:195
+msgid "Indonesia Rupiah"
+msgstr ""
+
+#: src/Helper/Currency.php:196
+msgid "Indian Rupee"
+msgstr ""
+
+#: src/Helper/Currency.php:197
+msgid "Nepali Rupee"
+msgstr ""
+
+#: src/Helper/Currency.php:198
+msgid "Israeli Shekel"
+msgstr ""
+
+#: src/Helper/Currency.php:199
+msgid "Japanese Yen"
+msgstr ""
+
+#: src/Helper/Currency.php:200
+msgid "Lao Kip"
+msgstr ""
+
+#: src/Helper/Currency.php:201
+msgid "South Korean Won"
+msgstr ""
+
+#: src/Helper/Currency.php:202
+msgid "Malaysian Ringgits"
+msgstr ""
+
+#: src/Helper/Currency.php:203
+msgid "Mexican Peso"
+msgstr ""
+
+#: src/Helper/Currency.php:204
+msgid "Nigerian Naira"
+msgstr ""
+
+#: src/Helper/Currency.php:205
+msgid "Norwegian Krone"
+msgstr ""
+
+#: src/Helper/Currency.php:206
+msgid "New Zealand Dollar"
+msgstr ""
+
+#: src/Helper/Currency.php:207
+msgid "Paraguayan Guaraní"
+msgstr ""
+
+#: src/Helper/Currency.php:208
+msgid "Philippine Pesos"
+msgstr ""
+
+#: src/Helper/Currency.php:209
+msgid "Polish Zloty"
+msgstr ""
+
+#: src/Helper/Currency.php:210
+msgid "Pounds Sterling"
+msgstr ""
+
+#: src/Helper/Currency.php:211
+msgid "Romanian Leu"
+msgstr ""
+
+#: src/Helper/Currency.php:212
+msgid "Russian Ruble"
+msgstr ""
+
+#: src/Helper/Currency.php:213
+msgid "Singapore Dollar"
+msgstr ""
+
+#: src/Helper/Currency.php:214
+msgid "South African rand"
+msgstr ""
+
+#: src/Helper/Currency.php:215
+msgid "Swedish Krona"
+msgstr ""
+
+#: src/Helper/Currency.php:216
+msgid "Swiss Franc"
+msgstr ""
+
+#: src/Helper/Currency.php:217
+msgid "Taiwan New Dollars"
+msgstr ""
+
+#: src/Helper/Currency.php:218
+msgid "Thai Baht"
+msgstr ""
+
+#: src/Helper/Currency.php:219
+msgid "Turkish Lira"
+msgstr ""
+
+#: src/Helper/Currency.php:220
+msgid "Ukrainian Hryvnia"
+msgstr ""
+
+#: src/Helper/Currency.php:221
+msgid "US Dollars"
+msgstr ""
+
+#: src/Helper/Currency.php:222
+msgid "Vietnamese Dong"
+msgstr ""
+
+#: src/Helper/Currency.php:223
+msgid "Egyptian Pound"
+msgstr ""
+
+#: src/Helper/Pages.php:16
+msgid "Select Page"
+msgstr ""
+
+#: src/MakeModelManager.php:74 templates/listings/filters/make.php:3
+msgid "Select Make"
+msgstr ""
+
+#: src/PostType.php:14 src/PostType.php:15
+msgid "Car Manager"
+msgstr ""
+
+#: src/PostType.php:16
+msgid "Parent Car:"
+msgstr ""
+
+#: src/PostType.php:17
+msgid "All Cars"
+msgstr ""
+
+#: src/PostType.php:18
+msgid "Add New Car"
+msgstr ""
+
+#: src/PostType.php:19
+msgid "Add New"
+msgstr ""
+
+#: src/PostType.php:20
+msgid "New Car"
+msgstr ""
+
+#: src/PostType.php:21
+msgid "Edit Car"
+msgstr ""
+
+#: src/PostType.php:22
+msgid "Update Car"
+msgstr ""
+
+#: src/PostType.php:23
+msgid "View Car"
+msgstr ""
+
+#: src/PostType.php:24
+msgid "Search Car"
+msgstr ""
+
+#: src/PostType.php:25
+msgid "No cars found"
+msgstr ""
+
+#: src/PostType.php:26
+msgid "Not found in Trash"
+msgstr ""
+
+#: src/PostType.php:29
+msgid "vehicle"
+msgstr ""
+
+#: src/PostType.php:30
+msgid "Cars"
+msgstr ""
+
+#: src/Settings.php:39
+msgid "General"
+msgstr ""
+
+#: src/Settings.php:43
+msgid "Listings Page"
+msgstr ""
+
+#: src/Settings.php:44
+msgid ""
+"Choose the page that will display your listings. Note that this page will "
+"need to have the <code>[wpcm_cars]</code> shortcode to actually display "
+"listings."
+msgstr ""
+
+#: src/Settings.php:50
+msgid "Currency"
+msgstr ""
+
+#: src/Settings.php:51
+msgid "Choose the currency used in your price fields."
+msgstr ""
+
+#: src/Settings.php:57
+msgid "Currency Position"
+msgstr ""
+
+#: src/Settings.php:59
+msgid "The position of the currency symbol."
+msgstr ""
+
+#: src/Settings.php:62
+msgid "Left %s"
+msgstr ""
+
+#: src/Settings.php:63
+msgid "Right %s"
+msgstr ""
+
+#: src/Settings.php:64
+msgid "Left with space %s"
+msgstr ""
+
+#: src/Settings.php:65
+msgid "Right with space %s"
+msgstr ""
+
+#: src/Settings.php:70
+msgid "Decimal Separator"
+msgstr ""
+
+#: src/Settings.php:71
+msgid "The decimal separator of distance unites and prices."
+msgstr ""
+
+#: src/Settings.php:75
+msgid "Thousand Separator"
+msgstr ""
+
+#: src/Settings.php:76
+msgid "The thousand separator of displayed distance unites and prices."
+msgstr ""
+
+#: src/Settings.php:80
+msgid "Distance Unit"
+msgstr ""
+
+#: src/Settings.php:81
+msgid "The unit type your distances are in (e.g. Mileage)."
+msgstr ""
+
+#: src/Settings.php:84
+msgid "Miles"
+msgstr ""
+
+#: src/Settings.php:85
+msgid "Kilometers"
+msgstr ""
+
+#: src/Settings.php:92
+msgid "Contact"
+msgstr ""
+
+#: src/Settings.php:96
+msgid "Contact Email Address"
+msgstr ""
+
+#: src/Settings.php:97
+msgid "The email address people can send an email to."
+msgstr ""
+
+#: src/Settings.php:101
+msgid "Contact Phone Number"
+msgstr ""
+
+#: src/Settings.php:102
+msgid "The phone number people can call to."
+msgstr ""
+
+#: src/Taxonomies.php:17
+msgid "Features"
+msgstr ""
+
+#: src/Taxonomies.php:18
+msgid "All Features"
+msgstr ""
+
+#: src/Taxonomies.php:19
+msgid "Parent Feature"
+msgstr ""
+
+#: src/Taxonomies.php:20
+msgid "Parent Feature:"
+msgstr ""
+
+#: src/Taxonomies.php:21
+msgid "New Feature Name"
+msgstr ""
+
+#: src/Taxonomies.php:22
+msgid "Add New Feature"
+msgstr ""
+
+#: src/Taxonomies.php:23
+msgid "Edit Feature"
+msgstr ""
+
+#: src/Taxonomies.php:24
+msgid "Update Feature"
+msgstr ""
+
+#: src/Taxonomies.php:25
+msgid "View Feature"
+msgstr ""
+
+#: src/Taxonomies.php:26
+msgid "Separate features with commas"
+msgstr ""
+
+#: src/Taxonomies.php:27
+msgid "Add or remove features"
+msgstr ""
+
+#: src/Taxonomies.php:28 src/Taxonomies.php:69
+msgid "Choose from the most used"
+msgstr ""
+
+#: src/Taxonomies.php:29
+msgid "Popular features"
+msgstr ""
+
+#: src/Taxonomies.php:30
+msgid "Search features"
+msgstr ""
+
+#: src/Taxonomies.php:31 src/Taxonomies.php:72
+msgid "Not Found"
+msgstr ""
+
+#: src/Taxonomies.php:59
+msgid "All Makes"
+msgstr ""
+
+#: src/Taxonomies.php:60
+msgid "Parent Make"
+msgstr ""
+
+#: src/Taxonomies.php:61
+msgid "Parent Make:"
+msgstr ""
+
+#: src/Taxonomies.php:62
+msgid "New Make Name"
+msgstr ""
+
+#: src/Taxonomies.php:64
+msgid "Edit Make"
+msgstr ""
+
+#: src/Taxonomies.php:65
+msgid "Update Make"
+msgstr ""
+
+#: src/Taxonomies.php:66
+msgid "View Make"
+msgstr ""
+
+#: src/Taxonomies.php:67
+msgid "Separate makes with commas"
+msgstr ""
+
+#: src/Taxonomies.php:68
+msgid "Add or remove makes"
+msgstr ""
+
+#: src/Taxonomies.php:70
+msgid "Popular Makes"
+msgstr ""
+
+#: src/Taxonomies.php:71
+msgid "Search Makes"
+msgstr ""
+
+#: src/Vehicle/Data.php:20 templates/vehicle-data/data-condition.php:9
+msgid "Condition"
+msgstr ""
+
+#: src/Vehicle/Data.php:26 templates/listings/filters/make.php:2
+#: templates/vehicle-data/data-make.php:9
+msgid "Make"
+msgstr ""
+
+#: src/Vehicle/Data.php:31 templates/listings/filters/model.php:2
+#: templates/vehicle-data/data-model.php:9
+msgid "Model"
+msgstr ""
+
+#: src/Vehicle/Data.php:36
+msgid "First Registration Date"
+msgstr ""
+
+#: src/Vehicle/Data.php:41 templates/vehicle-data/data-price.php:9
+msgid "Price"
+msgstr ""
+
+#: src/Vehicle/Data.php:46 templates/vehicle-data/data-mileage.php:9
+msgid "Mileage"
+msgstr ""
+
+#: src/Vehicle/Data.php:51
+msgid "Fuel Type"
+msgstr ""
+
+#: src/Vehicle/Data.php:56 templates/vehicle-data/data-color.php:9
+msgid "Color"
+msgstr ""
+
+#: src/Vehicle/Data.php:61 templates/vehicle-data/data-body_style.php:10
+msgid "Body Style"
+msgstr ""
+
+#: src/Vehicle/Data.php:67 templates/vehicle-data/data-transmission.php:9
+msgid "Transmission"
+msgstr ""
+
+#: src/Vehicle/Data.php:72 templates/vehicle-data/data-engine.php:9
+msgid "Engine"
+msgstr ""
+
+#: src/Vehicle/Data.php:77 templates/vehicle-data/data-doors.php:9
+msgid "Doors"
+msgstr ""
+
+#: src/Vehicle/Data.php:90
+msgid "New"
+msgstr ""
+
+#: src/Vehicle/Data.php:91
+msgid "Used"
+msgstr ""
+
+#: src/Vehicle/Data.php:102
+msgid "Automatic"
+msgstr ""
+
+#: src/Vehicle/Data.php:103
+msgid "Manual"
+msgstr ""
+
+#: templates/listings/filters/button.php:2
+msgid "Show Results"
+msgstr ""
+
+#: templates/listings/filters/frdate.php:2
+msgid "Min Year"
+msgstr ""
+
+#: templates/listings/filters/frdate.php:3
+#: templates/listings/filters/frdate.php:4
+#: templates/listings/filters/mileage.php:3
+#: templates/listings/filters/mileage.php:4
+#: templates/listings/filters/price.php:3
+#: templates/listings/filters/price.php:4
+msgid "All"
+msgstr ""
+
+#: templates/listings/filters/mileage.php:2
+msgid "Max Mileage"
+msgstr ""
+
+#: templates/listings/filters/price.php:2
+msgid "Max Price"
+msgstr ""
+
+#: templates/listings/no-results.php:1
+msgid "We couldn't find any cars."
+msgstr ""
+
+#: templates/single-vehicle/contact.php:12
+msgid "Email Us"
+msgstr ""
+
+#: templates/single-vehicle/contact.php:17
+msgid "Call Us"
+msgstr ""
+
+#: templates/single-vehicle/content.php:9
+msgid "Vehicle Description"
+msgstr ""
+
+#: templates/single-vehicle/data.php:9
+msgid "Vehicle Details"
+msgstr ""
+
+#: templates/single-vehicle/features.php:13
+msgid "Vehicle Features"
+msgstr ""
+
+#: templates/single-vehicle/image.php:37
+msgid "Placeholder"
+msgstr ""
+
+#: templates/vehicle-data/data-frdate.php:9
+msgid "Year"
+msgstr ""
+
+#: templates/vehicle-data/data-fuel_type.php:9
+msgid "Fuel"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WP Car Manager"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.wpcarmanager.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "The easiest way to manage, list and sell your cars online using WordPress."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Never5"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.never5.com"
+msgstr ""
+
+#: src/PostType.php:12
+msgctxt "Post Type General Name"
+msgid "Cars"
+msgstr ""
+
+#: src/PostType.php:13
+msgctxt "Post Type Singular Name"
+msgid "Car"
+msgstr ""
+
+#: src/Taxonomies.php:15
+msgctxt "Taxonomy General Name"
+msgid "Features"
+msgstr ""
+
+#: src/Taxonomies.php:56
+msgctxt "Taxonomy General Name"
+msgid "Makes"
+msgstr ""
+
+#: src/Taxonomies.php:16
+msgctxt "Taxonomy Singular Name"
+msgid "Feature"
+msgstr ""
+
+#: src/Taxonomies.php:57
+msgctxt "Taxonomy Singular Name"
+msgid "Make"
+msgstr ""

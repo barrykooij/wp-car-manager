@@ -2,8 +2,6 @@
 
 namespace Never5\WPCarManager\Admin\Page;
 
-use Never5\WPCarManager\Taxonomies;
-
 class Settings {
 
 	/**

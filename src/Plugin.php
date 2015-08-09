@@ -71,6 +71,9 @@ final class Plugin extends Pimple\Container {
 	private function load() {
 		$container = $this;
 
+		// Load plugin text domain
+		load_plugin_textdomain( 'wp-car-manager', false, $container['file']->plugin_path() . '/languages/' );
+
 		// register post type & taxonomies
 		add_action( 'init', function () {
 			PostType::register();
