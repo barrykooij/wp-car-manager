@@ -1,11 +1,13 @@
 <?php
 
 // get and prep models
-$models        = wp_car_manager()->service( 'make_model_manager' )->get_models( $vehicle->get_make() );
 $models_select = array( 0 => __( 'Select Model', 'wp-car-manager' ) );
-if ( count( $models ) > 0 ) {
-	foreach ( $models as $model ) {
-		$models_select[ $model['id'] ] = $model['name'];
+if ( $vehicle->get_make() != 0 ) {
+	$models = wp_car_manager()->service( 'make_model_manager' )->get_models( $vehicle->get_make() );
+	if ( count( $models ) > 0 ) {
+		foreach ( $models as $model ) {
+			$models_select[ $model['id'] ] = $model['name'];
+		}
 	}
 }
 

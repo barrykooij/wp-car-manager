@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					if('frdate'===$field['key']) {
 						$value = $value->format('Y-m-d');
 					}
-					
+
 					// load template part
 					wp_car_manager()->service( 'view_manager' )->display( 'meta-box/input/' . $field['type'], array(
 						'mb_prefix' => $mb_prefix,
