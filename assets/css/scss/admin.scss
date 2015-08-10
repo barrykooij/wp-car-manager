@@ -195,3 +195,87 @@
   }
 
 }
+
+.wpcm-extensions-wrap {
+  h2 {
+    a.dlm-reload-button {
+      float: right;
+    }
+  }
+  .wpcm-extensions {
+    padding: 15px 0;
+    overflow: hidden;
+    div.wpcm-extension {
+      cursor: auto !important;
+      a {
+        color: #444;
+        text-decoration: none;
+      }
+      .wpcm-extension-img-wrapper {
+        width: 100%;
+        background: #00d198;
+        text-align: center;
+        img {
+          max-width: 100%;
+          margin: 0 auto;
+        }
+      }
+      h3 {
+        padding: 0 20px;
+
+      }
+      p.wpcm-extension-desc {
+        min-height: 85px;
+        padding: 0 20px;
+      }
+      .wpcm-extension-footer {
+        padding: 0 20px 15px;
+        .wpcm-extension-price {
+          font-weight: bold;
+          &.sale {
+            color: #008000;
+            strike {
+              color: #444;
+            }
+          }
+        }
+        .wpcm-extension-more {
+          color: #00d198;
+          text-decoration: none;
+          font-weight: bold;
+          float: right;
+        }
+      }
+      .wpcm-extension-license {
+        padding: 0 20px 20px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        p.wpcm-license-status {
+          padding: 5px 0;
+          margin: 5px 0;
+          background: red;
+          font-weight: bold;
+          font-size: 1.2em;
+          color: #fff;
+          text-align: center;
+        }
+        p.wpcm-license-status.active {
+          background: #008000;
+        }
+        input {
+          width: 100%;
+          margin: 7px 0;
+          padding: 7px;
+        }
+        a.button-primary {
+          width: 100%;
+          margin: 5px auto 0;
+          color: #fff;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+}

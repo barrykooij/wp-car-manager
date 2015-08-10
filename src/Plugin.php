@@ -102,6 +102,12 @@ final class Plugin extends Pimple\Container {
 				$page_settings->init();
 			} );
 
+			// add extensions page
+			add_action( 'admin_menu', function () {
+				$page_extensions = new Admin\Page\Extensions();
+				$page_extensions->init();
+			}, 20 );
+
 			// add meta box
 			add_action( 'admin_init', function () {
 
