@@ -41,15 +41,7 @@ function wp_car_manager() {
 
 	static $instance;
 	if ( is_null( $instance ) ) {
-		/*
-		$id       = 0;
-		$file     = __FILE__;
-		$dir      = dirname( __FILE__ );
-		$name     = 'WP Car Manager';
-		$version  = '1.0.0';
-		*/
-
-		$instance = new \Never5\WPCarManager\Plugin( '0.0.1', __FILE__ );
+		$instance = new \Never5\WPCarManager\Plugin( '1.0.0', __FILE__ );
 	}
 
 	return $instance;
