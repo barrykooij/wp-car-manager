@@ -18,6 +18,7 @@ abstract class Assets {
 
 		// load vehicle singular assets
 		if ( is_singular( PostType::VEHICLE ) ) {
+
 			// enqueue prettyPhoto lib
 			wp_enqueue_script(
 				'wpcm_js_pretty_photo',
@@ -25,6 +26,9 @@ abstract class Assets {
 				array( 'jquery' ),
 				wp_car_manager()->get_version()
 			);
+
+			// do action wpcm_assets_frontend_vehicle_single
+			do_action( 'wpcm_assets_frontend_vehicle_single' );
 		}
 
 		// load listings assets on listings page
@@ -52,6 +56,9 @@ abstract class Assets {
 				'lbl_no_models_found'   => __( 'No models found', 'wp-car-manager' ),
 				'lbl_select_make_first' => __( 'Select make first', 'wp-car-manager' )
 			) );
+
+			// do action wpcm_assets_frontend_vehicle_single
+			do_action( 'wpcm_assets_frontend_vehicle_listings_page' );
 		}
 
 
