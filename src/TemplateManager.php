@@ -17,12 +17,12 @@ class TemplateManager {
 	}
 
 	/**
-	 * Return template path
+	 * Return theme template path
 	 *
 	 * @return string
 	 */
-	public function get_template_path() {
-		return apply_filters( 'wpcm_template_path', 'wp-car-manager/' );
+	public function get_theme_path() {
+		return apply_filters( 'wpcm_theme_template_path', 'wp-car-manager/' );
 	}
 
 	/**
@@ -61,7 +61,7 @@ class TemplateManager {
 
 			$file   = 'single-wpcm_vehicle.php';
 			$find[] = $file;
-			$find[] = $this->get_template_path() . $file;
+			$find[] = $this->get_theme_path() . $file;
 
 			$GLOBALS['vehicle'] = wp_car_manager()->service( 'vehicle_factory' )->make( get_the_ID() );
 		}
@@ -83,31 +83,36 @@ class TemplateManager {
 	 * @param string $name
 	 * @param array $args
 	 *
+	 * @parem string $custom_dir
+	 *
 	 */
-	public function get_template_part( $slug, $name = '', $args = array() ) {
+	public function get_template_part( $slug, $name = '', $args = array(), $custom_dir = '' ) {
 		$template = '';
+
+		// set template dir
+		$template_dir = ( '' !== $custom_dir ) ? $custom_dir : wp_car_manager()->service( 'file' )->plugin_path() . '/templates/';
 
 		// Look in yourtheme/slug-name.php and yourtheme/wp-car-manager/slug-name.php
 		if ( $name ) {
 			$template = locate_template( array(
 				"{$slug}-{$name}.php",
-				$this->get_template_path() . "{$slug}-{$name}.php"
+				$this->get_theme_path() . "{$slug}-{$name}.php"
 			) );
 		}
 
 		// Get default slug-name.php
 		if ( ! $template && $name && file_exists( wp_car_manager()->service( 'file' )->plugin_path() . "/templates/{$slug}-{$name}.php" ) ) {
-			$template = wp_car_manager()->service( 'file' )->plugin_path() . "/templates/{$slug}-{$name}.php";
+			$template = $template_dir . $slug . '-' . $name . '.php';
 		}
 
 		// If template file doesn't exist, look in yourtheme/slug.php and yourtheme/wp-car-manager/slug.php
 		if ( ! $template ) {
-			$template = locate_template( array( "{$slug}.php", $this->get_template_path() . "{$slug}.php" ) );
+			$template = locate_template( array( "{$slug}.php", $this->get_theme_path() . "{$slug}.php" ) );
 		}
 
 		// Get default slug.php
 		if ( ! $template ) {
-			$template = wp_car_manager()->service( 'file' )->plugin_path() . "/templates/{$slug}.php";
+			$template = $template_dir . $slug . '.php';
 		}
 
 		// Allow 3rd party plugin filter template file from their plugin
@@ -136,7 +141,9 @@ class TemplateManager {
 			do_action( 'wpcm_after_template_part', $template, $slug, $name, $args );
 
 		} else {
-			echo '<span style="color:#ff0000;">Template not found: ' . $slug . ( ( '' != $name ) ? '-' . $name : '' ) . '</span><br/>';
+			if ( WP_DEBUG ) {
+				echo '<span style="color:#ff0000;">Template not found: ' . $slug . ( ( '' != $name ) ? '-' . $name : '' ) . '</span><br/>';
+			}
 		}
 	}
 
