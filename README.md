@@ -6,8 +6,11 @@ The easiest way to manage, list and sell your cars online using WordPress.
 
 This plugin requires PHP version 5.3 or higher.
 
+**Documentation**
+For documentation, please visit our [Knowledge Base](http://www.wpcarmanager.com/kb/).
+
 **Support**
-@todo write support policy
+For support, please visit our [Contact Page](http://www.wpcarmanager.com/contact/).
 
 **License**
 
