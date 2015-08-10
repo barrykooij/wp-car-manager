@@ -75,13 +75,6 @@ module.exports = function ( grunt ) {
                     '!<%= dirs.js %>/*.min.js'
                 ],
                 tasks: [ 'uglify' ]
-            },
-            configurator: {
-                files: [
-                    '<%= dirs.js %>/configurator/*.js',
-                    '!<%= dirs.js %>/configurator/configurator.min.js'
-                ],
-                tasks: [ 'clean', 'concat', 'uglify' ]
             }
         },
 
