@@ -17,5 +17,4 @@ global $vehicle;
 		<a href="tel:<?php echo $phone_number; ?>" class="wpcm-contact-button"><?php _e( 'Call Us', 'wp-car-manager' ); ?></a>
 	<?php endif; ?>
 
-
 </div>
