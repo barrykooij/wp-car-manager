@@ -123,7 +123,9 @@ class Extensions {
 
 
 					} else if ( count( $installed_extensions ) > 0 ) {
+						echo '<div id="available-extensions" class="settings_panel">' . PHP_EOL;
 						echo '<p>Wow, looks like you installed all of our extensions. Thanks, you rock!</p>';
+						echo '</div>';
 					}
 
 					// Installed Extensions
