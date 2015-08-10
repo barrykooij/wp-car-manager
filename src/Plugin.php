@@ -108,6 +108,9 @@ final class Plugin extends Pimple\Container {
 				$page_extensions->init();
 			}, 20 );
 
+			// license AJAX callback
+			add_action( 'wp_ajax_wpcm_extension', array( 'Never5\\WPCarManager\\Admin\\Page\\Extensions', 'ajax_license_action' ) );
+
 			// add meta box
 			add_action( 'admin_init', function () {
 
@@ -134,6 +137,21 @@ final class Plugin extends Pimple\Container {
 
 			// admin assets
 			add_action( 'admin_enqueue_scripts', array( 'Never5\\WPCarManager\\Assets', 'enqueue_backend' ) );
+
+			// load extensions
+			add_action( 'admin_init', function () {
+				// Load the registered extensions
+				$registered_extensions = apply_filters( 'wpcm_extensions', array() );
+				// Check if we've got extensions
+				if ( count( $registered_extensions ) > 0 ) {
+
+					// Don't block local requests
+					add_filter( 'block_local_requests', '__return_false' );
+
+					// Load products
+					Extension\Manager::get()->load_extensions( $registered_extensions );
+				}
+			} );
 		} else {
 
 			// Include template functions

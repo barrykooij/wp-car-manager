@@ -44,10 +44,9 @@ class Extensions {
 
 		?>
 		<div class="wrap wpcm-extensions-wrap">
-			<div class="icon32 icon32-posts-dlm_download" id="icon-edit"><br/></div>
 			<h2><?php _e( 'WP Car Manager Extensions', 'wp-car-manager' ); ?> <a
 					href="<?php echo add_query_arg( 'wpcm-force-recheck', '1', admin_url( 'edit.php?post_type=wpcm_vehicle&page=wpcm-extensions' ) ); ?>"
-					class="button dlm-reload-button">Reload Extensions</a></h2>
+					class="button wpcm-reload-button">Reload Extensions</a></h2>
 			<?php
 
 			if ( false !== $extension_json ) {
@@ -145,11 +144,11 @@ class Extensions {
 
 							echo '<div class="wpcm-extension-license">' . PHP_EOL;
 							echo '<p class="wpcm-license-status' . ( ( $license->is_active() ) ? ' active' : '' ) . '">' . strtoupper( $license->get_status() ) . '</p>' . PHP_EOL;
-							echo '<input type="hidden" id="dlm-ajax-nonce" value="' . wp_create_nonce( 'dlm-ajax-nonce' ) . '" />' . PHP_EOL;
-							echo '<input type="hidden" id="status" value="' . $license->get_status() . '" />' . PHP_EOL;
-							echo '<input type="hidden" id="product_id" value="' . $extension->product_id . '" />' . PHP_EOL;
-							echo '<input type="text" name="key" id="key" value="' . $license->get_key() . '" placeholder="License Key"' . ( ( $license->is_active() ) ? ' disabled="disabled"' : '' ) . ' />' . PHP_EOL;
-							echo '<input type="text" name="email" id="email" value="' . $license->get_email() . '" placeholder="License Email"' . ( ( $license->is_active() ) ? ' disabled="disabled"' : '' ) . ' />' . PHP_EOL;
+							echo '<input type="hidden" id="wpcm-ajax-nonce" value="' . wp_create_nonce( 'wpcm-ajax-nonce' ) . '" />' . PHP_EOL;
+							echo '<input type="hidden" id="wpcm-status" value="' . $license->get_status() . '" />' . PHP_EOL;
+							echo '<input type="hidden" id="wpcm-product-id" value="' . $extension->product_id . '" />' . PHP_EOL;
+							echo '<input type="text" name="wpcm-key" id="wpcm-key" value="' . $license->get_key() . '" placeholder="License Key"' . ( ( $license->is_active() ) ? ' disabled="disabled"' : '' ) . ' />' . PHP_EOL;
+							echo '<input type="text" name="wpcmemail" id="wpcm-email" value="' . $license->get_email() . '" placeholder="License Email"' . ( ( $license->is_active() ) ? ' disabled="disabled"' : '' ) . ' />' . PHP_EOL;
 							echo '<a href="javascript:;" class="button button-primary">' . ( ( $license->is_active() ) ? 'Deactivate' : 'Activate' ) . '</a>';
 							echo '</div>' . PHP_EOL;
 
@@ -169,6 +168,47 @@ class Extensions {
 		</div>
 		<?php
 
+	}
+
+	/**
+	 * AJAX license action
+	 */
+	public static function ajax_license_action() {
+
+		// Check nonce
+		check_ajax_referer( 'wpcm-ajax-nonce', 'nonce' );
+
+		// Post vars
+		$product_id       = sanitize_text_field( $_POST['product_id'] );
+		$key              = sanitize_text_field( $_POST['key'] );
+		$email            = sanitize_text_field( $_POST['email'] );
+		$extension_action = $_POST['extension_action'];
+
+		// Get extensions
+		$products = Extension\Manager::get()->get_extensions();
+
+		// Check if product exists
+		if ( isset( $products[ $product_id ] ) ) {
+			// Get correct product
+			$product = $products[ $product_id ];
+			// Set new key in license object
+			$product->get_license()->set_key( $key );
+			// Set new email in license object
+			$product->get_license()->set_email( $email );
+			if ( 'activate' === $extension_action ) {
+				// Try to activate the license
+				$response = $product->activate();
+			} else {
+				// Try to deactivate the license
+				$response = $product->deactivate();
+			}
+		}
+
+		// Send JSON
+		wp_send_json( $response );
+
+		// bye
+		exit;
 	}
 
 }

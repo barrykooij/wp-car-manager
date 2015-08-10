@@ -98,6 +98,17 @@ abstract class Assets {
 
 		}
 
+		// extensions Js
+		if ( isset( $_GET['page'] ) && 'wpcm-extensions' === $_GET['page'] ) {
+			wp_enqueue_script(
+				'wpcm_extensions',
+				wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/extensions' . ( ( ! SCRIPT_DEBUG ) ? '.min' : '' ) . '.js' ),
+				array( 'jquery' ),
+				wp_car_manager()->get_version()
+			);
+		}
+
+
 		// admin CSS
 		wp_enqueue_style(
 			'wpcm_admin',
