@@ -31,6 +31,11 @@ Our detailed car pages will display the car details beautifully. The car detail 
 
 [Find out more information about our plugin, documentation and extensions at our website](https://www.wpcarmanager.com/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=more-information)
 
+> #### PHP Requirement
+> This plugin requires PHP version 5.3 or higher.<br />
+> If you're still at PHP 5.2, it's time to update. [Read here why and how](http://www.wpupdatephp.com/update/)<br />
+> Updating to a newer PHP version is almost always done in minutes and free of charge!
+
 == Installation ==
 
 = Installing the plugin =
