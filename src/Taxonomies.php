@@ -31,7 +31,7 @@ class Taxonomies {
 			'not_found'                  => __( 'Not Found', 'wp-car-manager' ),
 		);
 		$rewrite = array(
-			'slug'                       => 'feature',
+			'slug'                       => _x( 'feature', 'taxonomy type slug', 'wp-car-manager' ),
 			'with_front'                 => true,
 			'hierarchical'               => false,
 		);
@@ -72,7 +72,7 @@ class Taxonomies {
 			'not_found'                  => __( 'Not Found', 'wp-car-manager' ),
 		);
 		$rewrite = array(
-			'slug'                       => 'make',
+			'slug'                       => _x( 'make', 'taxonomy type slug', 'wp-car-manager' ),
 			'with_front'                 => true,
 			'hierarchical'               => true,
 		);
