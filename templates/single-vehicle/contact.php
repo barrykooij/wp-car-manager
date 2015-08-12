@@ -14,7 +14,7 @@ global $vehicle;
 	$phone_number = wp_car_manager()->service( 'settings' )->get_option( 'contact_phone' );
 	if( '' !== $phone_number ) :
 	?>
-		<a href="tel:<?php echo $phone_number; ?>" class="wpcm-contact-button"><?php _e( 'Call Us', 'wp-car-manager' ); ?></a>
+		<a href="tel:<?php echo esc_attr( $phone_number ); ?>" class="wpcm-contact-button"><?php _e( 'Call Us', 'wp-car-manager' ); ?></a>
 	<?php endif; ?>
 
 </div>
