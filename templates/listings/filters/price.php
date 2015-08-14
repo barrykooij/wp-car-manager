@@ -27,7 +27,7 @@
 				100000
 			) ) as $price
 		) : ?>
-			<option value="<?php echo $price; ?>"><?php echo Never5\WPCarManager\Helper\Format::price( $price ); ?></option>
+			<option value="<?php echo esc_attr( $price ); ?>"><?php echo Never5\WPCarManager\Helper\Format::price( $price ); ?></option>
 		<?php endforeach; ?>
 	</select>
 </div>
