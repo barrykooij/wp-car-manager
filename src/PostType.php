@@ -51,7 +51,7 @@ class PostType {
 			'publicly_queryable'  => true,
 			'capability_type'     => 'page',
 			'rewrite'             => array(
-				'slug'       => 'vehicle',
+				'slug'       => _x( 'vehicle', 'post type slug', 'wp-car-manager' ),
 				'with_front' => true,
 				'pages'      => true,
 				'feeds'      => true,
