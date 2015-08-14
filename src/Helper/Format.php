@@ -49,7 +49,7 @@ abstract class Format {
 		/** @var Settings $settings */
 		$settings = wp_car_manager()->service( 'settings' );
 
-		return number_format( $mileage, 0, $settings->get_option( 'decimal_separator' ), $settings->get_option( 'thousand_separator' ) ) . ' ' . $settings->get_option( 'distance_unit' );
+		return number_format( $mileage ? $mileage : 0, 0, $settings->get_option( 'decimal_separator' ), $settings->get_option( 'thousand_separator' ) ) . ' ' . $settings->get_option( 'distance_unit' );
 	}
 
 }
