@@ -59,4 +59,6 @@ if ( $updatePhp->does_it_meet_required_php_version( PHP_VERSION ) ) {
 	// create plugin object
 	add_action( 'plugins_loaded', '__load_wp_car_manager', 20 );
 
+	// plugin install
+	register_activation_hook( __FILE__, array( 'Never5\WPCarManager\Install', 'install' ) );
 }
