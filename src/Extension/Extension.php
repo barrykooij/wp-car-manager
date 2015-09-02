@@ -16,12 +16,12 @@ class Extension {
 	/**
 	 * Activation endpoint
 	 */
-	const ENDPOINT_ACTIVATION = 'wp_plugin_licencing_activation_api';
+	const ENDPOINT_ACTIVATION = 'license_wp_api_activation';
 
 	/**
 	 * Update endpoint
 	 */
-	const ENDPOINT_UPDATE = 'wp_plugin_licencing_update_api';
+	const ENDPOINT_UPDATE = 'license_wp_api_update';
 
 	/**
 	 * @var String
@@ -126,7 +126,7 @@ class Extension {
 			// Do activate request
 			$request = wp_remote_get( self::STORE_URL . self::ENDPOINT_ACTIVATION . '&' . http_build_query( array(
 					'email'          => $license->get_email(),
-					'licence_key'    => $license->get_key(),
+					'license_key'    => $license->get_key(),
 					'api_product_id' => $this->slug,
 					'request'        => 'activate',
 					'instance'       => site_url()
@@ -171,7 +171,7 @@ class Extension {
 	}
 
 	/**
-	 * Attempt to deactivate a licence
+	 * Attempt to deactivate a license
 	 */
 	public function deactivate() {
 
@@ -188,7 +188,7 @@ class Extension {
 			// The Request
 			$request = wp_remote_get( self::STORE_URL . self::ENDPOINT_ACTIVATION . '&' . http_build_query( array(
 					'api_product_id' => $this->slug,
-					'licence_key'    => $license->get_key(),
+					'license_key'    => $license->get_key(),
 					'request'        => 'deactivate',
 					'instance'       => site_url(),
 				), '', '&' ) );
@@ -246,7 +246,7 @@ class Extension {
 				'plugin_name'    => $this->name,
 				'version'        => $current_ver,
 				'api_product_id' => $this->slug,
-				'licence_key'    => $license->get_key(),
+				'license_key'    => $license->get_key(),
 				'email'          => $license->get_email(),
 				'instance'       => site_url()
 			), '', '&' ) );
@@ -315,7 +315,7 @@ class Extension {
 				'plugin_name'    => $this->name,
 				'version'        => $current_ver,
 				'api_product_id' => $this->slug,
-				'licence_key'    => $license->get_key(),
+				'license_key'    => $license->get_key(),
 				'email'          => $license->get_email(),
 				'instance'       => site_url()
 			), '', '&' ) );
