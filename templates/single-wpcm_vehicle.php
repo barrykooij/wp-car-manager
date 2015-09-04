@@ -34,13 +34,4 @@ do_action( 'wpcm_before_main_content' );
 do_action( 'wpcm_after_main_content' );
 ?>
 
-<?php
-/**
- * woocommerce_sidebar hook
- *
- * @hooked woocommerce_get_sidebar - 10
- */
-//do_action( 'wpcm_sidebar' );
-?>
-
 <?php get_footer(); ?>
