@@ -32,21 +32,13 @@ add_action( 'wpcm_vehicle_thumbnails', 'wpcm_template_vehicle_thumbnails', 20 );
 /**
  * Vehicle Summary Box
  *
- * @see wpcm_template_single_title()
  * @see wpcm_template_single_price()
- * @see wpcm_template_single_meta()
- * @see wpcm_template_single_sharing()
+ * @see wpcm_template_single_summary_data()
+ * @see wpcm_template_single_contact()
  */
 add_action( 'wpcm_vehicle_summary', 'wpcm_template_single_price', 10 );
 add_action( 'wpcm_vehicle_summary', 'wpcm_template_single_summary_data', 20 );
-
-/**
- * After Summary Box
- *
- * @see wpcm_show_vehicle_images()
- * @see wpcm_show_vehicle_thumbnails()
- */
-add_action( 'wpcm_after_vehicle_summary', 'wpcm_template_single_contact', 10 );
+add_action( 'wpcm_vehicle_summary', 'wpcm_template_single_contact', 30 );
 
 /**
  * Vehicle Content Box

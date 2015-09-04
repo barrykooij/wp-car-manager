@@ -24,33 +24,36 @@ do_action( 'wpcm_before_single_vehicle' );
 			?>
 		</header>
 
-		<?php
-		/**
-		 * wpcm_after_vehicle_summary hook
-		 *
-		 * @hooked wpcm_show_vehicle_images - 10
-		 */
-		do_action( 'wpcm_before_vehicle_summary' );
-		?>
-
-		<div class="wpcm-summary entry-summary">
+		<div class="wpcm-vehicle-head">
 			<?php
 			/**
-			 * wpcm_vehicle_summary hook
+			 * wpcm_after_vehicle_summary hook
 			 *
-			 * @hooked wpcm_template_single_price - 10
-			 * @hooked wpcm_template_single_summary_data - 20
+			 * @hooked wpcm_show_vehicle_images - 10
 			 */
-			do_action( 'wpcm_vehicle_summary' );
+			do_action( 'wpcm_before_vehicle_summary' );
+			?>
+
+			<div class="wpcm-summary entry-summary">
+				<?php
+				/**
+				 * wpcm_vehicle_summary hook
+				 *
+				 * @hooked wpcm_template_single_price - 10
+				 * @hooked wpcm_template_single_summary_data - 20
+				 * @hooked wpcm_template_single_contact - 30
+				 */
+				do_action( 'wpcm_vehicle_summary' );
+				?>
+			</div>
+
+			<?php
+			/**
+			 * wpcm_after_vehicle_summary hook
+			 */
+			do_action( 'wpcm_after_vehicle_summary' );
 			?>
 		</div>
-
-		<?php
-		/**
-		 * wpcm_after_vehicle_summary hook
-		 */
-		do_action( 'wpcm_after_vehicle_summary' );
-		?>
 
 		<div class="wpcm-vehicle-content">
 			<?php

@@ -260,7 +260,7 @@
       }
     }
 
-    .wpcm-summary, .wpcm-contact {
+    .wpcm-summary {
       float: right;
       width: 41%;
     }
@@ -279,18 +279,19 @@
           padding-left: 0;
         }
       }
-    }
 
-    .wpcm-contact {
-      .wpcm-contact-button {
-        display: block;
-        width: 100%;
-        margin-bottom: 15px;
-        float: left;
-        padding: 1em 0;
-        color: #fff;
-        text-align: center;
-        background: #428dcb;
+      .wpcm-contact {
+        overflow: hidden;
+        .wpcm-contact-button {
+          display: block;
+          width: 100%;
+          margin-bottom: 15px;
+          float: left;
+          padding: 1em 0;
+          color: #fff;
+          text-align: center;
+          background: #428dcb;
+        }
       }
     }
 
