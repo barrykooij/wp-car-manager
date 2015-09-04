@@ -4,9 +4,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-$template = get_option( 'template' );
+// get template
+$template = wp_car_manager()->service( 'template_manager' )->get_theme();
 
-switch( $template ) {
+switch ( $template ) {
 	case 'twentyeleven' :
 		echo '<div id="primary"><div id="content" role="main" class="twentyeleven">';
 		break;
@@ -21,6 +22,9 @@ switch( $template ) {
 		break;
 	case 'twentyfifteen' :
 		echo '<div id="primary" role="main" class="content-area twentyfifteen"><div id="main" class="site-main t15wc">';
+		break;
+	case 'genesis':
+		echo '<main class="content" id="genesis-content">';
 		break;
 	default :
 		echo '<div id="container"><div id="content" role="main">';
