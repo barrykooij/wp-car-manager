@@ -26,6 +26,16 @@ class TemplateManager {
 	}
 
 	/**
+	 * Return parent theme if child theme, else return theme
+	 *
+	 * @return string
+	 */
+	public function get_theme() {
+		$theme = wp_get_theme();
+		return ( ( null != $theme->parent ) ? $theme->parent : $theme->template );
+	}
+
+	/**
 	 * Filter post class
 	 *
 	 * @param array $classes
