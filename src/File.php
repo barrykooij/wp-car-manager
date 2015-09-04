@@ -39,4 +39,12 @@ class File {
 		return plugins_url( $path, $this->file );
 	}
 
+	/**
+	 * @param $image
+	 *
+	 * @return string
+	 */
+	public function image_url( $image ) {
+		return $this->plugin_url( '/assets/images/' . $image );
+	}
 }
