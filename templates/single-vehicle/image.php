@@ -19,8 +19,7 @@ global $vehicle;
 			'title' => $image_title,
 			'alt'   => $image_title
 		) );
-
-
+		
 		$attachment_count = count( $vehicle->get_gallery_attachment_ids() );
 
 		if ( $attachment_count > 0 ) {
@@ -33,7 +32,7 @@ global $vehicle;
 
 	} else {
 
-		$placeholder = ''; // @todo fetch placeholder
+		$placeholder = wp_car_manager()->service('file')->image_url('placeholder-single.png');
 		$image_html = sprintf( '<img src="%s" alt="%s" />', $placeholder, __( 'Placeholder', 'wp-car-manager' ) );
 
 	}
