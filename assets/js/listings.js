@@ -1,7 +1,9 @@
 jQuery( function ( $ ) {
-    var archive = $( '.wpcm-vehicle-listings' );
-    if ( archive ) {
-        new WPCM_Listings( archive );
+    var archives = $( '.wpcm-vehicle-listings' );
+    if ( archives ) {
+        $.each( archives, function ( k, v ) {
+            new WPCM_Listings( v );
+        } );
     }
 } );
 
