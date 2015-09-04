@@ -45,12 +45,21 @@ class GetVehicleResults extends Ajax {
 				// title
 				$title = get_the_title( $vehicle->get_id() );
 
-				// get image
-				$image = get_the_post_thumbnail( $vehicle->get_id(), apply_filters( 'wpcm_listings_vehicle_thumbnail_size', 'wpcm_vehicle_listings_item' ), array(
-					'title' => $title,
-					'alt'   => $title,
-					'class' => 'wpcm-listings-item-image'
-				) );
+				// check if there's a thumbnail
+				if ( has_post_thumbnail( $vehicle->get_id() ) ) {
+
+					// get image
+					$image = get_the_post_thumbnail( $vehicle->get_id(), apply_filters( 'wpcm_listings_vehicle_thumbnail_size', 'wpcm_vehicle_listings_item' ), array(
+						'title' => $title,
+						'alt'   => $title,
+						'class' => 'wpcm-listings-item-image'
+					) );
+
+				} else {
+					$placeholder = wp_car_manager()->service( 'file' )->image_url( 'placeholder-list.png' );
+					$image       = sprintf( '<img src="%s" alt="%s" class="wpcm-listings-item-image" />', $placeholder, __( 'Placeholder', 'wp-car-manager' ) );
+				}
+
 
 				// load template
 				wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/item', '', array(
