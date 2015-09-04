@@ -56,7 +56,7 @@ class GetVehicleResults extends Ajax {
 					) );
 
 				} else {
-					$placeholder = wp_car_manager()->service( 'file' )->image_url( 'placeholder-list.png' );
+					$placeholder = apply_filters( 'wpcm_listings_vehicle_thumbnail_placeholder', wp_car_manager()->service( 'file' )->image_url( 'placeholder-list.png' ), $vehicle );
 					$image       = sprintf( '<img src="%s" alt="%s" class="wpcm-listings-item-image" />', $placeholder, __( 'Placeholder', 'wp-car-manager' ) );
 				}
 

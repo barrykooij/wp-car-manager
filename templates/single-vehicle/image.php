@@ -32,7 +32,7 @@ global $vehicle;
 
 	} else {
 
-		$placeholder = wp_car_manager()->service( 'file' )->image_url( 'placeholder-single.png' );
+		$placeholder = apply_filters( 'wpcm_single_vehicle_thumbnail_placeholder', wp_car_manager()->service( 'file' )->image_url( 'placeholder-single.png' ), $vehicle );
 		$image_html  = sprintf( '<img src="%s" alt="%s" />', $placeholder, __( 'Placeholder', 'wp-car-manager' ) );
 
 	}
