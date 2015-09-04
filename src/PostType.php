@@ -41,7 +41,6 @@ class PostType {
 			'public'              => true,
 			'show_ui'             => true,
 			'show_in_menu'        => true,
-			'menu_position'       => 25,
 			'menu_icon'           => '',
 			'show_in_admin_bar'   => true,
 			'show_in_nav_menus'   => true,
