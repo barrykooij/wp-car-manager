@@ -184,6 +184,19 @@
           }
         }
 
+        li.wpcm-sortable-placeholder {
+          border: 3px dashed #dddddd;
+          position: relative;
+
+          &:after {
+            @include icon( "\e806" );
+            font-size: 2.618em;
+            line-height: 72px;
+            color: #ddd;
+          }
+
+        }
+
       }
 
     }

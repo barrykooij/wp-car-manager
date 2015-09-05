@@ -90,6 +90,7 @@ jQuery( function ( $ ) {
         items: 'li.image',
         cursor: 'move',
         scrollSensitivity: 40,
+        placeholder : 'wpcm-sortable-placeholder',
         forcePlaceholderSize: true,
         forceHelperSize: false,
         helper: 'clone',
