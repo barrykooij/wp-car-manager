@@ -7,18 +7,23 @@ do_action( 'wpcm_before_listings' );
 ?>
 	<div class="wpcm-vehicle-listings">
 
-		<?php do_action( 'wpcm_before_listings_filter' ); ?>
+		<?php if ( $atts['show_filters'] ) : ?>
 
-		<div class="wpcm-vehicle-filters">
-			<?php
-			/**
-			 * wpcm_listings_vehicle_filters hook
-			 */
-			do_action( 'wpcm_listings_vehicle_filters' );
-			?>
-		</div>
+			<?php do_action( 'wpcm_before_listings_filter' ); ?>
 
-		<?php do_action( 'wpcm_after_listings_filter' ); ?>
+			<div class="wpcm-vehicle-filters">
+				<?php
+				/**
+				 * wpcm_listings_vehicle_filters hook
+				 */
+				do_action( 'wpcm_listings_vehicle_filters' );
+				?>
+			</div>
+
+			<?php do_action( 'wpcm_after_listings_filter' ); ?>
+
+		<?php endif; ?>
+
 		<?php do_action( 'wpcm_before_listings_results' ); ?>
 
 		<div class="wpcm-vehicle-results-wrapper">

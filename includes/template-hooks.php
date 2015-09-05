@@ -62,9 +62,13 @@ add_action( 'wpcm_vehicle_content', 'wpcm_template_single_content', 20 );
 add_action( 'wpcm_vehicle_content', 'wpcm_template_single_features', 30 );
 
 /**
+ ************************ LISTINGS ************************
+ */
+
+/**
  * Vehicle Before Listings Filters
  */
-add_action( 'wpcm_before_listings_filter', 'wpcm_template_vehicle_listings_filters_nonce', 10 );
+add_action( 'wpcm_before_listings_results', 'wpcm_template_vehicle_listings_filters_nonce', 10 );
 
 /**
  * Vehicle Listings Filters
