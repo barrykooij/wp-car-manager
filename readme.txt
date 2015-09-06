@@ -55,5 +55,21 @@ Coming soon
 
 == Changelog ==
 
+= 1.1.0: September x, 2015 =
+* Feature: Added sort possibility to car listing shortcode
+* Feature: Added placeholder images
+* Feature: Added Genesis theme wrapper support
+* Feature: Added show_filters attribute to [wpcm_cars] shortcode
+* Feature: Added placeholder to gallery meta box in edit vehicle
+* Feature: Added date format option in settings
+* Tweak: Moved contact template hook into wpcm_vehicle_summary
+* Tweak: Added wpcm-vehicle-head wrapper around wpcm_vehicle_summary actions
+* Tweak: Fixed conflict with Contact Form 7
+* Tweak: Updated extension related code
+* Tweak: Single article wrapper element is now article instead of div
+* Tweak: Single article element wrapper are now separate overridable template files
+* Tweak: Hide email contact button when no email address is entered
+* Tweak: Initialize each listing separately. allowing multiple listings on one page
+
 = 1.0.0 : August 6, 2015 =
 * Initial version
