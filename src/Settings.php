@@ -85,6 +85,11 @@ class Settings {
 								'km'    => __( 'Kilometers', 'wp-car-manager' ),
 							)
 						),
+						array(
+							'name'  => 'date_format',
+							'label' => __( 'Date Format', 'wp-car-manager' ),
+							'desc'  => __( 'The way dates are formatted.', 'wp-car-manager' )
+						),
 
 					),
 				),
@@ -132,6 +137,7 @@ class Settings {
 			'decimal_separator'  => '.',
 			'thousand_separator' => ',',
 			'distance_unit'      => 'miles',
+			'date_format'        => 'm-Y',
 			'contact_email'      => get_option( 'admin_email', '' ),
 			'contact_phone'      => '',
 			'summary_data'       => apply_filters( 'wpcm_summary_data_fields', array(
