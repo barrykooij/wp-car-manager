@@ -35,6 +35,7 @@ class Cars extends Shortcode {
 		// get attributes, defaults filterable via 'wpcm_shortcode_cars_defaults' filter
 		$atts = shortcode_atts( apply_filters( 'wpcm_shortcode_' . $this->get_tag() . '_defaults', array(
 			'show_filters' => true,
+			'show_sort'    => true,
 			'per_page'     => - 1, // @todo make this a setting later
 			'orderby'      => 'date',
 			'order'        => 'DESC',
@@ -45,6 +46,13 @@ class Cars extends Shortcode {
 			$atts['show_filters'] = false;
 		} else {
 			$atts['show_filters'] = true;
+		}
+
+		// make sure show_sort is a bool
+		if ( 'false' == $atts['show_sort'] ) {
+			$atts['show_sort'] = false;
+		} else {
+			$atts['show_sort'] = true;
 		}
 
 		// start output buffer

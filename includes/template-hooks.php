@@ -65,6 +65,8 @@ add_action( 'wpcm_vehicle_content', 'wpcm_template_single_features', 30 );
  ************************ LISTINGS ************************
  */
 
+add_action( 'wpcm_listings_vehicle_sort', 'wpcm_template_vehicle_listings_sort', 10 );
+
 /**
  * Vehicle Before Listings Filters
  */

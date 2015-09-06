@@ -24,7 +24,7 @@ class GetVehicleResults extends Ajax {
 		// check nonce
 		$this->check_nonce();
 
-		// @todo set filters
+		// set filters
 		$filters = array();
 
 		// get filters from get vars
@@ -34,9 +34,12 @@ class GetVehicleResults extends Ajax {
 			}
 		}
 
+		// set sort
+		$sort = ( isset( $_GET['sort'] ) ) ? esc_attr( $_GET['sort'] ) : 'price-asc';
+
 		// get vehicles
 		$vehicle_manager = new Vehicle\Manager();
-		$vehicles        = $vehicle_manager->get_vehicles( $filters );
+		$vehicles        = $vehicle_manager->get_vehicles( $filters, $sort );
 
 		// check & loop
 		if ( count( $vehicles ) > 0 ) {

@@ -12,10 +12,16 @@ var WPCM_Listings = function ( tgt ) {
     this.is_updating = false;
     this.nonce = jQuery( tgt ).find( '#wpcm-listings-nonce' ).val();
     this.filters = jQuery( tgt ).find( '.wpcm-vehicle-filters:first' );
+    this.sort = jQuery( tgt ).find( '#wpcm-sort:first' );
     this.listings = jQuery( tgt ).find( '.wpcm-vehicle-results-wrapper>.wpcm-vehicle-results:first' );
 
     // init filters
     this.init_filters();
+
+    // init sort
+    if ( this.sort ) {
+        this.init_sort();
+    }
 
     // always load vehicles on init for now
     this.load_vehicles();
@@ -38,6 +44,17 @@ WPCM_Listings.prototype.init_filters = function () {
     } );
 
     this.filters.find( '.wpcm-filter-button input' ).click( function () {
+        instance.load_vehicles();
+    } );
+
+};
+
+WPCM_Listings.prototype.init_sort = function () {
+
+    var instance = this;
+
+    // bind listener to make field
+    this.sort.change( function () {
         instance.load_vehicles();
     } );
 
@@ -105,12 +122,12 @@ WPCM_Listings.prototype.load_vehicles = function () {
     // listings var
     var listings = this.listings;
 
-    // ajax args
+    // default ajax args with nonce
     var args = {
         nonce: this.nonce
     };
 
-    // todo load filters
+    // set filters in args
     var filters = [];
     jQuery.each( this.filters.find( '.wpcm-filter select' ), function ( k, v ) {
         var filter_val = jQuery( v ).find( 'option:selected' ).val();
@@ -119,6 +136,10 @@ WPCM_Listings.prototype.load_vehicles = function () {
         }
     } );
 
+    // set sort in args
+    args[ 'sort' ] = this.sort.find( 'option:selected' ).val();
+
+    // set AJAX endpoint
     args [ wpcm.ajax_endpoint ] = 'get_vehicle_results';
 
     // add spinner

@@ -51,6 +51,19 @@
       }
     }
   }
+
+  .wpcm-vehicle-sort {
+    padding: .5em 1em;
+    background: #f9f9f9;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+    text-align: right;
+
+    label {
+      font-size: .8em;
+    }
+  }
+
   .wpcm-vehicle-results-wrapper {
     position: relative;
 

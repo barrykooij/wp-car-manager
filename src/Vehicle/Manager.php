@@ -19,19 +19,49 @@ class Manager {
 	 * - frdate_from (int)
 	 * - frdate_to (int)
 	 *
+	 * Sort possibilities:
+	 * - price-asc
+	 * - price-desc
+	 * - year-asc
+	 * - year-desc
+	 * - mileage-asc
+	 * - mileage-desc
+	 *
 	 * @param array $filters
+	 * @param string $sort
 	 *
 	 * @return array
 	 */
-	public function get_vehicles( $filters ) {
+	public function get_vehicles( $filters, $sort ) {
 
 		// vehicle array
 		$vehicles = array();
 
+		// translate $sort to \WP_Query sort
+		$sort_params = explode( '-', $sort );
+		$order       = ( 'desc' == array_pop( $sort_params ) ) ? 'DESC' : 'ASC';
+		$sort_val    = array_shift( $sort_params );
+		$meta_key  = 'wpcm_' . $sort_val;
+		switch ( $sort_val ) {
+			case 'price':
+				$meta_type = 'NUMERIC';
+				break;
+			case 'frdate':
+				$meta_type = 'DATE';
+				break;
+			case 'mileage':
+				$meta_type = 'NUMERIC';
+				break;
+		}
+
 		// \WP_Query arg
 		$args = array(
 			'post_type'      => PostType::VEHICLE,
-			'posts_per_page' => - 1
+			'posts_per_page' => - 1,
+			'orderby'        => 'meta_value',
+			'order'          => $order,
+			'meta_type'      => $meta_type,
+			'meta_key'       => $meta_key
 		);
 
 		// base meta query

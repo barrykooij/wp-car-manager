@@ -24,6 +24,21 @@ do_action( 'wpcm_before_listings' );
 
 		<?php endif; ?>
 
+		<?php if ( $atts['show_sort'] ) : ?>
+
+			<?php do_action( 'wpcm_before_listings_sort' ); ?>
+
+			<?php
+			/**
+			 * wpcm_listings_vehicle_sort hook
+			 */
+			do_action( 'wpcm_listings_vehicle_sort' );
+			?>
+
+			<?php do_action( 'wpcm_after_listings_sort' ); ?>
+
+		<?php endif; ?>
+
 		<?php do_action( 'wpcm_before_listings_results' ); ?>
 
 		<div class="wpcm-vehicle-results-wrapper">
