@@ -1,6 +1,6 @@
 <?php
 
-namespace Never5\WPCarManager;
+namespace Never5\WPCarManager\Vehicle;
 
 class PostType {
 

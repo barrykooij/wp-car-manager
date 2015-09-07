@@ -9,7 +9,7 @@ class Install {
 	 */
 	public static function install() {
 		// Register pot type and custom taxonomies
-		PostType::register();
+		Vehicle\PostType::register();
 		Taxonomies::register_model_make();
 		Taxonomies::register_features();
 

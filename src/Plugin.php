@@ -76,7 +76,7 @@ final class Plugin extends Pimple\Container {
 
 		// register post type & taxonomies
 		add_action( 'init', function () {
-			PostType::register();
+			Vehicle\PostType::register();
 			Taxonomies::register_model_make();
 			Taxonomies::register_features();
 		} );

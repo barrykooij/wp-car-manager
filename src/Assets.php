@@ -17,7 +17,7 @@ abstract class Assets {
 		);
 
 		// load vehicle singular assets
-		if ( is_singular( PostType::VEHICLE ) ) {
+		if ( is_singular( Vehicle\PostType::VEHICLE ) ) {
 
 			// enqueue prettyPhoto lib
 			wp_enqueue_script(
@@ -71,7 +71,7 @@ abstract class Assets {
 		global $pagenow, $post;
 
 		// Enqueue Downloadable Files Metabox JS
-		if ( ( $pagenow == 'post.php' && isset( $post ) && PostType::VEHICLE === $post->post_type ) || ( $pagenow == 'post-new.php' && isset( $_GET['post_type'] ) && PostType::VEHICLE == $_GET['post_type'] ) ) {
+		if ( ( $pagenow == 'post.php' && isset( $post ) && Vehicle\PostType::VEHICLE === $post->post_type ) || ( $pagenow == 'post-new.php' && isset( $_GET['post_type'] ) && Vehicle\PostType::VEHICLE == $_GET['post_type'] ) ) {
 
 			// datepicker
 			wp_enqueue_script( 'jquery-ui-datepicker' );

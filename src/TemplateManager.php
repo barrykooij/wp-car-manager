@@ -45,7 +45,7 @@ class TemplateManager {
 	 * @return array
 	 */
 	public function filter_post_class( $classes, $class = '', $post_id = '' ) {
-		if ( ! $post_id || PostType::VEHICLE !== get_post_type( $post_id ) ) {
+		if ( ! $post_id || Vehicle\PostType::VEHICLE !== get_post_type( $post_id ) ) {
 			return $classes;
 		}
 
@@ -67,7 +67,7 @@ class TemplateManager {
 		$find = array();
 		$file = '';
 
-		if ( is_singular( PostType::VEHICLE ) ) {
+		if ( is_singular( Vehicle\PostType::VEHICLE ) ) {
 
 			$file   = 'single-wpcm_vehicle.php';
 			$find[] = $file;

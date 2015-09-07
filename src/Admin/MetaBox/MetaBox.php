@@ -43,7 +43,7 @@ abstract class MetaBox implements iMetaBox {
 	 */
 	public function add_meta_box() {
 		add_meta_box( 'wpcm-' . $this->id, $this->label,
-			array( $this, 'meta_box_output' ), WPCarManager\PostType::VEHICLE, $this->context, $this->priority );
+			array( $this, 'meta_box_output' ), WPCarManager\Vehicle\PostType::VEHICLE, $this->context, $this->priority );
 	}
 
 	/**
@@ -105,7 +105,7 @@ abstract class MetaBox implements iMetaBox {
 		}
 
 		// post type check
-		if ( WPCarManager\PostType::VEHICLE != $post->post_type ) {
+		if ( WPCarManager\Vehicle\PostType::VEHICLE != $post->post_type ) {
 			return false;
 		}
 

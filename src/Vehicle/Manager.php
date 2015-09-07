@@ -2,8 +2,6 @@
 
 namespace Never5\WPCarManager\Vehicle;
 
-use Never5\WPCarManager\PostType;
-
 class Manager {
 
 	/**
