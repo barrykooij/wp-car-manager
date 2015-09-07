@@ -4,32 +4,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-if ( ! function_exists( 'wpcm_output_content_wrapper' ) ) {
-	function wpcm_output_content_wrapper() {
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'global/wrapper-start' );
-	}
-}
-if ( ! function_exists( 'wpcm_output_content_wrapper_end' ) ) {
-	function wpcm_output_content_wrapper_end() {
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'global/wrapper-end' );
-	}
-}
-
 /**
  * SINGLE VEHICLE
  */
-
-if ( ! function_exists( 'wpcm_template_single_open' ) ) {
-	function wpcm_template_single_open() {
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/start' );
-	}
-}
-
-if ( ! function_exists( 'wpcm_template_single_close' ) ) {
-	function wpcm_template_single_close() {
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/end' );
-	}
-}
 
 if ( ! function_exists( 'wpcm_template_vehicle_images' ) ) {
 	function wpcm_template_vehicle_images() {
@@ -40,12 +17,6 @@ if ( ! function_exists( 'wpcm_template_vehicle_images' ) ) {
 if ( ! function_exists( 'wpcm_template_vehicle_thumbnails' ) ) {
 	function wpcm_template_vehicle_thumbnails() {
 		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/thumbnails' );
-	}
-}
-
-if ( ! function_exists( 'wpcm_template_single_title' ) ) {
-	function wpcm_template_single_title() {
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/title' );
 	}
 }
 

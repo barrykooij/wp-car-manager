@@ -12,8 +12,9 @@ class TemplateManager {
 	 * Init
 	 */
 	public function init() {
-		add_filter( 'template_include', array( $this, 'override_template' ) );
-		add_filter( 'post_class', array( $this, 'filter_post_class' ), 20, 3 );
+//		add_filter( 'template_include', array( $this, 'override_template' ) );
+//		add_filter( 'post_class', array( $this, 'filter_post_class' ), 20, 3 );
+		add_filter( 'the_content', array( $this, 'inject_singular_content' ) );
 	}
 
 	/**
@@ -32,6 +33,7 @@ class TemplateManager {
 	 */
 	public function get_theme() {
 		$theme = wp_get_theme();
+
 		return ( ( null != $theme->parent ) ? $theme->parent : $theme->template );
 	}
 
@@ -57,33 +59,52 @@ class TemplateManager {
 	}
 
 	/**
-	 * Override WordPress template. Hooked into template_include
+	 * Inject vehicle singular content into singular page
 	 *
-	 * @param string $template
+	 * @param string $content
 	 *
 	 * @return string
 	 */
-	public function override_template( $template ) {
-		$find = array();
-		$file = '';
+	public function inject_singular_content( $content ) {
+		global $post;
 
-		if ( is_singular( Vehicle\PostType::VEHICLE ) ) {
-
-			$file   = 'single-wpcm_vehicle.php';
-			$find[] = $file;
-			$find[] = $this->get_theme_path() . $file;
-
-			$GLOBALS['vehicle'] = wp_car_manager()->service( 'vehicle_factory' )->make( get_the_ID() );
+		// check if we need to inject
+		if ( ! is_singular( Vehicle\PostType::VEHICLE ) || ! in_the_loop() ) {
+			return $content;
 		}
 
-		if ( $file ) {
-			$template = locate_template( array_unique( $find ) );
-			if ( ! $template ) {
-				$template = wp_car_manager()->service( 'file' )->plugin_path() . '/templates/' . $file;
-			}
+		// remove filter to prevent crazy loops
+		remove_filter( 'the_content', array( $this, 'inject_singular_content' ) );
+
+		$GLOBALS['vehicle'] = wp_car_manager()->service( 'vehicle_factory' )->make( $post->ID );
+
+
+		// check if vehicle actually the post type that's being looped
+		if ( Vehicle\PostType::VEHICLE === $post->post_type ) {
+			ob_start();
+
+			/**
+			 * wpcm_before_main_content hook
+			 */
+			do_action( 'wpcm_before_single_content' );
+
+			// load content-single-vehicle
+			$this->get_template_part( 'content', 'single-vehicle' );
+
+			/**
+			 * wpcm_after_main_content hook
+			 */
+			do_action( 'wpcm_after_single_content' );
+
+			// set new content
+			$content = ob_get_clean();
 		}
 
-		return $template;
+		// add filter back in place
+		add_filter( 'the_content', array( $this, 'inject_singular_content' ) );
+
+		// return content
+		return apply_filters( 'wpcm_content_single_vehicle', $content, $post );
 	}
 
 	/**
@@ -92,6 +113,7 @@ class TemplateManager {
 	 * @param string $slug
 	 * @param string $name
 	 * @param array $args
+	 * @param string $custom_dir
 	 *
 	 * @parem string $custom_dir
 	 *

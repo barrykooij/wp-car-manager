@@ -4,27 +4,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-global $vehicle;
-
 /**
  * wpcm_before_single_vehicle hook
  */
 do_action( 'wpcm_before_single_vehicle' );
 ?>
-
-<?php do_action( 'wpcm_open_single_vehicle' ); ?>
-
-	<header class="entry-header">
-		<?php
-		/**
-		 * wpcm_vehicle_header hook
-		 *
-		 * @hooked wpcm_template_single_title - 5
-		 */
-		do_action( 'wpcm_vehicle_header' );
-		?>
-	</header>
-
 	<div class="wpcm-vehicle-head">
 		<?php
 		/**
@@ -35,7 +19,7 @@ do_action( 'wpcm_before_single_vehicle' );
 		do_action( 'wpcm_before_vehicle_summary' );
 		?>
 
-		<div class="wpcm-summary entry-summary">
+		<div class="wpcm-summary">
 			<?php
 			/**
 			 * wpcm_vehicle_summary hook
@@ -70,7 +54,5 @@ do_action( 'wpcm_before_single_vehicle' );
 	</div>
 
 	<meta itemprop="url" content="<?php the_permalink(); ?>"/>
-
-<?php do_action( 'wpcm_close_single_vehicle' ); ?>
 
 <?php do_action( 'wpcm_after_single_vehicle' ); ?>

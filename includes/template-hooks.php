@@ -5,36 +5,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 } // Exit if accessed directly
 
 /**
- * Content Wrappers
- *
- * @see wpcm_output_content_wrapper()
- * @see wpcm_output_content_wrapper_end()
- */
-add_action( 'wpcm_before_main_content', 'wpcm_output_content_wrapper', 10 );
-add_action( 'wpcm_after_main_content', 'wpcm_output_content_wrapper_end', 10 );
-
-/**
- * Vehicle Single Open
- *
- * @see wpcm_template_single_open()
- */
-add_action( 'wpcm_open_single_vehicle', 'wpcm_template_single_open', 5 );
-
-/**
- * Vehicle Single Close
- *
- * @see wpcm_template_single_close()
- */
-add_action( 'wpcm_close_single_vehicle', 'wpcm_template_single_close', 5 );
-
-/**
- * Vehicle Header Box
- *
- * @see wpcm_template_single_title()
- */
-add_action( 'wpcm_vehicle_header', 'wpcm_template_single_title', 5 );
-
-/**
  * Before Summary Box
  *
  * @see wpcm_show_vehicle_images()
