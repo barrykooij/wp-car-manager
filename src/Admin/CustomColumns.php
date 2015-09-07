@@ -30,9 +30,7 @@ class CustomColumns {
 		if ( ! is_array( $columns ) ) {
 			$columns = array();
 		}
-
-		error_log( print_r( $columns, 1 ), 0 );
-
+		
 		// temp title
 		$title = $columns['title'];
 
@@ -51,14 +49,6 @@ class CustomColumns {
 		$columns['price']   = __( 'Price', 'wp-car-manager' );
 		$columns['mileage'] = __( 'Mileage', 'wp-car-manager' );
 		$columns['frdate']  = __( 'FR Date', 'wp-car-manager' );
-
-//
-//		$columns['api_product']  = __( 'API Product ID', 'license-wp' );
-//		$columns['version']      = __( 'Version', 'license-wp' );
-//		$columns['last_updated'] = __( 'Last updated', 'license-wp' );
-//		$columns['package']      = __( 'Package name', 'license-wp' );
-//
-//		return $columns;
 
 		return $columns;
 	}
