@@ -57,11 +57,15 @@ Coming soon
 
 = 1.1.0: September x, 2015 =
 * Feature: Added sort possibility to car listing shortcode
+* Feature: Added various custom columns to car admin manage overview screen
 * Feature: Added placeholder images
 * Feature: Added Genesis theme wrapper support
 * Feature: Added show_filters attribute to [wpcm_cars] shortcode
 * Feature: Added placeholder to gallery meta box in edit vehicle
 * Feature: Added date format option in settings
+* Feature: Added tooltips to edit make & model pages
+* Feature: Cars listings page is now created upon installation
+* Tweak: Removed listings page setting because we now detect pages that contain listings shortcode
 * Tweak: Moved contact template hook into wpcm_vehicle_summary
 * Tweak: Added wpcm-vehicle-head wrapper around wpcm_vehicle_summary actions
 * Tweak: Fixed conflict with Contact Form 7
