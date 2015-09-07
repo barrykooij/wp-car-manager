@@ -104,4 +104,26 @@ class Data {
 		);
 	}
 
+	/**
+	 * Remove fields that have no value data
+	 *
+	 * @param array $fields
+	 * @param Vehicle $vehicle
+	 *
+	 * @return array
+	 */
+	public static function remove_empty_fields( $fields, $vehicle ) {
+
+		foreach ( $fields as $field_key => $field ) {
+			$data_method = 'get_' . $field;
+			if ( method_exists( $vehicle, $data_method ) ) {
+				$data_val = $vehicle->$data_method();
+				if ( '' == $data_val ) {
+					unset( $fields[ $field_key ] );
+				}
+			}
+		}
+
+		return $fields;
+	}
 }
