@@ -138,6 +138,10 @@ final class Plugin extends Pimple\Container {
 			// admin assets
 			add_action( 'admin_enqueue_scripts', array( 'Never5\\WPCarManager\\Assets', 'enqueue_backend' ) );
 
+			// admin custom columns
+			$custom_columns = new Admin\CustomColumns();
+			$custom_columns->setup();
+
 			// load extensions
 			add_action( 'admin_init', function () {
 				// Load the registered extensions

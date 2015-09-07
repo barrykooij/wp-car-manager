@@ -6,7 +6,7 @@
   #menu-posts-wpcm_vehicle {
     .wp-menu-image:before {
       font-family: "wp-car-manager" !important;
-      content: "\e800" ;
+      content: "\e800";
       font-size: 1.1em !important;
       line-height: 1.3em;
     }
@@ -92,8 +92,6 @@
     }
   }
 
-
-
 }
 
 #wpcm-car-gallery {
@@ -112,7 +110,7 @@
 
         @include clearfix();
 
-        &>li {
+        & > li {
           width: 80px;
           float: left;
           cursor: move;
@@ -154,7 +152,6 @@
 
                 position: relative;
 
-
               }
 
               a.delete {
@@ -162,11 +159,11 @@
                 font-size: 1.4em;
 
                 &:before {
-                  @include icon( "\e802" );
+                  @include icon("\e802");
                   color: white;
                   background-color: #000;
-                  border-radius:100%;
-                  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+                  border-radius: 100%;
+                  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
                   font-size: 12px;
                   line-height: 18px;
                 }
@@ -189,7 +186,7 @@
           position: relative;
 
           &:after {
-            @include icon( "\e806" );
+            @include icon("\e806");
             font-size: 2.618em;
             line-height: 72px;
             color: #ddd;
@@ -291,4 +288,38 @@
     }
   }
 
+}
+
+.post-type-wpcm_vehicle {
+  .wp-list-table {
+    .column-image {
+      width: 45px;
+    }
+
+    .column-make, .column-model {
+      width: 15%;
+    }
+
+    .column-price, .column-mileage, .column-frdate {
+      width: 10%;
+    }
+
+    .wpcm-admin-image-header {
+      display: block;
+      position: relative;
+      width: 40px;
+      height: 19px;
+      &:after {
+        @include icon("\e806");
+        font-size: 1.2em;
+        color: #ddd;
+        line-height: 1.3em;
+      }
+    }
+    .wpcm-admin-image {
+      max-width: 40px;
+      max-height: 40px;
+      border: 1px solid #eee;
+    }
+  }
 }
