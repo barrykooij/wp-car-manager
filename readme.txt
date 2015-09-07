@@ -65,6 +65,7 @@ Coming soon
 * Feature: Added date format option in settings
 * Feature: Added tooltips to edit make & model pages
 * Feature: Cars listings page is now created upon installation
+* Feature: Change overriding complete singular template to only replacing content via the_content
 * Tweak: Removed listings page setting because we now detect pages that contain listings shortcode
 * Tweak: Moved contact template hook into wpcm_vehicle_summary
 * Tweak: Added wpcm-vehicle-head wrapper around wpcm_vehicle_summary actions
