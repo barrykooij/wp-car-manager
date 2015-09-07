@@ -36,3 +36,4 @@ Improved select experience by [Select2](https://github.com/select2/select2).
 Image gallery created with [prettyPhoto](http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/).
 PHP version compatibility checks done by [WPupdatePHP](https://github.com/WPupdatePHP/wp-update-php).
 Steering Wheel icon made by [Freepik](http://www.flaticon.com/authors/freepik).
+Tooltips are done with [TippedJS](http://www.tippedjs.com/).

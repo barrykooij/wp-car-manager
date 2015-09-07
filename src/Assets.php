@@ -108,6 +108,22 @@ abstract class Assets {
 			);
 		}
 
+		// edit makes and models
+		if ( isset( $_GET['page'] ) && 'wpcm-makes' === $_GET['page'] ) {
+			wp_enqueue_script(
+				'wpcm_tipped',
+				wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/lib/tipped.js' ),
+				array( 'jquery' ),
+				wp_car_manager()->get_version()
+			);
+
+			wp_enqueue_script(
+				'wpcm_edit_make_model',
+				wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/edit-make-model' . ( ( ! SCRIPT_DEBUG ) ? '.min' : '' ) . '.js' ),
+				array( 'jquery' ),
+				wp_car_manager()->get_version()
+			);
+		}
 
 		// admin CSS
 		wp_enqueue_style(

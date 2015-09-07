@@ -45,8 +45,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<td class="slug column-slug"><?php echo $item['slug']; ?></td>
 								<td class="posts column-configure">
 									<a href="<?php echo add_query_arg( array( 'make' => $item['id'] ), admin_url( 'edit.php?post_type=wpcm_vehicle&page=wpcm-makes' ) ); ?>"
-									   class="dashicons dashicons-admin-generic wpcm-btn-configure"
-									   title="Configure Models"></a>
+									   class="dashicons dashicons-admin-generic wpcm-btn-configure wpcm-has-tip"
+									   title="<?php _e( 'Configure Models', 'wp-car-manager' ); ?>"></a>
 								</td>
 							</tr>
 						<?php endforeach; ?>
