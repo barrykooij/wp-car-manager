@@ -30,7 +30,7 @@ class CustomColumns {
 		if ( ! is_array( $columns ) ) {
 			$columns = array();
 		}
-		
+
 		// temp title
 		$title = $columns['title'];
 

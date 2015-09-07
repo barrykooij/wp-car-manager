@@ -3,6 +3,8 @@ namespace Never5\WPCarManager;
 
 abstract class Assets {
 
+	private static $shortcode_assets_enqueued = false;
+
 	/**
 	 * Enqueue frontend assets
 	 */
@@ -32,35 +34,51 @@ abstract class Assets {
 		}
 
 		// load listings assets on listings page
+		/*
 		if ( get_the_ID() == wp_car_manager()->service( 'settings' )->get_option( 'listings_page' ) ) {
+		}
+		*/
 
-			// enqueue select2 script
-			wp_enqueue_script(
-				'wpcm_js_select2',
-				wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/lib/select2.min.js' ),
-				array( 'jquery' ),
-				wp_car_manager()->get_version()
-			);
+	}
 
-			// enqueue listings script
-			wp_enqueue_script(
-				'wpcm_js_listings',
-				wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/listings' . ( ( ! SCRIPT_DEBUG ) ? '.min' : '' ) . '.js' ),
-				array( 'jquery', 'wpcm_js_select2' ),
-				wp_car_manager()->get_version()
-			);
+	/**
+	 * Enqueue shortcode related Js
+	 */
+	public static function enqueue_shortcode_js() {
 
-			wp_localize_script( 'wpcm_js_listings', 'wpcm', array(
-				'ajax_url'              => trailingslashit( get_site_url( '' ) ),
-				'ajax_endpoint'         => Ajax\Manager::ENDPOINT,
-				'lbl_no_models_found'   => __( 'No models found', 'wp-car-manager' ),
-				'lbl_select_make_first' => __( 'Select make first', 'wp-car-manager' )
-			) );
-
-			// do action wpcm_assets_frontend_vehicle_single
-			do_action( 'wpcm_assets_frontend_vehicle_listings_page' );
+		if ( true === self::$shortcode_assets_enqueued ) {
+			return;
 		}
 
+		self::$shortcode_assets_enqueued = true;
+
+		// enqueue select2 script
+		wp_enqueue_script(
+			'wpcm_js_select2',
+			wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/lib/select2.min.js' ),
+			array( 'jquery' ),
+			wp_car_manager()->get_version(),
+			true
+		);
+
+		// enqueue listings script
+		wp_enqueue_script(
+			'wpcm_js_listings',
+			wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/listings' . ( ( ! SCRIPT_DEBUG ) ? '.min' : '' ) . '.js' ),
+			array( 'jquery', 'wpcm_js_select2' ),
+			wp_car_manager()->get_version(),
+			true
+		);
+
+		wp_localize_script( 'wpcm_js_listings', 'wpcm', array(
+			'ajax_url'              => trailingslashit( get_site_url( '' ) ),
+			'ajax_endpoint'         => Ajax\Manager::ENDPOINT,
+			'lbl_no_models_found'   => __( 'No models found', 'wp-car-manager' ),
+			'lbl_select_make_first' => __( 'Select make first', 'wp-car-manager' )
+		) );
+
+		// do action wpcm_assets_frontend_vehicle_single
+		do_action( 'wpcm_assets_frontend_vehicle_listings_page' );
 
 	}
 

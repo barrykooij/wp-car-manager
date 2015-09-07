@@ -38,13 +38,13 @@ class Settings {
 				'general' => array(
 					__( 'General', 'wp-car-manager' ),
 					array(
-						array(
-							'name'    => 'listings_page',
-							'label'   => __( 'Listings Page', 'wp-car-manager' ),
-							'desc'    => __( 'Choose the page that will display your listings. Note that this page will need to have the <code>[wpcm_cars]</code> shortcode to actually display listings.', 'wp-car-manager' ),
-							'type'    => 'select',
-							'options' => Helper\Pages::get_pages()
-						),
+//						array(
+//							'name'    => 'listings_page',
+//							'label'   => __( 'Listings Page', 'wp-car-manager' ),
+//							'desc'    => __( 'Choose the page that will display your listings. Note that this page will need to have the <code>[wpcm_cars]</code> shortcode to actually display listings.', 'wp-car-manager' ),
+//							'type'    => 'select',
+//							'options' => Helper\Pages::get_pages()
+//						),
 						array(
 							'name'    => 'currency',
 							'label'   => __( 'Currency', 'wp-car-manager' ),
