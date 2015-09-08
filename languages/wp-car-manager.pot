@@ -2,9 +2,9 @@
 # This file is distributed under the GPL v2.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Car Manager 1.0.0\n"
+"Project-Id-Version: WP Car Manager 1.1.0-dev\n"
 "Report-Msgid-Bugs-To: https://github.com/barrykooij/wp-car-manager/issues\n"
-"POT-Creation-Date: 2015-08-09 19:18:51+00:00\n"
+"POT-Creation-Date: 2015-09-08 07:57:53+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -68,6 +68,10 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
+#: assets/views/page/makes.php:49
+msgid "Configure Models"
+msgstr ""
+
 #: assets/views/page/makes.php:71 assets/views/page/makes.php:94
 #: src/Taxonomies.php:63
 msgid "Add New Make"
@@ -89,6 +93,36 @@ msgstr ""
 msgid "Save Changes"
 msgstr ""
 
+#: src/Admin/CustomColumns.php:47 src/Vehicle/Data.php:26
+#: templates/listings/filters/make.php:2 templates/vehicle-data/data-make.php:9
+msgid "Make"
+msgstr ""
+
+#: src/Admin/CustomColumns.php:48 src/Vehicle/Data.php:31
+#: templates/listings/filters/model.php:2
+#: templates/vehicle-data/data-model.php:9
+msgid "Model"
+msgstr ""
+
+#: src/Admin/CustomColumns.php:49 src/Vehicle/Data.php:41
+#: templates/vehicle-data/data-price.php:9
+msgid "Price"
+msgstr ""
+
+#: src/Admin/CustomColumns.php:50 src/Vehicle/Data.php:46
+#: templates/vehicle-data/data-mileage.php:9
+msgid "Mileage"
+msgstr ""
+
+#: src/Admin/CustomColumns.php:51
+msgid "FR Date"
+msgstr ""
+
+#: src/Admin/CustomColumns.php:89 src/Ajax/GetVehicleResults.php:63
+#: templates/single-vehicle/image.php:36
+msgid "Placeholder"
+msgstr ""
+
 #: src/Admin/MetaBox/CarData.php:14
 msgid "Car Data"
 msgstr ""
@@ -101,25 +135,17 @@ msgstr ""
 msgid "Short Description"
 msgstr ""
 
-#: src/Admin/Page/Extensions.php:11
+#: src/Admin/Page/Extensions.php:13 src/Admin/Page/Extensions.php:47
 msgid "Extensions"
 msgstr ""
 
-#: src/Admin/Page/Extensions.php:11
-msgid "<span style=\"color:#428dcb;font-weight:bold;\">Extensions</span>"
-msgstr ""
-
-#: src/Admin/Page/Extensions.php:46
-msgid "WP Car Manager Extensions"
-msgstr ""
-
-#: src/Admin/Page/Extensions.php:79
+#: src/Admin/Page/Extensions.php:80
 msgid ""
 "Extend WP Car Manager with its powerful free and paid extensions. %sClick "
 "here to browse all extensions%s"
 msgstr ""
 
-#: src/Admin/Page/Extensions.php:164
+#: src/Admin/Page/Extensions.php:167
 msgid "Couldn't load extensions, please try again later."
 msgstr ""
 
@@ -139,12 +165,16 @@ msgstr ""
 msgid "Makes"
 msgstr ""
 
-#: src/Assets.php:52
+#: src/Assets.php:76
 msgid "No models found"
 msgstr ""
 
-#: src/Assets.php:53 templates/listings/filters/model.php:4
+#: src/Assets.php:77 templates/listings/filters/model.php:4
 msgid "Select make first"
+msgstr ""
+
+#: src/Extension/Extension.php:152
+msgid "License successfully activated."
 msgstr ""
 
 #: src/Helper/Currency.php:177
@@ -339,79 +369,16 @@ msgstr ""
 msgid "Select Page"
 msgstr ""
 
+#: src/Install.php:18 src/Install.php:27 src/Vehicle/PostType.php:30
+msgid "Cars"
+msgstr ""
+
 #: src/MakeModelManager.php:74 templates/listings/filters/make.php:3
 msgid "Select Make"
 msgstr ""
 
-#: src/PostType.php:14 src/PostType.php:15
-msgid "Car Manager"
-msgstr ""
-
-#: src/PostType.php:16
-msgid "Parent Car:"
-msgstr ""
-
-#: src/PostType.php:17
-msgid "All Cars"
-msgstr ""
-
-#: src/PostType.php:18
-msgid "Add New Car"
-msgstr ""
-
-#: src/PostType.php:19
-msgid "Add New"
-msgstr ""
-
-#: src/PostType.php:20
-msgid "New Car"
-msgstr ""
-
-#: src/PostType.php:21
-msgid "Edit Car"
-msgstr ""
-
-#: src/PostType.php:22
-msgid "Update Car"
-msgstr ""
-
-#: src/PostType.php:23
-msgid "View Car"
-msgstr ""
-
-#: src/PostType.php:24
-msgid "Search Car"
-msgstr ""
-
-#: src/PostType.php:25
-msgid "No cars found"
-msgstr ""
-
-#: src/PostType.php:26
-msgid "Not found in Trash"
-msgstr ""
-
-#: src/PostType.php:29
-msgid "vehicle"
-msgstr ""
-
-#: src/PostType.php:30
-msgid "Cars"
-msgstr ""
-
 #: src/Settings.php:39
 msgid "General"
-msgstr ""
-
-#: src/Settings.php:43
-msgid "Listings Page"
-msgstr ""
-
-#: src/Settings.php:44
-msgid ""
-"Choose the page that will display your listings. Note that this page will "
-"need to have the <code>[wpcm_cars]</code> shortcode to actually display "
-"listings."
 msgstr ""
 
 #: src/Settings.php:50
@@ -478,23 +445,31 @@ msgstr ""
 msgid "Kilometers"
 msgstr ""
 
-#: src/Settings.php:92
-msgid "Contact"
+#: src/Settings.php:90
+msgid "Date Format"
 msgstr ""
 
-#: src/Settings.php:96
-msgid "Contact Email Address"
+#: src/Settings.php:91
+msgid "The way dates are formatted."
 msgstr ""
 
 #: src/Settings.php:97
-msgid "The email address people can send an email to."
+msgid "Contact"
 msgstr ""
 
 #: src/Settings.php:101
-msgid "Contact Phone Number"
+msgid "Contact Email Address"
 msgstr ""
 
 #: src/Settings.php:102
+msgid "The email address people can send an email to."
+msgstr ""
+
+#: src/Settings.php:106
+msgid "Contact Phone Number"
+msgstr ""
+
+#: src/Settings.php:107
 msgid "The phone number people can call to."
 msgstr ""
 
@@ -606,26 +581,8 @@ msgstr ""
 msgid "Condition"
 msgstr ""
 
-#: src/Vehicle/Data.php:26 templates/listings/filters/make.php:2
-#: templates/vehicle-data/data-make.php:9
-msgid "Make"
-msgstr ""
-
-#: src/Vehicle/Data.php:31 templates/listings/filters/model.php:2
-#: templates/vehicle-data/data-model.php:9
-msgid "Model"
-msgstr ""
-
 #: src/Vehicle/Data.php:36
 msgid "First Registration Date"
-msgstr ""
-
-#: src/Vehicle/Data.php:41 templates/vehicle-data/data-price.php:9
-msgid "Price"
-msgstr ""
-
-#: src/Vehicle/Data.php:46 templates/vehicle-data/data-mileage.php:9
-msgid "Mileage"
 msgstr ""
 
 #: src/Vehicle/Data.php:51
@@ -668,6 +625,58 @@ msgstr ""
 msgid "Manual"
 msgstr ""
 
+#: src/Vehicle/PostType.php:14 src/Vehicle/PostType.php:15
+msgid "Car Manager"
+msgstr ""
+
+#: src/Vehicle/PostType.php:16
+msgid "Parent Car:"
+msgstr ""
+
+#: src/Vehicle/PostType.php:17
+msgid "All Cars"
+msgstr ""
+
+#: src/Vehicle/PostType.php:18
+msgid "Add New Car"
+msgstr ""
+
+#: src/Vehicle/PostType.php:19
+msgid "Add New"
+msgstr ""
+
+#: src/Vehicle/PostType.php:20
+msgid "New Car"
+msgstr ""
+
+#: src/Vehicle/PostType.php:21
+msgid "Edit Car"
+msgstr ""
+
+#: src/Vehicle/PostType.php:22
+msgid "Update Car"
+msgstr ""
+
+#: src/Vehicle/PostType.php:23
+msgid "View Car"
+msgstr ""
+
+#: src/Vehicle/PostType.php:24
+msgid "Search Car"
+msgstr ""
+
+#: src/Vehicle/PostType.php:25
+msgid "No cars found"
+msgstr ""
+
+#: src/Vehicle/PostType.php:26
+msgid "Not found in Trash"
+msgstr ""
+
+#: src/Vehicle/PostType.php:29
+msgid "vehicle"
+msgstr ""
+
 #: templates/listings/filters/button.php:2
 msgid "Show Results"
 msgstr ""
@@ -697,11 +706,39 @@ msgstr ""
 msgid "We couldn't find any cars."
 msgstr ""
 
-#: templates/single-vehicle/contact.php:12
-msgid "Email Us"
+#: templates/listings/sort.php:3
+msgid "Sort by:"
+msgstr ""
+
+#: templates/listings/sort.php:8
+msgid "Price (low-high)"
+msgstr ""
+
+#: templates/listings/sort.php:9
+msgid "Price (high-low)"
+msgstr ""
+
+#: templates/listings/sort.php:10
+msgid "Year (old-new)"
+msgstr ""
+
+#: templates/listings/sort.php:11
+msgid "Year (new-old)"
+msgstr ""
+
+#: templates/listings/sort.php:12
+msgid "Mileage (low-high)"
+msgstr ""
+
+#: templates/listings/sort.php:13
+msgid "Mileage (high-low)"
 msgstr ""
 
 #: templates/single-vehicle/contact.php:17
+msgid "Email Us"
+msgstr ""
+
+#: templates/single-vehicle/contact.php:25
 msgid "Call Us"
 msgstr ""
 
@@ -715,10 +752,6 @@ msgstr ""
 
 #: templates/single-vehicle/features.php:13
 msgid "Vehicle Features"
-msgstr ""
-
-#: templates/single-vehicle/image.php:37
-msgid "Placeholder"
 msgstr ""
 
 #: templates/vehicle-data/data-frdate.php:9
@@ -749,16 +782,6 @@ msgstr ""
 msgid "http://www.never5.com"
 msgstr ""
 
-#: src/PostType.php:12
-msgctxt "Post Type General Name"
-msgid "Cars"
-msgstr ""
-
-#: src/PostType.php:13
-msgctxt "Post Type Singular Name"
-msgid "Car"
-msgstr ""
-
 #: src/Taxonomies.php:15
 msgctxt "Taxonomy General Name"
 msgid "Features"
@@ -777,4 +800,29 @@ msgstr ""
 #: src/Taxonomies.php:57
 msgctxt "Taxonomy Singular Name"
 msgid "Make"
+msgstr ""
+
+#: src/Taxonomies.php:34
+msgctxt "taxonomy type slug"
+msgid "feature"
+msgstr ""
+
+#: src/Taxonomies.php:75
+msgctxt "taxonomy type slug"
+msgid "make"
+msgstr ""
+
+#: src/Vehicle/PostType.php:12
+msgctxt "Post Type General Name"
+msgid "Cars"
+msgstr ""
+
+#: src/Vehicle/PostType.php:13
+msgctxt "Post Type Singular Name"
+msgid "Car"
+msgstr ""
+
+#: src/Vehicle/PostType.php:53
+msgctxt "post type slug"
+msgid "vehicle"
 msgstr ""

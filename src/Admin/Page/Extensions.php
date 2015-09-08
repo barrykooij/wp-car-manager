@@ -10,7 +10,7 @@ class Extensions {
 	 * Init page
 	 */
 	public function init() {
-		add_submenu_page( 'edit.php?post_type=wpcm_vehicle', __( 'Extensions', 'wp-car-manager' ), __( '<span style="color:#00d198;font-weight:bold;">Extensions</span>', 'wp-car-manager' ), 'manage_options', 'wpcm-extensions', array(
+		add_submenu_page( 'edit.php?post_type=wpcm_vehicle', __( 'Extensions', 'wp-car-manager' ), '<span style="color:#00d198;font-weight:bold;">' . __( 'Extensions', 'wp-car-manager' ) . '</span>', 'manage_options', 'wpcm - extensions', array(
 			$this,
 			'page_cb'
 		) );
@@ -44,7 +44,7 @@ class Extensions {
 
 		?>
 		<div class="wrap wpcm-extensions-wrap">
-			<h2><?php _e( 'WP Car Manager Extensions', 'wp-car-manager' ); ?> <a
+			<h2>WP Car Manager <?php _e( 'Extensions', 'wp-car-manager' ); ?> <a
 					href="<?php echo add_query_arg( 'wpcm-force-recheck', '1', admin_url( 'edit.php?post_type=wpcm_vehicle&page=wpcm-extensions' ) ); ?>"
 					class="button wpcm-reload-button">Reload Extensions</a></h2>
 			<?php

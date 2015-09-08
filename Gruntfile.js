@@ -90,7 +90,7 @@ module.exports = function ( grunt ) {
             },
             frontend: {
                 options: {
-                    potFilename: 'related-posts-for-wp.pot',
+                    potFilename: 'wp-car-manager.pot',
                     exclude: [
                         'node_modules/.*',
                         'tests/.*',
