@@ -46,14 +46,14 @@ class Cars extends Shortcode {
 		) ), $atts );
 
 		// make sure show_filters is a bool
-		if ( 'false' == $atts['show_filters'] ) {
+		if ( 'false' === $atts['show_filters'] ) {
 			$atts['show_filters'] = false;
 		} else {
 			$atts['show_filters'] = true;
 		}
 
 		// make sure show_sort is a bool
-		if ( 'false' == $atts['show_sort'] ) {
+		if ( 'false' === $atts['show_sort'] ) {
 			$atts['show_sort'] = false;
 		} else {
 			$atts['show_sort'] = true;
