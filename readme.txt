@@ -59,7 +59,6 @@ Coming soon
 * Feature: Added sort possibility to car listing shortcode
 * Feature: Added various custom columns to car admin manage overview screen
 * Feature: Added placeholder images
-* Feature: Added Genesis theme wrapper support
 * Feature: Added show_filters attribute to [wpcm_cars] shortcode
 * Feature: Added placeholder to gallery meta box in edit vehicle
 * Feature: Added date format option in settings
