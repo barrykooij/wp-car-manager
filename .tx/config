@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[wp-car-manager.wp-car-managerpot]
+file_filter = languages/wp-car-manager-<lang>.po
+source_file = languages/wp-car-manager.pot
+source_lang = en_US
+type = PO
