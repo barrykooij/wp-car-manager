@@ -50,6 +50,9 @@ This plugin requires a minimum of PHP 5.3.
 
 [Please visit our Knowledge Base for more documentation](https://www.wpcarmanager.com/kb/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=faq)
 
+= How do I list the vehicles on my website? =
+Upon installation the plugin should have created a page called 'Cars' (could be translated to your websites language) that contains our listing shortcode. You can read more on how to list your vehicles here: (https://www.wpcarmanager.com/kb/listings-page/)[https://www.wpcarmanager.com/kb/listings-page/].
+
 == Screenshots ==
 Coming soon
 
