@@ -1,181 +1,186 @@
 # Copyright (C) 2015 Never5
 # This file is distributed under the GPL v2.
+# Translators:
+# Barry Kooij <mail@barrykooij.nl>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Car Manager 1.1.0-dev\n"
+"Project-Id-Version: WP Car Manager\n"
 "Report-Msgid-Bugs-To: https://github.com/barrykooij/wp-car-manager/issues\n"
-"POT-Creation-Date: 2015-09-08 08:54:43+00:00\n"
+"POT-Creation-Date: 2015-09-08 07:57:53+00:00\n"
+"PO-Revision-Date: 2015-09-08 08:42+0000\n"
+"Last-Translator: Barry Kooij <mail@barrykooij.nl>\n"
+"Language-Team: Dutch (Netherlands) (http://www.transifex.com/barrykooijplugins/wp-car-manager/language/nl_NL/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"Language: nl_NL\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: grunt-wp-i18n 0.4.9\n"
 
 #: assets/views/meta-box/gallery.php:15 assets/views/meta-box/gallery.php:30
 msgid "Delete image"
-msgstr ""
+msgstr "Verwijder afbeelding"
 
 #: assets/views/meta-box/gallery.php:15 assets/views/meta-box/gallery.php:31
 msgid "Delete"
-msgstr ""
+msgstr "Verwijderen"
 
 #: assets/views/meta-box/gallery.php:28
 msgid "Add Images to Gallery"
-msgstr ""
+msgstr "Voeg afbeeldingen toe aan gallerij"
 
 #: assets/views/meta-box/gallery.php:29
 msgid "Add to gallery"
-msgstr ""
+msgstr "Voeg toe aan galerij"
 
 #: assets/views/meta-box/gallery.php:31
 msgid "Add gallery images"
-msgstr ""
+msgstr "Voeg galerij afbeeldingen toe"
 
 #: assets/views/meta-box/input/select-model.php:4
 #: templates/listings/filters/model.php:3
 msgid "Select Model"
-msgstr ""
+msgstr "Selecteer Model"
 
 #: assets/views/page/edit-make-model.php:16 assets/views/page/makes.php:16
 #: assets/views/page/makes.php:59 assets/views/page/makes.php:81
 #: assets/views/page/models.php:16 assets/views/page/models.php:59
 #: assets/views/page/models.php:82
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 #: assets/views/page/edit-make-model.php:19 assets/views/page/makes.php:84
 #: assets/views/page/models.php:85
 msgid "The name is how it appears on your site."
-msgstr ""
+msgstr "De naam zoals deze getoond wordt op je website"
 
 #: assets/views/page/edit-make-model.php:23 assets/views/page/makes.php:18
 #: assets/views/page/makes.php:60 assets/views/page/makes.php:87
 #: assets/views/page/models.php:18 assets/views/page/models.php:60
 #: assets/views/page/models.php:88
 msgid "Slug"
-msgstr ""
+msgstr "Slug"
 
 #: assets/views/page/edit-make-model.php:26 assets/views/page/makes.php:90
 #: assets/views/page/models.php:91
 msgid ""
 "The “slug” is the URL-friendly version of the name. It is usually all "
 "lowercase and contains only letters, numbers, and hyphens."
-msgstr ""
+msgstr "De \"slug\" is de URL-vriendelijke versie van de naam. Deze is normaal gesproken in kleine letters en bevat enkel letters, cijfers en streepjes."
 
 #: assets/views/page/edit-make-model.php:32
 msgid "Update"
-msgstr ""
+msgstr "Update"
 
 #: assets/views/page/makes.php:49
 msgid "Configure Models"
-msgstr ""
+msgstr "Configureer Modellen"
 
 #: assets/views/page/makes.php:71 assets/views/page/makes.php:94
 #: src/Taxonomies.php:63
 msgid "Add New Make"
-msgstr ""
+msgstr "Voeg nieuwe merk toe"
 
 #: assets/views/page/models.php:70 assets/views/page/models.php:95
 msgid "Add New Model"
-msgstr ""
+msgstr "Voeg nieuwe model toe"
 
 #: assets/views/page/settings.php:7 src/Admin/Page/Settings.php:11
 msgid "Settings"
-msgstr ""
+msgstr "Instellingen"
 
 #: assets/views/page/settings.php:25
 msgid "Settings successfully saved"
-msgstr ""
+msgstr "Instellingen opgeslagen"
 
 #: assets/views/page/settings.php:95
 msgid "Save Changes"
-msgstr ""
+msgstr "Sla wijzigingen op"
 
 #: src/Admin/CustomColumns.php:47 src/Vehicle/Data.php:26
-#: templates/listings/filters/make.php:2 templates/vehicle-data/data-make.php:9
+#: templates/listings/filters/make.php:2
+#: templates/vehicle-data/data-make.php:9
 msgid "Make"
-msgstr ""
+msgstr "Merk"
 
 #: src/Admin/CustomColumns.php:48 src/Vehicle/Data.php:31
 #: templates/listings/filters/model.php:2
 #: templates/vehicle-data/data-model.php:9
 msgid "Model"
-msgstr ""
+msgstr "Mode"
 
 #: src/Admin/CustomColumns.php:49 src/Vehicle/Data.php:41
 #: templates/vehicle-data/data-price.php:9
 msgid "Price"
-msgstr ""
+msgstr "Prijs"
 
 #: src/Admin/CustomColumns.php:50 src/Vehicle/Data.php:46
 #: templates/vehicle-data/data-mileage.php:9
 msgid "Mileage"
-msgstr ""
+msgstr "Kilometerstand"
 
 #: src/Admin/CustomColumns.php:51
 msgid "FR Date"
-msgstr ""
+msgstr "Bouwjaar"
 
 #: src/Admin/CustomColumns.php:89 src/Ajax/GetVehicleResults.php:63
 #: templates/single-vehicle/image.php:36
 msgid "Placeholder"
-msgstr ""
+msgstr "Placeholder"
 
 #: src/Admin/MetaBox/CarData.php:14
 msgid "Car Data"
-msgstr ""
+msgstr "Auto Data"
 
 #: src/Admin/MetaBox/Gallery.php:14
 msgid "Car Gallery"
-msgstr ""
+msgstr "Auto Galerij"
 
 #: src/Admin/MetaBox/ShortDescription.php:13
 msgid "Short Description"
-msgstr ""
+msgstr "Korte Omschrijving"
 
 #: src/Admin/Page/Extensions.php:13 src/Admin/Page/Extensions.php:47
 msgid "Extensions"
-msgstr ""
+msgstr "Extensies"
 
 #: src/Admin/Page/Extensions.php:80
 msgid ""
 "Extend WP Car Manager with its powerful free and paid extensions. %sClick "
 "here to browse all extensions%s"
-msgstr ""
+msgstr "Breid WP Car Manager uit met haar krachtige gratis en betaalde extensies. %sKlik hier om alle extensies te zien%s"
 
 #: src/Admin/Page/Extensions.php:167
 msgid "Couldn't load extensions, please try again later."
-msgstr ""
+msgstr "Kan de extensies niet laden, probeer het later opnieuw."
 
 #: src/Admin/Page/Makes.php:13 src/Taxonomies.php:58
 msgid "Makes & Models"
-msgstr ""
+msgstr "Merken & Modellen"
 
 #: src/Admin/Page/Makes.php:141
 msgid "Edit %s"
-msgstr ""
+msgstr "Bewerk %s"
 
 #: src/Admin/Page/Makes.php:156
 msgid "%s Models"
-msgstr ""
+msgstr "%s Modellen"
 
 #: src/Admin/Page/Makes.php:163
 msgid "Makes"
-msgstr ""
+msgstr "Merken"
 
 #: src/Assets.php:76
 msgid "No models found"
-msgstr ""
+msgstr "Geen modellen gevonden"
 
 #: src/Assets.php:77 templates/listings/filters/model.php:4
 msgid "Select make first"
-msgstr ""
+msgstr "Kies eerst een merk"
 
 #: src/Extension/Extension.php:152
 msgid "License successfully activated."
-msgstr ""
+msgstr "Licentie succesvol geactiveerd."
 
 #: src/Helper/Currency.php:177
 msgid "United Arab Emirates Dirham"
@@ -367,323 +372,323 @@ msgstr ""
 
 #: src/Helper/Pages.php:16
 msgid "Select Page"
-msgstr ""
+msgstr "Selecteer Pagina"
 
 #: src/Install.php:18 src/Install.php:27 src/Vehicle/PostType.php:30
 msgid "Cars"
-msgstr ""
+msgstr "Auto's"
 
 #: src/MakeModelManager.php:74 templates/listings/filters/make.php:3
 msgid "Select Make"
-msgstr ""
+msgstr "Selecteer Merk"
 
 #: src/Settings.php:39
 msgid "General"
-msgstr ""
+msgstr "Algemeen"
 
 #: src/Settings.php:50
 msgid "Currency"
-msgstr ""
+msgstr "Valuta"
 
 #: src/Settings.php:51
 msgid "Choose the currency used in your price fields."
-msgstr ""
+msgstr "Kies de valuta waarin je auto's getoond moeten worden."
 
 #: src/Settings.php:57
 msgid "Currency Position"
-msgstr ""
+msgstr "Valuta Positie"
 
 #: src/Settings.php:59
 msgid "The position of the currency symbol."
-msgstr ""
+msgstr "The positie van het valuta symbool."
 
 #: src/Settings.php:62
 msgid "Left %s"
-msgstr ""
+msgstr "Links %s"
 
 #: src/Settings.php:63
 msgid "Right %s"
-msgstr ""
+msgstr "Rechts %s"
 
 #: src/Settings.php:64
 msgid "Left with space %s"
-msgstr ""
+msgstr "Links met spatie %s"
 
 #: src/Settings.php:65
 msgid "Right with space %s"
-msgstr ""
+msgstr "Rechts met spatie %s"
 
 #: src/Settings.php:70
 msgid "Decimal Separator"
-msgstr ""
+msgstr "Decimaal Scheidingsteken"
 
 #: src/Settings.php:71
 msgid "The decimal separator of distance unites and prices."
-msgstr ""
+msgstr "Het teken dat decimalen scheidt in afstanden en prijzen."
 
 #: src/Settings.php:75
 msgid "Thousand Separator"
-msgstr ""
+msgstr "Duizend Scheidingsteken"
 
 #: src/Settings.php:76
 msgid "The thousand separator of displayed distance unites and prices."
-msgstr ""
+msgstr "Het teken dat duizenden scheidt in afstanden en prijzen."
 
 #: src/Settings.php:80
 msgid "Distance Unit"
-msgstr ""
+msgstr "Afstandseenheid"
 
 #: src/Settings.php:81
 msgid "The unit type your distances are in (e.g. Mileage)."
-msgstr ""
+msgstr "De eenheid waarin je afstanden getoond worden (bijv. kilometerstand)."
 
 #: src/Settings.php:84
 msgid "Miles"
-msgstr ""
+msgstr "Mijlen"
 
 #: src/Settings.php:85
 msgid "Kilometers"
-msgstr ""
+msgstr "Kilometers"
 
 #: src/Settings.php:90
 msgid "Date Format"
-msgstr ""
+msgstr "Datum format"
 
 #: src/Settings.php:91
 msgid "The way dates are formatted."
-msgstr ""
+msgstr "De manier waarom datums getoond worden."
 
 #: src/Settings.php:97
 msgid "Contact"
-msgstr ""
+msgstr "Contact"
 
 #: src/Settings.php:101
 msgid "Contact Email Address"
-msgstr ""
+msgstr "Contact Email Adres"
 
 #: src/Settings.php:102
 msgid "The email address people can send an email to."
-msgstr ""
+msgstr "Het email adres waar mensen naar toe kunnen mailen."
 
 #: src/Settings.php:106
 msgid "Contact Phone Number"
-msgstr ""
+msgstr "Contact Telefoonnummer"
 
 #: src/Settings.php:107
 msgid "The phone number people can call to."
-msgstr ""
+msgstr "Het telefoonnummer dat mensen kunnen bellen."
 
 #: src/Taxonomies.php:17
 msgid "Features"
-msgstr ""
+msgstr "Kenmerken"
 
 #: src/Taxonomies.php:18
 msgid "All Features"
-msgstr ""
+msgstr "Alle Kenmerken"
 
 #: src/Taxonomies.php:19
 msgid "Parent Feature"
-msgstr ""
+msgstr "Parent Kenmerk"
 
 #: src/Taxonomies.php:20
 msgid "Parent Feature:"
-msgstr ""
+msgstr "Parent Kenmerk:"
 
 #: src/Taxonomies.php:21
 msgid "New Feature Name"
-msgstr ""
+msgstr "Nieuwe Kenmerk Naam"
 
 #: src/Taxonomies.php:22
 msgid "Add New Feature"
-msgstr ""
+msgstr "Voeg nieuwe feature toe"
 
 #: src/Taxonomies.php:23
 msgid "Edit Feature"
-msgstr ""
+msgstr "Bewerk Kenmerk"
 
 #: src/Taxonomies.php:24
 msgid "Update Feature"
-msgstr ""
+msgstr "Update Kenmerk"
 
 #: src/Taxonomies.php:25
 msgid "View Feature"
-msgstr ""
+msgstr "Bekijk Kenmerk"
 
 #: src/Taxonomies.php:26
 msgid "Separate features with commas"
-msgstr ""
+msgstr "Scheid kenmerken met comma's"
 
 #: src/Taxonomies.php:27
 msgid "Add or remove features"
-msgstr ""
+msgstr "Voeg toe of verwijder kenmerken"
 
 #: src/Taxonomies.php:28 src/Taxonomies.php:69
 msgid "Choose from the most used"
-msgstr ""
+msgstr "Kies van de meest gebruikte"
 
 #: src/Taxonomies.php:29
 msgid "Popular features"
-msgstr ""
+msgstr "Populaire kenmerken"
 
 #: src/Taxonomies.php:30
 msgid "Search features"
-msgstr ""
+msgstr "Zoek kenmerken"
 
 #: src/Taxonomies.php:31 src/Taxonomies.php:72
 msgid "Not Found"
-msgstr ""
+msgstr "Niet Gevonden"
 
 #: src/Taxonomies.php:59
 msgid "All Makes"
-msgstr ""
+msgstr "Alle Merken"
 
 #: src/Taxonomies.php:60
 msgid "Parent Make"
-msgstr ""
+msgstr "Parent Merk"
 
 #: src/Taxonomies.php:61
 msgid "Parent Make:"
-msgstr ""
+msgstr "Parent Merk:"
 
 #: src/Taxonomies.php:62
 msgid "New Make Name"
-msgstr ""
+msgstr "Nieuwe Merk Naam"
 
 #: src/Taxonomies.php:64
 msgid "Edit Make"
-msgstr ""
+msgstr "Bewerk Merk"
 
 #: src/Taxonomies.php:65
 msgid "Update Make"
-msgstr ""
+msgstr "Update Merk"
 
 #: src/Taxonomies.php:66
 msgid "View Make"
-msgstr ""
+msgstr "Bekijk Merk"
 
 #: src/Taxonomies.php:67
 msgid "Separate makes with commas"
-msgstr ""
+msgstr "Scheid merken met comma's"
 
 #: src/Taxonomies.php:68
 msgid "Add or remove makes"
-msgstr ""
+msgstr "Voeg toe of verwijder merken"
 
 #: src/Taxonomies.php:70
 msgid "Popular Makes"
-msgstr ""
+msgstr "Populaire Merken"
 
 #: src/Taxonomies.php:71
 msgid "Search Makes"
-msgstr ""
+msgstr "Zoek Merken"
 
 #: src/Vehicle/Data.php:20 templates/vehicle-data/data-condition.php:9
 msgid "Condition"
-msgstr ""
+msgstr "Staat"
 
 #: src/Vehicle/Data.php:36
 msgid "First Registration Date"
-msgstr ""
+msgstr "Bouwjaar"
 
 #: src/Vehicle/Data.php:51
 msgid "Fuel Type"
-msgstr ""
+msgstr "Brandstoftype"
 
 #: src/Vehicle/Data.php:56 templates/vehicle-data/data-color.php:9
 msgid "Color"
-msgstr ""
+msgstr "Kleur"
 
 #: src/Vehicle/Data.php:61 templates/vehicle-data/data-body_style.php:10
 msgid "Body Style"
-msgstr ""
+msgstr "Carrosserietype"
 
 #: src/Vehicle/Data.php:67 templates/vehicle-data/data-transmission.php:9
 msgid "Transmission"
-msgstr ""
+msgstr "Transmissie"
 
 #: src/Vehicle/Data.php:72 templates/vehicle-data/data-engine.php:9
 msgid "Engine"
-msgstr ""
+msgstr "Motor"
 
 #: src/Vehicle/Data.php:77 templates/vehicle-data/data-doors.php:9
 msgid "Doors"
-msgstr ""
+msgstr "Deuren"
 
 #: src/Vehicle/Data.php:90
 msgid "New"
-msgstr ""
+msgstr "Nieuw"
 
 #: src/Vehicle/Data.php:91
 msgid "Used"
-msgstr ""
+msgstr "Gebruikt"
 
 #: src/Vehicle/Data.php:102
 msgid "Automatic"
-msgstr ""
+msgstr "Automaat"
 
 #: src/Vehicle/Data.php:103
 msgid "Manual"
-msgstr ""
+msgstr "Handgeschakeld"
 
 #: src/Vehicle/PostType.php:14 src/Vehicle/PostType.php:15
 msgid "Car Manager"
-msgstr ""
+msgstr "Car Manager"
 
 #: src/Vehicle/PostType.php:16
 msgid "Parent Car:"
-msgstr ""
+msgstr "Parent Auto:"
 
 #: src/Vehicle/PostType.php:17
 msgid "All Cars"
-msgstr ""
+msgstr "Alle Auto's"
 
 #: src/Vehicle/PostType.php:18
 msgid "Add New Car"
-msgstr ""
+msgstr "Voeg Nieuwe Auto Toe"
 
 #: src/Vehicle/PostType.php:19
 msgid "Add New"
-msgstr ""
+msgstr "Voeg Nieuwe Toe"
 
 #: src/Vehicle/PostType.php:20
 msgid "New Car"
-msgstr ""
+msgstr "Nieuwe Auto"
 
 #: src/Vehicle/PostType.php:21
 msgid "Edit Car"
-msgstr ""
+msgstr "Bewerk Auto"
 
 #: src/Vehicle/PostType.php:22
 msgid "Update Car"
-msgstr ""
+msgstr "Update Auto"
 
 #: src/Vehicle/PostType.php:23
 msgid "View Car"
-msgstr ""
+msgstr "Bekijk Auto"
 
 #: src/Vehicle/PostType.php:24
 msgid "Search Car"
-msgstr ""
+msgstr "Zoek Auto"
 
 #: src/Vehicle/PostType.php:25
 msgid "No cars found"
-msgstr ""
+msgstr "Geen auto's gevonden"
 
 #: src/Vehicle/PostType.php:26
 msgid "Not found in Trash"
-msgstr ""
+msgstr "Niet gevonden in prullenbak"
 
 #: src/Vehicle/PostType.php:29
 msgid "vehicle"
-msgstr ""
+msgstr "voertuig"
 
 #: templates/listings/filters/button.php:2
 msgid "Show Results"
-msgstr ""
+msgstr "Bekijk Resultaten"
 
 #: templates/listings/filters/frdate.php:2
 msgid "Min Year"
-msgstr ""
+msgstr "Min Jaar"
 
 #: templates/listings/filters/frdate.php:3
 #: templates/listings/filters/frdate.php:4
@@ -692,137 +697,138 @@ msgstr ""
 #: templates/listings/filters/price.php:3
 #: templates/listings/filters/price.php:4
 msgid "All"
-msgstr ""
+msgstr "Alle"
 
 #: templates/listings/filters/mileage.php:2
 msgid "Max Mileage"
-msgstr ""
+msgstr "Max Kilometerstand"
 
 #: templates/listings/filters/price.php:2
 msgid "Max Price"
-msgstr ""
+msgstr "Max Prijs"
 
 #: templates/listings/no-results.php:1
 msgid "We couldn't find any cars."
-msgstr ""
+msgstr "We konden geen auto's vinden."
 
 #: templates/listings/sort.php:3
 msgid "Sort by:"
-msgstr ""
+msgstr "Sorteren op:"
 
 #: templates/listings/sort.php:8
 msgid "Price (low-high)"
-msgstr ""
+msgstr "Prijs (laag-hoog)"
 
 #: templates/listings/sort.php:9
 msgid "Price (high-low)"
-msgstr ""
+msgstr "Prijs (hoog-laag)"
 
 #: templates/listings/sort.php:10
 msgid "Year (old-new)"
-msgstr ""
+msgstr "Jaar (oud-nieuw)"
 
 #: templates/listings/sort.php:11
 msgid "Year (new-old)"
-msgstr ""
+msgstr "Jaar (nieuw-oud)"
 
 #: templates/listings/sort.php:12
 msgid "Mileage (low-high)"
-msgstr ""
+msgstr "Kilometerstand (laag-hoog)"
 
 #: templates/listings/sort.php:13
 msgid "Mileage (high-low)"
-msgstr ""
+msgstr "Kilometerstand (hoog-laag)"
 
 #: templates/single-vehicle/contact.php:17
 msgid "Email Us"
-msgstr ""
+msgstr "Email Ons"
 
 #: templates/single-vehicle/contact.php:25
 msgid "Call Us"
-msgstr ""
+msgstr "Bel Ons"
 
 #: templates/single-vehicle/content.php:9
 msgid "Vehicle Description"
-msgstr ""
+msgstr "Auto Omschrijving"
 
 #: templates/single-vehicle/data.php:9
 msgid "Vehicle Details"
-msgstr ""
+msgstr "Auto Details"
 
 #: templates/single-vehicle/features.php:13
 msgid "Vehicle Features"
-msgstr ""
+msgstr "Auto Kenmerken"
 
 #: templates/vehicle-data/data-frdate.php:9
 msgid "Year"
-msgstr ""
+msgstr "Jaar"
 
 #: templates/vehicle-data/data-fuel_type.php:9
 msgid "Fuel"
-msgstr ""
+msgstr "Brandstof"
 
 #. Plugin Name of the plugin/theme
 msgid "WP Car Manager"
-msgstr ""
+msgstr "WP Car Manager"
 
 #. Plugin URI of the plugin/theme
 msgid "http://www.wpcarmanager.com"
-msgstr ""
+msgstr "http://www.wpcarmanager.com"
 
 #. Description of the plugin/theme
-msgid "The easiest way to manage, list and sell your cars online using WordPress."
-msgstr ""
+msgid ""
+"The easiest way to manage, list and sell your cars online using WordPress."
+msgstr "De makkelijkste manier om je auto's te beheren, tonen en verkopen via WordPress."
 
 #. Author of the plugin/theme
 msgid "Never5"
-msgstr ""
+msgstr "Never5"
 
 #. Author URI of the plugin/theme
 msgid "http://www.never5.com"
-msgstr ""
+msgstr "http://www.never5.com"
 
 #: src/Taxonomies.php:15
 msgctxt "Taxonomy General Name"
 msgid "Features"
-msgstr ""
+msgstr "Kenmerken"
 
 #: src/Taxonomies.php:56
 msgctxt "Taxonomy General Name"
 msgid "Makes"
-msgstr ""
+msgstr "Merken"
 
 #: src/Taxonomies.php:16
 msgctxt "Taxonomy Singular Name"
 msgid "Feature"
-msgstr ""
+msgstr "Kenmerk"
 
 #: src/Taxonomies.php:57
 msgctxt "Taxonomy Singular Name"
 msgid "Make"
-msgstr ""
+msgstr "Merk"
 
 #: src/Taxonomies.php:34
 msgctxt "taxonomy type slug"
 msgid "feature"
-msgstr ""
+msgstr "kermerk"
 
 #: src/Taxonomies.php:75
 msgctxt "taxonomy type slug"
 msgid "make"
-msgstr ""
+msgstr "merk"
 
 #: src/Vehicle/PostType.php:12
 msgctxt "Post Type General Name"
 msgid "Cars"
-msgstr ""
+msgstr "Auto's"
 
 #: src/Vehicle/PostType.php:13
 msgctxt "Post Type Singular Name"
 msgid "Car"
-msgstr ""
+msgstr "Auto"
 
 #: src/Vehicle/PostType.php:53
 msgctxt "post type slug"
 msgid "vehicle"
-msgstr ""
+msgstr "voertuig"
