@@ -38,7 +38,8 @@ function wp_car_manager() {
 
 	static $instance;
 	if ( is_null( $instance ) ) {
-		$instance = new \Never5\WPCarManager\Plugin( '1.1.0', __FILE__ );
+		$class = 'Never5\WPCarManager\Plugin';
+		$instance = new $class( '1.1.0', __FILE__ );
 	}
 
 	return $instance;
