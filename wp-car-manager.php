@@ -31,9 +31,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// autoloader
-require 'vendor/autoload.php';
-
 /**
  * @return \Never5\WPCarManager\Plugin
  */
@@ -52,6 +49,9 @@ function __load_wp_car_manager() {
 	// fetch instance and store in global
 	$GLOBALS['wp-car-manager'] = wp_car_manager();
 }
+
+// autoloader
+require dirname( __FILE__ ) . '/vendor/autoload_52.php';
 
 // check PHP version
 $updatePhp = new WPUpdatePhp( '5.3.0' );
