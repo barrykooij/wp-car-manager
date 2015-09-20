@@ -31,9 +31,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// autoloader
-require 'vendor/autoload.php';
-
 /**
  * @return \Never5\WPCarManager\Plugin
  */
@@ -41,7 +38,8 @@ function wp_car_manager() {
 
 	static $instance;
 	if ( is_null( $instance ) ) {
-		$instance = new \Never5\WPCarManager\Plugin( '1.1.0', __FILE__ );
+		$class = 'Never5\WPCarManager\Plugin';
+		$instance = new $class( '1.1.0', __FILE__ );
 	}
 
 	return $instance;
@@ -52,6 +50,9 @@ function __load_wp_car_manager() {
 	// fetch instance and store in global
 	$GLOBALS['wp-car-manager'] = wp_car_manager();
 }
+
+// autoloader
+require dirname( __FILE__ ) . '/vendor/autoload_52.php';
 
 // check PHP version
 $updatePhp = new WPUpdatePhp( '5.3.0' );
