@@ -63,6 +63,7 @@ Coming soon
 * Tweak: Fixed fatal error on PHP 5.2, props [Danny van Kooten](https://github.com/dannyvankooten).
 * Tweak: Makes & Models page now require 'edit_posts' capabilities.
 * Tweak: Small admin Makes & Models page styling tweaks.
+* Tweak: Hide default theme image on vehicle detail page.
 
 = 1.1.0: September 8, 2015 =
 * Feature: Added sort possibility to car listing shortcode
