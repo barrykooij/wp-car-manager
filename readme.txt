@@ -61,6 +61,7 @@ Coming soon
 = 1.1.1: September 20, 2015 =
 * Tweak: Fixed CSS issue with main vehicle thumbnail.
 * Tweak: Fixed fatal error on PHP 5.2, props [Danny van Kooten](https://github.com/dannyvankooten).
+* Tweak: Makes & Models page now require 'edit_posts' capabilities.
 
 = 1.1.0: September 8, 2015 =
 * Feature: Added sort possibility to car listing shortcode
