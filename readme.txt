@@ -54,7 +54,9 @@ This plugin requires a minimum of PHP 5.3.
 Upon installation the plugin should have created a page called 'Cars' (could be translated to your websites language) that contains our listing shortcode. You can read more on how to list your vehicles here: (https://www.wpcarmanager.com/kb/listings-page/)[https://www.wpcarmanager.com/kb/listings-page/].
 
 == Screenshots ==
-Coming soon
+1. Manage your cars via your WordPress dashboard.
+2. We generate clear filterable and sortable overview pages for you.
+3. Your cars will be displayed beautifully in our vehicle detail pages.
 
 == Changelog ==
 
