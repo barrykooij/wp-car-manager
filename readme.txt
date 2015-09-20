@@ -58,6 +58,10 @@ Coming soon
 
 == Changelog ==
 
+= 1.1.1: September 20, 2015 =
+* Tweak: Fixed CSS issue with main vehicle thumbnail.
+* Tweak: Fixed fatal error on PHP 5.2, props [Danny van Kooten](https://github.com/dannyvankooten).
+
 = 1.1.0: September 8, 2015 =
 * Feature: Added sort possibility to car listing shortcode
 * Feature: Added various custom columns to car admin manage overview screen
