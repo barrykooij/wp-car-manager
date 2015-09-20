@@ -10,7 +10,7 @@ class Extensions {
 	 * Init page
 	 */
 	public function init() {
-		add_submenu_page( 'edit.php?post_type=wpcm_vehicle', __( 'Extensions', 'wp-car-manager' ), '<span style="color:#00d198;font-weight:bold;">' . __( 'Extensions', 'wp-car-manager' ) . '</span>', 'manage_options', 'wpcm-extensions', array(
+		add_submenu_page( 'edit.php?post_type=wpcm_vehicle', __( 'Extensions', 'wp-car-manager' ), '<span style="color:#00d198;font-weight:bold;">' . __( 'Extensions', 'wp-car-manager' ) . '</span>', 'edit_posts', 'wpcm-extensions', array(
 			$this,
 			'page_cb'
 		) );

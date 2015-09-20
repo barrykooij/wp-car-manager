@@ -10,7 +10,7 @@ class Makes {
 	 * Init page
 	 */
 	public function init() {
-		add_submenu_page( 'edit.php?post_type=wpcm_vehicle', __( 'Makes & Models', 'wp-car-manager' ), __( 'Makes & Models', 'wp-car-manager' ), 'manage_options', 'wpcm-makes', array(
+		add_submenu_page( 'edit.php?post_type=wpcm_vehicle', __( 'Makes & Models', 'wp-car-manager' ), __( 'Makes & Models', 'wp-car-manager' ), 'edit_posts', 'wpcm-makes', array(
 			$this,
 			'page_cb'
 		) );
