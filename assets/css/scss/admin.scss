@@ -22,7 +22,7 @@
           padding-left: 0;
         }
         #actions {
-          width: 5%;
+          width: 10%;
         }
       }
       th {
@@ -33,6 +33,9 @@
       tbody {
         th, td {
           height: 41px;
+        }
+        td.column-configure {
+          text-align: right;
         }
         .wpcm-btn-configure {
           border: 1px solid #cccccc;
