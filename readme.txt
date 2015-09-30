@@ -60,6 +60,9 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 == Changelog ==
 
+= 1.1.2: October xx, 2015 =
+* Included sort labels into correct text domain.
+
 = 1.1.1: September 20, 2015 =
 * Tweak: Fixed CSS issue with main vehicle thumbnail.
 * Tweak: Fixed fatal error on PHP 5.2, props [Danny van Kooten](https://github.com/dannyvankooten).
