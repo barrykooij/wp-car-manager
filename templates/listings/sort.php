@@ -5,12 +5,12 @@
 	<select id="wpcm-sort">
 		<?php foreach (
 			apply_filters( 'wpcm_filter_mileage', array(
-				'price-asc'    => __( 'Price (low-high)' ),
-				'price-desc'   => __( 'Price (high-low)' ),
-				'frdate-asc'   => __( 'Year (old-new)' ),
-				'frdate-desc'  => __( 'Year (new-old)' ),
-				'mileage-asc'  => __( 'Mileage (low-high)' ),
-				'mileage-desc' => __( 'Mileage (high-low)' ),
+				'price-asc'    => __( 'Price (low-high)', 'wp-car-manager' ),
+				'price-desc'   => __( 'Price (high-low)', 'wp-car-manager' ),
+				'frdate-asc'   => __( 'Year (old-new)', 'wp-car-manager' ),
+				'frdate-desc'  => __( 'Year (new-old)', 'wp-car-manager' ),
+				'mileage-asc'  => __( 'Mileage (low-high)', 'wp-car-manager' ),
+				'mileage-desc' => __( 'Mileage (high-low)', 'wp-car-manager' ),
 			) ) as $sort_key => $sort_val
 		) : ?>
 			<option
