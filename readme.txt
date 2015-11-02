@@ -1,10 +1,10 @@
 === WP Car Manager ===
 Contributors: never5, barrykooij
 Donate link: http://www.barrykooij.com/donate/
-Tags: car, vehicle, motor, sell, car listings, cars
+Tags: car, vehicle, motor, sell, car listings, cars, auto
 Requires at least: 3.8
-Tested up to: 4.3
-Stable tag: 1.1.1
+Tested up to: 4.3.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
