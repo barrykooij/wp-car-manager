@@ -60,7 +60,8 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 == Changelog ==
 
-= 1.1.2: October xx, 2015 =
+= 1.1.2: November 2, 2015 =
+* Fixed a path bug that caused translation not the load properly
 * Included sort labels into correct text domain.
 
 = 1.1.1: September 20, 2015 =
