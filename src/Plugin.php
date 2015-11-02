@@ -72,7 +72,7 @@ final class Plugin extends Pimple\Container {
 		$container = $this;
 
 		// Load plugin text domain
-		load_plugin_textdomain( 'wp-car-manager', false, $container['file']->plugin_path() . '/languages/' );
+		load_plugin_textdomain( 'wp-car-manager', false, $container['file']->dirname() . '/languages/' );
 
 		// register post type & taxonomies
 		add_action( 'init', function () {
