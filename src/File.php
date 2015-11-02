@@ -40,11 +40,22 @@ class File {
 	}
 
 	/**
+	 * Return image URL for given image
+	 *
 	 * @param $image
 	 *
 	 * @return string
 	 */
 	public function image_url( $image ) {
 		return $this->plugin_url( '/assets/images/' . $image );
+	}
+
+	/**
+	 * Return plugin dirname
+	 *
+	 * @return string
+	 */
+	public function dirname() {
+		return dirname( plugin_basename( $this->file ) );
 	}
 }
