@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: WP Car Manager\n"
 "Report-Msgid-Bugs-To: https://github.com/barrykooij/wp-car-manager/issues\n"
 "POT-Creation-Date: 2015-09-08 07:57:53+00:00\n"
-"PO-Revision-Date: 2015-09-08 08:42+0000\n"
+"PO-Revision-Date: 2015-12-04 10:13+0000\n"
 "Last-Translator: Barry Kooij <mail@barrykooij.nl>\n"
 "Language-Team: Dutch (Netherlands) (http://www.transifex.com/barrykooijplugins/wp-car-manager/language/nl_NL/)\n"
 "MIME-Version: 1.0\n"
@@ -107,7 +107,7 @@ msgstr "Merk"
 #: templates/listings/filters/model.php:2
 #: templates/vehicle-data/data-model.php:9
 msgid "Model"
-msgstr "Mode"
+msgstr "Model"
 
 #: src/Admin/CustomColumns.php:49 src/Vehicle/Data.php:41
 #: templates/vehicle-data/data-price.php:9
