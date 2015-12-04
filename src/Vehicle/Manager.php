@@ -27,10 +27,11 @@ class Manager {
 	 *
 	 * @param array $filters
 	 * @param string $sort
+	 * @param int $per_page
 	 *
 	 * @return array
 	 */
-	public function get_vehicles( $filters, $sort ) {
+	public function get_vehicles( $filters, $sort, $per_page=-1 ) {
 
 		// vehicle array
 		$vehicles = array();
@@ -55,7 +56,7 @@ class Manager {
 		// \WP_Query arg
 		$args = array(
 			'post_type'      => PostType::VEHICLE,
-			'posts_per_page' => - 1,
+			'posts_per_page' => $per_page,
 			'orderby'        => 'meta_value',
 			'order'          => $order,
 			'meta_type'      => $meta_type,

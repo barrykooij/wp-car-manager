@@ -36,10 +36,11 @@ class GetVehicleResults extends Ajax {
 
 		// set sort
 		$sort = ( isset( $_GET['sort'] ) ) ? esc_attr( $_GET['sort'] ) : 'price-asc';
+		$per_page = ( isset( $_GET['per_page'] ) ) ? intval( $_GET['per_page'] ) : -1;
 
 		// get vehicles
 		$vehicle_manager = new Vehicle\Manager();
-		$vehicles        = $vehicle_manager->get_vehicles( $filters, $sort );
+		$vehicles        = $vehicle_manager->get_vehicles( $filters, $sort, $per_page );
 
 		// check & loop
 		if ( count( $vehicles ) > 0 ) {

@@ -14,6 +14,7 @@ var WPCM_Listings = function ( tgt ) {
     this.filters = jQuery( tgt ).find( '.wpcm-vehicle-filters:first' );
     this.sort = jQuery( tgt ).find( '#wpcm-sort:first' );
     this.listings = jQuery( tgt ).find( '.wpcm-vehicle-results-wrapper>.wpcm-vehicle-results:first' );
+    this.per_page = jQuery( tgt ).data( 'per_page' );
 
     // init filters
     this.init_filters();
@@ -124,7 +125,8 @@ WPCM_Listings.prototype.load_vehicles = function () {
 
     // default ajax args with nonce
     var args = {
-        nonce: this.nonce
+        nonce: this.nonce,
+        per_page: this.per_page
     };
 
     // set filters in args

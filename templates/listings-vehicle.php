@@ -5,7 +5,7 @@
  */
 do_action( 'wpcm_before_listings' );
 ?>
-	<div class="wpcm-vehicle-listings">
+	<div class="wpcm-vehicle-listings" data-per_page="<?php esc_attr_e( $atts['per_page'] ); ?>">
 
 		<?php if ( $atts['show_filters'] ) : ?>
 
