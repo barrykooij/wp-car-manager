@@ -60,16 +60,19 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 == Changelog ==
 
+= 1.1.3: December 4, 2015 =
+* Tweak: Fixed the per_page attribute for the [wpcm_cars] shortcode
+
 = 1.1.2: November 2, 2015 =
-* Fixed a path bug that caused translation not the load properly
-* Included sort labels into correct text domain.
+* Tweak: Fixed a path bug that caused translation not the load properly
+* Tweak: Included sort labels into correct text domain
 
 = 1.1.1: September 20, 2015 =
-* Tweak: Fixed CSS issue with main vehicle thumbnail.
-* Tweak: Fixed fatal error on PHP 5.2, props [Danny van Kooten](https://github.com/dannyvankooten).
-* Tweak: Makes & Models page now require 'edit_posts' capabilities.
-* Tweak: Small admin Makes & Models page styling tweaks.
-* Tweak: Hide default theme image on vehicle detail page.
+* Tweak: Fixed CSS issue with main vehicle thumbnail
+* Tweak: Fixed fatal error on PHP 5.2, props [Danny van Kooten](https://github.com/dannyvankooten)
+* Tweak: Makes & Models page now require 'edit_posts' capabilities
+* Tweak: Small admin Makes & Models page styling tweaks
+* Tweak: Hide default theme image on vehicle detail page
 
 = 1.1.0: September 8, 2015 =
 * Feature: Added sort possibility to car listing shortcode
