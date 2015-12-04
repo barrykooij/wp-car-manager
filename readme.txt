@@ -62,6 +62,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 = 1.1.3: December 4, 2015 =
 * Tweak: Fixed the per_page attribute for the [wpcm_cars] shortcode
+* Tweak: Updated Dutch translation
 
 = 1.1.2: November 2, 2015 =
 * Tweak: Fixed a path bug that caused translation not the load properly
