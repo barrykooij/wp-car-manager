@@ -9,14 +9,14 @@ class PostType {
 	public static function register() {
 
 		$labels = array(
-			'name'               => _x( 'Cars', 'Post Type General Name', 'wp-car-manager' ),
+			'name'               => _x( 'Car Listings', 'Post Type General Name', 'wp-car-manager' ),
 			'singular_name'      => _x( 'Car', 'Post Type Singular Name', 'wp-car-manager' ),
-			'menu_name'          => __( 'Car Manager', 'wp-car-manager' ),
-			'name_admin_bar'     => __( 'Car Manager', 'wp-car-manager' ),
+			'menu_name'          => __( 'Car Listings', 'wp-car-manager' ),
+			'name_admin_bar'     => __( 'Car Listings', 'wp-car-manager' ),
 			'parent_item_colon'  => __( 'Parent Car:', 'wp-car-manager' ),
-			'all_items'          => __( 'All Cars', 'wp-car-manager' ),
-			'add_new_item'       => __( 'Add New Car', 'wp-car-manager' ),
-			'add_new'            => __( 'Add New', 'wp-car-manager' ),
+			'all_items'          => __( 'All Car Listings', 'wp-car-manager' ),
+			'add_new_item'       => __( 'Add New Car Lsiting', 'wp-car-manager' ),
+			'add_new'            => __( 'Add New Listing', 'wp-car-manager' ),
 			'new_item'           => __( 'New Car', 'wp-car-manager' ),
 			'edit_item'          => __( 'Edit Car', 'wp-car-manager' ),
 			'update_item'        => __( 'Update Car', 'wp-car-manager' ),
