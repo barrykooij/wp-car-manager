@@ -52,7 +52,7 @@ function __load_wp_car_manager() {
 }
 
 // autoloader
-require dirname( __FILE__ ) . '/vendor/autoload_52.php';
+require 'vendor/autoload.php';
 
 // check PHP version
 $updatePhp = new WPUpdatePhp( '5.3.0' );
