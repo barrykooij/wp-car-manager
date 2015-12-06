@@ -35,7 +35,7 @@ class Settings {
 	private function setup_fields() {
 		$this->fields = apply_filters( 'wpcm_fields',
 			array(
-				'general' => array(
+				'general'        => array(
 					__( 'General', 'wp-car-manager' ),
 					array(
 						array(
@@ -86,7 +86,54 @@ class Settings {
 
 					),
 				),
-				'contact' => array(
+				'car_submission' => array(
+					__( 'Car Submission', 'wp-car-manager' ),
+					array(
+
+						array(
+							'name'     => 'account_required',
+							'label'    => __( 'Account Required', 'wp-car-manager' ),
+							'cb_label' => __( 'Submitting listings requires an account', 'wp-car-manager' ),
+							'desc'     => __( 'If disabled, non-logged in users will be able to submit listings without creating an account.', 'wp-car-manager' ),
+							'type'     => 'checkbox',
+						),
+						array(
+							'name'     => 'account_creation',
+							'label'    => __( 'Account Creation', 'wp-car-manager' ),
+							'cb_label' => __( 'Allow account creation', 'wp-car-manager' ),
+							'desc'     => __( 'If enabled, non-logged in users will be able to create an account by entering their email address on the submission form.', 'wp-car-manager' ),
+							'type'     => 'checkbox',
+						),
+						array(
+							'name'     => 'account_username',
+							'label'    => __( 'Account Username', 'wp-car-manager' ),
+							'cb_label' => __( 'Automatically Generate Username from Email Address', 'wp-car-manager' ),
+							'desc'     => __( 'If enabled, a username will be generated from the first part of the user email address. Otherwise, a username field will be shown.', 'wp-car-manager' ),
+							'type'     => 'checkbox',
+						),
+						array(
+							'name'    => 'account_role',
+							'label'   => __( 'Account Role', 'wp-car-manager' ),
+							'desc'    => __( 'If you enable registration on your submission form, choose a role for the new user.', 'wp-car-manager' ),
+							'type'    => 'select',
+							'options' => Helper\Roles::get_roles()
+						),
+						array(
+							'name'     => 'moderate_new_listings',
+							'label'    => __( 'Moderate New Listings', 'wp-car-manager' ),
+							'cb_label' => __( 'New listing submissions require admin approval', 'wp-car-manager' ),
+							'desc'     => __( 'If enabled, new submissions will be inactive, pending admin approval.', 'wp-car-manager' ),
+							'type'     => 'checkbox',
+						),
+						array(
+							'name'  => 'listing_duration',
+							'label' => __( 'Listing Duration', 'wp-car-manager' ),
+							'desc'  => sprintf( __( 'How many %sdays%s listings are live before expiring. Can be left blank to never expire.', 'wp-car-manager' ), '<strong>', '</strong>' )
+						),
+
+					),
+				),
+				'contact'        => array(
 					__( 'Contact', 'wp-car-manager' ),
 					array(
 						array(
@@ -125,21 +172,26 @@ class Settings {
 	 */
 	private function set_defaults() {
 		$this->defaults = array(
-			'currency'           => 'USD',
-			'currency_pos'       => 'left',
-			'decimal_separator'  => '.',
-			'thousand_separator' => ',',
-			'distance_unit'      => 'miles',
-			'date_format'        => 'm-Y',
-			'contact_email'      => get_option( 'admin_email', '' ),
-			'contact_phone'      => '',
-			'summary_data'       => apply_filters( 'wpcm_summary_data_fields', array(
+			'currency'              => 'USD',
+			'currency_pos'          => 'left',
+			'decimal_separator'     => '.',
+			'thousand_separator'    => ',',
+			'distance_unit'         => 'miles',
+			'date_format'           => 'm-Y',
+			'contact_email'         => get_option( 'admin_email', '' ),
+			'contact_phone'         => '',
+			'summary_data'          => apply_filters( 'wpcm_summary_data_fields', array(
 				'condition',
 				'mileage',
 				'frdate',
 				'engine',
 				'fuel_type'
-			) )
+			) ),
+			'account_required'      => '1',
+			'account_creation'      => '1',
+			'account_username'      => '1',
+			'moderate_new_listings' => '1',
+			'listing_duration'      => '30'
 		);
 	}
 
