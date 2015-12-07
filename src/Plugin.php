@@ -171,6 +171,7 @@ final class Plugin extends Pimple\Container {
 			// setup shortcode
 			add_action( 'init', function () use ( $container ) {
 				$shortcode_cars = new Shortcode\Cars();
+				$shortcode_submit_car_form = new Shortcode\SubmitCarForm();
 			} );
 
 			// Setup custom AJAX
