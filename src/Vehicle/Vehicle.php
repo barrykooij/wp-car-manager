@@ -23,7 +23,7 @@ abstract class Vehicle {
 	/** @var String */
 	private $model;
 
-	/** @var \Date */
+	/** @var \DateTime */
 	private $frdate;
 
 	/** @var String */
