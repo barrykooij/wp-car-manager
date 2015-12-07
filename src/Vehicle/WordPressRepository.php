@@ -26,6 +26,7 @@ class WordPressRepository implements VehicleRepository {
 		$data->id                = $post->ID;
 		$data->title             = $post->post_title;
 		$data->author            = $post->post_author;
+		$data->description       = $post->post_content; // @todo check if we need to apply filters here
 		$data->short_description = $post->post_excerpt;
 		$data->condition         = get_post_meta( $post->ID, $pm_prefix . 'condition', true );
 		$data->make              = get_post_meta( $post->ID, $pm_prefix . 'make', true );
