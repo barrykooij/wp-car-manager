@@ -119,3 +119,69 @@ if ( ! function_exists( 'wpcm_template_vehicle_listings_end' ) ) {
 		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/end' );
 	}
 }
+
+/**
+ ************************ CAR SUBMISSION ************************
+ */
+
+if ( ! function_exists( 'wpcm_template_submit_car_form_fields_car_title' ) ) {
+	function wpcm_template_submit_car_form_fields_car_title( $vehicle ) {
+		?>
+		<fieldset class="wpcm-fieldset-title">
+			<label for="title"><?php _e( 'Listing Title', 'wp-car-manager' ); ?></label>
+
+			<div class="wpcm-field wpcm-required-field">
+				<?php
+				wp_car_manager()->service( 'template_manager' )->get_template_part( 'form-fields/text', '', array(
+					'field'   => array( 'key' => 'title' ),
+					'value'   => $vehicle->get_title(),
+					'vehicle' => $vehicle
+				) );
+				?>
+			</div>
+		</fieldset>
+		<?php
+	}
+}
+
+if ( ! function_exists( 'wpcm_template_submit_car_form_fields_car_data' ) ) {
+	function wpcm_template_submit_car_form_fields_car_data( $vehicle ) {
+
+		// get fields
+		$fields = Never5\WPCarManager\Vehicle\Data::get_fields();
+
+		if ( ! empty( $fields ) ) :
+			foreach ( $fields as $field ) :
+
+				?>
+				<fieldset class="wpcm-fieldset-<?php esc_attr_e( $field['key'] ); ?>">
+					<label
+						for="<?php esc_attr_e( $field['key'] ); ?>"><?php echo $field['label'] . apply_filters( 'wpcm_submit_car_form_required_label', $field['required'] ? '' : ' <small>' . __( '(optional)', 'wp-car-manager' ) . '</small>', $field ); ?></label>
+
+					<div class="wpcm-field <?php echo $field['required'] ? 'wpcm-required-field' : ''; ?>">
+						<?php
+						$value = '';
+
+						// getter method for value
+						$get_method = 'get_' . $field['key'];
+						$value      = $vehicle->$get_method();
+
+						if ( 'frdate' === $field['key'] && null !== $value ) {
+							$value = $value->format( 'Y-m-d' );
+						}
+
+						wp_car_manager()->service( 'template_manager' )->get_template_part( 'form-fields/' . $field['type'], '', array(
+							'field'   => $field,
+							'value'   => $value,
+							'vehicle' => $vehicle
+						) );
+						?>
+					</div>
+				</fieldset>
+				<?php
+
+			endforeach;
+		endif;
+
+	}
+}
