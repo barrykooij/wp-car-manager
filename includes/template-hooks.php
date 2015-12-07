@@ -57,3 +57,13 @@ add_action( 'wpcm_listings_vehicle_filters', 'wpcm_template_vehicle_listings_fil
  */
 add_action( 'wpcm_listings_vehicle_results', 'wpcm_template_vehicle_listings_start', 10 );
 add_action( 'wpcm_listings_vehicle_results', 'wpcm_template_vehicle_listings_end', 15 );
+
+
+/**
+ ************************ CAR SUBMISSION ************************
+ */
+
+add_action( 'wpcm_submit_car_form_fields', 'wpcm_template_submit_car_form_fields_car_title', 11 );
+// @todo add content (description) field
+add_action( 'wpcm_submit_car_form_fields', 'wpcm_template_submit_car_form_fields_car_data', 20 );
+// @todo add images fields
