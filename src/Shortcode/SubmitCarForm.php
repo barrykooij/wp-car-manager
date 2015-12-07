@@ -27,9 +27,12 @@ class SubmitCarForm extends Shortcode {
 		// start output buffer
 		ob_start();
 
+		/** @var Vehicle\Vehicle $listing */
+		$vehicle = wp_car_manager()->service( 'vehicle_factory' )->make( $listing_id );
+
 		// load template
 		wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form', '', array(
-			'listing_id'         => $listing_id,
+			'vehicle'            => $vehicle,
 			'action'             => '',
 			'submit_button_text' => __( 'Submit Car', 'wp-car-manager' ),
 			'can_post_listing'   => wp_car_manager()->service( 'user_manager' )->can_post_listing(),
