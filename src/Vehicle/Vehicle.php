@@ -14,6 +14,9 @@ abstract class Vehicle {
 	/** @var int */
 	private $author;
 
+	/** @var String */
+	private $description;
+
 	/** @var string */
 	private $short_description = '';
 
@@ -81,6 +84,20 @@ abstract class Vehicle {
 	 */
 	public function set_author( $author ) {
 		$this->author = $author;
+	}
+
+	/**
+	 * @return String
+	 */
+	public function get_description() {
+		return $this->description;
+	}
+
+	/**
+	 * @param String $description
+	 */
+	public function set_description( $description ) {
+		$this->description = $description;
 	}
 
 	/**
