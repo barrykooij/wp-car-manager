@@ -24,6 +24,7 @@ class WordPressRepository implements VehicleRepository {
 		$pm_prefix = 'wpcm_';
 
 		$data->id                = $post->ID;
+		$data->title             = $post->post_title;
 		$data->author            = $post->post_author;
 		$data->short_description = $post->post_excerpt;
 		$data->condition         = get_post_meta( $post->ID, $pm_prefix . 'condition', true );
