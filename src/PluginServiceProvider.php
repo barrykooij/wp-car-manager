@@ -39,6 +39,11 @@ class PluginServiceProvider implements Pimple\ServiceProviderInterface {
 			return new MakeModelManager();
 		};
 
+		// UserManager
+		$container['user_manager'] = function () {
+			return new UserManager();
+		};
+
 	}
 
 }
