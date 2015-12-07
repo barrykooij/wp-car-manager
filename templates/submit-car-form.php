@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php do_action( 'wpcm_submit_car_form_fields_start' ); ?>
 
-		<?php do_action( 'wpcm_submit_car_from_fields', $vehicle); ?>
+		<?php do_action( 'wpcm_submit_car_form_fields', $vehicle); ?>
 
 		<?php do_action( 'wpcm_submit_car_form_fields_end' ); ?>
 
