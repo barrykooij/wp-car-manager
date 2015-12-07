@@ -23,8 +23,8 @@ class VehicleFactory {
 	 */
 	public function make( $id = 0 ) {
 
-		// get data from repository
-		$data = $this->repository->retrieve( $id );
+		// absint
+		$id = absint( $id );
 
 		// for now type is always car
 		$type = ucfirst( 'car' );
@@ -42,15 +42,22 @@ class VehicleFactory {
 			/** @var Car $vehicle */
 			$vehicle = new $class;
 
-			foreach ( $data as $dkey => $dval ) {
-				$method = 'set_' . $dkey;
-				if ( method_exists( $vehicle, $method ) ) {
-					$vehicle->$method( $dval );
-				}
-			}
+			if ( $id > 0 ) {
 
-			// set props
-			$vehicle->set_id( $data->id );
+				// get data from repository
+				$data = $this->repository->retrieve( $id );
+
+				foreach ( $data as $dkey => $dval ) {
+					$method = 'set_' . $dkey;
+					if ( method_exists( $vehicle, $method ) ) {
+						$vehicle->$method( $dval );
+					}
+				}
+
+				// set props
+				$vehicle->set_id( $data->id );
+
+			}
 
 		}
 
