@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php if ( apply_filters( 'wpcm_submit_car_form_show_signin', true ) ) : ?>
 
-		<?php /* load signin template file */ ?>
+		<?php do_action( 'wpcm_submit_car_form_login', $vehicle); ?>
 
 	<?php endif; ?>
 
