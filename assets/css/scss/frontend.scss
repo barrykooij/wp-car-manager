@@ -180,7 +180,7 @@
       display: none;
       &:before {
         font-family: "wp-car-manager" !important;
-        content: "\e804" ;
+        content: "\e804";
         font-size: 4em !important;
         line-height: 1.3em;
         color: #fff;;
@@ -379,6 +379,7 @@
 .wpcm-car-form {
 
   fieldset {
+
     margin: 0 0 1em 0;
     padding: 0 0 1em 0;
     line-height: 2em;
@@ -406,14 +407,22 @@
         vertical-align: middle;
         width: 100%;
         -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-        -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-        box-sizing: border-box;         /* Opera/IE 8+ */
+        -moz-box-sizing: border-box; /* Firefox, other Gecko */
+        box-sizing: border-box; /* Opera/IE 8+ */
       }
 
     }
+
+    div.wpcm-account-sign-in {
+      .button {
+        margin-right: .5em;
+      }
+      p {
+        margin: 1em 0 0 0;
+      }
+    }
+
   }
-
-
 
 }
 
