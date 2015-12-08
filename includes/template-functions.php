@@ -123,6 +123,11 @@ if ( ! function_exists( 'wpcm_template_vehicle_listings_end' ) ) {
 /**
  ************************ CAR SUBMISSION ************************
  */
+if ( ! function_exists( 'wpcm_template_submit_car_form_fields_account_signin' ) ) {
+	function wpcm_template_submit_car_form_fields_account_signin() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form/account-signin' );
+	}
+}
 
 if ( ! function_exists( 'wpcm_template_submit_car_form_fields_car_title' ) ) {
 	function wpcm_template_submit_car_form_fields_car_title( $vehicle ) {
@@ -132,7 +137,7 @@ if ( ! function_exists( 'wpcm_template_submit_car_form_fields_car_title' ) ) {
 
 			<div class="wpcm-field wpcm-required-field">
 				<?php
-				wp_car_manager()->service( 'template_manager' )->get_template_part( 'form-fields/text', '', array(
+				wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form/form-fields/text', '', array(
 					'field'   => array( 'key' => 'title' ),
 					'value'   => $vehicle->get_title(),
 					'vehicle' => $vehicle
@@ -152,7 +157,7 @@ if ( ! function_exists( 'wpcm_template_submit_car_form_fields_car_description' )
 
 			<div class="wpcm-field wpcm-required-field">
 				<?php
-				wp_car_manager()->service( 'template_manager' )->get_template_part( 'form-fields/textarea', '', array(
+				wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form/form-fields/textarea', '', array(
 					'field'   => array( 'key' => 'description' ),
 					'value'   => $vehicle->get_description(),
 					'vehicle' => $vehicle
@@ -171,6 +176,11 @@ if ( ! function_exists( 'wpcm_template_submit_car_form_fields_car_data' ) ) {
 		$fields = Never5\WPCarManager\Vehicle\Data::get_fields();
 
 		if ( ! empty( $fields ) ) :
+
+			?>
+			<h2><?php _e( 'Car Data', 'wp-car-manager' ); ?></h2>
+			<?php
+
 			foreach ( $fields as $field ) :
 
 				?>
@@ -182,15 +192,24 @@ if ( ! function_exists( 'wpcm_template_submit_car_form_fields_car_data' ) ) {
 						<?php
 						$value = '';
 
-						// getter method for value
-						$get_method = 'get_' . $field['key'];
-						$value      = $vehicle->$get_method();
-
-						if ( 'frdate' === $field['key'] && null !== $value ) {
-							$value = $value->format( 'Y-m-d' );
+						// check if there's a post set
+						if ( ! empty( $_POST['wpcm_submit_car'][ $field['key'] ] ) ) {
+							$value = esc_attr( sanitize_text_field( stripslashes( $_POST['wpcm_submit_car'][ $field['key'] ] ) ) );
 						}
 
-						wp_car_manager()->service( 'template_manager' )->get_template_part( 'form-fields/' . $field['type'], '', array(
+						// if we don't have a POST, take the vehicle data
+						if ( empty( $value ) ) {
+							// getter method for value
+							$get_method = 'get_' . $field['key'];
+							$value      = $vehicle->$get_method();
+
+							if ( 'frdate' === $field['key'] && null !== $value ) {
+								$value = $value->format( 'Y-m-d' );
+							}
+						}
+
+
+						wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form/form-fields/' . $field['type'], '', array(
 							'field'   => $field,
 							'value'   => $value,
 							'vehicle' => $vehicle
@@ -203,5 +222,11 @@ if ( ! function_exists( 'wpcm_template_submit_car_form_fields_car_data' ) ) {
 			endforeach;
 		endif;
 
+	}
+}
+
+if ( ! function_exists( 'wpcm_template_submit_car_form_fields_car_features' ) ) {
+	function wpcm_template_submit_car_form_fields_car_features() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'account-signin' );
 	}
 }
