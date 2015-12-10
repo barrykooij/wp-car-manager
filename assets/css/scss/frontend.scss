@@ -411,6 +411,32 @@
         box-sizing: border-box; /* Opera/IE 8+ */
       }
 
+      ul.wpcm-form-features {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        overflow: auto;
+        li {
+          width: 33%;
+          padding: 10px 0;
+          margin: 0;
+          float: left;
+          border-bottom: 1px solid #eee;
+
+          label {
+            width: 100%;
+
+            input {
+              margin-right: 10px;
+            }
+          }
+
+        }
+      }
+
+    }
+    div.wpcm-field-fw {
+      width: 100%;
     }
 
     div.wpcm-account-sign-in {
@@ -422,6 +448,10 @@
       }
     }
 
+  }
+
+  .wpcm-fieldset-features {
+    border-bottom: 0;
   }
 
 }

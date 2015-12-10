@@ -67,6 +67,6 @@ add_action( 'wpcm_submit_car_form_login', 'wpcm_template_submit_car_form_fields_
 add_action( 'wpcm_submit_car_form_fields', 'wpcm_template_submit_car_form_fields_car_title', 15 );
 add_action( 'wpcm_submit_car_form_fields', 'wpcm_template_submit_car_form_fields_car_description', 20 );
 add_action( 'wpcm_submit_car_form_fields', 'wpcm_template_submit_car_form_fields_car_data', 25 );
-//add_action( 'wpcm_submit_car_form_fields', 'wpcm_template_submit_car_form_fields_car_features', 30 );
+add_action( 'wpcm_submit_car_form_fields', 'wpcm_template_submit_car_form_fields_car_features', 30 );
 // @todo add features field
 // @todo add images fields
