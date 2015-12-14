@@ -3,7 +3,7 @@ namespace Never5\WPCarManager;
 
 abstract class Assets {
 
-	private static $shortcode_assets_enqueued = false;
+	private static $shortcode_assets_enqueued = array();
 
 	/**
 	 * Enqueue frontend assets
@@ -33,24 +33,18 @@ abstract class Assets {
 			do_action( 'wpcm_assets_frontend_vehicle_single' );
 		}
 
-		// load listings assets on listings page
-		/*
-		if ( get_the_ID() == wp_car_manager()->service( 'settings' )->get_option( 'listings_page' ) ) {
-		}
-		*/
-
 	}
 
 	/**
 	 * Enqueue shortcode related Js
 	 */
-	public static function enqueue_shortcode_js() {
+	public static function enqueue_shortcode_cars() {
 
-		if ( true === self::$shortcode_assets_enqueued ) {
+		if ( in_array( 'cars', self::$shortcode_assets_enqueued ) ) {
 			return;
 		}
 
-		self::$shortcode_assets_enqueued = true;
+		self::$shortcode_assets_enqueued[] = 'cars';
 
 		// enqueue select2 script
 		wp_enqueue_script(

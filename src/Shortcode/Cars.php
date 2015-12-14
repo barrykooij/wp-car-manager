@@ -34,7 +34,7 @@ class Cars extends Shortcode {
 	public function output( $atts ) {
 
 		// JS
-		WPCarManager\Assets::enqueue_shortcode_js();
+		WPCarManager\Assets::enqueue_shortcode_cars();
 
 		// get attributes, defaults filterable via 'wpcm_shortcode_cars_defaults' filter
 		$atts = shortcode_atts( apply_filters( 'wpcm_shortcode_' . $this->get_tag() . '_defaults', array(

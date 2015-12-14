@@ -22,6 +22,9 @@ class SubmitCarForm extends Shortcode {
 	 */
 	public function output( $atts ) {
 
+		// JS
+		WPCarManager\Assets::enqueue_shortcode_submit_car_form();
+
 		$listing_id = 0;
 
 		// start output buffer
