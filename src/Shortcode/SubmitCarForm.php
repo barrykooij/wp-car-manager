@@ -30,7 +30,7 @@ class SubmitCarForm extends Shortcode {
 		// start output buffer
 		ob_start();
 
-		/** @var Vehicle\Vehicle $listing */
+		/** @var Vehicle\Car $vehicle */
 		$vehicle = wp_car_manager()->service( 'vehicle_factory' )->make( $listing_id );
 
 		// @todo check if we can set vehicle data based on POST data if $listing_id is 0
