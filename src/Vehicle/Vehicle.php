@@ -194,7 +194,7 @@ abstract class Vehicle {
 	}
 
 	/**
-	 * @return \Date
+	 * @return \DateTime
 	 */
 	public function get_frdate() {
 		return $this->frdate;
@@ -210,7 +210,7 @@ abstract class Vehicle {
 	}
 
 	/**
-	 * @param \Date $frdate
+	 * @param \DateTime $frdate
 	 */
 	public function set_frdate( $frdate ) {
 		$this->frdate = $frdate;
