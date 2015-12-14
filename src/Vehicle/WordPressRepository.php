@@ -40,7 +40,17 @@ class WordPressRepository implements VehicleRepository {
 		$data->engine            = get_post_meta( $post->ID, $pm_prefix . 'engine', true );
 		$data->body_style        = get_post_meta( $post->ID, $pm_prefix . 'body_style', true );
 		$data->doors             = get_post_meta( $post->ID, $pm_prefix . 'doors', true );
-		$data->features          = wp_get_post_terms( $post->ID, Taxonomies::FEATURES, array( 'fields' => 'names' ) );
+
+		// get and format features
+		$features     = array();
+		$raw_features = wp_get_post_terms( $post->ID, Taxonomies::FEATURES, array( 'fields' => 'all' ) );
+		if ( count( $raw_features ) > 0 ) {
+			foreach ( $raw_features as $raw_feature ) {
+				$features[ $raw_feature->term_id ] = $raw_feature->name;
+			}
+		}
+
+		$data->features = $features;
 
 		// get product gallery
 		$product_image_gallery = '';
