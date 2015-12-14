@@ -71,7 +71,7 @@ WPCM_Listings.prototype.updateModels = function () {
     if ( make_id > 0 ) {
         // args
         var args = {
-            nonce: this.nonce,
+            nonce: wpcm.nonce_models,
             make: make_id
         };
 
@@ -103,7 +103,6 @@ WPCM_Listings.prototype.updateModels = function () {
     } else {
         select_model.attr( 'disabled', true ).find( 'option' ).remove().end().append( jQuery( '<option>' ).val( 0 ).html( wpcm.lbl_select_make_first ) ).select2();
     }
-
 
 };
 

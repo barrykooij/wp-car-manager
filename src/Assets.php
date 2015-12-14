@@ -73,6 +73,7 @@ abstract class Assets {
 		wp_localize_script( 'wpcm_js_listings', 'wpcm', array(
 			'ajax_url'              => trailingslashit( get_site_url( '' ) ),
 			'ajax_endpoint'         => Ajax\Manager::ENDPOINT,
+			'nonce_models'          => wp_create_nonce( 'wpcm_ajax_nonce_get_models' ),
 			'lbl_no_models_found'   => __( 'No models found', 'wp-car-manager' ),
 			'lbl_select_make_first' => __( 'Select make first', 'wp-car-manager' )
 		) );
