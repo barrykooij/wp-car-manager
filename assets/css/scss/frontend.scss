@@ -435,6 +435,21 @@
       }
 
     }
+
+    .wpcm-form-image-upload {
+      width: 100%;
+      min-height: 150px;
+      border: 2px dashed #60646c;
+      text-align: center;
+      padding: 50px;
+      color: #60646c;
+      cursor: pointer;
+      span {
+        font-size: 0.9em;
+        font-weight: 200;
+      }
+    }
+
     div.wpcm-field-fw {
       width: 100%;
     }
@@ -459,4 +474,5 @@
 @import "prettyPhoto";
 @import "select2";
 @import "frontendMedia";
+@import "dropzone";
 
