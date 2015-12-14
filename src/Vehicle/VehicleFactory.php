@@ -57,6 +57,8 @@ class VehicleFactory {
 				// set props
 				$vehicle->set_id( $data->id );
 
+			} else {
+				$vehicle->set_id( 0 );
 			}
 
 		}
