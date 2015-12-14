@@ -6,12 +6,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<form action="<?php echo esc_url( $action ); ?>" method="post" id="wpcm-car-form" class="wpcm-car-form"
-      enctype="multipart/form-data">
+<form action="<?php echo esc_url( $action ); ?>" method="post" id="wpcm-car-form" class="wpcm-car-form" data-vehicle="<?php echo $vehicle->get_id(); ?>">
 
 	<?php if ( apply_filters( 'wpcm_submit_car_form_show_signin', true ) ) : ?>
 
-		<?php do_action( 'wpcm_submit_car_form_login', $vehicle); ?>
+		<?php do_action( 'wpcm_submit_car_form_login', $vehicle ); ?>
 
 	<?php endif; ?>
 
@@ -19,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php do_action( 'wpcm_submit_car_form_fields_start' ); ?>
 
-		<?php do_action( 'wpcm_submit_car_form_fields', $vehicle); ?>
+		<?php do_action( 'wpcm_submit_car_form_fields', $vehicle ); ?>
 
 		<?php do_action( 'wpcm_submit_car_form_fields_end' ); ?>
 
