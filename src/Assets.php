@@ -78,6 +78,47 @@ abstract class Assets {
 	}
 
 	/**
+	 * Enqueue shortcode related Js
+	 */
+	public static function enqueue_shortcode_submit_car_form() {
+
+		if ( in_array( 'submit_car_form', self::$shortcode_assets_enqueued ) ) {
+			return;
+		}
+
+		self::$shortcode_assets_enqueued[] = 'submit_car_form';
+
+		// enqueue select2 script
+		wp_enqueue_script(
+			'wpcm_js_dropzone',
+			wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/lib/dropzone.js' ),
+			array( 'jquery' ),
+			wp_car_manager()->get_version(),
+			true
+		);
+
+		// enqueue listings script
+		wp_enqueue_script(
+			'wpcm_js_car_submission',
+			wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/car-submission' . ( ( ! SCRIPT_DEBUG ) ? '.min' : '' ) . '.js' ),
+			array( 'jquery', 'wpcm_js_dropzone' ),
+			wp_car_manager()->get_version(),
+			true
+		);
+
+		wp_localize_script( 'wpcm_js_car_submission', 'wpcm', array(
+			'ajax_url_save'         => untrailingslashit( site_url( sprintf( '?%s=save_vehicle', Ajax\Manager::ENDPOINT ) ) ),
+			'nonce_save'            => wp_create_nonce( 'wpcm_ajax_nonce_save_vehicle' ),
+			'lbl_no_models_found'   => __( 'No models found', 'wp-car-manager' ),
+			'lbl_select_make_first' => __( 'Select make first', 'wp-car-manager' )
+		) );
+
+		// do action wpcm_assets_frontend_car_submission
+		do_action( 'wpcm_assets_frontend_car_submission' );
+
+	}
+
+	/**
 	 * Enqueue backend(admin) assets
 	 */
 	public static function enqueue_backend() {
