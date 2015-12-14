@@ -1,1 +1,1 @@
-<?php wp_nonce_field( 'wpcm_secret_listings_nonce', 'wpcm-listings-nonce' ) ?>
+<?php wp_nonce_field( 'wpcm_ajax_nonce_get_vehicle_results', 'wpcm-listings-nonce' ) ?>
