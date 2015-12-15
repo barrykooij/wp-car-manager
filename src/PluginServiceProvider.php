@@ -20,8 +20,13 @@ class PluginServiceProvider implements Pimple\ServiceProviderInterface {
 		};
 
 		// vehicle factory
-		$container['vehicle_factory'] = function () {
-			return new Vehicle\VehicleFactory( new Vehicle\WordPressRepository() );
+		$container['vehicle_repository'] = function () {
+			return new Vehicle\WordPressRepository();
+		};
+
+		// vehicle factory
+		$container['vehicle_factory'] = function ( $c ) {
+			return new Vehicle\VehicleFactory( $c['vehicle_repository'] );
 		};
 
 		// template manger
