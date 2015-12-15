@@ -42,10 +42,6 @@ jQuery( function ( $ ) {
     // catch form submission
     $form.submit( function () {
 
-        // testing
-        $form.trigger( 'wpcm_car_saved', [ { vehicle: 170 } ] );
-        return false;
-
         // args
         var args = {
             nonce: wpcm.nonce_save,
