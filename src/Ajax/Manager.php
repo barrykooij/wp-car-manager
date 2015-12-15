@@ -40,6 +40,10 @@ class Manager {
 		// register SaveVehicle
 		$save_vehicle = new SaveVehicle();
 		$save_vehicle->register();
+
+		// register SaveImages
+		$save_images = new SaveImages();
+		$save_images->register();
 	}
 
 	/**
