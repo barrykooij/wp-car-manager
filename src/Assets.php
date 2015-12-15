@@ -108,6 +108,7 @@ abstract class Assets {
 
 		wp_localize_script( 'wpcm_js_car_submission', 'wpcm', array(
 			'ajax_url_save'         => untrailingslashit( site_url( sprintf( '?%s=save_vehicle', Ajax\Manager::ENDPOINT ) ) ),
+			'ajax_url_post_images'  => untrailingslashit( site_url( sprintf( '?%s=save_images', Ajax\Manager::ENDPOINT ) ) ),
 			'nonce_save'            => wp_create_nonce( 'wpcm_ajax_nonce_save_vehicle' ),
 			'lbl_no_models_found'   => __( 'No models found', 'wp-car-manager' ),
 			'lbl_select_make_first' => __( 'Select make first', 'wp-car-manager' )
