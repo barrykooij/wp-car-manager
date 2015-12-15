@@ -42,10 +42,24 @@ class SaveVehicle extends Ajax {
 			$is_allowed = wp_car_manager()->service( 'user_manager' )->can_edit_listing( $vehicle_id );
 		}
 
-		// @todo check if we need to create
-
 		// requester not allowed to do what they try to do
-		if ( false == $is_allowed ) {
+		if ( true != $is_allowed ) {
+			return;
+		}
+
+		// if user is not logged in but allowed to post, we need to create an account
+		if ( ! is_user_logged_in() ) {
+			// @todo create account
+			// @todo login user
+		}
+
+		// @todo check if we need to create an account
+
+		// get logged in user
+		$user = wp_get_current_user();
+
+		// make sure we've got a logged in user, if we don't something went horribly wrong
+		if ( false === $user ) {
 			return;
 		}
 
@@ -92,7 +106,10 @@ class SaveVehicle extends Ajax {
 			/** @var Vehicle\Car $vehicle */
 			$vehicle = wp_car_manager()->service( 'vehicle_factory' )->make( 0 );
 
-			// Set Vehicle data in object
+			// set vehicle listing author
+			$vehicle->set_author( $user->ID );
+
+			// set Vehicle data in object
 			$vehicle->set_title( $data['title'] );
 			$vehicle->set_description( $data['description'] );
 			$vehicle->set_condition( $data['condition'] );
@@ -117,7 +134,24 @@ class SaveVehicle extends Ajax {
 				$vehicle->set_features( $features );
 			}
 
-			error_log( print_r( $vehicle, 1 ), 0 );
+
+			try {
+
+				// try to persist vehicle
+				$vehicle = wp_car_manager()->service( 'vehicle_repository' )->persist( $vehicle );
+
+				// set success to true in return
+				$return['success'] = true;
+
+				// set vehicle ID in return
+				$return['vehicle'] = $vehicle->get_id();
+
+			} catch ( \Exception $e ) {
+				$return['errors'] = array(
+					'id'  => 'persist',
+					'msg' => $e->getMessage()
+				);
+			}
 
 		}
 
