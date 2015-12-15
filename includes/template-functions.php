@@ -228,8 +228,10 @@ if ( ! function_exists( 'wpcm_template_submit_car_form_fields_car_data' ) ) {
 if ( ! function_exists( 'wpcm_template_submit_car_form_fields_car_features' ) ) {
 	function wpcm_template_submit_car_form_fields_car_features() {
 
+
+
 		// get features
-		$features = apply_filters( 'wpcm_submit_car_form_features', get_terms( 'wpcm_features', array(
+		$features = apply_filters( 'wpcm_submit_car_form_features', get_terms( \Never5\WPCarManager\Taxonomies::FEATURES, array(
 			'hide_empty' => false
 		) ) );
 
