@@ -20,6 +20,7 @@ class SaveVehicle extends Ajax {
 	 */
 	public function run() {
 
+		// return fields
 		$return = array( 'success' => false, 'errors' => array(), 'vehicle' => 0 );
 
 		// check nonce
@@ -33,13 +34,33 @@ class SaveVehicle extends Ajax {
 		// vehicle ID (can be 0 for new vehicle)
 		$vehicle_id = absint( $_POST['vehicle_id'] );
 
+		// check if user is logged in and allowed to do this
+		$is_allowed = false;
+		if ( 0 == $vehicle_id ) {
+			$is_allowed = wp_car_manager()->service( 'user_manager' )->can_post_listing();
+		} else {
+			$is_allowed = wp_car_manager()->service( 'user_manager' )->can_edit_listing( $vehicle_id );
+		}
+
+		// @todo check if we need to create 
+
+		// requester not allowed to do what they try to do
+		if ( false == $is_allowed ) {
+			return;
+		}
+
 		// check if data is posted
 		if ( ! isset( $_POST['data'] ) ) {
 			return;
 		}
 
+		// parse post data
+		parse_str( $_POST['data'], $post_arr );
+
 		// put data in $data
-		parse_str( $_POST['data'], $data );
+		$data = $post_arr['wpcm_submit_car'];
+
+		error_log( print_r( $data, 1 ), 0 );
 
 		// validate data
 		// @todo validate data
@@ -57,7 +78,7 @@ class SaveVehicle extends Ajax {
 		}
 
 		// only proceed if errors is empty
-		if ( ! empty( $return['errors'] ) ) {
+		if ( empty( $return['errors'] ) ) {
 
 			// @todo escape data
 
