@@ -42,7 +42,7 @@ class SaveVehicle extends Ajax {
 			$is_allowed = wp_car_manager()->service( 'user_manager' )->can_edit_listing( $vehicle_id );
 		}
 
-		// @todo check if we need to create 
+		// @todo check if we need to create
 
 		// requester not allowed to do what they try to do
 		if ( false == $is_allowed ) {

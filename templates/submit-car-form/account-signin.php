@@ -15,7 +15,6 @@
 	</fieldset>
 
 <?php else :
-	$account_required             = ( '1' == wp_car_manager()->service( 'settings' )->get_option( 'account_required' ) );
 	$account_creation             = ( '1' == wp_car_manager()->service( 'settings' )->get_option( 'account_creation' ) );
 	$generate_username_from_email = ( '1' == wp_car_manager()->service( 'settings' )->get_option( 'account_username' ) );
 	?>
@@ -28,9 +27,9 @@
 
 			<?php if ( $account_creation ) : ?>
 
-				<p><?php printf( __( 'If you don&rsquo;t have an account you can %screate one below by entering your email address/username. Your account details will be confirmed via email.', 'wp-car-manager' ), $account_required ? '' : __( 'optionally', 'wp-car-manager' ) . ' ' ); ?></p>
+				<p><?php _e( 'If you don&rsquo;t have an account you can create one below by entering your email address/username. Your account details will be confirmed via email.', 'wp-car-manager'  ); ?></p>
 
-			<?php elseif ( $account_required ) : ?>
+			<?php else : ?>
 
 				<?php echo apply_filters( 'wpcm_submit_car_form_account_login_required_message', __( 'You must sign in to create a new listing.', 'wp-car-manager' ) ); ?>
 

@@ -89,14 +89,6 @@ class Settings {
 				'car_submission' => array(
 					__( 'Car Submission', 'wp-car-manager' ),
 					array(
-
-						array(
-							'name'     => 'account_required',
-							'label'    => __( 'Account Required', 'wp-car-manager' ),
-							'cb_label' => __( 'Submitting listings requires an account', 'wp-car-manager' ),
-							'desc'     => __( 'If disabled, non-logged in users will be able to submit listings without creating an account.', 'wp-car-manager' ),
-							'type'     => 'checkbox',
-						),
 						array(
 							'name'     => 'account_creation',
 							'label'    => __( 'Account Creation', 'wp-car-manager' ),
@@ -187,7 +179,6 @@ class Settings {
 				'engine',
 				'fuel_type'
 			) ),
-			'account_required'      => '1',
 			'account_creation'      => '1',
 			'account_username'      => '1',
 			'moderate_new_listings' => '1',

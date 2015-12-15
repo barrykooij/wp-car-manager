@@ -14,15 +14,8 @@ class UserManager {
 		$can_post = true;
 
 		if ( ! is_user_logged_in() ) {
-
-			// get settings
-			$account_required = ( '1' == wp_car_manager()->service( 'settings' )->get_option( 'account_required' ) );
-			$account_creation = ( '1' == wp_car_manager()->service( 'settings' )->get_option( 'account_creation' ) );
-
-			// check if account is required but account creation is disabled
-			if ( true === $account_required && false === $account_creation ) {
-				$can_post = false;
-			}
+			// can post depends on if user creation is allowed on post
+			$can_post = ( '1' == wp_car_manager()->service( 'settings' )->get_option( 'account_creation' ) );
 		}
 
 		return apply_filters( 'wpcm_user_can_post_listing', $can_post );
