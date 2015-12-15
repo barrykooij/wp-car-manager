@@ -108,6 +108,16 @@ class SaveVehicle extends Ajax {
 			$vehicle->set_engine( $data['engine'] );
 			$vehicle->set_doors( $data['doors'] );
 
+			// set features
+			if ( isset( $data['features'] ) && count( $data['features'] ) > 0 ) {
+				$features = array();
+				foreach ( $data['features'] as $feature_id ) {
+					$features[ $feature_id ] = 'n/a';
+				}
+				$vehicle->set_features( $features );
+			}
+
+			error_log( print_r( $vehicle, 1 ), 0 );
 
 		}
 
