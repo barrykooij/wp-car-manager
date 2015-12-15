@@ -168,13 +168,6 @@ class WordPressRepository implements VehicleRepository {
 			$vehicle->set_features( $this->get_formatted_features( $vehicle->get_id() ) );
 		}
 
-		/**
-		 * @todo decide if we're doing gallery images here or exclude all media from the repository classes and use WP default stuff
-		 */
-		// set vehicle gallery images
-		//_car_gallery
-
-
 		return $vehicle;
 	}
 
