@@ -77,12 +77,105 @@ class WordPressRepository implements VehicleRepository {
 	}
 
 	/**
-	 * @param Vehicle $vehicle
+	 * Persist Vehicle in WordPress database
 	 *
-	 * @return bool
+	 * @param Car $vehicle
+	 *
+	 * @throws \Exception
+	 *
+	 * @return Vehicle $vehicle
 	 */
 	public function persist( $vehicle ) {
-		// TODO: Implement persist() method.
+
+		// check if new or existing
+		if ( 0 == $vehicle->get_id() ) {
+
+			// create
+			$vehicle_id = wp_insert_post( array(
+				'post_title'   => $vehicle->get_title(),
+				'post_content' => $vehicle->get_description(),
+				'post_excerpt' => $vehicle->get_short_description(),
+				'post_author'  => $vehicle->get_author(),
+				'post_type'    => PostType::VEHICLE,
+				'post_status'  => 'publish' // @todo this needs to be based on settings + be filterable
+			) );
+
+			if ( is_wp_error( $vehicle_id ) ) {
+				throw new \Exception( 'Unable to insert post in WordPress database' );
+			}
+
+			// set new vehicle ID
+			$vehicle->set_id( $vehicle_id );
+
+		} else {
+
+			// update
+			$vehicle_id = wp_update_post( array(
+				'ID'           => $vehicle->get_id(),
+				'post_title'   => $vehicle->get_title(),
+				'post_content' => $vehicle->get_description(),
+				'post_excerpt' => $vehicle->get_short_description(),
+				'post_status'  => 'publish' // @todo this needs to be based on settings + be filterable
+			) );
+
+			if ( is_wp_error( $vehicle_id ) ) {
+				throw new \Exception( 'Unable to updarte post in WordPress database' );
+			}
+
+		}
+
+		// get fields
+		$fields = Data::get_fields();
+
+		// set vehicle meta-data
+		if ( ! empty( $fields ) ) {
+			foreach ( $fields as $field_key => $field ) {
+
+				// the method
+				$method = 'get_' . $field_key;
+
+				// check if exists in vehicle
+				if ( method_exists( $vehicle, $method ) ) {
+
+					// the value
+					$value = $vehicle->$method();
+
+					// turn \DateTime object into formatted string
+					if ( $value instanceof \DateTime) {
+						$value = $value->format( 'Y-m-d' );
+					}
+
+					// update post method
+					update_post_meta( $vehicle->get_id(), 'wpcm_' . $field_key, $value );
+				}
+
+			}
+		}
+
+		// set vehicle features
+		if ( ! empty( $vehicle->get_features() ) ) {
+
+			// store feature ID's in array
+			$terms = array();
+			foreach ( $vehicle->get_features() as $feature_id => $feature ) {
+				$terms[] = $feature_id;
+			}
+
+			// set object terms
+			wp_set_object_terms( $vehicle->get_id(), $terms, Taxonomies::FEATURES );
+
+			// re-fetch features from DB so we're sure to have a correctly formatted array
+			$vehicle->set_features( $this->get_formatted_features( $vehicle->get_id() ) );
+		}
+
+		/**
+		 * @todo decide if we're doing gallery images here or exclude all media from the repository classes and use WP default stuff
+		 */
+		// set vehicle gallery images
+		//_car_gallery
+
+
+		return $vehicle;
 	}
 
 }
