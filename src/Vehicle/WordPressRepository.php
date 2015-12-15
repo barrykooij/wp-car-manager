@@ -7,6 +7,25 @@ use Never5\WPCarManager\Taxonomies;
 class WordPressRepository implements VehicleRepository {
 
 	/**
+	 * Get a correctly formatted features list
+	 *
+	 * @param int $id
+	 *
+	 * @return array
+	 */
+	private function get_formatted_features( $id ) {
+		$features     = array();
+		$raw_features = wp_get_post_terms( $id, Taxonomies::FEATURES, array( 'fields' => 'all' ) );
+		if ( count( $raw_features ) > 0 ) {
+			foreach ( $raw_features as $raw_feature ) {
+				$features[ $raw_feature->term_id ] = $raw_feature->name;
+			}
+		}
+
+		return $features;
+	}
+
+	/**
 	 * @param int $id
 	 *
 	 * @throws \Exception
@@ -42,15 +61,7 @@ class WordPressRepository implements VehicleRepository {
 		$data->doors             = get_post_meta( $post->ID, $pm_prefix . 'doors', true );
 
 		// get and format features
-		$features     = array();
-		$raw_features = wp_get_post_terms( $post->ID, Taxonomies::FEATURES, array( 'fields' => 'all' ) );
-		if ( count( $raw_features ) > 0 ) {
-			foreach ( $raw_features as $raw_feature ) {
-				$features[ $raw_feature->term_id ] = $raw_feature->name;
-			}
-		}
-
-		$data->features = $features;
+		$data->features = $this->get_formatted_features( $post->ID );
 
 		// get product gallery
 		$product_image_gallery = '';
