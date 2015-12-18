@@ -90,6 +90,15 @@ abstract class Assets {
 
 		// enqueue select2 script
 		wp_enqueue_script(
+			'wpcm_js_select2',
+			wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/lib/select2.min.js' ),
+			array( 'jquery' ),
+			wp_car_manager()->get_version(),
+			true
+		);
+
+		// enqueue dropzone script
+		wp_enqueue_script(
 			'wpcm_js_dropzone',
 			wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/lib/dropzone.js' ),
 			array( 'jquery' ),
@@ -101,15 +110,17 @@ abstract class Assets {
 		wp_enqueue_script(
 			'wpcm_js_car_submission',
 			wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/car-submission' . ( ( ! SCRIPT_DEBUG ) ? '.min' : '' ) . '.js' ),
-			array( 'jquery', 'wpcm_js_dropzone' ),
+			array( 'jquery', 'wpcm_js_select2', 'wpcm_js_dropzone' ),
 			wp_car_manager()->get_version(),
 			true
 		);
 
 		wp_localize_script( 'wpcm_js_car_submission', 'wpcm', array(
 			'ajax_url_save'         => untrailingslashit( site_url( sprintf( '?%s=save_vehicle', Ajax\Manager::ENDPOINT ) ) ),
+			'ajax_url_get_models'   => untrailingslashit( site_url( sprintf( '?%s=get_models', Ajax\Manager::ENDPOINT ) ) ),
 			'ajax_url_post_images'  => untrailingslashit( site_url( sprintf( '?%s=save_images', Ajax\Manager::ENDPOINT ) ) ),
 			'nonce_save'            => wp_create_nonce( 'wpcm_ajax_nonce_save_vehicle' ),
+			'nonce_models'          => wp_create_nonce( 'wpcm_ajax_nonce_get_models' ),
 			'lbl_no_models_found'   => __( 'No models found', 'wp-car-manager' ),
 			'lbl_select_make_first' => __( 'Select make first', 'wp-car-manager' )
 		) );

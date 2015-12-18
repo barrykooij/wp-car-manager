@@ -35,8 +35,59 @@ jQuery( function ( $ ) {
         return success;
     };
 
+    $.fn.wpcm_update_models = function () {
+
+        var make_id = this.find( '#make option:selected' ).val();
+        
+        // model select input
+        var select_model = this.find( '#model' );
+
+        if ( make_id > 0 ) {
+            // args
+            var args = {
+                nonce: wpcm.nonce_models,
+                make: make_id
+            };
+
+            jQuery.get( wpcm.ajax_url_get_models, args, function ( response ) {
+
+                // remove current options
+                select_model.attr( 'disabled', false ).find( 'option' ).remove();
+
+                if ( undefined != response && '' != response && 0 != response && response.length > 0 ) {
+
+                    select_model.append( jQuery( '<option>' ).val( 0 ).html( select_model.data( 'placeholder' ) ) );
+
+                    for ( var i = 0; i < response.length; i++ ) {
+                        select_model.append( jQuery( '<option>' ).val( response[ i ].id ).html( response[ i ].name ) );
+                    }
+                } else {
+                    select_model.append( jQuery( '<option>' ).val( 0 ).html( wpcm.lbl_no_models_found ) );
+                }
+
+                // re-enable select2
+                select_model.select2();
+
+            } );
+        } else {
+            select_model.attr( 'disabled', true ).find( 'option' ).remove().end().append( jQuery( '<option>' ).val( 0 ).html( wpcm.lbl_select_make_first ) ).select2();
+        }
+
+        return this;
+
+    };
+
     // get action URL
     var $form = $( '#wpcm-car-form' );
+
+    // setup select2
+    $form.find( '#make' ).select2();
+    $form.find( '#model' ).select2();
+
+    // bind listener to make field
+    $form.find( '#make' ).change( function () {
+        $form.wpcm_update_models();
+    } );
 
     // setup dropzone
     $( 'div#wpcm-car-submission-images' ).dropzone( {

@@ -13,7 +13,7 @@ if ( $vehicle->get_make() != 0 ) {
 
 
 ?>
-<select name="wpcm_submit_car[<?php echo $field['key']; ?>]" id="<?php echo $field['key']; ?>">
+<select name="wpcm_submit_car[<?php echo $field['key']; ?>]" id="<?php echo $field['key']; ?>" data-placeholder="<?php esc_attr_e( 'Select Model', 'wp-car-manager' ); ?>">
 	<?php
 	if ( isset( $models_select ) && count( $models_select ) > 0 ) {
 		foreach ( $models_select as $option_key => $option_value ) {
