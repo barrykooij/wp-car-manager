@@ -23,8 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php do_action( 'wpcm_submit_car_form_fields_end' ); ?>
 
 		<p>
-			<input type="hidden" name="listing_id" value="<?php echo esc_attr( $vehicle->get_id() ); ?>"/>
-			<input type="submit" name="submit_car" class="wpcm-button" value="<?php esc_attr_e( $submit_button_text ); ?>"/>
+			<input type="submit" name="submit_car" class="wpcm-button" id="wpcm-submit" value="<?php esc_attr_e( $submit_button_text ); ?>"/>
 		</p>
 
 	<?php else : ?>
