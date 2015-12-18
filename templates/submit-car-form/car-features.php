@@ -1,6 +1,6 @@
 <h2><?php _e( 'Car Features', 'wp-car-manager' ); ?></h2>
 <fieldset class="wpcm-fieldset-features">
-	<div class="wpcm-field wpcm-field-fw wpcm-required-field">
+	<div class="wpcm-field wpcm-field-fw">
 		<ul class="wpcm-form-features">
 		<?php foreach ( $features as $feature ): ?>
 			<li>
