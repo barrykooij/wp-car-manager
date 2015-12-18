@@ -434,6 +434,9 @@
         }
       }
 
+      .wpcm-error {
+        border: 1px solid red;
+      }
     }
 
     .wpcm-form-image-upload {
@@ -467,6 +470,15 @@
 
   .wpcm-fieldset-features {
     border-bottom: 0;
+  }
+
+  #wpcm-submit {
+    &.wpcm-disabled {
+      cursor: not-allowed;
+      opacity: 0.4;
+      filter: alpha(opacity=40); /* For IE8 and earlier */
+
+    }
   }
 
 }
