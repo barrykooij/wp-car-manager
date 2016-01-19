@@ -6,7 +6,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<form action="<?php echo esc_url( $action ); ?>" method="post" id="wpcm-car-form" class="wpcm-car-form" data-vehicle="<?php echo $vehicle->get_id(); ?>">
+<form action="<?php echo esc_url( $action ); ?>" method="post" id="wpcm-car-form" class="wpcm-car-form"
+      data-vehicle="<?php echo $vehicle->get_id(); ?>" xmlns="http://www.w3.org/1999/html">
 
 	<?php if ( apply_filters( 'wpcm_submit_car_form_show_signin', true ) ) : ?>
 
@@ -23,7 +24,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php do_action( 'wpcm_submit_car_form_fields_end' ); ?>
 
 		<p>
-			<input type="submit" name="submit_car" class="wpcm-button" id="wpcm-submit" value="<?php esc_attr_e( $submit_button_text ); ?>"/>
+			<a type="submit" name="submit_car" class="button wpcm-button" id="wpcm-submit">
+				<span class="wpcm-val"><?php esc_attr_e( $submit_button_text ); ?></span>
+				<span class="wpcm-spinner"><i></i></span>
+			</a>
+			<input type="submit" style="position: absolute; left: -9999px"/><!-- Fallback submit -->
 		</p>
 
 	<?php else : ?>
