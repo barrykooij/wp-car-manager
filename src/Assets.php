@@ -122,7 +122,9 @@ abstract class Assets {
 			'nonce_save'            => wp_create_nonce( 'wpcm_ajax_nonce_save_vehicle' ),
 			'nonce_models'          => wp_create_nonce( 'wpcm_ajax_nonce_get_models' ),
 			'lbl_no_models_found'   => __( 'No models found', 'wp-car-manager' ),
-			'lbl_select_make_first' => __( 'Select make first', 'wp-car-manager' )
+			'lbl_select_make_first' => __( 'Select make first', 'wp-car-manager' ),
+			'lbl_submit_car'        => __( 'Submit Car', 'wp-car-manager' ),
+			'lbl_submitting'        => __( 'Submitting your data, please wait...', 'wp-car-manager' )
 		) );
 
 		// do action wpcm_assets_frontend_car_submission
