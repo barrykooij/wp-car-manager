@@ -473,11 +473,36 @@
   }
 
   #wpcm-submit {
+    span.wpcm-spinner {
+      display: none;
+    }
     &.wpcm-disabled {
-      cursor: not-allowed;
-      opacity: 0.4;
-      filter: alpha(opacity=40); /* For IE8 and earlier */
+      cursor:progress;
 
+      span.wpcm-spinner {
+        width: 50px;
+        display: inline-block;
+        -webkit-transition: opacity 0.25s, width 0.25s;
+        -moz-transition: opacity 0.25s, width 0.25s;
+        -o-transition: opacity 0.25s, width 0.25s;
+        transition: opacity 0.25s, width 0.25s;
+
+        i {
+          @include icon("\e807");
+          color: white;
+        }
+      }
+
+
+      //opacity: 0.4;
+      //filter: alpha(opacity=40); /* For IE8 and earlier */
+      &:after {
+        font-family: "wp-car-manager" !important;
+        content: "\e807";
+        font-size: 4em !important;
+        line-height: 1.3em;
+        color: #fff;
+      }
     }
   }
 
