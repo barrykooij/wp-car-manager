@@ -8,7 +8,8 @@ jQuery( function ( $ ) {
 
     $.fn.wpcm_disable = function () {
         wpcm_submitting = true;
-        this.find( '#wpcm-submit' ).attr( 'disabled', 'disabled' ).addClass( 'wpcm-disabled' );
+        //this.find( '#wpcm-submit' ).attr( 'disabled', 'disabled' ).addClass( 'wpcm-disabled' ).val(wpcm.lbl_submitting);
+        this.find( '#wpcm-submit' ).addClass( 'wpcm-disabled' ).val(wpcm.lbl_submitting);
         return this;
     };
 
@@ -32,13 +33,16 @@ jQuery( function ( $ ) {
                 success = false;
             }
         } );
+
+        console.log( 'succcess:' + success );
+
         return success;
     };
 
     $.fn.wpcm_update_models = function () {
 
         var make_id = this.find( '#make option:selected' ).val();
-        
+
         // model select input
         var select_model = this.find( '#model' );
 
@@ -127,9 +131,11 @@ jQuery( function ( $ ) {
     // catch form submission
     $form.submit( function () {
 
+        console.log('submitting');
+
         // don't continue if we're already processing
         if ( wpcm_submitting ) {
-            //return false;
+            return false;
         }
 
         // @todo add spinner
@@ -148,7 +154,7 @@ jQuery( function ( $ ) {
             data: $form.serialize()
         };
 
-        // @todo should probably change this to post instead of get
+        // post data
         jQuery.post( wpcm.ajax_url_save, args, function ( response ) {
 
             // check response
