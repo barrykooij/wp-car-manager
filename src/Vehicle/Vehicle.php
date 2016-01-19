@@ -8,6 +8,9 @@ abstract class Vehicle {
 	/** @var int */
 	private $id = null;
 
+	/** @var  String */
+	private $status;
+
 	/** @var String */
 	private $title;
 
@@ -56,6 +59,20 @@ abstract class Vehicle {
 	 */
 	public function set_id( $id ) {
 		$this->id = $id;
+	}
+
+	/**
+	 * @return String
+	 */
+	public function get_status() {
+		return $this->status;
+	}
+
+	/**
+	 * @param String $status
+	 */
+	public function set_status( $status ) {
+		$this->status = $status;
 	}
 
 	/**
