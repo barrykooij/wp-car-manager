@@ -94,13 +94,14 @@ class SaveVehicle extends Ajax {
 		// only proceed if errors is empty
 		if ( empty( $return['errors'] ) ) {
 
-			// @todo escape data
-
 			/**
 			 * Data Sanitation
 			 */
 
-			// @todo save data
+			// Sanitize integer values
+			$data['mileage'] = intval( preg_replace( '/,|\./mi', '', $data['mileage'] ) );
+			$data['price']   = intval( preg_replace( '/,|\./mi', '', $data['price'] ) );
+			$data['doors']   = intval( $data['doors'] );
 
 			// create Vehicle object
 			/** @var Vehicle\Car $vehicle */
@@ -133,7 +134,6 @@ class SaveVehicle extends Ajax {
 				}
 				$vehicle->set_features( $features );
 			}
-
 
 			try {
 
