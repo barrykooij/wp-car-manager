@@ -23,76 +23,98 @@ class SaveVehicle extends Ajax {
 		// return fields
 		$return = array( 'success' => false, 'errors' => array(), 'vehicle' => 0 );
 
-		// check nonce
-		$this->check_nonce();
-
-		// check if vehicle ID is set
-		if ( ! isset( $_POST['vehicle_id'] ) ) {
-			return;
-		}
-
-		// vehicle ID (can be 0 for new vehicle)
-		$vehicle_id = absint( $_POST['vehicle_id'] );
-
-		// check if user is logged in and allowed to do this
-		$is_allowed = false;
-		if ( 0 == $vehicle_id ) {
-			$is_allowed = wp_car_manager()->service( 'user_manager' )->can_post_listing();
-		} else {
-			$is_allowed = wp_car_manager()->service( 'user_manager' )->can_edit_listing( $vehicle_id );
-		}
-
-		// requester not allowed to do what they try to do
-		if ( true != $is_allowed ) {
-			return;
-		}
-
-		// if user is not logged in but allowed to post, we need to create an account
-		if ( ! is_user_logged_in() ) {
-			// @todo create account
-			// @todo login user
-		}
-
-		// @todo check if we need to create an account
-
-		// get logged in user
-		$user = wp_get_current_user();
-
-		// make sure we've got a logged in user, if we don't something went horribly wrong
-		if ( false === $user ) {
-			return;
-		}
-
-		// check if data is posted
-		if ( ! isset( $_POST['data'] ) ) {
-			return;
-		}
-
-		// parse post data
-		parse_str( $_POST['data'], $post_arr );
-
-		// put data in $data
-		$data = $post_arr['wpcm_submit_car'];
-
-		error_log( print_r( $data, 1 ), 0 );
-
-		// validate data
-		// @todo validate data
-
-		/**
-		 * Data Validation
-		 */
 		try {
-			$frdate_dt = new \DateTime( $data['frdate'] );
-		} catch ( \Exception $e ) {
-			$return['errors'] = array(
-				'id'  => 'frdate',
-				'msg' => __( 'Incorrect First Registration Date format' )
-			);
-		}
 
-		// only proceed if errors is empty
-		if ( empty( $return['errors'] ) ) {
+			// check nonce
+			$this->check_nonce();
+
+			// check if vehicle ID is set
+			if ( ! isset( $_POST['vehicle_id'] ) ) {
+				throw new SaveVehicleException( __( 'Missing vehicle ID.', 'wp-car-manager' ), 'missing-id' );
+			}
+
+			// vehicle ID (can be 0 for new vehicle)
+			$vehicle_id = absint( $_POST['vehicle_id'] );
+
+			// check if user is logged in and allowed to do this
+			$is_allowed = false;
+			if ( 0 == $vehicle_id ) {
+				$is_allowed = wp_car_manager()->service( 'user_manager' )->can_post_listing();
+			} else {
+				$is_allowed = wp_car_manager()->service( 'user_manager' )->can_edit_listing( $vehicle_id );
+			}
+
+			// requester not allowed to do what they try to do
+			if ( true != $is_allowed ) {
+				throw new SaveVehicleException( __( 'Not allowed to create/edit vehicle.', 'wp-car-manager' ), 'not-allowed' );
+			}
+
+			// check if data is posted
+			if ( ! isset( $_POST['data'] ) ) {
+				throw new SaveVehicleException( 'No data received', 'no-data' );
+			}
+
+			// parse post data
+			parse_str( $_POST['data'], $post_arr );
+
+			// put data in $data
+			$data = $post_arr['wpcm_submit_car'];
+
+			// if user is not logged in but allowed to post, we need to create an account
+			if ( ! is_user_logged_in() ) {
+
+				$account_created = false;
+
+				// check if account creation is allowed
+				if ( wp_car_manager()->service( 'user_manager' )->is_account_creation_allowed() ) {
+
+					// username must be posted when not automatically generated from email address
+					if ( ! wp_car_manager()->service( 'user_manager' )->is_generate_username_from_email() && empty( $data['create_account_username'] ) ) {
+						throw new SaveVehicleException( __( 'Please enter a username.', 'wp-car-manager' ), 'missing-username' );
+					}
+
+					// if user is not logged in and automatic account creation is enabled we do require an email address
+					if ( empty( $data['create_account_email'] ) ) {
+						throw new SaveVehicleException( __( 'Please enter your email address.', 'wp-car-manager' ), 'missing-email' );
+					}
+
+					// create account
+					$account_created = wp_car_manager()->service( 'user_manager' )->create_account( array(
+						'username' => ( wp_car_manager()->service( 'user_manager' )->is_generate_username_from_email() ? '' : $data['create_account_username'] ),
+						'email'    => $data['create_account_email'],
+						'role'     => wp_car_manager()->service( 'user_manager' )->get_registration_role()
+					) );
+
+				}
+
+				// check if account was created
+				if ( is_wp_error( $account_created ) ) {
+					throw new SaveVehicleException( $account_created->get_error_message(), 'account-creation-failed' );
+				}
+
+				// @todo login user
+
+			}
+
+			// get logged in user
+			$user = wp_get_current_user();
+
+			// make sure we've got a logged in user, if we don't something went horribly wrong
+			if ( false === $user ) {
+				throw new SaveVehicleException( __( 'User could not log in, please contact support.', 'wp-car-manager' ), 'account-login-failed' );
+			}
+
+			// validate data
+			// @todo validate data (check if required fields are set)
+
+			/**
+			 * Data Validation
+			 */
+			try {
+				$frdate_dt = new \DateTime( $data['frdate'] );
+			} catch ( \Exception $e ) {
+				throw new SaveVehicleException( __( 'Incorrect First Registration Date format', 'wp-car-manager' ), 'frdate' );
+			}
 
 			/**
 			 * Data Sanitation
@@ -147,12 +169,16 @@ class SaveVehicle extends Ajax {
 				$return['vehicle'] = $vehicle->get_id();
 
 			} catch ( \Exception $e ) {
-				$return['errors'] = array(
-					'id'  => 'persist',
-					'msg' => $e->getMessage()
-				);
+				throw new SaveVehicleException( $e->getMessage(), 'persist' );
 			}
 
+
+		} catch ( SaveVehicleException $e ) {
+			$return['success'] = false;
+			$return['errors']  = array(
+				'id'  => $e->getId(),
+				'msg' => $e->getMessage()
+			);
 		}
 
 		// send JSON
