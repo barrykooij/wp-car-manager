@@ -63,7 +63,7 @@ class SaveVehicle extends Ajax {
 			// if user is not logged in but allowed to post, we need to create an account
 			if ( ! is_user_logged_in() ) {
 
-				$account_created = false;
+				$new_account_id = null;
 
 				// check if account creation is allowed
 				if ( wp_car_manager()->service( 'user_manager' )->is_account_creation_allowed() ) {
@@ -79,7 +79,7 @@ class SaveVehicle extends Ajax {
 					}
 
 					// create account
-					$account_created = wp_car_manager()->service( 'user_manager' )->create_account( array(
+					$new_account_id = wp_car_manager()->service( 'user_manager' )->create_account( array(
 						'username' => ( wp_car_manager()->service( 'user_manager' )->is_generate_username_from_email() ? '' : $data['create_account_username'] ),
 						'email'    => $data['create_account_email'],
 						'role'     => wp_car_manager()->service( 'user_manager' )->get_registration_role()
@@ -88,12 +88,14 @@ class SaveVehicle extends Ajax {
 				}
 
 				// check if account was created
-				if ( is_wp_error( $account_created ) ) {
-					throw new SaveVehicleException( $account_created->get_error_message(), 'account-creation-failed' );
+				if ( is_wp_error( $new_account_id ) ) {
+					throw new SaveVehicleException( $new_account_id->get_error_message(), 'account-creation-failed' );
 				}
 
-				// @todo login user
-
+				// login new account
+				if ( null !== $new_account_id ) {
+					wp_car_manager()->service( 'user_manager' )->login_user( $new_account_id );
+				}
 			}
 
 			// get logged in user
