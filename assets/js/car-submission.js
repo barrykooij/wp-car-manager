@@ -34,8 +34,6 @@ jQuery( function ( $ ) {
 			}
 		} );
 
-		console.log( 'succcess:' + success );
-
 		return success;
 	};
 
@@ -140,7 +138,7 @@ jQuery( function ( $ ) {
 
 		// @todo add spinner
 		// @todo disable submit
-		$form.wpcm_disable();
+//		$form.wpcm_disable();
 
 		if ( ! $form.wpcm_check_required() ) {
 			$form.wpcm_enable();
@@ -160,8 +158,11 @@ jQuery( function ( $ ) {
 			// check response
 			if ( response.success ) {
 
-				// @todo upload dem images
+				// wpcm_car_saved event, uploading car images binds on this
 				$form.trigger( 'wpcm_car_saved', [response] );
+
+				// redirect user to success URL
+				console.log( 'redirect time GG ');
 
 			} else {
 				if ( response.errors.length > 0 ) {
