@@ -133,7 +133,7 @@ class UserManager {
 		}
 
 		// mimicking WP core user registration error checking (registration_errors filter)
-		$reg_errors = new WP_Error();
+		$reg_errors = new \WP_Error();
 		$reg_errors = apply_filters( 'wpcm_registration_errors', $reg_errors, $data['username'], $data['email'] );
 
 		// mimicking WP Core register_post action
@@ -162,7 +162,7 @@ class UserManager {
 
 		// send new user email
 		$this->send_new_account_email( $user_id, $data['password'] );
-		
+
 		// return new account ID
 		return $user_id;
 	}
