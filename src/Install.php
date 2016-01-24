@@ -14,6 +14,10 @@ class Install {
 		Taxonomies::register_model_make();
 		Taxonomies::register_features();
 
+		// setup user roles
+		$role_manager = new RoleManager();
+		$role_manager->setup_roles();
+
 		// create cars listing page if not exists
 		$listings_slug = sanitize_title( __( 'Cars', 'wp-car-manager' ) );
 		$listings_page = get_page_by_path( $listings_slug );
