@@ -18,7 +18,7 @@ class RoleManager {
 		if ( is_object( $wp_roles ) ) {
 
 			// add WPCM role
-			\add_role( 'car_lister', __( 'Car Lister', 'wp-car-manager' ), array(
+			\add_role( 'car_seller', __( 'Car Seller', 'wp-car-manager' ), array(
 				'read'         => true,
 				'edit_posts'   => false,
 				'delete_posts' => false
@@ -49,23 +49,23 @@ class RoleManager {
 				'manage_car_listings'
 			),
 			'car_listing' => array(
-				"edit_car_listing",
-				"read_car_listing",
-				"delete_car_listing",
-				"edit_car_listings",
-				"edit_others_car_listings",
-				"publish_car_listings",
-				"read_private_car_listings",
-				"delete_car_listings",
-				"delete_private_car_listings",
-				"delete_published_car_listings",
-				"delete_others_car_listings",
-				"edit_private_car_listings",
-				"edit_published_car_listings",
-				"manage_car_listing_terms",
-				"edit_car_listing_terms",
-				"delete_car_listing_terms",
-				"assign_car_listing_terms"
+				'edit_car_listing',
+				'read_car_listing',
+				'delete_car_listing',
+				'edit_car_listings',
+				'edit_others_car_listings',
+				'publish_car_listings',
+				'read_private_car_listings',
+				'delete_car_listings',
+				'delete_private_car_listings',
+				'delete_published_car_listings',
+				'delete_others_car_listings',
+				'edit_private_car_listings',
+				'edit_published_car_listings',
+				'manage_car_listing_terms',
+				'edit_car_listing_terms',
+				'delete_car_listing_terms',
+				'assign_car_listing_terms'
 			)
 		) );
 	}
