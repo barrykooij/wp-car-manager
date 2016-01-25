@@ -33,8 +33,6 @@ final class Plugin extends Pimple\Container {
 
 		// load the plugin
 		$this->load();
-
-
 	}
 
 	/**
@@ -77,6 +75,7 @@ final class Plugin extends Pimple\Container {
 		// register post type & taxonomies
 		add_action( 'init', function () {
 			Vehicle\PostType::register();
+			Vehicle\PostStatus::register();
 			Taxonomies::register_model_make();
 			Taxonomies::register_features();
 		} );
