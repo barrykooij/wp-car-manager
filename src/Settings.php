@@ -141,6 +141,32 @@ class Settings {
 
 					),
 				),
+				'pages'          => array(
+					__( 'Pages', 'wp-car-manager' ),
+					array(
+						array(
+							'name'    => 'page_submit',
+							'label'   => __( 'Submit Car Page Form', 'wp-car-manager' ),
+							'desc'    => sprintf( __( 'Select the page where you have placed the %s shortcode.', 'wp-car-manager' ), '<a href="https://www.wpcarmanager.com/kb/submit-car-form/" target="_blank">[wpcm_submit_car_form]</a>' ),
+							'type'    => 'select',
+							'options' => Helper\Pages::get_pages()
+						),
+						array(
+							'name'    => 'page_dashboard',
+							'label'   => __( 'Car Dashboard Page Form', 'wp-car-manager' ),
+							'desc'    => sprintf( __( 'Select the page where you have placed the %s shortcode.', 'wp-car-manager' ), '<a href="https://www.wpcarmanager.com/kb/car-dashboard/" target="_blank">[wpcm_dashboard]</a>' ),
+							'type'    => 'select',
+							'options' => Helper\Pages::get_pages()
+						),
+						array(
+							'name'    => 'page_listings',
+							'label'   => __( 'Car Listings Page Form', 'wp-car-manager' ),
+							'desc'    => sprintf( __( 'Select the page where you have placed the %s shortcode.', 'wp-car-manager' ), '<a href="https://www.wpcarmanager.com/kb/listings-page/" target="_blank">[wpcm_cars]</a>' ),
+							'type'    => 'select',
+							'options' => Helper\Pages::get_pages()
+						),
+					),
+				),
 			)
 		);
 	}
