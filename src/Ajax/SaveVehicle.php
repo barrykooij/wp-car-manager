@@ -131,6 +131,9 @@ class SaveVehicle extends Ajax {
 			/** @var Vehicle\Car $vehicle */
 			$vehicle = wp_car_manager()->service( 'vehicle_factory' )->make( 0 );
 
+			// set vehicle status
+			$vehicle->set_status( 'preview' );
+
 			// set vehicle listing author
 			$vehicle->set_author( $user->ID );
 
