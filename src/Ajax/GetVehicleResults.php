@@ -67,7 +67,7 @@ class GetVehicleResults extends Ajax {
 
 				// load template
 				wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/item', '', array(
-					'url'         => get_permalink( $vehicle->get_id() ),
+					'url'         => $vehicle->get_url(),
 					'title'       => $title,
 					'image'       => $image,
 					'description' => $vehicle->get_short_description(),

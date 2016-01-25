@@ -298,4 +298,13 @@ abstract class Vehicle {
 		$this->gallery_attachment_ids = $gallery_attachment_ids;
 	}
 
+	/**
+	 * Get the URL (permalink) of the Vehicle
+	 *
+	 * @return mixed
+	 */
+	public function get_url() {
+		return \get_permalink( $this->get_id() );
+	}
+
 }
