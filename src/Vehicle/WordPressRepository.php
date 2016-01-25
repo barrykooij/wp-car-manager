@@ -97,7 +97,7 @@ class WordPressRepository implements VehicleRepository {
 				'post_excerpt' => $vehicle->get_short_description(),
 				'post_author'  => $vehicle->get_author(),
 				'post_type'    => PostType::VEHICLE,
-				'post_status'  => 'publish' // @todo this needs to be based on settings + be filterable
+				'post_status'  => $vehicle->get_status()
 			) );
 
 			if ( is_wp_error( $vehicle_id ) ) {
@@ -115,7 +115,7 @@ class WordPressRepository implements VehicleRepository {
 				'post_title'   => $vehicle->get_title(),
 				'post_content' => $vehicle->get_description(),
 				'post_excerpt' => $vehicle->get_short_description(),
-				'post_status'  => 'publish' // @todo this needs to be based on settings + be filterable
+				'post_status'  => $vehicle->get_status()
 			) );
 
 			if ( is_wp_error( $vehicle_id ) ) {
@@ -141,7 +141,7 @@ class WordPressRepository implements VehicleRepository {
 					$value = $vehicle->$method();
 
 					// turn \DateTime object into formatted string
-					if ( $value instanceof \DateTime) {
+					if ( $value instanceof \DateTime ) {
 						$value = $value->format( 'Y-m-d' );
 					}
 
