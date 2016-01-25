@@ -196,6 +196,21 @@
 
   .wpcm_vehicle {
 
+    .wpcm-preview {
+      background: #428dcb;
+      color: #fff;
+      padding: 1em;
+      margin-bottom: 1em;
+
+      h2 {
+        font-size: 2.2em;
+        color: #fff;
+      }
+      .wpcm-preview-or {
+        padding: 0 .5em;
+      }
+    }
+
     .attachment-full, .entry-thumbnail, .attachment-post-thumbnail {
       display: none;
     }
