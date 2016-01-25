@@ -39,7 +39,7 @@ class SubmitCarForm extends Shortcode {
 		wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form', '', array(
 			'vehicle'            => $vehicle,
 			'action'             => esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ),
-			'submit_button_text' => __( 'Submit Car', 'wp-car-manager' ),
+			'submit_button_text' => __( 'Preview Car', 'wp-car-manager' ),
 			'can_post_listing'   => wp_car_manager()->service( 'user_manager' )->can_post_listing(),
 			'can_edit_listing'   => wp_car_manager()->service( 'user_manager' )->can_edit_listing( $listing_id ),
 		) );
