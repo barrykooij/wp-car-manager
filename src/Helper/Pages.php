@@ -13,16 +13,16 @@ class Pages {
 
 		// setup array with default option
 		$pages = array(
-			0 => __( 'Select Page', 'wp-car-manager' )
+			0 => '-- ' . __( 'no page', 'wp-car-manager' ) . ' --'
 		);
 
 		// get pages from WP
 		$pages_raw = get_pages();
 
 		// count. loop. add
-		if(count($pages_raw)>0){
-			foreach($pages_raw as $page) {
-				$pages[$page->ID] = $page->post_title;
+		if ( count( $pages_raw ) > 0 ) {
+			foreach ( $pages_raw as $page ) {
+				$pages[ $page->ID ] = $page->post_title;
 			}
 		}
 
