@@ -8,6 +8,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  * SINGLE VEHICLE
  */
 
+if ( ! function_exists( 'wpcm_template_vehicle_preview_bar' ) ) {
+	function wpcm_template_vehicle_preview_bar() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/preview' );
+	}
+}
+
 if ( ! function_exists( 'wpcm_template_vehicle_images' ) ) {
 	function wpcm_template_vehicle_images() {
 		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/image' );

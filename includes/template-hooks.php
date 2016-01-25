@@ -7,8 +7,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Before Summary Box
  *
- * @see wpcm_show_vehicle_images()
- * @see wpcm_show_vehicle_thumbnails()
+ * @see wpcm_template_vehicle_preview_bar()
+ */
+add_action( 'wpcm_before_single_vehicle', 'wpcm_template_vehicle_preview_bar', 10 );
+
+/**
+ * Before Summary Box
+ *
+ * @see wpcm_template_vehicle_images()
+ * @see wpcm_template_vehicle_thumbnails()
  */
 add_action( 'wpcm_before_vehicle_summary', 'wpcm_template_vehicle_images', 10 );
 add_action( 'wpcm_vehicle_thumbnails', 'wpcm_template_vehicle_thumbnails', 20 );
