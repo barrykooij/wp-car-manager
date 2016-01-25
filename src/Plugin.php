@@ -3,6 +3,7 @@
 namespace Never5\WPCarManager;
 
 use Never5\WPCarManager\Shortcode;
+use Never5\WPCarManager\Vehicle\PostStatus;
 
 final class Plugin extends Pimple\Container {
 
@@ -80,7 +81,7 @@ final class Plugin extends Pimple\Container {
 			Taxonomies::register_features();
 		} );
 
-		// register image size
+		// register image sizes
 		add_action( 'init', function () {
 			add_image_size( 'wpcm_vehicle_single', 600, 400, true );
 			add_image_size( 'wpcm_vehicle_thumbnail', 150, 150, true );
@@ -108,7 +109,10 @@ final class Plugin extends Pimple\Container {
 			}, 20 );
 
 			// license AJAX callback
-			add_action( 'wp_ajax_wpcm_extension', array( 'Never5\\WPCarManager\\Admin\\Page\\Extensions', 'ajax_license_action' ) );
+			add_action( 'wp_ajax_wpcm_extension', array(
+				'Never5\\WPCarManager\\Admin\\Page\\Extensions',
+				'ajax_license_action'
+			) );
 
 			// add meta box
 			add_action( 'admin_init', function () {
@@ -169,13 +173,17 @@ final class Plugin extends Pimple\Container {
 
 			// setup shortcode
 			add_action( 'init', function () use ( $container ) {
-				$shortcode_cars = new Shortcode\Cars();
+				$shortcode_cars            = new Shortcode\Cars();
 				$shortcode_submit_car_form = new Shortcode\SubmitCarForm();
 			} );
 
-			// Setup custom AJAX
+			// setup custom AJAX
 			$ajax_manager = new Ajax\Manager();
 			$ajax_manager->setup();
+
+			// allow authors to preview their own posts
+			$post_status = new PostStatus();
+			$post_status->allow_preview();
 		}
 
 	}
