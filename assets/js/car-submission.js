@@ -101,35 +101,47 @@ jQuery( function ( $ ) {
 		parallelUploads: 20,
 		maxFiles: 20,
 		acceptedFiles: 'image/*',
+		wpcm_response: null,
 
 		init: function () {
-			var wcpm_dropzone = this;
+			var wpcm_dropzone = this;
 
 			// processQueue on wpcm_car_saved
 			$form.on( 'wpcm_car_saved', function ( event, response ) {
 
-				// set new URL based on SaveVehicle response
-				wcpm_dropzone.options.url = wpcm.ajax_url_post_images + '&vehicle=' + response.vehicle;
+				wpcm_dropzone.wpcm_response = response;
 
-				// process that queue
-				wcpm_dropzone.processQueue();
+				// only process when there are images
+				if ( wpcm_dropzone.getQueuedFiles().length > 0 ) {
+					// set new URL based on SaveVehicle response
+					wpcm_dropzone.options.url = wpcm.ajax_url_post_images + '&vehicle=' + wpcm_dropzone.wpcm_response.vehicle;
+
+					// process that queue
+					wpcm_dropzone.processQueue();
+				} else {
+					// no images so trigger complete event
+					$form.trigger( 'wpcm_image_queue_complete', [wpcm_dropzone.wpcm_response] );
+				}
+
 			} );
 
-			// bind on queuecomplete
+			// trigger wpcm_image_queue_complete on queuecomplete
 			this.on( 'queuecomplete', function () {
-				console.log( 'queuecomplete triggerd' );
-
-				// we're not longer submitting
-				$form.wpcm_enable();
+				$form.trigger( 'wpcm_image_queue_complete', [wpcm_dropzone.wpcm_response] );
 			} );
 
 		}
 	} );
 
+	$form.bind( 'wpcm_image_queue_complete', function ( event, response ) {
+		// redirect user to success URL
+		if ( 'undefined' !== typeof response.url ) {
+			window.location = response.url;
+		}
+	} );
+
 	// catch form submission
 	$form.submit( function () {
-
-		console.log( 'submitting' );
 
 		// don't continue if we're already processing
 		if ( wpcm_submitting ) {
@@ -138,7 +150,7 @@ jQuery( function ( $ ) {
 
 		// @todo add spinner
 		// @todo disable submit
-//		$form.wpcm_disable();
+		$form.wpcm_disable();
 
 		if ( ! $form.wpcm_check_required() ) {
 			$form.wpcm_enable();
@@ -160,9 +172,6 @@ jQuery( function ( $ ) {
 
 				// wpcm_car_saved event, uploading car images binds on this
 				$form.trigger( 'wpcm_car_saved', [response] );
-
-				// redirect user to success URL
-				console.log( 'redirect time GG ');
 
 			} else {
 				if ( response.errors.length > 0 ) {
@@ -186,8 +195,6 @@ jQuery( function ( $ ) {
 				// we're not longer submitting
 				wpcm_submitting = false;
 			}
-
-			console.log( response );
 
 		} );
 
