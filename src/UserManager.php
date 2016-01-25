@@ -70,7 +70,7 @@ class UserManager {
 			$listing = wp_car_manager()->service( 'vehicle_factory' )->make( $listing_id );
 
 			// check if listing author is equal to currently logged in user and if user has permission to edit listing
-			if ( $listing->get_author() !== get_current_user_id() && ! current_user_can( 'edit_post', $listing->get_id() ) ) {
+			if ( $listing->get_author() != get_current_user_id() && ! current_user_can( 'edit_car_listing', $listing->get_id() ) ) {
 				$can_edit = false;
 			}
 		}
