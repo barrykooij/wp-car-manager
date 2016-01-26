@@ -43,6 +43,7 @@ class WordPressRepository implements VehicleRepository {
 		$pm_prefix = 'wpcm_';
 
 		$data->id                = $post->ID;
+		$data->status            = $post->post_status;
 		$data->title             = $post->post_title;
 		$data->author            = $post->post_author;
 		$data->description       = $post->post_content; // @todo check if we need to apply filters here
