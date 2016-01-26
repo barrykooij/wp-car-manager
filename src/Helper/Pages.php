@@ -36,7 +36,13 @@ class Pages {
 	 * @return string
 	 */
 	public static function get_page_submit() {
-		return apply_filters( 'wpcm_page_submit', wp_car_manager()->service( 'settings' )->get_option( 'page_submit' ) );
+		$url     = '';
+		$page_id = apply_filters( 'wpcm_page_id_submit', wp_car_manager()->service( 'settings' )->get_option( 'page_submit' ) );
+		if ( 0 != $page_id ) {
+			$url = get_permalink( $page_id );
+		}
+
+		return apply_filters( 'wpcm_page_url_submit', $url );
 	}
 
 	/**
@@ -45,7 +51,13 @@ class Pages {
 	 * @return string
 	 */
 	public static function get_page_dashboard() {
-		return apply_filters( 'wpcm_page_dashboard', wp_car_manager()->service( 'settings' )->get_option( 'page_dashboard' ) );
+		$url     = '';
+		$page_id = apply_filters( 'wpcm_page_id_dashboard', wp_car_manager()->service( 'settings' )->get_option( 'page_dashboard' ) );
+		if ( 0 != $page_id ) {
+			$url = get_permalink( $page_id );
+		}
+
+		return apply_filters( 'wpcm_page_url_dashboard', $url );
 	}
 
 	/**
@@ -54,7 +66,13 @@ class Pages {
 	 * @return string
 	 */
 	public static function get_page_listings() {
-		return apply_filters( 'wpcm_page_listings', wp_car_manager()->service( 'settings' )->get_option( 'page_listings' ) );
+		$url     = '';
+		$page_id = apply_filters( 'wpcm_page_id_listings', wp_car_manager()->service( 'settings' )->get_option( 'page_listings' ) );
+		if ( 0 != $page_id ) {
+			$url = get_permalink( $page_id );
+		}
+
+		return apply_filters( 'wpcm_page_url_listings', $url );
 	}
 
 }
