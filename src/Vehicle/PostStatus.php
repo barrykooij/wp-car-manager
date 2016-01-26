@@ -63,7 +63,9 @@ class PostStatus {
 			$vehicle = wp_car_manager()->service( 'vehicle_factory' )->make( $vehicle_id );
 
 			// set vehicle status
-			$vehicle->set_status( 'publish' ); // @todo check if admin need to check this first, make filterable for waiting_for_payment etc.
+			$new_status = ( ( '1' == wp_car_manager()->service('settings')->get_option('moderate_new_listings') ) ? 'pending' : 'publish' );
+			$new_status = apply_filters( 'wpcm_submit_publish_action_status', $new_status, $vehicle );
+			$vehicle->set_status( $new_status );
 
 			// @todo set vehicle expiration date
 
@@ -71,7 +73,7 @@ class PostStatus {
 			$vehicle = wp_car_manager()->service( 'vehicle_repository' )->persist( $vehicle );
 
 			// redirect to new url
-			wp_redirect( remove_query_arg( 'wpcm_publish' ) ); // @todo make URL filterable so we can redirect to payment screen etc.
+			wp_redirect( apply_filters( 'wpcm_submit_publish_action_redirect', $vehicle->get_url(), $vehicle ) ); // @todo make URL filterable so we can redirect to payment screen etc.
 
 			// bye
 			exit;
