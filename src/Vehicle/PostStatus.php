@@ -73,7 +73,7 @@ class PostStatus {
 			$vehicle = wp_car_manager()->service( 'vehicle_repository' )->persist( $vehicle );
 
 			// redirect to new url
-			wp_redirect( apply_filters( 'wpcm_submit_publish_action_redirect', $vehicle->get_url(), $vehicle ) ); // @todo make URL filterable so we can redirect to payment screen etc.
+			wp_redirect( apply_filters( 'wpcm_submit_publish_action_redirect', $vehicle->get_url(), $vehicle ) );
 
 			// bye
 			exit;
