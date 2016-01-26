@@ -41,7 +41,7 @@
 		<fieldset>
 			<label for="create_account_username"><?php _e( 'Username', 'wp-car-manager' ); ?></label>
 
-			<div class="wpcm-field">
+			<div class="wpcm-field wpcm-required-field">
 				<?php
 				wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form/form-fields/text', '', array(
 					'field' => array( 'key' => 'create_account_username' ),
@@ -54,7 +54,7 @@
 	<fieldset>
 		<label for="create_account_email"><?php _e( 'Your Email', 'wp-car-manager' ); ?></label>
 
-		<div class="wpcm-field">
+		<div class="wpcm-field wpcm-required-field">
 			<?php
 			wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form/form-fields/text', '', array(
 				'field' => array( 'key' => 'create_account_email' ),
