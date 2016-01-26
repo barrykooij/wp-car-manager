@@ -184,6 +184,7 @@ final class Plugin extends Pimple\Container {
 			// allow authors to preview their own posts
 			$post_status = new PostStatus();
 			$post_status->allow_preview();
+			add_action( 'init', array( $post_status, 'catch_publish_action' ) );
 		}
 
 	}

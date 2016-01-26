@@ -44,6 +44,41 @@ class PostStatus {
 	}
 
 	/**
+	 * Catch the publish action
+	 */
+	public function catch_publish_action() {
+		if ( isset( $_GET['wpcm_publish'] ) ) {
+
+			// vehicle ID that is requested to publish
+			$vehicle_id = absint( $_GET['wpcm_publish'] );
+
+			// redirect user to login screen if they can't edit this listing
+			if ( ! wp_car_manager()->service( 'user_manager' )->can_edit_listing( $vehicle_id ) ) {
+				wp_redirect( wp_login_url( add_query_arg( 'wpcm_publish', $vehicle_id ) ) );
+				exit;
+			}
+
+			// get vehicle
+			/** @var Vehicle $vehicle */
+			$vehicle = wp_car_manager()->service( 'vehicle_factory' )->make( $vehicle_id );
+
+			// set vehicle status
+			$vehicle->set_status( 'publish' ); // @todo check if admin need to check this first, make filterable for waiting_for_payment etc.
+
+			// @todo set vehicle expiration date
+
+			// save vehicle
+			$vehicle = wp_car_manager()->service( 'vehicle_repository' )->persist( $vehicle );
+
+			// redirect to new url
+			wp_redirect( remove_query_arg( 'wpcm_publish' ) ); // @todo make URL filterable so we can redirect to payment screen etc.
+
+			// bye
+			exit;
+		}
+	}
+
+	/**
 	 *
 	 * Catch the pre post
 	 *
@@ -80,17 +115,17 @@ class PostStatus {
 		}
 
 		// check if we're dealing with a wpcm_vehicle post type
-		if( PostType::VEHICLE != $posts[0]->post_type) {
+		if ( PostType::VEHICLE != $posts[0]->post_type ) {
 			return $posts;
 		}
 
 		// only continue on preview posts
-		if( 'preview' != $posts[0]->post_status ) {
+		if ( 'preview' != $posts[0]->post_status ) {
 			return $posts;
 		}
 
 		// check if this user can edit this vehicle
-		if( ! wp_car_manager()->service( 'user_manager' )->can_edit_listing( $posts[0]->ID ) ) {
+		if ( ! wp_car_manager()->service( 'user_manager' )->can_edit_listing( $posts[0]->ID ) ) {
 			return $posts;
 		}
 
