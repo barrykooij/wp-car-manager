@@ -121,7 +121,7 @@ class UserManager {
 
 		// check if email address exists
 		if ( email_exists( $data['email'] ) ) {
-			return new WP_Error( 'validation-error', __( 'This email is already registered, please choose another one.', 'wp-car-manager' ) );
+			return new \WP_Error( 'validation-error', __( 'This email is already registered, please choose another one.', 'wp-car-manager' ) );
 		}
 
 		// ensure username is unique
