@@ -20,6 +20,15 @@ if ( ! function_exists( 'wpcm_template_vehicle_preview_bar' ) ) {
 	}
 }
 
+if ( ! function_exists( 'wpcm_template_vehicle_pending_bar' ) ) {
+	function wpcm_template_vehicle_pending_bar() {
+		global $vehicle;
+		if ( 'pending' == $vehicle->get_status() ) {
+			wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/pending' );
+		}
+	}
+}
+
 if ( ! function_exists( 'wpcm_template_vehicle_images' ) ) {
 	function wpcm_template_vehicle_images() {
 		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/image' );

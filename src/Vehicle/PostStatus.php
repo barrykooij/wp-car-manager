@@ -122,7 +122,7 @@ class PostStatus {
 		}
 
 		// only continue on preview posts
-		if ( 'preview' != $posts[0]->post_status ) {
+		if ( 'preview' != $posts[0]->post_status && 'pending' != $posts[0]->post_status ) {
 			return $posts;
 		}
 
