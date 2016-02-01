@@ -46,6 +46,7 @@ class WordPressRepository implements VehicleRepository {
 		$data->status            = $post->post_status;
 		$data->title             = $post->post_title;
 		$data->author            = $post->post_author;
+		$data->expiration        = ( ( false != get_post_meta( $post->ID, $pm_prefix . 'expiration', true ) ) ? new \DateTime( get_post_meta( $post->ID, $pm_prefix . 'expiration', true ) ) : null );
 		$data->description       = $post->post_content; // @todo check if we need to apply filters here
 		$data->short_description = $post->post_excerpt;
 		$data->condition         = get_post_meta( $post->ID, $pm_prefix . 'condition', true );
@@ -127,6 +128,13 @@ class WordPressRepository implements VehicleRepository {
 
 		// get fields
 		$fields = Data::get_fields();
+
+		// set expiration date
+		if ( null != $vehicle->get_expiration() ) {
+			update_post_meta( $vehicle->get_id(), 'wpcm_expiration', $vehicle->get_expiration()->format( 'Y-m-d' ) );
+		} else {
+			delete_post_meta( $vehicle->get_id(), 'wpcm_expiration' );
+		}
 
 		// set vehicle meta-data
 		if ( ! empty( $fields ) ) {

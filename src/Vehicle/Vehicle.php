@@ -17,6 +17,9 @@ abstract class Vehicle {
 	/** @var int */
 	private $author;
 
+	/** @var \DateTime */
+	private $expiration;
+
 	/** @var String */
 	private $description;
 
@@ -101,6 +104,20 @@ abstract class Vehicle {
 	 */
 	public function set_author( $author ) {
 		$this->author = $author;
+	}
+
+	/**
+	 * @return \DateTime
+	 */
+	public function get_expiration() {
+		return $this->expiration;
+	}
+
+	/**
+	 * @param \DateTime $expiration
+	 */
+	public function set_expiration( $expiration ) {
+		$this->expiration = $expiration;
 	}
 
 	/**

@@ -63,11 +63,9 @@ class PostStatus {
 			$vehicle = wp_car_manager()->service( 'vehicle_factory' )->make( $vehicle_id );
 
 			// set vehicle status
-			$new_status = ( ( '1' == wp_car_manager()->service('settings')->get_option('moderate_new_listings') ) ? 'pending' : 'publish' );
+			$new_status = ( ( '1' == wp_car_manager()->service( 'settings' )->get_option( 'moderate_new_listings' ) ) ? 'pending' : 'publish' );
 			$new_status = apply_filters( 'wpcm_submit_publish_action_status', $new_status, $vehicle );
 			$vehicle->set_status( $new_status );
-
-			// @todo set vehicle expiration date
 
 			// save vehicle
 			$vehicle = wp_car_manager()->service( 'vehicle_repository' )->persist( $vehicle );
@@ -139,6 +137,54 @@ class PostStatus {
 		add_filter( 'pings_open', '__return_false' );
 
 		return $posts;
+	}
+
+	/**
+	 * Catch first publish of car-lister created listings and set an expiration date
+	 *
+	 * @param string $new_status
+	 * @param string $old_status
+	 * @param \WP_Post $post
+	 */
+	public function set_expiration_on_first_publish( $new_status, $old_status, $post ) {
+
+		// verify this is not an auto save routine.
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+			return;
+		}
+
+		// only catch posts of our vehicle post
+		if ( PostType::VEHICLE != $post->post_type ) {
+			return;
+		}
+
+		// new post status must be publish, old status can't be publish
+		if ( 'publish' != $new_status || 'publish' == $old_status ) {
+			return;
+		}
+
+		// check if listing is created by a 'car_seller'
+		$user = get_user_by( 'id', $post->post_author );
+		$role = array_shift( $user->roles );
+		if ( 'car_seller' != $role ) {
+			return;
+		}
+
+		// get the abs int value of the listing duration setting
+		$exp_days = absint( wp_car_manager()->service( 'settings' )->get_option( 'listing_duration' ) );
+
+		// only set an expiration date if the listing duration is at least 1 day
+		if ( $exp_days < 1 ) {
+			return;
+		}
+
+		// create \DateTime object and modify it to represent the date of expiration
+		$exp_date = new \DateTime();
+		$exp_date->setTime( 0, 0, 0 );
+		$exp_date->modify( '+' . $exp_days . ' days' );
+
+		// set expiration date
+		update_post_meta( $post->ID, 'wpcm_expiration', $exp_date->format( 'Y-m-d' ) );
 	}
 
 }

@@ -88,6 +88,12 @@ final class Plugin extends Pimple\Container {
 			add_image_size( 'wpcm_vehicle_listings_item', 100, 100, true );
 		} );
 
+		// Post status object
+		$post_status = new PostStatus();
+
+		// set listing expiration on first publish
+		add_action( 'transition_post_status', array( $post_status, 'set_expiration_on_first_publish' ), 10, 3 );
+
 		if ( is_admin() ) {
 
 			// add admin menu
@@ -182,7 +188,6 @@ final class Plugin extends Pimple\Container {
 			$ajax_manager->setup();
 
 			// allow authors to preview their own posts
-			$post_status = new PostStatus();
 			$post_status->allow_preview();
 			add_action( 'init', array( $post_status, 'catch_publish_action' ) );
 		}
