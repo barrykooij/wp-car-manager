@@ -74,7 +74,7 @@
 }
 
 /** Car Data Meta Box **/
-#wpcm-car-data {
+#wpcm-car-data, #wpcm-listing-data {
   .inside {
     @include clearfix();
     table {

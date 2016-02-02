@@ -50,6 +50,9 @@ abstract class Vehicle {
 	/** @var String */
 	private $gallery_attachment_ids;
 
+	/** @var int */
+	private $sold;
+
 	/**
 	 * @return int
 	 */
@@ -322,6 +325,27 @@ abstract class Vehicle {
 	 */
 	public function get_url() {
 		return \get_permalink( $this->get_id() );
+	}
+
+	/**
+	 * @return int
+	 */
+	public function get_sold() {
+		return $this->sold;
+	}
+
+	/**
+	 * @param int $sold
+	 */
+	public function set_sold( $sold ) {
+		$this->sold = $sold;
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function is_sold() {
+		return ( '1' == $this->get_sold() );
 	}
 
 }

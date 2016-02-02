@@ -23,7 +23,7 @@ jQuery( function ( $ ) {
         } );
     } );
 
-    $( '#frdate' ).datepicker( {
+    $( '.wpcm-date-field' ).datepicker( {
         dateFormat: 'yy-mm-dd',
         changeMonth: true,
         changeYear: true

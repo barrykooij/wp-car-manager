@@ -35,7 +35,7 @@ class Data {
 				'required' => true,
 			),
 			'frdate'       => array(
-				'type'     => 'text',
+				'type'     => 'date',
 				'label'    => __( 'First Registration Date', 'wp-car-manager' ),
 				'key'      => 'frdate',
 				'required' => true

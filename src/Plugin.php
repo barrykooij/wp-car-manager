@@ -123,6 +123,10 @@ final class Plugin extends Pimple\Container {
 			// add meta box
 			add_action( 'admin_init', function () {
 
+				// listing data
+				$listing_data = new Admin\MetaBox\ListingData();
+				$listing_data->init();
+
 				// car data
 				$car_data = new Admin\MetaBox\CarData();
 				$car_data->init();

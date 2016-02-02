@@ -14,10 +14,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php
 					// getter method for value
 					$get_method = 'get_' . $field['key'];
-					$value = $vehicle->$get_method();
+					$value      = $vehicle->$get_method();
 
-					if('frdate'===$field['key']) {
-						$value = $value->format('Y-m-d');
+					if ( 'date' === $field['type'] ) {
+						$value = '';
+						if ( null != $value ) {
+							$value = $value->format( 'Y-m-d' );
+						}
 					}
 
 					// load template part

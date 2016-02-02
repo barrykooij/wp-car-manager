@@ -42,6 +42,7 @@ class WordPressRepository implements VehicleRepository {
 
 		$pm_prefix = 'wpcm_';
 
+
 		$data->id                = $post->ID;
 		$data->status            = $post->post_status;
 		$data->title             = $post->post_title;
@@ -61,6 +62,7 @@ class WordPressRepository implements VehicleRepository {
 		$data->engine            = get_post_meta( $post->ID, $pm_prefix . 'engine', true );
 		$data->body_style        = get_post_meta( $post->ID, $pm_prefix . 'body_style', true );
 		$data->doors             = get_post_meta( $post->ID, $pm_prefix . 'doors', true );
+		$data->sold              = get_post_meta( $post->ID, $pm_prefix . 'sold', true );
 
 		// get and format features
 		$data->features = $this->get_formatted_features( $post->ID );
@@ -73,6 +75,8 @@ class WordPressRepository implements VehicleRepository {
 
 		// set attachments ids
 		$data->gallery_attachment_ids = array_filter( explode( ',', $product_image_gallery ) );
+
+		error_log( print_r( $data, 1 ), 0 );
 
 		return $data;
 
@@ -135,6 +139,10 @@ class WordPressRepository implements VehicleRepository {
 		} else {
 			delete_post_meta( $vehicle->get_id(), 'wpcm_expiration' );
 		}
+
+		// set sold
+		update_post_meta( $vehicle->get_id(), 'wpcm_sold', $vehicle->get_sold() );
+
 
 		// set vehicle meta-data
 		if ( ! empty( $fields ) ) {

@@ -42,7 +42,7 @@ class CarData extends MetaBox {
 		if ( count( $tables ) > 0 ) {
 			foreach ( $tables as $table ) {
 				// view
-				wp_car_manager()->service( 'view_manager' )->display( 'meta-box/car-data', array(
+				wp_car_manager()->service( 'view_manager' )->display( 'meta-box/mb-data', array(
 					'mb_prefix' => 'wpcm-cd',
 					'fields'    => $table,
 					'vehicle'   => $vehicle
