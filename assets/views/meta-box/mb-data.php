@@ -17,8 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					$value      = $vehicle->$get_method();
 
 					if ( 'date' === $field['type'] ) {
-						$value = '';
-						if ( null != $value ) {
+						if ( null != $value && ! empty( $value ) ) {
 							$value = $value->format( 'Y-m-d' );
 						}
 					}

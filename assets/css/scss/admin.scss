@@ -78,7 +78,7 @@
   .inside {
     @include clearfix();
     table {
-      width: 50%;
+      width: 100%;
       margin: 0;
       float: left;
 
@@ -92,6 +92,15 @@
           width: 100%;
         }
       }
+    }
+  }
+
+}
+
+#wpcm-car-data {
+  .inside {
+    table {
+      width: 50%;
     }
   }
 
