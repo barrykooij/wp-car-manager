@@ -11,7 +11,7 @@ class ListingData extends MetaBox {
 	 * Constructor
 	 */
 	public function __construct() {
-		parent::__construct( 'listing-data', __( 'Listing Data', 'wp-car-manager' ), 'normal', 'high' );
+		parent::__construct( 'listing-data', __( 'Listing Data', 'wp-car-manager' ), 'side', 'default' );
 	}
 
 	/**
