@@ -31,7 +31,7 @@ class Manager {
 	 *
 	 * @return array
 	 */
-	public function get_vehicles( $filters, $sort, $per_page=-1 ) {
+	public function get_vehicles( $filters, $sort, $per_page = - 1 ) {
 
 		// vehicle array
 		$vehicles = array();
@@ -40,7 +40,7 @@ class Manager {
 		$sort_params = explode( '-', $sort );
 		$order       = ( 'desc' == array_pop( $sort_params ) ) ? 'DESC' : 'ASC';
 		$sort_val    = array_shift( $sort_params );
-		$meta_key  = 'wpcm_' . $sort_val;
+		$meta_key    = 'wpcm_' . $sort_val;
 		switch ( $sort_val ) {
 			case 'price':
 				$meta_type = 'NUMERIC';
@@ -55,6 +55,7 @@ class Manager {
 
 		// \WP_Query arg
 		$args = array(
+			'post_status'    => 'publish',
 			'post_type'      => PostType::VEHICLE,
 			'posts_per_page' => $per_page,
 			'orderby'        => 'meta_value',
@@ -146,5 +147,55 @@ class Manager {
 
 		return $vehicles;
 	}
+
+	/**
+	 * Mark published vehicles that has expired as expired
+	 *
+	 * @return bool
+	 */
+	public function mark_vehicles_expired() {
+
+		$today = new \DateTime();
+		$today->setTime( 0, 0, 0 );
+
+		// query
+		$expired_query = new \WP_Query( array(
+			'post_status'    => 'publish',
+			'post_type'      => PostType::VEHICLE,
+			'posts_per_page' => - 1,
+			'fields'         => 'ids',
+			'meta_query'     => array(
+				array(
+					'key'     => 'wpcm_expiration',
+					'value'   => $today->format( 'Y-m-d' ),
+					'type'    => 'DATE',
+					'compare' => '<='
+				)
+			)
+		) );
+
+		// check & loop
+		if ( $expired_query->have_posts() ) {
+			while ( $expired_query->have_posts() ) {
+
+				// load next
+				$expired_query->the_post();
+
+				// update the post status
+				wp_update_post( array(
+					'ID'          => get_the_ID(),
+					'post_status' => 'expired'
+				) );
+			}
+		}
+
+		// reset post data
+		wp_reset_postdata();
+
+		exit;
+
+		return true;
+	}
+
 
 }

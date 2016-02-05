@@ -196,6 +196,14 @@ final class Plugin extends Pimple\Container {
 			add_action( 'init', array( $post_status, 'catch_publish_action' ) );
 		}
 
+
+		// test
+		add_action( 'init', function () {
+			if ( isset( $_GET['test'] ) ) {
+				$manager = new Vehicle\Manager();
+				$manager->mark_vehicles_expired();
+			}
+		} );
 	}
 
 }
