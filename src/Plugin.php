@@ -94,6 +94,12 @@ final class Plugin extends Pimple\Container {
 		// set listing expiration on first publish
 		add_action( 'transition_post_status', array( $post_status, 'set_expiration_on_first_publish' ), 10, 3 );
 
+		// expiration cron-job callback
+		add_action( 'wpcm_crob_set_expired', function () {
+			$manager = new Vehicle\Manager();
+			$manager->mark_vehicles_expired();
+		} );
+
 		if ( is_admin() ) {
 
 			// add admin menu
@@ -196,14 +202,6 @@ final class Plugin extends Pimple\Container {
 			add_action( 'init', array( $post_status, 'catch_publish_action' ) );
 		}
 
-
-		// test
-		add_action( 'init', function () {
-			if ( isset( $_GET['test'] ) ) {
-				$manager = new Vehicle\Manager();
-				$manager->mark_vehicles_expired();
-			}
-		} );
 	}
 
 }
