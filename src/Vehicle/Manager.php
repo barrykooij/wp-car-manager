@@ -192,8 +192,6 @@ class Manager {
 		// reset post data
 		wp_reset_postdata();
 
-		exit;
-
 		return true;
 	}
 
