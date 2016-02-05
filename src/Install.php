@@ -34,6 +34,10 @@ class Install {
 			) );
 		}
 
+		// setup cron
+		$cron = new Vehicle\Cron();
+		$cron->schedule();
+
 		// flush rules after install
 		flush_rewrite_rules();
 	}
