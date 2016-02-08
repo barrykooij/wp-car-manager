@@ -76,8 +76,6 @@ class WordPressRepository implements VehicleRepository {
 		// set attachments ids
 		$data->gallery_attachment_ids = array_filter( explode( ',', $product_image_gallery ) );
 
-		error_log( print_r( $data, 1 ), 0 );
-
 		return $data;
 
 	}
