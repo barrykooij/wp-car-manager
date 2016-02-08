@@ -76,7 +76,6 @@ final class Plugin extends Pimple\Container {
 		// register post type & taxonomies
 		add_action( 'init', function () {
 			Vehicle\PostType::register();
-			Vehicle\PostStatus::register();
 			Taxonomies::register_model_make();
 			Taxonomies::register_features();
 		} );
@@ -90,9 +89,7 @@ final class Plugin extends Pimple\Container {
 
 		// Post status object
 		$post_status = new PostStatus();
-
-		// set listing expiration on first publish
-		add_action( 'transition_post_status', array( $post_status, 'set_expiration_on_first_publish' ), 10, 3 );
+		$post_status->setup();
 
 		// expiration cron-job callback
 		add_action( 'wpcm_crob_set_expired', function () {
@@ -196,10 +193,6 @@ final class Plugin extends Pimple\Container {
 			// setup custom AJAX
 			$ajax_manager = new Ajax\Manager();
 			$ajax_manager->setup();
-
-			// allow authors to preview their own posts
-			$post_status->allow_preview();
-			add_action( 'init', array( $post_status, 'catch_publish_action' ) );
 		}
 
 	}

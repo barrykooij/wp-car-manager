@@ -5,9 +5,31 @@ namespace Never5\WPCarManager\Vehicle;
 class PostStatus {
 
 	/**
+	 * Setup Post Status related stuff
+	 */
+	public function setup() {
+
+		// register post statusses
+		add_action( 'init', array( $this, 'register' ) );
+
+		// set listing expiration on first publish
+		add_action( 'transition_post_status', array( $this, 'set_expiration_on_first_publish' ), 10, 3 );
+
+		// allow authors to preview their own posts
+		$this->allow_preview();
+
+		// catch publish action
+		add_action( 'init', array( $this, 'catch_publish_action' ) );
+
+		// add custom post statuses to WP post status list
+		add_action( 'admin_footer-post.php', array( $this, 'append_to_post_status_list' ) );
+	}
+
+
+	/**
 	 * Register Post Statuses
 	 */
-	public static function register() {
+	public function register() {
 
 		// preview post status
 		register_post_status( 'preview', array(
@@ -185,6 +207,49 @@ class PostStatus {
 
 		// set expiration date
 		update_post_meta( $post->ID, 'wpcm_expiration', $exp_date->format( 'Y-m-d' ) );
+	}
+
+	/**
+	 * Add custom post statuses to WP post status list
+	 */
+	public function append_to_post_status_list() {
+		global $post;
+
+		// only for our post type
+		if ( PostType::VEHICLE == $post->post_type ) {
+
+			// empty
+			$script = '';
+
+			// our extra post statuses
+			$post_status_arr = array(
+				'expired' => __( 'Expired', 'wp-car-manager' ),
+				'preview' => __( 'Preview', 'wp-car-manager' )
+			);
+
+			// make filterable
+			$post_status_arr = apply_filters( 'wpcm_admin_post_status_list', $post_status_arr, $post );
+
+			// count and loop
+			if ( count( $post_status_arr ) > 0 ) {
+				foreach ( $post_status_arr as $ps_key => $ps_val ) {
+
+					// add script to $script
+					$script .= "$('select#post_status').append(\"<option value='" . $ps_key . "'" . selected( $ps_key, $post->post_status, false ) . ">" . $ps_val . "</option>\");";
+
+					if ( $post->post_status == $ps_key ) {
+						$script .= "$('#post-status-display').html('" . $ps_val . "');";
+					}
+
+				}
+			}
+
+			// print script
+			if ( ! empty( $script ) ) {
+				echo "<script type='text/javascript'>jQuery(document).ready(function($){" . $script . "});</script>";
+			}
+
+		}
 	}
 
 }
