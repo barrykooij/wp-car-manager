@@ -247,7 +247,7 @@ if ( ! function_exists( 'wpcm_template_submit_car_form_fields_car_data' ) ) {
 }
 
 if ( ! function_exists( 'wpcm_template_submit_car_form_fields_car_features' ) ) {
-	function wpcm_template_submit_car_form_fields_car_features() {
+	function wpcm_template_submit_car_form_fields_car_features( $vehicle ) {
 
 
 		// get features
@@ -258,9 +258,15 @@ if ( ! function_exists( 'wpcm_template_submit_car_form_fields_car_features' ) ) 
 		// check if there are features
 		if ( ! empty( $features ) && ! is_wp_error( $features ) ) {
 
+			// get selected features
+			$vehicle_features = array_keys( $vehicle->get_features() );
+
+
 			// load template file
 			wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form/car-features', '', array(
-				'features' => $features
+				'features'         => $features,
+				'vehicle'          => $vehicle,
+				'vehicle_features' => $vehicle_features
 			) );
 		}
 	}
