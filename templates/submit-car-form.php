@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php endif; ?>
 
-	<?php if ( $can_post_listing || $can_edit_listing ) : ?>
+	<?php if ( ( $can_post_listing && 0 == $vehicle->get_id() ) || $can_edit_listing ) : ?>
 
 		<?php do_action( 'wpcm_submit_car_form_fields_start' ); ?>
 
@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php else : ?>
 
-		<?php do_action( 'wpcm_submit_car_form_disabled' ); ?>
+		<?php do_action( 'wpcm_submit_car_form_disabled', $vehicle ); ?>
 
 	<?php endif; ?>
 </form>

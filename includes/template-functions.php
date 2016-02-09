@@ -273,3 +273,11 @@ if ( ! function_exists( 'wpcm_template_submit_car_form_fields_car_images' ) ) {
 		) );
 	}
 }
+
+if ( ! function_exists( 'wpcm_template_submit_car_form_disabled' ) ) {
+	function wpcm_template_submit_car_form_disabled( $vehicle ) {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form/disabled', '', array(
+			'vehicle' => $vehicle
+		) );
+	}
+}

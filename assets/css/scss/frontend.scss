@@ -487,6 +487,12 @@
     border-bottom: 0;
   }
 
+  .wpcm-fieldset-disabled {
+    p {
+      padding-top: 20px;
+    }
+  }
+
   #wpcm-submit {
     span.wpcm-spinner {
       display: none;

@@ -25,7 +25,8 @@ class SubmitCarForm extends Shortcode {
 		// JS
 		WPCarManager\Assets::enqueue_shortcode_submit_car_form();
 
-		$listing_id = 0;
+		// get listing id (0 if new)
+		$listing_id = ( ( ! empty( $_GET['edit'] ) ) ? absint( $_GET['edit'] ) : 0 );
 
 		// start output buffer
 		ob_start();
