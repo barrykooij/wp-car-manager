@@ -140,6 +140,41 @@ jQuery( function ( $ ) {
 		}
 	} );
 
+	$form.find( '.wpcm-form-images-current a.wpcm-delete-image' ).click( function () {
+
+		var tgt = $( this );
+		var tgt_cont = tgt.closest( 'li' );
+
+		// blur() to remove button focus() effects
+		tgt.blur();
+
+		// add overlay
+		tgt_cont.append( $( '<div>' ).addClass( 'wpcm-image-delete-overlay' ) ).append( $( '<div>' ).addClass( 'wpcm-spinner' ) );
+
+		// post data
+		jQuery.post( wpcm.ajax_url_delete_image, {
+			nonce: wpcm.nonce_delete_image,
+			vehicle: $form.data( 'vehicle' ),
+			image: tgt.data( 'id' )
+		}, function ( response ) {
+			// check response
+			if ( response.success ) {
+				tgt_cont.fadeOut( 'normal', function () {
+					$( this ).remove();
+				} );
+			} else {
+
+				alert( 'Something went wrong while trying to delete the image.' );
+
+				tgt_cont.find( '.wpcm-image-delete-overlay' ).remove();
+				tgt_cont.find( '.wpcm-spinner' ).remove();
+
+			}
+
+		} );
+
+	} );
+
 	// catch form submission
 	$form.submit( function () {
 

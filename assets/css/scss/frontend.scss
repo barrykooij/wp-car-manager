@@ -490,14 +490,26 @@
         overflow: hidden;
 
         li {
+          position: relative;
           padding: 0;
           margin: 0 1em 0 0;
           float: left;
           border: 1px solid #eee;
-          
+
           a.button {
             display: block;
             text-align: center;
+          }
+
+          .wpcm-image-delete-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0.5;
+
           }
         }
       }
@@ -522,33 +534,54 @@
     &.wpcm-disabled {
       cursor:progress;
 
-      span.wpcm-spinner {
-        width: 50px;
-        display: inline-block;
-        -webkit-transition: opacity 0.25s, width 0.25s;
-        -moz-transition: opacity 0.25s, width 0.25s;
-        -o-transition: opacity 0.25s, width 0.25s;
-        transition: opacity 0.25s, width 0.25s;
 
-        i {
-          @include icon("\e807");
-          color: white;
-        }
-      }
-
-
-      //opacity: 0.4;
-      //filter: alpha(opacity=40); /* For IE8 and earlier */
-      &:after {
-        font-family: "wp-car-manager" !important;
-        content: "\e807";
-        font-size: 4em !important;
-        line-height: 1.3em;
-        color: #fff;
-      }
     }
   }
 
+}
+
+@-moz-keyframes wpcm-spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes wpcm-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes wpcm-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.wpcm-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 45px;
+  height: 45px;
+  margin: -22px 0 0 -22px;
+
+  &:after {
+    @include icon("\e807");
+    color: #fff;
+    font-size: 3em;
+
+    -webkit-transform-origin: 49% 49%;
+    -moz-transform-origin: 49% 49%;
+    -o-transform-origin: 49% 49%;
+    transform-origin: 49% 49%;
+
+    -webkit-animation:wpcm-spin 1.5s linear infinite;
+    -moz-animation:wpcm-spin 1.5s linear infinite;
+    animation:wpcm-spin 1.5s linear infinite;
+
+  }
 }
 
 @import "prettyPhoto";

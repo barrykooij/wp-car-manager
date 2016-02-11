@@ -25,7 +25,7 @@
 				<?php foreach ( $attachment_ids as $attachment_id ) : ?>
 					<li>
 						<?php echo Never5\WPCarManager\Helper\Images::get_image_html( $attachment_id, apply_filters( 'wpcm_single_vehicle_small_thumbnail_size', 'wpcm_vehicle_thumbnail' ) ); ?>
-						<a href="javascript:;" class="button"><?php _e( 'Delete', 'wp-car-manager' ); ?></a>
+						<a href="javascript:;" class="button wpcm-delete-image" data-id="<?php echo $attachment_id; ?>"><?php _e( 'Delete', 'wp-car-manager' ); ?></a>
 					</li>
 				<?php endforeach; ?>
 			</ul>

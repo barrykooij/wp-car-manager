@@ -44,6 +44,10 @@ class Manager {
 		// register SaveImages
 		$save_images = new SaveImages();
 		$save_images->register();
+
+		// register DeleteImage
+		$delete_image = new DeleteImage();
+		$delete_image->register();
 	}
 
 	/**

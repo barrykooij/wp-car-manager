@@ -141,7 +141,6 @@ class WordPressRepository implements VehicleRepository {
 		// set sold
 		update_post_meta( $vehicle->get_id(), 'wpcm_sold', $vehicle->get_sold() );
 
-
 		// set vehicle meta-data
 		if ( ! empty( $fields ) ) {
 			foreach ( $fields as $field_key => $field ) {
@@ -182,6 +181,9 @@ class WordPressRepository implements VehicleRepository {
 			// re-fetch features from DB so we're sure to have a correctly formatted array
 			$vehicle->set_features( $this->get_formatted_features( $vehicle->get_id() ) );
 		}
+
+		// set images
+		update_post_meta( $vehicle_id, '_car_gallery', implode( ',', $vehicle->get_gallery_attachment_ids() ) );
 
 		return $vehicle;
 	}
