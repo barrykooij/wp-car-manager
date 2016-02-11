@@ -2,7 +2,21 @@
 <fieldset class="wpcm-fieldset-images">
 
 	<?php
-	$attachment_ids = $vehicle->get_gallery_attachment_ids();
+
+	// attachments
+	$attachment_ids = array();
+
+	// get featured image
+	$featured_id = get_post_thumbnail_id( $vehicle->get_id() );
+
+	// add id to $attachment_ids if not empty
+	if ( ! empty( $featured_id ) ) {
+		$attachment_ids[] = $featured_id;
+
+		// get other images, these can only exist if there's a featured image
+		$attachment_ids = array_merge( $attachment_ids, $vehicle->get_gallery_attachment_ids() );
+	}
+
 	if ( count( $attachment_ids ) > 0 ):
 		?>
 		<div class="wpcm-form-images-current">
