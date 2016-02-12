@@ -129,13 +129,17 @@ class SaveVehicle extends Ajax {
 
 			// create Vehicle object
 			/** @var Vehicle\Car $vehicle */
-			$vehicle = wp_car_manager()->service( 'vehicle_factory' )->make( 0 );
+			$vehicle = wp_car_manager()->service( 'vehicle_factory' )->make( $vehicle_id );
 
-			// set vehicle status
-			$vehicle->set_status( 'preview' );
+			// set some intial data for new vehicles
+			if ( 0 == $vehicle->get_id() ) {
 
-			// set vehicle listing author
-			$vehicle->set_author( $user->ID );
+				// set vehicle status to preview if this is a new item
+				$vehicle->set_status( 'preview' );
+
+				// set vehicle listing author
+				$vehicle->set_author( $user->ID );
+			}
 
 			// set Vehicle data in object
 			$vehicle->set_title( $data['title'] );
