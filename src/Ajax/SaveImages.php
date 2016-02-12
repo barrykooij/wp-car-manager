@@ -33,6 +33,10 @@ class SaveImages extends Ajax {
 			wp_send_json( array( 'success' => false ) );
 		}
 
+		// create vehicle object
+		/** @var Vehicle\Car $vehicle */
+		$vehicle = wp_car_manager()->service( 'vehicle_factory' )->make( $vehicle_id );
+
 		// require the wp_handle_upload containing file
 		if ( ! function_exists( 'wp_handle_upload' ) ) {
 			require_once( ABSPATH . 'wp-admin/includes/file.php' );
@@ -116,7 +120,7 @@ class SaveImages extends Ajax {
 
 		// set post meta _car_gallery with uploaded images
 		if ( count( $gallery_ids ) > 0 ) {
-			update_post_meta( $vehicle_id, '_car_gallery', implode( ',', $gallery_ids ) );
+			update_post_meta( $vehicle_id, '_car_gallery', implode( ',', array_merge( $vehicle->get_gallery_attachment_ids(), $gallery_ids ) ) );
 		}
 		
 		// done
