@@ -8,7 +8,6 @@ jQuery( function ( $ ) {
 
 	$.fn.wpcm_disable = function () {
 		wpcm_submitting = true;
-		//this.find( '#wpcm-submit' ).attr( 'disabled', 'disabled' ).addClass( 'wpcm-disabled' ).val(wpcm.lbl_submitting);
 		this.find( '#wpcm-submit' ).addClass( 'wpcm-disabled' ).val( wpcm.lbl_submitting );
 		return this;
 	};
@@ -89,6 +88,11 @@ jQuery( function ( $ ) {
 	// bind listener to make field
 	$form.find( '#make' ).change( function () {
 		$form.wpcm_update_models();
+	} );
+
+	// bind submit button
+	$form.find( '#wpcm-submit' ).click( function () {
+		$form.submit();
 	} );
 
 	// setup dropzone
