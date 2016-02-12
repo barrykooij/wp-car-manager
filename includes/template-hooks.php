@@ -80,3 +80,13 @@ add_action( 'wpcm_submit_car_form_fields', 'wpcm_template_submit_car_form_fields
 
 
 add_action( 'wpcm_submit_car_form_disabled', 'wpcm_template_submit_car_form_disabled', 15 );
+
+/**
+ ************************ DASHBOARD ************************
+ */
+
+/**
+ * Vehicle Listings Results
+ */
+add_action( 'wpcm_dashboard_results', 'wpcm_template_dashboard_list_start', 10 );
+add_action( 'wpcm_dashboard_results', 'wpcm_template_dashboard_list_end', 15 );

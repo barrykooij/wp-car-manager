@@ -48,6 +48,10 @@ class Manager {
 		// register DeleteImage
 		$delete_image = new DeleteImage();
 		$delete_image->register();
+
+		// register GetDashboard
+		$get_dashboard = new GetDashboard();
+		$get_dashboard->register();
 	}
 
 	/**

@@ -287,3 +287,19 @@ if ( ! function_exists( 'wpcm_template_submit_car_form_disabled' ) ) {
 		) );
 	}
 }
+
+/**
+ ************************ DASHBOARD ************************
+ */
+
+if ( ! function_exists( 'wpcm_template_dashboard_list_start' ) ) {
+	function wpcm_template_dashboard_list_start() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'dashboard/start' );
+	}
+}
+
+if ( ! function_exists( 'wpcm_template_dashboard_list_end' ) ) {
+	function wpcm_template_dashboard_list_end() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'dashboard/end' );
+	}
+}

@@ -130,7 +130,38 @@ abstract class Assets {
 		) );
 
 		// do action wpcm_assets_frontend_car_submission
-		do_action( 'wpcm_assets_frontend_car_submission' );
+		do_action( 'wpcm_assets_frontend_car_submission_page' );
+
+	}
+
+	/**
+	 * Enqueue shortcode related Js
+	 */
+	public static function enqueue_shortcode_dashboard() {
+
+		if ( in_array( 'dashboard', self::$shortcode_assets_enqueued ) ) {
+			return;
+		}
+
+		self::$shortcode_assets_enqueued[] = 'dashboard';
+
+		// enqueue listings script
+		wp_enqueue_script(
+			'wpcm_js_dashboard',
+			wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/dashboard' . ( ( ! SCRIPT_DEBUG ) ? '.min' : '' ) . '.js' ),
+			array( 'jquery' ),
+			wp_car_manager()->get_version(),
+			true
+		);
+
+		// localize
+		wp_localize_script( 'wpcm_js_dashboard', 'wpcm', array(
+			'ajax_url_get_vehicles' => untrailingslashit( site_url( sprintf( '?%s=get_dashboard', Ajax\Manager::ENDPOINT ) ) ),
+			'nonce_vehicles'        => wp_create_nonce( 'wpcm_ajax_nonce_get_dashboard' ),
+		) );
+
+		// do action wpcm_assets_frontend_vehicle_single
+		do_action( 'wpcm_assets_frontend_dashboard_page' );
 
 	}
 
