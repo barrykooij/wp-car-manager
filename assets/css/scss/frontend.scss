@@ -15,6 +15,9 @@
 /** CAR SUBMISSION FORM **/
 @import "car_submission";
 
+/** DASHBOARD **/
+@import "dashboard";
+
 .wpcm-spinner {
   position: absolute;
   top: 50%;
@@ -42,6 +45,5 @@
 
 @import "prettyPhoto";
 @import "select2";
-@import "frontendMedia";
 @import "dropzone";
 

@@ -182,3 +182,52 @@
   }
 
 }
+
+/** MEDIA **/
+
+@media (min-width: 992px) {
+
+  // Listings
+  .wpcm-vehicle-listings {
+
+    // filters
+    .wpcm-vehicle-filters {
+      .wpcm-filter {
+        width: 25%;
+      }
+      .wpcm-filter-make, .wpcm-filter-model {
+        width: 50%;
+      }
+    }
+
+    // results
+    .wpcm-vehicle-results-wrapper {
+      .wpcm-vehicle-results {
+        li.wpcm-listings-item {
+          a {
+
+            .wpcm-listings-item-description {
+              display: block;
+            }
+
+            .wpcm-listings-item-meta {
+              width: 20%;
+              padding-left: 1em;
+              text-align: right;
+              float: right;
+              li.wpcm-title {
+                display: none;
+              }
+              li.wpcm-price {
+                font-weight: bold;
+                font-size: 1.1em;
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+}

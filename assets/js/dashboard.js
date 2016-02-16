@@ -10,7 +10,7 @@ jQuery( function ( $ ) {
 var WPCM_Dashboard = function ( tgt ) {
 
     this.is_updating = false;
-    this.listings = jQuery( tgt ).find( '.wpcm-vehicle-results-wrapper>.wpcm-vehicle-results:first' );
+    this.listings = jQuery( tgt ).find( '.wpcm-dashboard-wrapper>.wpcm-dashboard-list:first' );
     this.per_page = jQuery( tgt ).data( 'per_page' );
 
     // load vehicles

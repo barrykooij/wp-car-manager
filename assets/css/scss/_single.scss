@@ -195,3 +195,37 @@
   }
 
 }
+
+/** MEDIA **/
+
+@media (min-width: 768px) {
+
+  // Single
+  .single-wpcm_vehicle {
+    .wpcm_vehicle {
+      .wpcm-vehicle-content {
+        .wpcm-content-block {
+
+          &#wpcm-vehicle-data {
+            table {
+              width: 50%;
+              float: left;
+            }
+          }
+
+          &#wpcm-vehicle-features {
+            ul {
+              float: left;
+              li {
+                width: 50%;
+                float: left;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+}

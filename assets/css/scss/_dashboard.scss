@@ -11,72 +11,82 @@
         list-style: none outside;
         padding: 0;
         margin: 0;
+
+        display: block;
+        padding: 1em 1em 1em 2em;
+        border: 0;
         border-bottom: 1px solid #eee;
-        a {
-          display: block;
-          padding: 1em 1em 1em 2em;
-          border: 0;
-          overflow: hidden;
-          zoom: 1;
-          position: relative;
+        overflow: hidden;
+        zoom: 1;
+        position: relative;
+        line-height: 1.5em;
+        text-decoration: none;
+        font-weight: normal;
+        min-height: 100px;
+        box-sizing: content-box;
+
+        &:hover {
+          background-color: #f3f3f3;
+        }
+
+        img.wpcm-dashboard-item-image {
+          width: 100px;
+          height: 100px;
+          position: absolute;
+          left: 1em;
+          float: left;
+          margin-right: 1em;
+          vertical-align: middle;
+          box-shadow: none;
+        }
+
+        .wpcm-dashboard-item-data {
+          float: left;
+          width: 80%;
+          padding: 0 0 0 100px;
+          margin: 0;
           line-height: 1.5em;
-          text-decoration: none;
-          font-weight: normal;
-          min-height: 100px;
-          box-sizing: content-box;
-
-          &:hover {
-            background-color: #f3f3f3;
-          }
-
-          &:active, &:focus, &:visited {
-            border: 0;
-            outline: 0;
-          }
-
-          img.wpcm-dashboard-item-image {
-            width: 100px;
-            height: 100px;
-            position: absolute;
-            left: 1em;
-            float: left;
-            margin-right: 1em;
-            vertical-align: middle;
-            box-shadow: none;
-          }
-
-          .wpcm-listings-item-description {
-            display: none;
-            float: left;
-            width: 80%;
-            padding: 0 0 0 100px;
-            line-height: 1.5em;
-            h3 {
-              margin: 0;
-              padding: 0;
-              line-height: inherit;
-              font-size: inherit;
-            }
-            p {
-              color: #999;
-            }
-          }
-
-          .wpcm-listings-item-meta {
-            float: left;
-            width: 100%;
-            padding: 0 0 0 100px;
+          color: #999;
+          list-style: none outside;
+          ul {
             margin: 0;
-            line-height: 1.5em;
-            color: #999;
-            list-style: none outside;
-            ul {
+            list-style: none;
+            .wpcm-title {
+              color: #484c51;
+              font-weight: bold;
+              font-size: 1.1em;
+            }
+          }
+        }
+
+        .wpcm-dashboard-item-actions {
+          float: left;
+          width: 20%;
+          text-align: right;
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li {
+              padding: 0 0 0.5em;
               margin: 0;
-              list-style: none;
-              .wpcm-title {
-                color: #484c51;
-                font-weight: bold;
-                font-size: 1.1em;
+              a.wpcm-dashboard-button {
+                display: block;
+                text-align: center;
+
+                line-height: .9em;
+                font-size: .9em;
+                background-color: #428dcb;
+                width: 100%;
+                color: #fff;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                padding: .6em .4em;
+
+                &:active, &:focus, &:visited {
+                  border: 1px solid #ccc;
+                  outline: 0;
+                }
               }
             }
           }
@@ -119,5 +129,11 @@
       }
     }
   }
+
+}
+
+/** MEDIA **/
+
+@media (min-width: 992px) {
 
 }
