@@ -52,6 +52,10 @@ class Manager {
 		// register GetDashboard
 		$get_dashboard = new GetDashboard();
 		$get_dashboard->register();
+
+		// register DeleteVehicle
+		$delete_vehicle = new DeleteVehicle();
+		$delete_vehicle->register();
 	}
 
 	/**

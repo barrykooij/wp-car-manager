@@ -72,6 +72,7 @@ class GetDashboard extends Ajax {
 
 				// load template
 				wp_car_manager()->service( 'template_manager' )->get_template_part( 'dashboard/item', '', array(
+					'id'       => $vehicle->get_id(),
 					'url'      => $vehicle->get_url(),
 					'edit_url' => $vehicle->get_edit_url(),
 					'title'    => $title,
@@ -79,7 +80,8 @@ class GetDashboard extends Ajax {
 					'price'    => $vehicle->get_formatted_price(),
 					'mileage'  => $vehicle->get_formatted_mileage(),
 					'frdate'   => $vehicle->get_formatted_frdate(),
-					'expires'  => $expires
+					'expires'  => $expires,
+					'vehicle'  => $vehicle
 				) );
 			}
 		} else {

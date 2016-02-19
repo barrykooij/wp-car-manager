@@ -156,8 +156,12 @@ abstract class Assets {
 
 		// localize
 		wp_localize_script( 'wpcm_js_dashboard', 'wpcm', array(
-			'ajax_url_get_vehicles' => untrailingslashit( site_url( sprintf( '?%s=get_dashboard', Ajax\Manager::ENDPOINT ) ) ),
-			'nonce_vehicles'        => wp_create_nonce( 'wpcm_ajax_nonce_get_dashboard' ),
+			'ajax_url_get_vehicles'   => untrailingslashit( site_url( sprintf( '?%s=get_dashboard', Ajax\Manager::ENDPOINT ) ) ),
+			'ajax_url_delete_vehicle' => untrailingslashit( site_url( sprintf( '?%s=delete_vehicle', Ajax\Manager::ENDPOINT ) ) ),
+			'nonce_vehicles'          => wp_create_nonce( 'wpcm_ajax_nonce_get_dashboard' ),
+			'nonce_delete_vehicle'    => wp_create_nonce( 'wpcm_ajax_nonce_delete_vehicle' ),
+			'delete_confirm'          => __( 'Are you sure you want to delete %s?', 'wp-car-manager' ),
+			'error_delete_vehicle'    => __( 'Something went wrong when trying to delete your vehicle, please try again.', 'wp-car-manager' )
 		) );
 
 		// do action wpcm_assets_frontend_vehicle_single
