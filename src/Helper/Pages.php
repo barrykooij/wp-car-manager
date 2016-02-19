@@ -48,6 +48,25 @@ class Pages {
 	/**
 	 * Get dashboard page URL
 	 *
+	 * @param int Vehicle ID
+	 *
+	 * @return string
+	 */
+	public static function get_page_edit( $vehicle_id ) {
+
+		// get submit url
+		$url = self::get_page_submit();
+
+		// add the query arg
+		$url = add_query_arg( 'edit', $vehicle_id, $url );
+
+		// return the filterable URL
+		return apply_filters( 'wpcm_page_url_edit', $url, $vehicle_id );
+	}
+
+	/**
+	 * Get dashboard page URL
+	 *
 	 * @return string
 	 */
 	public static function get_page_dashboard() {

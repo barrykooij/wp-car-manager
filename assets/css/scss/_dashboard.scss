@@ -42,7 +42,7 @@
 
         .wpcm-dashboard-item-data {
           float: left;
-          width: 80%;
+          width: 60%;
           padding: 0 0 0 100px;
           margin: 0;
           line-height: 1.5em;
@@ -55,7 +55,20 @@
               color: #484c51;
               font-weight: bold;
               font-size: 1.1em;
+              a {
+                color: #484c51;
+              }
             }
+          }
+        }
+
+        .wpcm-dashboard-item-expires {
+          float: left;
+          width: 20%;
+          padding: 0 0 0 1em;
+          text-align: center;
+          span {
+            display: block;
           }
         }
 
@@ -63,6 +76,7 @@
           float: left;
           width: 20%;
           text-align: right;
+          padding: 0 0 0 1em;
           ul {
             list-style: none;
             padding: 0;

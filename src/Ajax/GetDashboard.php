@@ -34,6 +34,11 @@ class GetDashboard extends Ajax {
 
 		// check & loop
 		if ( count( $vehicles ) > 0 ) {
+
+			// Today
+			$today = new \DateTime();
+			$today->setTime( 0, 0, 0 );
+
 			foreach ( $vehicles as $vehicle ) {
 
 				// title
@@ -54,16 +59,27 @@ class GetDashboard extends Ajax {
 					$image       = sprintf( '<img src="%s" alt="%s" class="wpcm-dashboard-item-image" />', $placeholder, __( 'Placeholder', 'wp-car-manager' ) );
 				}
 
+				$expires = 'n/a';
+				if ( null != $vehicle->get_expiration() ) {
+					if ( $today > $vehicle->get_expiration() ) {
+						$expires = __( 'Expired', 'wp-car-manager' );
+					} else {
+
+						$expires = $vehicle->get_expiration()->format( 'd-m-Y' );
+					}
+				}
+
 
 				// load template
 				wp_car_manager()->service( 'template_manager' )->get_template_part( 'dashboard/item', '', array(
-					'url'         => $vehicle->get_url(),
-					'title'       => $title,
-					'image'       => $image,
-					'description' => $vehicle->get_short_description(),
-					'price'       => $vehicle->get_formatted_price(),
-					'mileage'     => $vehicle->get_formatted_mileage(),
-					'frdate'      => $vehicle->get_formatted_frdate()
+					'url'      => $vehicle->get_url(),
+					'edit_url' => $vehicle->get_edit_url(),
+					'title'    => $title,
+					'image'    => $image,
+					'price'    => $vehicle->get_formatted_price(),
+					'mileage'  => $vehicle->get_formatted_mileage(),
+					'frdate'   => $vehicle->get_formatted_frdate(),
+					'expires'  => $expires
 				) );
 			}
 		} else {

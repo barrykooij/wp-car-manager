@@ -328,6 +328,15 @@ abstract class Vehicle {
 	}
 
 	/**
+	 * Get the URL to edit the vehicle
+	 *
+	 * @return string
+	 */
+	public function get_edit_url() {
+		return Helper\Pages::get_page_edit( $this->get_id() );
+	}
+
+	/**
 	 * @return int
 	 */
 	public function get_sold() {
