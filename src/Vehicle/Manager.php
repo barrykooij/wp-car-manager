@@ -28,10 +28,11 @@ class Manager {
 	 * @param array $filters
 	 * @param string $sort
 	 * @param int $per_page
+	 * @param array $extra_args
 	 *
 	 * @return array
 	 */
-	public function get_vehicles( $filters, $sort, $per_page = - 1 ) {
+	public function get_vehicles( $filters, $sort, $per_page = - 1, $extra_args = array() ) {
 
 		// vehicle array
 		$vehicles = array();
@@ -120,6 +121,11 @@ class Manager {
 			// add meta query
 			$args['meta_query'] = $meta_query;
 
+		}
+
+		// merge extra args
+		if ( ! empty( $extra_args ) ) {
+			$args = array_merge( $args, $extra_args );
 		}
 
 		// do new \WP_Query

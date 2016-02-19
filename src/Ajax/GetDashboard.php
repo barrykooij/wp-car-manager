@@ -30,7 +30,7 @@ class GetDashboard extends Ajax {
 
 		// get vehicles
 		$vehicle_manager = new Vehicle\Manager();
-		$vehicles        = $vehicle_manager->get_vehicles( array(), $sort, $per_page );
+		$vehicles        = $vehicle_manager->get_vehicles( array(), $sort, $per_page, array( 'author' => get_current_user_id() ) );
 
 		// check & loop
 		if ( count( $vehicles ) > 0 ) {
