@@ -18,8 +18,7 @@
 
 	<div class="wpcm-dashboard-item-actions">
 		<ul>
-			<li><a href="<?php echo $edit_url; ?>" class="wpcm-dashboard-button">Edit</a></li>
-			<li><a href="javascript:;" class="wpcm-dashboard-button wpcm-dashboard-delete-button">Delete</a></li>
+			<?php do_action( 'wpcm_dashboard_item_actions', $vehicle ); ?>
 		</ul>
 	</div>
 

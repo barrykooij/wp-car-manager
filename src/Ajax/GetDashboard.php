@@ -30,7 +30,10 @@ class GetDashboard extends Ajax {
 
 		// get vehicles
 		$vehicle_manager = new Vehicle\Manager();
-		$vehicles        = $vehicle_manager->get_vehicles( array(), $sort, $per_page, array( 'author' => get_current_user_id() ) );
+		$vehicles        = $vehicle_manager->get_vehicles( array(), $sort, $per_page, array(
+			'author'      => get_current_user_id(),
+			'post_status' => array( 'publish', 'expired', 'pending', 'pending_payment' )
+		) );
 
 		// check & loop
 		if ( count( $vehicles ) > 0 ) {
@@ -72,16 +75,15 @@ class GetDashboard extends Ajax {
 
 				// load template
 				wp_car_manager()->service( 'template_manager' )->get_template_part( 'dashboard/item', '', array(
-					'id'       => $vehicle->get_id(),
-					'url'      => $vehicle->get_url(),
-					'edit_url' => $vehicle->get_edit_url(),
-					'title'    => $title,
-					'image'    => $image,
-					'price'    => $vehicle->get_formatted_price(),
-					'mileage'  => $vehicle->get_formatted_mileage(),
-					'frdate'   => $vehicle->get_formatted_frdate(),
-					'expires'  => $expires,
-					'vehicle'  => $vehicle
+					'id'      => $vehicle->get_id(),
+					'url'     => $vehicle->get_url(),
+					'title'   => $title,
+					'image'   => $image,
+					'price'   => $vehicle->get_formatted_price(),
+					'mileage' => $vehicle->get_formatted_mileage(),
+					'frdate'  => $vehicle->get_formatted_frdate(),
+					'expires' => $expires,
+					'vehicle' => $vehicle
 				) );
 			}
 		} else {

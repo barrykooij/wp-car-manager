@@ -1,0 +1,1 @@
+<li><a href="javascript:;" class="wpcm-dashboard-button wpcm-dashboard-delete-button">Delete</a></li>

@@ -1,0 +1,1 @@
+<li><a href="<?php echo $vehicle->get_edit_url(); ?>" class="wpcm-dashboard-button">Edit</a></li>
