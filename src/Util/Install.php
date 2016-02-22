@@ -21,22 +21,6 @@ class Install {
 		$role_manager = new WPCarManager\RoleManager();
 		$role_manager->setup_roles();
 
-		// create cars listing page if not exists
-		$listings_slug = sanitize_title( __( 'Cars', 'wp-car-manager' ) );
-		$listings_page = get_page_by_path( $listings_slug );
-
-		// check if listings page exists
-		if ( null == $listings_page ) {
-
-			// create page
-			wp_insert_post( array(
-				'post_type'    => 'page',
-				'post_title'   => __( 'Cars', 'wp-car-manager' ),
-				'post_content' => '[wpcm_cars]',
-				'post_status'  => 'publish'
-			) );
-		}
-
 		// setup cron
 		$cron = new Vehicle\Cron();
 		$cron->schedule();
