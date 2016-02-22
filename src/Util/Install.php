@@ -12,7 +12,7 @@ class Install {
 	 */
 	public static function run() {
 
-		// register pot type and custom taxonomies
+		// register post type and custom taxonomies
 		Vehicle\PostType::register();
 		WPCarManager\Taxonomies::register_model_make();
 		WPCarManager\Taxonomies::register_features();
