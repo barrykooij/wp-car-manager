@@ -56,6 +56,10 @@ class Manager {
 		// register DeleteVehicle
 		$delete_vehicle = new DeleteVehicle();
 		$delete_vehicle->register();
+
+		// register CreatePage
+		$create_page = new CreatePage();
+		$create_page->register();
 	}
 
 	/**

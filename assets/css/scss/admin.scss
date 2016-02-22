@@ -342,4 +342,21 @@
   }
 }
 
+.wpcm-onboarding {
+
+  .wpcm-onboarding-pages {
+    width: 100%;
+
+    th,td {
+      padding: .5em 0;
+      border-bottom: 1px solid #ccc;
+    }
+    th {
+      text-align: left;
+    }
+  }
+
+}
+
+
 @import "tipped";

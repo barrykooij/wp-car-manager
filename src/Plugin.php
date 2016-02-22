@@ -158,6 +158,10 @@ final class Plugin extends Pimple\Container {
 			$custom_columns = new Admin\CustomColumns();
 			$custom_columns->setup();
 
+			// setup onboarding
+			$onboarding = new Util\Onboarding();
+			$onboarding->setup();
+
 			// load extensions
 			add_action( 'admin_init', function () {
 				// Load the registered extensions

@@ -1,21 +1,24 @@
 <?php
 
-namespace Never5\WPCarManager;
+namespace Never5\WPCarManager\Util;
+
+use Never5\WPCarManager\Vehicle;
+use Never5\WPCarManager;
 
 class Install {
 
 	/**
 	 * Installation actions
 	 */
-	public static function install() {
+	public static function run() {
 
 		// register pot type and custom taxonomies
 		Vehicle\PostType::register();
-		Taxonomies::register_model_make();
-		Taxonomies::register_features();
+		WPCarManager\Taxonomies::register_model_make();
+		WPCarManager\Taxonomies::register_features();
 
 		// setup user roles
-		$role_manager = new RoleManager();
+		$role_manager = new WPCarManager\RoleManager();
 		$role_manager->setup_roles();
 
 		// create cars listing page if not exists
