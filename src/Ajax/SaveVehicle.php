@@ -107,7 +107,6 @@ class SaveVehicle extends Ajax {
 			}
 
 			// validate data
-			// @todo validate data (check if required fields are set)
 
 			/**
 			 * Data Validation
