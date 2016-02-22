@@ -129,6 +129,11 @@ jQuery( function ( $ ) {
 
 			} );
 
+			// add custum nonce to each AJAX request
+			this.on( 'sending', function ( file, xhr, formData ) {
+				formData.append( 'nonce', wpcm.nonce_save_images );
+			} );
+
 			// trigger wpcm_image_queue_complete on queuecomplete
 			this.on( 'queuecomplete', function () {
 				$form.trigger( 'wpcm_image_queue_complete', [wpcm_dropzone.wpcm_response] );
