@@ -11,6 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 add_action( 'wpcm_before_single_vehicle', 'wpcm_template_vehicle_preview_bar', 10 );
 add_action( 'wpcm_before_single_vehicle', 'wpcm_template_vehicle_pending_bar', 10 );
+add_action( 'wpcm_before_single_vehicle', 'wpcm_template_vehicle_expired_bar', 10 );
 
 /**
  * Before Summary Box
