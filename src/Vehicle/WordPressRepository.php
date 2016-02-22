@@ -183,7 +183,9 @@ class WordPressRepository implements VehicleRepository {
 		}
 
 		// set images
-		update_post_meta( $vehicle_id, '_car_gallery', implode( ',', $vehicle->get_gallery_attachment_ids() ) );
+		if ( is_array( $vehicle->get_gallery_attachment_ids() ) && count( $vehicle->get_gallery_attachment_ids() ) > 0 ) {
+			update_post_meta( $vehicle_id, '_car_gallery', implode( ',', $vehicle->get_gallery_attachment_ids() ) );
+		}
 
 		return $vehicle;
 	}
