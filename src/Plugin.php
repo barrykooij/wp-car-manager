@@ -158,6 +158,13 @@ final class Plugin extends Pimple\Container {
 			$custom_columns = new Admin\CustomColumns();
 			$custom_columns->setup();
 
+			// upgrade manager
+			add_action( 'admin_init', function () {
+				$upgrade_manager = new Util\Upgrade();
+				$upgrade_manager->run();
+			} );
+
+
 			// setup onboarding
 			$onboarding = new Util\Onboarding();
 			$onboarding->setup();
@@ -192,7 +199,7 @@ final class Plugin extends Pimple\Container {
 			add_action( 'init', function () use ( $container ) {
 				$shortcode_cars            = new Shortcode\Cars();
 				$shortcode_submit_car_form = new Shortcode\SubmitCarForm();
-				$shortcode_dashboard = new Shortcode\Dashboard();
+				$shortcode_dashboard       = new Shortcode\Dashboard();
 			} );
 
 			// setup custom AJAX
