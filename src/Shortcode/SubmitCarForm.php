@@ -32,18 +32,20 @@ class SubmitCarForm extends Shortcode {
 		ob_start();
 
 		/** @var Vehicle\Car $vehicle */
-		$vehicle = wp_car_manager()->service( 'vehicle_factory' )->make( $listing_id );
+		try{
+			$vehicle = wp_car_manager()->service( 'vehicle_factory' )->make( $listing_id );
 
-		// @todo check if we can set vehicle data based on POST data if $listing_id is 0
-
-		// load template
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form', '', array(
-			'vehicle'            => $vehicle,
-			'action'             => esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ),
-			'submit_button_text' => ( ( 0 != $vehicle->get_id() ) ? __( 'Save Changes', 'wp-car-manager' ) : __( 'Preview Car', 'wp-car-manager' ) ),
-			'can_post_listing'   => wp_car_manager()->service( 'user_manager' )->can_post_listing(),
-			'can_edit_listing'   => wp_car_manager()->service( 'user_manager' )->can_edit_listing( $listing_id ),
-		) );
+			// load template
+			wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form', '', array(
+				'vehicle'            => $vehicle,
+				'action'             => esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ),
+				'submit_button_text' => ( ( 0 != $vehicle->get_id() ) ? __( 'Save Changes', 'wp-car-manager' ) : __( 'Preview Car', 'wp-car-manager' ) ),
+				'can_post_listing'   => wp_car_manager()->service( 'user_manager' )->can_post_listing(),
+				'can_edit_listing'   => wp_car_manager()->service( 'user_manager' )->can_edit_listing( $listing_id ),
+			) );
+		}catch( \Exception $e) {
+			wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form/disabled', '' );
+		}
 
 		return ob_get_clean();
 	}
