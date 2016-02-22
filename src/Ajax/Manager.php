@@ -60,6 +60,10 @@ class Manager {
 		// register CreatePage
 		$create_page = new CreatePage();
 		$create_page->register();
+
+		// register DismissNotice
+		$dismiss_notice = new DismissNotice();
+		$dismiss_notice->register();
 	}
 
 	/**

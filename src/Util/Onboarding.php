@@ -26,8 +26,25 @@ class Onboarding {
 		} );
 
 		// add notice
-		if ( ( ! isset( $_GET['page'] ) || ( isset( $_GET['page'] ) && 'wpcm_onboarding' != $_GET['page'] ) ) ) {
+		if ( false === get_option( 'wpcm_notice_onboarding' ) && ( ! isset( $_GET['page'] ) || ( isset( $_GET['page'] ) && 'wpcm_onboarding' != $_GET['page'] ) ) ) {
 			add_action( 'admin_notices', array( $this, 'add_notice' ) );
+
+			// notice JS -.-
+			add_action( 'in_admin_footer', function () {
+				?>
+				<script type="text/javascript">
+					jQuery( function ( $ ) {
+						$( '.wpcm-notice' ).on( 'click', '.notice-dismiss', function ( event ) {
+							$.get( '<?php echo untrailingslashit( site_url( sprintf( '?%s=dismiss_notice', Ajax\Manager::ENDPOINT ) ) ); ?>', {
+								id: $( this ).closest( '.wpcm-notice' ).data( 'id' ),
+								nonce: '<?php echo wp_create_nonce( 'wpcm_ajax_nonce_dismiss_notice' ) ?>'
+							}, function () {
+							} );
+						} );
+					} );
+				</script>
+				<?php
+			} );
 		}
 
 	}
@@ -57,7 +74,7 @@ class Onboarding {
 	 */
 	public function add_notice() {
 		?>
-		<div class="notice notice-warning is-dismissible">
+		<div class="notice notice-warning is-dismissible wpcm-notice" data-id="onboarding">
 			<p><?php printf( __( 'WP Car Manager is almost ready for use, %sclick here%s to setup the final settings.', 'wp-car-manager' ), '<a href="' . admin_url( 'edit.php?post_type=' . Vehicle\PostType::VEHICLE . '&page=wpcm_onboarding' ) . '">', '</a>' ); ?></p>
 		</div>
 		<?php
@@ -67,6 +84,11 @@ class Onboarding {
 	 * Onboarding page
 	 */
 	public function page() {
+
+		// been there, done that
+		update_option( 'wpcm_notice_onboarding', 1 );
+
+		// the actual pagegit 
 		?>
 		<div class="wrap wpcm-onboarding">
 			<h2>WP Car Manager - <?php _e( 'Setup', 'wp-car-manager' ); ?></h2>
