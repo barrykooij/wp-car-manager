@@ -88,7 +88,7 @@ class Onboarding {
 		// been there, done that
 		update_option( 'wpcm_notice_onboarding', 1 );
 
-		// the actual pagegit 
+		// the actual page
 		?>
 		<div class="wrap wpcm-onboarding">
 			<h2>WP Car Manager - <?php _e( 'Setup', 'wp-car-manager' ); ?></h2>
