@@ -308,12 +308,33 @@
       width: 45px;
     }
 
-    .column-make, .column-model {
+    .column-expires {
       width: 15%;
+    }
+
+    .column-make, .column-model {
+      width: 12%;
     }
 
     .column-price, .column-mileage, .column-frdate {
       width: 10%;
+    }
+
+    .column-actions {
+      width: 7%;
+      text-align: right;
+
+      a.wpcm-btn-approve {
+        padding-left: 8px;
+        padding-right: 8px;
+
+        &:before {
+        font-family: "wp-car-manager" !important;
+        content: "\e808";
+        //font-size: 1.1em !important;
+        //line-height: 1.3em;
+        }
+      }
     }
 
     .wpcm-admin-image-header {

@@ -169,7 +169,7 @@ class PostStatus {
 	 * @param \WP_Post $post
 	 */
 	public function set_expiration_on_first_publish( $new_status, $old_status, $post ) {
-
+		
 		// verify this is not an auto save routine.
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return;

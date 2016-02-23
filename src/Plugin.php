@@ -158,12 +158,15 @@ final class Plugin extends Pimple\Container {
 			$custom_columns = new Admin\CustomColumns();
 			$custom_columns->setup();
 
+			// admin custom actions
+			$custom_actions = new Admin\CustomActions();
+			$custom_actions->listen();
+
 			// upgrade manager
 			add_action( 'admin_init', function () {
 				$upgrade_manager = new Util\Upgrade();
 				$upgrade_manager->run();
 			} );
-
 
 			// setup onboarding
 			$onboarding = new Util\Onboarding();
