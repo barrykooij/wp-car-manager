@@ -65,6 +65,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 * Feature: Added Car Dashboard functionality.
 * Feature: Added Onboarding process.
 * Feature: Added Car Seller user role.
+* Tweak: We're now properly flushing rewrites on website language change.
 * Tweak: Added new vehicle states.
 * Tweak: Set manage_car_listings capability to features
 * Tweak: Set manage_car_listings capability to makes & models

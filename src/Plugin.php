@@ -172,6 +172,16 @@ final class Plugin extends Pimple\Container {
 			$onboarding = new Util\Onboarding();
 			$onboarding->setup();
 
+
+			// setup rewrites util
+			$rewrites = new Util\Rewrites();
+
+			// listen to language changes
+			$rewrites->listen_language_change();
+
+			// flush when needed
+			$rewrites->maybe_flush();
+
 			// load extensions
 			add_action( 'admin_init', function () {
 				// Load the registered extensions
