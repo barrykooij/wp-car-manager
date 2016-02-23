@@ -60,10 +60,16 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 == Changelog ==
 
-= 2.0.0: xxx, 2016 =
+= 1.2.0: xxx, 2016 =
+* Feature: Added Frontend Car Submission functionality.
+* Feature: Added Car Dashboard functionality.
+* Feature: Added Onboarding process.
+* Feature: Added Car Seller user role.
+* Tweak: Added new vehicle states.
 * Tweak: Set manage_car_listings capability to features
 * Tweak: Set manage_car_listings capability to makes & models
 * Tweak: Vehicle object now has a get_url() method
+* Tweak: We now bundle jQuery UI assets instead of loading from Google severs.
 
 = 1.1.3: December 4, 2015 =
 * Tweak: Fixed the per_page attribute for the [wpcm_cars] shortcode
