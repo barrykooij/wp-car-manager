@@ -168,9 +168,9 @@ if ( ! function_exists( 'wpcm_template_submit_car_form_fields_car_title' ) ) {
 			<div class="wpcm-field wpcm-required-field">
 				<?php
 				wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form/form-fields/text', '', array(
-					'field'   => array( 'key' => 'title' ),
-					'value'   => $vehicle->get_title(),
-					'vehicle' => $vehicle
+					'field'       => array( 'key' => 'title', 'placeholder' => __( '', 'wp-car-manager' ) ),
+					'value'       => $vehicle->get_title(),
+					'vehicle'     => $vehicle
 				) );
 				?>
 			</div>
@@ -188,9 +188,9 @@ if ( ! function_exists( 'wpcm_template_submit_car_form_fields_car_description' )
 			<div class="wpcm-field wpcm-required-field">
 				<?php
 				wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form/form-fields/textarea', '', array(
-					'field'   => array( 'key' => 'description' ),
-					'value'   => $vehicle->get_description(),
-					'vehicle' => $vehicle
+					'field'       => array( 'key' => 'description', 'placeholder' => __( 'A short description of the vehicle. Does not need to include features, these can be selected separately below.', 'wp-car-manager' ) ),
+					'value'       => $vehicle->get_description(),
+					'vehicle'     => $vehicle
 				) );
 				?>
 			</div>

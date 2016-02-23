@@ -25,7 +25,8 @@ abstract class Format {
 			'decimal_separator'  => $wpcm->service( 'settings' )->get_option( 'decimal_separator' ),
 			'thousand_separator' => $wpcm->service( 'settings' )->get_option( 'thousand_separator' ),
 			'decimals'           => 0,
-			'price_format'       => Price::get_price_format()
+			'price_format'       => Price::get_price_format(),
+			'plain'              => false,
 		) ) );
 
 		$negative = $price < 0;
@@ -33,7 +34,21 @@ abstract class Format {
 		$price    = number_format( $price, $args['decimals'], $args['decimal_separator'], $args['thousand_separator'] );
 
 		$formatted_price = ( $negative ? '-' : '' ) . sprintf( $args['price_format'], Currency::get_currency_symbol(), $price );
-		$return          = '<span class="amount">' . $formatted_price . '</span>';
+
+		$return = '';
+
+		// add span
+		if ( ! $args['plain'] ) {
+			$return .= '<span class="amount">';
+		}
+
+		// add price
+		$return .= $formatted_price;
+
+		// close span
+		if ( ! $args['plain'] ) {
+			$return .= '</span>';
+		}
 
 		return $return;
 	}
