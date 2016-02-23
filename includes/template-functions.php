@@ -103,8 +103,21 @@ if ( ! function_exists( 'wpcm_template_vehicle_listings_filters_nonce' ) ) {
 }
 
 if ( ! function_exists( 'wpcm_template_vehicle_listings_filters_make' ) ) {
-	function wpcm_template_vehicle_listings_filters_make() {
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/filters/make' );
+	function wpcm_template_vehicle_listings_filters_make( $atts ) {
+
+		// fetch all makes if make attr is empty
+		if ( empty( $atts['make'] ) ) {
+			$makes = wp_car_manager()->service( 'make_model_manager' )->get_makes_map();
+		} else {
+			$term  = get_term_by( 'name', $atts['make'], 'wpcm_make_model' );
+			$makes = array( $term->term_id => $term->name );
+		}
+
+		// load template
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/filters/make', '', array(
+			'makes' => $makes
+		) );
+
 	}
 }
 
@@ -168,9 +181,9 @@ if ( ! function_exists( 'wpcm_template_submit_car_form_fields_car_title' ) ) {
 			<div class="wpcm-field wpcm-required-field">
 				<?php
 				wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form/form-fields/text', '', array(
-					'field'       => array( 'key' => 'title', 'placeholder' => __( '', 'wp-car-manager' ) ),
-					'value'       => $vehicle->get_title(),
-					'vehicle'     => $vehicle
+					'field'   => array( 'key' => 'title', 'placeholder' => __( '', 'wp-car-manager' ) ),
+					'value'   => $vehicle->get_title(),
+					'vehicle' => $vehicle
 				) );
 				?>
 			</div>
@@ -188,9 +201,12 @@ if ( ! function_exists( 'wpcm_template_submit_car_form_fields_car_description' )
 			<div class="wpcm-field wpcm-required-field">
 				<?php
 				wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form/form-fields/textarea', '', array(
-					'field'       => array( 'key' => 'description', 'placeholder' => __( 'A short description of the vehicle. Does not need to include features, these can be selected separately below.', 'wp-car-manager' ) ),
-					'value'       => $vehicle->get_description(),
-					'vehicle'     => $vehicle
+					'field'   => array(
+						'key'         => 'description',
+						'placeholder' => __( 'A short description of the vehicle. Does not need to include features, these can be selected separately below.', 'wp-car-manager' )
+					),
+					'value'   => $vehicle->get_description(),
+					'vehicle' => $vehicle
 				) );
 				?>
 			</div>

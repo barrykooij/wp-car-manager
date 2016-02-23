@@ -24,6 +24,9 @@ var WPCM_Listings = function ( tgt ) {
         this.init_sort();
     }
 
+    // always try to initially load models
+    this.updateModels();
+
     // always load vehicles on init for now
     this.load_vehicles();
 };

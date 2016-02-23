@@ -16,7 +16,7 @@ do_action( 'wpcm_before_listings' );
 				/**
 				 * wpcm_listings_vehicle_filters hook
 				 */
-				do_action( 'wpcm_listings_vehicle_filters' );
+				do_action( 'wpcm_listings_vehicle_filters', $atts );
 				?>
 			</div>
 

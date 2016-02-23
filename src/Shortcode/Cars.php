@@ -43,6 +43,7 @@ class Cars extends Shortcode {
 			'per_page'     => - 1, // @todo make this a setting later
 			'orderby'      => 'date',
 			'order'        => 'DESC',
+			'make'         => '',
 		) ), $atts );
 
 		// make sure show_filters is a bool
