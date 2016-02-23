@@ -81,6 +81,13 @@ jQuery( function ( $ ) {
 	// get action URL
 	var $form = $( '#wpcm-car-form' );
 
+	// setup datepicker
+	$( '.wpcm-input-date' ).datepicker( {
+		dateFormat: 'yy-mm-dd',
+		changeMonth: true,
+		changeYear: true
+	} );
+
 	// setup select2
 	$form.find( '#make' ).select2();
 	$form.find( '#model' ).select2();

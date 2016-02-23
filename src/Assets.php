@@ -88,6 +88,9 @@ abstract class Assets {
 
 		self::$shortcode_assets_enqueued[] = 'submit_car_form';
 
+		// datepicker
+		wp_enqueue_script( 'jquery-ui-datepicker' );
+
 		// enqueue select2 script
 		wp_enqueue_script(
 			'wpcm_js_select2',
@@ -181,7 +184,6 @@ abstract class Assets {
 
 			// datepicker
 			wp_enqueue_script( 'jquery-ui-datepicker' );
-			wp_enqueue_style( 'jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css' );
 
 			// enqueue edit vehicle script
 			wp_enqueue_script(
