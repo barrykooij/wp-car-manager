@@ -14,7 +14,7 @@
 			) ) as $sort_key => $sort_val
 		) : ?>
 			<option
-				value="<?php echo esc_attr( $sort_key ); ?>"><?php esc_html_e( $sort_val ); ?></option>
+				value="<?php echo esc_attr( $sort_key ); ?>"<?php selected( $atts['sort'], $sort_key ); ?>><?php esc_html_e( $sort_val ); ?></option>
 		<?php endforeach; ?>
 	</select>
 </div>
