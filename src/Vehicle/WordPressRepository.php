@@ -49,7 +49,7 @@ class WordPressRepository implements VehicleRepository {
 		$data->author            = $post->post_author;
 		$data->expiration        = ( ( false != get_post_meta( $post->ID, $pm_prefix . 'expiration', true ) ) ? new \DateTime( get_post_meta( $post->ID, $pm_prefix . 'expiration', true ) ) : null );
 		$data->description       = $post->post_content; // @todo check if we need to apply filters here
-		$data->short_description = $post->post_excerpt;
+		$data->short_description = wp_trim_words( ( ! empty( $post->post_excerpt ) ? $post->post_excerpt : $post->post_content ), absint( apply_filters( 'wpcm_vehicle_short_description_length', 30 ) ) );
 		$data->condition         = get_post_meta( $post->ID, $pm_prefix . 'condition', true );
 		$data->make              = get_post_meta( $post->ID, $pm_prefix . 'make', true );
 		$data->model             = get_post_meta( $post->ID, $pm_prefix . 'model', true );
@@ -185,7 +185,7 @@ class WordPressRepository implements VehicleRepository {
 		// set images
 		if ( is_array( $vehicle->get_gallery_attachment_ids() ) && count( $vehicle->get_gallery_attachment_ids() ) > 0 ) {
 			update_post_meta( $vehicle_id, '_car_gallery', implode( ',', $vehicle->get_gallery_attachment_ids() ) );
-		}else {
+		} else {
 			update_post_meta( $vehicle_id, '_car_gallery', '' );
 		}
 
