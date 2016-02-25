@@ -48,8 +48,6 @@ class Cars extends Shortcode {
 			'condition'    => '',
 		) ), $atts );
 
-		var_dump($atts);
-
 		// make sure show_filters is a bool
 		if ( 'false' === $atts['show_filters'] ) {
 			$atts['show_filters'] = false;
