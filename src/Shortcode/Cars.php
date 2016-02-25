@@ -44,8 +44,11 @@ class Cars extends Shortcode {
 			'orderby'      => 'date',
 			'order'        => 'DESC',
 			'make'         => '',
-			'sort'         => 'price-asc'
+			'sort'         => 'price-asc',
+			'condition'    => '',
 		) ), $atts );
+
+		var_dump($atts);
 
 		// make sure show_filters is a bool
 		if ( 'false' === $atts['show_filters'] ) {

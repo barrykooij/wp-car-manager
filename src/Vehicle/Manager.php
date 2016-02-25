@@ -16,6 +16,7 @@ class Manager {
 	 * - mileage_to (int)
 	 * - frdate_from (int)
 	 * - frdate_to (int)
+	 * - condition (new,used)
 	 *
 	 * Sort possibilities:
 	 * - price-asc
@@ -68,6 +69,7 @@ class Manager {
 		// base meta query
 		$meta_query = array();
 
+
 		// check for make
 		if ( is_array( $filters ) && count( $filters ) > 0 ) {
 			foreach ( $filters as $filter_key => $filter_val ) {
@@ -75,25 +77,34 @@ class Manager {
 				// var that will contain filter specific values
 				$key     = '';
 				$compare = '=';
+				$type    = 'NUMERIC';
 
 				switch ( $filter_key ) {
 
 					// check for make and model filter
 					case 'make':
 					case 'model':
-						$key = 'wpcm_' . $filter_key;
+						$key        = 'wpcm_' . $filter_key;
+						$filter_val = absint( $filter_val );
 						break;
 					case 'price_from':
 					case 'mileage_from':
 					case 'frdate_from':
-						$key     = 'wpcm_' . str_ireplace( '_from', '', $filter_key );
-						$compare = '>=';
+						$key        = 'wpcm_' . str_ireplace( '_from', '', $filter_key );
+						$compare    = '>=';
+						$filter_val = absint( $filter_val );
 						break;
 					case 'price_to':
 					case 'mileage_to':
 					case 'frdate_to':
-						$key     = 'wpcm_' . str_ireplace( '_to', '', $filter_key );
-						$compare = '<=';
+						$key        = 'wpcm_' . str_ireplace( '_to', '', $filter_key );
+						$compare    = '<=';
+						$filter_val = absint( $filter_val );
+						break;
+					case 'condition':
+						$key        = 'wpcm_condition';
+						$filter_val = sanitize_title( $filter_val );
+						$type       = 'CHAR';
 						break;
 					default:
 						break;
@@ -108,7 +119,7 @@ class Manager {
 						'key'     => $key,
 						'value'   => $filter_val,
 						'compare' => $compare,
-						'type'    => 'NUMERIC'
+						'type'    => $type
 					);
 				}
 

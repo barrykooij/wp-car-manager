@@ -30,13 +30,13 @@ class GetVehicleResults extends Ajax {
 		// get filters from get vars
 		foreach ( $_GET as $get_key => $get_var ) {
 			if ( 0 === strpos( $get_key, 'filter_' ) ) {
-				$filters[ str_ireplace( 'filter_', '', $get_key ) ] = absint( $get_var );
+				$filters[ str_ireplace( 'filter_', '', $get_key ) ] = $get_var;
 			}
 		}
 
 		// set sort
-		$sort = ( isset( $_GET['sort'] ) ) ? esc_attr( $_GET['sort'] ) : 'price-asc';
-		$per_page = ( isset( $_GET['per_page'] ) ) ? intval( $_GET['per_page'] ) : -1;
+		$sort     = ( isset( $_GET['sort'] ) ) ? esc_attr( $_GET['sort'] ) : 'price-asc';
+		$per_page = ( isset( $_GET['per_page'] ) ) ? intval( $_GET['per_page'] ) : - 1;
 
 		// get vehicles
 		$vehicle_manager = new Vehicle\Manager();

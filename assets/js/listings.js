@@ -16,6 +16,7 @@ var WPCM_Listings = function ( tgt ) {
 	this.listings = jQuery( tgt ).find( '.wpcm-vehicle-results-wrapper>.wpcm-vehicle-results:first' );
 	this.per_page = jQuery( tgt ).data( 'per_page' );
 	this.default_sort = jQuery( tgt ).data( 'default_sort' );
+	this.condition = jQuery( tgt ).data( 'condition' );
 
 	// init filters
 	this.init_filters();
@@ -146,6 +147,10 @@ WPCM_Listings.prototype.load_vehicles = function () {
 		args['sort'] = this.sort.find( 'option:selected' ).val();
 	} else {
 		args['sort'] = this.default_sort;
+	}
+
+	if ( '' != this.condition ) {
+		args['filter_condition'] = this.condition;
 	}
 
 	// set AJAX endpoint
