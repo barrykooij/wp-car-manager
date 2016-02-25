@@ -26,8 +26,7 @@
     }
 
     .wpcm-images {
-      float: left;
-      width: 55%;
+      width: 100%;
 
       img.attachment-wpcm_vehicle_single.wp-post-image {
         width: 100%;
@@ -96,8 +95,7 @@
     }
 
     .wpcm-summary {
-      float: right;
-      width: 41%;
+      width: 100%;
     }
 
     .wpcm-summary {
@@ -152,7 +150,7 @@
             margin: 0;
             tr {
               th {
-                width: 35%;
+                width: 50%;
               }
             }
           }
@@ -203,6 +201,17 @@
   // Single
   .single-wpcm_vehicle {
     .wpcm_vehicle {
+      .wpcm-vehicle-head {
+        .wpcm-images {
+          float: left;
+          width: 55%;
+        }
+        .wpcm-summary {
+          float: right;
+          width: 41%;
+        }
+      }
+
       .wpcm-vehicle-content {
         .wpcm-content-block {
 
@@ -210,6 +219,11 @@
             table {
               width: 50%;
               float: left;
+              tr {
+                th {
+                  width: 35%;
+                }
+              }
             }
           }
 
