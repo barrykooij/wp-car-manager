@@ -41,6 +41,7 @@ WPCM_Listings.prototype.init_filters = function () {
 	jQuery.each( this.filters.find( 'select' ), function ( k, v ) {
 		jQuery( v ).select2( {
 			placeholder: jQuery( v ).data( 'placeholder' ),
+			width: 'resolve'
 		} );
 	} );
 
@@ -102,11 +103,11 @@ WPCM_Listings.prototype.updateModels = function () {
 			}
 
 			// re-enable select2
-			select_model.select2();
+			select_model.select2( {width: 'resolve'} );
 
 		} );
 	} else {
-		select_model.attr( 'disabled', true ).find( 'option' ).remove().end().append( jQuery( '<option>' ).val( 0 ).html( wpcm.lbl_select_make_first ) ).select2();
+		select_model.attr( 'disabled', true ).find( 'option' ).remove().end().append( jQuery( '<option>' ).val( 0 ).html( wpcm.lbl_select_make_first ) ).select2( {width: 'resolve'} );
 	}
 
 };
