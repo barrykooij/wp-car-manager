@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Car Manager 1.2.0-dev\n"
 "Report-Msgid-Bugs-To: https://github.com/barrykooij/wp-car-manager/issues\n"
-"POT-Creation-Date: 2016-02-26 11:10:31+00:00\n"
+"POT-Creation-Date: 2016-02-26 15:02:49+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,6 +18,7 @@ msgid "Delete image"
 msgstr ""
 
 #: assets/views/meta-box/gallery.php:15 assets/views/meta-box/gallery.php:31
+#: templates/dashboard/buttons/delete.php:1
 #: templates/submit-car-form/images.php:28
 msgid "Delete"
 msgstr ""
@@ -644,11 +645,11 @@ msgid "Select the page where you have placed the %s shortcode."
 msgstr ""
 
 #: src/Settings.php:156
-msgid "Car Dashboard Page Form"
+msgid "Car Dashboard Page"
 msgstr ""
 
 #: src/Settings.php:163
-msgid "Car Listings Page Form"
+msgid "Car Listings Page"
 msgstr ""
 
 #: src/Shortcode/SubmitCarForm.php:42
@@ -993,6 +994,18 @@ msgstr ""
 
 #: src/Vehicle/PostType.php:29
 msgid "vehicle"
+msgstr ""
+
+#: templates/dashboard/buttons/edit.php:1
+msgid "Edit"
+msgstr ""
+
+#: templates/dashboard/buttons/renew.php:1
+msgid "Renew"
+msgstr ""
+
+#: templates/dashboard/item.php:15
+msgid "Expires on"
 msgstr ""
 
 #: templates/dashboard/no-results.php:1 templates/listings/no-results.php:1
