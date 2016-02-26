@@ -153,14 +153,14 @@ class Settings {
 						),
 						array(
 							'name'    => 'page_dashboard',
-							'label'   => __( 'Car Dashboard Page Form', 'wp-car-manager' ),
+							'label'   => __( 'Car Dashboard Page', 'wp-car-manager' ),
 							'desc'    => sprintf( __( 'Select the page where you have placed the %s shortcode.', 'wp-car-manager' ), '<a href="https://www.wpcarmanager.com/kb/car-dashboard/" target="_blank">[wpcm_dashboard]</a>' ),
 							'type'    => 'select',
 							'options' => Helper\Pages::get_pages()
 						),
 						array(
 							'name'    => 'page_listings',
-							'label'   => __( 'Car Listings Page Form', 'wp-car-manager' ),
+							'label'   => __( 'Car Listings Page', 'wp-car-manager' ),
 							'desc'    => sprintf( __( 'Select the page where you have placed the %s shortcode.', 'wp-car-manager' ), '<a href="https://www.wpcarmanager.com/kb/listings-page/" target="_blank">[wpcm_cars]</a>' ),
 							'type'    => 'select',
 							'options' => Helper\Pages::get_pages()
