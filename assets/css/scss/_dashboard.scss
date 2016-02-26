@@ -30,6 +30,7 @@
         }
 
         img.wpcm-dashboard-item-image {
+          display: none;
           width: 100px;
           height: 100px;
           position: absolute;
@@ -42,8 +43,8 @@
 
         .wpcm-dashboard-item-data {
           float: left;
-          width: 60%;
-          padding: 0 0 0 100px;
+          width: 70%;
+          padding: 0;
           margin: 0;
           line-height: 1.5em;
           color: #999;
@@ -63,6 +64,7 @@
         }
 
         .wpcm-dashboard-item-expires {
+          display: none;
           float: left;
           width: 20%;
           padding: 0 0 0 1em;
@@ -74,7 +76,7 @@
 
         .wpcm-dashboard-item-actions {
           float: left;
-          width: 20%;
+          width: 30%;
           text-align: right;
           padding: 0 0 0 1em;
           ul {
@@ -149,5 +151,35 @@
 /** MEDIA **/
 
 @media (min-width: 992px) {
+
+  .wpcm-dashboard {
+
+    .wpcm-dashboard-wrapper {
+
+      .wpcm-dashboard-list {
+
+        li.wpcm-dashboard-item {
+
+          img.wpcm-dashboard-item-image {
+            display: block;
+          }
+
+          .wpcm-dashboard-item-data {
+            width: 60%;
+            padding-left: 100px;
+          }
+
+          .wpcm-dashboard-item-expires {
+            display: block;
+          }
+
+          .wpcm-dashboard-item-actions {
+            width: 20%;
+          }
+
+        }
+      }
+    }
+  }
 
 }
