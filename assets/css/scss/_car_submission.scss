@@ -39,7 +39,7 @@
         list-style: none;
         overflow: auto;
         li {
-          width: 33%;
+          width: 100%;
           padding: 10px 0;
           margin: 0;
           float: left;
@@ -92,7 +92,7 @@
     div.wpcm-form-images-current {
       ul {
         list-style: none;
-        padding:0;
+        padding: 0;
         margin: 0 0 2em;
         overflow: hidden;
 
@@ -139,8 +139,7 @@
       display: none;
     }
     &.wpcm-disabled {
-      cursor:progress;
-
+      cursor: progress;
 
     }
   }
@@ -168,4 +167,26 @@
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+@media (min-width: 992px) {
+
+  .wpcm-car-form {
+
+    fieldset {
+
+      div.wpcm-field {
+
+        ul.wpcm-form-features {
+          li {
+            width: 33%;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
 }
