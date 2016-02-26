@@ -74,6 +74,10 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 * Tweak: Set manage_car_listings capability to makes & models
 * Tweak: Vehicle object now has a get_url() method
 * Tweak: We now bundle jQuery UI assets instead of loading from Google severs.
+* Tweak: We optimized multiple responsive styling elements.
+* Tweak: Dutch translation updated.
+* Tweak: German translation updated.
+* Tweak: French translation updated, props dirk.
 
 = 1.1.3: December 4, 2015 =
 * Tweak: Fixed the per_page attribute for the [wpcm_cars] shortcode
