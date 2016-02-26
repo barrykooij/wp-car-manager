@@ -12,7 +12,7 @@
 	</div>
 
 	<div class="wpcm-dashboard-item-expires">
-		<span class"wpcm-expires-on">Expires on</span>
+		<span class="wpcm-expires-on"><?php _e( 'Expires on', 'wp-car-manager' ); ?></span>
 		<strong><?php echo $expires; ?></strong>
 	</div>
 
