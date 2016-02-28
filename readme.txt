@@ -3,8 +3,8 @@ Contributors: never5, barrykooij
 Donate link: http://www.barrykooij.com/donate/
 Tags: car, vehicle, motor, sell, car listings, cars, auto, car market, marketplace
 Requires at least: 3.8
-Tested up to: 4.4
-Stable tag: 1.1.3
+Tested up to: 4.4.2
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,7 +60,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 == Changelog ==
 
-= 1.2.0: xxx, 2016 =
+= 1.2.0: February 28, 2016 =
 * Feature: Added Frontend Car Submission functionality.
 * Feature: Added Car Dashboard functionality.
 * Feature: Added Onboarding process.
