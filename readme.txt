@@ -65,6 +65,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 * Feature: Added Car Dashboard functionality.
 * Feature: Added Onboarding process.
 * Feature: Added Car Seller user role.
+* Feature: Added make attribute to wpcm_cars shortcode to only display vehicles of given make.
 * Feature: Added sort attribute to wpcm_cars shortcode to define default sorting. Options: price-asc, price-desc, year-asc, year-desc, mileage-asc, mileage-desc.
 * Feature: Added condition attribute to wpcm_cars shortcode to only show cars with one condition. Options: new, used.
 * Tweak: We're now properly flushing rewrites on website language change.
