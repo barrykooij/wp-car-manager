@@ -13,21 +13,85 @@ class Pages {
 
 		// setup array with default option
 		$pages = array(
-			0 => __( 'Select Page', 'wp-car-manager' )
+			0 => '-- ' . __( 'no page', 'wp-car-manager' ) . ' --'
 		);
 
 		// get pages from WP
 		$pages_raw = get_pages();
 
 		// count. loop. add
-		if(count($pages_raw)>0){
-			foreach($pages_raw as $page) {
-				$pages[$page->ID] = $page->post_title;
+		if ( count( $pages_raw ) > 0 ) {
+			foreach ( $pages_raw as $page ) {
+				$pages[ $page->ID ] = $page->post_title;
 			}
 		}
 
 		// return
 		return $pages;
+	}
+
+	/**
+	 * Get submit page URL
+	 *
+	 * @return string
+	 */
+	public static function get_page_submit() {
+		$url     = '';
+		$page_id = apply_filters( 'wpcm_page_id_submit', wp_car_manager()->service( 'settings' )->get_option( 'page_submit' ) );
+		if ( 0 != $page_id ) {
+			$url = get_permalink( $page_id );
+		}
+
+		return apply_filters( 'wpcm_page_url_submit', $url );
+	}
+
+	/**
+	 * Get dashboard page URL
+	 *
+	 * @param int Vehicle ID
+	 *
+	 * @return string
+	 */
+	public static function get_page_edit( $vehicle_id ) {
+
+		// get submit url
+		$url = self::get_page_submit();
+
+		// add the query arg
+		$url = add_query_arg( 'edit', $vehicle_id, $url );
+
+		// return the filterable URL
+		return apply_filters( 'wpcm_page_url_edit', $url, $vehicle_id );
+	}
+
+	/**
+	 * Get dashboard page URL
+	 *
+	 * @return string
+	 */
+	public static function get_page_dashboard() {
+		$url     = '';
+		$page_id = apply_filters( 'wpcm_page_id_dashboard', wp_car_manager()->service( 'settings' )->get_option( 'page_dashboard' ) );
+		if ( 0 != $page_id ) {
+			$url = get_permalink( $page_id );
+		}
+
+		return apply_filters( 'wpcm_page_url_dashboard', $url );
+	}
+
+	/**
+	 * Get listings page URL
+	 *
+	 * @return string
+	 */
+	public static function get_page_listings() {
+		$url     = '';
+		$page_id = apply_filters( 'wpcm_page_id_listings', wp_car_manager()->service( 'settings' )->get_option( 'page_listings' ) );
+		if ( 0 != $page_id ) {
+			$url = get_permalink( $page_id );
+		}
+
+		return apply_filters( 'wpcm_page_url_listings', $url );
 	}
 
 }

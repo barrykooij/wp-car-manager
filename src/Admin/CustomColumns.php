@@ -49,6 +49,8 @@ class CustomColumns {
 		$columns['price']   = __( 'Price', 'wp-car-manager' );
 		$columns['mileage'] = __( 'Mileage', 'wp-car-manager' );
 		$columns['frdate']  = __( 'FR Date', 'wp-car-manager' );
+		$columns['expires'] = __( 'Expires', 'wp-car-manager' );
+		$columns['actions'] = __( 'Actions', 'wp-car-manager' );
 
 		return $columns;
 	}
@@ -106,6 +108,21 @@ class CustomColumns {
 				break;
 			case 'frdate' :
 				$val = $vehicle->get_formatted_frdate();
+				break;
+			case 'expires' :
+				$expiration = $vehicle->get_expiration();
+				if ( null != $expiration ) {
+					$val = $expiration->format( str_ireplace( 'F', 'M', get_option( 'date_format' ) ) );
+				}
+				break;
+			case 'actions':
+				if ( 'pending' == $vehicle->get_status() ) {
+					$val = '<a href="' . add_query_arg( array(
+							'wpcm_action'     => 'approve',
+							'wpcm_action_val' => $post->ID,
+							'wpcm_nonce'      => wp_create_nonce( 'wpcm_action_approve_' . $post->ID )
+						), admin_url( 'edit.php?post_type=wpcm_vehicle' ) ) . '" class="button wpcm-btn-approve"></a>';
+				}
 				break;
 		}
 

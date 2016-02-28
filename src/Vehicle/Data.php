@@ -2,6 +2,8 @@
 
 namespace Never5\WPCarManager\Vehicle;
 
+use Never5\WPCarManager\Helper;
+
 class Data {
 
 	/**
@@ -15,67 +17,87 @@ class Data {
 
 		return array(
 			'condition'    => array(
-				'type'    => 'select',
-				'options' => self::get_conditions(),
-				'label'   => __( 'Condition', 'wp-car-manager' ),
-				'key'     => 'condition'
+				'type'     => 'select',
+				'options'  => self::get_conditions(),
+				'label'    => __( 'Condition', 'wp-car-manager' ),
+				'key'      => 'condition',
+				'required' => true,
 			),
 			'make'         => array(
-				'type'    => 'select',
-				'options' => wp_car_manager()->service('make_model_manager')->get_makes_map(),
-				'label'   => __( 'Make', 'wp-car-manager' ),
-				'key'     => 'make'
+				'type'     => 'select',
+				'options'  => wp_car_manager()->service( 'make_model_manager' )->get_makes_map(),
+				'label'    => __( 'Make', 'wp-car-manager' ),
+				'key'      => 'make',
+				'required' => true
 			),
 			'model'        => array(
-				'type'  => 'select-model',
-				'label' => __( 'Model', 'wp-car-manager' ),
-				'key'   => 'model'
+				'type'     => 'select-model',
+				'label'    => __( 'Model', 'wp-car-manager' ),
+				'key'      => 'model',
+				'required' => true,
 			),
-			'frdate'         => array(
-				'type'  => 'text',
-				'label' => __( 'First Registration Date', 'wp-car-manager' ),
-				'key'   => 'frdate'
+			'frdate'       => array(
+				'type'        => 'date',
+				'label'       => __( 'First Registration Date', 'wp-car-manager' ),
+				'key'         => 'frdate',
+				'required'    => true,
+				'placeholder' => 'YY-MM-DD'
 			),
 			'price'        => array(
-				'type'  => 'text',
-				'label' => __( 'Price', 'wp-car-manager' ),
-				'key'   => 'price'
+				'type'        => 'text',
+				'label'       => __( 'Price', 'wp-car-manager' ),
+				'key'         => 'price',
+				'required'    => false,
+				'placeholder' => Helper\Format::price( '29000.99', array( 'plain' => true, 'decimals' => 2 ) )
 			),
 			'mileage'      => array(
-				'type'  => 'text',
-				'label' => __( 'Mileage', 'wp-car-manager' ),
-				'key'   => 'mileage'
+				'type'        => 'text',
+				'label'       => __( 'Mileage', 'wp-car-manager' ),
+				'key'         => 'mileage',
+				'required'    => false,
+				'placeholder' => Helper\Format::mileage( '100000' )
 			),
 			'fuel_type'    => array(
-				'type'  => 'text',
-				'label' => __( 'Fuel Type', 'wp-car-manager' ),
-				'key'   => 'fuel_type'
+				'type'        => 'text',
+				'label'       => __( 'Fuel Type', 'wp-car-manager' ),
+				'key'         => 'fuel_type',
+				'required'    => false,
+				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' ' . __( 'Gas', 'wp-car-manager' )
 			),
 			'color'        => array(
-				'type'  => 'text',
-				'label' => __( 'Color', 'wp-car-manager' ),
-				'key'   => 'color'
+				'type'        => 'text',
+				'label'       => __( 'Color', 'wp-car-manager' ),
+				'key'         => 'color',
+				'required'    => false,
+				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' ' . __( 'Grey', 'wp-car-manager' )
 			),
 			'body_style'   => array(
-				'type'  => 'text',
-				'label' => __( 'Body Style', 'wp-car-manager' ),
-				'key'   => 'body_style'
+				'type'     => 'text',
+				'label'    => __( 'Body Style', 'wp-car-manager' ),
+				'key'      => 'body_style',
+				'required' => false,
+				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' ' . __( 'Sedan', 'wp-car-manager' )
 			),
 			'transmission' => array(
-				'type'    => 'select',
-				'options' => self::get_transmissions(),
-				'label'   => __( 'Transmission', 'wp-car-manager' ),
-				'key'     => 'transmission'
+				'type'     => 'select',
+				'options'  => self::get_transmissions(),
+				'label'    => __( 'Transmission', 'wp-car-manager' ),
+				'key'      => 'transmission',
+				'required' => false,
 			),
 			'engine'       => array(
-				'type'  => 'text',
-				'label' => __( 'Engine', 'wp-car-manager' ),
-				'key'   => 'engine'
+				'type'     => 'text',
+				'label'    => __( 'Engine', 'wp-car-manager' ),
+				'key'      => 'engine',
+				'required' => false,
+				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' ' . __( '2.0 TDI', 'wp-car-manager' )
 			),
 			'doors'        => array(
-				'type'  => 'text',
-				'label' => __( 'Doors', 'wp-car-manager' ),
-				'key'   => 'doors'
+				'type'     => 'text',
+				'label'    => __( 'Doors', 'wp-car-manager' ),
+				'key'      => 'doors',
+				'required' => false,
+				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' 5'
 			),
 		);
 	}

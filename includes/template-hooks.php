@@ -7,8 +7,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Before Summary Box
  *
- * @see wpcm_show_vehicle_images()
- * @see wpcm_show_vehicle_thumbnails()
+ * @see wpcm_template_vehicle_preview_bar()
+ */
+add_action( 'wpcm_before_single_vehicle', 'wpcm_template_vehicle_preview_bar', 10 );
+add_action( 'wpcm_before_single_vehicle', 'wpcm_template_vehicle_pending_bar', 10 );
+add_action( 'wpcm_before_single_vehicle', 'wpcm_template_vehicle_expired_bar', 10 );
+
+/**
+ * Before Summary Box
+ *
+ * @see wpcm_template_vehicle_images()
+ * @see wpcm_template_vehicle_thumbnails()
  */
 add_action( 'wpcm_before_vehicle_summary', 'wpcm_template_vehicle_images', 10 );
 add_action( 'wpcm_vehicle_thumbnails', 'wpcm_template_vehicle_thumbnails', 20 );
@@ -57,3 +66,35 @@ add_action( 'wpcm_listings_vehicle_filters', 'wpcm_template_vehicle_listings_fil
  */
 add_action( 'wpcm_listings_vehicle_results', 'wpcm_template_vehicle_listings_start', 10 );
 add_action( 'wpcm_listings_vehicle_results', 'wpcm_template_vehicle_listings_end', 15 );
+
+
+/**
+ ************************ CAR SUBMISSION ************************
+ */
+
+add_action( 'wpcm_submit_car_form_login', 'wpcm_template_submit_car_form_fields_account_signin', 15 );
+add_action( 'wpcm_submit_car_form_fields', 'wpcm_template_submit_car_form_fields_car_title', 15 );
+add_action( 'wpcm_submit_car_form_fields', 'wpcm_template_submit_car_form_fields_car_description', 20 );
+add_action( 'wpcm_submit_car_form_fields', 'wpcm_template_submit_car_form_fields_car_data', 25 );
+add_action( 'wpcm_submit_car_form_fields', 'wpcm_template_submit_car_form_fields_car_features', 30 );
+add_action( 'wpcm_submit_car_form_fields', 'wpcm_template_submit_car_form_fields_car_images', 40 );
+
+
+add_action( 'wpcm_submit_car_form_disabled', 'wpcm_template_submit_car_form_disabled', 15 );
+
+/**
+ ************************ DASHBOARD ************************
+ */
+
+/**
+ * Vehicle Dashboard Results
+ */
+add_action( 'wpcm_dashboard_results', 'wpcm_template_dashboard_list_start', 10 );
+add_action( 'wpcm_dashboard_results', 'wpcm_template_dashboard_list_end', 15 );
+
+/**
+ * Vehicle Dashboard Item Buttons
+ */
+add_action( 'wpcm_dashboard_item_actions', 'wpcm_template_dashboard_button_edit', 10 );
+add_action( 'wpcm_dashboard_item_actions', 'wpcm_template_dashboard_button_delete', 10 );
+//add_action( 'wpcm_dashboard_item_actions', 'wpcm_template_dashboard_button_renew', 10 );

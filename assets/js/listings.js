@@ -1,185 +1,198 @@
 jQuery( function ( $ ) {
-    var archives = $( '.wpcm-vehicle-listings' );
-    if ( archives ) {
-        $.each( archives, function ( k, v ) {
-            new WPCM_Listings( v );
-        } );
-    }
+	var archives = $( '.wpcm-vehicle-listings' );
+	if ( archives ) {
+		$.each( archives, function ( k, v ) {
+			new WPCM_Listings( v );
+		} );
+	}
 } );
 
 var WPCM_Listings = function ( tgt ) {
 
-    this.is_updating = false;
-    this.nonce = jQuery( tgt ).find( '#wpcm-listings-nonce' ).val();
-    this.filters = jQuery( tgt ).find( '.wpcm-vehicle-filters:first' );
-    this.sort = jQuery( tgt ).find( '#wpcm-sort:first' );
-    this.listings = jQuery( tgt ).find( '.wpcm-vehicle-results-wrapper>.wpcm-vehicle-results:first' );
-    this.per_page = jQuery( tgt ).data( 'per_page' );
+	this.is_updating = false;
+	this.nonce = jQuery( tgt ).find( '#wpcm-listings-nonce' ).val();
+	this.filters = jQuery( tgt ).find( '.wpcm-vehicle-filters:first' );
+	this.sort = jQuery( tgt ).find( '#wpcm-sort:first' );
+	this.listings = jQuery( tgt ).find( '.wpcm-vehicle-results-wrapper>.wpcm-vehicle-results:first' );
+	this.per_page = jQuery( tgt ).data( 'per_page' );
+	this.default_sort = jQuery( tgt ).data( 'default_sort' );
+	this.condition = jQuery( tgt ).data( 'condition' );
 
-    // init filters
-    this.init_filters();
+	// init filters
+	this.init_filters();
 
-    // init sort
-    if ( this.sort ) {
-        this.init_sort();
-    }
+	// init sort
+	if ( this.sort.length > 0 ) {
+		this.init_sort();
+	}
 
-    // always load vehicles on init for now
-    this.load_vehicles();
+	// always try to initially load models
+	this.updateModels();
+
+	// always load vehicles on init for now
+	this.load_vehicles();
 };
 
 WPCM_Listings.prototype.init_filters = function () {
 
-    var instance = this;
+	var instance = this;
 
-    // select 2 the select fields
-    jQuery.each( this.filters.find( 'select' ), function ( k, v ) {
-        jQuery( v ).select2( {
-            placeholder: jQuery( v ).data( 'placeholder' ),
-        } );
-    } );
+	// select 2 the select fields
+	jQuery.each( this.filters.find( 'select' ), function ( k, v ) {
+		jQuery( v ).select2( {
+			placeholder: jQuery( v ).data( 'placeholder' ),
+			width: 'resolve'
+		} );
+	} );
 
-    // bind listener to make field
-    this.filters.find( '.wpcm-filter-make select' ).change( function () {
-        instance.updateModels();
-    } );
+	// bind listener to make field
+	this.filters.find( '.wpcm-filter-make select' ).change( function () {
+		instance.updateModels();
+	} );
 
-    this.filters.find( '.wpcm-filter-button input' ).click( function () {
-        instance.load_vehicles();
-    } );
+	this.filters.find( '.wpcm-filter-button input' ).click( function () {
+		instance.load_vehicles();
+	} );
 
 };
 
 WPCM_Listings.prototype.init_sort = function () {
 
-    var instance = this;
+	var instance = this;
 
-    // bind listener to make field
-    this.sort.change( function () {
-        instance.load_vehicles();
-    } );
+	// bind listener to make field
+	this.sort.change( function () {
+		instance.load_vehicles();
+	} );
 
 };
 
 WPCM_Listings.prototype.updateModels = function () {
 
-    var make_id = this.filters.find( '.wpcm-filter-make select option:selected' ).val();
+	var make_id = this.filters.find( '.wpcm-filter-make select option:selected' ).val();
 
-    // model select input
-    var select_model = this.filters.find( '.wpcm-filter-model select' );
+	// model select input
+	var select_model = this.filters.find( '.wpcm-filter-model select' );
 
-    if ( make_id > 0 ) {
-        // args
-        var args = {
-            nonce: this.nonce,
-            make: make_id
-        };
+	if ( make_id > 0 ) {
+		// args
+		var args = {
+			nonce: wpcm.nonce_models,
+			make: make_id
+		};
 
-        // add endpoint
-        args [ wpcm.ajax_endpoint ] = 'get_models';
+		// add endpoint
+		args [wpcm.ajax_endpoint] = 'get_models';
 
-        // todo add spinner
+		// todo add spinner
 
-        jQuery.get( wpcm.ajax_url, args, function ( response ) {
+		jQuery.get( wpcm.ajax_url, args, function ( response ) {
 
-            // remove current options
-            select_model.attr( 'disabled', false ).find( 'option' ).remove();
+			// remove current options
+			select_model.attr( 'disabled', false ).find( 'option' ).remove();
 
-            if ( undefined != response && '' != response && 0 != response && response.length > 0 ) {
+			if ( undefined != response && '' != response && 0 != response && response.length > 0 ) {
 
-                select_model.append( jQuery( '<option>' ).val( 0 ).html( select_model.data( 'placeholder' ) ) );
+				select_model.append( jQuery( '<option>' ).val( 0 ).html( select_model.data( 'placeholder' ) ) );
 
-                for ( var i = 0; i < response.length; i++ ) {
-                    select_model.append( jQuery( '<option>' ).val( response[ i ].id ).html( response[ i ].name ) );
-                }
-            } else {
-                select_model.append( jQuery( '<option>' ).val( 0 ).html( wpcm.lbl_no_models_found ) );
-            }
+				for ( var i = 0; i < response.length; i ++ ) {
+					select_model.append( jQuery( '<option>' ).val( response[i].id ).html( response[i].name ) );
+				}
+			} else {
+				select_model.append( jQuery( '<option>' ).val( 0 ).html( wpcm.lbl_no_models_found ) );
+			}
 
-            // re-enable select2
-            select_model.select2();
+			// re-enable select2
+			select_model.select2( {width: 'resolve'} );
 
-        } );
-    } else {
-        select_model.attr( 'disabled', true ).find( 'option' ).remove().end().append( jQuery( '<option>' ).val( 0 ).html( wpcm.lbl_select_make_first ) ).select2();
-    }
-
+		} );
+	} else {
+		select_model.attr( 'disabled', true ).find( 'option' ).remove().end().append( jQuery( '<option>' ).val( 0 ).html( wpcm.lbl_select_make_first ) ).select2( {width: 'resolve'} );
+	}
 
 };
 
 WPCM_Listings.prototype.load_vehicles = function () {
 
-    // don't do anything if we're already updating
-    if ( this.is_updating == true ) {
-        return;
-    }
+	// don't do anything if we're already updating
+	if ( this.is_updating == true ) {
+		return;
+	}
 
-    // listings is updating
-    this.is_updating = true;
+	// listings is updating
+	this.is_updating = true;
 
-    // meh
-    var instance = this;
+	// meh
+	var instance = this;
 
-    // listings var
-    var listings = this.listings;
+	// listings var
+	var listings = this.listings;
 
-    // default ajax args with nonce
-    var args = {
-        nonce: this.nonce,
-        per_page: this.per_page
-    };
+	// default ajax args with nonce
+	var args = {
+		nonce: this.nonce,
+		per_page: this.per_page
+	};
 
-    // set filters in args
-    var filters = [];
-    jQuery.each( this.filters.find( '.wpcm-filter select' ), function ( k, v ) {
-        var filter_val = jQuery( v ).find( 'option:selected' ).val();
-        if ( filter_val != 0 ) {
-            args[ 'filter_' + jQuery( v ).attr( 'name' ) ] = filter_val;
-        }
-    } );
+	// set filters in args
+	var filters = [];
+	jQuery.each( this.filters.find( '.wpcm-filter select' ), function ( k, v ) {
+		var filter_val = jQuery( v ).find( 'option:selected' ).val();
+		if ( filter_val != 0 ) {
+			args['filter_' + jQuery( v ).attr( 'name' )] = filter_val;
+		}
+	} );
 
-    // set sort in args
-    args[ 'sort' ] = this.sort.find( 'option:selected' ).val();
+	// set sort in args
+	if ( this.sort.length > 0 ) {
+		args['sort'] = this.sort.find( 'option:selected' ).val();
+	} else {
+		args['sort'] = this.default_sort;
+	}
 
-    // set AJAX endpoint
-    args [ wpcm.ajax_endpoint ] = 'get_vehicle_results';
+	if ( '' != this.condition ) {
+		args['filter_condition'] = this.condition;
+	}
 
-    // add spinner
-    this.listings.parent().append( jQuery( '<div>' ).addClass( 'wpcm-results-load-overlay' ) );
-    this.listings.parent().append( new WPCM_Spinner().getDOM() );
+	// set AJAX endpoint
+	args [wpcm.ajax_endpoint] = 'get_vehicle_results';
 
-    jQuery.get( wpcm.ajax_url, args, function ( response ) {
+	// add spinner
+	this.listings.parent().append( jQuery( '<div>' ).addClass( 'wpcm-results-load-overlay' ) );
+	this.listings.parent().append( new WPCM_Spinner().getDOM() );
 
-        // set response
-        listings.html( response );
+	jQuery.get( wpcm.ajax_url, args, function ( response ) {
 
-        // remove spinner
-        listings.parent().find( '.wpcm-results-load-overlay' ).remove();
-        listings.parent().find( '.wpcm-results-spinner' ).remove();
+		// set response
+		listings.html( response );
 
-        // set is_updating to false
-        instance.is_updating = false;
+		// remove spinner
+		listings.parent().find( '.wpcm-results-load-overlay' ).remove();
+		listings.parent().find( '.wpcm-results-spinner' ).remove();
 
-    } );
+		// set is_updating to false
+		instance.is_updating = false;
+
+	} );
 
 };
 
 var WPCM_Spinner = function () {
-    this.el = jQuery( '<div>' ).addClass( 'wpcm-results-spinner' ).fadeIn( 400, WPCM_Spinner.prototype.fadeOut );
+	this.el = jQuery( '<div>' ).addClass( 'wpcm-results-spinner' ).fadeIn( 400, WPCM_Spinner.prototype.fadeOut );
 
-    jQuery( this.el ).bind( 'fade', function () {
-        jQuery( this ).fadeOut( 'slow', function () {
-            jQuery( this ).fadeIn( 'slow', function () {
-                jQuery( this ).trigger( 'fade' );
-            } );
-        } );
-    } );
+	jQuery( this.el ).bind( 'fade', function () {
+		jQuery( this ).fadeOut( 'slow', function () {
+			jQuery( this ).fadeIn( 'slow', function () {
+				jQuery( this ).trigger( 'fade' );
+			} );
+		} );
+	} );
 
-    jQuery( this.el ).trigger( 'fade' );
+	jQuery( this.el ).trigger( 'fade' );
 
-    return this;
+	return this;
 };
 
 WPCM_Spinner.prototype.getDOM = function () {
-    return this.el;
+	return this.el;
 }

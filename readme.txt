@@ -3,8 +3,8 @@ Contributors: never5, barrykooij
 Donate link: http://www.barrykooij.com/donate/
 Tags: car, vehicle, motor, sell, car listings, cars, auto, car market, marketplace
 Requires at least: 3.8
-Tested up to: 4.4
-Stable tag: 1.1.3
+Tested up to: 4.4.2
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,26 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 3. Your cars will be displayed beautifully in our vehicle detail pages.
 
 == Changelog ==
+
+= 1.2.0: February 28, 2016 =
+* Feature: Added Frontend Car Submission functionality.
+* Feature: Added Car Dashboard functionality.
+* Feature: Added Onboarding process.
+* Feature: Added Car Seller user role.
+* Feature: Added make attribute to wpcm_cars shortcode to only display vehicles of given make.
+* Feature: Added sort attribute to wpcm_cars shortcode to define default sorting. Options: price-asc, price-desc, year-asc, year-desc, mileage-asc, mileage-desc.
+* Feature: Added condition attribute to wpcm_cars shortcode to only show cars with one condition. Options: new, used.
+* Tweak: We're now properly flushing rewrites on website language change.
+* Tweak: Always limiting short_description length to 30 words, can be filtered with wpcm_vehicle_short_description_length
+* Tweak: Added new vehicle states.
+* Tweak: Set manage_car_listings capability to features
+* Tweak: Set manage_car_listings capability to makes & models
+* Tweak: Vehicle object now has a get_url() method
+* Tweak: We now bundle jQuery UI assets instead of loading from Google severs.
+* Tweak: We optimized multiple responsive styling elements.
+* Tweak: Dutch translation updated.
+* Tweak: German translation updated.
+* Tweak: French translation updated, props dirk.
 
 = 1.1.3: December 4, 2015 =
 * Tweak: Fixed the per_page attribute for the [wpcm_cars] shortcode

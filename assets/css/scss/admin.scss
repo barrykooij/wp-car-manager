@@ -74,11 +74,11 @@
 }
 
 /** Car Data Meta Box **/
-#wpcm-car-data {
+#wpcm-car-data, #wpcm-listing-data {
   .inside {
     @include clearfix();
     table {
-      width: 50%;
+      width: 100%;
       margin: 0;
       float: left;
 
@@ -88,10 +88,19 @@
       }
       td {
         padding: 5px 20px;
-        input, select {
+        input.wpcm-text, input.wpcm-date-field, select {
           width: 100%;
         }
       }
+    }
+  }
+
+}
+
+#wpcm-car-data {
+  .inside {
+    table {
+      width: 50%;
     }
   }
 
@@ -299,12 +308,33 @@
       width: 45px;
     }
 
-    .column-make, .column-model {
+    .column-expires {
       width: 15%;
+    }
+
+    .column-make, .column-model {
+      width: 12%;
     }
 
     .column-price, .column-mileage, .column-frdate {
       width: 10%;
+    }
+
+    .column-actions {
+      width: 7%;
+      text-align: right;
+
+      a.wpcm-btn-approve {
+        padding-left: 8px;
+        padding-right: 8px;
+
+        &:before {
+        font-family: "wp-car-manager" !important;
+        content: "\e808";
+        //font-size: 1.1em !important;
+        //line-height: 1.3em;
+        }
+      }
     }
 
     .wpcm-admin-image-header {
@@ -327,4 +357,28 @@
   }
 }
 
+.settings_panel {
+  .wpcm-description {
+    font-style: italic;
+  }
+}
+
+.wpcm-onboarding {
+
+  .wpcm-onboarding-pages {
+    width: 100%;
+
+    th,td {
+      padding: .5em 0;
+      border-bottom: 1px solid #ccc;
+    }
+    th {
+      text-align: left;
+    }
+  }
+
+}
+
+
 @import "tipped";
+@import "jquery-ui";

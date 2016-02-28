@@ -1,0 +1,1 @@
+<textarea name="wpcm_submit_car[<?php echo $field['key']; ?>]" id="<?php echo $field['key']; ?>" class="wpcm-input-text" cols="20" rows="3" placeholder="<?php echo $field['placeholder']; ?>"><?php echo $value; ?></textarea>

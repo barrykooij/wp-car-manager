@@ -3,6 +3,7 @@
 namespace Never5\WPCarManager;
 
 use Never5\WPCarManager\Shortcode;
+use Never5\WPCarManager\Vehicle\PostStatus;
 
 final class Plugin extends Pimple\Container {
 
@@ -33,8 +34,6 @@ final class Plugin extends Pimple\Container {
 
 		// load the plugin
 		$this->load();
-
-
 	}
 
 	/**
@@ -81,11 +80,21 @@ final class Plugin extends Pimple\Container {
 			Taxonomies::register_features();
 		} );
 
-		// register image size
+		// register image sizes
 		add_action( 'init', function () {
 			add_image_size( 'wpcm_vehicle_single', 600, 400, true );
 			add_image_size( 'wpcm_vehicle_thumbnail', 150, 150, true );
 			add_image_size( 'wpcm_vehicle_listings_item', 100, 100, true );
+		} );
+
+		// Post status object
+		$post_status = new PostStatus();
+		$post_status->setup();
+
+		// expiration cron-job callback
+		add_action( 'wpcm_crob_set_expired', function () {
+			$manager = new Vehicle\Manager();
+			$manager->mark_vehicles_expired();
 		} );
 
 		if ( is_admin() ) {
@@ -109,10 +118,17 @@ final class Plugin extends Pimple\Container {
 			}, 20 );
 
 			// license AJAX callback
-			add_action( 'wp_ajax_wpcm_extension', array( 'Never5\\WPCarManager\\Admin\\Page\\Extensions', 'ajax_license_action' ) );
+			add_action( 'wp_ajax_wpcm_extension', array(
+				'Never5\\WPCarManager\\Admin\\Page\\Extensions',
+				'ajax_license_action'
+			) );
 
 			// add meta box
 			add_action( 'admin_init', function () {
+
+				// listing data
+				$listing_data = new Admin\MetaBox\ListingData();
+				$listing_data->init();
 
 				// car data
 				$car_data = new Admin\MetaBox\CarData();
@@ -142,6 +158,30 @@ final class Plugin extends Pimple\Container {
 			$custom_columns = new Admin\CustomColumns();
 			$custom_columns->setup();
 
+			// admin custom actions
+			$custom_actions = new Admin\CustomActions();
+			$custom_actions->listen();
+
+			// upgrade manager
+			add_action( 'admin_init', function () {
+				$upgrade_manager = new Util\Upgrade();
+				$upgrade_manager->run();
+			} );
+
+			// setup onboarding
+			$onboarding = new Util\Onboarding();
+			$onboarding->setup();
+
+
+			// setup rewrites util
+			$rewrites = new Util\Rewrites();
+
+			// listen to language changes
+			$rewrites->listen_language_change();
+
+			// flush when needed
+			$rewrites->maybe_flush();
+
 			// load extensions
 			add_action( 'admin_init', function () {
 				// Load the registered extensions
@@ -170,10 +210,12 @@ final class Plugin extends Pimple\Container {
 
 			// setup shortcode
 			add_action( 'init', function () use ( $container ) {
-				$shortcode_cars = new Shortcode\Cars();
+				$shortcode_cars            = new Shortcode\Cars();
+				$shortcode_submit_car_form = new Shortcode\SubmitCarForm();
+				$shortcode_dashboard       = new Shortcode\Dashboard();
 			} );
 
-			// Setup custom AJAX
+			// setup custom AJAX
 			$ajax_manager = new Ajax\Manager();
 			$ajax_manager->setup();
 		}

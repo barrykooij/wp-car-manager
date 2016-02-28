@@ -34,7 +34,7 @@ class Cars extends Shortcode {
 	public function output( $atts ) {
 
 		// JS
-		WPCarManager\Assets::enqueue_shortcode_js();
+		WPCarManager\Assets::enqueue_shortcode_cars();
 
 		// get attributes, defaults filterable via 'wpcm_shortcode_cars_defaults' filter
 		$atts = shortcode_atts( apply_filters( 'wpcm_shortcode_' . $this->get_tag() . '_defaults', array(
@@ -43,6 +43,9 @@ class Cars extends Shortcode {
 			'per_page'     => - 1, // @todo make this a setting later
 			'orderby'      => 'date',
 			'order'        => 'DESC',
+			'make'         => '',
+			'sort'         => 'price-asc',
+			'condition'    => '',
 		) ), $atts );
 
 		// make sure show_filters is a bool

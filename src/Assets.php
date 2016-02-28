@@ -3,7 +3,7 @@ namespace Never5\WPCarManager;
 
 abstract class Assets {
 
-	private static $shortcode_assets_enqueued = false;
+	private static $shortcode_assets_enqueued = array();
 
 	/**
 	 * Enqueue frontend assets
@@ -33,24 +33,18 @@ abstract class Assets {
 			do_action( 'wpcm_assets_frontend_vehicle_single' );
 		}
 
-		// load listings assets on listings page
-		/*
-		if ( get_the_ID() == wp_car_manager()->service( 'settings' )->get_option( 'listings_page' ) ) {
-		}
-		*/
-
 	}
 
 	/**
 	 * Enqueue shortcode related Js
 	 */
-	public static function enqueue_shortcode_js() {
+	public static function enqueue_shortcode_cars() {
 
-		if ( true === self::$shortcode_assets_enqueued ) {
+		if ( in_array( 'cars', self::$shortcode_assets_enqueued ) ) {
 			return;
 		}
 
-		self::$shortcode_assets_enqueued = true;
+		self::$shortcode_assets_enqueued[] = 'cars';
 
 		// enqueue select2 script
 		wp_enqueue_script(
@@ -71,14 +65,111 @@ abstract class Assets {
 		);
 
 		wp_localize_script( 'wpcm_js_listings', 'wpcm', array(
-			'ajax_url'              => trailingslashit( get_site_url( '' ) ),
+			'ajax_url'              => trailingslashit( site_url( '' ) ),
 			'ajax_endpoint'         => Ajax\Manager::ENDPOINT,
+			'nonce_models'          => wp_create_nonce( 'wpcm_ajax_nonce_get_models' ),
 			'lbl_no_models_found'   => __( 'No models found', 'wp-car-manager' ),
 			'lbl_select_make_first' => __( 'Select make first', 'wp-car-manager' )
 		) );
 
 		// do action wpcm_assets_frontend_vehicle_single
 		do_action( 'wpcm_assets_frontend_vehicle_listings_page' );
+
+	}
+
+	/**
+	 * Enqueue shortcode related Js
+	 */
+	public static function enqueue_shortcode_submit_car_form() {
+
+		if ( in_array( 'submit_car_form', self::$shortcode_assets_enqueued ) ) {
+			return;
+		}
+
+		self::$shortcode_assets_enqueued[] = 'submit_car_form';
+
+		// datepicker
+		wp_enqueue_script( 'jquery-ui-datepicker' );
+
+		// enqueue select2 script
+		wp_enqueue_script(
+			'wpcm_js_select2',
+			wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/lib/select2.min.js' ),
+			array( 'jquery' ),
+			wp_car_manager()->get_version(),
+			true
+		);
+
+		// enqueue dropzone script
+		wp_enqueue_script(
+			'wpcm_js_dropzone',
+			wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/lib/dropzone.js' ),
+			array( 'jquery' ),
+			wp_car_manager()->get_version(),
+			true
+		);
+
+		// enqueue listings script
+		wp_enqueue_script(
+			'wpcm_js_car_submission',
+			wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/car-submission' . ( ( ! SCRIPT_DEBUG ) ? '.min' : '' ) . '.js' ),
+			array( 'jquery', 'wpcm_js_select2', 'wpcm_js_dropzone' ),
+			wp_car_manager()->get_version(),
+			true
+		);
+
+		wp_localize_script( 'wpcm_js_car_submission', 'wpcm', array(
+			'ajax_url_save'         => untrailingslashit( site_url( sprintf( '?%s=save_vehicle', Ajax\Manager::ENDPOINT ) ) ),
+			'ajax_url_get_models'   => untrailingslashit( site_url( sprintf( '?%s=get_models', Ajax\Manager::ENDPOINT ) ) ),
+			'ajax_url_post_images'  => untrailingslashit( site_url( sprintf( '?%s=save_images', Ajax\Manager::ENDPOINT ) ) ),
+			'ajax_url_delete_image' => untrailingslashit( site_url( sprintf( '?%s=delete_image', Ajax\Manager::ENDPOINT ) ) ),
+			'nonce_save'            => wp_create_nonce( 'wpcm_ajax_nonce_save_vehicle' ),
+			'nonce_models'          => wp_create_nonce( 'wpcm_ajax_nonce_get_models' ),
+			'nonce_save_images'     => wp_create_nonce( 'wpcm_ajax_nonce_save_images' ),
+			'nonce_delete_image'    => wp_create_nonce( 'wpcm_ajax_nonce_delete_image' ),
+			'lbl_no_models_found'   => __( 'No models found', 'wp-car-manager' ),
+			'lbl_select_make_first' => __( 'Select make first', 'wp-car-manager' ),
+			'lbl_submit_car'        => __( 'Submit Car', 'wp-car-manager' ),
+			'lbl_submitting'        => __( 'Submitting your data, please wait...', 'wp-car-manager' )
+		) );
+
+		// do action wpcm_assets_frontend_car_submission
+		do_action( 'wpcm_assets_frontend_car_submission_page' );
+
+	}
+
+	/**
+	 * Enqueue shortcode related Js
+	 */
+	public static function enqueue_shortcode_dashboard() {
+
+		if ( in_array( 'dashboard', self::$shortcode_assets_enqueued ) ) {
+			return;
+		}
+
+		self::$shortcode_assets_enqueued[] = 'dashboard';
+
+		// enqueue listings script
+		wp_enqueue_script(
+			'wpcm_js_dashboard',
+			wp_car_manager()->service( 'file' )->plugin_url( '/assets/js/dashboard' . ( ( ! SCRIPT_DEBUG ) ? '.min' : '' ) . '.js' ),
+			array( 'jquery' ),
+			wp_car_manager()->get_version(),
+			true
+		);
+
+		// localize
+		wp_localize_script( 'wpcm_js_dashboard', 'wpcm', array(
+			'ajax_url_get_vehicles'   => untrailingslashit( site_url( sprintf( '?%s=get_dashboard', Ajax\Manager::ENDPOINT ) ) ),
+			'ajax_url_delete_vehicle' => untrailingslashit( site_url( sprintf( '?%s=delete_vehicle', Ajax\Manager::ENDPOINT ) ) ),
+			'nonce_vehicles'          => wp_create_nonce( 'wpcm_ajax_nonce_get_dashboard' ),
+			'nonce_delete_vehicle'    => wp_create_nonce( 'wpcm_ajax_nonce_delete_vehicle' ),
+			'delete_confirm'          => __( 'Are you sure you want to delete %s?', 'wp-car-manager' ),
+			'error_delete_vehicle'    => __( 'Something went wrong when trying to delete your vehicle, please try again.', 'wp-car-manager' )
+		) );
+
+		// do action wpcm_assets_frontend_vehicle_single
+		do_action( 'wpcm_assets_frontend_dashboard_page' );
 
 	}
 
@@ -93,7 +184,6 @@ abstract class Assets {
 
 			// datepicker
 			wp_enqueue_script( 'jquery-ui-datepicker' );
-			wp_enqueue_style( 'jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css' );
 
 			// enqueue edit vehicle script
 			wp_enqueue_script(

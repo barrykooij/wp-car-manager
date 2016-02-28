@@ -3,7 +3,7 @@
     Plugin Name: WP Car Manager
     Plugin URI: http://www.wpcarmanager.com
     Description: The easiest way to manage, list and sell your cars online using WordPress.
-    Version: 1.1.3
+    Version: 1.2.0
     Author: Never5
     Author URI: http://www.never5.com
     License: GPL v2
@@ -39,7 +39,7 @@ function wp_car_manager() {
 	static $instance;
 	if ( is_null( $instance ) ) {
 		$class = 'Never5\WPCarManager\Plugin';
-		$instance = new $class( '1.1.3', __FILE__ );
+		$instance = new $class( '1.2.0', __FILE__ );
 	}
 
 	return $instance;
@@ -52,7 +52,7 @@ function __load_wp_car_manager() {
 }
 
 // autoloader
-require dirname( __FILE__ ) . '/vendor/autoload_52.php';
+require 'vendor/autoload.php';
 
 // check PHP version
 $updatePhp = new WPUpdatePhp( '5.3.0' );
@@ -61,5 +61,5 @@ if ( $updatePhp->does_it_meet_required_php_version( PHP_VERSION ) ) {
 	add_action( 'plugins_loaded', '__load_wp_car_manager', 20 );
 
 	// plugin install
-	register_activation_hook( __FILE__, array( 'Never5\WPCarManager\Install', 'install' ) );
+	register_activation_hook( __FILE__, array( 'Never5\WPCarManager\Util\Install', 'run' ) );
 }

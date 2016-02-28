@@ -1,0 +1,245 @@
+.single-wpcm_vehicle {
+
+  .wpcm_vehicle {
+
+    .wpcm-notice {
+      background: #428dcb;
+      color: #fff;
+      padding: 1em;
+      margin-bottom: 1em;
+
+      h2 {
+        font-size: 2.2em;
+        color: #fff;
+      }
+      .wpcm-preview-or {
+        padding: 0 .5em;
+      }
+    }
+
+    .attachment-full, .entry-thumbnail, .attachment-post-thumbnail {
+      display: none;
+    }
+
+    .wpcm-vehicle-head {
+      overflow: hidden;
+    }
+
+    .wpcm-images {
+      width: 100%;
+
+      img.attachment-wpcm_vehicle_single.wp-post-image {
+        width: 100%;
+      }
+
+      .wpcm-thumbnails {
+        width: 100%;
+        padding: 10px 0;
+
+        &.wpcm-columns-1 a {
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        &.wpcm-columns-2 a {
+          width: 47%;
+          margin-left: 3%;
+          margin-right: 3%;
+        }
+
+        &.wpcm-columns-3 a {
+          width: 30%;
+          margin-left: 2.5%;
+          margin-right: 2.5%;
+        }
+
+        &.wpcm-columns-4 a {
+          width: 22%;
+          margin-left: 2%;
+          margin-right: 2%;
+        }
+
+        &.wpcm-columns-5 a {
+          width: 17%;
+          margin-left: 1.875%;
+          margin-right: 1.875%;
+        }
+
+        a {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          float: left;
+          img {
+            width: 100%;
+          }
+        }
+
+        a.first {
+          margin-left: 0;
+        }
+
+        a.last {
+          margin-right: 0;
+        }
+
+      }
+    }
+
+    .wpcm-price-wrapper {
+      padding-bottom: 10px;
+      .wpcm-price {
+        font-size: 1.8em;
+        font-weight: bold;
+      }
+    }
+
+    .wpcm-summary {
+      width: 100%;
+    }
+
+    .wpcm-summary {
+      font-size: .9em;
+      table {
+        border: 0;
+        th, td {
+          padding: .857em 1.387em;
+          border: 0;
+          border-bottom: 1px dotted #F1F1F1;
+        }
+        th {
+          font-weight: bold;
+          padding-left: 0;
+        }
+      }
+
+      .wpcm-contact {
+        overflow: hidden;
+        .wpcm-contact-button {
+          display: block;
+          width: 100%;
+          margin-bottom: 15px;
+          float: left;
+          padding: 1em 0;
+          color: #fff;
+          text-align: center;
+          background: #428dcb;
+        }
+      }
+    }
+
+    .wpcm-vehicle-content {
+      clear: both;
+      overflow: hidden;
+
+      .wpcm-content-block {
+        border: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+        margin: 1em 0;
+        padding: 1em 0;
+        overflow: hidden;
+
+        h2 {
+          border-bottom: 1px solid rgba(0, 0, 0, .1);
+          padding-bottom: .5em;
+        }
+
+        &#wpcm-vehicle-data {
+          table {
+            width: 100%;
+            margin: 0;
+            tr {
+              th {
+                width: 50%;
+              }
+            }
+          }
+        }
+
+        &#wpcm-vehicle-features {
+          ul {
+            width: 100%;
+            margin: 0;
+            list-style: none;
+            li {
+              padding: .2em 0 .2em 22px;
+              background: url('../images/frontend-sprite.png') center left no-repeat;
+              box-sizing: border-box;
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+  /** twentyfifteen compatibility **/
+  .twentyfifteen {
+    .wpcm_vehicle {
+      .wpcm-summary {
+        padding: 0;
+      }
+      table {
+        border: 0;
+        tr {
+          border: 0;
+          th, td {
+            border: 0;
+            border-bottom: 1px dotted #F1F1F1;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+/** MEDIA **/
+
+@media (min-width: 768px) {
+
+  // Single
+  .single-wpcm_vehicle {
+    .wpcm_vehicle {
+      .wpcm-vehicle-head {
+        .wpcm-images {
+          float: left;
+          width: 55%;
+        }
+        .wpcm-summary {
+          float: right;
+          width: 41%;
+        }
+      }
+
+      .wpcm-vehicle-content {
+        .wpcm-content-block {
+
+          &#wpcm-vehicle-data {
+            table {
+              width: 50%;
+              float: left;
+              tr {
+                th {
+                  width: 35%;
+                }
+              }
+            }
+          }
+
+          &#wpcm-vehicle-features {
+            ul {
+              float: left;
+              li {
+                width: 50%;
+                float: left;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+}

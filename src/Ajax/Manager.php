@@ -36,6 +36,34 @@ class Manager {
 		// register GetModels
 		$get_models = new GetModels();
 		$get_models->register();
+
+		// register SaveVehicle
+		$save_vehicle = new SaveVehicle();
+		$save_vehicle->register();
+
+		// register SaveImages
+		$save_images = new SaveImages();
+		$save_images->register();
+
+		// register DeleteImage
+		$delete_image = new DeleteImage();
+		$delete_image->register();
+
+		// register GetDashboard
+		$get_dashboard = new GetDashboard();
+		$get_dashboard->register();
+
+		// register DeleteVehicle
+		$delete_vehicle = new DeleteVehicle();
+		$delete_vehicle->register();
+
+		// register CreatePage
+		$create_page = new CreatePage();
+		$create_page->register();
+
+		// register DismissNotice
+		$dismiss_notice = new DismissNotice();
+		$dismiss_notice->register();
 	}
 
 	/**

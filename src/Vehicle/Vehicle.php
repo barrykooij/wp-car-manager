@@ -8,6 +8,21 @@ abstract class Vehicle {
 	/** @var int */
 	private $id = null;
 
+	/** @var  String */
+	private $status;
+
+	/** @var String */
+	private $title;
+
+	/** @var int */
+	private $author;
+
+	/** @var \DateTime */
+	private $expiration;
+
+	/** @var String */
+	private $description;
+
 	/** @var string */
 	private $short_description = '';
 
@@ -20,7 +35,7 @@ abstract class Vehicle {
 	/** @var String */
 	private $model;
 
-	/** @var \Date */
+	/** @var \DateTime */
 	private $frdate;
 
 	/** @var String */
@@ -35,6 +50,9 @@ abstract class Vehicle {
 	/** @var String */
 	private $gallery_attachment_ids;
 
+	/** @var int */
+	private $sold;
+
 	/**
 	 * @return int
 	 */
@@ -47,6 +65,76 @@ abstract class Vehicle {
 	 */
 	public function set_id( $id ) {
 		$this->id = $id;
+	}
+
+	/**
+	 * @return String
+	 */
+	public function get_status() {
+		return $this->status;
+	}
+
+	/**
+	 * @param String $status
+	 */
+	public function set_status( $status ) {
+		$this->status = $status;
+	}
+
+	/**
+	 * @return String
+	 */
+	public function get_title() {
+		return $this->title;
+	}
+
+	/**
+	 * @param String $title
+	 */
+	public function set_title( $title ) {
+		$this->title = $title;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function get_author() {
+		return $this->author;
+	}
+
+	/**
+	 * @param int $author
+	 */
+	public function set_author( $author ) {
+		$this->author = $author;
+	}
+
+	/**
+	 * @return \DateTime
+	 */
+	public function get_expiration() {
+		return $this->expiration;
+	}
+
+	/**
+	 * @param \DateTime $expiration
+	 */
+	public function set_expiration( $expiration ) {
+		$this->expiration = $expiration;
+	}
+
+	/**
+	 * @return String
+	 */
+	public function get_description() {
+		return $this->description;
+	}
+
+	/**
+	 * @param String $description
+	 */
+	public function set_description( $description ) {
+		$this->description = $description;
 	}
 
 	/**
@@ -143,7 +231,7 @@ abstract class Vehicle {
 	}
 
 	/**
-	 * @return \Date
+	 * @return \DateTime
 	 */
 	public function get_frdate() {
 		return $this->frdate;
@@ -159,7 +247,7 @@ abstract class Vehicle {
 	}
 
 	/**
-	 * @param \Date $frdate
+	 * @param \DateTime $frdate
 	 */
 	public function set_frdate( $frdate ) {
 		$this->frdate = $frdate;
@@ -228,6 +316,45 @@ abstract class Vehicle {
 	 */
 	public function set_gallery_attachment_ids( $gallery_attachment_ids ) {
 		$this->gallery_attachment_ids = $gallery_attachment_ids;
+	}
+
+	/**
+	 * Get the URL (permalink) of the Vehicle
+	 *
+	 * @return mixed
+	 */
+	public function get_url() {
+		return \get_permalink( $this->get_id() );
+	}
+
+	/**
+	 * Get the URL to edit the vehicle
+	 *
+	 * @return string
+	 */
+	public function get_edit_url() {
+		return Helper\Pages::get_page_edit( $this->get_id() );
+	}
+
+	/**
+	 * @return int
+	 */
+	public function get_sold() {
+		return $this->sold;
+	}
+
+	/**
+	 * @param int $sold
+	 */
+	public function set_sold( $sold ) {
+		$this->sold = $sold;
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function is_sold() {
+		return ( '1' == $this->get_sold() );
 	}
 
 }

@@ -24,7 +24,7 @@ abstract class Ajax {
 	 * Checks AJAX nonce
 	 */
 	protected function check_nonce() {
-		check_ajax_referer( 'wpcm_secret_listings_nonce', 'nonce' );
+		check_ajax_referer( 'wpcm_ajax_nonce_' . $this->tag, 'nonce' );
 	}
 
 	/**

@@ -1,0 +1,185 @@
+.wpcm-dashboard {
+
+  .wpcm-dashboard-wrapper {
+    position: relative;
+
+    .wpcm-dashboard-list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      li.wpcm-dashboard-item {
+        list-style: none outside;
+        padding: 0;
+        margin: 0;
+
+        display: block;
+        padding: 1em 1em 1em 2em;
+        border: 0;
+        border-bottom: 1px solid #eee;
+        overflow: hidden;
+        zoom: 1;
+        position: relative;
+        line-height: 1.5em;
+        text-decoration: none;
+        font-weight: normal;
+        min-height: 100px;
+        box-sizing: content-box;
+
+        &:hover {
+          background-color: #f3f3f3;
+        }
+
+        img.wpcm-dashboard-item-image {
+          display: none;
+          width: 100px;
+          height: 100px;
+          position: absolute;
+          left: 1em;
+          float: left;
+          margin-right: 1em;
+          vertical-align: middle;
+          box-shadow: none;
+        }
+
+        .wpcm-dashboard-item-data {
+          float: left;
+          width: 70%;
+          padding: 0;
+          margin: 0;
+          line-height: 1.5em;
+          color: #999;
+          list-style: none outside;
+          ul {
+            margin: 0;
+            list-style: none;
+            .wpcm-title {
+              color: #484c51;
+              font-weight: bold;
+              font-size: 1.1em;
+              a {
+                color: #484c51;
+              }
+            }
+          }
+        }
+
+        .wpcm-dashboard-item-expires {
+          display: none;
+          float: left;
+          width: 20%;
+          padding: 0 0 0 1em;
+          text-align: center;
+          span {
+            display: block;
+          }
+        }
+
+        .wpcm-dashboard-item-actions {
+          float: left;
+          width: 30%;
+          text-align: right;
+          padding: 0 0 0 1em;
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li {
+              padding: 0 0 0.5em;
+              margin: 0;
+              a.wpcm-dashboard-button {
+                display: block;
+                text-align: center;
+
+                line-height: .9em;
+                font-size: .9em;
+                background-color: #428dcb;
+                width: 100%;
+                color: #fff;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                padding: .6em .4em;
+
+                &:active, &:focus, &:visited {
+                  border: 1px solid #ccc;
+                  outline: 0;
+                }
+              }
+            }
+          }
+        }
+
+      }
+      li.wpcm-no-results {
+        padding: 2em 0;
+        font-style: italic;
+        text-align: center;
+      }
+    }
+
+    .wpcm-results-load-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: #000;
+      opacity: 0.3;
+    }
+
+    .wpcm-results-spinner {
+      position: absolute;
+      width: 100px;
+      height: 76px;
+      top: 5%;
+      left: 50%;
+      margin-left: -50px;
+      text-align: center;
+      display: none;
+      &:before {
+        font-family: "wp-car-manager" !important;
+        content: "\e804";
+        font-size: 4em !important;
+        line-height: 1.3em;
+        color: #fff;;
+
+      }
+    }
+  }
+
+}
+
+/** MEDIA **/
+
+@media (min-width: 992px) {
+
+  .wpcm-dashboard {
+
+    .wpcm-dashboard-wrapper {
+
+      .wpcm-dashboard-list {
+
+        li.wpcm-dashboard-item {
+
+          img.wpcm-dashboard-item-image {
+            display: block;
+          }
+
+          .wpcm-dashboard-item-data {
+            width: 60%;
+            padding-left: 100px;
+          }
+
+          .wpcm-dashboard-item-expires {
+            display: block;
+          }
+
+          .wpcm-dashboard-item-actions {
+            width: 20%;
+          }
+
+        }
+      }
+    }
+  }
+
+}

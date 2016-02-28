@@ -5,7 +5,7 @@
  */
 do_action( 'wpcm_before_listings' );
 ?>
-	<div class="wpcm-vehicle-listings" data-per_page="<?php esc_attr_e( $atts['per_page'] ); ?>">
+	<div class="wpcm-vehicle-listings" data-per_page="<?php esc_attr_e( $atts['per_page'] ); ?>" data-default_sort="<?php esc_attr_e( $atts['sort'] ); ?>" data-condition="<?php esc_attr_e( $atts['condition'] ); ?>">
 
 		<?php if ( $atts['show_filters'] ) : ?>
 
@@ -16,7 +16,7 @@ do_action( 'wpcm_before_listings' );
 				/**
 				 * wpcm_listings_vehicle_filters hook
 				 */
-				do_action( 'wpcm_listings_vehicle_filters' );
+				do_action( 'wpcm_listings_vehicle_filters', $atts );
 				?>
 			</div>
 
@@ -32,7 +32,7 @@ do_action( 'wpcm_before_listings' );
 			/**
 			 * wpcm_listings_vehicle_sort hook
 			 */
-			do_action( 'wpcm_listings_vehicle_sort' );
+			do_action( 'wpcm_listings_vehicle_sort', $atts );
 			?>
 
 			<?php do_action( 'wpcm_after_listings_sort' ); ?>

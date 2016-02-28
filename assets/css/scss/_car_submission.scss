@@ -1,0 +1,192 @@
+.wpcm-car-form {
+
+  fieldset {
+
+    margin: 0 0 1em 0;
+    padding: 0 0 1em 0;
+    line-height: 2em;
+    border: 0;
+    border-bottom: 1px solid #eee;
+    @include clearfix();
+    label {
+      display: block;
+      margin: 0;
+      width: 29%;
+      float: left;
+      vertical-align: middle;
+      small {
+        opacity: .75;
+        font-size: 0.83em;
+      }
+    }
+    div.wpcm-field {
+      width: 70%;
+      float: right;
+      vertical-align: middle;
+
+      input.wpcm-input-text, input.wpcm-input-date, textarea, select {
+        margin: 0;
+        vertical-align: middle;
+        width: 100%;
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box; /* Firefox, other Gecko */
+        box-sizing: border-box; /* Opera/IE 8+ */
+      }
+
+      ul.wpcm-form-features {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        overflow: auto;
+        li {
+          width: 100%;
+          padding: 10px 0;
+          margin: 0;
+          float: left;
+          border-bottom: 1px solid #eee;
+
+          label {
+            width: 100%;
+
+            input {
+              margin-right: 10px;
+            }
+          }
+
+        }
+      }
+
+      .wpcm-error {
+        border: 1px solid red;
+      }
+    }
+
+    .wpcm-form-image-upload {
+      width: 100%;
+      min-height: 150px;
+      border: 2px dashed #60646c;
+      text-align: center;
+      padding: 50px;
+      color: #60646c;
+      cursor: pointer;
+      span {
+        font-size: 0.9em;
+        font-weight: 200;
+      }
+    }
+
+    div.wpcm-field-fw {
+      width: 100%;
+    }
+
+    div.wpcm-account-sign-in {
+      .button {
+        margin-right: .5em;
+      }
+      p {
+        margin: 1em 0 0 0;
+      }
+
+    }
+
+    div.wpcm-form-images-current {
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2em;
+        overflow: hidden;
+
+        li {
+          position: relative;
+          padding: 0;
+          margin: 0 1em 0 0;
+          float: left;
+          border: 1px solid #eee;
+
+          a.button {
+            display: block;
+            text-align: center;
+          }
+
+          .wpcm-image-delete-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0.5;
+
+          }
+        }
+      }
+    }
+
+  }
+
+  .wpcm-fieldset-features {
+    border-bottom: 0;
+  }
+
+  .wpcm-fieldset-disabled {
+    p {
+      padding-top: 20px;
+    }
+  }
+
+  #wpcm-submit {
+    span.wpcm-spinner {
+      display: none;
+    }
+    &.wpcm-disabled {
+      cursor: progress;
+
+    }
+  }
+
+}
+
+.ui-datepicker {
+  font-size: 0.9em;
+}
+
+@-moz-keyframes wpcm-spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes wpcm-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes wpcm-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 992px) {
+
+  .wpcm-car-form {
+
+    fieldset {
+
+      div.wpcm-field {
+
+        ul.wpcm-form-features {
+          li {
+            width: 33%;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+}
