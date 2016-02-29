@@ -24,11 +24,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php do_action( 'wpcm_submit_car_form_fields_end' ); ?>
 
 		<p>
-			<a type="submit" name="submit_car" class="button wpcm-button" id="wpcm-submit">
+			<a name="submit_car" class="button wpcm-button" id="wpcm-submit">
 				<span class="wpcm-val"><?php esc_attr_e( $submit_button_text ); ?></span>
 				<span class="wpcm-spinner"><i></i></span>
 			</a>
-			<input type="submit" style="position: absolute; left: -9999px"/><!-- Fallback submit -->
+			<input style="position: absolute; left: -9999px"/><!-- Fallback submit -->
 		</p>
 
 	<?php else : ?>
