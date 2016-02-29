@@ -29,7 +29,14 @@ List all your cars on your WordPress website by simply adding our shortcode to y
 = Detailed Car Pages =
 Our detailed car pages will display the car details beautifully. The car detail pages include a summary for the most important data, an overlay image gallery, automatically generated tables for all your car data, automatically created lists for the car's features and configurable call to action buttons.
 
+= User Submitted Listings =
+Allow your visitors to add their own cars to your website! Simply add our `[wpcm_submit_car_form]` shortcode to your page and allow your visitor to create car listings on your website!
+
 [Find out more information about our plugin, documentation and extensions at our website](https://www.wpcarmanager.com/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=more-information)
+
+This is the best car listing plugin for WordPress for car dealers, for people who want to setup their own car marketplace / listing website in WordPress or for those who simply want to list their car collection on their WordPress website.
+
+WP Car Manager integrates well with all WordPress theme (including car WordPress themes) that respect the WordPress standards. We will also offer WordPress car themes specifically created for WP Car Manager soon!
 
 > #### PHP Requirement
 > This plugin requires PHP version 5.3 or higher.<br />
@@ -60,7 +67,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 == Changelog ==
 
-= 1.2.0: February 28, 2016 =
+= 1.2.0: February 29, 2016 =
 * Feature: Added Frontend Car Submission functionality.
 * Feature: Added Car Dashboard functionality.
 * Feature: Added Onboarding process.
