@@ -125,7 +125,6 @@ abstract class Assets {
 			'ajax_url_delete_image' => untrailingslashit( site_url( sprintf( '?%s=delete_image', Ajax\Manager::ENDPOINT ) ) ),
 			'nonce_save'            => wp_create_nonce( 'wpcm_ajax_nonce_save_vehicle' ),
 			'nonce_models'          => wp_create_nonce( 'wpcm_ajax_nonce_get_models' ),
-			'nonce_save_images'     => wp_create_nonce( 'wpcm_ajax_nonce_save_images' ),
 			'nonce_delete_image'    => wp_create_nonce( 'wpcm_ajax_nonce_delete_image' ),
 			'lbl_no_models_found'   => __( 'No models found', 'wp-car-manager' ),
 			'lbl_select_make_first' => __( 'Select make first', 'wp-car-manager' ),

@@ -20,9 +20,6 @@ class SaveImages extends Ajax {
 	 */
 	public function run() {
 
-		// check nonce
-		$this->check_nonce();
-
 		// vehicle must be set
 		if ( ! isset( $_GET['vehicle'] ) ) {
 			wp_send_json( array( 'success' => false ) );
