@@ -167,7 +167,8 @@ class WordPressRepository implements VehicleRepository {
 		}
 
 		// set vehicle features
-		if ( ! empty( $vehicle->get_features() ) ) {
+		$obj_features = $vehicle->get_features();
+		if ( ! empty( $obj_features ) ) {
 
 			// store feature ID's in array
 			$terms = array();
