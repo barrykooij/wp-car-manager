@@ -7,9 +7,11 @@
     overflow: hidden;
 
     .wpcm-filter {
+      position: relative;
       width: 100%;
       padding: .5em 1em;
       float: left;
+      overflow: hidden;
 
       label {
         display: block;

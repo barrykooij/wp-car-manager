@@ -1,5 +1,4 @@
 <?php
-
 // get and prep models
 $models_select = array( 0 => __( 'Select Model', 'wp-car-manager' ) );
 if ( $vehicle->get_make() != 0 ) {
