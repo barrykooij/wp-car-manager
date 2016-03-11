@@ -925,10 +925,14 @@ msgid "Used"
 msgstr ""
 
 #: src/Vehicle/Data.php:124
-msgid "Automatic"
+msgid "Semi-Automatic"
 msgstr ""
 
 #: src/Vehicle/Data.php:125
+msgid "Automatic"
+msgstr ""
+
+#: src/Vehicle/Data.php:126
 msgid "Manual"
 msgstr ""
 
