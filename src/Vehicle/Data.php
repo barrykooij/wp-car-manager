@@ -72,10 +72,10 @@ class Data {
 				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' ' . __( 'Grey', 'wp-car-manager' )
 			),
 			'body_style'   => array(
-				'type'     => 'text',
-				'label'    => __( 'Body Style', 'wp-car-manager' ),
-				'key'      => 'body_style',
-				'required' => false,
+				'type'        => 'text',
+				'label'       => __( 'Body Style', 'wp-car-manager' ),
+				'key'         => 'body_style',
+				'required'    => false,
 				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' ' . __( 'Sedan', 'wp-car-manager' )
 			),
 			'transmission' => array(
@@ -86,17 +86,17 @@ class Data {
 				'required' => false,
 			),
 			'engine'       => array(
-				'type'     => 'text',
-				'label'    => __( 'Engine', 'wp-car-manager' ),
-				'key'      => 'engine',
-				'required' => false,
+				'type'        => 'text',
+				'label'       => __( 'Engine', 'wp-car-manager' ),
+				'key'         => 'engine',
+				'required'    => false,
 				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' ' . __( '2.0 TDI', 'wp-car-manager' )
 			),
 			'doors'        => array(
-				'type'     => 'text',
-				'label'    => __( 'Doors', 'wp-car-manager' ),
-				'key'      => 'doors',
-				'required' => false,
+				'type'        => 'text',
+				'label'       => __( 'Doors', 'wp-car-manager' ),
+				'key'         => 'doors',
+				'required'    => false,
 				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' 5'
 			),
 		);
@@ -121,9 +121,9 @@ class Data {
 	 */
 	public static function get_transmissions() {
 		return array(
-			'semi-automatic' => __( 'Semi-Automatic', 'wp-car-manager' ),
-			'automatic' => __( 'Automatic', 'wp-car-manager' ),
-			'manual'    => __( 'Manual', 'wp-car-manager' )
+			'automatic'      => __( 'Automatic', 'wp-car-manager' ),
+			'manual'         => __( 'Manual', 'wp-car-manager' ),
+			'semi-automatic' => __( 'Semi-Automatic', 'wp-car-manager' )
 		);
 	}
 
