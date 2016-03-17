@@ -108,10 +108,10 @@ class Data {
 	 * @return array
 	 */
 	public static function get_conditions() {
-		return array(
+		return apply_filters( 'wpcm_conditions', array(
 			'new'  => __( 'New', 'wp-car-manager' ),
 			'used' => __( 'Used', 'wp-car-manager' )
-		);
+		) );
 	}
 
 	/**
