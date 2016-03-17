@@ -44,6 +44,7 @@ class Cars extends Shortcode {
 			'orderby'      => 'date',
 			'order'        => 'DESC',
 			'make'         => '',
+			'make_id'      => '',
 			'sort'         => 'price-asc',
 			'condition'    => '',
 		) ), $atts );
@@ -62,12 +63,30 @@ class Cars extends Shortcode {
 			$atts['show_sort'] = true;
 		}
 
+		// check if we need to set a make_id
+		if ( ! empty( $atts['make'] ) && empty( $atts['make_id'] ) ) {
+			$term = get_term_by( 'name', $atts['make'], 'wpcm_make_model' );
+			if ( $term != false ) {
+				$atts['make_id'] = $term->term_id;
+			}
+		}
+
+		// build data atts
+		$data_atts = array( 'per_page', 'sort', 'condition', 'make_id' );
+		$data_str  = '';
+		foreach ( $data_atts as $data_att ) {
+			if ( ! empty( $atts[ $data_att ] ) ) {
+				$data_str .= ' data-' . $data_att . '="' . esc_attr( $atts[ $data_att ] ) . '"';
+			}
+		}
+
 		// start output buffer
 		ob_start();
 
 		// load template
 		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings-vehicle', '', array(
-			'atts' => $atts,
+			'atts'      => $atts,
+			'data_atts' => $data_str
 		) );
 
 		return ob_get_clean();
