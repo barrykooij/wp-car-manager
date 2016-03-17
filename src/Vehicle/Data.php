@@ -121,6 +121,7 @@ class Data {
 	 */
 	public static function get_transmissions() {
 		return array(
+			'semi-automatic' => __( 'Semi-Automatic', 'wp-car-manager' ),
 			'automatic' => __( 'Automatic', 'wp-car-manager' ),
 			'manual'    => __( 'Manual', 'wp-car-manager' )
 		);
