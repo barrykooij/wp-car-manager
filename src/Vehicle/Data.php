@@ -120,11 +120,11 @@ class Data {
 	 * @return array
 	 */
 	public static function get_transmissions() {
-		return array(
+		return apply_filters( 'wpcm_transmissions', array(
 			'automatic'      => __( 'Automatic', 'wp-car-manager' ),
 			'manual'         => __( 'Manual', 'wp-car-manager' ),
 			'semi-automatic' => __( 'Semi-Automatic', 'wp-car-manager' )
-		);
+		) );
 	}
 
 	/**
