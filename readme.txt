@@ -67,6 +67,9 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 == Changelog ==
 
+= 1.2.1: March xx, 2016 =
+* Tweak: Fixed a bug where you couldn't use the make attribute combined with show_filters="false" in [wpcm_cars]
+
 = 1.2.0: February 29, 2016 =
 * Feature: Added Frontend Car Submission functionality.
 * Feature: Added Car Dashboard functionality.
