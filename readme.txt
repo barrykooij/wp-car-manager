@@ -4,7 +4,7 @@ Donate link: http://www.barrykooij.com/donate/
 Tags: car, vehicle, motor, sell, car listings, cars, auto, car market, marketplace, car dealer, car classifieds, auto dealer, auto classifieds, autostock, selling cars, dealer, car-dealer, cardealer, automotive, sales, lots, auto, motorcycle, bike, boat, airplane, rvs, tractors, motorhomes, trailers, car sales
 Requires at least: 3.8
 Tested up to: 4.4.2
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -72,6 +72,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 * Tweak: Added semi-automatic as transmission type, props [Zaanmedia](https://github.com/Zaanmedia).
 * Tweak: Transmission are now filterable via wpcm_transmissions.
 * Tweak: Conditions are now filterable via wpcm_conditions.
+* Tweak: Updated Dutch translation.
 
 = 1.2.0: February 29, 2016 =
 * Feature: Added Frontend Car Submission functionality.
