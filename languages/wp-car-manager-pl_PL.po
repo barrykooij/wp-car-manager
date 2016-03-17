@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Car Manager\n"
 "Report-Msgid-Bugs-To: https://github.com/barrykooij/wp-car-manager/issues\n"
-"POT-Creation-Date: 2016-02-26 15:02:49+00:00\n"
-"PO-Revision-Date: 2016-02-26 15:03+0000\n"
+"POT-Creation-Date: 2016-03-17 15:44:20+00:00\n"
+"PO-Revision-Date: 2016-03-17 15:45+0000\n"
 "Last-Translator: Barry Kooij <mail@barrykooij.nl>\n"
 "Language-Team: Polish (Poland) (http://www.transifex.com/barrykooijplugins/wp-car-manager/language/pl_PL/)\n"
 "MIME-Version: 1.0\n"
@@ -41,8 +41,8 @@ msgstr "Dodaj zdjęcie galerii"
 
 #: assets/views/meta-box/input/select-model.php:4
 #: templates/listings/filters/model.php:3
-#: templates/submit-car-form/form-fields/select-model.php:4
-#: templates/submit-car-form/form-fields/select-model.php:16
+#: templates/submit-car-form/form-fields/select-model.php:3
+#: templates/submit-car-form/form-fields/select-model.php:15
 msgid "Select Model"
 msgstr "Wybierz model"
 
@@ -213,7 +213,7 @@ msgstr "%s Model"
 msgid "Makes"
 msgstr "Marka"
 
-#: src/Ajax/CreatePage.php:46 src/Assets.php:132
+#: src/Ajax/CreatePage.php:46 src/Assets.php:131
 msgid "Submit Car"
 msgstr ""
 
@@ -253,23 +253,23 @@ msgstr ""
 msgid "Incorrect First Registration Date format"
 msgstr ""
 
-#: src/Assets.php:71 src/Assets.php:130
+#: src/Assets.php:71 src/Assets.php:129
 msgid "No models found"
 msgstr "Nie znaleziono modelu"
 
-#: src/Assets.php:72 src/Assets.php:131 templates/listings/filters/model.php:4
+#: src/Assets.php:72 src/Assets.php:130 templates/listings/filters/model.php:4
 msgid "Select make first"
 msgstr "Wybierz markę"
 
-#: src/Assets.php:133
+#: src/Assets.php:132
 msgid "Submitting your data, please wait..."
 msgstr ""
 
-#: src/Assets.php:167
+#: src/Assets.php:166
 msgid "Are you sure you want to delete %s?"
 msgstr ""
 
-#: src/Assets.php:168
+#: src/Assets.php:167
 msgid ""
 "Something went wrong when trying to delete your vehicle, please try again."
 msgstr ""
@@ -937,6 +937,10 @@ msgstr "Automatyczna"
 #: src/Vehicle/Data.php:125
 msgid "Manual"
 msgstr "Manualna"
+
+#: src/Vehicle/Data.php:126
+msgid "Semi-Automatic"
+msgstr ""
 
 #: src/Vehicle/PostStatus.php:41
 msgid "Preview <span class=\"count\">(%s)</span>"

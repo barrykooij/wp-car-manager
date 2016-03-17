@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Car Manager\n"
 "Report-Msgid-Bugs-To: https://github.com/barrykooij/wp-car-manager/issues\n"
-"POT-Creation-Date: 2016-02-26 15:02:49+00:00\n"
-"PO-Revision-Date: 2016-02-26 15:03+0000\n"
+"POT-Creation-Date: 2016-03-17 15:44:20+00:00\n"
+"PO-Revision-Date: 2016-03-17 15:45+0000\n"
 "Last-Translator: Barry Kooij <mail@barrykooij.nl>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/barrykooijplugins/wp-car-manager/language/de_DE/)\n"
 "MIME-Version: 1.0\n"
@@ -40,10 +40,10 @@ msgstr "Galerie-Bilder hinzufügen"
 
 #: assets/views/meta-box/input/select-model.php:4
 #: templates/listings/filters/model.php:3
-#: templates/submit-car-form/form-fields/select-model.php:4
-#: templates/submit-car-form/form-fields/select-model.php:16
+#: templates/submit-car-form/form-fields/select-model.php:3
+#: templates/submit-car-form/form-fields/select-model.php:15
 msgid "Select Model"
-msgstr "Wähle Fahrzeugmarke/Modell"
+msgstr "Wähle das Fahrzeugmodel"
 
 #: assets/views/page/edit-make-model.php:16 assets/views/page/makes.php:16
 #: assets/views/page/makes.php:59 assets/views/page/makes.php:81
@@ -77,16 +77,16 @@ msgstr "Aktualisieren"
 
 #: assets/views/page/makes.php:49
 msgid "Configure Models"
-msgstr "Fahrzeugmarken/-modelle hinzufügen"
+msgstr "Fahrzeugmodelle konfigurieren"
 
 #: assets/views/page/makes.php:71 assets/views/page/makes.php:94
 #: src/Taxonomies.php:69
 msgid "Add New Make"
-msgstr "Jahrgang hinzufügen"
+msgstr "Fahrzeugmarke hinzufügen"
 
 #: assets/views/page/models.php:70 assets/views/page/models.php:95
 msgid "Add New Model"
-msgstr "Neue Marke/Modell hinzufügen"
+msgstr "Neues Model hinzufügen"
 
 #: assets/views/page/settings.php:7 src/Admin/Page/Settings.php:11
 msgid "Settings"
@@ -102,17 +102,17 @@ msgstr "Änderungen speichern"
 
 #: includes/template-functions.php:179
 msgid "Listing Title"
-msgstr ""
+msgstr "Überschrift"
 
 #: includes/template-functions.php:199 src/Util/Onboarding.php:103
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: includes/template-functions.php:206
 msgid ""
 "A short description of the vehicle. Does not need to include features, these"
 " can be selected separately below."
-msgstr ""
+msgstr "Eine kurze Beschreibung des Fahrzeugs. Spezifische Merkmale müssen nicht angegeben werden. Diese können weiter unten separat ausgewählt werden."
 
 #: includes/template-functions.php:227 src/Admin/MetaBox/CarData.php:14
 msgid "Car Data"
@@ -120,19 +120,19 @@ msgstr "Fahrzeugdaten"
 
 #: includes/template-functions.php:235
 msgid "(optional)"
-msgstr ""
+msgstr "(optional)"
 
 #: src/Admin/CustomColumns.php:47 src/Vehicle/Data.php:29
 #: templates/listings/filters/make.php:2
 #: templates/vehicle-data/data-make.php:9
 msgid "Make"
-msgstr "Jahrgang"
+msgstr "Fahrzeugmarke"
 
 #: src/Admin/CustomColumns.php:48 src/Vehicle/Data.php:35
 #: templates/listings/filters/model.php:2
 #: templates/vehicle-data/data-model.php:9
 msgid "Model"
-msgstr "Marke/Modell"
+msgstr "Model"
 
 #: src/Admin/CustomColumns.php:49 src/Vehicle/Data.php:48
 #: templates/vehicle-data/data-price.php:9
@@ -150,11 +150,11 @@ msgstr "Erstzulassung"
 
 #: src/Admin/CustomColumns.php:52
 msgid "Expires"
-msgstr ""
+msgstr "läuft ab am"
 
 #: src/Admin/CustomColumns.php:53
 msgid "Actions"
-msgstr ""
+msgstr "Aktion"
 
 #: src/Admin/CustomColumns.php:91 src/Ajax/GetDashboard.php:62
 #: src/Ajax/GetVehicleResults.php:64 templates/single-vehicle/image.php:36
@@ -167,15 +167,15 @@ msgstr "Fahrzeuggalerie"
 
 #: src/Admin/MetaBox/ListingData.php:14
 msgid "Listing Data"
-msgstr ""
+msgstr "Veröffentlicht am"
 
 #: src/Admin/MetaBox/ListingData.php:37
 msgid "Expiry Date:"
-msgstr ""
+msgstr "Ablauf am:"
 
 #: src/Admin/MetaBox/ListingData.php:43
 msgid "Sold?"
-msgstr ""
+msgstr "Verkauft?"
 
 #: src/Admin/MetaBox/ShortDescription.php:13
 msgid "Short Description"
@@ -190,7 +190,7 @@ msgstr "Erweiterungen"
 msgid ""
 "Extend WP Car Manager with its powerful free and paid extensions. %sClick "
 "here to browse all extensions%s"
-msgstr "Erweitern Sie WP-Car-Manager mit kostenlosen und kostenpflichtigen Erweiterungen. % sklicken Sie hier um alle Erweiterungen zu sehen %s"
+msgstr "Erweitern Sie WP-Car-Manager mit kostenlosen und kostenpflichtigen Erweiterungen. %sklicken Sie hier um alle Erweiterungen zu sehen%s"
 
 #: src/Admin/Page/Extensions.php:167
 msgid "Couldn't load extensions, please try again later."
@@ -198,7 +198,7 @@ msgstr "Konnte Erweiterungen nicht laden, bitte versuchen Sie es später noch ei
 
 #: src/Admin/Page/Makes.php:13 src/Taxonomies.php:64
 msgid "Makes & Models"
-msgstr "Jahrgänge & Fahrzeugmarken"
+msgstr "Fahrzeugmarken und -modelle"
 
 #: src/Admin/Page/Makes.php:141
 msgid "Edit %s"
@@ -206,19 +206,19 @@ msgstr "Bearbeite %s"
 
 #: src/Admin/Page/Makes.php:156
 msgid "%s Models"
-msgstr "%s-Fahrzeugmarken/-modelle"
+msgstr "%s Fahrzeugmodelle"
 
 #: src/Admin/Page/Makes.php:163
 msgid "Makes"
-msgstr "Jahrgänge"
+msgstr "Fahrzeugmarken"
 
-#: src/Ajax/CreatePage.php:46 src/Assets.php:132
+#: src/Ajax/CreatePage.php:46 src/Assets.php:131
 msgid "Submit Car"
-msgstr ""
+msgstr "Übermittle Fahrzeug"
 
 #: src/Ajax/CreatePage.php:51
 msgid "My Cars"
-msgstr ""
+msgstr "Meine Fahrzeuge"
 
 #: src/Ajax/CreatePage.php:54 src/Vehicle/PostType.php:30
 msgid "Cars"
@@ -226,52 +226,52 @@ msgstr "Fahrzeuge"
 
 #: src/Ajax/GetDashboard.php:68 src/Vehicle/PostStatus.php:226
 msgid "Expired"
-msgstr ""
+msgstr "abgelaufen"
 
 #: src/Ajax/SaveVehicle.php:33
 msgid "Missing vehicle ID."
-msgstr ""
+msgstr "Fehlende Fahrzeug-ID."
 
 #: src/Ajax/SaveVehicle.php:49
 msgid "Not allowed to create/edit vehicle."
-msgstr ""
+msgstr "Die Erstellung oder Bearbeitung eines Fahrzeugs ist nicht erlaubt."
 
 #: src/Ajax/SaveVehicle.php:73
 msgid "Please enter a username."
-msgstr ""
+msgstr "Bitte geben Sie einen Benutzernamen ein."
 
 #: src/Ajax/SaveVehicle.php:78
 msgid "Please enter your email address."
-msgstr ""
+msgstr "Bitte geben Sie Ihre E-Mail-Adresse ein."
 
 #: src/Ajax/SaveVehicle.php:106
 msgid "User could not log in, please contact support."
-msgstr ""
+msgstr "Benutzer kann nicht angemeldet werden, bitte kontaktiere den Webmaster."
 
 #: src/Ajax/SaveVehicle.php:117
 msgid "Incorrect First Registration Date format"
-msgstr ""
+msgstr "Ungültiges Datumsformat der Erstzulassung"
 
-#: src/Assets.php:71 src/Assets.php:130
+#: src/Assets.php:71 src/Assets.php:129
 msgid "No models found"
-msgstr "Keine Fahrzeuge gefunden,"
+msgstr "Keine Fahrzeugemodelle gefunden"
 
-#: src/Assets.php:72 src/Assets.php:131 templates/listings/filters/model.php:4
+#: src/Assets.php:72 src/Assets.php:130 templates/listings/filters/model.php:4
 msgid "Select make first"
-msgstr "Wähle zuerst einen Jahrgang"
+msgstr "Wählen Sie zuerst eine Fahrzeugmarke"
 
-#: src/Assets.php:133
+#: src/Assets.php:132
 msgid "Submitting your data, please wait..."
-msgstr ""
+msgstr "Ihre Daten werden übermittelt, bitte warten Sie einen Moment ..."
+
+#: src/Assets.php:166
+msgid "Are you sure you want to delete %s?"
+msgstr "Sind Sie sicher,  dass Sie %s löschen wollen?"
 
 #: src/Assets.php:167
-msgid "Are you sure you want to delete %s?"
-msgstr ""
-
-#: src/Assets.php:168
 msgid ""
 "Something went wrong when trying to delete your vehicle, please try again."
-msgstr ""
+msgstr "Etwas hat nicht funktioniert, als Sie versuchten, Ihr Fahrzeug zu löschen, bitte versuchen Sie es erneut."
 
 #: src/Extension/Extension.php:152
 msgid "License successfully activated."
@@ -467,15 +467,15 @@ msgstr "Ägyptisches Pfund"
 
 #: src/Helper/Pages.php:16
 msgid "no page"
-msgstr ""
+msgstr "keine Seite"
 
 #: src/MakeModelManager.php:74 templates/listings/filters/make.php:3
 msgid "Select Make"
-msgstr "Wähle den Jahrgang"
+msgstr "Wähle die Fahrzeugmarke"
 
 #: src/RoleManager.php:21
 msgid "Car Seller"
-msgstr ""
+msgstr "Verkäufer"
 
 #: src/Settings.php:39
 msgid "General"
@@ -487,7 +487,7 @@ msgstr "Währung"
 
 #: src/Settings.php:44
 msgid "Choose the currency used in your price fields."
-msgstr "Wählen Sie die Währung, die angezeigt werden soll"
+msgstr "Wählen Sie die Währung, die in ihrem Preisfeld angezeigt werden soll"
 
 #: src/Settings.php:50
 msgid "Currency Position"
@@ -555,67 +555,67 @@ msgstr "Darstellungsart des Datums 'Erstzulassung' auf der Webseite (Tipp Deutsc
 
 #: src/Settings.php:90
 msgid "Car Submission"
-msgstr ""
+msgstr "Einstellung Inserateerfassung"
 
 #: src/Settings.php:94
 msgid "Account Creation"
-msgstr ""
+msgstr "Kontoerstellung"
 
 #: src/Settings.php:95
 msgid "Allow account creation"
-msgstr ""
+msgstr "Useraccount erstellen erlauben"
 
 #: src/Settings.php:96
 msgid ""
 "If enabled, non-logged in users will be able to create an account by "
 "entering their email address on the submission form."
-msgstr ""
+msgstr "Wenn aktiviert, können nicht angemeldete Benutzer einen Account erstellen, indem Sie ihre E-Mail-Adresse im Übermittlungsformular eintragen."
 
 #: src/Settings.php:101
 msgid "Account Username"
-msgstr ""
+msgstr "Benutzername des Kontos"
 
 #: src/Settings.php:102
 msgid "Automatically Generate Username from Email Address"
-msgstr ""
+msgstr "Generiere automatisch einen Benutzernamen aufgrund der E-Mail-Adresse"
 
 #: src/Settings.php:103
 msgid ""
 "If enabled, a username will be generated from the first part of the user "
 "email address. Otherwise, a username field will be shown."
-msgstr ""
+msgstr "Falls aktiviert, wird der Benutzername aus dem ersten Teil der E-Mail Adresse generiert . Andernfalls wird das Feld Benutzername angezeigt."
 
 #: src/Settings.php:108
 msgid "Account Role"
-msgstr ""
+msgstr "Benutzerrolle"
 
 #: src/Settings.php:109
 msgid ""
 "If you enable registration on your submission form, choose a role for the "
 "new user."
-msgstr ""
+msgstr "Wenn Sie die Registrierung im Formular aktivieren, wählen Sie hier die Standard-Benutzerrolle."
 
 #: src/Settings.php:115
 msgid "Moderate New Listings"
-msgstr ""
+msgstr "Neue Einträge moderieren"
 
 #: src/Settings.php:116
 msgid "New listing submissions require admin approval"
-msgstr ""
+msgstr "Neue Einträge müssen vom Administrator genehmigt werden"
 
 #: src/Settings.php:117
 msgid "If enabled, new submissions will be inactive, pending admin approval."
-msgstr ""
+msgstr "Wenn aktiviert, sind neue Einreichungen inaktiv bis diese vom Administrator freigegeben werden."
 
 #: src/Settings.php:122
 msgid "Listing Duration"
-msgstr ""
+msgstr "Anzeigedauer"
 
 #: src/Settings.php:123
 msgid ""
 "How many %sdays%s listings are live before expiring. Can be left blank to "
 "never expire."
-msgstr ""
+msgstr "Wie viele %sTage%s bleiben Einträge aktiv bevor sie ablaufen. Leer lassen, wenn die Einträge niemals ablaufen sollen."
 
 #: src/Settings.php:129
 msgid "Contact"
@@ -639,31 +639,31 @@ msgstr "Telefonnummer unter der Sie erreichbar sind"
 
 #: src/Settings.php:145 src/Util/Onboarding.php:98
 msgid "Pages"
-msgstr ""
+msgstr "Seiten"
 
 #: src/Settings.php:149
 msgid "Submit Car Page Form"
-msgstr ""
+msgstr "Übermittle eingegebene Fahrzeugdaten"
 
 #: src/Settings.php:150 src/Settings.php:157 src/Settings.php:164
 msgid "Select the page where you have placed the %s shortcode."
-msgstr ""
+msgstr "Wählen Sie die Seite aus wo Sie den Shortcode %s eingefügt haben."
 
 #: src/Settings.php:156
 msgid "Car Dashboard Page"
-msgstr ""
+msgstr "Fahrzeugübersichtsseite"
 
 #: src/Settings.php:163
 msgid "Car Listings Page"
-msgstr ""
+msgstr "Bestehende Fahrzeuginserate"
 
 #: src/Shortcode/SubmitCarForm.php:42
 msgid "Preview Car"
-msgstr ""
+msgstr "Vorschau Fahrzeugdaten"
 
 #: src/Taxonomies.php:17
 msgid "Features"
-msgstr "Ausstattungs-merkmale"
+msgstr "Besonderheiten"
 
 #: src/Taxonomies.php:18
 msgid "All Features"
@@ -679,7 +679,7 @@ msgstr "Übergeordnete Ausstattungsmerkmale:"
 
 #: src/Taxonomies.php:21
 msgid "New Feature Name"
-msgstr "Ausstattungsmerkmale umbenennen"
+msgstr "Neues Ausstattungsmerkmal"
 
 #: src/Taxonomies.php:22
 msgid "Add New Feature"
@@ -723,150 +723,150 @@ msgstr "Nicht gefunden"
 
 #: src/Taxonomies.php:65
 msgid "All Makes"
-msgstr "Alle Produktionsjahre"
+msgstr "Alle Fahrzeugmarken"
 
 #: src/Taxonomies.php:66
 msgid "Parent Make"
-msgstr "übergeordneter Jahrgang"
+msgstr "übergeordnete Fahrzeugmarke"
 
 #: src/Taxonomies.php:67
 msgid "Parent Make:"
-msgstr "übergeordneter Jahrgang:"
+msgstr "übergeordnete Fahrzeugmarke:"
 
 #: src/Taxonomies.php:68
 msgid "New Make Name"
-msgstr "Neuer Jahrgang"
+msgstr "Neuer Fahrzeugmarkenname"
 
 #: src/Taxonomies.php:70
 msgid "Edit Make"
-msgstr "Bearbeite Jahrgänge"
+msgstr "Bearbeite Fahrzeugmarke"
 
 #: src/Taxonomies.php:71
 msgid "Update Make"
-msgstr "Aktualisiere Jahrgang"
+msgstr "Aktualisiere  Fahrzeugmarke"
 
 #: src/Taxonomies.php:72
 msgid "View Make"
-msgstr "Zeige Jahrgänge"
+msgstr "Zeige  Fahrzeugmarken"
 
 #: src/Taxonomies.php:73
 msgid "Separate makes with commas"
-msgstr "Trenne mehrere Jahrgänge mit Komma"
+msgstr "Trenne mehrere  Fahrzeugmarken mit Komma"
 
 #: src/Taxonomies.php:74
 msgid "Add or remove makes"
-msgstr "Hinzufügen/Entfernen Jahrgänge"
+msgstr "Hinzufügen/Entfernen Fahrzeugmarken"
 
 #: src/Taxonomies.php:76
 msgid "Popular Makes"
-msgstr "Populäre Jahrgänge"
+msgstr "Populäre  Fahrzeugmarken"
 
 #: src/Taxonomies.php:77
 msgid "Search Makes"
-msgstr "Suche nach Jahrgängen"
+msgstr "Suche nach  Fahrzeugmarken"
 
 #: src/UserManager.php:109
 msgid "Invalid email address."
-msgstr ""
+msgstr "Ungültige E-Mail-Adresse"
 
 #: src/UserManager.php:119
 msgid "Your email address isn't correct."
-msgstr ""
+msgstr "Ihre E-Mailadresse ist nicht korrekt."
 
 #: src/UserManager.php:124
 msgid "This email is already registered, please choose another one."
-msgstr ""
+msgstr "Diese E-Mail-Adresse wird bereits verwendet. Bitte nutzen Sie eine andere."
 
 #: src/Util/Onboarding.php:66
 msgid "Creating"
-msgstr ""
+msgstr "Erstellen"
 
 #: src/Util/Onboarding.php:67
 msgid "Page created"
-msgstr ""
+msgstr "Die Seite wurde erstellt."
 
 #: src/Util/Onboarding.php:68 src/Util/Onboarding.php:111
 #: src/Util/Onboarding.php:118 src/Util/Onboarding.php:125
 msgid "Create Page"
-msgstr ""
+msgstr "Seite erstellen"
 
 #: src/Util/Onboarding.php:78
 msgid ""
 "WP Car Manager is almost ready for use, %sclick here%s to setup the final "
 "settings."
-msgstr ""
+msgstr "WP Car Manager ist bereit zur Nutzung, %sklicke hier%s um die Einstellungen fertigzustellen."
 
 #: src/Util/Onboarding.php:94
 msgid "Setup"
-msgstr ""
+msgstr "Einstellungen"
 
 #: src/Util/Onboarding.php:95
 msgid ""
 "Thank you for using WP Car Manager! We'd like to help you setup the plugin "
 "correctly so you can start listing your cars as quickly as possible."
-msgstr ""
+msgstr "Danke, dass Sie WP Car Manager benutzen! Wir helfen Ihnen beim Setup des Plugins damit Sie gleich mit der Erfassung von Fahrzeugen beginnen können."
 
 #: src/Util/Onboarding.php:99
 msgid ""
 "WP Car Manager needs 3 pages setup with specific shortcodes to function "
 "correct. We can create and setup these pages for you at this moment or you "
 "can create them yourself and set them in %sthe settings screen%s."
-msgstr ""
+msgstr "WP Car Manager benötigt 3 Seiten mit spezifischen Shortcodes um korrekt funktionieren zu können. Wir können diese Seiten jetzt automatisch erstellen oder Sie können diese später selbst erstellen und unter %sEinstellungen - Seiten%s zuordnen"
 
 #: src/Util/Onboarding.php:102
 msgid "Page"
-msgstr ""
+msgstr "Seite"
 
 #: src/Util/Onboarding.php:107
 msgid "Submit Car Page"
-msgstr ""
+msgstr "Fahrzeugseite übermitteln"
 
 #: src/Util/Onboarding.php:108
 msgid "Users can submit their own listings via this page"
-msgstr ""
+msgstr "Benutzer können ihre eigenen Inserate über diese Seite einreichen."
 
 #: src/Util/Onboarding.php:114
 msgid "Car Dashboard"
-msgstr ""
+msgstr "Fahrzeugübersicht"
 
 #: src/Util/Onboarding.php:115
 msgid "An overview page of all cars created of logged in user"
-msgstr ""
+msgstr "Eine Übersichtsseite von allen Fahrzeugen eingeloggter Benutzer"
 
 #: src/Util/Onboarding.php:121 src/Vehicle/PostType.php:14
 #: src/Vehicle/PostType.php:15
 msgid "Car Listings"
-msgstr ""
+msgstr "Fahrzeuginserate"
 
 #: src/Util/Onboarding.php:122
 msgid "The page containing your car listings"
-msgstr ""
+msgstr "Die Seite enthält Ihre Fahrzeuginserate"
 
 #: src/Util/Onboarding.php:132
 msgid ""
 "Power up your WP Car Manager website with our official extensions. Our "
 "extensions allow you to add very specific functionality to your WP Car "
 "Manager installation and come with our premium support and updates."
-msgstr ""
+msgstr "Erweitern Sie Ihre WP Car Manager Website mit unseren offiziellen Erweiterungen. Unsere Erweiterungen erlauben es Ihnen, spezifische Funktionen hinzuzufügen und beinhalten unseren Premium-Support und Updates."
 
 #: src/Util/Onboarding.php:135
 msgid "Read more about our extensions"
-msgstr ""
+msgstr "Lesen Sie mehr über unsere Erweiterungen"
 
 #: src/Util/Onboarding.php:139
 msgid "A Never5 Product"
-msgstr ""
+msgstr "Ein Never5-Produkt"
 
 #: src/Util/Onboarding.php:144
 msgid ""
 "At %sNever5%s we create high quality premium WordPress plugins, with "
 "extensive support. We offer solutions in related posts, advanced download "
 "management, vehicle management and connecting post types."
-msgstr ""
+msgstr "%sNever5 %s erstellt qualitativ hochwertige Premium-WordPress-Plugins mit umfangreichem Support. Wir bieten Lösungen in Verbindung mit bestehenden Veröffentlichungen, erweiterte Download-Verwaltung, Fahrzeugmanagement und verbindet verschiedene Post-Typen"
 
 #: src/Util/Onboarding.php:146
 msgid "%sFollow Never5 on Twitter%s"
-msgstr ""
+msgstr "%sFolge Never5 auf Twitter%s"
 
 #: src/Vehicle/Data.php:22 templates/vehicle-data/data-condition.php:9
 msgid "Condition"
@@ -883,11 +883,11 @@ msgstr "Treibstoffart"
 #: src/Vehicle/Data.php:65 src/Vehicle/Data.php:72 src/Vehicle/Data.php:79
 #: src/Vehicle/Data.php:93 src/Vehicle/Data.php:100
 msgid "e.g."
-msgstr ""
+msgstr "z. B."
 
 #: src/Vehicle/Data.php:65
 msgid "Gas"
-msgstr ""
+msgstr "Benzin, Diesel"
 
 #: src/Vehicle/Data.php:69 templates/vehicle-data/data-color.php:9
 msgid "Color"
@@ -895,7 +895,7 @@ msgstr "Farbe"
 
 #: src/Vehicle/Data.php:72
 msgid "Grey"
-msgstr ""
+msgstr "Grau"
 
 #: src/Vehicle/Data.php:76 templates/vehicle-data/data-body_style.php:10
 msgid "Body Style"
@@ -903,7 +903,7 @@ msgstr "Karosserieform"
 
 #: src/Vehicle/Data.php:79
 msgid "Sedan"
-msgstr ""
+msgstr "Sedan"
 
 #: src/Vehicle/Data.php:84 templates/vehicle-data/data-transmission.php:9
 msgid "Transmission"
@@ -915,7 +915,7 @@ msgstr "Motor"
 
 #: src/Vehicle/Data.php:93
 msgid "2.0 TDI"
-msgstr ""
+msgstr "2.0 TDI"
 
 #: src/Vehicle/Data.php:97 templates/vehicle-data/data-doors.php:9
 msgid "Doors"
@@ -937,21 +937,25 @@ msgstr "Automat"
 msgid "Manual"
 msgstr "Handgeschaltet"
 
+#: src/Vehicle/Data.php:126
+msgid "Semi-Automatic"
+msgstr ""
+
 #: src/Vehicle/PostStatus.php:41
 msgid "Preview <span class=\"count\">(%s)</span>"
 msgid_plural "Preview <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Vorschau <span class=\"count\">(% s)</span>"
+msgstr[1] "Vorschau <span class=\"count\">(% s)</span>"
 
 #: src/Vehicle/PostStatus.php:52
 msgid "Expired <span class=\"count\">(%s)</span>"
 msgid_plural "Expired <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Abgelaufen <span class=\"count\">(%s)</span>"
+msgstr[1] "Abgelaufene <span class=\"count\">(%s)</span>"
 
 #: src/Vehicle/PostStatus.php:227 templates/single-vehicle/preview.php:2
 msgid "Preview"
-msgstr ""
+msgstr "Vorschau"
 
 #: src/Vehicle/PostType.php:16
 msgid "Parent Car:"
@@ -959,15 +963,15 @@ msgstr "Übergeordnetes Fahrzeug:"
 
 #: src/Vehicle/PostType.php:17
 msgid "All Car Listings"
-msgstr ""
+msgstr "Alle Fahrzeugangebote"
 
 #: src/Vehicle/PostType.php:18
 msgid "Add New Car Lsiting"
-msgstr ""
+msgstr "Neues Fahrzeugangebot hinzufügen"
 
 #: src/Vehicle/PostType.php:19
 msgid "Add New Listing"
-msgstr ""
+msgstr "Neuen Eintrag hinzufügen"
 
 #: src/Vehicle/PostType.php:20
 msgid "New Car"
@@ -1003,15 +1007,15 @@ msgstr "Fahrzeug"
 
 #: templates/dashboard/buttons/edit.php:1
 msgid "Edit"
-msgstr ""
+msgstr "Editieren"
 
 #: templates/dashboard/buttons/renew.php:1
 msgid "Renew"
-msgstr ""
+msgstr "Neu laden"
 
 #: templates/dashboard/item.php:15
 msgid "Expires on"
-msgstr ""
+msgstr "Läuft ab am:"
 
 #: templates/dashboard/no-results.php:1 templates/listings/no-results.php:1
 msgid "We couldn't find any cars."
@@ -1019,7 +1023,7 @@ msgstr "Wir konnten keine Fahrzeuge finden."
 
 #: templates/dashboard/not-logged-in.php:1
 msgid "Please sign in to view your car listings"
-msgstr ""
+msgstr "Bitte melden Sie sich an, um Ihre Fahrzeuginserate einsehen zu können."
 
 #: templates/listings/filters/button.php:2
 msgid "Show Results"
@@ -1092,13 +1096,13 @@ msgstr "Fahrzeugdetails"
 
 #: templates/single-vehicle/expired.php:2
 msgid "Listing Expired"
-msgstr ""
+msgstr "Inserat abgelaufen"
 
 #: templates/single-vehicle/expired.php:3
 msgid ""
 "This listing is expired, please go to your car dashboard for more "
 "information."
-msgstr ""
+msgstr "Dieses Inserat ist abgelaufen. Rufen Sie ihre Fahrzeugübersichtsseite auf für mehr Informationen."
 
 #: templates/single-vehicle/features.php:13
 msgid "Vehicle Features"
@@ -1106,97 +1110,97 @@ msgstr "Fahrzeugausstattung"
 
 #: templates/single-vehicle/pending.php:2
 msgid "Pending Review"
-msgstr ""
+msgstr "Freigabe ist noch ausstehend"
 
 #: templates/single-vehicle/pending.php:3
 msgid "Your submission is pending review, please check back later."
-msgstr ""
+msgstr "Die Freigabe ihres Inserates ist noch ausstehend. Bitte versuchen Sie es später noch einmal."
 
 #: templates/single-vehicle/preview.php:3
 msgid ""
 "This is a preview of your listing, please note this listing is not published"
 " yet!"
-msgstr ""
+msgstr "Dies ist eine Vorschau Ihres Inserats, beachten Sie bitte, dass dieses Inserat noch nicht veröffentlicht ist!"
 
 #: templates/single-vehicle/preview.php:4
 msgid "Edit listing"
-msgstr ""
+msgstr "Inserat bearbeiten"
 
 #: templates/single-vehicle/preview.php:6
 msgid "Submit listing"
-msgstr ""
+msgstr "Inserat übermitteln"
 
 #: templates/submit-car-form/account-signin.php:4
 msgid "Your account"
-msgstr ""
+msgstr "Ihr Benutzerkonto"
 
 #: templates/submit-car-form/account-signin.php:9
 msgid "You are currently signed in as <strong>%s</strong>."
-msgstr ""
+msgstr "Sie sind derzeit angemeldet als <strong>%s</strong>."
 
 #: templates/submit-car-form/account-signin.php:13
 msgid "Sign out"
-msgstr ""
+msgstr "Ausloggen"
 
 #: templates/submit-car-form/account-signin.php:22
 msgid "Have an account?"
-msgstr ""
+msgstr "Haben Sie bereits ein Benutzerkonto?"
 
 #: templates/submit-car-form/account-signin.php:26
 msgid "Sign in"
-msgstr ""
+msgstr "Anmelden"
 
 #: templates/submit-car-form/account-signin.php:30
 msgid ""
 "If you don&rsquo;t have an account you can create one below by entering your"
 " email address/username. Your account details will be confirmed via email."
-msgstr ""
+msgstr "Falls Sie noch kein Konto haben können Sie jetzt eines erstellen. Bitte geben Sie Ihre E-Mailadresse / Usernamen ein. Ihre Angaben werden via E-Mail bestätigt."
 
 #: templates/submit-car-form/account-signin.php:34
 msgid "You must sign in to create a new listing."
-msgstr ""
+msgstr "Sie müssen sich anmelden um ein Inserat erstellen zu können."
 
 #: templates/submit-car-form/account-signin.php:42
 msgid "Username"
-msgstr ""
+msgstr "Benutzername"
 
 #: templates/submit-car-form/account-signin.php:55
 msgid "Your Email"
-msgstr ""
+msgstr "Bitte geben Sie Ihre E-Mail-Adresse ein."
 
 #: templates/submit-car-form/car-features.php:1
 msgid "Car Features"
-msgstr ""
+msgstr "Fahrzeugausstattung"
 
 #: templates/submit-car-form/disabled.php:2
 msgid "You do not have permission to post or edit this listing."
-msgstr ""
+msgstr "Sie haben keine Berechtigung, dieses Inserat zu veröffentlichen oder zu bearbeiten."
 
 #: templates/submit-car-form/images.php:1
 msgid "Images"
-msgstr ""
+msgstr "Bilder"
 
 #: templates/submit-car-form/images.php:23
 msgid "Current Images"
-msgstr ""
+msgstr "Aktuelle Bilder"
 
 #: templates/submit-car-form/images.php:37
 msgid "Upload New Images"
-msgstr ""
+msgstr "Neue Bilder hochladen"
 
 #: templates/submit-car-form/images.php:38
 msgid "Click here to upload your images"
-msgstr ""
+msgstr "Klicken Sie hier, um Ihre Bilder hochladen"
 
 #: templates/submit-car-form/images.php:39
 msgid ""
 "You can upload multiple images at the same time, the first image will be "
 "your thumbnail."
-msgstr ""
+msgstr "Sie können mehrere Bilder gleichzeitig hochladen, das erste Bild wird als Beitragsbild verwendet."
 
 #: templates/vehicle-data/data-frdate.php:9
 msgid "Year"
-msgstr "Erstzulassung"
+msgstr "Jahr"
 
 #: templates/vehicle-data/data-fuel_type.php:9
 msgid "Fuel"
@@ -1256,17 +1260,17 @@ msgstr "Jahrgang"
 #: src/Vehicle/PostStatus.php:36
 msgctxt "post status"
 msgid "Preview"
-msgstr ""
+msgstr "Vorschau"
 
 #: src/Vehicle/PostStatus.php:46
 msgctxt "post status"
 msgid "Expired"
-msgstr ""
+msgstr "abgelaufen"
 
 #: src/Vehicle/PostType.php:12
 msgctxt "Post Type General Name"
 msgid "Car Listings"
-msgstr ""
+msgstr "Fahrzeuginserate"
 
 #: src/Vehicle/PostType.php:13
 msgctxt "Post Type Singular Name"
