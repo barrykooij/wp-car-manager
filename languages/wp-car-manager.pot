@@ -2,9 +2,9 @@
 # This file is distributed under the GPL v2.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Car Manager 1.2.0-dev\n"
+"Project-Id-Version: WP Car Manager 1.2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/barrykooij/wp-car-manager/issues\n"
-"POT-Creation-Date: 2016-02-26 15:02:49+00:00\n"
+"POT-Creation-Date: 2016-03-17 15:44:20+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,8 +37,8 @@ msgstr ""
 
 #: assets/views/meta-box/input/select-model.php:4
 #: templates/listings/filters/model.php:3
-#: templates/submit-car-form/form-fields/select-model.php:4
-#: templates/submit-car-form/form-fields/select-model.php:16
+#: templates/submit-car-form/form-fields/select-model.php:3
+#: templates/submit-car-form/form-fields/select-model.php:15
 msgid "Select Model"
 msgstr ""
 
@@ -208,7 +208,7 @@ msgstr ""
 msgid "Makes"
 msgstr ""
 
-#: src/Ajax/CreatePage.php:46 src/Assets.php:132
+#: src/Ajax/CreatePage.php:46 src/Assets.php:131
 msgid "Submit Car"
 msgstr ""
 
@@ -248,23 +248,23 @@ msgstr ""
 msgid "Incorrect First Registration Date format"
 msgstr ""
 
-#: src/Assets.php:71 src/Assets.php:130
+#: src/Assets.php:71 src/Assets.php:129
 msgid "No models found"
 msgstr ""
 
-#: src/Assets.php:72 src/Assets.php:131 templates/listings/filters/model.php:4
+#: src/Assets.php:72 src/Assets.php:130 templates/listings/filters/model.php:4
 msgid "Select make first"
 msgstr ""
 
-#: src/Assets.php:133
+#: src/Assets.php:132
 msgid "Submitting your data, please wait..."
 msgstr ""
 
-#: src/Assets.php:167
+#: src/Assets.php:166
 msgid "Are you sure you want to delete %s?"
 msgstr ""
 
-#: src/Assets.php:168
+#: src/Assets.php:167
 msgid "Something went wrong when trying to delete your vehicle, please try again."
 msgstr ""
 
@@ -925,15 +925,15 @@ msgid "Used"
 msgstr ""
 
 #: src/Vehicle/Data.php:124
-msgid "Semi-Automatic"
-msgstr ""
-
-#: src/Vehicle/Data.php:125
 msgid "Automatic"
 msgstr ""
 
-#: src/Vehicle/Data.php:126
+#: src/Vehicle/Data.php:125
 msgid "Manual"
+msgstr ""
+
+#: src/Vehicle/Data.php:126
+msgid "Semi-Automatic"
 msgstr ""
 
 #: src/Vehicle/PostStatus.php:41
