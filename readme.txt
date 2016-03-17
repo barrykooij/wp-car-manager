@@ -67,9 +67,11 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 == Changelog ==
 
-= 1.2.1: March xx, 2016 =
+= 1.2.1: March 17, 2016 =
 * Tweak: Fixed a bug where you couldn't use the make attribute combined with show_filters="false" in [wpcm_cars]
 * Tweak: Added semi-automatic as transmission type, props [Zaanmedia](https://github.com/Zaanmedia).
+* Tweak: Transmission are now filterable via wpcm_transmissions.
+* Tweak: Conditions are now filterable via wpcm_conditions.
 
 = 1.2.0: February 29, 2016 =
 * Feature: Added Frontend Car Submission functionality.
