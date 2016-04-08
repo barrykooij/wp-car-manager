@@ -73,7 +73,8 @@ class GetVehicleResults extends Ajax {
 					'description' => $vehicle->get_short_description(),
 					'price'       => $vehicle->get_formatted_price(),
 					'mileage'     => $vehicle->get_formatted_mileage(),
-					'frdate'      => $vehicle->get_formatted_frdate()
+					'frdate'      => $vehicle->get_formatted_frdate(),
+					'vehicle'     => $vehicle
 				) );
 			}
 		} else {
