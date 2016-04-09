@@ -67,8 +67,13 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 == Changelog ==
 
-= 1.2.2: April X, 2016 =
-* Added Swedish translation, props Nicklas.
+= 1.3.0: April X, 2016 =
+* Feature: Added Power data field.
+* Feature: Added Power Type data field.
+* Feature: Added Swedish translation, props Nicklas.
+* Tweak: Made date fields that are displayed in single car template filterable via wpcm_single_vehicle_data_fields.
+* Tweak: Made distance unit abbreviation translatable.
+* Tweak: We're now passing current vehicle object to listings/item.php template part.
 
 = 1.2.1: March 17, 2016 =
 * Tweak: Fixed a bug where you couldn't use the make attribute combined with show_filters="false" in [wpcm_cars]
