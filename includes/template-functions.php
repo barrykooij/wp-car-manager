@@ -85,6 +85,13 @@ if ( ! function_exists( 'wpcm_template_single_contact' ) ) {
 		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/contact' );
 	}
 }
+if ( ! function_exists( 'wpcm_template_data_remove_power_type' ) ) {
+	function wpcm_template_data_remove_power_type( $fields, $vehicle ) {
+		unset( $fields['power_type'] );
+		return $fields;
+	}
+}
+
 
 /**
  * LISTINGS VEHICLE

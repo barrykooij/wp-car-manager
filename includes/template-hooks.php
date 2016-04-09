@@ -40,6 +40,9 @@ add_action( 'wpcm_vehicle_content', 'wpcm_template_single_data', 10 );
 add_action( 'wpcm_vehicle_content', 'wpcm_template_single_content', 20 );
 add_action( 'wpcm_vehicle_content', 'wpcm_template_single_features', 30 );
 
+// Remove the power type from data template parts as we display this in the power template
+add_filter( 'wpcm_single_vehicle_data_fields', 'wpcm_template_data_remove_power_type', 10, 2 );
+
 /**
  ************************ LISTINGS ************************
  */

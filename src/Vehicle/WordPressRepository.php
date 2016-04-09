@@ -60,6 +60,8 @@ class WordPressRepository implements VehicleRepository {
 		$data->fuel_type         = get_post_meta( $post->ID, $pm_prefix . 'fuel_type', true );
 		$data->transmission      = get_post_meta( $post->ID, $pm_prefix . 'transmission', true );
 		$data->engine            = get_post_meta( $post->ID, $pm_prefix . 'engine', true );
+		$data->power             = get_post_meta( $post->ID, $pm_prefix . 'power', true );
+		$data->power_type        = get_post_meta( $post->ID, $pm_prefix . 'power_type', true );
 		$data->body_style        = get_post_meta( $post->ID, $pm_prefix . 'body_style', true );
 		$data->doors             = get_post_meta( $post->ID, $pm_prefix . 'doors', true );
 		$data->sold              = get_post_meta( $post->ID, $pm_prefix . 'sold', true );
