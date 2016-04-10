@@ -81,6 +81,9 @@
       width: 100%;
       margin: 0;
       float: left;
+      @media ( max-width: 668px ) {
+          width: 100% !important;
+      }
 
       th {
         width: 30%;
