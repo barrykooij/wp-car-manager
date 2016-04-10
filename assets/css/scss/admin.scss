@@ -302,6 +302,7 @@
 
 }
 
+/** Overview page */
 .post-type-wpcm_vehicle {
   .wp-list-table {
     .column-image {
@@ -353,6 +354,18 @@
       max-width: 40px;
       max-height: 40px;
       border: 1px solid #eee;
+    }
+
+    @media screen and (max-width: 782px) {
+      th.column-image {
+        display: none;
+      }
+      .column-primary .toggle-row {
+        top: -53px;
+      }
+      .column-primary {
+        overflow: visible !important;
+      }
     }
   }
 }
