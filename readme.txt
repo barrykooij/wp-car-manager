@@ -72,6 +72,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 * Feature: Added Power Type data field.
 * Feature: Added Swedish translation, props Nicklas.
 * Tweak: Made date fields that are displayed in single car template filterable via wpcm_single_vehicle_data_fields.
+* Tweak: Fixed schema.org declaration issue.
 * Tweak: Made distance unit abbreviation translatable.
 * Tweak: We're now passing current vehicle object to listings/item.php template part.
 
