@@ -379,6 +379,10 @@
 
 }
 
+/* Settings */
+a.nav-tab:focus {
+  box-shadow: none;
+}
 
 @import "tipped";
 @import "jquery-ui";
