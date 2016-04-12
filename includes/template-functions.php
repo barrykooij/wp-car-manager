@@ -88,6 +88,7 @@ if ( ! function_exists( 'wpcm_template_single_contact' ) ) {
 if ( ! function_exists( 'wpcm_template_data_remove_power_type' ) ) {
 	function wpcm_template_data_remove_power_type( $fields, $vehicle ) {
 		unset( $fields['power_type'] );
+
 		return $fields;
 	}
 }
@@ -167,6 +168,14 @@ if ( ! function_exists( 'wpcm_template_vehicle_listings_start' ) ) {
 if ( ! function_exists( 'wpcm_template_vehicle_listings_end' ) ) {
 	function wpcm_template_vehicle_listings_end() {
 		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/end' );
+	}
+}
+
+if ( ! function_exists( 'wpcm_template_vehicle_listings_item_sold_sign' ) ) {
+	function wpcm_template_vehicle_listings_item_sold_sign( $vehicle ) {
+		if ( $vehicle->is_sold() ) {
+			wp_car_manager()->service( 'template_manager' )->get_template_part( 'general/sold-sign' );
+		}
 	}
 }
 
