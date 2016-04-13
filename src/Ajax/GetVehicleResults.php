@@ -38,6 +38,13 @@ class GetVehicleResults extends Ajax {
 		$sort     = ( isset( $_GET['sort'] ) ) ? esc_attr( $_GET['sort'] ) : 'price-asc';
 		$per_page = ( isset( $_GET['per_page'] ) ) ? intval( $_GET['per_page'] ) : - 1;
 
+		// check if we need to hide sold cars
+		if ( '1' == wp_car_manager()->service( 'settings' )->get_option( 'listings_hide_sold' ) ) {
+			$filters['hide_sold'] = true;
+		} else {
+			$filters['hide_sold'] = false;
+		}
+
 		// get vehicles
 		$vehicle_manager = new Vehicle\Manager();
 		$vehicles        = $vehicle_manager->get_vehicles( $filters, $sort, $per_page );
