@@ -86,6 +86,19 @@ class Settings {
 
 					),
 				),
+				'car_listings'   => array(
+					__( 'Car Listings', 'wp-car-manager' ),
+					array(
+						array(
+							'name'     => 'listings_hide_sold',
+							'label'    => __( 'Hide Sold Listings', 'wp-car-manager' ),
+							'cb_label' => __( 'Hide sold listings from listing pages', 'wp-car-manager' ),
+							'desc'     => __( 'If enabled, listings marked as sold will no longer be listed on your listing pages.', 'wp-car-manager' ),
+							'type'     => 'checkbox',
+						),
+
+					),
+				),
 				'car_submission' => array(
 					__( 'Car Submission', 'wp-car-manager' ),
 					array(
@@ -213,6 +226,7 @@ class Settings {
 			'page_submit'           => 0,
 			'page_dashboard'        => 0,
 			'page_listings'         => 0,
+			'listings_hide_sold'    => 0
 		);
 	}
 
