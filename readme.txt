@@ -69,6 +69,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 = 1.3.0: April X, 2016 =
 * Feature: Added 'sold' banner that is displayed when listing is sold.
+* Feature: Listings marked as sold can now be hidden van listing pages, see settings > Listings.
 * Feature: Added Power data field.
 * Feature: Added Power Type data field.
 * Feature: Added Swedish translation, props Nicklas.
