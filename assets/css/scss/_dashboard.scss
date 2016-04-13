@@ -30,6 +30,7 @@
         }
 
         .wpcm-dashboard-item-image-wrapper {
+          display: none;
           width: 100px;
           height: 100px;
           position: absolute;
@@ -170,7 +171,7 @@
 
         li.wpcm-dashboard-item {
 
-          img.wpcm-dashboard-item-image {
+          .wpcm-dashboard-item-image-wrapper {
             display: block;
           }
 
