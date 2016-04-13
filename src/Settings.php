@@ -86,8 +86,8 @@ class Settings {
 
 					),
 				),
-				'car_listings'   => array(
-					__( 'Car Listings', 'wp-car-manager' ),
+				'listings'   => array(
+					__( 'Listings', 'wp-car-manager' ),
 					array(
 						array(
 							'name'     => 'listings_hide_sold',
@@ -99,8 +99,8 @@ class Settings {
 
 					),
 				),
-				'car_submission' => array(
-					__( 'Car Submission', 'wp-car-manager' ),
+				'submission' => array(
+					__( 'Submission', 'wp-car-manager' ),
 					array(
 						array(
 							'name'     => 'account_creation',
