@@ -73,7 +73,9 @@ add_action( 'wpcm_listings_vehicle_results', 'wpcm_template_vehicle_listings_end
 /**
  * Sold sign
  */
-add_action( 'wpcm_vehicle_listings_item_start', 'wpcm_template_vehicle_listings_item_sold_sign', 10, 1 );
+add_action( 'wpcm_vehicle_listings_item_image_start', 'wpcm_template_sold_sign', 10, 1 );
+add_action( 'wpcm_vehicle_dashboard_item_image_start', 'wpcm_template_sold_sign', 10, 1 );
+add_action( 'wpcm_vehicle_thumbnails', 'wpcm_template_sold_sign', 15, 1 );
 
 /**
  ************************ CAR SUBMISSION ************************

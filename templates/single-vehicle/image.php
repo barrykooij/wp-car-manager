@@ -40,6 +40,6 @@ global $vehicle;
 	echo apply_filters( 'wpcm_single_vehicle_image_html', $image_html, get_the_ID() );
 	?>
 
-	<?php do_action( 'wpcm_vehicle_thumbnails' ); ?>
+	<?php do_action( 'wpcm_vehicle_thumbnails', $vehicle ); ?>
 
 </div>

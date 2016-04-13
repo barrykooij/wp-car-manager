@@ -68,9 +68,12 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 == Changelog ==
 
 = 1.3.0: April X, 2016 =
+* Feature: Added 'sold' banner that is displayed when listing is sold.
 * Feature: Added Power data field.
 * Feature: Added Power Type data field.
 * Feature: Added Swedish translation, props Nicklas.
+* Tweak: Structural changes have been made to listings/item.php. Listing image is now wrapper in <div> and various actions have been added. **Important: If you've overridden this template, you'll need to update your own template after updating!**
+* Tweak: Structural changes have been made to dashboard/item.php. Dashboard image is now wrapper in <div> and various actions have been added. **Important: If you've overridden this template, you'll need to update your own template after updating!**
 * Tweak: Made date fields that are displayed in single car template filterable via wpcm_single_vehicle_data_fields.
 * Tweak: Fixed schema.org declaration issue.
 * Tweak: Made distance unit abbreviation translatable.
