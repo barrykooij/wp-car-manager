@@ -17,6 +17,7 @@ class Manager {
 	 * - frdate_from (int)
 	 * - frdate_to (int)
 	 * - condition (new,used)
+	 * - hide_sold (bool)
 	 *
 	 * Sort possibilities:
 	 * - price-asc
@@ -105,6 +106,14 @@ class Manager {
 						$key        = 'wpcm_condition';
 						$filter_val = sanitize_title( $filter_val );
 						$type       = 'CHAR';
+						break;
+					case 'hide_sold':
+						if ( true === $filter_val ) {
+							$key        = 'wpcm_sold';
+							$filter_val = '1';
+							$type       = 'CHAR';
+							$compare    = '!=';
+						}
 						break;
 					default:
 						break;
