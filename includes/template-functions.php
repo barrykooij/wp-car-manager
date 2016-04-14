@@ -13,7 +13,8 @@ if ( ! function_exists( 'wpcm_template_vehicle_preview_bar' ) ) {
 		if ( 'preview' == $vehicle->get_status() ) {
 			wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/preview', '', array(
 				'edit_url'    => add_query_arg( 'edit', $vehicle->get_id(), Never5\WPCarManager\Helper\Pages::get_page_submit() ),
-				'publish_url' => add_query_arg( 'wpcm_publish', $vehicle->get_id(), $vehicle->get_url() )
+				'publish_url' => add_query_arg( 'wpcm_publish', $vehicle->get_id(), $vehicle->get_url() ),
+				'vehicle'     => $vehicle
 			) );
 		}
 	}
@@ -22,7 +23,7 @@ if ( ! function_exists( 'wpcm_template_vehicle_preview_bar' ) ) {
 if ( ! function_exists( 'wpcm_template_vehicle_pending_bar' ) ) {
 	function wpcm_template_vehicle_pending_bar( $vehicle ) {
 		if ( 'pending' == $vehicle->get_status() ) {
-			wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/pending' );
+			wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/pending', '', array( 'vehicle' => $vehicle ) );
 		}
 	}
 }
@@ -30,7 +31,7 @@ if ( ! function_exists( 'wpcm_template_vehicle_pending_bar' ) ) {
 if ( ! function_exists( 'wpcm_template_vehicle_expired_bar' ) ) {
 	function wpcm_template_vehicle_expired_bar( $vehicle ) {
 		if ( 'expired' == $vehicle->get_status() ) {
-			wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/expired', '' );
+			wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/expired', '', array( 'vehicle' => $vehicle ) );
 		}
 	}
 }
