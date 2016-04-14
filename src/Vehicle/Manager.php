@@ -44,6 +44,8 @@ class Manager {
 		$order       = ( 'desc' == array_pop( $sort_params ) ) ? 'DESC' : 'ASC';
 		$sort_val    = array_shift( $sort_params );
 		$meta_key    = 'wpcm_' . $sort_val;
+
+		// determine sort value type
 		switch ( $sort_val ) {
 			case 'price':
 				$meta_type = 'NUMERIC';
@@ -54,6 +56,11 @@ class Manager {
 			case 'mileage':
 				$meta_type = 'NUMERIC';
 				break;
+			default:
+				// force sort to ascending price if given sort isn't recognized
+				$meta_type = 'NUMERIC';
+				$meta_key = 'wpcm_price';
+				$order = 'ASC';
 		}
 
 		// \WP_Query arg
