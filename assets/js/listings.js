@@ -171,10 +171,15 @@ WPCM_Listings.prototype.load_vehicles = function () {
 	this.listings.parent().append( jQuery( '<div>' ).addClass( 'wpcm-results-load-overlay' ) );
 	this.listings.parent().append( new WPCM_Spinner().getDOM() );
 
-	jQuery.get( wpcm.ajax_url, args, function ( response ) {
+	jQuery.getJSON( wpcm.ajax_url, args, function ( response ) {
 
-		// set response
-		listings.html( response );
+		// set listings
+		if ( response.listings ) {
+			// set response
+			listings.html( response.listings );
+		}
+
+		// @todo inject pagination response
 
 		// remove spinner
 		listings.parent().find( '.wpcm-results-load-overlay' ).remove();
