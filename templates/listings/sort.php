@@ -11,6 +11,8 @@
 				'frdate-desc'  => __( 'Year (new-old)', 'wp-car-manager' ),
 				'mileage-asc'  => __( 'Mileage (low-high)', 'wp-car-manager' ),
 				'mileage-desc' => __( 'Mileage (high-low)', 'wp-car-manager' ),
+				'date-asc'     => __( 'Date (old-new)', 'wp-car-manager' ),
+				'date-desc'    => __( 'Date (new-old)', 'wp-car-manager' ),
 			) ) as $sort_key => $sort_val
 		) : ?>
 			<option

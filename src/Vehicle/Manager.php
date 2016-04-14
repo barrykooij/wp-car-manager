@@ -90,7 +90,7 @@ class Manager {
 
 		// base meta query
 		$meta_query = array();
-		
+
 		// check for make
 		if ( is_array( $filters ) && count( $filters ) > 0 ) {
 			foreach ( $filters as $filter_key => $filter_val ) {
