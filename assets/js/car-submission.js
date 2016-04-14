@@ -28,7 +28,7 @@ jQuery( function ( $ ) {
 
 			// validate
 			if ( '' == $( v ).val() || 0 == $( v ).val() ) {
-				$( v ).addClass( 'wpcm-error' );
+				$( v ).parent().addClass( 'wpcm-error' );
 				success = false;
 			}
 		} );

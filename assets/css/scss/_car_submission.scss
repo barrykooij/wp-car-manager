@@ -24,6 +24,7 @@
       width: 70%;
       float: right;
       vertical-align: middle;
+      overflow: hidden;
 
       input.wpcm-input-text, input.wpcm-input-date, textarea, select {
         margin: 0;
@@ -57,7 +58,7 @@
         }
       }
 
-      .wpcm-error {
+      &.wpcm-error {
         border: 1px solid red;
       }
     }

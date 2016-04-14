@@ -83,6 +83,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 * Tweak: We're now passing current vehicle object to listings/item.php template part.
 * Tweak: We're now only showing template notices to administrators.
 * Tweak: Vehicle\Manager::get_vehicles() now forces price-asc sorting if given sort isn't recognized.
+* Tweak: We've moved the .wpcm-error class on the submission page from the input to the input-wrapper.
 
 = 1.2.1: March 17, 2016 =
 * Tweak: Fixed a bug where you couldn't use the make attribute combined with show_filters="false" in [wpcm_cars]
