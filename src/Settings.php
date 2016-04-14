@@ -35,7 +35,7 @@ class Settings {
 	private function setup_fields() {
 		$this->fields = apply_filters( 'wpcm_fields',
 			array(
-				'general'        => array(
+				'general'    => array(
 					__( 'General', 'wp-car-manager' ),
 					array(
 						array(
@@ -96,6 +96,11 @@ class Settings {
 							'desc'     => __( 'If enabled, listings marked as sold will no longer be listed on your listing pages.', 'wp-car-manager' ),
 							'type'     => 'checkbox',
 						),
+						array(
+							'name'  => 'listings_ppp',
+							'label' => __( 'Listings Per Page', 'wp-car-manager' ),
+							'desc'  => sprintf( __( 'The amount of listings per page. Enter %s to disable pagination.', 'wp-car-manager' ), '<code>-1</code>' )
+						),
 
 					),
 				),
@@ -138,7 +143,7 @@ class Settings {
 
 					),
 				),
-				'contact'        => array(
+				'contact'    => array(
 					__( 'Contact', 'wp-car-manager' ),
 					array(
 						array(
@@ -154,7 +159,7 @@ class Settings {
 
 					),
 				),
-				'pages'          => array(
+				'pages'      => array(
 					__( 'Pages', 'wp-car-manager' ),
 					array(
 						array(
@@ -226,7 +231,8 @@ class Settings {
 			'page_submit'           => 0,
 			'page_dashboard'        => 0,
 			'page_listings'         => 0,
-			'listings_hide_sold'    => 0
+			'listings_hide_sold'    => 0,
+			'listings_ppp'          => 10,
 		);
 	}
 
