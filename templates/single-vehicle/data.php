@@ -3,7 +3,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-global $vehicle;
 ?>
 <div class="wpcm-content-block" id="wpcm-vehicle-data">
 	<h2><?php _e( 'Vehicle Details', 'wp-car-manager' ); ?></h2>
@@ -24,7 +23,7 @@ global $vehicle;
 	<?php foreach ( $tables as $table_fields ) : ?>
 		<table>
 			<?php foreach ( $table_fields as $data_key => $data_field ) : ?>
-				<?php wp_car_manager()->service( 'template_manager' )->get_template_part( 'vehicle-data/data', $data_field, array( 'key' => $data_field ) ); ?>
+				<?php wp_car_manager()->service( 'template_manager' )->get_template_part( 'vehicle-data/data', $data_field, array( 'key' => $data_field, 'vehicle' => $vehicle ) ); ?>
 			<?php endforeach; ?>
 		</table>
 	<?php endforeach; ?>

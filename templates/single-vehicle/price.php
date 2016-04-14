@@ -3,8 +3,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-
-global $vehicle;
 ?>
 <div class="wpcm-price-wrapper" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 	<span class="wpcm-price"><?php echo $vehicle->get_formatted_price(); ?></span>

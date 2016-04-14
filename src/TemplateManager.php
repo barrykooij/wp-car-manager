@@ -12,8 +12,6 @@ class TemplateManager {
 	 * Init
 	 */
 	public function init() {
-//		add_filter( 'template_include', array( $this, 'override_template' ) );
-//		add_filter( 'post_class', array( $this, 'filter_post_class' ), 20, 3 );
 		add_filter( 'the_content', array( $this, 'inject_singular_content' ) );
 	}
 
@@ -76,25 +74,29 @@ class TemplateManager {
 		// remove filter to prevent crazy loops
 		remove_filter( 'the_content', array( $this, 'inject_singular_content' ) );
 
-		$GLOBALS['vehicle'] = wp_car_manager()->service( 'vehicle_factory' )->make( $post->ID );
+//		$GLOBALS['vehicle'] = wp_car_manager()->service( 'vehicle_factory' )->make( $post->ID ); // check if this is really needed
 
 
 		// check if vehicle actually the post type that's being looped
 		if ( Vehicle\PostType::VEHICLE === $post->post_type ) {
+
+			// create vehicle object
+			$vehicle = wp_car_manager()->service( 'vehicle_factory' )->make( $post->ID );
+
 			ob_start();
 
 			/**
 			 * wpcm_before_main_content hook
 			 */
-			do_action( 'wpcm_before_single_content' );
+			do_action( 'wpcm_before_single_content', $vehicle );
 
 			// load content-single-vehicle
-			$this->get_template_part( 'content', 'single-vehicle' );
+			$this->get_template_part( 'content', 'single-vehicle', array( 'vehicle' => $vehicle ) );
 
 			/**
 			 * wpcm_after_main_content hook
 			 */
-			do_action( 'wpcm_after_single_content' );
+			do_action( 'wpcm_after_single_content', $vehicle );
 
 			// set new content
 			$content = ob_get_clean();

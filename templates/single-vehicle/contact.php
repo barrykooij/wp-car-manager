@@ -3,9 +3,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-
-global $vehicle;
-
 ?>
 <div class="wpcm-contact">
 

@@ -3,9 +3,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-global $vehicle;
-
-
 // find getter dynamically
 $method = ( method_exists( $vehicle, 'get_' . $key ) ) ? 'get_' . $key : null;
 ?>
