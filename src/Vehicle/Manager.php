@@ -26,6 +26,8 @@ class Manager {
 	 * - year-desc
 	 * - mileage-asc
 	 * - mileage-desc
+	 * - date-asc
+	 * - date-desc
 	 *
 	 * @param array $filters
 	 * @param string $sort
@@ -41,9 +43,14 @@ class Manager {
 
 		// translate $sort to \WP_Query sort
 		$sort_params = explode( '-', $sort );
-		$order       = ( 'desc' == array_pop( $sort_params ) ) ? 'DESC' : 'ASC';
-		$sort_val    = array_shift( $sort_params );
-		$meta_key    = 'wpcm_' . $sort_val;
+
+		// order by variables
+		$orderby = 'meta_value';
+		$order   = ( 'desc' == array_pop( $sort_params ) ) ? 'DESC' : 'ASC';
+
+		// get sort value and meta key
+		$sort_val = array_shift( $sort_params );
+		$meta_key = 'wpcm_' . $sort_val;
 
 		// determine sort value type
 		switch ( $sort_val ) {
@@ -56,28 +63,34 @@ class Manager {
 			case 'mileage':
 				$meta_type = 'NUMERIC';
 				break;
+			case 'date':
+				$orderby = 'date';
+				break;
 			default:
 				// force sort to ascending price if given sort isn't recognized
 				$meta_type = 'NUMERIC';
-				$meta_key = 'wpcm_price';
-				$order = 'ASC';
+				$meta_key  = 'wpcm_price';
+				$order     = 'ASC';
 		}
 
 		// \WP_Query arg
 		$args = array(
 			'post_status'    => 'publish',
 			'post_type'      => PostType::VEHICLE,
-			'posts_per_page' => $per_page,
-			'orderby'        => 'meta_value',
-			'order'          => $order,
-			'meta_type'      => $meta_type,
-			'meta_key'       => $meta_key
+			'posts_per_page' => intval( $per_page ),
+			'orderby'        => $orderby,
+			'order'          => $order
 		);
+
+		// check if we're sorting by meta and if so, add the meta sort data
+		if ( 'meta_value' == $orderby ) {
+			$args['meta_type'] = $meta_type;
+			$args['meta_key']  = $meta_key;
+		}
 
 		// base meta query
 		$meta_query = array();
-
-
+		
 		// check for make
 		if ( is_array( $filters ) && count( $filters ) > 0 ) {
 			foreach ( $filters as $filter_key => $filter_val ) {
