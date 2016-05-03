@@ -71,6 +71,11 @@ add_action( 'wpcm_listings_vehicle_results', 'wpcm_template_vehicle_listings_sta
 add_action( 'wpcm_listings_vehicle_results', 'wpcm_template_vehicle_listings_end', 15 );
 
 /**
+ * Listings Pagination
+ */
+add_action( 'wpcm_after_listings_results', 'wpcm_template_vehicle_listings_pagination', 10 );
+
+/**
  * Sold sign
  */
 add_action( 'wpcm_vehicle_listings_item_image_start', 'wpcm_template_sold_sign', 10, 1 );

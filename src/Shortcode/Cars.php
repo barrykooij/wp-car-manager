@@ -40,7 +40,6 @@ class Cars extends Shortcode {
 		$atts = shortcode_atts( apply_filters( 'wpcm_shortcode_' . $this->get_tag() . '_defaults', array(
 			'show_filters' => true,
 			'show_sort'    => true,
-			'per_page'     => - 1, // @todo make this a setting later
 			'orderby'      => 'date',
 			'order'        => 'DESC',
 			'make'         => '',
@@ -72,7 +71,7 @@ class Cars extends Shortcode {
 		}
 
 		// build data atts
-		$data_atts = array( 'per_page', 'sort', 'condition', 'make_id' );
+		$data_atts = array( 'sort', 'condition', 'make_id' );
 		$data_str  = '';
 		foreach ( $data_atts as $data_att ) {
 			if ( ! empty( $atts[ $data_att ] ) ) {

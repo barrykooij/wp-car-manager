@@ -170,6 +170,12 @@ if ( ! function_exists( 'wpcm_template_vehicle_listings_end' ) ) {
 	}
 }
 
+if ( ! function_exists( 'wpcm_template_vehicle_listings_pagination' ) ) {
+	function wpcm_template_vehicle_listings_pagination() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/pagination-wrapper' );
+	}
+}
+
 /**
  ************************ CAR SUBMISSION ************************
  */

@@ -37,7 +37,6 @@ class GetVehicleResults extends Ajax {
 		// set sort
 		$sort = ( isset( $_GET['sort'] ) ) ? esc_attr( $_GET['sort'] ) : 'price-asc';
 
-
 		// set per page
 		$per_page = intval( wp_car_manager()->service( 'settings' )->get_option( 'listings_ppp' ) );
 
@@ -101,12 +100,13 @@ class GetVehicleResults extends Ajax {
 			wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/no-results', '', array() );
 		}
 
+		// put listing content in variable
 		$listing_content = ob_get_clean();
-
-		// @todo load pagination template dynamically here
-
+		
 		// send JSON response
-		wp_send_json( array( 'listings' => $listing_content ) );
+		wp_send_json( array( 'listings'   => $listing_content,
+		                     'pagination' => \Never5\WPCarManager\Helper\Pagination::generate( 1, 5 )
+		) );
 
 		// bye
 		exit;
