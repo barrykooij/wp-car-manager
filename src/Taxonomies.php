@@ -52,6 +52,28 @@ class Taxonomies {
 			'rewrite'           => $rewrite,
 		);
 		register_taxonomy( self::FEATURES, array( 'wpcm_vehicle' ), $args );
+
+		// add explanatory text for features
+		add_action( 'add_tag_form_pre', array( __CLASS__, 'add_explanatory_features_text' ) );
+	}
+
+	/**
+	 * Add explanatory text for features
+	 *
+	 * @param string $taxonomy
+	 */
+	public static function add_explanatory_features_text( $taxonomy ) {
+		if ( 'wpcm_features' != $taxonomy ) {
+			return;
+		}
+		echo '<h2>What are Features?</h2>';
+		echo "<p>" . sprintf(
+				__( "WP Car Manager Features are the place to add all the 'features' your vehicle has so you don't have to re-type the same feature every time. Examples of commonly used features are %s, %s, %s and %s but you are free to enter any feature you like. Vehicle features are listed in a nice list on the vehicle detail page.", 'wp-car-manager' ),
+				"<strong>" . __( 'ABS', 'wp-car-manager' ) . "</strong>",
+				"<strong>" . __( 'Airbag', 'wp-car-manager' ) . "</strong>",
+				"<strong>" . __( 'ESP', 'wp-car-manager' ) . "</strong>",
+				"<strong>" . __( 'Radio', 'wp-car-manager' ) . "</strong>"
+			) . "</p>";
 	}
 
 	/**
