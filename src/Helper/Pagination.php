@@ -6,8 +6,8 @@ class Pagination {
 	/**
 	 * Generate pagination
 	 *
-	 * @param int $cur
-	 * @param int $total
+	 * @param int $cur current page
+	 * @param int $total total amount of pages
 	 *
 	 * @return string
 	 */
@@ -81,4 +81,15 @@ class Pagination {
 		return $r;
 	}
 
+	/**
+	 * Calculate total pages
+	 *
+	 * @param int $per_page
+	 * @param int $total_items
+	 *
+	 * @return int
+	 */
+	public static function calc_total_pages( $per_page, $total_items ) {
+		return ceil( $total_items / $per_page );
+	}
 }

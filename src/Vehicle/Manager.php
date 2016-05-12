@@ -4,6 +4,16 @@ namespace Never5\WPCarManager\Vehicle;
 
 class Manager {
 
+	/** @var \WP_Query */
+	private $vehicle_query = null;
+
+	/**
+	 * Manager constructor.
+	 */
+	public function __construct() {
+		$this->vehicle_query = new \WP_Query();
+	}
+
 	/**
 	 * Get vehicles
 	 *
@@ -168,23 +178,20 @@ class Manager {
 			$args = array_merge( $args, $extra_args );
 		}
 
-		// do new \WP_Query
-		$vehicle_query = new \WP_Query( $args );
+		// get vehicles
+		$db_vehicles = $this->vehicle_query->query( $args );
 
 		// check
-		if ( $vehicle_query->have_posts() ) {
+		if ( count( $db_vehicles ) > 0 ) {
 
 			/** @var VehicleFactory $vehicle_factory */
 			$vehicle_factory = wp_car_manager()->service( 'vehicle_factory' );
 
 			// loop
-			while ( $vehicle_query->have_posts() ) {
-
-				// load next post
-				$vehicle_query->the_post();
+			foreach ( $db_vehicles as $db_vehicle ) {
 
 				// add vehicle to arry
-				$vehicles[] = $vehicle_factory->make( get_the_ID() );
+				$vehicles[] = $vehicle_factory->make( $db_vehicle->ID );
 			}
 		}
 
@@ -192,6 +199,15 @@ class Manager {
 		wp_reset_postdata();
 
 		return $vehicles;
+	}
+
+	/**
+	 * Get total vehicle count of last get_vehicles() query
+	 *
+	 * @return int
+	 */
+	public function get_total_vehicle_count_of_last_query() {
+		return intval( $this->vehicle_query->found_posts );
 	}
 
 	/**
