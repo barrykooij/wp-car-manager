@@ -66,6 +66,7 @@ class Taxonomies {
 		if ( 'wpcm_features' != $taxonomy ) {
 			return;
 		}
+		echo '<div class="wpcm-taxonomy-explanation">';
 		echo '<h2>What are Features?</h2>';
 		echo "<p>" . sprintf(
 				__( "WP Car Manager Features are the place to add all the 'features' your vehicle has so you don't have to re-type the same feature every time. Examples of commonly used features are %s, %s, %s and %s but you are free to enter any feature you like. Vehicle features are listed in a nice list on the vehicle detail page.", 'wp-car-manager' ),
@@ -74,6 +75,7 @@ class Taxonomies {
 				"<strong>" . __( 'ESP', 'wp-car-manager' ) . "</strong>",
 				"<strong>" . __( 'Radio', 'wp-car-manager' ) . "</strong>"
 			) . "</p>";
+		echo '</div>';
 	}
 
 	/**
