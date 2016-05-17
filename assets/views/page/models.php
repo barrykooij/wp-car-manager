@@ -66,8 +66,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 		<div id="col-left">
 			<div class="col-wrap">
+
+				<div class="wpcm-models-explanation">
+					<h2><?php _e( 'What are Models?', 'wp-car-manager' ); ?></h2>
+					<p><?php _e( "On this page you manage your vehicles models. You can add a new model with the form below and manage your existing models on the right. A model is always linked to one make.", 'wp-car-manager' ); ?></p>
+					<p><a href="https://www.wpcarmanager.com/kb/makes-models/?utm_source=plugin&utm_medium=link&utm_campaign=models" target="_blank"><?php _e( 'You can read more about Makes and Models here', 'wp-car-manager' ); ?></a></p>
+				</div>
+				
 				<div class="form-wrap">
-					<h3><?php _e( 'Add New Model', 'wp-car-manager' ); ?></h3>
+					<h2><?php _e( 'Add New Model', 'wp-car-manager' ); ?></h2>
 
 					<form id="add-make" method="post"
 					      action="<?php echo esc_url( admin_url( 'edit.php?post_type=wpcm_vehicle&page=wpcm-makes&make=' . $_GET['make'] ) ) ?>">

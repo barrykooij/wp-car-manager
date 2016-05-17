@@ -69,7 +69,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="col-wrap">
 
 				<div class="wpcm-makes-explanation">
-					<h2><?php _e( 'What are Makes & Models?', 'wp-car-manager' ); ?></h2>
+					<h2><?php _e( 'What are Makes?', 'wp-car-manager' ); ?></h2>
 					<p><?php _e( "On this page you manage your vehicles makes. You can add a new make with the form below and manage your existing makes on the right. To manage a make’s models, click the wheel button.", 'wp-car-manager' ); ?></p>
 					<p><a href="https://www.wpcarmanager.com/kb/makes-models/?utm_source=plugin&utm_medium=link&utm_campaign=makes" target="_blank"><?php _e( 'You can read more about Makes and Models here', 'wp-car-manager' ); ?></a></p>
 				</div>
