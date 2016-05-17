@@ -99,20 +99,19 @@ class Data {
 				'required'    => false,
 				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' ' . __( '2.0 TDI', 'wp-car-manager' )
 			),
-			'power'        => array(
+			'power_hp'        => array(
 				'type'        => 'text',
-				'label'       => __( 'Power', 'wp-car-manager' ),
-				'key'         => 'power',
+				'label'       => __( 'Power hp', 'wp-car-manager' ),
+				'key'         => 'power_hp',
 				'required'    => false,
-				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' ' . __( '66', 'wp-car-manager' )
+				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' ' . __( '170', 'wp-car-manager' )
 			),
-			'power_type'   => array(
-				'type'        => 'select',
-				'options'     => self::get_power_types(),
-				'label'       => __( 'Power Type', 'wp-car-manager' ),
-				'key'         => 'power_type',
+			'power_kw'        => array(
+				'type'        => 'text',
+				'label'       => __( 'Power kW', 'wp-car-manager' ),
+				'key'         => 'power_kw',
 				'required'    => false,
-				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' ' . __( '2.0 TDI', 'wp-car-manager' )
+				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' ' . __( '125', 'wp-car-manager' )
 			),
 		);
 	}
@@ -139,18 +138,6 @@ class Data {
 			'automatic'      => __( 'Automatic', 'wp-car-manager' ),
 			'manual'         => __( 'Manual', 'wp-car-manager' ),
 			'semi-automatic' => __( 'Semi-Automatic', 'wp-car-manager' )
-		) );
-	}
-
-	/**
-	 * Return condition possibilities
-	 *
-	 * @return array
-	 */
-	public static function get_power_types() {
-		return apply_filters( 'wpcm_power_types', array(
-			'kw' => __( 'kW', 'wp-car-manager' ),
-			'hp' => __( 'hp', 'wp-car-manager' )
 		) );
 	}
 
