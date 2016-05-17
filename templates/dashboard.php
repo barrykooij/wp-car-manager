@@ -5,7 +5,7 @@
  */
 do_action( 'wpcm_before_dashboard' );
 ?>
-	<div class="wpcm-dashboard" data-per_page="<?php esc_attr_e( $atts['per_page'] ); ?>">
+	<div class="wpcm-dashboard">
 
 		<?php do_action( 'wpcm_before_dashboard_results' ); ?>
 
