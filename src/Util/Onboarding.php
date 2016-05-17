@@ -134,14 +134,6 @@ class Onboarding {
 				</table>
 			</fieldset>
 
-			<fieldset id="wpcm-extensions">
-				<h3><?php _e( 'Extensions', 'wp-car-manager' ); ?></h3>
-				<p><?php _e( 'Power up your WP Car Manager website with our official extensions. Our extensions allow you to add very specific functionality to your WP Car Manager installation and come with our premium support and updates.', 'wp-car-manager' ); ?></p>
-				<p>
-					<a href="https://www.wpcarmanager.com/extensions/?utm_source=plugin&utm_medium=link&utm_campaign=onboarding"
-					   target="_blank"><?php _e( 'Read more about our extensions', 'wp-car-manager' ); ?> >></a></p>
-			</fieldset>
-
 			<fieldset id="wpcm-never5">
 				<h3><?php _e( 'A Never5 Product', 'wp-car-manager' ); ?></h3>
 				<a href="http://www.never5.com" target="_blank"><img
@@ -153,6 +145,15 @@ class Onboarding {
 				<p><?php printf( __( "%sFollow Never5 on Twitter%s", 'wp-car-manager' ), '<a href="https://twitter.com/Never5Plugins" target="_blank">', '</a>' ); ?></p>
 
 			</fieldset>
+
+			<fieldset id="wpcm-extensions">
+				<h3><?php _e( 'Extensions', 'wp-car-manager' ); ?></h3>
+				<p><?php _e( 'Power up your WP Car Manager website with our official extensions. Our extensions allow you to add very specific functionality to your WP Car Manager installation and come with our premium support and updates.', 'wp-car-manager' ); ?></p>
+				<p>
+					<a href="https://www.wpcarmanager.com/extensions/?utm_source=plugin&utm_medium=link&utm_campaign=onboarding"
+					   target="_blank"><?php _e( 'Read more about our extensions', 'wp-car-manager' ); ?> >></a></p>
+			</fieldset>
+
 			<fieldset id="wpcm-whats-next">
 				<h3><?php _e( "What's next?", 'wp-car-manager' ); ?></h3>
 
