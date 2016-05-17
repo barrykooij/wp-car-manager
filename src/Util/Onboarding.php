@@ -134,7 +134,7 @@ class Onboarding {
 				</table>
 			</fieldset>
 
-			<fieldset id="extensions">
+			<fieldset id="wpcm-extensions">
 				<h3><?php _e( 'Extensions', 'wp-car-manager' ); ?></h3>
 				<p><?php _e( 'Power up your WP Car Manager website with our official extensions. Our extensions allow you to add very specific functionality to your WP Car Manager installation and come with our premium support and updates.', 'wp-car-manager' ); ?></p>
 				<p>
@@ -142,7 +142,7 @@ class Onboarding {
 					   target="_blank"><?php _e( 'Read more about our extensions', 'wp-car-manager' ); ?> >></a></p>
 			</fieldset>
 
-			<fieldset id="never5">
+			<fieldset id="wpcm-never5">
 				<h3><?php _e( 'A Never5 Product', 'wp-car-manager' ); ?></h3>
 				<a href="http://www.never5.com" target="_blank"><img
 						src="<?php echo wp_car_manager()->service( 'file' )->plugin_url( '/assets/images/never5-logo.png' ); ?>"
