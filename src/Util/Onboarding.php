@@ -96,7 +96,7 @@ class Onboarding {
 
 			<fieldset id="wpcm-pages">
 				<h3><?php _e( 'Pages', 'wp-car-manager' ); ?></h3>
-				<p><?php printf( __( 'WP Car Manager needs 3 pages setup with specific shortcodes to function correct. We can create and setup these pages for you at this moment or you can create them yourself and set them in %sthe settings screen%s.', 'wp-car-manager' ), '<a href="' . admin_url( 'edit.php?post_type=' . Vehicle\PostType::VEHICLE . '&page=wpcm-settings' ) . '" target="_blank">', '</a>' ); ?></p>
+				<p><?php _e( 'WP Car Manager needs 3 pages setup with specific shortcodes to function correct. We can create and setup these pages for you at this moment or you can create them yourself and set them in the settings screen.', 'wp-car-manager' ); ?></p>
 				<table cellpadding="0" cellspacing="0" border="0" class="wpcm-onboarding-pages">
 					<tr>
 						<th><?php _e( 'Page', 'wp-car-manager' ); ?></th>
