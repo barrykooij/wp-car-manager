@@ -106,60 +106,59 @@ class Manager {
 			foreach ( $filters as $filter_key => $filter_val ) {
 
 				// var that will contain filter specific values
-				$key     = '';
-				$compare = '=';
-				$type    = 'NUMERIC';
+				$filter = array(
+					'key'     => '',
+					'value'   => '',
+					'compare' => '=',
+					'type'    => 'NUMERIC'
+				);
 
 				switch ( $filter_key ) {
 
 					// check for make and model filter
 					case 'make':
 					case 'model':
-						$key        = 'wpcm_' . $filter_key;
-						$filter_val = absint( $filter_val );
+						$filter['key']   = 'wpcm_' . $filter_key;
+						$filter['value'] = absint( $filter_val );
 						break;
 					case 'price_from':
 					case 'mileage_from':
 					case 'frdate_from':
-						$key        = 'wpcm_' . str_ireplace( '_from', '', $filter_key );
-						$compare    = '>=';
-						$filter_val = absint( $filter_val );
+						$filter['key']     = 'wpcm_' . str_ireplace( '_from', '', $filter_key );
+						$filter['compare'] = '>=';
+						$filter['value']   = absint( $filter_val );
 						break;
 					case 'price_to':
 					case 'mileage_to':
 					case 'frdate_to':
-						$key        = 'wpcm_' . str_ireplace( '_to', '', $filter_key );
-						$compare    = '<=';
-						$filter_val = absint( $filter_val );
+						$filter['key']     = 'wpcm_' . str_ireplace( '_to', '', $filter_key );
+						$filter['compare'] = '<=';
+						$filter['value']   = absint( $filter_val );
 						break;
 					case 'condition':
-						$key        = 'wpcm_condition';
-						$filter_val = sanitize_title( $filter_val );
-						$type       = 'CHAR';
+						$filter['key']   = 'wpcm_condition';
+						$filter['value'] = sanitize_title( $filter_val );
+						$filter['type']  = 'CHAR';
 						break;
 					case 'hide_sold':
 						if ( true === $filter_val ) {
-							$key        = 'wpcm_sold';
-							$filter_val = '1';
-							$type       = 'CHAR';
-							$compare    = '!=';
+							$filter['key']     = 'wpcm_sold';
+							$filter['value']   = '1';
+							$filter['compare'] = '!=';
+							$filter['type']    = 'CHAR';
 						}
 						break;
 					default:
-						break;
 
+						// allow filtering of non-catched filter key
+						$filter = apply_filters( 'wpcm_get_vehicles_filter_' . $filter_key, $filter, $filter_key, $filter_val );
+
+						break;
 				}
 
 				// check if we've got a new filter
-				if ( '' !== $key ) {
-
-					// add new filter
-					$meta_query[] = array(
-						'key'     => $key,
-						'value'   => $filter_val,
-						'compare' => $compare,
-						'type'    => $type
-					);
+				if ( ! empty( $filter['key'] ) ) {
+					$meta_query[] = $filter;
 				}
 
 			}
