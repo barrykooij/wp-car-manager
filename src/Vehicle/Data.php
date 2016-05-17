@@ -99,19 +99,19 @@ class Data {
 				'required'    => false,
 				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' ' . __( '2.0 TDI', 'wp-car-manager' )
 			),
-			'power_hp'        => array(
-				'type'        => 'text',
-				'label'       => __( 'Power hp', 'wp-car-manager' ),
-				'key'         => 'power_hp',
-				'required'    => false,
-				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' ' . __( '170', 'wp-car-manager' )
-			),
 			'power_kw'        => array(
 				'type'        => 'text',
 				'label'       => __( 'Power kW', 'wp-car-manager' ),
 				'key'         => 'power_kw',
 				'required'    => false,
 				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' ' . __( '125', 'wp-car-manager' )
+			),
+			'power_hp'        => array(
+				'type'        => 'text',
+				'label'       => __( 'Power hp', 'wp-car-manager' ),
+				'key'         => 'power_hp',
+				'required'    => false,
+				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' ' . __( '170', 'wp-car-manager' )
 			),
 		);
 	}
