@@ -104,26 +104,27 @@ class Onboarding {
 						<th>&nbsp;</th>
 					</tr>
 					<tr>
-						<td><?php _e( 'Submit Car Page', 'wp-car-manager' ); ?></td>
+						<td><a href="https://www.wpcarmanager.com/kb/listings-page/?utm_source=plugin&utm_medium=link&utm_campaign=onboarding" target="_blank"><?php _e( 'Car Listings', 'wp-car-manager' ); ?></a></td>
+						<td><?php _e( 'The page containing your car listings', 'wp-car-manager' ); ?></td>
+						<td><a href="javascript:;"
+						       class="button button-primary"
+						       data-page="listings"><?php _e( 'Create Page', 'wp-car-manager' ); ?></a></td>
+					</tr>
+					<tr>
+						<td><a href="https://www.wpcarmanager.com/kb/submit-car-form/?utm_source=plugin&utm_medium=link&utm_campaign=onboarding" target="_blank"><?php _e( 'Submit Car Page', 'wp-car-manager' ); ?></a></td>
 						<td><?php _e( 'Users can submit their own listings via this page', 'wp-car-manager' ); ?></td>
 						<td><a href="javascript:;"
 						       class="button button-primary"
 						       data-page="submit"><?php _e( 'Create Page', 'wp-car-manager' ); ?></a></td>
 					</tr>
 					<tr>
-						<td><?php _e( 'Car Dashboard', 'wp-car-manager' ); ?></td>
+						<td><a href="https://www.wpcarmanager.com/kb/car-dashboard/?utm_source=plugin&utm_medium=link&utm_campaign=onboarding" target="_blank"><?php _e( 'Car Dashboard', 'wp-car-manager' ); ?></a></td>
 						<td><?php _e( 'An overview page of all cars created of logged in user', 'wp-car-manager' ); ?></td>
 						<td><a href="javascript:;"
 						       class="button button-primary"
 						       data-page="dashboard"><?php _e( 'Create Page', 'wp-car-manager' ); ?></a></td>
 					</tr>
-					<tr>
-						<td><?php _e( 'Car Listings', 'wp-car-manager' ); ?></td>
-						<td><?php _e( 'The page containing your car listings', 'wp-car-manager' ); ?></td>
-						<td><a href="javascript:;"
-						       class="button button-primary"
-						       data-page="listings"><?php _e( 'Create Page', 'wp-car-manager' ); ?></a></td>
-					</tr>
+
 				</table>
 			</fieldset>
 
