@@ -1,4 +1,4 @@
-.wpcm-sold {
+.wpcm-sold, .wpcm-pending-review {
   position: absolute;
   top: 0;
   left: 0;
@@ -8,4 +8,10 @@
   font-weight: bold;
   background: #428dcb;
   text-align: left;
+}
+
+.wpcm-pending-review {
+  text-align: center;
+  padding-top: .6em;
+  padding-bottom: .6em;
 }

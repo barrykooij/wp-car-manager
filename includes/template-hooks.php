@@ -83,6 +83,11 @@ add_action( 'wpcm_vehicle_dashboard_item_image_start', 'wpcm_template_sold_sign'
 add_action( 'wpcm_vehicle_thumbnails', 'wpcm_template_sold_sign', 15, 1 );
 
 /**
+ * Review sign
+ */
+add_action( 'wpcm_vehicle_dashboard_item_image_start', 'wpcm_template_review_sign', 10, 1 );
+
+/**
  ************************ CAR SUBMISSION ************************
  */
 

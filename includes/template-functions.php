@@ -382,3 +382,11 @@ if ( ! function_exists( 'wpcm_template_sold_sign' ) ) {
 		}
 	}
 }
+
+if ( ! function_exists( 'wpcm_template_review_sign' ) ) {
+	function wpcm_template_review_sign( $vehicle ) {
+		if ( 'pending' == $vehicle->get_status() ) {
+			wp_car_manager()->service( 'template_manager' )->get_template_part( 'general/review-sign' );
+		}
+	}
+}
