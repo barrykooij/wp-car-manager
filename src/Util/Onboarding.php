@@ -104,21 +104,27 @@ class Onboarding {
 						<th>&nbsp;</th>
 					</tr>
 					<tr>
-						<td><a href="https://www.wpcarmanager.com/kb/listings-page/?utm_source=plugin&utm_medium=link&utm_campaign=onboarding" target="_blank"><?php _e( 'Car Listings', 'wp-car-manager' ); ?></a></td>
+						<td>
+							<a href="https://www.wpcarmanager.com/kb/listings-page/?utm_source=plugin&utm_medium=link&utm_campaign=onboarding"
+							   target="_blank"><?php _e( 'Car Listings', 'wp-car-manager' ); ?></a></td>
 						<td><?php _e( 'The page containing your car listings', 'wp-car-manager' ); ?></td>
 						<td><a href="javascript:;"
 						       class="button button-primary"
 						       data-page="listings"><?php _e( 'Create Page', 'wp-car-manager' ); ?></a></td>
 					</tr>
 					<tr>
-						<td><a href="https://www.wpcarmanager.com/kb/submit-car-form/?utm_source=plugin&utm_medium=link&utm_campaign=onboarding" target="_blank"><?php _e( 'Submit Car Page', 'wp-car-manager' ); ?></a></td>
+						<td>
+							<a href="https://www.wpcarmanager.com/kb/submit-car-form/?utm_source=plugin&utm_medium=link&utm_campaign=onboarding"
+							   target="_blank"><?php _e( 'Submit Car Page', 'wp-car-manager' ); ?></a></td>
 						<td><?php _e( 'Users can submit their own listings via this page', 'wp-car-manager' ); ?></td>
 						<td><a href="javascript:;"
 						       class="button button-primary"
 						       data-page="submit"><?php _e( 'Create Page', 'wp-car-manager' ); ?></a></td>
 					</tr>
 					<tr>
-						<td><a href="https://www.wpcarmanager.com/kb/car-dashboard/?utm_source=plugin&utm_medium=link&utm_campaign=onboarding" target="_blank"><?php _e( 'Car Dashboard', 'wp-car-manager' ); ?></a></td>
+						<td>
+							<a href="https://www.wpcarmanager.com/kb/car-dashboard/?utm_source=plugin&utm_medium=link&utm_campaign=onboarding"
+							   target="_blank"><?php _e( 'Car Dashboard', 'wp-car-manager' ); ?></a></td>
 						<td><?php _e( 'An overview page of all cars created of logged in user', 'wp-car-manager' ); ?></td>
 						<td><a href="javascript:;"
 						       class="button button-primary"
@@ -145,6 +151,13 @@ class Onboarding {
 				<p><?php printf( __( 'At %sNever5%s we create high quality premium WordPress plugins, with extensive support. We offer solutions in related posts, advanced download management, vehicle management and connecting post types.', 'wp-car-manager' ), '<a href="http://www.never5.com" target="_blank">', '</a>' ); ?></p>
 
 				<p><?php printf( __( "%sFollow Never5 on Twitter%s", 'wp-car-manager' ), '<a href="https://twitter.com/Never5Plugins" target="_blank">', '</a>' ); ?></p>
+
+			</fieldset>
+			<fieldset id="wpcm-whats-next">
+				<h3><?php _e( "What's next?", 'wp-car-manager' ); ?></h3>
+
+				<p><?php printf( __( "Now that you have created the required pages, it's time to setup your Makes & Models. You can %sread more about Makes & Models here%s or %screate them here%s.", 'wp-car-manager' ), '<a href="https://www.wpcarmanager.com/kb/makes-models/?utm_source=plugin&utm_medium=link&utm_campaign=onboarding" target="_blank">', '</a>', '<a href="' . admin_url( 'edit.php?post_type=' . Vehicle\PostType::VEHICLE . '&page=wpcm-makes' ) . '">', '</a>' ); ?></p>
+
 
 			</fieldset>
 		</div>
