@@ -14,16 +14,7 @@ class Onboarding {
 	public function setup() {
 
 		// add page
-		add_action( 'admin_menu', function () {
-			// add page
-			$menu_hook = \add_submenu_page( null, 'WPCM_ONBOARDING', 'WPCM_ONBOARDING', 'edit_posts', 'wpcm_onboarding', array(
-				$this,
-				'page'
-			) );
-
-			// load onboarding assets
-			add_action( 'load-' . $menu_hook, array( $this, 'enqueue_assets' ) );
-		} );
+		add_action( 'admin_menu', array( $this, 'add_admin_page' ) );
 
 		// add notice
 		if ( false === get_option( 'wpcm_notice_onboarding' ) && ( ! isset( $_GET['page'] ) || ( isset( $_GET['page'] ) && 'wpcm_onboarding' != $_GET['page'] ) ) ) {
@@ -47,6 +38,20 @@ class Onboarding {
 			} );
 		}
 
+	}
+
+	/**
+	 * Add admin page
+	 */
+	public function add_admin_page() {
+		// add page
+		$menu_hook = \add_submenu_page( null, 'WPCM_ONBOARDING', 'WPCM_ONBOARDING', 'edit_posts', 'wpcm_onboarding', array(
+			$this,
+			'page'
+		) );
+
+		// load onboarding assets
+		add_action( 'load-' . $menu_hook, array( $this, 'enqueue_assets' ) );
 	}
 
 	/**
