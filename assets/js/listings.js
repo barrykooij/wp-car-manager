@@ -198,6 +198,8 @@ WPCM_Listings.prototype.load_vehicles = function () {
 			pagination.html( response.pagination );
 
 			instance.bind_pagination();
+		}else {
+			pagination.html( '' );
 		}
 
 		// remove spinner
