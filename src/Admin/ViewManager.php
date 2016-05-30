@@ -19,14 +19,20 @@ class ViewManager {
 	 *
 	 * @param String $view
 	 * @param array $vars
+	 * @param String $path
 	 */
-	public function display( $view, $vars ) {
+	public function display( $view, $vars, $path='' ) {
 
 		// setup variables
 		extract( $vars );
 
+		// set default path if $path is empty
+		if(empty($path)) {
+			$path = $this->container['file']->plugin_path() . '/assets/views/';
+		}
+
 		// setup full view path
-		$view = $this->container['file']->plugin_path() . '/assets/views/' . $view . '.php';
+		$view = $path. $view . '.php';
 
 		// check if view exists
 		if ( file_exists( $view ) ) {
