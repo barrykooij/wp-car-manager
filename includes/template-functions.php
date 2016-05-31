@@ -11,9 +11,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! function_exists( 'wpcm_template_vehicle_preview_bar' ) ) {
 	function wpcm_template_vehicle_preview_bar( $vehicle ) {
 		if ( 'preview' == $vehicle->get_status() ) {
+
+			$wpcm_step = ( ( ! ( empty( $_GET['wpcm_step'] ) ) ? absint( $_GET['wpcm_step'] ) : 0 ) + 1 );
+
 			wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/preview', '', array(
 				'edit_url'    => add_query_arg( 'edit', $vehicle->get_id(), Never5\WPCarManager\Helper\Pages::get_page_submit() ),
-				'publish_url' => add_query_arg( 'wpcm_publish', $vehicle->get_id(), $vehicle->get_url() ),
+				'publish_url' => add_query_arg( array( 'wpcm_step'  => $wpcm_step,
+				                                       'vehicle_id' => $vehicle->get_id()
+				), Never5\WPCarManager\Helper\Pages::get_page_submit() ),
 				'vehicle'     => $vehicle
 			) );
 		}
