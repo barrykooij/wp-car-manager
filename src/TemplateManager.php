@@ -73,10 +73,7 @@ class TemplateManager {
 
 		// remove filter to prevent crazy loops
 		remove_filter( 'the_content', array( $this, 'inject_singular_content' ) );
-
-//		$GLOBALS['vehicle'] = wp_car_manager()->service( 'vehicle_factory' )->make( $post->ID ); // check if this is really needed
-
-
+		
 		// check if vehicle actually the post type that's being looped
 		if ( Vehicle\PostType::VEHICLE === $post->post_type ) {
 
