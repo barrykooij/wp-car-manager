@@ -49,6 +49,10 @@ class PluginServiceProvider implements Pimple\ServiceProviderInterface {
 			return new UserManager();
 		};
 
+		// SubmitCarHandler
+		$container['submit_car_handler'] = function () {
+			return new SubmitCarHandler();
+		};
 	}
 
 }
