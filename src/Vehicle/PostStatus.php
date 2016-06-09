@@ -197,6 +197,12 @@ class PostStatus {
 		// get the abs int value of the listing duration setting
 		$exp_days = absint( wp_car_manager()->service( 'settings' )->get_option( 'listing_duration' ) );
 
+		// check if custom exp_days is set for current listing
+		$custom_exp_days = get_post_meta( $post->ID, '_wpcm_listing_duration', true );
+		if ( ! empty( $custom_exp_days ) ) {
+			$exp_days = absint( $custom_exp_days );
+		}
+
 		// only set an expiration date if the listing duration is at least 1 day
 		if ( $exp_days < 1 ) {
 			return;
