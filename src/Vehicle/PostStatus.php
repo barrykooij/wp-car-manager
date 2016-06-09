@@ -119,7 +119,9 @@ class PostStatus {
 	/**
 	 * Morph preview state to publish state
 	 *
-	 * @param $posts
+	 * @param array $posts
+	 *
+	 * @return array
 	 */
 	public function morph_preview_to_publish( $posts ) {
 
@@ -197,6 +199,12 @@ class PostStatus {
 
 		// only set an expiration date if the listing duration is at least 1 day
 		if ( $exp_days < 1 ) {
+			return;
+		}
+
+		// check if no expiration date is already set
+		$cur_exp = get_post_meta( $post->ID, 'wpcm_expiration', true );
+		if ( ! empty( $cur_exp ) ) {
 			return;
 		}
 
