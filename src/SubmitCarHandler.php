@@ -74,18 +74,39 @@ class SubmitCarHandler {
 	 *
 	 * @return array
 	 */
-	private function get_current_step_data() {
+	public function get_current_step_data() {
 
-		// get step keys
-		$step_keys = array_keys( $this->steps );
+		// get current step key
+		$current_step_key = $this->get_current_step_key();
 
 		// check if current step exists in keys and if so, return it
-		if ( isset( $step_keys[ $this->step - 1 ] ) && isset( $this->steps[ $step_keys[ $this->step - 1 ] ] ) ) {
-			return $this->steps[ $step_keys[ $this->step - 1 ] ];
+		if ( isset( $this->steps[ $current_step_key ] ) ) {
+			return $this->steps[ $current_step_key ];
 		}
 
 		// return empty array
 		return array();
+	}
+
+	/**
+	 * Get current step key
+	 *
+	 * @return string
+	 */
+	public function get_current_step_key() {
+
+		$step_key = '';
+
+		// get step keys
+		$step_keys = array_keys( $this->steps );
+
+		// check if step key exists, if it does set it in $step_key
+		if ( isset( $step_keys[ $this->step - 1 ] ) ) {
+			$step_key = $step_keys[ $this->step - 1 ];
+		}
+
+		// return step_key
+		return $step_key;
 	}
 
 	/**
@@ -193,13 +214,13 @@ class SubmitCarHandler {
 			/** @var Vehicle\Car $vehicle */
 			try {
 				$vehicle = wp_car_manager()->service( 'vehicle_factory' )->make( $listing_id );
-				
+
 				// we need an extra wrapper because the native single template adds the 'wpcm_vehicle' class to the article wrapper
 				echo '<div class="wpcm_vehicle">';
 
 				// load template
 				wp_car_manager()->service( 'template_manager' )->get_template_part( 'content-single-vehicle', '', array(
-					'vehicle'            => $vehicle
+					'vehicle' => $vehicle
 				) );
 
 				// end extra wrapper
