@@ -146,7 +146,7 @@ jQuery( function ( $ ) {
 
 	$form.bind( 'wpcm_image_queue_complete', function ( event, response ) {
 		// redirect user to success URL
-		window.location = $form.attr( 'action' ) + '&vehicle_id=' + response.vehicle;
+		window.location = $form.attr( 'action' ) + '&wpcm_vehicle_id=' + response.vehicle;
 	} );
 
 	$form.find( '.wpcm-form-images-current a.wpcm-delete-image' ).click( function () {

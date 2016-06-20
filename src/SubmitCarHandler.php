@@ -158,8 +158,8 @@ class SubmitCarHandler {
 	private function set_listing_id() {
 		if ( isset( $_POST['wpcm_vehicle_id'] ) ) {
 			$this->listing_id = absint( $_POST['wpcm_vehicle_id'] );
-		} else if ( isset( $_GET['vehicle_id'] ) ) {
-			$this->listing_id = absint( $_GET['vehicle_id'] );
+		} else if ( isset( $_GET['wpcm_vehicle_id'] ) ) {
+			$this->listing_id = absint( $_GET['wpcm_vehicle_id'] );
 		}
 	}
 
@@ -195,7 +195,7 @@ class SubmitCarHandler {
 			'listing_id' => $this->listing_id,
 			'redirect_url' => add_query_arg( array(
 				'wpcm_step'  => $this->step,
-				'vehicle_id' => $this->listing_id,
+				'wpcm_vehicle_id' => $this->listing_id,
 			), \Never5\WPCarManager\Helper\Pages::get_page_submit() )
 		) );
 	}
@@ -215,7 +215,7 @@ class SubmitCarHandler {
 			// load template
 			wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form', '', array(
 				'vehicle'            => $vehicle,
-				'action'             => add_query_arg( 'wpcm_step', 1, site_url( esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ) ) ),
+				'action'             => add_query_arg( 'wpcm_step', $this->step, \Never5\WPCarManager\Helper\Pages::get_page_submit() ),
 				'submit_button_text' => ( ( 0 != $vehicle->get_id() ) ? __( 'Save Changes', 'wp-car-manager' ) : __( 'Preview Car', 'wp-car-manager' ) ),
 				'can_post_listing'   => wp_car_manager()->service( 'user_manager' )->can_post_listing(),
 				'can_edit_listing'   => wp_car_manager()->service( 'user_manager' )->can_edit_listing( $listing_id ),
@@ -231,7 +231,7 @@ class SubmitCarHandler {
 	public function view_preview() {
 
 		// get listing id (0 if new)
-		$listing_id = ( ( ! empty( $_GET['vehicle_id'] ) ) ? absint( $_GET['vehicle_id'] ) : 0 );
+		$listing_id = ( ( ! empty( $_GET['wpcm_vehicle_id'] ) ) ? absint( $_GET['wpcm_vehicle_id'] ) : 0 );
 
 		if ( $listing_id > 0 ) {
 			/** @var Vehicle\Car $vehicle */
