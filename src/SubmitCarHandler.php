@@ -45,6 +45,8 @@ class SubmitCarHandler {
 			// call handler
 			call_user_func( $step_data['handler'] );
 		}
+
+
 	}
 
 	/**
@@ -59,10 +61,17 @@ class SubmitCarHandler {
 		$step_data = $this->get_current_step_data();
 
 		// check if view is defined
-		if ( isset( $step_data['view'] ) && is_callable( $step_data['view'] ) ) {
+		if ( isset( $step_data['view'] ) ) {
 
-			// call handler
-			call_user_func( $step_data['view'] );
+
+			if ( is_callable( $step_data['view'] ) ) {
+				// call handler
+				call_user_func( $step_data['view'] );
+			} else if ( false === $step_data['view'] ) {
+				// no view in current step, setup redirect to next step so we invoke process
+				$this->view_empty_redirect();
+			}
+
 		}
 
 	}
@@ -149,8 +158,8 @@ class SubmitCarHandler {
 	private function set_listing_id() {
 		if ( isset( $_POST['wpcm_vehicle_id'] ) ) {
 			$this->listing_id = absint( $_POST['wpcm_vehicle_id'] );
-		} else if ( isset( $_GET['wpcm_vehicle_id'] ) ) {
-			$this->listing_id = absint( $_GET['wpcm_vehicle_id'] );
+		} else if ( isset( $_GET['vehicle_id'] ) ) {
+			$this->listing_id = absint( $_GET['vehicle_id'] );
 		}
 	}
 
@@ -174,6 +183,22 @@ class SubmitCarHandler {
 	/**
 	 * VIEWS
 	 */
+
+	/**
+	 * If a view is empty we setup a redirect to next step to kick in it's processing action
+	 */
+	public function view_empty_redirect() {
+		// load template
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form/step-empty-view', '', array(
+			'step'       => $this->step,
+			'step_key'   => $this->get_current_step_key(),
+			'listing_id' => $this->listing_id,
+			'redirect_url' => add_query_arg( array(
+				'wpcm_step'  => $this->step,
+				'vehicle_id' => $this->listing_id,
+			), \Never5\WPCarManager\Helper\Pages::get_page_submit() )
+		) );
+	}
 
 	/**
 	 * Form view
