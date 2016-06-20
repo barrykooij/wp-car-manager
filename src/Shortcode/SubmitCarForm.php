@@ -21,10 +21,7 @@ class SubmitCarForm extends Shortcode {
 	 * @return string
 	 */
 	public function output( $atts ) {
-
-		// init submit car handler
-		wp_car_manager()->service('submit_car_handler')->init();
-
+		
 		// JS
 		WPCarManager\Assets::enqueue_shortcode_submit_car_form();
 		
