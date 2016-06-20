@@ -58,8 +58,6 @@ class SubmitCarHandler {
 		// get current step data
 		$step_data = $this->get_current_step_data();
 
-//		var_dump( $step_data );
-
 		// check if view is defined
 		if ( isset( $step_data['view'] ) && is_callable( $step_data['view'] ) ) {
 
@@ -150,9 +148,9 @@ class SubmitCarHandler {
 	 */
 	private function set_listing_id() {
 		if ( isset( $_POST['wpcm_vehicle_id'] ) ) {
-			$this->step = absint( $_POST['wpcm_vehicle_id'] );
+			$this->listing_id = absint( $_POST['wpcm_vehicle_id'] );
 		} else if ( isset( $_GET['wpcm_vehicle_id'] ) ) {
-			$this->step = absint( $_GET['wpcm_vehicle_id'] );
+			$this->listing_id = absint( $_GET['wpcm_vehicle_id'] );
 		}
 	}
 
