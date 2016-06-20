@@ -204,7 +204,7 @@ final class Plugin extends Pimple\Container {
 
 			// init template manager to enable template overrides
 			$container['template_manager']->init();
-			
+
 			// assets
 			add_action( 'wp_enqueue_scripts', array( 'Never5\\WPCarManager\\Assets', 'enqueue_frontend' ) );
 
@@ -213,11 +213,12 @@ final class Plugin extends Pimple\Container {
 				$shortcode_cars            = new Shortcode\Cars();
 				$shortcode_submit_car_form = new Shortcode\SubmitCarForm();
 				$shortcode_dashboard       = new Shortcode\Dashboard();
-
-				// init submit car handler
-				wp_car_manager()->service('submit_car_handler')->init();
 			} );
 
+			// init submit car handler
+			add_action( 'wp_loaded', function () use ( $container ) {
+				$container['submit_car_handler']->init();
+			} );
 
 
 			// setup custom AJAX
