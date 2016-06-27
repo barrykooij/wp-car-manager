@@ -163,7 +163,6 @@ class SubmitCarHandler {
 		}
 	}
 
-
 	/**
 	 * Sort array by priority value
 	 *
@@ -190,11 +189,11 @@ class SubmitCarHandler {
 	public function view_empty_redirect() {
 		// load template
 		wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form/step-empty-view', '', array(
-			'step'       => $this->step,
-			'step_key'   => $this->get_current_step_key(),
-			'listing_id' => $this->listing_id,
+			'step'         => $this->step,
+			'step_key'     => $this->get_current_step_key(),
+			'listing_id'   => $this->listing_id,
 			'redirect_url' => add_query_arg( array(
-				'wpcm_step'  => $this->step,
+				'wpcm_step'       => $this->step,
 				'wpcm_vehicle_id' => $this->listing_id,
 			), \Never5\WPCarManager\Helper\Pages::get_page_submit() )
 		) );
@@ -207,6 +206,7 @@ class SubmitCarHandler {
 
 		// get listing id (0 if new)
 		$listing_id = ( ( ! empty( $_GET['edit'] ) ) ? absint( $_GET['edit'] ) : 0 );
+		/** @todo probably need to change this to wpcm_vehicle_id */
 
 		/** @var Vehicle\Car $vehicle */
 		try {
@@ -230,7 +230,7 @@ class SubmitCarHandler {
 	 */
 	public function view_preview() {
 
-		// get listing id (0 if new)
+		// get listing id
 		$listing_id = ( ( ! empty( $_GET['wpcm_vehicle_id'] ) ) ? absint( $_GET['wpcm_vehicle_id'] ) : 0 );
 
 		if ( $listing_id > 0 ) {
@@ -252,6 +252,39 @@ class SubmitCarHandler {
 				wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form/disabled', '' );
 			}
 		}
+
+	}
+
+	/**
+	 * Done view
+	 */
+	public function view_done() {
+
+		// get listing id
+		$listing_id = ( ( ! empty( $_GET['wpcm_vehicle_id'] ) ) ? absint( $_GET['wpcm_vehicle_id'] ) : 0 );
+
+		switch ( get_post_status( $listing_id ) ) {
+			case 'pending' :
+				echo wpautop( sprintf( __( '%s has been submitted successfully and will be visible once approved.', 'wpcm-wc-paid-listings' ), '<strong>' . get_the_title( $listing_id ) . '</strong>' ) );
+				break;
+			case 'wpcm_pending_payment' :
+			case 'expired' :
+				echo wpautop( sprintf( __( '%s has been submitted successfully and will be visible once payment has been confirmed.', 'wpcm-wc-paid-listings' ), '<strong>' . get_the_title( $listing_id ) . '</strong>' ) );
+				break;
+			default :
+				echo wpautop( sprintf( __( '%s has been submitted successfully.', 'wpcm-wc-paid-listings' ), '<strong>' . get_the_title( $listing_id ) . '</strong>' ) );
+				break;
+		}
+
+		echo '<p class="wpcm-submitted-actions">';
+
+		if ( 'publish' === get_post_status( $listing_id ) ) {
+			echo '<a class="button" href="' . get_permalink( $listing_id ) . '">' . __( 'View Listing', 'wpcm-wc-paid-listings' ) . '</a> ';
+		} elseif ( absint( wp_car_manager()->service( 'settings' )->get_option( 'page_dashboard' ) ) > 0 ) {
+			echo '<a class="button" href="' . get_permalink( wp_car_manager()->service( 'settings' )->get_option( 'page_dashboard' ) ) . '">' . __( 'View Dashboard', 'wpcm-wc-paid-listings' ) . '</a> ';
+		}
+
+		echo '</p>';
 
 	}
 }
