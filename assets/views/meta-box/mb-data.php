@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					?>
 				</td>
 			</tr>
-
 		<?php endforeach; ?>
+		<?php do_action( 'wpcm_mb_listing_data_after', $vehicle ); ?>
 	</table>
 <?php endif; ?>
