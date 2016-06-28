@@ -15,7 +15,11 @@
     }
   }
 
-  .attachment-full, .entry-thumbnail, .attachment-post-thumbnail {
+  .attachment-full,
+  .entry-thumbnail,
+  .attachment-post-thumbnail,
+  .attachment-post-featured-image,
+  .size-post-featured-image {
     display: none;
   }
 
