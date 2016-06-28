@@ -1,7 +1,7 @@
 .wpcm_vehicle {
 
   .wpcm-notice {
-    background: #428dcb;
+    background: #164161;
     color: #fff;
     padding: 1em;
     margin-bottom: 1em;
@@ -9,6 +9,14 @@
     h2 {
       font-size: 2.2em;
       color: #fff;
+    }
+    a.wpcm-btn-link {
+      color: #fff;
+      text-decoration: underline;
+      &:hover, &:focus {
+        color: #fff;
+        text-decoration: underline;
+      }
     }
     .wpcm-preview-or {
       padding: 0 .5em;
@@ -125,16 +133,12 @@
 
     .wpcm-contact {
       overflow: hidden;
+
       .wpcm-contact-button {
-        display: block;
         width: 100%;
-        margin-bottom: 15px;
-        float: left;
-        padding: 1em 0;
-        color: #fff;
-        text-align: center;
-        background: #428dcb;
+        margin-bottom: 10px;
       }
+
     }
   }
 

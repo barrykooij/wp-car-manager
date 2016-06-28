@@ -97,24 +97,11 @@
             li {
               padding: 0 0 0.5em;
               margin: 0;
+
               a.wpcm-dashboard-button {
-                display: block;
-                text-align: center;
-
-                line-height: .9em;
-                font-size: .9em;
-                background-color: #428dcb;
                 width: 100%;
-                color: #fff;
-                border: 1px solid #ccc;
-                border-radius: 3px;
-                padding: .6em .4em;
-
-                &:active, &:focus, &:visited {
-                  border: 1px solid #ccc;
-                  outline: 0;
-                }
               }
+
             }
           }
         }

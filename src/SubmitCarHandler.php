@@ -307,9 +307,9 @@ class SubmitCarHandler {
 		echo '<p class="wpcm-submitted-actions">';
 
 		if ( 'publish' === get_post_status( $listing_id ) ) {
-			echo '<a class="button" href="' . get_permalink( $listing_id ) . '">' . __( 'View Listing', 'wpcm-wc-paid-listings' ) . '</a> ';
+			echo '<a class="button wpcm-button" href="' . get_permalink( $listing_id ) . '">' . __( 'View Listing', 'wpcm-wc-paid-listings' ) . '</a> ';
 		} elseif ( absint( wp_car_manager()->service( 'settings' )->get_option( 'page_dashboard' ) ) > 0 ) {
-			echo '<a class="button" href="' . get_permalink( wp_car_manager()->service( 'settings' )->get_option( 'page_dashboard' ) ) . '">' . __( 'View Dashboard', 'wpcm-wc-paid-listings' ) . '</a> ';
+			echo '<a class="button wpcm-button" href="' . get_permalink( wp_car_manager()->service( 'settings' )->get_option( 'page_dashboard' ) ) . '">' . __( 'View Dashboard', 'wpcm-wc-paid-listings' ) . '</a> ';
 		}
 
 		echo '</p>';

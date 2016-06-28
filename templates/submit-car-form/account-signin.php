@@ -9,7 +9,7 @@
 			printf( __( 'You are currently signed in as <strong>%s</strong>.', 'wp-car-manager' ), $user->user_login );
 			?>
 
-			<a class="button"
+			<a class="button wpcm-button"
 			   href="<?php echo apply_filters( 'wpcm_submit_car_form_account_logout_url', wp_logout_url( get_permalink() ) ); ?>"><?php _e( 'Sign out', 'wp-car-manager' ); ?></a>
 		</div>
 	</fieldset>
