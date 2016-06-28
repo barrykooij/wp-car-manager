@@ -102,7 +102,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 * Tweak: Made dashboard post statuses filterable via wpcm_dashboard_post_status.
 * Tweak: Added more featured image classes to be hidden on vehicle detail page.
 * Tweak: Included default styling for buttons because many themes lack default button styling.
-* Tweak: Added 'wpcm_contact_email_link' filter to contact email template.
+* Tweak: Added 'wpcm_contact_email_link' filter to contact email template, props [kjohnson](https://github.com/kjohnson).
 * Tweak: Removed focus state on settings tabs, props [JeroenSormani](https://github.com/JeroenSormani).
 * Tweak: Persist on current tab in settings after saving, props [JeroenSormani](https://github.com/JeroenSormani).
 * Tweak: Show message when there are no makes or models, props [JeroenSormani](https://github.com/JeroenSormani).
