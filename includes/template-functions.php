@@ -15,7 +15,7 @@ if ( ! function_exists( 'wpcm_template_vehicle_preview_bar' ) ) {
 			$wpcm_step = ( ( ! ( empty( $_GET['wpcm_step'] ) ) ? absint( $_GET['wpcm_step'] ) : 0 ) + 1 );
 
 			wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/preview', '', array(
-				'edit_url'      => add_query_arg( 'edit', $vehicle->get_id(), Never5\WPCarManager\Helper\Pages::get_page_submit() ),
+				'edit_url'      => add_query_arg( 'wpcm_vehicle_id', $vehicle->get_id(), Never5\WPCarManager\Helper\Pages::get_page_submit() ),
 				'publish_url'   => add_query_arg( array(
 					'wpcm_step'       => $wpcm_step,
 					'wpcm_vehicle_id' => $vehicle->get_id()
