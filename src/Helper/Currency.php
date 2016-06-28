@@ -65,7 +65,7 @@ abstract class Currency {
 				$currency_symbol = '&#75;&#269;';
 				break;
 			case 'DJF':
-				$currency_symbol = 'DJF';
+				$currency_symbol = 'Fdj';
 				break;
 			case 'DKK' :
 				$currency_symbol = 'DKK';
