@@ -50,6 +50,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<td class="slug column-slug"><?php echo $item['slug']; ?></td>
 							</tr>
 						<?php endforeach; ?>
+					<?php else : ?>
+						<tr class="no-items">
+							<td class="colspanchange" colspan="2"><?php _e( 'No Models found', 'wp-car-manager' ); ?></td>
+						</tr>
 					<?php endif; ?>
 					</tbody>
 
