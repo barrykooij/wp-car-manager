@@ -23,7 +23,11 @@ class SubmitCarHandler {
 
 		// check if we're editing
 		if ( ! empty( $_GET['wpcm_edit'] ) && ! empty( $_GET['wpcm_vehicle_id'] ) ) {
-			$this->is_edit    = true;
+			$this->is_edit = true;
+		}
+
+		// set vehicle ID
+		if ( ! empty( $_GET['wpcm_vehicle_id'] ) ) {
 			$this->listing_id = absint( $_GET['wpcm_vehicle_id'] );
 		}
 
@@ -148,6 +152,7 @@ class SubmitCarHandler {
 			// add preview step to 'new' listing steps (editing has no preview)
 			$default_steps['preview'] = array(
 				'view'     => array( $this, 'view_preview' ),
+				'handler'  => array( $this, 'process_new_listing' ),
 				'priority' => 20
 			);
 
@@ -235,8 +240,9 @@ class SubmitCarHandler {
 
 			// check we're in edit
 			if ( $this->is_edit ) {
-				$action_url = add_query_arg( array( 'wpcm_edit'       => 1,
-				                                    'wpcm_vehicle_id' => $this->listing_id
+				$action_url = add_query_arg( array(
+					'wpcm_edit'       => 1,
+					'wpcm_vehicle_id' => $this->listing_id
 				), $action_url );
 			}
 
@@ -281,6 +287,33 @@ class SubmitCarHandler {
 			}
 		}
 
+	}
+
+	/**
+	 * Process a new listing, called after the view_preview() method
+	 */
+	public function process_new_listing() {
+
+		// vehicle ID that is requested to publish
+		$vehicle_id = $this->listing_id;
+
+		// redirect user to login screen if they can't edit this listing
+		if ( ! wp_car_manager()->service( 'user_manager' )->can_edit_listing( $vehicle_id ) ) {
+			wp_redirect( wp_login_url( add_query_arg( 'wpcm_publish', $vehicle_id ) ) );
+			exit;
+		}
+
+		// get vehicle object
+		/** @var Vehicle $vehicle */
+		$vehicle = wp_car_manager()->service( 'vehicle_factory' )->make( $vehicle_id );
+
+		// set vehicle status
+		$new_status = ( ( '1' == wp_car_manager()->service( 'settings' )->get_option( 'moderate_new_listings' ) ) ? 'pending' : 'publish' );
+		$new_status = apply_filters( 'wpcm_submit_publish_action_status', $new_status, $vehicle );
+		$vehicle->set_status( $new_status );
+
+		// save vehicle
+		$vehicle = wp_car_manager()->service( 'vehicle_repository' )->persist( $vehicle );
 	}
 
 	/**
