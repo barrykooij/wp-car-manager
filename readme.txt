@@ -100,6 +100,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 * Tweak: Allow for custom path in ViewManager::display() so others can use it to load own views.
 * Tweak: Replaced the_content() with $vehicle->get_description() in single-vehicle/content.php.
 * Tweak: Made dashboard post statuses filterable via wpcm_dashboard_post_status.
+* Tweak: Added Djiboutian Franc.
 * Tweak: Updated Italian translation, props VGS Service.
 
 = 1.2.1: March 17, 2016 =

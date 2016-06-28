@@ -61,6 +61,9 @@ abstract class Currency {
 			case 'CZK' :
 				$currency_symbol = '&#75;&#269;';
 				break;
+			case 'DJF':
+				$currency_symbol = 'DJF';
+				break;
 			case 'DKK' :
 				$currency_symbol = 'DKK';
 				break;
@@ -167,7 +170,7 @@ abstract class Currency {
 
 	/**
 	 * Return available currencies
-	 * 
+	 *
 	 * @return array
 	 */
 	public static function get_currencies() {
@@ -184,6 +187,7 @@ abstract class Currency {
 					'CLP' => __( 'Chilean Peso', 'wp-car-manager' ),
 					'CNY' => __( 'Chinese Yuan', 'wp-car-manager' ),
 					'COP' => __( 'Colombian Peso', 'wp-car-manager' ),
+					'DJF' => __( 'Djiboutian Franc', 'wp-car-manager' ),
 					'CZK' => __( 'Czech Koruna', 'wp-car-manager' ),
 					'DKK' => __( 'Danish Krone', 'wp-car-manager' ),
 					'DOP' => __( 'Dominican Peso', 'wp-car-manager' ),
