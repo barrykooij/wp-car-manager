@@ -67,7 +67,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 == Changelog ==
 
-= 1.3.0: May X, 2016 =
+= 1.3.0: June 28, 2016 =
 * Feature: Car listings now fully support pagination, amount of vehicles per page can be set in settings.
 * Feature: Added 'sold' banner that is displayed when listing is sold.
 * Feature: Listings marked as sold can now be hidden van listing pages, see settings > Listings.
@@ -76,6 +76,8 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 * Feature: Added Power hp data field.
 * Feature: Added 'Under Review' label to car dashboard.
 * Feature: Added Swedish translation, props Nicklas.
+* Feature: Added Croatian translation, props Damir.
+* Feature: Added Danish translation, props Flemming.
 * Tweak: Structural changes to **ALL** single content template parts. **Important: If you've overridden any of the single-vehicle/ templates, you will need to remove the 'global $vehicle;' from the top of the file!**
 * Tweak: Structural changes have been made to listings/item.php. Listing image is now wrapper in <div> and various actions have been added. **Important: If you've overridden this template, you'll need to update your own template after updating!**
 * Tweak: Structural changes have been made to dashboard/item.php. Dashboard image is now wrapper in <div> and various actions have been added. **Important: If you've overridden this template, you'll need to update your own template after updating!**
