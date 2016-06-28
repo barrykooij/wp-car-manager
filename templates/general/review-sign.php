@@ -1,0 +1,1 @@
+<div class="wpcm-pending-review"><?php _e( 'PENDING REVIEW', 'wp-car-manager' ); ?></div>

@@ -3,8 +3,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-global $vehicle;
-
 ?>
 <tr>
 	<th><?php _e( 'Body Style', 'wp-car-manager' ); ?></th>

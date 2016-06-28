@@ -14,7 +14,8 @@ var WPCM_Listings = function ( tgt ) {
 	this.filters = jQuery( tgt ).find( '.wpcm-vehicle-filters:first' );
 	this.sort = jQuery( tgt ).find( '#wpcm-sort:first' );
 	this.listings = jQuery( tgt ).find( '.wpcm-vehicle-results-wrapper>.wpcm-vehicle-results:first' );
-	this.per_page = jQuery( tgt ).data( 'per_page' );
+	this.pagination = jQuery( tgt ).find( '.wpcm-vehicle-listings-pagination:first' );
+	this.page = 1;
 	this.default_sort = jQuery( tgt ).data( 'sort' );
 	this.condition = jQuery( tgt ).data( 'condition' );
 
@@ -56,6 +57,11 @@ WPCM_Listings.prototype.init_filters = function () {
 	} );
 
 	this.filters.find( '.wpcm-filter-button input' ).click( function () {
+
+		// reset page to 1 on sort change
+		instance.page = 1;
+
+		// load
 		instance.load_vehicles();
 	} );
 
@@ -67,6 +73,11 @@ WPCM_Listings.prototype.init_sort = function () {
 
 	// bind listener to make field
 	this.sort.change( function () {
+
+		// reset page to 1 on sort change
+		instance.page = 1;
+
+		// load
 		instance.load_vehicles();
 	} );
 
@@ -133,10 +144,13 @@ WPCM_Listings.prototype.load_vehicles = function () {
 	// listings var
 	var listings = this.listings;
 
+	// pagination var
+	var pagination = this.pagination;
+
 	// default ajax args with nonce
 	var args = {
 		nonce: this.nonce,
-		per_page: this.per_page
+		page: this.page
 	};
 
 	// set filters in args
@@ -171,10 +185,22 @@ WPCM_Listings.prototype.load_vehicles = function () {
 	this.listings.parent().append( jQuery( '<div>' ).addClass( 'wpcm-results-load-overlay' ) );
 	this.listings.parent().append( new WPCM_Spinner().getDOM() );
 
-	jQuery.get( wpcm.ajax_url, args, function ( response ) {
+	jQuery.getJSON( wpcm.ajax_url, args, function ( response ) {
 
-		// set response
-		listings.html( response );
+		// set listings
+		if ( response.listings ) {
+			// set response
+			listings.html( response.listings );
+		}
+
+		// set pagination
+		if ( response.pagination ) {
+			pagination.html( response.pagination );
+
+			instance.bind_pagination();
+		}else {
+			pagination.html( '' );
+		}
 
 		// remove spinner
 		listings.parent().find( '.wpcm-results-load-overlay' ).remove();
@@ -185,6 +211,31 @@ WPCM_Listings.prototype.load_vehicles = function () {
 
 	} );
 
+};
+
+WPCM_Listings.prototype.bind_pagination = function () {
+	var instance = this;
+
+	jQuery.each( jQuery( this.pagination ).find( 'a' ), function ( k, v ) {
+		jQuery( v ).click( function () {
+			var new_page = jQuery( v ).data( 'page' );
+
+			if ( new_page == 'next' ) {
+				new_page = instance.page + 1;
+			}
+
+			if ( new_page == 'prev' ) {
+				new_page = instance.page - 1;
+			}
+
+			// set new page
+			instance.page = new_page;
+
+			// trigger load_vehicles()
+			instance.load_vehicles();
+
+		} );
+	} );
 };
 
 var WPCM_Spinner = function () {

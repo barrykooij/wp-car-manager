@@ -9,85 +9,92 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 if ( ! function_exists( 'wpcm_template_vehicle_preview_bar' ) ) {
-	function wpcm_template_vehicle_preview_bar() {
-		global $vehicle;
+	function wpcm_template_vehicle_preview_bar( $vehicle ) {
 		if ( 'preview' == $vehicle->get_status() ) {
+
+			$wpcm_step = ( ( ! ( empty( $_GET['wpcm_step'] ) ) ? absint( $_GET['wpcm_step'] ) : 0 ) + 1 );
+
 			wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/preview', '', array(
-				'edit_url'    => add_query_arg( 'edit', $vehicle->get_id(), Never5\WPCarManager\Helper\Pages::get_page_submit() ),
-				'publish_url' => add_query_arg( 'wpcm_publish', $vehicle->get_id(), $vehicle->get_url() )
+				'edit_url'      => add_query_arg( 'wpcm_vehicle_id', $vehicle->get_id(), Never5\WPCarManager\Helper\Pages::get_page_submit() ),
+				'publish_url'   => add_query_arg( array(
+					'wpcm_step'       => $wpcm_step,
+					'wpcm_vehicle_id' => $vehicle->get_id()
+				), Never5\WPCarManager\Helper\Pages::get_page_submit() ),
+				'publish_label' => apply_filters( 'wpcm_preview_submit_label', __( 'Submit listing', 'wp-car-manager' ), $vehicle ),
+				'vehicle'       => $vehicle
 			) );
 		}
 	}
 }
 
 if ( ! function_exists( 'wpcm_template_vehicle_pending_bar' ) ) {
-	function wpcm_template_vehicle_pending_bar() {
-		global $vehicle;
+	function wpcm_template_vehicle_pending_bar( $vehicle ) {
 		if ( 'pending' == $vehicle->get_status() ) {
-			wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/pending' );
+			wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/pending', '', array( 'vehicle' => $vehicle ) );
 		}
 	}
 }
 
 if ( ! function_exists( 'wpcm_template_vehicle_expired_bar' ) ) {
-	function wpcm_template_vehicle_expired_bar() {
-		global $vehicle;
+	function wpcm_template_vehicle_expired_bar( $vehicle ) {
 		if ( 'expired' == $vehicle->get_status() ) {
-			wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/expired', '' );
+			wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/expired', '', array( 'vehicle' => $vehicle ) );
 		}
 	}
 }
 
 if ( ! function_exists( 'wpcm_template_vehicle_images' ) ) {
-	function wpcm_template_vehicle_images() {
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/image' );
+	function wpcm_template_vehicle_images( $vehicle ) {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/image', '', array( 'vehicle' => $vehicle ) );
 	}
 }
 
 if ( ! function_exists( 'wpcm_template_vehicle_thumbnails' ) ) {
-	function wpcm_template_vehicle_thumbnails() {
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/thumbnails' );
+	function wpcm_template_vehicle_thumbnails( $vehicle ) {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/thumbnails', '', array( 'vehicle' => $vehicle ) );
 	}
 }
 
 if ( ! function_exists( 'wpcm_template_single_price' ) ) {
-	function wpcm_template_single_price() {
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/price' );
+	function wpcm_template_single_price( $vehicle ) {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/price', '', array( 'vehicle' => $vehicle ) );
 	}
 }
 
 if ( ! function_exists( 'wpcm_template_single_summary_data' ) ) {
-	function wpcm_template_single_summary_data() {
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/summary-data' );
+	function wpcm_template_single_summary_data( $vehicle ) {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/summary-data', '', array( 'vehicle' => $vehicle ) );
 	}
 }
 
 if ( ! function_exists( 'wpcm_template_single_data' ) ) {
-	function wpcm_template_single_data() {
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/data' );
+	function wpcm_template_single_data( $vehicle ) {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/data', '', array( 'vehicle' => $vehicle ) );
 	}
 }
 
 if ( ! function_exists( 'wpcm_template_single_content' ) ) {
-	function wpcm_template_single_content() {
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/content' );
+	function wpcm_template_single_content( $vehicle ) {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/content', '', array( 'vehicle' => $vehicle ) );
 	}
 }
 
 if ( ! function_exists( 'wpcm_template_single_features' ) ) {
-	function wpcm_template_single_features() {
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/features' );
+	function wpcm_template_single_features( $vehicle ) {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/features', '', array( 'vehicle' => $vehicle ) );
 	}
 }
 
 if ( ! function_exists( 'wpcm_template_single_contact' ) ) {
-	function wpcm_template_single_contact() {
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/contact' );
+	function wpcm_template_single_contact( $vehicle ) {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/contact', '', array( 'vehicle' => $vehicle ) );
 	}
 }
-if ( ! function_exists( 'wpcm_template_data_remove_power_type' ) ) {
-	function wpcm_template_data_remove_power_type( $fields, $vehicle ) {
-		unset( $fields['power_type'] );
+
+if ( ! function_exists( 'wpcm_template_data_remove_power_hp' ) ) {
+	function wpcm_template_data_remove_power_hp( $fields, $vehicle ) {
+		unset( $fields['power_hp'] );
+
 		return $fields;
 	}
 }
@@ -167,6 +174,12 @@ if ( ! function_exists( 'wpcm_template_vehicle_listings_start' ) ) {
 if ( ! function_exists( 'wpcm_template_vehicle_listings_end' ) ) {
 	function wpcm_template_vehicle_listings_end() {
 		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/end' );
+	}
+}
+
+if ( ! function_exists( 'wpcm_template_vehicle_listings_pagination' ) ) {
+	function wpcm_template_vehicle_listings_pagination() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/pagination-wrapper' );
 	}
 }
 
@@ -360,6 +373,27 @@ if ( ! function_exists( 'wpcm_template_dashboard_button_renew' ) ) {
 			wp_car_manager()->service( 'template_manager' )->get_template_part( 'dashboard/buttons/renew', '', array(
 				'vehicle' => $vehicle
 			) );
+		}
+	}
+}
+
+/**
+ ************************ GENERAL ************************
+ */
+
+
+if ( ! function_exists( 'wpcm_template_sold_sign' ) ) {
+	function wpcm_template_sold_sign( $vehicle ) {
+		if ( $vehicle->is_sold() ) {
+			wp_car_manager()->service( 'template_manager' )->get_template_part( 'general/sold-sign' );
+		}
+	}
+}
+
+if ( ! function_exists( 'wpcm_template_review_sign' ) ) {
+	function wpcm_template_review_sign( $vehicle ) {
+		if ( 'pending' == $vehicle->get_status() ) {
+			wp_car_manager()->service( 'template_manager' )->get_template_part( 'general/review-sign' );
 		}
 	}
 }

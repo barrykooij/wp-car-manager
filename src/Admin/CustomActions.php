@@ -32,7 +32,7 @@ class CustomActions {
 			$vid = absint( $_GET['wpcm_action_val'] );
 
 			// Let's go
-			wp_publish_post( $vid );
+			wp_update_post( array( 'ID' => $vid, 'post_status' => 'publish' ) );
 		}
 	}
 

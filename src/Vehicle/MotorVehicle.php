@@ -19,7 +19,10 @@ abstract class MotorVehicle extends Vehicle {
 	private $engine;
 
 	/** @var  int */
-	private $power;
+	private $power_hp;
+
+	/** @var int */
+	private $power_kw;
 
 	/** @var String */
 	private $power_type;
@@ -107,22 +110,29 @@ abstract class MotorVehicle extends Vehicle {
 	/**
 	 * @return int
 	 */
-	public function get_power() {
-		return $this->power;
+	public function get_power_hp() {
+		return $this->power_hp;
 	}
 
 	/**
-	 * @param int $power
+	 * @param int $power_hp
 	 */
-	public function set_power( $power ) {
-		$this->power = $power;
+	public function set_power_hp( $power_hp ) {
+		$this->power_hp = $power_hp;
 	}
 
 	/**
-	 * @return String
+	 * @return int
 	 */
-	public function get_power_type() {
-		return $this->power_type;
+	public function get_power_kw() {
+		return $this->power_kw;
+	}
+
+	/**
+	 * @param int $power_kw
+	 */
+	public function set_power_kw( $power_kw ) {
+		$this->power_kw = $power_kw;
 	}
 
 	/**

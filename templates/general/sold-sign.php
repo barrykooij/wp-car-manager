@@ -1,0 +1,1 @@
+<div class="wpcm-sold"><?php _e( 'SOLD', 'wp-car-manager' ); ?></div>

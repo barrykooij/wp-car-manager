@@ -35,15 +35,46 @@ class GetVehicleResults extends Ajax {
 		}
 
 		// set sort
-		$sort     = ( isset( $_GET['sort'] ) ) ? esc_attr( $_GET['sort'] ) : 'price-asc';
-		$per_page = ( isset( $_GET['per_page'] ) ) ? intval( $_GET['per_page'] ) : - 1;
+		$sort = ( isset( $_GET['sort'] ) ) ? esc_attr( $_GET['sort'] ) : 'price-asc';
+
+		// set per page
+		$per_page = intval( wp_car_manager()->service( 'settings' )->get_option( 'listings_ppp' ) );
+
+		// correct any funky zero listings per page. I mean, who wants 0 listings per page ...
+		if ( 0 === $per_page ) {
+			$per_page = - 1;
+		}
+
+		// get current page
+		$page = intval( ( ( ! empty( $_GET['page'] ) ) ? $_GET['page'] : 1 ) );
+
+		// check if we need to hide sold cars
+		if ( '1' == wp_car_manager()->service( 'settings' )->get_option( 'listings_hide_sold' ) ) {
+			$filters['hide_sold'] = true;
+		} else {
+			$filters['hide_sold'] = false;
+		}
+
+		// extra args
+		$extra_args = array();
+
+		if ( $page > 0 ) {
+			$extra_args['paged'] = $page;
+		}
 
 		// get vehicles
 		$vehicle_manager = new Vehicle\Manager();
-		$vehicles        = $vehicle_manager->get_vehicles( $filters, $sort, $per_page );
+		$vehicles        = $vehicle_manager->get_vehicles( $filters, $sort, $per_page, $extra_args );
+
+		// get total vehicle count for pagination
+		$total_vehicle_count = $vehicle_manager->get_total_vehicle_count_of_last_query();
+
+		// start output buffer
+		ob_start();
 
 		// check & loop
 		if ( count( $vehicles ) > 0 ) {
+
 			foreach ( $vehicles as $vehicle ) {
 
 				// title
@@ -77,9 +108,19 @@ class GetVehicleResults extends Ajax {
 					'vehicle'     => $vehicle
 				) );
 			}
+
 		} else {
 			wp_car_manager()->service( 'template_manager' )->get_template_part( 'listings/no-results', '', array() );
 		}
+
+		// put listing content in variable
+		$listing_content = ob_get_clean();
+
+		// send JSON response
+		wp_send_json( array(
+			'listings'   => $listing_content,
+			'pagination' => \Never5\WPCarManager\Helper\Pagination::generate( $page, \Never5\WPCarManager\Helper\Pagination::calc_total_pages( $per_page, $total_vehicle_count ) )
+		) );
 
 		// bye
 		exit;

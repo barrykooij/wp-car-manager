@@ -3,8 +3,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-global $vehicle;
-
 // get attachment ID's
 $attachment_ids = $vehicle->get_gallery_attachment_ids();
 

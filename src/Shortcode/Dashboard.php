@@ -27,7 +27,6 @@ class Dashboard extends Shortcode {
 
 		// get attributes, defaults filterable via 'wpcm_shortcode_dashboard_defaults' filter
 		$atts = shortcode_atts( apply_filters( 'wpcm_shortcode_' . $this->get_tag() . '_defaults', array(
-			'per_page' => - 1,
 			'orderby'  => 'date',
 			'order'    => 'DESC',
 		) ), $atts );
@@ -46,8 +45,7 @@ class Dashboard extends Shortcode {
 				'atts' => $atts,
 			) );
 		}
-
-
+		
 		return ob_get_clean();
 	}
 

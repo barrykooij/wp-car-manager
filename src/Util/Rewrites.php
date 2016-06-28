@@ -13,6 +13,9 @@ class Rewrites {
 		}, 10, 3 );
 	}
 
+	/**
+	 * Set option that we need to flush rewrites
+	 */
 	public function mark_flush_needed() {
 		update_option( 'wpcm_rewrites_need_flush', 1 );
 	}

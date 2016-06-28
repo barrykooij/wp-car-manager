@@ -47,6 +47,9 @@ abstract class Currency {
 			case 'BGN' :
 				$currency_symbol = '&#1083;&#1074;.';
 				break;
+			case 'BIF':
+				$currency_symbol = 'FBu';
+				break;
 			case 'BRL' :
 				$currency_symbol = '&#82;&#36;';
 				break;
@@ -61,6 +64,9 @@ abstract class Currency {
 			case 'CZK' :
 				$currency_symbol = '&#75;&#269;';
 				break;
+			case 'DJF':
+				$currency_symbol = 'Fdj';
+				break;
 			case 'DKK' :
 				$currency_symbol = 'DKK';
 				break;
@@ -70,11 +76,17 @@ abstract class Currency {
 			case 'EGP' :
 				$currency_symbol = 'EGP';
 				break;
+			case 'ETB':
+				$currency_symbol = 'ETB';
+				break;
 			case 'EUR' :
 				$currency_symbol = '&euro;';
 				break;
 			case 'GBP' :
 				$currency_symbol = '&pound;';
+				break;
+			case 'GHS':
+				$currency_symbol = 'GH₵';
 				break;
 			case 'HRK' :
 				$currency_symbol = 'Kn';
@@ -93,6 +105,9 @@ abstract class Currency {
 				break;
 			case 'ISK' :
 				$currency_symbol = 'Kr.';
+				break;
+			case 'KES':
+				$currency_symbol = 'KSh';
 				break;
 			case 'KIP' :
 				$currency_symbol = '&#8365;';
@@ -127,6 +142,9 @@ abstract class Currency {
 			case 'RUB' :
 				$currency_symbol = '&#1088;&#1091;&#1073;.';
 				break;
+			case 'RWF':
+				$currency_symbol = 'FRw';
+				break;
 			case 'SEK' :
 				$currency_symbol = '&#107;&#114;';
 				break;
@@ -139,8 +157,14 @@ abstract class Currency {
 			case 'TWD' :
 				$currency_symbol = '&#78;&#84;&#36;';
 				break;
+			case 'TZS':
+				$currency_symbol = 'TSh';
+				break;
 			case 'UAH' :
 				$currency_symbol = '&#8372;';
+				break;
+			case 'UGX':
+				$currency_symbol = 'USh';
 				break;
 			case 'VND' :
 				$currency_symbol = '&#8363;';
@@ -167,7 +191,7 @@ abstract class Currency {
 
 	/**
 	 * Return available currencies
-	 * 
+	 *
 	 * @return array
 	 */
 	public static function get_currencies() {
@@ -180,29 +204,34 @@ abstract class Currency {
 					'BDT' => __( 'Bangladeshi Taka', 'wp-car-manager' ),
 					'BRL' => __( 'Brazilian Real', 'wp-car-manager' ),
 					'BGN' => __( 'Bulgarian Lev', 'wp-car-manager' ),
+					'BIF' => __( 'Burundian Franc', 'wp-car-manager' ),
 					'CAD' => __( 'Canadian Dollars', 'wp-car-manager' ),
 					'CLP' => __( 'Chilean Peso', 'wp-car-manager' ),
 					'CNY' => __( 'Chinese Yuan', 'wp-car-manager' ),
 					'COP' => __( 'Colombian Peso', 'wp-car-manager' ),
 					'CZK' => __( 'Czech Koruna', 'wp-car-manager' ),
+					'DJF' => __( 'Djiboutian Franc', 'wp-car-manager' ),
 					'DKK' => __( 'Danish Krone', 'wp-car-manager' ),
 					'DOP' => __( 'Dominican Peso', 'wp-car-manager' ),
+					'ETB' => __( 'Ethiopian Birr', 'wp-car-manager' ),
 					'EUR' => __( 'Euros', 'wp-car-manager' ),
+					'GHS' => __( 'Ghanaian Cedi', 'wp-car-manager' ),
 					'HKD' => __( 'Hong Kong Dollar', 'wp-car-manager' ),
 					'HRK' => __( 'Croatia kuna', 'wp-car-manager' ),
 					'HUF' => __( 'Hungarian Forint', 'wp-car-manager' ),
 					'ISK' => __( 'Icelandic krona', 'wp-car-manager' ),
 					'IDR' => __( 'Indonesia Rupiah', 'wp-car-manager' ),
 					'INR' => __( 'Indian Rupee', 'wp-car-manager' ),
-					'NPR' => __( 'Nepali Rupee', 'wp-car-manager' ),
 					'ILS' => __( 'Israeli Shekel', 'wp-car-manager' ),
 					'JPY' => __( 'Japanese Yen', 'wp-car-manager' ),
+					'KES' => __( 'Kenyan Shilling', 'wp-car-manager'),
 					'KIP' => __( 'Lao Kip', 'wp-car-manager' ),
 					'KRW' => __( 'South Korean Won', 'wp-car-manager' ),
 					'MYR' => __( 'Malaysian Ringgits', 'wp-car-manager' ),
 					'MXN' => __( 'Mexican Peso', 'wp-car-manager' ),
 					'NGN' => __( 'Nigerian Naira', 'wp-car-manager' ),
 					'NOK' => __( 'Norwegian Krone', 'wp-car-manager' ),
+					'NPR' => __( 'Nepali Rupee', 'wp-car-manager' ),
 					'NZD' => __( 'New Zealand Dollar', 'wp-car-manager' ),
 					'PYG' => __( 'Paraguayan Guaraní', 'wp-car-manager' ),
 					'PHP' => __( 'Philippine Pesos', 'wp-car-manager' ),
@@ -210,14 +239,17 @@ abstract class Currency {
 					'GBP' => __( 'Pounds Sterling', 'wp-car-manager' ),
 					'RON' => __( 'Romanian Leu', 'wp-car-manager' ),
 					'RUB' => __( 'Russian Ruble', 'wp-car-manager' ),
+					'RWF' => __( 'Rwandan Franc', 'wp-car-manager' ),
 					'SGD' => __( 'Singapore Dollar', 'wp-car-manager' ),
 					'ZAR' => __( 'South African rand', 'wp-car-manager' ),
 					'SEK' => __( 'Swedish Krona', 'wp-car-manager' ),
 					'CHF' => __( 'Swiss Franc', 'wp-car-manager' ),
-					'TWD' => __( 'Taiwan New Dollars', 'wp-car-manager' ),
 					'THB' => __( 'Thai Baht', 'wp-car-manager' ),
 					'TRY' => __( 'Turkish Lira', 'wp-car-manager' ),
+					'TWD' => __( 'Taiwan New Dollars', 'wp-car-manager' ),
+					'TZS' => __( 'Tanzanian Shilling', 'wp-car-manager' ),
 					'UAH' => __( 'Ukrainian Hryvnia', 'wp-car-manager' ),
+					'UGX' => __( 'Ugandan Shilling', 'wp-car-manager' ),
 					'USD' => __( 'US Dollars', 'wp-car-manager' ),
 					'VND' => __( 'Vietnamese Dong', 'wp-car-manager' ),
 					'EGP' => __( 'Egyptian Pound', 'wp-car-manager' )

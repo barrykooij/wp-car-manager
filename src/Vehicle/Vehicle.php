@@ -243,7 +243,17 @@ abstract class Vehicle {
 	 * @return string
 	 */
 	public function get_formatted_frdate() {
-		return $this->get_frdate()->format( Helper\Date::get_date_format() );
+		$frdate = $this->get_frdate();
+
+		if ( ! empty( $frdate ) ) {
+			try {
+				$frdate = $this->get_frdate()->format( Helper\Date::get_date_format() );
+			} catch ( \Exception $e ) {
+				$frdate = '';
+			}
+		}
+
+		return $frdate;
 	}
 
 	/**

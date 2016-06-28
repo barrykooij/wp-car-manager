@@ -53,18 +53,24 @@ class WordPressRepository implements VehicleRepository {
 		$data->condition         = get_post_meta( $post->ID, $pm_prefix . 'condition', true );
 		$data->make              = get_post_meta( $post->ID, $pm_prefix . 'make', true );
 		$data->model             = get_post_meta( $post->ID, $pm_prefix . 'model', true );
-		$data->frdate            = new \DateTime( get_post_meta( $post->ID, $pm_prefix . 'frdate', true ) );
-		$data->price             = get_post_meta( $post->ID, $pm_prefix . 'price', true );
-		$data->color             = get_post_meta( $post->ID, $pm_prefix . 'color', true );
-		$data->mileage           = get_post_meta( $post->ID, $pm_prefix . 'mileage', true );
-		$data->fuel_type         = get_post_meta( $post->ID, $pm_prefix . 'fuel_type', true );
-		$data->transmission      = get_post_meta( $post->ID, $pm_prefix . 'transmission', true );
-		$data->engine            = get_post_meta( $post->ID, $pm_prefix . 'engine', true );
-		$data->power             = get_post_meta( $post->ID, $pm_prefix . 'power', true );
-		$data->power_type        = get_post_meta( $post->ID, $pm_prefix . 'power_type', true );
-		$data->body_style        = get_post_meta( $post->ID, $pm_prefix . 'body_style', true );
-		$data->doors             = get_post_meta( $post->ID, $pm_prefix . 'doors', true );
-		$data->sold              = get_post_meta( $post->ID, $pm_prefix . 'sold', true );
+		$data->price        = get_post_meta( $post->ID, $pm_prefix . 'price', true );
+		$data->color        = get_post_meta( $post->ID, $pm_prefix . 'color', true );
+		$data->mileage      = get_post_meta( $post->ID, $pm_prefix . 'mileage', true );
+		$data->fuel_type    = get_post_meta( $post->ID, $pm_prefix . 'fuel_type', true );
+		$data->transmission = get_post_meta( $post->ID, $pm_prefix . 'transmission', true );
+		$data->engine       = get_post_meta( $post->ID, $pm_prefix . 'engine', true );
+		$data->power_hp     = get_post_meta( $post->ID, $pm_prefix . 'power_hp', true );
+		$data->power_kw     = get_post_meta( $post->ID, $pm_prefix . 'power_kw', true );
+		$data->body_style   = get_post_meta( $post->ID, $pm_prefix . 'body_style', true );
+		$data->doors        = get_post_meta( $post->ID, $pm_prefix . 'doors', true );
+		$data->sold         = get_post_meta( $post->ID, $pm_prefix . 'sold', true );
+
+		// wrap frdate in try-catch in case someone enters an incorrect date
+		try {
+			$data->frdate = new \DateTime( get_post_meta( $post->ID, $pm_prefix . 'frdate', true ) );
+		} catch ( \Exception $e ) {
+			$data->frdate = '';
+		}
 
 		// get and format features
 		$data->features = $this->get_formatted_features( $post->ID );

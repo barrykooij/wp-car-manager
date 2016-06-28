@@ -175,7 +175,6 @@ class SaveVehicle extends Ajax {
 
 				// set vehicle ID in return
 				$return['vehicle'] = $vehicle->get_id();
-				$return['url']     = $vehicle->get_url();
 
 			} catch ( \Exception $e ) {
 				throw new SaveVehicleException( $e->getMessage(), 'persist' );

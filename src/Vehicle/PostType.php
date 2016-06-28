@@ -15,7 +15,7 @@ class PostType {
 			'name_admin_bar'     => __( 'Car Listings', 'wp-car-manager' ),
 			'parent_item_colon'  => __( 'Parent Car:', 'wp-car-manager' ),
 			'all_items'          => __( 'All Car Listings', 'wp-car-manager' ),
-			'add_new_item'       => __( 'Add New Car Lsiting', 'wp-car-manager' ),
+			'add_new_item'       => __( 'Add New Car Listing', 'wp-car-manager' ),
 			'add_new'            => __( 'Add New Listing', 'wp-car-manager' ),
 			'new_item'           => __( 'New Car', 'wp-car-manager' ),
 			'edit_item'          => __( 'Edit Car', 'wp-car-manager' ),

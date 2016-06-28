@@ -67,15 +67,50 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 == Changelog ==
 
-= 1.3.0: April X, 2016 =
-* Feature: Added Power data field.
-* Feature: Added Power Type data field.
+= 1.3.0: May X, 2016 =
+* Feature: Car listings now fully support pagination, amount of vehicles per page can be set in settings.
+* Feature: Added 'sold' banner that is displayed when listing is sold.
+* Feature: Listings marked as sold can now be hidden van listing pages, see settings > Listings.
+* Feature: Added sorting by date listing is created to listings page.
+* Feature: Added Power kW data field.
+* Feature: Added Power hp data field.
+* Feature: Added 'Under Review' label to car dashboard.
 * Feature: Added Swedish translation, props Nicklas.
+* Tweak: Structural changes to **ALL** single content template parts. **Important: If you've overridden any of the single-vehicle/ templates, you will need to remove the 'global $vehicle;' from the top of the file!**
+* Tweak: Structural changes have been made to listings/item.php. Listing image is now wrapper in <div> and various actions have been added. **Important: If you've overridden this template, you'll need to update your own template after updating!**
+* Tweak: Structural changes have been made to dashboard/item.php. Dashboard image is now wrapper in <div> and various actions have been added. **Important: If you've overridden this template, you'll need to update your own template after updating!**
 * Tweak: Made date fields that are displayed in single car template filterable via wpcm_single_vehicle_data_fields.
+* Tweak: Non-default filters passed to get_vehicles() AJAX request can now be used via wpcm_get_vehicles_filter_$filter_key.
+* Tweak: Added handler class for car submit specific steps and screens.
 * Tweak: Fixed schema.org declaration issue.
 * Tweak: Made distance unit abbreviation translatable.
+* Tweak: Fixed DateTime exceptions when data was corrupt.
+* Tweak: Optimized the onboarding screen.
+* Tweak: Removed per_page attribute from car dashboard (was not used in results before).
 * Tweak: We're now passing current vehicle object to listings/item.php template part.
+* Tweak: We're now passing current vehicle object to single-vehicle/preview.php template part.
+* Tweak: We're now passing current vehicle object to single-vehicle/pending.php template part.
+* Tweak: We're now passing current vehicle object to single-vehicle/expired.php template part.
 * Tweak: We're now only showing template notices to administrators.
+* Tweak: Vehicle\Manager::get_vehicles() now forces price-asc sorting if given sort isn't recognized.
+* Tweak: We've moved the .wpcm-error class on the submission page from the input to the input-wrapper.
+* Tweak: Added explanation text to features screen.
+* Tweak: Added explanation text to makes screen.
+* Tweak: Added explanation text to models screen.
+* Tweak: Allow for custom path in ViewManager::display() so others can use it to load own views.
+* Tweak: Replaced the_content() with $vehicle->get_description() in single-vehicle/content.php.
+* Tweak: Made dashboard post statuses filterable via wpcm_dashboard_post_status.
+* Tweak: Added more featured image classes to be hidden on vehicle detail page.
+* Tweak: Included default styling for buttons because many themes lack default button styling.
+* Tweak: Currency: Added Djiboutian Franc.
+* Tweak: Currency: Added Ghanaian Cedi.
+* Tweak: Currency: Added Rwandan Franc.
+* Tweak: Currency: Added Ethiopian Birr.
+* Tweak: Currency: Added Ugandan Shilling.
+* Tweak: Currency: Added Kenyan Shilling.
+* Tweak: Currency: Added Tanzanian Shilling.
+* Tweak: Currency: Added Burundian Franc.
+* Tweak: Updated Italian translation, props VGS Service.
 
 = 1.2.1: March 17, 2016 =
 * Tweak: Fixed a bug where you couldn't use the make attribute combined with show_filters="false" in [wpcm_cars]

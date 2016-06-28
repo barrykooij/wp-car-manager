@@ -215,6 +215,12 @@ final class Plugin extends Pimple\Container {
 				$shortcode_dashboard       = new Shortcode\Dashboard();
 			} );
 
+			// init submit car handler
+			add_action( 'wp_loaded', function () use ( $container ) {
+				$container['submit_car_handler']->init();
+			} );
+
+
 			// setup custom AJAX
 			$ajax_manager = new Ajax\Manager();
 			$ajax_manager->setup();

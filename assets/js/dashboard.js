@@ -11,7 +11,6 @@ var WPCM_Dashboard = function ( tgt ) {
 
 	this.is_updating = false;
 	this.listings = jQuery( tgt ).find( '.wpcm-dashboard-wrapper>.wpcm-dashboard-list:first' );
-	this.per_page = jQuery( tgt ).data( 'per_page' );
 
 	// load vehicles
 	this.load_vehicles();
@@ -35,8 +34,7 @@ WPCM_Dashboard.prototype.load_vehicles = function () {
 
 	// default ajax args with nonce
 	var args = {
-		nonce: wpcm.nonce_vehicles,
-		per_page: this.per_page
+		nonce: wpcm.nonce_vehicles
 	};
 
 	// add spinner

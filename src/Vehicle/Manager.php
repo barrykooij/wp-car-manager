@@ -4,6 +4,16 @@ namespace Never5\WPCarManager\Vehicle;
 
 class Manager {
 
+	/** @var \WP_Query */
+	private $vehicle_query = null;
+
+	/**
+	 * Manager constructor.
+	 */
+	public function __construct() {
+		$this->vehicle_query = new \WP_Query();
+	}
+
 	/**
 	 * Get vehicles
 	 *
@@ -17,6 +27,7 @@ class Manager {
 	 * - frdate_from (int)
 	 * - frdate_to (int)
 	 * - condition (new,used)
+	 * - hide_sold (bool)
 	 *
 	 * Sort possibilities:
 	 * - price-asc
@@ -25,6 +36,8 @@ class Manager {
 	 * - year-desc
 	 * - mileage-asc
 	 * - mileage-desc
+	 * - date-asc
+	 * - date-desc
 	 *
 	 * @param array $filters
 	 * @param string $sort
@@ -40,9 +53,16 @@ class Manager {
 
 		// translate $sort to \WP_Query sort
 		$sort_params = explode( '-', $sort );
-		$order       = ( 'desc' == array_pop( $sort_params ) ) ? 'DESC' : 'ASC';
-		$sort_val    = array_shift( $sort_params );
-		$meta_key    = 'wpcm_' . $sort_val;
+
+		// order by variables
+		$orderby = 'meta_value';
+		$order   = ( 'desc' == array_pop( $sort_params ) ) ? 'DESC' : 'ASC';
+
+		// get sort value and meta key
+		$sort_val = array_shift( $sort_params );
+		$meta_key = 'wpcm_' . $sort_val;
+
+		// determine sort value type
 		switch ( $sort_val ) {
 			case 'price':
 				$meta_type = 'NUMERIC';
@@ -53,74 +73,92 @@ class Manager {
 			case 'mileage':
 				$meta_type = 'NUMERIC';
 				break;
+			case 'date':
+				$orderby = 'date';
+				break;
+			default:
+				// force sort to ascending price if given sort isn't recognized
+				$meta_type = 'NUMERIC';
+				$meta_key  = 'wpcm_price';
+				$order     = 'ASC';
 		}
 
 		// \WP_Query arg
 		$args = array(
 			'post_status'    => 'publish',
 			'post_type'      => PostType::VEHICLE,
-			'posts_per_page' => $per_page,
-			'orderby'        => 'meta_value',
-			'order'          => $order,
-			'meta_type'      => $meta_type,
-			'meta_key'       => $meta_key
+			'posts_per_page' => intval( $per_page ),
+			'orderby'        => $orderby,
+			'order'          => $order
 		);
+
+		// check if we're sorting by meta and if so, add the meta sort data
+		if ( 'meta_value' == $orderby ) {
+			$args['meta_type'] = $meta_type;
+			$args['meta_key']  = $meta_key;
+		}
 
 		// base meta query
 		$meta_query = array();
-
 
 		// check for make
 		if ( is_array( $filters ) && count( $filters ) > 0 ) {
 			foreach ( $filters as $filter_key => $filter_val ) {
 
 				// var that will contain filter specific values
-				$key     = '';
-				$compare = '=';
-				$type    = 'NUMERIC';
+				$filter = array(
+					'key'     => '',
+					'value'   => '',
+					'compare' => '=',
+					'type'    => 'NUMERIC'
+				);
 
 				switch ( $filter_key ) {
 
 					// check for make and model filter
 					case 'make':
 					case 'model':
-						$key        = 'wpcm_' . $filter_key;
-						$filter_val = absint( $filter_val );
+						$filter['key']   = 'wpcm_' . $filter_key;
+						$filter['value'] = absint( $filter_val );
 						break;
 					case 'price_from':
 					case 'mileage_from':
 					case 'frdate_from':
-						$key        = 'wpcm_' . str_ireplace( '_from', '', $filter_key );
-						$compare    = '>=';
-						$filter_val = absint( $filter_val );
+						$filter['key']     = 'wpcm_' . str_ireplace( '_from', '', $filter_key );
+						$filter['compare'] = '>=';
+						$filter['value']   = absint( $filter_val );
 						break;
 					case 'price_to':
 					case 'mileage_to':
 					case 'frdate_to':
-						$key        = 'wpcm_' . str_ireplace( '_to', '', $filter_key );
-						$compare    = '<=';
-						$filter_val = absint( $filter_val );
+						$filter['key']     = 'wpcm_' . str_ireplace( '_to', '', $filter_key );
+						$filter['compare'] = '<=';
+						$filter['value']   = absint( $filter_val );
 						break;
 					case 'condition':
-						$key        = 'wpcm_condition';
-						$filter_val = sanitize_title( $filter_val );
-						$type       = 'CHAR';
+						$filter['key']   = 'wpcm_condition';
+						$filter['value'] = sanitize_title( $filter_val );
+						$filter['type']  = 'CHAR';
+						break;
+					case 'hide_sold':
+						if ( true === $filter_val ) {
+							$filter['key']     = 'wpcm_sold';
+							$filter['value']   = '1';
+							$filter['compare'] = '!=';
+							$filter['type']    = 'CHAR';
+						}
 						break;
 					default:
-						break;
 
+						// allow filtering of non-catched filter key
+						$filter = apply_filters( 'wpcm_get_vehicles_filter_' . $filter_key, $filter, $filter_key, $filter_val );
+
+						break;
 				}
 
 				// check if we've got a new filter
-				if ( '' !== $key ) {
-
-					// add new filter
-					$meta_query[] = array(
-						'key'     => $key,
-						'value'   => $filter_val,
-						'compare' => $compare,
-						'type'    => $type
-					);
+				if ( ! empty( $filter['key'] ) ) {
+					$meta_query[] = $filter;
 				}
 
 			}
@@ -139,23 +177,20 @@ class Manager {
 			$args = array_merge( $args, $extra_args );
 		}
 
-		// do new \WP_Query
-		$vehicle_query = new \WP_Query( $args );
+		// get vehicles
+		$db_vehicles = $this->vehicle_query->query( $args );
 
 		// check
-		if ( $vehicle_query->have_posts() ) {
+		if ( count( $db_vehicles ) > 0 ) {
 
 			/** @var VehicleFactory $vehicle_factory */
 			$vehicle_factory = wp_car_manager()->service( 'vehicle_factory' );
 
 			// loop
-			while ( $vehicle_query->have_posts() ) {
-
-				// load next post
-				$vehicle_query->the_post();
+			foreach ( $db_vehicles as $db_vehicle ) {
 
 				// add vehicle to arry
-				$vehicles[] = $vehicle_factory->make( get_the_ID() );
+				$vehicles[] = $vehicle_factory->make( $db_vehicle->ID );
 			}
 		}
 
@@ -163,6 +198,15 @@ class Manager {
 		wp_reset_postdata();
 
 		return $vehicles;
+	}
+
+	/**
+	 * Get total vehicle count of last get_vehicles() query
+	 *
+	 * @return int
+	 */
+	public function get_total_vehicle_count_of_last_query() {
+		return intval( $this->vehicle_query->found_posts );
 	}
 
 	/**

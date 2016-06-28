@@ -18,9 +18,6 @@ class PostStatus {
 		// allow authors to preview their own posts
 		$this->allow_preview();
 
-		// catch publish action
-		add_action( 'init', array( $this, 'catch_publish_action' ) );
-
 		// add custom post statuses to WP post status list
 		add_action( 'admin_footer-post.php', array( $this, 'append_to_post_status_list' ) );
 	}
@@ -66,41 +63,6 @@ class PostStatus {
 	}
 
 	/**
-	 * Catch the publish action
-	 */
-	public function catch_publish_action() {
-		if ( isset( $_GET['wpcm_publish'] ) ) {
-
-			// vehicle ID that is requested to publish
-			$vehicle_id = absint( $_GET['wpcm_publish'] );
-
-			// redirect user to login screen if they can't edit this listing
-			if ( ! wp_car_manager()->service( 'user_manager' )->can_edit_listing( $vehicle_id ) ) {
-				wp_redirect( wp_login_url( add_query_arg( 'wpcm_publish', $vehicle_id ) ) );
-				exit;
-			}
-
-			// get vehicle
-			/** @var Vehicle $vehicle */
-			$vehicle = wp_car_manager()->service( 'vehicle_factory' )->make( $vehicle_id );
-
-			// set vehicle status
-			$new_status = ( ( '1' == wp_car_manager()->service( 'settings' )->get_option( 'moderate_new_listings' ) ) ? 'pending' : 'publish' );
-			$new_status = apply_filters( 'wpcm_submit_publish_action_status', $new_status, $vehicle );
-			$vehicle->set_status( $new_status );
-
-			// save vehicle
-			$vehicle = wp_car_manager()->service( 'vehicle_repository' )->persist( $vehicle );
-
-			// redirect to new url
-			wp_redirect( apply_filters( 'wpcm_submit_publish_action_redirect', $vehicle->get_url(), $vehicle ) );
-
-			// bye
-			exit;
-		}
-	}
-
-	/**
 	 *
 	 * Catch the pre post
 	 *
@@ -119,7 +81,9 @@ class PostStatus {
 	/**
 	 * Morph preview state to publish state
 	 *
-	 * @param $posts
+	 * @param array $posts
+	 *
+	 * @return array
 	 */
 	public function morph_preview_to_publish( $posts ) {
 
@@ -195,8 +159,20 @@ class PostStatus {
 		// get the abs int value of the listing duration setting
 		$exp_days = absint( wp_car_manager()->service( 'settings' )->get_option( 'listing_duration' ) );
 
+		// check if custom exp_days is set for current listing
+		$custom_exp_days = get_post_meta( $post->ID, '_wpcm_listing_duration', true );
+		if ( ! empty( $custom_exp_days ) ) {
+			$exp_days = absint( $custom_exp_days );
+		}
+
 		// only set an expiration date if the listing duration is at least 1 day
 		if ( $exp_days < 1 ) {
+			return;
+		}
+
+		// check if no expiration date is already set
+		$cur_exp = get_post_meta( $post->ID, 'wpcm_expiration', true );
+		if ( ! empty( $cur_exp ) ) {
 			return;
 		}
 
