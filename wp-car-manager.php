@@ -3,7 +3,7 @@
     Plugin Name: WP Car Manager
     Plugin URI: http://www.wpcarmanager.com
     Description: The easiest way to manage, list and sell your cars online using WordPress.
-    Version: 1.3.0-beta1
+    Version: 1.3.0
     Author: Never5
     Author URI: http://www.never5.com
     License: GPL v2
