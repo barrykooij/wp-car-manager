@@ -154,6 +154,9 @@ abstract class Currency {
 			case 'TWD' :
 				$currency_symbol = '&#78;&#84;&#36;';
 				break;
+			case 'TZS':
+				$currency_symbol = 'TSh';
+				break;
 			case 'UAH' :
 				$currency_symbol = '&#8372;';
 				break;
@@ -240,6 +243,7 @@ abstract class Currency {
 					'TWD' => __( 'Taiwan New Dollars', 'wp-car-manager' ),
 					'THB' => __( 'Thai Baht', 'wp-car-manager' ),
 					'TRY' => __( 'Turkish Lira', 'wp-car-manager' ),
+					'TZS' => __( 'Tanzanian Shilling', 'wp-car-manager' ),
 					'UAH' => __( 'Ukrainian Hryvnia', 'wp-car-manager' ),
 					'UGX' => __( 'Ugandan Shilling', 'wp-car-manager' ),
 					'USD' => __( 'US Dollars', 'wp-car-manager' ),
