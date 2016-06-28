@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php
 	$email = wp_car_manager()->service( 'settings' )->get_option( 'contact_email' );
-	if ( '' != $email ) :
+	if ( '' != $email && apply_filters( 'wpcm_contact_email_link', TRUE ) ) :
 		?>
 		<a href="mailto:<?php echo antispambot( $email ); ?>?subject=<?php the_title(); ?>"
 		   class="wpcm-button wpcm-contact-button"><?php _e( 'Email Us', 'wp-car-manager' ); ?></a>
