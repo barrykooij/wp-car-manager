@@ -154,6 +154,9 @@ abstract class Currency {
 			case 'UAH' :
 				$currency_symbol = '&#8372;';
 				break;
+			case 'UGX':
+				$currency_symbol = 'USh';
+				break;
 			case 'VND' :
 				$currency_symbol = '&#8363;';
 				break;
@@ -234,6 +237,7 @@ abstract class Currency {
 					'THB' => __( 'Thai Baht', 'wp-car-manager' ),
 					'TRY' => __( 'Turkish Lira', 'wp-car-manager' ),
 					'UAH' => __( 'Ukrainian Hryvnia', 'wp-car-manager' ),
+					'UGX' => __( 'Ugandan Shilling', 'wp-car-manager' ),
 					'USD' => __( 'US Dollars', 'wp-car-manager' ),
 					'VND' => __( 'Vietnamese Dong', 'wp-car-manager' ),
 					'EGP' => __( 'Egyptian Pound', 'wp-car-manager' )
