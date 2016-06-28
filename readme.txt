@@ -81,6 +81,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 * Tweak: Structural changes have been made to dashboard/item.php. Dashboard image is now wrapper in <div> and various actions have been added. **Important: If you've overridden this template, you'll need to update your own template after updating!**
 * Tweak: Made date fields that are displayed in single car template filterable via wpcm_single_vehicle_data_fields.
 * Tweak: Non-default filters passed to get_vehicles() AJAX request can now be used via wpcm_get_vehicles_filter_$filter_key.
+* Tweak: Added 'Add New' button on car dashboard.
 * Tweak: Added handler class for car submit specific steps and screens.
 * Tweak: Fixed schema.org declaration issue.
 * Tweak: Made distance unit abbreviation translatable.

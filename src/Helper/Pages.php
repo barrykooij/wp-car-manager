@@ -68,13 +68,22 @@ class Pages {
 	}
 
 	/**
+	 * Get Dashboard page ID
+	 *
+	 * @return int
+	 */
+	public static function get_page_dashboard_id() {
+		return apply_filters( 'wpcm_page_id_dashboard', wp_car_manager()->service( 'settings' )->get_option( 'page_dashboard' ) );
+	}
+
+	/**
 	 * Get dashboard page URL
 	 *
 	 * @return string
 	 */
 	public static function get_page_dashboard() {
 		$url     = '';
-		$page_id = apply_filters( 'wpcm_page_id_dashboard', wp_car_manager()->service( 'settings' )->get_option( 'page_dashboard' ) );
+		$page_id = self::get_page_dashboard_id();
 		if ( 0 != $page_id ) {
 			$url = get_permalink( $page_id );
 		}

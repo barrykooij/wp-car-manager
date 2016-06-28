@@ -106,6 +106,11 @@ add_action( 'wpcm_submit_car_form_disabled', 'wpcm_template_submit_car_form_disa
  */
 
 /**
+ * Add new listing button on dashboard
+ */
+add_action( 'the_title', 'wpcm_template_dashboard_add_new_listing_button' );
+
+/**
  * Vehicle Dashboard Results
  */
 add_action( 'wpcm_dashboard_results', 'wpcm_template_dashboard_list_start', 10 );
