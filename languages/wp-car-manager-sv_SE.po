@@ -1,0 +1,1284 @@
+# Copyright (C) 2016 Never5
+# This file is distributed under the GPL v2.
+# Translators:
+# Asir Hawrami <asirhawrami@gmail.com>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Car Manager\n"
+"Report-Msgid-Bugs-To: https://github.com/barrykooij/wp-car-manager/issues\n"
+"POT-Creation-Date: 2016-03-17 15:44:20+00:00\n"
+"PO-Revision-Date: 2016-06-02 09:13+0000\n"
+"Last-Translator: Asir Hawrami <asirhawrami@gmail.com>\n"
+"Language-Team: Swedish (Sweden) (http://www.transifex.com/barrykooijplugins/wp-car-manager/language/sv_SE/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sv_SE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: grunt-wp-i18n 0.4.9\n"
+
+#: assets/views/meta-box/gallery.php:15 assets/views/meta-box/gallery.php:30
+msgid "Delete image"
+msgstr "Radera bild"
+
+#: assets/views/meta-box/gallery.php:15 assets/views/meta-box/gallery.php:31
+#: templates/dashboard/buttons/delete.php:1
+#: templates/submit-car-form/images.php:28
+msgid "Delete"
+msgstr "Radera"
+
+#: assets/views/meta-box/gallery.php:28
+msgid "Add Images to Gallery"
+msgstr "Lägg till bilder i galleri"
+
+#: assets/views/meta-box/gallery.php:29
+msgid "Add to gallery"
+msgstr "Lägg till i galleri"
+
+#: assets/views/meta-box/gallery.php:31
+msgid "Add gallery images"
+msgstr "Lägg till galleribilder"
+
+#: assets/views/meta-box/input/select-model.php:4
+#: templates/listings/filters/model.php:3
+#: templates/submit-car-form/form-fields/select-model.php:3
+#: templates/submit-car-form/form-fields/select-model.php:15
+msgid "Select Model"
+msgstr "Välj modell"
+
+#: assets/views/page/edit-make-model.php:16 assets/views/page/makes.php:16
+#: assets/views/page/makes.php:59 assets/views/page/makes.php:81
+#: assets/views/page/models.php:16 assets/views/page/models.php:59
+#: assets/views/page/models.php:82
+msgid "Name"
+msgstr "Namn"
+
+#: assets/views/page/edit-make-model.php:19 assets/views/page/makes.php:84
+#: assets/views/page/models.php:85
+msgid "The name is how it appears on your site."
+msgstr "Namnet är hur det visas på din webbplats."
+
+#: assets/views/page/edit-make-model.php:23 assets/views/page/makes.php:18
+#: assets/views/page/makes.php:60 assets/views/page/makes.php:87
+#: assets/views/page/models.php:18 assets/views/page/models.php:60
+#: assets/views/page/models.php:88
+msgid "Slug"
+msgstr "Permalänk"
+
+#: assets/views/page/edit-make-model.php:26 assets/views/page/makes.php:90
+#: assets/views/page/models.php:91
+msgid ""
+"The “slug” is the URL-friendly version of the name. It is usually all "
+"lowercase and contains only letters, numbers, and hyphens."
+msgstr "Permalänkar är en sökmotorvänlig URL som normalt består av gemena bokstäver, siffror och bindestreck"
+
+#: assets/views/page/edit-make-model.php:32
+msgid "Update"
+msgstr "Uppdatera"
+
+#: assets/views/page/makes.php:49
+msgid "Configure Models"
+msgstr "Konfigurera Modeller"
+
+#: assets/views/page/makes.php:71 assets/views/page/makes.php:94
+#: src/Taxonomies.php:69
+msgid "Add New Make"
+msgstr "Lägg Till Märke"
+
+#: assets/views/page/models.php:70 assets/views/page/models.php:95
+msgid "Add New Model"
+msgstr "Lägg Till Modell"
+
+#: assets/views/page/settings.php:7 src/Admin/Page/Settings.php:11
+msgid "Settings"
+msgstr "Inställningar"
+
+#: assets/views/page/settings.php:25
+msgid "Settings successfully saved"
+msgstr "Inställningarna Sparades"
+
+#: assets/views/page/settings.php:95 src/Shortcode/SubmitCarForm.php:42
+msgid "Save Changes"
+msgstr "Spara Ändringar"
+
+#: includes/template-functions.php:179
+msgid "Listing Title"
+msgstr "Objektets Titel"
+
+#: includes/template-functions.php:199 src/Util/Onboarding.php:103
+msgid "Description"
+msgstr "Beskrivning"
+
+#: includes/template-functions.php:206
+msgid ""
+"A short description of the vehicle. Does not need to include features, these"
+" can be selected separately below."
+msgstr "En kort beskrivning av fordonet. Behöver inte innehålla funktioner, dessa kan väljas separat nedan."
+
+#: includes/template-functions.php:227 src/Admin/MetaBox/CarData.php:14
+msgid "Car Data"
+msgstr "Fordonsdata"
+
+#: includes/template-functions.php:235
+msgid "(optional)"
+msgstr "(valfritt)"
+
+#: src/Admin/CustomColumns.php:47 src/Vehicle/Data.php:29
+#: templates/listings/filters/make.php:2
+#: templates/vehicle-data/data-make.php:9
+msgid "Make"
+msgstr "Märke"
+
+#: src/Admin/CustomColumns.php:48 src/Vehicle/Data.php:35
+#: templates/listings/filters/model.php:2
+#: templates/vehicle-data/data-model.php:9
+msgid "Model"
+msgstr "Modell"
+
+#: src/Admin/CustomColumns.php:49 src/Vehicle/Data.php:48
+#: templates/vehicle-data/data-price.php:9
+msgid "Price"
+msgstr "Pris"
+
+#: src/Admin/CustomColumns.php:50 src/Vehicle/Data.php:55
+#: templates/vehicle-data/data-mileage.php:9
+msgid "Mileage"
+msgstr "Mil"
+
+#: src/Admin/CustomColumns.php:51
+msgid "FR Date"
+msgstr "Registreringsdatum"
+
+#: src/Admin/CustomColumns.php:52
+msgid "Expires"
+msgstr "Utgår"
+
+#: src/Admin/CustomColumns.php:53
+msgid "Actions"
+msgstr "Åtgärder"
+
+#: src/Admin/CustomColumns.php:91 src/Ajax/GetDashboard.php:62
+#: src/Ajax/GetVehicleResults.php:64 templates/single-vehicle/image.php:36
+msgid "Placeholder"
+msgstr "Platshållare"
+
+#: src/Admin/MetaBox/Gallery.php:14
+msgid "Car Gallery"
+msgstr "Bilgalleri"
+
+#: src/Admin/MetaBox/ListingData.php:14
+msgid "Listing Data"
+msgstr "Annonsdata"
+
+#: src/Admin/MetaBox/ListingData.php:37
+msgid "Expiry Date:"
+msgstr "Utgångsdatum:"
+
+#: src/Admin/MetaBox/ListingData.php:43
+msgid "Sold?"
+msgstr "Såld?"
+
+#: src/Admin/MetaBox/ShortDescription.php:13
+msgid "Short Description"
+msgstr "Kort Beskrivning"
+
+#: src/Admin/Page/Extensions.php:13 src/Admin/Page/Extensions.php:47
+#: src/Util/Onboarding.php:131
+msgid "Extensions"
+msgstr "Tillägg"
+
+#: src/Admin/Page/Extensions.php:80
+msgid ""
+"Extend WP Car Manager with its powerful free and paid extensions. %sClick "
+"here to browse all extensions%s"
+msgstr "Utöka WP Car Manager med kraftfulla, gratis och betaltillägg. %sKlicka här för att bläddra bland alla tillägg%s"
+
+#: src/Admin/Page/Extensions.php:167
+msgid "Couldn't load extensions, please try again later."
+msgstr "Det gick inte att läsa in tillägg, försök igen senare."
+
+#: src/Admin/Page/Makes.php:13 src/Taxonomies.php:64
+msgid "Makes & Models"
+msgstr "Märken & Modeller"
+
+#: src/Admin/Page/Makes.php:141
+msgid "Edit %s"
+msgstr "Ändra %s"
+
+#: src/Admin/Page/Makes.php:156
+msgid "%s Models"
+msgstr "%s Modeller"
+
+#: src/Admin/Page/Makes.php:163
+msgid "Makes"
+msgstr "Märken"
+
+#: src/Ajax/CreatePage.php:46 src/Assets.php:131
+msgid "Submit Car"
+msgstr "Lägg till Bil"
+
+#: src/Ajax/CreatePage.php:51
+msgid "My Cars"
+msgstr "Mina Bilar"
+
+#: src/Ajax/CreatePage.php:54 src/Vehicle/PostType.php:30
+msgid "Cars"
+msgstr "Bilar"
+
+#: src/Ajax/GetDashboard.php:68 src/Vehicle/PostStatus.php:226
+msgid "Expired"
+msgstr "Utgått"
+
+#: src/Ajax/SaveVehicle.php:33
+msgid "Missing vehicle ID."
+msgstr "Bil ID Saknas"
+
+#: src/Ajax/SaveVehicle.php:49
+msgid "Not allowed to create/edit vehicle."
+msgstr "Ej tillåtet att skapa / redigera fordon."
+
+#: src/Ajax/SaveVehicle.php:73
+msgid "Please enter a username."
+msgstr "Vänligen ange ett användarnamn."
+
+#: src/Ajax/SaveVehicle.php:78
+msgid "Please enter your email address."
+msgstr "Vänligen ange din e-postadress"
+
+#: src/Ajax/SaveVehicle.php:106
+msgid "User could not log in, please contact support."
+msgstr "Användaren kan inte logga in, var vänlig kontakta supporten."
+
+#: src/Ajax/SaveVehicle.php:117
+msgid "Incorrect First Registration Date format"
+msgstr "Fel format på första registreringsdatum"
+
+#: src/Assets.php:71 src/Assets.php:129
+msgid "No models found"
+msgstr "Inga modeller hittades"
+
+#: src/Assets.php:72 src/Assets.php:130 templates/listings/filters/model.php:4
+msgid "Select make first"
+msgstr "Välj märke först"
+
+#: src/Assets.php:132
+msgid "Submitting your data, please wait..."
+msgstr "Sparar data, vänligen vänta…"
+
+#: src/Assets.php:166
+msgid "Are you sure you want to delete %s?"
+msgstr "Är du säker på att du vill radera %s?"
+
+#: src/Assets.php:167
+msgid ""
+"Something went wrong when trying to delete your vehicle, please try again."
+msgstr "Något gick fel när din bil raderades, vänligen försök igen."
+
+#: src/Extension/Extension.php:152
+msgid "License successfully activated."
+msgstr "Aktivering av licensen lyckades."
+
+#: src/Helper/Currency.php:177
+msgid "United Arab Emirates Dirham"
+msgstr "Förenade Arabemiraten Dirham"
+
+#: src/Helper/Currency.php:178
+msgid "Argentine Peso"
+msgstr "Argentinska Pesos"
+
+#: src/Helper/Currency.php:179
+msgid "Australian Dollars"
+msgstr "Australienska Dollar"
+
+#: src/Helper/Currency.php:180
+msgid "Bangladeshi Taka"
+msgstr "Bangladesh Taka"
+
+#: src/Helper/Currency.php:181
+msgid "Brazilian Real"
+msgstr "Brasilianska Real"
+
+#: src/Helper/Currency.php:182
+msgid "Bulgarian Lev"
+msgstr "Bulgariska Lev"
+
+#: src/Helper/Currency.php:183
+msgid "Canadian Dollars"
+msgstr "Kanadensiska Dollar"
+
+#: src/Helper/Currency.php:184
+msgid "Chilean Peso"
+msgstr "Chilenska Pesos"
+
+#: src/Helper/Currency.php:185
+msgid "Chinese Yuan"
+msgstr "Kinesiska Yuan"
+
+#: src/Helper/Currency.php:186
+msgid "Colombian Peso"
+msgstr "Colobiska Pesos"
+
+#: src/Helper/Currency.php:187
+msgid "Czech Koruna"
+msgstr "Tjeckiska Krona"
+
+#: src/Helper/Currency.php:188
+msgid "Danish Krone"
+msgstr "Danska Kronor"
+
+#: src/Helper/Currency.php:189
+msgid "Dominican Peso"
+msgstr "Dominikanska Pesos"
+
+#: src/Helper/Currency.php:190
+msgid "Euros"
+msgstr "Euros"
+
+#: src/Helper/Currency.php:191
+msgid "Hong Kong Dollar"
+msgstr "Hong Kong Dollar"
+
+#: src/Helper/Currency.php:192
+msgid "Croatia kuna"
+msgstr "Kroatiska Kuna"
+
+#: src/Helper/Currency.php:193
+msgid "Hungarian Forint"
+msgstr "Ungerska Forint"
+
+#: src/Helper/Currency.php:194
+msgid "Icelandic krona"
+msgstr "Isländska Kronor"
+
+#: src/Helper/Currency.php:195
+msgid "Indonesia Rupiah"
+msgstr "Indonesisk Rupiah"
+
+#: src/Helper/Currency.php:196
+msgid "Indian Rupee"
+msgstr "Indiska Rupier"
+
+#: src/Helper/Currency.php:197
+msgid "Nepali Rupee"
+msgstr "Nepalska Rupier"
+
+#: src/Helper/Currency.php:198
+msgid "Israeli Shekel"
+msgstr "Israeliska Shekel"
+
+#: src/Helper/Currency.php:199
+msgid "Japanese Yen"
+msgstr "Japanska Yen"
+
+#: src/Helper/Currency.php:200
+msgid "Lao Kip"
+msgstr "Lao Kip"
+
+#: src/Helper/Currency.php:201
+msgid "South Korean Won"
+msgstr "Sydkoreanska Won"
+
+#: src/Helper/Currency.php:202
+msgid "Malaysian Ringgits"
+msgstr "Malaysiska Ringgits"
+
+#: src/Helper/Currency.php:203
+msgid "Mexican Peso"
+msgstr "Mexikanska Pesos"
+
+#: src/Helper/Currency.php:204
+msgid "Nigerian Naira"
+msgstr "Nigerianska Naira"
+
+#: src/Helper/Currency.php:205
+msgid "Norwegian Krone"
+msgstr "Norska Kronor"
+
+#: src/Helper/Currency.php:206
+msgid "New Zealand Dollar"
+msgstr "Nya Zealand Dollar"
+
+#: src/Helper/Currency.php:207
+msgid "Paraguayan Guaraní"
+msgstr "Paraguayansk Guaraní"
+
+#: src/Helper/Currency.php:208
+msgid "Philippine Pesos"
+msgstr "Filippinsk Pesos"
+
+#: src/Helper/Currency.php:209
+msgid "Polish Zloty"
+msgstr "Polska Zloty"
+
+#: src/Helper/Currency.php:210
+msgid "Pounds Sterling"
+msgstr "Pounds Sterling"
+
+#: src/Helper/Currency.php:211
+msgid "Romanian Leu"
+msgstr "Rumänska Leu"
+
+#: src/Helper/Currency.php:212
+msgid "Russian Ruble"
+msgstr "Ryska Rubel"
+
+#: src/Helper/Currency.php:213
+msgid "Singapore Dollar"
+msgstr "Singapore Dollar"
+
+#: src/Helper/Currency.php:214
+msgid "South African rand"
+msgstr "Sydafrikanska Rand"
+
+#: src/Helper/Currency.php:215
+msgid "Swedish Krona"
+msgstr "Svenska Kronor"
+
+#: src/Helper/Currency.php:216
+msgid "Swiss Franc"
+msgstr "Schweiziska Franc"
+
+#: src/Helper/Currency.php:217
+msgid "Taiwan New Dollars"
+msgstr "Taiwan Nya Dollar"
+
+#: src/Helper/Currency.php:218
+msgid "Thai Baht"
+msgstr "Thailändska Baht"
+
+#: src/Helper/Currency.php:219
+msgid "Turkish Lira"
+msgstr "Turkiska Lire"
+
+#: src/Helper/Currency.php:220
+msgid "Ukrainian Hryvnia"
+msgstr "Ukrainska Hryvnia"
+
+#: src/Helper/Currency.php:221
+msgid "US Dollars"
+msgstr "US Dollar"
+
+#: src/Helper/Currency.php:222
+msgid "Vietnamese Dong"
+msgstr "Vietnamesiska Dong"
+
+#: src/Helper/Currency.php:223
+msgid "Egyptian Pound"
+msgstr "Egyptiska Pund"
+
+#: src/Helper/Pages.php:16
+msgid "no page"
+msgstr "ingen sida"
+
+#: src/MakeModelManager.php:74 templates/listings/filters/make.php:3
+msgid "Select Make"
+msgstr "Välj Märke"
+
+#: src/RoleManager.php:21
+msgid "Car Seller"
+msgstr "Bilhandlare"
+
+#: src/Settings.php:39
+msgid "General"
+msgstr "Allmän"
+
+#: src/Settings.php:43
+msgid "Currency"
+msgstr "Valuta"
+
+#: src/Settings.php:44
+msgid "Choose the currency used in your price fields."
+msgstr "Välj valutan till ditt prisfält"
+
+#: src/Settings.php:50
+msgid "Currency Position"
+msgstr "Valuta position "
+
+#: src/Settings.php:52
+msgid "The position of the currency symbol."
+msgstr "Plats för valutasymbol"
+
+#: src/Settings.php:55
+msgid "Left %s"
+msgstr "Vänster %s"
+
+#: src/Settings.php:56
+msgid "Right %s"
+msgstr "Höger %s"
+
+#: src/Settings.php:57
+msgid "Left with space %s"
+msgstr "Vänster med mellanrum %s"
+
+#: src/Settings.php:58
+msgid "Right with space %s"
+msgstr "Höger med mellanrum %s"
+
+#: src/Settings.php:63
+msgid "Decimal Separator"
+msgstr "Decimaltecken"
+
+#: src/Settings.php:64
+msgid "The decimal separator of distance unites and prices."
+msgstr "Decimaltecken körsträcka och priser."
+
+#: src/Settings.php:68
+msgid "Thousand Separator"
+msgstr "Tusenavgränsare"
+
+#: src/Settings.php:69
+msgid "The thousand separator of displayed distance unites and prices."
+msgstr "Tusenavgränsare för körsträcka och priser."
+
+#: src/Settings.php:73
+msgid "Distance Unit"
+msgstr "Körsträcka"
+
+#: src/Settings.php:74
+msgid "The unit type your distances are in (e.g. Mileage)."
+msgstr "Din körsträcka beräknas i (t.ex. mil)"
+
+#: src/Settings.php:77
+msgid "Miles"
+msgstr "Mil"
+
+#: src/Settings.php:78
+msgid "Kilometers"
+msgstr "Kilometer"
+
+#: src/Settings.php:83
+msgid "Date Format"
+msgstr "Datumformat"
+
+#: src/Settings.php:84
+msgid "The way dates are formatted."
+msgstr "Datumformatet är"
+
+#: src/Settings.php:90
+msgid "Car Submission"
+msgstr "Lägg upp bil"
+
+#: src/Settings.php:94
+msgid "Account Creation"
+msgstr "Skapa Konto"
+
+#: src/Settings.php:95
+msgid "Allow account creation"
+msgstr "Tillåt skapa konto"
+
+#: src/Settings.php:96
+msgid ""
+"If enabled, non-logged in users will be able to create an account by "
+"entering their email address on the submission form."
+msgstr "Om aktiverad, kommer icke-inloggade användare att kunna skapa ett konto genom att ange sin e-postadress på formuläret."
+
+#: src/Settings.php:101
+msgid "Account Username"
+msgstr "Användarnamn"
+
+#: src/Settings.php:102
+msgid "Automatically Generate Username from Email Address"
+msgstr "Generera användarnamn automatiskt från e-postadress"
+
+#: src/Settings.php:103
+msgid ""
+"If enabled, a username will be generated from the first part of the user "
+"email address. Otherwise, a username field will be shown."
+msgstr "Om aktiverad, kommer ett användarnamn att genereras från den första delen av användarens e-postadress. Annars kommer ett fält för användarnamn visas."
+
+#: src/Settings.php:108
+msgid "Account Role"
+msgstr "Kontoroll"
+
+#: src/Settings.php:109
+msgid ""
+"If you enable registration on your submission form, choose a role for the "
+"new user."
+msgstr "Vid registrering via formuläret, välj en roll som den nya användaren får."
+
+#: src/Settings.php:115
+msgid "Moderate New Listings"
+msgstr "Granska nya objekt"
+
+#: src/Settings.php:116
+msgid "New listing submissions require admin approval"
+msgstr "Nya objekt kräver godkännande av administratören"
+
+#: src/Settings.php:117
+msgid "If enabled, new submissions will be inactive, pending admin approval."
+msgstr "Om aktiverad kommer nya objekt vara inaktiva i väntan på godkännande"
+
+#: src/Settings.php:122
+msgid "Listing Duration"
+msgstr "Objektets varaktighet"
+
+#: src/Settings.php:123
+msgid ""
+"How many %sdays%s listings are live before expiring. Can be left blank to "
+"never expire."
+msgstr "Hur många %sdagar%s ett objekt ligger innan det tas bort. Kan lämnas tomt för att aldrig tas bort."
+
+#: src/Settings.php:129
+msgid "Contact"
+msgstr "Kontakt"
+
+#: src/Settings.php:133
+msgid "Contact Email Address"
+msgstr "Kontakt e-postadress"
+
+#: src/Settings.php:134
+msgid "The email address people can send an email to."
+msgstr "e-postadressen som används för att ta emot e-post."
+
+#: src/Settings.php:138
+msgid "Contact Phone Number"
+msgstr "Kontakt Telefonnummer"
+
+#: src/Settings.php:139
+msgid "The phone number people can call to."
+msgstr "Telefonnumret som används för att ta emot samtal på."
+
+#: src/Settings.php:145 src/Util/Onboarding.php:98
+msgid "Pages"
+msgstr "Sidor"
+
+#: src/Settings.php:149
+msgid "Submit Car Page Form"
+msgstr "Lägg till bilsida formulär"
+
+#: src/Settings.php:150 src/Settings.php:157 src/Settings.php:164
+msgid "Select the page where you have placed the %s shortcode."
+msgstr "Välj sidan där du skrivit din %s shortcode."
+
+#: src/Settings.php:156
+msgid "Car Dashboard Page"
+msgstr "Kontrollpanelen"
+
+#: src/Settings.php:163
+msgid "Car Listings Page"
+msgstr "Objektlistan"
+
+#: src/Shortcode/SubmitCarForm.php:42
+msgid "Preview Car"
+msgstr "Förhandsgranska bil"
+
+#: src/Taxonomies.php:17
+msgid "Features"
+msgstr "Egenskaper"
+
+#: src/Taxonomies.php:18
+msgid "All Features"
+msgstr "Alla egenskaper"
+
+#: src/Taxonomies.php:19
+msgid "Parent Feature"
+msgstr "Överordnad egenskap"
+
+#: src/Taxonomies.php:20
+msgid "Parent Feature:"
+msgstr "Överordnad egenskap:"
+
+#: src/Taxonomies.php:21
+msgid "New Feature Name"
+msgstr "Beskrivning av ny egenskap"
+
+#: src/Taxonomies.php:22
+msgid "Add New Feature"
+msgstr "Lägg till ny egenskap"
+
+#: src/Taxonomies.php:23
+msgid "Edit Feature"
+msgstr "Redigera egenskap"
+
+#: src/Taxonomies.php:24
+msgid "Update Feature"
+msgstr "Uppdatera egenskap"
+
+#: src/Taxonomies.php:25
+msgid "View Feature"
+msgstr "Se egenskap"
+
+#: src/Taxonomies.php:26
+msgid "Separate features with commas"
+msgstr "Separera egenskaper med kommatecken"
+
+#: src/Taxonomies.php:27
+msgid "Add or remove features"
+msgstr "Lägg till eller ta bort egenskap"
+
+#: src/Taxonomies.php:28 src/Taxonomies.php:75
+msgid "Choose from the most used"
+msgstr "Välj bland de mest använda"
+
+#: src/Taxonomies.php:29
+msgid "Popular features"
+msgstr "Populära egenskaper"
+
+#: src/Taxonomies.php:30
+msgid "Search features"
+msgstr "Sök egenskap"
+
+#: src/Taxonomies.php:31 src/Taxonomies.php:78
+msgid "Not Found"
+msgstr "Hittades inte"
+
+#: src/Taxonomies.php:65
+msgid "All Makes"
+msgstr "Alla mörken"
+
+#: src/Taxonomies.php:66
+msgid "Parent Make"
+msgstr "Överordnat Märke"
+
+#: src/Taxonomies.php:67
+msgid "Parent Make:"
+msgstr "Överordnat Märke:"
+
+#: src/Taxonomies.php:68
+msgid "New Make Name"
+msgstr "Nytt Märkesnamn"
+
+#: src/Taxonomies.php:70
+msgid "Edit Make"
+msgstr "Ändra Märke"
+
+#: src/Taxonomies.php:71
+msgid "Update Make"
+msgstr "Uppdatera Märke"
+
+#: src/Taxonomies.php:72
+msgid "View Make"
+msgstr "Se Märke"
+
+#: src/Taxonomies.php:73
+msgid "Separate makes with commas"
+msgstr "Separera Märken med kommatecken"
+
+#: src/Taxonomies.php:74
+msgid "Add or remove makes"
+msgstr "Lägg till eller ta bort Märke"
+
+#: src/Taxonomies.php:76
+msgid "Popular Makes"
+msgstr "Populära märken"
+
+#: src/Taxonomies.php:77
+msgid "Search Makes"
+msgstr "Sök Märken"
+
+#: src/UserManager.php:109
+msgid "Invalid email address."
+msgstr "ogiltig e-postadress."
+
+#: src/UserManager.php:119
+msgid "Your email address isn't correct."
+msgstr "Din e-postadress är inte korrekt"
+
+#: src/UserManager.php:124
+msgid "This email is already registered, please choose another one."
+msgstr "e-postadressen används redan, välj en annan."
+
+#: src/Util/Onboarding.php:66
+msgid "Creating"
+msgstr "Skapar"
+
+#: src/Util/Onboarding.php:67
+msgid "Page created"
+msgstr "Sida Skapad"
+
+#: src/Util/Onboarding.php:68 src/Util/Onboarding.php:111
+#: src/Util/Onboarding.php:118 src/Util/Onboarding.php:125
+msgid "Create Page"
+msgstr "Skapa Sida"
+
+#: src/Util/Onboarding.php:78
+msgid ""
+"WP Car Manager is almost ready for use, %sclick here%s to setup the final "
+"settings."
+msgstr "WP Car Manager är nästan klart för användning, %sklicka här%s för att slutföra de sista inställningarna."
+
+#: src/Util/Onboarding.php:94
+msgid "Setup"
+msgstr "Installation"
+
+#: src/Util/Onboarding.php:95
+msgid ""
+"Thank you for using WP Car Manager! We'd like to help you setup the plugin "
+"correctly so you can start listing your cars as quickly as possible."
+msgstr "Tack för att du använder WP Car Manager! Vi vill hjälpa dig ställa in pluginet korrekt så att du kan börja lista dina bilar så snabbt som möjligt."
+
+#: src/Util/Onboarding.php:99
+msgid ""
+"WP Car Manager needs 3 pages setup with specific shortcodes to function "
+"correct. We can create and setup these pages for you at this moment or you "
+"can create them yourself and set them in %sthe settings screen%s."
+msgstr "WP Car Manager behöver ställa in 3st sidor med [shortcodes] för att fungera korrekt. Vi kan skapa dessa sidor nu eller så kan du skapa dem själv i dina %sinställningar%s"
+
+#: src/Util/Onboarding.php:102
+msgid "Page"
+msgstr "Sida"
+
+#: src/Util/Onboarding.php:107
+msgid "Submit Car Page"
+msgstr "Skapa Bilsida"
+
+#: src/Util/Onboarding.php:108
+msgid "Users can submit their own listings via this page"
+msgstr "Användare kan skapa sina egna annonssidor via denna sida"
+
+#: src/Util/Onboarding.php:114
+msgid "Car Dashboard"
+msgstr "Bilinställningar"
+
+#: src/Util/Onboarding.php:115
+msgid "An overview page of all cars created of logged in user"
+msgstr "En översiktssida av alla objekt som skapats av inloggade användare"
+
+#: src/Util/Onboarding.php:121 src/Vehicle/PostType.php:14
+#: src/Vehicle/PostType.php:15
+msgid "Car Listings"
+msgstr "Bilannonser"
+
+#: src/Util/Onboarding.php:122
+msgid "The page containing your car listings"
+msgstr "Sidan innehåller dina bilannonser"
+
+#: src/Util/Onboarding.php:132
+msgid ""
+"Power up your WP Car Manager website with our official extensions. Our "
+"extensions allow you to add very specific functionality to your WP Car "
+"Manager installation and come with our premium support and updates."
+msgstr "Boosta din WP Car Manager sida med våra officiella tillägg. Våra tilläg låter dig lägga till fler funktioner ovh ger dig tillgång till vår premium support och uppdateringar."
+
+#: src/Util/Onboarding.php:135
+msgid "Read more about our extensions"
+msgstr "Läs mer om våra tillägg"
+
+#: src/Util/Onboarding.php:139
+msgid "A Never5 Product"
+msgstr "En Never5 Produkt"
+
+#: src/Util/Onboarding.php:144
+msgid ""
+"At %sNever5%s we create high quality premium WordPress plugins, with "
+"extensive support. We offer solutions in related posts, advanced download "
+"management, vehicle management and connecting post types."
+msgstr "At %sNever5%s we create high quality premium WordPress plugins, with extensive support. We offer solutions in related posts, advanced download management, vehicle management and connecting post types."
+
+#: src/Util/Onboarding.php:146
+msgid "%sFollow Never5 on Twitter%s"
+msgstr "%sFollow Never5 on Twitter%s"
+
+#: src/Vehicle/Data.php:22 templates/vehicle-data/data-condition.php:9
+msgid "Condition"
+msgstr "Skick"
+
+#: src/Vehicle/Data.php:41
+msgid "First Registration Date"
+msgstr "Första Reg. Datum"
+
+#: src/Vehicle/Data.php:62
+msgid "Fuel Type"
+msgstr "Drivmedel"
+
+#: src/Vehicle/Data.php:65 src/Vehicle/Data.php:72 src/Vehicle/Data.php:79
+#: src/Vehicle/Data.php:93 src/Vehicle/Data.php:100
+msgid "e.g."
+msgstr "t.ex."
+
+#: src/Vehicle/Data.php:65
+msgid "Gas"
+msgstr "Bensin"
+
+#: src/Vehicle/Data.php:69 templates/vehicle-data/data-color.php:9
+msgid "Color"
+msgstr "Färg"
+
+#: src/Vehicle/Data.php:72
+msgid "Grey"
+msgstr "Grå"
+
+#: src/Vehicle/Data.php:76 templates/vehicle-data/data-body_style.php:10
+msgid "Body Style"
+msgstr "Karosstyp"
+
+#: src/Vehicle/Data.php:79
+msgid "Sedan"
+msgstr "Sedan"
+
+#: src/Vehicle/Data.php:84 templates/vehicle-data/data-transmission.php:9
+msgid "Transmission"
+msgstr "Växellåda"
+
+#: src/Vehicle/Data.php:90 templates/vehicle-data/data-engine.php:9
+msgid "Engine"
+msgstr "Motor"
+
+#: src/Vehicle/Data.php:93
+msgid "2.0 TDI"
+msgstr "2.0 TDI"
+
+#: src/Vehicle/Data.php:97 templates/vehicle-data/data-doors.php:9
+msgid "Doors"
+msgstr "Dörrar"
+
+#: src/Vehicle/Data.php:112
+msgid "New"
+msgstr "Ny"
+
+#: src/Vehicle/Data.php:113
+msgid "Used"
+msgstr "Begagnad"
+
+#: src/Vehicle/Data.php:124
+msgid "Automatic"
+msgstr "Automat"
+
+#: src/Vehicle/Data.php:125
+msgid "Manual"
+msgstr "Manuell"
+
+#: src/Vehicle/Data.php:126
+msgid "Semi-Automatic"
+msgstr "Semi-Automat"
+
+#: src/Vehicle/PostStatus.php:41
+msgid "Preview <span class=\"count\">(%s)</span>"
+msgid_plural "Preview <span class=\"count\">(%s)</span>"
+msgstr[0] "Förhandsvisa <span class=\"count\">(%s)</span>"
+msgstr[1] ""
+
+#: src/Vehicle/PostStatus.php:52
+msgid "Expired <span class=\"count\">(%s)</span>"
+msgid_plural "Expired <span class=\"count\">(%s)</span>"
+msgstr[0] "Utgått <span class=\"count\">(%s)</span>"
+msgstr[1] ""
+
+#: src/Vehicle/PostStatus.php:227 templates/single-vehicle/preview.php:2
+msgid "Preview"
+msgstr "Förhandsvisa"
+
+#: src/Vehicle/PostType.php:16
+msgid "Parent Car:"
+msgstr "Överordnad Bil:"
+
+#: src/Vehicle/PostType.php:17
+msgid "All Car Listings"
+msgstr "Alla Bilannonser"
+
+#: src/Vehicle/PostType.php:18
+msgid "Add New Car Lsiting"
+msgstr "Lägg till bilobjekt"
+
+#: src/Vehicle/PostType.php:19
+msgid "Add New Listing"
+msgstr "Lägg till nytt objekt"
+
+#: src/Vehicle/PostType.php:20
+msgid "New Car"
+msgstr "Ny bil"
+
+#: src/Vehicle/PostType.php:21
+msgid "Edit Car"
+msgstr "Ändra bil"
+
+#: src/Vehicle/PostType.php:22
+msgid "Update Car"
+msgstr "Uppdatera bil"
+
+#: src/Vehicle/PostType.php:23
+msgid "View Car"
+msgstr "Se bil"
+
+#: src/Vehicle/PostType.php:24
+msgid "Search Car"
+msgstr "Sök bil"
+
+#: src/Vehicle/PostType.php:25
+msgid "No cars found"
+msgstr "Inga bilar hittades"
+
+#: src/Vehicle/PostType.php:26
+msgid "Not found in Trash"
+msgstr "Inte hittad i borttaget"
+
+#: src/Vehicle/PostType.php:29
+msgid "vehicle"
+msgstr "Fordon"
+
+#: templates/dashboard/buttons/edit.php:1
+msgid "Edit"
+msgstr "Ändra"
+
+#: templates/dashboard/buttons/renew.php:1
+msgid "Renew"
+msgstr "Förnya"
+
+#: templates/dashboard/item.php:15
+msgid "Expires on"
+msgstr "Går ut den:"
+
+#: templates/dashboard/no-results.php:1 templates/listings/no-results.php:1
+msgid "We couldn't find any cars."
+msgstr "Vi kunde inte hitta några bilar."
+
+#: templates/dashboard/not-logged-in.php:1
+msgid "Please sign in to view your car listings"
+msgstr "Logga in för att se dina bilannonser"
+
+#: templates/listings/filters/button.php:2
+msgid "Show Results"
+msgstr "Visa resultat"
+
+#: templates/listings/filters/frdate.php:2
+msgid "Min Year"
+msgstr "Från År"
+
+#: templates/listings/filters/frdate.php:3
+#: templates/listings/filters/frdate.php:4
+#: templates/listings/filters/mileage.php:3
+#: templates/listings/filters/mileage.php:4
+#: templates/listings/filters/price.php:3
+#: templates/listings/filters/price.php:4
+msgid "All"
+msgstr "Alla"
+
+#: templates/listings/filters/mileage.php:2
+msgid "Max Mileage"
+msgstr "Max miltal"
+
+#: templates/listings/filters/price.php:2
+msgid "Max Price"
+msgstr "Max Pris"
+
+#: templates/listings/sort.php:3
+msgid "Sort by:"
+msgstr "Sortera efter:"
+
+#: templates/listings/sort.php:8
+msgid "Price (low-high)"
+msgstr "Pris (stigande)"
+
+#: templates/listings/sort.php:9
+msgid "Price (high-low)"
+msgstr "Pris (fallande)"
+
+#: templates/listings/sort.php:10
+msgid "Year (old-new)"
+msgstr "Årsmodell (gammal-ny)"
+
+#: templates/listings/sort.php:11
+msgid "Year (new-old)"
+msgstr "Årsmodell (ny-gammal)"
+
+#: templates/listings/sort.php:12
+msgid "Mileage (low-high)"
+msgstr "Miltal (stigande)"
+
+#: templates/listings/sort.php:13
+msgid "Mileage (high-low)"
+msgstr "Miltal (fallande)"
+
+#: templates/single-vehicle/contact.php:17
+msgid "Email Us"
+msgstr "Mejla Oss"
+
+#: templates/single-vehicle/contact.php:25
+msgid "Call Us"
+msgstr "Ring Oss"
+
+#: templates/single-vehicle/content.php:9
+msgid "Vehicle Description"
+msgstr "Fordonsbeskrivning"
+
+#: templates/single-vehicle/data.php:9
+msgid "Vehicle Details"
+msgstr "Fordonsdetaljer"
+
+#: templates/single-vehicle/expired.php:2
+msgid "Listing Expired"
+msgstr "Annons utgått"
+
+#: templates/single-vehicle/expired.php:3
+msgid ""
+"This listing is expired, please go to your car dashboard for more "
+"information."
+msgstr "Annonsen är utgången, gå till din kontrollpanel för mer information."
+
+#: templates/single-vehicle/features.php:13
+msgid "Vehicle Features"
+msgstr "Fordonsegenskaper"
+
+#: templates/single-vehicle/pending.php:2
+msgid "Pending Review"
+msgstr "Väntar på granskning"
+
+#: templates/single-vehicle/pending.php:3
+msgid "Your submission is pending review, please check back later."
+msgstr "Din annons väntar på granskning, vänligen kom tillbaks senare."
+
+#: templates/single-vehicle/preview.php:3
+msgid ""
+"This is a preview of your listing, please note this listing is not published"
+" yet!"
+msgstr "Detta är en förhandsvisning av din annons, annonsen är inte publicerad ännu!"
+
+#: templates/single-vehicle/preview.php:4
+msgid "Edit listing"
+msgstr "Ändra annons"
+
+#: templates/single-vehicle/preview.php:6
+msgid "Submit listing"
+msgstr "Spara annons"
+
+#: templates/submit-car-form/account-signin.php:4
+msgid "Your account"
+msgstr "Ditt konto"
+
+#: templates/submit-car-form/account-signin.php:9
+msgid "You are currently signed in as <strong>%s</strong>."
+msgstr "Du är inloggad som <strong>%s</strong>."
+
+#: templates/submit-car-form/account-signin.php:13
+msgid "Sign out"
+msgstr "Logga ut"
+
+#: templates/submit-car-form/account-signin.php:22
+msgid "Have an account?"
+msgstr "Har du ett konto?"
+
+#: templates/submit-car-form/account-signin.php:26
+msgid "Sign in"
+msgstr "Logga in"
+
+#: templates/submit-car-form/account-signin.php:30
+msgid ""
+"If you don&rsquo;t have an account you can create one below by entering your"
+" email address/username. Your account details will be confirmed via email."
+msgstr "Om du inte har ett konto ännu kan du skapa ett genom att skriva in din e-postadress/användarnamn. Ditt konto kommer bekräftas via e-post."
+
+#: templates/submit-car-form/account-signin.php:34
+msgid "You must sign in to create a new listing."
+msgstr "Du måste logga in för att skapa en ny annons."
+
+#: templates/submit-car-form/account-signin.php:42
+msgid "Username"
+msgstr "Användarnamn"
+
+#: templates/submit-car-form/account-signin.php:55
+msgid "Your Email"
+msgstr "Din e-post"
+
+#: templates/submit-car-form/car-features.php:1
+msgid "Car Features"
+msgstr "Fordonsegenskaper"
+
+#: templates/submit-car-form/disabled.php:2
+msgid "You do not have permission to post or edit this listing."
+msgstr "Du är inte befogad att lägga in nya eller ändra annonser."
+
+#: templates/submit-car-form/images.php:1
+msgid "Images"
+msgstr "Bilder"
+
+#: templates/submit-car-form/images.php:23
+msgid "Current Images"
+msgstr "Aktuella bilder"
+
+#: templates/submit-car-form/images.php:37
+msgid "Upload New Images"
+msgstr "Ladda upp nya bilder"
+
+#: templates/submit-car-form/images.php:38
+msgid "Click here to upload your images"
+msgstr "Klicka här för att ladda upp dina bilder"
+
+#: templates/submit-car-form/images.php:39
+msgid ""
+"You can upload multiple images at the same time, the first image will be "
+"your thumbnail."
+msgstr "Du kan ladda upp fler bilder samtidigt, den första bilden blir din huvudbild och miniatyrbild."
+
+#: templates/vehicle-data/data-frdate.php:9
+msgid "Year"
+msgstr "Årsmodell"
+
+#: templates/vehicle-data/data-fuel_type.php:9
+msgid "Fuel"
+msgstr "Drivmedel"
+
+#. Plugin Name of the plugin/theme
+msgid "WP Car Manager"
+msgstr "WP Car Manager"
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.wpcarmanager.com"
+msgstr "http://www.wpcarmanager.com"
+
+#. Description of the plugin/theme
+msgid ""
+"The easiest way to manage, list and sell your cars online using WordPress."
+msgstr "Det enklaste sättet att hantera, annonsera och sälja dina bilar online via WordPress"
+
+#. Author of the plugin/theme
+msgid "Never5"
+msgstr "Never5"
+
+#. Author URI of the plugin/theme
+msgid "http://www.never5.com"
+msgstr "http://www.never5.com"
+
+#: src/Taxonomies.php:15
+msgctxt "Taxonomy General Name"
+msgid "Features"
+msgstr "Egenskaper"
+
+#: src/Taxonomies.php:62
+msgctxt "Taxonomy General Name"
+msgid "Makes"
+msgstr "Märken"
+
+#: src/Taxonomies.php:16
+msgctxt "Taxonomy Singular Name"
+msgid "Feature"
+msgstr "Funktion"
+
+#: src/Taxonomies.php:63
+msgctxt "Taxonomy Singular Name"
+msgid "Make"
+msgstr "Märke"
+
+#: src/Taxonomies.php:34
+msgctxt "taxonomy type slug"
+msgid "feature"
+msgstr "funktion"
+
+#: src/Taxonomies.php:81
+msgctxt "taxonomy type slug"
+msgid "make"
+msgstr "märke"
+
+#: src/Vehicle/PostStatus.php:36
+msgctxt "post status"
+msgid "Preview"
+msgstr "Förhandsvisa"
+
+#: src/Vehicle/PostStatus.php:46
+msgctxt "post status"
+msgid "Expired"
+msgstr "Utgått"
+
+#: src/Vehicle/PostType.php:12
+msgctxt "Post Type General Name"
+msgid "Car Listings"
+msgstr "Bil Annons"
+
+#: src/Vehicle/PostType.php:13
+msgctxt "Post Type Singular Name"
+msgid "Car"
+msgstr "Bil"
+
+#: src/Vehicle/PostType.php:64
+msgctxt "post type slug"
+msgid "vehicle"
+msgstr "fordon"
