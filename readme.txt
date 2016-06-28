@@ -79,8 +79,8 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 * Feature: Added Croatian translation, props Damir.
 * Feature: Added Danish translation, props Flemming.
 * Tweak: Structural changes to **ALL** single content template parts. **Important: If you've overridden any of the single-vehicle/ templates, you will need to remove the 'global $vehicle;' from the top of the file!**
-* Tweak: Structural changes have been made to listings/item.php. Listing image is now wrapper in <div> and various actions have been added. **Important: If you've overridden this template, you'll need to update your own template after updating!**
-* Tweak: Structural changes have been made to dashboard/item.php. Dashboard image is now wrapper in <div> and various actions have been added. **Important: If you've overridden this template, you'll need to update your own template after updating!**
+* Tweak: Structural changes have been made to listings/item.php. Listing image is now wrapper in div and various actions have been added. **Important: If you've overridden this template, you'll need to update your own template after updating!**
+* Tweak: Structural changes have been made to dashboard/item.php. Dashboard image is now wrapper in div and various actions have been added. **Important: If you've overridden this template, you'll need to update your own template after updating!**
 * Tweak: Made date fields that are displayed in single car template filterable via wpcm_single_vehicle_data_fields.
 * Tweak: Non-default filters passed to get_vehicles() AJAX request can now be used via wpcm_get_vehicles_filter_$filter_key.
 * Tweak: Added 'Add New' button on car dashboard.
