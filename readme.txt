@@ -105,6 +105,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 * Tweak: Added 'wpcm_contact_email_link' filter to contact email template.
 * Tweak: Removed focus state on settings tabs, props [JeroenSormani](https://github.com/JeroenSormani).
 * Tweak: Persist on current tab in settings after saving, props [JeroenSormani](https://github.com/JeroenSormani).
+* Tweak: Show message when there are no makes or models, props [JeroenSormani](https://github.com/JeroenSormani).
 * Tweak: Currency: Added Djiboutian Franc.
 * Tweak: Currency: Added Ghanaian Cedi.
 * Tweak: Currency: Added Rwandan Franc.
