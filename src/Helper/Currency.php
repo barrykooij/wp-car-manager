@@ -103,6 +103,9 @@ abstract class Currency {
 			case 'ISK' :
 				$currency_symbol = 'Kr.';
 				break;
+			case 'KES':
+				$currency_symbol = 'KSh';
+				break;
 			case 'KIP' :
 				$currency_symbol = '&#8365;';
 				break;
@@ -215,6 +218,7 @@ abstract class Currency {
 					'NPR' => __( 'Nepali Rupee', 'wp-car-manager' ),
 					'ILS' => __( 'Israeli Shekel', 'wp-car-manager' ),
 					'JPY' => __( 'Japanese Yen', 'wp-car-manager' ),
+					'KES' => __( 'Kenyan Shilling', 'wp-car-manager'),
 					'KIP' => __( 'Lao Kip', 'wp-car-manager' ),
 					'KRW' => __( 'South Korean Won', 'wp-car-manager' ),
 					'MYR' => __( 'Malaysian Ringgits', 'wp-car-manager' ),
