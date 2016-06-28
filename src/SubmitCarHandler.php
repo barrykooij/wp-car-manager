@@ -313,7 +313,7 @@ class SubmitCarHandler {
 		$vehicle->set_status( $new_status );
 
 		// save vehicle
-		$vehicle = wp_car_manager()->service( 'vehicle_repository' )->persist( $vehicle );
+		wp_car_manager()->service( 'vehicle_repository' )->persist( $vehicle );
 	}
 
 	/**
