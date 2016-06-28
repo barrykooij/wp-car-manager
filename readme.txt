@@ -100,6 +100,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 * Tweak: Allow for custom path in ViewManager::display() so others can use it to load own views.
 * Tweak: Replaced the_content() with $vehicle->get_description() in single-vehicle/content.php.
 * Tweak: Made dashboard post statuses filterable via wpcm_dashboard_post_status.
+* Tweak: Added more featured image classes to be hidden on vehicle detail page.
 * Tweak: Currency: Added Djiboutian Franc.
 * Tweak: Currency: Added Ghanaian Cedi.
 * Tweak: Currency: Added Rwandan Franc.
