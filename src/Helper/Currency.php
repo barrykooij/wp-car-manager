@@ -79,6 +79,9 @@ abstract class Currency {
 			case 'GBP' :
 				$currency_symbol = '&pound;';
 				break;
+			case 'GHS':
+				$currency_symbol = 'GH₵';
+				break;
 			case 'HRK' :
 				$currency_symbol = 'Kn';
 				break;
@@ -192,6 +195,7 @@ abstract class Currency {
 					'DKK' => __( 'Danish Krone', 'wp-car-manager' ),
 					'DOP' => __( 'Dominican Peso', 'wp-car-manager' ),
 					'EUR' => __( 'Euros', 'wp-car-manager' ),
+					'GHS' => __( 'Ghanaian Cedi', 'wp-car-manager' ),
 					'HKD' => __( 'Hong Kong Dollar', 'wp-car-manager' ),
 					'HRK' => __( 'Croatia kuna', 'wp-car-manager' ),
 					'HUF' => __( 'Hungarian Forint', 'wp-car-manager' ),
