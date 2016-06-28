@@ -13,10 +13,19 @@ class SubmitCarHandler {
 	/** @var int $listing_id */
 	private $listing_id = 0;
 
+	/** @var bool True if we're editing a listing */
+	private $is_edit = false;
+
 	/**
 	 * Init SubmitCarHandler
 	 */
 	public function init() {
+
+		// check if we're editing
+		if ( ! empty( $_GET['wpcm_edit'] ) && ! empty( $_GET['wpcm_vehicle_id'] ) ) {
+			$this->is_edit    = true;
+			$this->listing_id = absint( $_GET['wpcm_vehicle_id'] );
+		}
 
 		// load form steps
 		$this->load_steps();
@@ -121,8 +130,8 @@ class SubmitCarHandler {
 	 */
 	private function load_steps() {
 
-		// setup default steps, make filterable
-		$this->steps = (array) apply_filters( 'wpcm_submit_car_form_steps', array(
+		// default steps
+		$default_steps = array(
 			'form'    => array(
 				'view'     => array( $this, 'view_form' ),
 				'priority' => 10
@@ -135,7 +144,17 @@ class SubmitCarHandler {
 				'view'     => array( $this, 'view_done' ),
 				'priority' => 30
 			),
-		) );
+		);
+
+		// check if edit
+		if ( ! $this->is_edit ) {
+			// apply add filters
+			$this->steps = (array) apply_filters( 'wpcm_submit_car_form_steps_new', $default_steps );
+		} else {
+			// apply edit filters
+			$this->steps = (array) apply_filters( 'wpcm_submit_car_form_steps_edit', $default_steps );
+		}
+
 
 		// sort steps by priority
 		uasort( $this->steps, array( $this, 'sort_by_priority' ) );
@@ -204,21 +223,25 @@ class SubmitCarHandler {
 	 */
 	public function view_form() {
 
-		// get listing id (0 if new)
-		$listing_id = ( ( ! empty( $_GET['edit'] ) ) ? absint( $_GET['edit'] ) : 0 );
-		/** @todo probably need to change this to wpcm_vehicle_id */
-
 		/** @var Vehicle\Car $vehicle */
 		try {
-			$vehicle = wp_car_manager()->service( 'vehicle_factory' )->make( $listing_id );
+			$vehicle = wp_car_manager()->service( 'vehicle_factory' )->make( $this->listing_id );
+
+			// setup action URL
+			$action_url = add_query_arg( 'wpcm_step', $this->step, \Never5\WPCarManager\Helper\Pages::get_page_submit() );
+
+			// check we're in edit
+			if ( $this->is_edit ) {
+				$action_url = add_query_arg( array( 'wpcm_edit' => 1, 'wpcm_vehicle_id' => $_GET['wpcm_vehicle_id']), $action_url );
+			}
 
 			// load template
 			wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form', '', array(
 				'vehicle'            => $vehicle,
-				'action'             => add_query_arg( 'wpcm_step', $this->step, \Never5\WPCarManager\Helper\Pages::get_page_submit() ),
+				'action'             => $action_url,
 				'submit_button_text' => ( ( 0 != $vehicle->get_id() ) ? __( 'Save Changes', 'wp-car-manager' ) : __( 'Preview Car', 'wp-car-manager' ) ),
 				'can_post_listing'   => wp_car_manager()->service( 'user_manager' )->can_post_listing(),
-				'can_edit_listing'   => wp_car_manager()->service( 'user_manager' )->can_edit_listing( $listing_id ),
+				'can_edit_listing'   => wp_car_manager()->service( 'user_manager' )->can_edit_listing( $this->listing_id ),
 			) );
 		} catch ( \Exception $e ) {
 			wp_car_manager()->service( 'template_manager' )->get_template_part( 'submit-car-form/disabled', '' );

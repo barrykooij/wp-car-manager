@@ -57,8 +57,11 @@ class Pages {
 		// get submit url
 		$url = self::get_page_submit();
 
-		// add the query arg
-		$url = add_query_arg( 'edit', $vehicle_id, $url );
+		// add the wpcm_edit query var
+		$url = add_query_arg( 'wpcm_edit', 1, $url );
+
+		// add wpcm_vehicle_id query var
+		$url = add_query_arg( 'wpcm_vehicle_id', $vehicle_id, $url );
 
 		// return the filterable URL
 		return apply_filters( 'wpcm_page_url_edit', $url, $vehicle_id );
