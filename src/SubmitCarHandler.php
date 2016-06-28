@@ -132,15 +132,11 @@ class SubmitCarHandler {
 
 		// default steps
 		$default_steps = array(
-			'form'    => array(
+			'form' => array(
 				'view'     => array( $this, 'view_form' ),
 				'priority' => 10
 			),
-			'preview' => array(
-				'view'     => array( $this, 'view_preview' ),
-				'priority' => 20
-			),
-			'done'    => array(
+			'done' => array(
 				'view'     => array( $this, 'view_done' ),
 				'priority' => 30
 			),
@@ -148,6 +144,13 @@ class SubmitCarHandler {
 
 		// check if edit
 		if ( ! $this->is_edit ) {
+
+			// add preview step to 'new' listing steps (editing has no preview)
+			$default_steps['preview'] = array(
+				'view'     => array( $this, 'view_preview' ),
+				'priority' => 20
+			);
+
 			// apply add filters
 			$this->steps = (array) apply_filters( 'wpcm_submit_car_form_steps_new', $default_steps );
 		} else {
@@ -232,7 +235,9 @@ class SubmitCarHandler {
 
 			// check we're in edit
 			if ( $this->is_edit ) {
-				$action_url = add_query_arg( array( 'wpcm_edit' => 1, 'wpcm_vehicle_id' => $_GET['wpcm_vehicle_id']), $action_url );
+				$action_url = add_query_arg( array( 'wpcm_edit'       => 1,
+				                                    'wpcm_vehicle_id' => $_GET['wpcm_vehicle_id']
+				), $action_url );
 			}
 
 			// load template
