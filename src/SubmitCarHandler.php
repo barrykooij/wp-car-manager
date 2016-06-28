@@ -236,7 +236,7 @@ class SubmitCarHandler {
 			// check we're in edit
 			if ( $this->is_edit ) {
 				$action_url = add_query_arg( array( 'wpcm_edit'       => 1,
-				                                    'wpcm_vehicle_id' => $_GET['wpcm_vehicle_id']
+				                                    'wpcm_vehicle_id' => $this->listing_id
 				), $action_url );
 			}
 
