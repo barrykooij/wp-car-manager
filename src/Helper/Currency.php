@@ -73,6 +73,9 @@ abstract class Currency {
 			case 'EGP' :
 				$currency_symbol = 'EGP';
 				break;
+			case 'ETB':
+				$currency_symbol = 'ETB';
+				break;
 			case 'EUR' :
 				$currency_symbol = '&euro;';
 				break;
@@ -197,6 +200,7 @@ abstract class Currency {
 					'DJF' => __( 'Djiboutian Franc', 'wp-car-manager' ),
 					'DKK' => __( 'Danish Krone', 'wp-car-manager' ),
 					'DOP' => __( 'Dominican Peso', 'wp-car-manager' ),
+					'ETB' => __( 'Ethiopian Birr', 'wp-car-manager' ),
 					'EUR' => __( 'Euros', 'wp-car-manager' ),
 					'GHS' => __( 'Ghanaian Cedi', 'wp-car-manager' ),
 					'HKD' => __( 'Hong Kong Dollar', 'wp-car-manager' ),
