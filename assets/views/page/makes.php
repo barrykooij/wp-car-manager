@@ -50,6 +50,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 								</td>
 							</tr>
 						<?php endforeach; ?>
+					<?php else : ?>
+						<tr class="no-items">
+							<td class="colspanchange" colspan="3"><?php _e( 'No Makes found', 'wp-car-manager' ); ?></td>
+						</tr>
 					<?php endif; ?>
 					</tbody>
 
