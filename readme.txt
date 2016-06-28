@@ -103,6 +103,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 * Tweak: Added more featured image classes to be hidden on vehicle detail page.
 * Tweak: Included default styling for buttons because many themes lack default button styling.
 * Tweak: Added 'wpcm_contact_email_link' filter to contact email template.
+* Tweak: Removed focus state on settings tabs, props [JeroenSormani](https://github.com/JeroenSormani).
 * Tweak: Currency: Added Djiboutian Franc.
 * Tweak: Currency: Added Ghanaian Cedi.
 * Tweak: Currency: Added Rwandan Franc.
