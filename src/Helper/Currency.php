@@ -133,6 +133,9 @@ abstract class Currency {
 			case 'RUB' :
 				$currency_symbol = '&#1088;&#1091;&#1073;.';
 				break;
+			case 'RWF':
+				$currency_symbol = 'FRw';
+				break;
 			case 'SEK' :
 				$currency_symbol = '&#107;&#114;';
 				break;
@@ -218,6 +221,7 @@ abstract class Currency {
 					'GBP' => __( 'Pounds Sterling', 'wp-car-manager' ),
 					'RON' => __( 'Romanian Leu', 'wp-car-manager' ),
 					'RUB' => __( 'Russian Ruble', 'wp-car-manager' ),
+					'RWF' => __( 'Rwandan Franc', 'wp-car-manager' ),
 					'SGD' => __( 'Singapore Dollar', 'wp-car-manager' ),
 					'ZAR' => __( 'South African rand', 'wp-car-manager' ),
 					'SEK' => __( 'Swedish Krona', 'wp-car-manager' ),

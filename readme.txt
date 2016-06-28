@@ -102,6 +102,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 * Tweak: Made dashboard post statuses filterable via wpcm_dashboard_post_status.
 * Tweak: Currency: Added Djiboutian Franc.
 * Tweak: Currency: Added Ghanaian Cedi.
+* Tweak: Currency: Added Rwandan Franc.
 * Tweak: Updated Italian translation, props VGS Service.
 
 = 1.2.1: March 17, 2016 =
