@@ -5,3 +5,5 @@
 	<span class="wpcm-preview-or">or</span>
 	<a href="<?php echo $edit_url; ?>" class="wpcm-btn-link"><?php _e( 'Edit listing', 'wp-car-manager' ); ?></a>
 </div>
+
+<h1><?php echo $vehicle->get_title(); ?></h1>
