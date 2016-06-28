@@ -39,7 +39,7 @@ function wp_car_manager() {
 	static $instance;
 	if ( is_null( $instance ) ) {
 		$class = 'Never5\WPCarManager\Plugin';
-		$instance = new $class( '1.3.0-beta1', __FILE__ );
+		$instance = new $class( '1.3.0', __FILE__ );
 	}
 
 	return $instance;
