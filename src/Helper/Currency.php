@@ -47,6 +47,9 @@ abstract class Currency {
 			case 'BGN' :
 				$currency_symbol = '&#1083;&#1074;.';
 				break;
+			case 'BIF':
+				$currency_symbol = 'FBu';
+				break;
 			case 'BRL' :
 				$currency_symbol = '&#82;&#36;';
 				break;
@@ -201,6 +204,7 @@ abstract class Currency {
 					'BDT' => __( 'Bangladeshi Taka', 'wp-car-manager' ),
 					'BRL' => __( 'Brazilian Real', 'wp-car-manager' ),
 					'BGN' => __( 'Bulgarian Lev', 'wp-car-manager' ),
+					'BIF' => __( 'Burundian Franc', 'wp-car-manager' ),
 					'CAD' => __( 'Canadian Dollars', 'wp-car-manager' ),
 					'CLP' => __( 'Chilean Peso', 'wp-car-manager' ),
 					'CNY' => __( 'Chinese Yuan', 'wp-car-manager' ),

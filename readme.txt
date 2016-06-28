@@ -107,6 +107,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 * Tweak: Currency: Added Ugandan Shilling.
 * Tweak: Currency: Added Kenyan Shilling.
 * Tweak: Currency: Added Tanzanian Shilling.
+* Tweak: Currency: Added Burundian Franc.
 * Tweak: Updated Italian translation, props VGS Service.
 
 = 1.2.1: March 17, 2016 =
