@@ -3,7 +3,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-$active_tab = isset( $_GET['tab'] ) ? $_GET['tab'] : 'general';
+// get active tab
+$active_tab = ( isset( $_GET['tab'] ) ? esc_attr( $_GET['tab'] ) : 'general' );
 ?>
 <div class="wrap nosubsub wpcm-page-settings">
 	<h2><?php _e( 'Settings', 'wp-car-manager' ); ?></h2>
@@ -15,7 +16,10 @@ $active_tab = isset( $_GET['tab'] ) ? $_GET['tab'] : 'general';
 		<h2 class="nav-tab-wrapper">
 			<?php
 			foreach ( $fields as $key => $section ) {
-				$active = $key == $active_tab ? 'nav-tab-active' : '';
+
+				// check if tab is active
+				$active = ( ( $key == $active_tab ) ? 'nav-tab-active' : '' );
+
 				echo '<a href="#settings-' . sanitize_title( $key ) . '" class="nav-tab ' . $active . '"">' . esc_html( $section[0] ) . '</a>';
 			}
 			?>
@@ -30,7 +34,10 @@ $active_tab = isset( $_GET['tab'] ) ? $_GET['tab'] : 'general';
 
 		// loop through sections
 		foreach ( $fields as $key => $section ) {
-			$show = $key == $active_tab ? '' : 'hidden';
+
+			// check if we're showing this tab
+			$show = ( ( $key == $active_tab ) ? '' : 'hidden' );
+
 			echo '<div id="settings-' . sanitize_title( $key ) . '" class="settings_panel ' . $show . '">';
 			echo '<table class="form-table">';
 
