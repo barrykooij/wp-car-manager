@@ -7,7 +7,7 @@ jQuery( function ( $ ) {
 
         // Set url parameter
         var href = window.location.href;
-        href = href.replace( /\&tab=[a-zA-Z0-9-_]+/g, '' );
+        href = href.replace( /\&tab=[a-zA-Z0-9\-_]+/g, '' );
         href = href + '&tab=' + $( this ).attr( 'href' ).replace( /\#settings-/, '' );
         window.history.replaceState( 'Object', 'Title', href );
         

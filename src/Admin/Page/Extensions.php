@@ -80,16 +80,16 @@ class Extensions {
 					echo '<p>' . sprintf( __( 'Extend WP Car Manager with its powerful free and paid extensions. %sClick here to browse all extensions%s', 'wp-car-manager' ), '<a href="https://www.wpcarmanager.com/extensions/?utm_source=plugin&utm_medium=link&utm_campaign=extensions-top" target="_blank">', '</a>' ) . '</p>' . PHP_EOL;
 					?>
 					<h2 class="nav-tab-wrapper">
-						<a href="#available-extensions" class="nav-tab nav-tab-active">Available Extensions</a>
+						<a href="#settings-available-extensions" class="nav-tab nav-tab-active">Available Extensions</a>
 						<?php if ( count( $installed_extensions ) > 0 ) { ?>
-							<a href="#installed-extensions" class="nav-tab">Installed Extensions</a><?php } ?>
+							<a href="#settings-installed-extensions" class="nav-tab">Installed Extensions</a><?php } ?>
 					</h2>
 					<?php
 
 					// Available Extensions
 					if ( count( $extensions ) > 0 ) {
 
-						echo '<div id="available-extensions" class="settings_panel">' . PHP_EOL;
+						echo '<div id="settings-available-extensions" class="settings_panel">' . PHP_EOL;
 						echo '<div class="theme-browser wpcm-extensions">';
 
 						foreach ( $extensions as $extension ) {
@@ -123,7 +123,7 @@ class Extensions {
 
 
 					} else if ( count( $installed_extensions ) > 0 ) {
-						echo '<div id="available-extensions" class="settings_panel">' . PHP_EOL;
+						echo '<div id="settings-available-extensions" class="settings_panel">' . PHP_EOL;
 						echo '<p>Wow, looks like you installed all of our extensions. Thanks, you rock!</p>';
 						echo '</div>';
 					}
@@ -131,7 +131,7 @@ class Extensions {
 					// Installed Extensions
 					if ( count( $installed_extensions ) > 0 ) {
 
-						echo '<div id="installed-extensions" class="settings_panel">' . PHP_EOL;
+						echo '<div id="settings-installed-extensions" class="settings_panel">' . PHP_EOL;
 
 						echo '<div class="theme-browser wpcm-extensions">';
 						foreach ( $installed_extensions as $extension ) {

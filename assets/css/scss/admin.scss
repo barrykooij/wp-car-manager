@@ -227,6 +227,15 @@
       float: right;
     }
   }
+
+  #settings-available-extensions {
+    display: block;
+  }
+
+  #settings-installed-extensions {
+    display: none;
+  }
+
   .wpcm-extensions {
     padding: 15px 0;
     overflow: hidden;
