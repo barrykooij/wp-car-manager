@@ -67,6 +67,10 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 == Changelog ==
 
+= 1.3.1: August xx, 2016 =
+* Tweak: Fixed a visual bug on the extensions tab.
+* Tweak: Updated German translations, props Robert from Switzerland.
+
 = 1.3.0: June 28, 2016 =
 * Feature: Car listings now fully support pagination, amount of vehicles per page can be set in settings.
 * Feature: Added 'sold' banner that is displayed when listing is sold.
