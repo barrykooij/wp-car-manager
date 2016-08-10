@@ -69,8 +69,9 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 = 1.3.1: August xx, 2016 =
 * Tweak: Fixed a visual bug on the extensions tab.
-* Tweak: Updated German translations, props Robert from Switzerland.
-* Tweak: Updated Italian translations, props Dario Gattuso.
+* Tweak: Updated German translation, props Robert from Switzerland.
+* Tweak: Updated Italian translation, props Dario Gattuso.
+* Tweak: Updated Dutch translation, props Ad.
 
 = 1.3.0: June 28, 2016 =
 * Feature: Car listings now fully support pagination, amount of vehicles per page can be set in settings.
