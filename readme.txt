@@ -4,7 +4,7 @@ Donate link: http://www.barrykooij.com/donate/
 Tags: car, vehicle, motor, sell, car listings, cars, auto, car market, marketplace, car dealer, car classifieds, auto dealer, auto classifieds, autostock, selling cars, dealer, car-dealer, cardealer, automotive, sales, lots, auto, motorcycle, bike, boat, airplane, rvs, tractors, motorhomes, trailers, car sales
 Requires at least: 3.8
 Tested up to: 4.6
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,7 +67,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 == Changelog ==
 
-= 1.3.1: August xx, 2016 =
+= 1.3.1: August 12, 2016 =
 * Tweak: Added 'wpcm_currency_symbol' filter.
 * Tweak: Use listing author's email address for email button.
 * Tweak: Fixed a visual bug on the extensions tab.
