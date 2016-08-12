@@ -87,7 +87,25 @@ if ( ! function_exists( 'wpcm_template_single_features' ) ) {
 
 if ( ! function_exists( 'wpcm_template_single_contact' ) ) {
 	function wpcm_template_single_contact( $vehicle ) {
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/contact', '', array( 'vehicle' => $vehicle ) );
+
+		// get author		
+		$author = get_user_by( 'ID', $vehicle->get_author() );
+
+		// default empty email
+		$email = '';
+
+		// check if listing creator is a 'car_seller'
+		if ( in_array( 'car_seller', (array) $author->roles ) ) {
+			$email = $author->user_email;
+		}
+
+		// if email is empty, use contact email setting
+		if ( empty ( $email ) ) {
+			$email = wp_car_manager()->service( 'settings' )->get_option( 'contact_email' );	
+		}
+		
+
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/contact', '', array( 'vehicle' => $vehicle, 'email' => $email ) );
 	}
 }
 

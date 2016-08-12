@@ -69,6 +69,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 = 1.3.1: August xx, 2016 =
 * Tweak: Added 'wpcm_currency_symbol' filter.
+* Tweak: Use listing author's email address for email button.
 * Tweak: Fixed a visual bug on the extensions tab.
 * Tweak: Currency: Added CFA Franc.
 * Tweak: Updated German translation, props Robert from Switzerland.
