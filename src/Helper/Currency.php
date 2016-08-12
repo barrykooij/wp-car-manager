@@ -180,7 +180,7 @@ abstract class Currency {
 				break;
 		}
 
-		return $currency_symbol;
+		return apply_filters( 'wpcm_currency_symbol', $currency_symbol, $currency );
 	}
 
 	/**
