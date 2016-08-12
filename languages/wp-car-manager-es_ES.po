@@ -1,19 +1,19 @@
 # Copyright (C) 2016 Never5
 # This file is distributed under the GPL v2.
 # Translators:
-# Barry Kooij <mail@barrykooij.nl>, 2015-2016
+# Manuel Marín <mjmarintorralbo@hotmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Car Manager\n"
 "Report-Msgid-Bugs-To: https://github.com/barrykooij/wp-car-manager/issues\n"
 "POT-Creation-Date: 2016-07-11 09:01:01+00:00\n"
-"PO-Revision-Date: 2016-08-10 09:44+0000\n"
-"Last-Translator: Barry Kooij <mail@barrykooij.nl>\n"
-"Language-Team: Dutch (Netherlands) (http://www.transifex.com/barrykooijplugins/wp-car-manager/language/nl_NL/)\n"
+"PO-Revision-Date: 2016-08-11 00:15+0000\n"
+"Last-Translator: Manuel Marín <mjmarintorralbo@hotmail.com>\n"
+"Language-Team: Spanish (Spain) (http://www.transifex.com/barrykooijplugins/wp-car-manager/language/es_ES/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl_NL\n"
+"Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: grunt-wp-i18n 0.4.9\n"
 
@@ -27,538 +27,538 @@ msgstr "170"
 
 #: assets/views/meta-box/gallery.php:15 assets/views/meta-box/gallery.php:30
 msgid "Delete image"
-msgstr "Verwijder afbeelding"
+msgstr "Borrar imagen"
 
 #: assets/views/meta-box/gallery.php:15 assets/views/meta-box/gallery.php:31
 #: templates/dashboard/buttons/delete.php:1
 #: templates/submit-car-form/images.php:28
 msgid "Delete"
-msgstr "Verwijderen"
+msgstr "Borrar"
 
 #: assets/views/meta-box/gallery.php:28
 msgid "Add Images to Gallery"
-msgstr "Voeg afbeeldingen toe aan gallerij"
+msgstr "Añadir imágenes a la galería"
 
 #: assets/views/meta-box/gallery.php:29
 msgid "Add to gallery"
-msgstr "Voeg toe aan galerij"
+msgstr "Añadir a la galería"
 
 #: assets/views/meta-box/gallery.php:31
 msgid "Add gallery images"
-msgstr "Voeg galerij afbeeldingen toe"
+msgstr "Añadir galería de imágenes"
 
 #: assets/views/meta-box/input/select-model.php:4
 #: templates/listings/filters/model.php:3
 #: templates/submit-car-form/form-fields/select-model.php:3
 #: templates/submit-car-form/form-fields/select-model.php:15
 msgid "Select Model"
-msgstr "Selecteer Model"
+msgstr "Selecciona Modelo"
 
 #: assets/views/page/edit-make-model.php:16 assets/views/page/makes.php:16
 #: assets/views/page/makes.php:63 assets/views/page/makes.php:92
 #: assets/views/page/models.php:16 assets/views/page/models.php:63
 #: assets/views/page/models.php:93
 msgid "Name"
-msgstr "Naam"
+msgstr "Nombre"
 
 #: assets/views/page/edit-make-model.php:19 assets/views/page/makes.php:95
 #: assets/views/page/models.php:96
 msgid "The name is how it appears on your site."
-msgstr "De naam zoals deze getoond wordt op je website"
+msgstr "El \"nombre\" es con el que aparece en tu web."
 
 #: assets/views/page/edit-make-model.php:23 assets/views/page/makes.php:18
 #: assets/views/page/makes.php:64 assets/views/page/makes.php:98
 #: assets/views/page/models.php:18 assets/views/page/models.php:64
 #: assets/views/page/models.php:99
 msgid "Slug"
-msgstr "Slug"
+msgstr "Etiqueta"
 
 #: assets/views/page/edit-make-model.php:26 assets/views/page/makes.php:101
 #: assets/views/page/models.php:102
 msgid ""
 "The “slug” is the URL-friendly version of the name. It is usually all "
 "lowercase and contains only letters, numbers, and hyphens."
-msgstr "De \"slug\" is de URL-vriendelijke versie van de naam. Deze is normaal gesproken in kleine letters en bevat enkel letters, cijfers en streepjes."
+msgstr "La \"Etiqueta\" es la versión URL-amigable del \"Nombre\". Suele ser un nombre corto y contiene sólo letras, números y guiones."
 
 #: assets/views/page/edit-make-model.php:32
 msgid "Update"
-msgstr "Update"
+msgstr "Actualizar"
 
 #: assets/views/page/makes.php:49
 msgid "Configure Models"
-msgstr "Configureer Modellen"
+msgstr "Configurar modelos"
 
 #: assets/views/page/makes.php:55
 msgid "No Makes found"
-msgstr "Geen Merken gevonden"
+msgstr "Marcas no encontradas"
 
 #: assets/views/page/makes.php:76
 msgid "What are Makes?"
-msgstr "Wat zijn Merken?"
+msgstr "Qué son las \"Marcas\""
 
 #: assets/views/page/makes.php:77
 msgid ""
 "On this page you manage your vehicles makes. You can add a new make with the"
 " form below and manage your existing makes on the right. To manage a make’s "
 "models, click the wheel button."
-msgstr "Op deze pagina beheer je jouw voertuig merken. Je kan nieuwe merken toevoegen via het formulier hieronder en bestaande merken bewerken in de lijst rechts. Klik op het tandwiel icoon om een merk te bewerken."
+msgstr "En esta página usted configura las Marcas de los vehículos. Puede añadir una nueva marca usando el siguiente formulario y configurar las marcas existentes a la derecha. Para configurar una marca, haga click en el botón \"rueda\""
 
 #: assets/views/page/makes.php:78 assets/views/page/models.php:77
 msgid "You can read more about Makes and Models here"
-msgstr "Je kan hier meer lezen over Merken en Modellen"
+msgstr "Puede leer más sobre Marcas y Modelos aquí"
 
 #: assets/views/page/makes.php:82 assets/views/page/makes.php:105
 #: src/Taxonomies.php:93
 msgid "Add New Make"
-msgstr "Voeg nieuwe merk toe"
+msgstr "Añade una nueva Marca"
 
 #: assets/views/page/models.php:55
 msgid "No Models found"
-msgstr "Geen Modellen gevonden"
+msgstr "Modelos no encontramos"
 
 #: assets/views/page/models.php:75
 msgid "What are Models?"
-msgstr "Wat zijn Modellen?"
+msgstr "Qué son los Modelos?"
 
 #: assets/views/page/models.php:76
 msgid ""
 "On this page you manage your vehicles models. You can add a new model with "
 "the form below and manage your existing models on the right. A model is "
 "always linked to one make."
-msgstr "Op deze pagina beheer je jouw voertuig modellen. Je kan nieuwe modellen toevoegen via het formulier hieronder en bestaande modellen bewerken in de lijst rechts. Klik op het tandwiel icoon om een model te bewerken. Een model is altijd gelinkt aan een merk."
+msgstr "Es esta página usted configura los Modelos de los vehículos. Puede añadir un nuevo Modelo usando el siguiente formulario y configurar los Modelos existentes a la derecha. Los Modelos pertenecen siempre a una Marca determinada."
 
 #: assets/views/page/models.php:81 assets/views/page/models.php:106
 msgid "Add New Model"
-msgstr "Voeg nieuwe model toe"
+msgstr "Añade un nuevo Modelo"
 
 #: assets/views/page/settings.php:10 src/Admin/Page/Settings.php:11
 msgid "Settings"
-msgstr "Instellingen"
+msgstr "Ajustes"
 
 #: assets/views/page/settings.php:32
 msgid "Settings successfully saved"
-msgstr "Instellingen opgeslagen"
+msgstr "Ajustes guardados con éxito."
 
 #: assets/views/page/settings.php:106 src/SubmitCarHandler.php:253
 msgid "Save Changes"
-msgstr "Sla wijzigingen op"
+msgstr "Cambios guardados"
 
 #: includes/template-functions.php:23
 msgid "Submit listing"
-msgstr "Vermelding toevoegen"
+msgstr "enviar anuncio"
 
 #: includes/template-functions.php:199
 msgid "Listing Title"
-msgstr "Vermelding Titel"
+msgstr "Título de Anuncio"
 
 #: includes/template-functions.php:219 src/Util/Onboarding.php:108
 msgid "Description"
-msgstr "Omschrijving"
+msgstr "Descripción"
 
 #: includes/template-functions.php:226
 msgid ""
 "A short description of the vehicle. Does not need to include features, these"
 " can be selected separately below."
-msgstr "Een korte omschrijving van het voertuig. Hoeft geen kenmerken te bevatten, deze kunnen onderaan los toegevoegd worden."
+msgstr "Una descripción corta del vehículo. No es necesario incluir extras, se puede incluir por separado más abajo."
 
 #: includes/template-functions.php:247 src/Admin/MetaBox/CarData.php:14
 msgid "Car Data"
-msgstr "Auto Data"
+msgstr "Datos del Coche"
 
 #: includes/template-functions.php:255
 msgid "(optional)"
-msgstr "(optioneel)"
+msgstr "(opcional)"
 
 #: src/Admin/CustomColumns.php:47 src/Vehicle/Data.php:29
 #: templates/listings/filters/make.php:2
 #: templates/vehicle-data/data-make.php:8
 msgid "Make"
-msgstr "Merk"
+msgstr "Marca"
 
 #: src/Admin/CustomColumns.php:48 src/Vehicle/Data.php:35
 #: templates/listings/filters/model.php:2
 #: templates/vehicle-data/data-model.php:8
 msgid "Model"
-msgstr "Model"
+msgstr "Modelo"
 
 #: src/Admin/CustomColumns.php:49 src/Vehicle/Data.php:48
 #: templates/vehicle-data/data-price.php:8
 msgid "Price"
-msgstr "Prijs"
+msgstr "Precio"
 
 #: src/Admin/CustomColumns.php:50 src/Vehicle/Data.php:55
 #: templates/vehicle-data/data-mileage.php:8
 msgid "Mileage"
-msgstr "Kilometerstand"
+msgstr "Kilometros"
 
 #: src/Admin/CustomColumns.php:51
 msgid "FR Date"
-msgstr "Bouwjaar"
+msgstr "Fecha matriculación"
 
 #: src/Admin/CustomColumns.php:52
 msgid "Expires"
-msgstr "Verloopt"
+msgstr "Expira"
 
 #: src/Admin/CustomColumns.php:53
 msgid "Actions"
-msgstr "Acties"
+msgstr "Acciones"
 
 #: src/Admin/CustomColumns.php:91 src/Ajax/GetDashboard.php:61
 #: src/Ajax/GetVehicleResults.php:95 templates/single-vehicle/image.php:37
 msgid "Placeholder"
-msgstr "Placeholder"
+msgstr "Marcador de posición"
 
 #: src/Admin/MetaBox/Gallery.php:14
 msgid "Car Gallery"
-msgstr "Auto Galerij"
+msgstr "Galería de Coches"
 
 #: src/Admin/MetaBox/ListingData.php:14
 msgid "Listing Data"
-msgstr "Vermelding Data"
+msgstr "Listado de Anuncios"
 
 #: src/Admin/MetaBox/ListingData.php:37
 msgid "Expiry Date:"
-msgstr "Verloop Datum:"
+msgstr "Expira el día:"
 
 #: src/Admin/MetaBox/ListingData.php:43
 msgid "Sold?"
-msgstr "Verkocht?"
+msgstr "Vendido?"
 
 #: src/Admin/MetaBox/ShortDescription.php:13
 msgid "Short Description"
-msgstr "Korte Omschrijving"
+msgstr "Descripción corta"
 
 #: src/Admin/Page/Extensions.php:13 src/Admin/Page/Extensions.php:47
 #: src/Util/Onboarding.php:155
 msgid "Extensions"
-msgstr "Extensies"
+msgstr "Extensiones"
 
 #: src/Admin/Page/Extensions.php:80
 msgid ""
 "Extend WP Car Manager with its powerful free and paid extensions. %sClick "
 "here to browse all extensions%s"
-msgstr "Breid WP Car Manager uit met haar krachtige gratis en betaalde extensies. %sKlik hier om alle extensies te zien%s"
+msgstr "Amplíe WC Car Manager además de los recursos gratuitos y contrate sus extensiones. Haga Click aquí para ver todas las extensiones."
 
 #: src/Admin/Page/Extensions.php:167
 msgid "Couldn't load extensions, please try again later."
-msgstr "Kan de extensies niet laden, probeer het later opnieuw."
+msgstr "No ha sido posible cargar las extensiones, por favor inténtelo más tarde."
 
 #: src/Admin/Page/Makes.php:13 src/Taxonomies.php:88
 msgid "Makes & Models"
-msgstr "Merken & Modellen"
+msgstr "Marcas y Modelos"
 
 #: src/Admin/Page/Makes.php:141
 msgid "Edit %s"
-msgstr "Bewerk %s"
+msgstr "Edita %s"
 
 #: src/Admin/Page/Makes.php:156
 msgid "%s Models"
-msgstr "%s Modellen"
+msgstr "%s Modelos"
 
 #: src/Admin/Page/Makes.php:163
 msgid "Makes"
-msgstr "Merken"
+msgstr "Marcas"
 
 #: src/Ajax/CreatePage.php:46 src/Assets.php:131
 msgid "Submit Car"
-msgstr "Auto Toevoegen"
+msgstr "Grabar Coche"
 
 #: src/Ajax/CreatePage.php:51
 msgid "My Cars"
-msgstr "Mijn Auto's"
+msgstr "Mis Coches"
 
 #: src/Ajax/CreatePage.php:54 src/Vehicle/PostType.php:30
 msgid "Cars"
-msgstr "Auto's"
+msgstr "Coches"
 
 #: src/Ajax/GetDashboard.php:67 src/Vehicle/PostStatus.php:202
 msgid "Expired"
-msgstr "Verlopen"
+msgstr "Expirado"
 
 #: src/Ajax/SaveVehicle.php:33
 msgid "Missing vehicle ID."
-msgstr "Ontbrekend voertuig ID"
+msgstr "Falta ID. del vehículo"
 
 #: src/Ajax/SaveVehicle.php:49
 msgid "Not allowed to create/edit vehicle."
-msgstr "Niet toegestaan om voertuigen aan te maken/bewerken."
+msgstr "No permitido editar/crear vehículo."
 
 #: src/Ajax/SaveVehicle.php:73
 msgid "Please enter a username."
-msgstr "Vul een gebruikersnaam in."
+msgstr "Por favor introducir un nombre de usuario."
 
 #: src/Ajax/SaveVehicle.php:78
 msgid "Please enter your email address."
-msgstr "Vul een email adres in."
+msgstr "Por favor introducir cuenta de correo electrónico"
 
 #: src/Ajax/SaveVehicle.php:106
 msgid "User could not log in, please contact support."
-msgstr "Gebruiker kan niet ingelogd worden, neem contact op met support."
+msgstr "No se ha podido logear el usuario, contacte con soporte, por favor."
 
 #: src/Ajax/SaveVehicle.php:117
 msgid "Incorrect First Registration Date format"
-msgstr "Incorrect bouwjaar format"
+msgstr "Formato de Fecha de Primer Registro Incorrecto."
 
 #: src/Assets.php:71 src/Assets.php:129
 msgid "No models found"
-msgstr "Geen modellen gevonden"
+msgstr "Modelos no encontrados"
 
 #: src/Assets.php:72 src/Assets.php:130 templates/listings/filters/model.php:4
 msgid "Select make first"
-msgstr "Kies eerst een merk"
+msgstr "Seleccionar Marca primero"
 
 #: src/Assets.php:132
 msgid "Submitting your data, please wait..."
-msgstr "Data wordt verstuurd, een moment geduld..."
+msgstr "Grabando sus datos, espere por favor."
 
 #: src/Assets.php:166
 msgid "Are you sure you want to delete %s?"
-msgstr "Weet u zeker dat u %s wilt verwijderen?"
+msgstr "Está seguro que quiere borrar %s?"
 
 #: src/Assets.php:167
 msgid ""
 "Something went wrong when trying to delete your vehicle, please try again."
-msgstr "Er ging iets mis met het verwijderen van uw voertuig, probeer het opnieuw."
+msgstr "Algo salió mal cuando intentaba borrar su vehículo, inténtelo de nuevo, por favor."
 
 #: src/Extension/Extension.php:152
 msgid "License successfully activated."
-msgstr "Licentie succesvol geactiveerd."
+msgstr "Acceso activado satisfactoriamente."
 
 #: src/Helper/Currency.php:201
 msgid "United Arab Emirates Dirham"
-msgstr ""
+msgstr "Dirham Emiratos Árabes Unidos"
 
 #: src/Helper/Currency.php:202
 msgid "Argentine Peso"
-msgstr ""
+msgstr "Peso Armentina"
 
 #: src/Helper/Currency.php:203
 msgid "Australian Dollars"
-msgstr ""
+msgstr "Dólar Australia"
 
 #: src/Helper/Currency.php:204
 msgid "Bangladeshi Taka"
-msgstr ""
+msgstr "Taka Bangladesh"
 
 #: src/Helper/Currency.php:205
 msgid "Brazilian Real"
-msgstr ""
+msgstr "Real Brasil"
 
 #: src/Helper/Currency.php:206
 msgid "Bulgarian Lev"
-msgstr ""
+msgstr "Lev Bulgaria"
 
 #: src/Helper/Currency.php:207
 msgid "Burundian Franc"
-msgstr ""
+msgstr "Franco Burundi"
 
 #: src/Helper/Currency.php:208
 msgid "Canadian Dollars"
-msgstr ""
+msgstr "Dólar Canadá"
 
 #: src/Helper/Currency.php:209
 msgid "Chilean Peso"
-msgstr ""
+msgstr "Peso Chile"
 
 #: src/Helper/Currency.php:210
 msgid "Chinese Yuan"
-msgstr ""
+msgstr "Yuan China"
 
 #: src/Helper/Currency.php:211
 msgid "Colombian Peso"
-msgstr ""
+msgstr "Peso Colombia"
 
 #: src/Helper/Currency.php:212
 msgid "Czech Koruna"
-msgstr ""
+msgstr "Corona Repùblica Checa"
 
 #: src/Helper/Currency.php:213
 msgid "Djiboutian Franc"
-msgstr ""
+msgstr "Franco Djiboutia"
 
 #: src/Helper/Currency.php:214
 msgid "Danish Krone"
-msgstr ""
+msgstr "Corona Dinamarca"
 
 #: src/Helper/Currency.php:215
 msgid "Dominican Peso"
-msgstr ""
+msgstr "Peso República Dominicana"
 
 #: src/Helper/Currency.php:216
 msgid "Ethiopian Birr"
-msgstr ""
+msgstr "Birr Etiopía"
 
 #: src/Helper/Currency.php:217
 msgid "Euros"
-msgstr ""
+msgstr "Euros"
 
 #: src/Helper/Currency.php:218
 msgid "Ghanaian Cedi"
-msgstr ""
+msgstr "Cedi Ghana"
 
 #: src/Helper/Currency.php:219
 msgid "Hong Kong Dollar"
-msgstr ""
+msgstr "Dólar Hong Kong"
 
 #: src/Helper/Currency.php:220
 msgid "Croatia kuna"
-msgstr ""
+msgstr "Kuna Croacia"
 
 #: src/Helper/Currency.php:221
 msgid "Hungarian Forint"
-msgstr ""
+msgstr "Florín Hungría"
 
 #: src/Helper/Currency.php:222
 msgid "Icelandic krona"
-msgstr ""
+msgstr "Corona Islandia"
 
 #: src/Helper/Currency.php:223
 msgid "Indonesia Rupiah"
-msgstr ""
+msgstr "Rupia Indonesia"
 
 #: src/Helper/Currency.php:224
 msgid "Indian Rupee"
-msgstr ""
+msgstr "Rupia India"
 
 #: src/Helper/Currency.php:225
 msgid "Israeli Shekel"
-msgstr ""
+msgstr "Siclo Israel"
 
 #: src/Helper/Currency.php:226
 msgid "Japanese Yen"
-msgstr ""
+msgstr "Yen Japón"
 
 #: src/Helper/Currency.php:227
 msgid "Kenyan Shilling"
-msgstr ""
+msgstr "Chelín Kenia"
 
 #: src/Helper/Currency.php:228
 msgid "Lao Kip"
-msgstr ""
+msgstr "Kip Laos"
 
 #: src/Helper/Currency.php:229
 msgid "South Korean Won"
-msgstr ""
+msgstr "Won Corea del Sur"
 
 #: src/Helper/Currency.php:230
 msgid "Malaysian Ringgits"
-msgstr ""
+msgstr "Ringgits Malasia"
 
 #: src/Helper/Currency.php:231
 msgid "Mexican Peso"
-msgstr ""
+msgstr "Peso Mexico"
 
 #: src/Helper/Currency.php:232
 msgid "Nigerian Naira"
-msgstr ""
+msgstr "Naira Nigeria"
 
 #: src/Helper/Currency.php:233
 msgid "Norwegian Krone"
-msgstr ""
+msgstr "Corona noruega"
 
 #: src/Helper/Currency.php:234
 msgid "Nepali Rupee"
-msgstr ""
+msgstr "Rupia Nepal"
 
 #: src/Helper/Currency.php:235
 msgid "New Zealand Dollar"
-msgstr ""
+msgstr "Dólar Nueva Zelanda"
 
 #: src/Helper/Currency.php:236
 msgid "Paraguayan Guaraní"
-msgstr ""
+msgstr "Guaraní paraguayo"
 
 #: src/Helper/Currency.php:237
 msgid "Philippine Pesos"
-msgstr ""
+msgstr "Pesos Filipinas"
 
 #: src/Helper/Currency.php:238
 msgid "Polish Zloty"
-msgstr ""
+msgstr "Zloty polaco"
 
 #: src/Helper/Currency.php:239
 msgid "Pounds Sterling"
-msgstr ""
+msgstr "Libra esterlina"
 
 #: src/Helper/Currency.php:240
 msgid "Romanian Leu"
-msgstr ""
+msgstr "Leu rumano"
 
 #: src/Helper/Currency.php:241
 msgid "Russian Ruble"
-msgstr ""
+msgstr "Rublo ruso"
 
 #: src/Helper/Currency.php:242
 msgid "Rwandan Franc"
-msgstr ""
+msgstr "Franco Ruanda"
 
 #: src/Helper/Currency.php:243
 msgid "Singapore Dollar"
-msgstr ""
+msgstr "Dólar Singapur"
 
 #: src/Helper/Currency.php:244
 msgid "South African rand"
-msgstr ""
+msgstr "Rand Sudáfrica"
 
 #: src/Helper/Currency.php:245
 msgid "Swedish Krona"
-msgstr ""
+msgstr "Corona Suecia"
 
 #: src/Helper/Currency.php:246
 msgid "Swiss Franc"
-msgstr ""
+msgstr "Franco Suiza"
 
 #: src/Helper/Currency.php:247
 msgid "Thai Baht"
-msgstr ""
+msgstr "Baht tailandés"
 
 #: src/Helper/Currency.php:248
 msgid "Turkish Lira"
-msgstr ""
+msgstr "Lira Turquía"
 
 #: src/Helper/Currency.php:249
 msgid "Taiwan New Dollars"
-msgstr ""
+msgstr "New Dólar Tailandia"
 
 #: src/Helper/Currency.php:250
 msgid "Tanzanian Shilling"
-msgstr ""
+msgstr "Shilling tanzano"
 
 #: src/Helper/Currency.php:251
 msgid "Ukrainian Hryvnia"
-msgstr ""
+msgstr "Hryvnia Ucrania"
 
 #: src/Helper/Currency.php:252
 msgid "Ugandan Shilling"
-msgstr ""
+msgstr "Shilling de Uganda"
 
 #: src/Helper/Currency.php:253
 msgid "US Dollars"
-msgstr ""
+msgstr "Dólar US"
 
 #: src/Helper/Currency.php:254
 msgid "Vietnamese Dong"
-msgstr ""
+msgstr "Dong vietnamita"
 
 #: src/Helper/Currency.php:255
 msgid "Egyptian Pound"
-msgstr ""
+msgstr "Libra egipcia"
 
 #: src/Helper/Format.php:69
 msgid "miles"
-msgstr "mijl"
+msgstr "Millas"
 
 #: src/Helper/Format.php:70
 msgid "km"
-msgstr "km"
+msgstr "Km"
 
 #: src/Helper/Pages.php:16
 msgid "no page"
-msgstr "geen pagina"
+msgstr "sin página"
 
 #: src/Helper/Pagination.php:66
 msgid "&hellip;"
-msgstr ""
+msgstr "&hellip;"
 
 #: src/Helper/Power.php:20
 msgid "kW"
@@ -566,307 +566,307 @@ msgstr "kW"
 
 #: src/Helper/Power.php:21
 msgid "hp"
-msgstr "pk"
+msgstr "CV"
 
 #: src/MakeModelManager.php:74 templates/listings/filters/make.php:3
 msgid "Select Make"
-msgstr "Selecteer Merk"
+msgstr "Selecciona Marca"
 
 #: src/RoleManager.php:21
 msgid "Car Seller"
-msgstr "Auto Verkoper"
+msgstr "Vendedor de Coches"
 
 #: src/Settings.php:39
 msgid "General"
-msgstr "Algemeen"
+msgstr "General"
 
 #: src/Settings.php:43
 msgid "Currency"
-msgstr "Valuta"
+msgstr "Moneda"
 
 #: src/Settings.php:44
 msgid "Choose the currency used in your price fields."
-msgstr "Kies de valuta waarin je auto's getoond moeten worden."
+msgstr "Selecciona la moneda usada en el campo \"precio\""
 
 #: src/Settings.php:50
 msgid "Currency Position"
-msgstr "Valuta Positie"
+msgstr "Posición de Moneda"
 
 #: src/Settings.php:52
 msgid "The position of the currency symbol."
-msgstr "The positie van het valuta symbool."
+msgstr "La posición del símbolo de la moneda."
 
 #: src/Settings.php:55
 msgid "Left %s"
-msgstr "Links %s"
+msgstr "Izquierda %s"
 
 #: src/Settings.php:56
 msgid "Right %s"
-msgstr "Rechts %s"
+msgstr "Derecha %s"
 
 #: src/Settings.php:57
 msgid "Left with space %s"
-msgstr "Links met spatie %s"
+msgstr "Izquierda con espacio %s"
 
 #: src/Settings.php:58
 msgid "Right with space %s"
-msgstr "Rechts met spatie %s"
+msgstr "Derecha  con espacio %s"
 
 #: src/Settings.php:63
 msgid "Decimal Separator"
-msgstr "Decimaal Scheidingsteken"
+msgstr "Separador de Decimales"
 
 #: src/Settings.php:64
 msgid "The decimal separator of distance unites and prices."
-msgstr "Het teken dat decimalen scheidt in afstanden en prijzen."
+msgstr "El separador de decimales de unidades de distancia y precios."
 
 #: src/Settings.php:68
 msgid "Thousand Separator"
-msgstr "Duizend Scheidingsteken"
+msgstr "Separador de miles"
 
 #: src/Settings.php:69
 msgid "The thousand separator of displayed distance unites and prices."
-msgstr "Het teken dat duizenden scheidt in afstanden en prijzen."
+msgstr "El separador de miles de unidades de distancia y precios mostrado."
 
 #: src/Settings.php:73
 msgid "Distance Unit"
-msgstr "Afstandseenheid"
+msgstr "Unidad de Distancia"
 
 #: src/Settings.php:74
 msgid "The unit type your distances are in (e.g. Mileage)."
-msgstr "De eenheid waarin je afstanden getoond worden (bijv. kilometerstand)."
+msgstr "La unidad de distancia es en. (ej. Km)"
 
 #: src/Settings.php:77
 msgid "Miles"
-msgstr "Mijlen"
+msgstr "Millas"
 
 #: src/Settings.php:78
 msgid "Kilometers"
-msgstr "Kilometers"
+msgstr "Kilómetros"
 
 #: src/Settings.php:83
 msgid "Date Format"
-msgstr "Datum format"
+msgstr "Formato de Fecha"
 
 #: src/Settings.php:84
 msgid "The way dates are formatted."
-msgstr "De manier waarom datums getoond worden."
+msgstr "Formato de Fecha definido."
 
 #: src/Settings.php:90
 msgid "Listings"
-msgstr "Listings"
+msgstr "Anuncios"
 
 #: src/Settings.php:94
 msgid "Hide Sold Listings"
-msgstr "Verberg Verkochte Listings"
+msgstr "Ocultar Anuncios Vendidos."
 
 #: src/Settings.php:95
 msgid "Hide sold listings from listing pages"
-msgstr "Verberg verkochte listings van de listings pagina"
+msgstr "Ocultar anuncios vendidos de las páginas de listados."
 
 #: src/Settings.php:96
 msgid ""
 "If enabled, listings marked as sold will no longer be listed on your listing"
 " pages."
-msgstr "Wanneer actief zullen verkochte listings niet getoond worden op je listings paginas."
+msgstr "Si está habilitado, los anuncios marcados como vendidos no serán listados en las páginas de listados."
 
 #: src/Settings.php:101
 msgid "Listings Per Page"
-msgstr "Listings Per Pagina"
+msgstr "Anuncios por página."
 
 #: src/Settings.php:102
 msgid "The amount of listings per page. Enter %s to disable pagination."
-msgstr "De hoeveelheid listings per pagina. Vul %s in om paginatie uit te schakelen."
+msgstr "La cantidad de anuncios por página. Pulsa %s para deshabilitar paginación."
 
 #: src/Settings.php:108
 msgid "Submission"
-msgstr "Toevoeging"
+msgstr "Inscripción"
 
 #: src/Settings.php:112
 msgid "Account Creation"
-msgstr "Account Aanmaken"
+msgstr "Creación de Cuenta"
 
 #: src/Settings.php:113
 msgid "Allow account creation"
-msgstr "Sta het aanmaken van nieuwe accounts toe."
+msgstr "Permitir creación de cuenta"
 
 #: src/Settings.php:114
 msgid ""
 "If enabled, non-logged in users will be able to create an account by "
 "entering their email address on the submission form."
-msgstr "Wanneer actief kunnen niet ingelogde bezoekers een account aanmaken door hun email adres in te vullen in het auto toevoeg formulier."
+msgstr "Si está habilitado, los usuarios lo logeados podrán crear una cuenta al escribir su cuenta de email en el formulario de inscripción."
 
 #: src/Settings.php:119
 msgid "Account Username"
-msgstr "Account Gebruikersnaam"
+msgstr "Nombre de usuario"
 
 #: src/Settings.php:120
 msgid "Automatically Generate Username from Email Address"
-msgstr "Automatisch genereren van gebruikersnaam vanuit email adres"
+msgstr "Generar Automáticamente un Nombre de Usuario usando la Cuenta de Email."
 
 #: src/Settings.php:121
 msgid ""
 "If enabled, a username will be generated from the first part of the user "
 "email address. Otherwise, a username field will be shown."
-msgstr "Wanneer actief zal een gebruikersnaam automatisch gegenereerd worden vanuit het eerste deel van het email adres. Anders zal een gebruikersnaam getoond worden."
+msgstr "Si está habilitado, se generará un nombre de usuario usando la primera parte de la cuenta de email. De lo contrario , se mostrará un campo de nombre de usuario."
 
 #: src/Settings.php:126
 msgid "Account Role"
-msgstr "Account Rol"
+msgstr "Rol de la Cuenta."
 
 #: src/Settings.php:127
 msgid ""
 "If you enable registration on your submission form, choose a role for the "
 "new user."
-msgstr "Wanneer u het toestaat dat nieuwe accounts aangemaakt worden, kies hier een rol voor deze nieuwe accounts."
+msgstr "SI habilita el registro en el formulario de inscripción, elija un rol para los usuarios nuevos."
 
 #: src/Settings.php:133
 msgid "Moderate New Listings"
-msgstr "Modereer Nieuwe Vermeldingen"
+msgstr "Modera Nuevos Anuncios."
 
 #: src/Settings.php:134
 msgid "New listing submissions require admin approval"
-msgstr "Nieuwe vermeldingen vereisen een admin goedkeuring"
+msgstr "La Inscripción de Nuevos Anuncios requiere aprobación del Administrador."
 
 #: src/Settings.php:135
 msgid "If enabled, new submissions will be inactive, pending admin approval."
-msgstr "Wanneer actief zullen nieuwe vermeldingen inactief zijn, wachtend op admin goedkeuring."
+msgstr "Si está habilitado, las nuevas inscripciones estarán inactivas hasta la aprobación del Administrador."
 
 #: src/Settings.php:140
 msgid "Listing Duration"
-msgstr "Vermelding Duur"
+msgstr "Duración de los Anuncios."
 
 #: src/Settings.php:141
 msgid ""
 "How many %sdays%s listings are live before expiring. Can be left blank to "
 "never expire."
-msgstr "Hoeveel %sdagen%s een vermelding actief is voordat deze verloopt. Kan leeg gelaten worden voor niet verlopende vermeldingen."
+msgstr "Cuantos %sdias%s los anuncios están activos antes de expirar. Se puede dejar en blanco para que no expiren nunca."
 
 #: src/Settings.php:147
 msgid "Contact"
-msgstr "Contact"
+msgstr "Contacto"
 
 #: src/Settings.php:151
 msgid "Contact Email Address"
-msgstr "Contact Email Adres"
+msgstr "Email de Contacto"
 
 #: src/Settings.php:152
 msgid "The email address people can send an email to."
-msgstr "Het email adres waar mensen naar toe kunnen mailen."
+msgstr "Se puede enviar email desde cuentas externas."
 
 #: src/Settings.php:156
 msgid "Contact Phone Number"
-msgstr "Contact Telefoonnummer"
+msgstr "Número de Teléfono de Contacto"
 
 #: src/Settings.php:157
 msgid "The phone number people can call to."
-msgstr "Het telefoonnummer dat mensen kunnen bellen."
+msgstr "Se puede llamar desde teléfonos externos."
 
 #: src/Settings.php:163 src/Util/Onboarding.php:103
 msgid "Pages"
-msgstr "Pagina's"
+msgstr "Páginas"
 
 #: src/Settings.php:167
 msgid "Submit Car Page Form"
-msgstr "Auto Toevoegen Formulier"
+msgstr "Página de Formulario de Inscripción"
 
 #: src/Settings.php:168 src/Settings.php:175 src/Settings.php:182
 msgid "Select the page where you have placed the %s shortcode."
-msgstr "Kies welke pagina de %s shortcode bevat."
+msgstr "Selecciona la página donde ha ubicado el %s shorcode."
 
 #: src/Settings.php:174
 msgid "Car Dashboard Page"
-msgstr "Auto Dashboard Pagina"
+msgstr "Página de Tablero de Coches"
 
 #: src/Settings.php:181
 msgid "Car Listings Page"
-msgstr "Auto Vermelding Pagina"
+msgstr "Página de Anuncios de Coches"
 
 #: src/SubmitCarHandler.php:253
 msgid "Preview Car"
-msgstr "Auto Preview"
+msgstr "Vista previa del Coche"
 
 #: src/SubmitCarHandler.php:329
 msgid "%s has been submitted successfully and will be visible once approved."
-msgstr "%s is succesvol toegevoegd en zal getoond worden wanneer deze goedgekeurd is."
+msgstr "%s ha sido inscrito exitósamente y será visible en cuanto sea aprobado."
 
 #: src/SubmitCarHandler.php:333
 msgid ""
 "%s has been submitted successfully and will be visible once payment has been"
 " confirmed."
-msgstr "%s is succesvol toegevoegd en zal getoond worden wanneer de betaling bevestigd is."
+msgstr "%s ha sido inscrito exitósamente y será visible una vez que se confirme el pago."
 
 #: src/SubmitCarHandler.php:336
 msgid "%s has been submitted successfully."
-msgstr "%s is succesvol toegevoegd."
+msgstr "%s ha sido inscrito exitósamente."
 
 #: src/SubmitCarHandler.php:343
 msgid "View Listing"
-msgstr "Bekijk Listing"
+msgstr "Ver Anuncio"
 
 #: src/SubmitCarHandler.php:345
 msgid "View Dashboard"
-msgstr "Bekijk Dashboard"
+msgstr "Ver Tablero"
 
 #: src/Taxonomies.php:17
 msgid "Features"
-msgstr "Kenmerken"
+msgstr "Extras"
 
 #: src/Taxonomies.php:18
 msgid "All Features"
-msgstr "Alle Kenmerken"
+msgstr "Todos los Extras"
 
 #: src/Taxonomies.php:19
 msgid "Parent Feature"
-msgstr "Parent Kenmerk"
+msgstr "Extra Superior"
 
 #: src/Taxonomies.php:20
 msgid "Parent Feature:"
-msgstr "Parent Kenmerk:"
+msgstr "Extra Superior:"
 
 #: src/Taxonomies.php:21
 msgid "New Feature Name"
-msgstr "Nieuwe Kenmerk Naam"
+msgstr "Nuevo Nombre de Extra"
 
 #: src/Taxonomies.php:22
 msgid "Add New Feature"
-msgstr "Voeg nieuwe feature toe"
+msgstr "Añade Nuevo Extra"
 
 #: src/Taxonomies.php:23
 msgid "Edit Feature"
-msgstr "Bewerk Kenmerk"
+msgstr "Edita Extra"
 
 #: src/Taxonomies.php:24
 msgid "Update Feature"
-msgstr "Update Kenmerk"
+msgstr "Actualiza Extra"
 
 #: src/Taxonomies.php:25
 msgid "View Feature"
-msgstr "Bekijk Kenmerk"
+msgstr "Ver Extra"
 
 #: src/Taxonomies.php:26
 msgid "Separate features with commas"
-msgstr "Scheid kenmerken met comma's"
+msgstr "Separa Extras con comas"
 
 #: src/Taxonomies.php:27
 msgid "Add or remove features"
-msgstr "Voeg toe of verwijder kenmerken"
+msgstr "Añade o borra Extras"
 
 #: src/Taxonomies.php:28 src/Taxonomies.php:99
 msgid "Choose from the most used"
-msgstr "Kies van de meest gebruikte"
+msgstr "Elige entre los más usados"
 
 #: src/Taxonomies.php:29
 msgid "Popular features"
-msgstr "Populaire kenmerken"
+msgstr "Extras Populares"
 
 #: src/Taxonomies.php:30
 msgid "Search features"
-msgstr "Zoek kenmerken"
+msgstr "Busca Extras"
 
 #: src/Taxonomies.php:31 src/Taxonomies.php:102
 msgid "Not Found"
-msgstr "Niet Gevonden"
+msgstr "No encontrado"
 
 #: src/Taxonomies.php:72
 msgid ""
@@ -875,7 +875,7 @@ msgid ""
 "commonly used features are %s, %s, %s and %s but you are free to enter any "
 "feature you like. Vehicle features are listed in a nice list on the vehicle "
 "detail page."
-msgstr "WP Car Manager Kenmerken is de centrale plek waar je de kenmerken toevoeg zodat je ze niet opnieuw hoeft te typen bij ieder voertuig. Voorbeelden van veel gebruikte kenmerken zijn %s, %s, %s en %s maar je mag hier natuurlijk alles toevoegen wat je wilt. Voertuig kenmerken worden in een mooie lijst getoond op het voertuig detail pagina."
+msgstr "Wp Car Manager Extras es el lugar donde añadir todos los \"Extras\" que tiene el vehículo para no tener que escribir el mismo Extra cada vez. Ejemplos de Extras comunes son %s, %s, %s and %s pero es libre de escribir el extra que quiera. Los Extras de los vehículos están listados en una atractiva lista en la página de detalles del vehículo."
 
 #: src/Taxonomies.php:73
 msgid "ABS"
@@ -895,195 +895,195 @@ msgstr "Radio"
 
 #: src/Taxonomies.php:89
 msgid "All Makes"
-msgstr "Alle Merken"
+msgstr "Todas las Marcas"
 
 #: src/Taxonomies.php:90
 msgid "Parent Make"
-msgstr "Parent Merk"
+msgstr "Marca Padre"
 
 #: src/Taxonomies.php:91
 msgid "Parent Make:"
-msgstr "Parent Merk:"
+msgstr "Marca Padre:"
 
 #: src/Taxonomies.php:92
 msgid "New Make Name"
-msgstr "Nieuwe Merk Naam"
+msgstr "Nombre de Marca Nueva"
 
 #: src/Taxonomies.php:94
 msgid "Edit Make"
-msgstr "Bewerk Merk"
+msgstr "Edita Marca"
 
 #: src/Taxonomies.php:95
 msgid "Update Make"
-msgstr "Update Merk"
+msgstr "Actualiza Marca"
 
 #: src/Taxonomies.php:96
 msgid "View Make"
-msgstr "Bekijk Merk"
+msgstr "Ver Marca"
 
 #: src/Taxonomies.php:97
 msgid "Separate makes with commas"
-msgstr "Scheid merken met comma's"
+msgstr "Separa Marcas con comas"
 
 #: src/Taxonomies.php:98
 msgid "Add or remove makes"
-msgstr "Voeg toe of verwijder merken"
+msgstr "Añade o borra Marcas"
 
 #: src/Taxonomies.php:100
 msgid "Popular Makes"
-msgstr "Populaire Merken"
+msgstr "Marcas Populares"
 
 #: src/Taxonomies.php:101
 msgid "Search Makes"
-msgstr "Zoek Merken"
+msgstr "Busca Marcas"
 
 #: src/UserManager.php:109
 msgid "Invalid email address."
-msgstr "Incorrect email adres."
+msgstr "Cuenta de email Inválida"
 
 #: src/UserManager.php:119
 msgid "Your email address isn't correct."
-msgstr "Uw email adres is incorrect."
+msgstr "Su cuenta de email es incorrecta."
 
 #: src/UserManager.php:124
 msgid "This email is already registered, please choose another one."
-msgstr "Dit email adres is al geregistreerd, kies aub een andere."
+msgstr "Este email está ya registrado, por favor elija otro."
 
 #: src/Util/Onboarding.php:71
 msgid "Creating"
-msgstr "Aanmakende"
+msgstr "Creando"
 
 #: src/Util/Onboarding.php:72
 msgid "Page created"
-msgstr "Pagina aangemaakt"
+msgstr "Página creada"
 
 #: src/Util/Onboarding.php:73 src/Util/Onboarding.php:118
 #: src/Util/Onboarding.php:127 src/Util/Onboarding.php:136
 msgid "Create Page"
-msgstr "Maak Pagina"
+msgstr "Crear Página"
 
 #: src/Util/Onboarding.php:83
 msgid ""
 "WP Car Manager is almost ready for use, %sclick here%s to setup the final "
 "settings."
-msgstr "WP Car Manager is bijna klaar voor gebruikt, %sklik hier%s om de laatste instellingen te doen."
+msgstr "WP Car Manager está casi preparado para su uso, %sclick aquí %s para configurar los ajustes finales"
 
 #: src/Util/Onboarding.php:99
 msgid "Setup"
-msgstr "Installeren"
+msgstr "Configuración"
 
 #: src/Util/Onboarding.php:100
 msgid ""
 "Thank you for using WP Car Manager! We'd like to help you setup the plugin "
 "correctly so you can start listing your cars as quickly as possible."
-msgstr "Bedankt voor het gebruiken van WP Car Manager! We willen je graag helpen met het correct opzetten van de plugin zodat je zo snel mogelijk je voertuigen kan toevoegen."
+msgstr "Gracias por usar WP Car Manager! Nos gustaría ayudarle a configurar el plugin de forma correcta, por lo tanto usted puede empezar ya a anunciar sus coches a la mayor brevedad."
 
 #: src/Util/Onboarding.php:104
 msgid ""
 "WP Car Manager needs 3 pages setup with specific shortcodes to function "
 "correct. We can create and setup these pages for you at this moment or you "
 "can create them yourself and set them in the settings screen."
-msgstr "WP Car Manager heeft 3 pagina's nodig om correct te werken. We kunnen deze pagina's nu voor je maken of je kan deze later zelf maken en correct instellen via het instellingen scherm."
+msgstr "WP Car Manager  necesita la configuración de 3 páginas con shorcodes específicos para funcionar correctamente . Podemos crear y configurar estas páginas para usted ahora o puede crearlos usted y situarlos en la pantalla de configuración ."
 
 #: src/Util/Onboarding.php:107
 msgid "Page"
-msgstr "Pagina"
+msgstr "Página"
 
 #: src/Util/Onboarding.php:114 src/Vehicle/PostType.php:14
 #: src/Vehicle/PostType.php:15
 msgid "Car Listings"
-msgstr "Auto's"
+msgstr "Listado de Coches"
 
 #: src/Util/Onboarding.php:115
 msgid "The page containing your car listings"
-msgstr "The pagina welke alle auto vermeldingen toont."
+msgstr "La página que contiene sus anuncios de coches"
 
 #: src/Util/Onboarding.php:123
 msgid "Submit Car Page"
-msgstr "Auto Toevoegen Pagina"
+msgstr "Inscribir Coches en la Página"
 
 #: src/Util/Onboarding.php:124
 msgid "Users can submit their own listings via this page"
-msgstr "Gebruikers kunnen auto's toevoegen via deze pagina"
+msgstr "Los usuarios pueden inscribir sus propios anuncios en esta página"
 
 #: src/Util/Onboarding.php:132
 msgid "Car Dashboard"
-msgstr "Auto Dashboard"
+msgstr "Tablero de Coches"
 
 #: src/Util/Onboarding.php:133
 msgid "An overview page of all cars created of logged in user"
-msgstr "Een overzicht met alle auto's welke de ingelogde gebruiker toevoegd heeft"
+msgstr "Una página de la información de todos los coches creados del usuario conectado"
 
 #: src/Util/Onboarding.php:143
 msgid "A Never5 Product"
-msgstr "Een Never5 Product"
+msgstr "Un Producto Never5"
 
 #: src/Util/Onboarding.php:148
 msgid ""
 "At %sNever5%s we create high quality premium WordPress plugins, with "
 "extensive support. We offer solutions in related posts, advanced download "
 "management, vehicle management and connecting post types."
-msgstr "Bij %sNever5%s maken we premium WordPress plugins van hoge kwaliteit, met uitgebreide ondersteuning. Wij bieden oplossingen in gerelateerde berichten, geavanceerd download beheer, voertuig beheer en het verbinden van verschillende post types."
+msgstr "En %sNever5% creamos plugins de WordPress premium de alta calidad, con un amplio apoyo. Ofrecemos soluciones en los mensajes relacionados, gestión de descargas avanzada, gestión de vehículos y de conexión tipos de envíos ."
 
 #: src/Util/Onboarding.php:150
 msgid "%sFollow Never5 on Twitter%s"
-msgstr "%sVolg Never5 op Twitter%s"
+msgstr "%sSigue a Never5 en Twitter%s"
 
 #: src/Util/Onboarding.php:156
 msgid ""
 "Power up your WP Car Manager website with our official extensions. Our "
 "extensions allow you to add very specific functionality to your WP Car "
 "Manager installation and come with our premium support and updates."
-msgstr "Maak je WP Car Manager website nog krachtiger met onze officiële extensies. Onze extensies voegen specifieke functionaliteit toe aan jouw WP Car Manager installatie en komen allemaal met onze premium support en updates."
+msgstr "Mejore su página web WP Car Manager con nuestras extensiones oficiales. Nuestras extensiones permiten añadir funcionalidad muy específica para la instalación de WP Car Manager y cuente con nuestro apoyo premium y nuestras actualizaciones."
 
 #: src/Util/Onboarding.php:159
 msgid "Read more about our extensions"
-msgstr "Lees meer over onze extensies"
+msgstr "Leer más sobre nuestras extensiones"
 
 #: src/Util/Onboarding.php:163
 msgid "What's next?"
-msgstr "Wat is de volgende stap?"
+msgstr "Qué viene ahora?"
 
 #: src/Util/Onboarding.php:165
 msgid ""
 "Now that you have created the required pages, it's time to setup your Makes "
 "& Models. You can %sread more about Makes & Models here%s or %screate them "
 "here%s."
-msgstr "Nu de benodigde pagina's aangemaakt zijn, is het tijd om Merken & Modellen toe te voegen. %sJe kan hier meer lezen over het aanmaken van Merken & Modellen.%s"
+msgstr "Ahora que ha creado las páginas necesarias , es el momento de configurar sus Marcas y Modelos . Puede %sleer más sobre las Marcas y Modelos aquí%s o %screarlos aquí %s."
 
 #: src/Vehicle/Data.php:22 templates/vehicle-data/data-condition.php:8
 msgid "Condition"
-msgstr "Staat"
+msgstr "Condición"
 
 #: src/Vehicle/Data.php:41
 msgid "First Registration Date"
-msgstr "Bouwjaar"
+msgstr "Fecha de matriculación"
 
 #: src/Vehicle/Data.php:62
 msgid "Fuel Type"
-msgstr "Brandstoftype"
+msgstr "Tipo de combustible"
 
 #: src/Vehicle/Data.php:65 src/Vehicle/Data.php:72 src/Vehicle/Data.php:79
 #: src/Vehicle/Data.php:93 src/Vehicle/Data.php:100 src/Vehicle/Data.php:107
 #: src/Vehicle/Data.php:114
 msgid "e.g."
-msgstr "bijv."
+msgstr "p.ej."
 
 #: src/Vehicle/Data.php:65
 msgid "Gas"
-msgstr "Bezine"
+msgstr "Gasolina"
 
 #: src/Vehicle/Data.php:69 templates/vehicle-data/data-color.php:8
 msgid "Color"
-msgstr "Kleur"
+msgstr "Color"
 
 #: src/Vehicle/Data.php:72
 msgid "Grey"
-msgstr "Grijs"
+msgstr "Gris"
 
 #: src/Vehicle/Data.php:76 templates/vehicle-data/data-body_style.php:8
 msgid "Body Style"
-msgstr "Carrosserietype"
+msgstr "Carrocería"
 
 #: src/Vehicle/Data.php:79
 msgid "Sedan"
@@ -1091,11 +1091,11 @@ msgstr "Sedan"
 
 #: src/Vehicle/Data.php:84 templates/vehicle-data/data-transmission.php:8
 msgid "Transmission"
-msgstr "Transmissie"
+msgstr "Transmisión"
 
 #: src/Vehicle/Data.php:90 templates/vehicle-data/data-doors.php:8
 msgid "Doors"
-msgstr "Deuren"
+msgstr "Puertas"
 
 #: src/Vehicle/Data.php:97 templates/vehicle-data/data-engine.php:8
 msgid "Engine"
@@ -1107,131 +1107,131 @@ msgstr "2.0 TDI"
 
 #: src/Vehicle/Data.php:104
 msgid "Power kW"
-msgstr "Vermogen kW"
+msgstr "Potencia kW"
 
 #: src/Vehicle/Data.php:111
 msgid "Power hp"
-msgstr "Vermogen pk"
+msgstr "Potencia CV"
 
 #: src/Vehicle/Data.php:126
 msgid "New"
-msgstr "Nieuw"
+msgstr "Nuevo"
 
 #: src/Vehicle/Data.php:127
 msgid "Used"
-msgstr "Gebruikt"
+msgstr "Usado"
 
 #: src/Vehicle/Data.php:138
 msgid "Automatic"
-msgstr "Automaat"
+msgstr "Automático"
 
 #: src/Vehicle/Data.php:139
 msgid "Manual"
-msgstr "Handgeschakeld"
+msgstr "Manual"
 
 #: src/Vehicle/Data.php:140
 msgid "Semi-Automatic"
-msgstr "Half/Semi-automaat"
+msgstr "Semi-Automático"
 
 #: src/Vehicle/PostStatus.php:38
 msgid "Preview <span class=\"count\">(%s)</span>"
 msgid_plural "Preview <span class=\"count\">(%s)</span>"
-msgstr[0] "Voorbeeld <span class=\"count\">(%s)</span>"
-msgstr[1] "Voorbeeld <span class=\"count\">(%s)</span>"
+msgstr[0] "Vista Previa <span class=\"count\">(%s)</span>"
+msgstr[1] "Vista previa <span class=\"count\">(%s)</span>"
 
 #: src/Vehicle/PostStatus.php:49
 msgid "Expired <span class=\"count\">(%s)</span>"
 msgid_plural "Expired <span class=\"count\">(%s)</span>"
-msgstr[0] "Verlopen <span class=\"count\">(%s)</span>"
-msgstr[1] "Verlopen <span class=\"count\">(%s)</span>"
+msgstr[0] "Expirado <span class=\"count\">(%s)</span>"
+msgstr[1] "Expired <span class=\"count\">(%s)</span>"
 
 #: src/Vehicle/PostStatus.php:203 templates/single-vehicle/preview.php:2
 msgid "Preview"
-msgstr "Preview"
+msgstr "Vista Previa"
 
 #: src/Vehicle/PostType.php:16
 msgid "Parent Car:"
-msgstr "Parent Auto:"
+msgstr "Coche Padre:"
 
 #: src/Vehicle/PostType.php:17
 msgid "All Car Listings"
-msgstr "Alle Auto's"
+msgstr "Todos los coches Listados"
 
 #: src/Vehicle/PostType.php:18
 msgid "Add New Car Listing"
-msgstr "Voeg nieuwe Auto Listing toe"
+msgstr "Añadir un Nuevo Anuncio de Coche"
 
 #: src/Vehicle/PostType.php:19
 msgid "Add New Listing"
-msgstr "Voeg Nieuwe Toe"
+msgstr "Añadir un Nuevo Anuncio"
 
 #: src/Vehicle/PostType.php:20
 msgid "New Car"
-msgstr "Nieuwe Auto"
+msgstr "Nuevo Coche"
 
 #: src/Vehicle/PostType.php:21
 msgid "Edit Car"
-msgstr "Bewerk Auto"
+msgstr "Editar Coche"
 
 #: src/Vehicle/PostType.php:22
 msgid "Update Car"
-msgstr "Update Auto"
+msgstr "Actualizar Coche"
 
 #: src/Vehicle/PostType.php:23
 msgid "View Car"
-msgstr "Bekijk Auto"
+msgstr "Ver Coche"
 
 #: src/Vehicle/PostType.php:24
 msgid "Search Car"
-msgstr "Zoek Auto"
+msgstr "Buscar Coche"
 
 #: src/Vehicle/PostType.php:25
 msgid "No cars found"
-msgstr "Geen auto's gevonden"
+msgstr "Coches no encontrados"
 
 #: src/Vehicle/PostType.php:26
 msgid "Not found in Trash"
-msgstr "Niet gevonden in prullenbak"
+msgstr "No encontrados en la Papelera"
 
 #: src/Vehicle/PostType.php:29
 msgid "vehicle"
-msgstr "voertuig"
+msgstr "Vehículo"
 
 #: templates/dashboard/buttons/add-new.php:7
 msgid "Add New"
-msgstr "Voeg Nieuwe Toe"
+msgstr "Añadir Nuevo"
 
 #: templates/dashboard/buttons/edit.php:1
 msgid "Edit"
-msgstr "Bewerk"
+msgstr "Editar"
 
 #: templates/dashboard/item.php:24
 msgid "Expires on"
-msgstr "Verloopt op"
+msgstr "Expira en"
 
 #: templates/dashboard/no-results.php:1 templates/listings/no-results.php:1
 msgid "We couldn't find any cars."
-msgstr "We konden geen auto's vinden."
+msgstr "No hemos podido encontrar ningún coche."
 
 #: templates/dashboard/not-logged-in.php:1
 msgid "Please sign in to view your car listings"
-msgstr "Log in om uw auto's te zien"
+msgstr "Por favor, logea para ver sus anuncios de coches"
 
 #: templates/general/review-sign.php:1
 msgid "PENDING REVIEW"
-msgstr "IN AFWACHTING VAN BEOORDELING"
+msgstr "REVISIÓN PENDIENTE"
 
 #: templates/general/sold-sign.php:1
 msgid "SOLD"
-msgstr "VERKOCHT"
+msgstr "VENDIDO"
 
 #: templates/listings/filters/button.php:2
 msgid "Show Results"
-msgstr "Bekijk Resultaten"
+msgstr "Mostrar Resultados"
 
 #: templates/listings/filters/frdate.php:2
 msgid "Min Year"
-msgstr "Min Jaar"
+msgstr "Año Mínimo"
 
 #: templates/listings/filters/frdate.php:3
 #: templates/listings/filters/frdate.php:4
@@ -1240,184 +1240,184 @@ msgstr "Min Jaar"
 #: templates/listings/filters/price.php:3
 #: templates/listings/filters/price.php:4
 msgid "All"
-msgstr "Alle"
+msgstr "Todos"
 
 #: templates/listings/filters/mileage.php:2
 msgid "Max Mileage"
-msgstr "Max Kilometerstand"
+msgstr "Máximo Kms"
 
 #: templates/listings/filters/price.php:2
 msgid "Max Price"
-msgstr "Max Prijs"
+msgstr "Máximo Precio"
 
 #: templates/listings/sort.php:3
 msgid "Sort by:"
-msgstr "Sorteren op:"
+msgstr "Ordenar por:"
 
 #: templates/listings/sort.php:8
 msgid "Price (low-high)"
-msgstr "Prijs (laag-hoog)"
+msgstr "Precio (menor a mayor)"
 
 #: templates/listings/sort.php:9
 msgid "Price (high-low)"
-msgstr "Prijs (hoog-laag)"
+msgstr "Precio (mayor a menor)"
 
 #: templates/listings/sort.php:10
 msgid "Year (old-new)"
-msgstr "Jaar (oud-nieuw)"
+msgstr "Año (antiguo a nuevo)"
 
 #: templates/listings/sort.php:11
 msgid "Year (new-old)"
-msgstr "Jaar (nieuw-oud)"
+msgstr "Año (nuevo a antiguo)"
 
 #: templates/listings/sort.php:12
 msgid "Mileage (low-high)"
-msgstr "Kilometerstand (laag-hoog)"
+msgstr "Kilometraje (menor a mayor)"
 
 #: templates/listings/sort.php:13
 msgid "Mileage (high-low)"
-msgstr "Kilometerstand (hoog-laag)"
+msgstr "Kilometraje (mayor a menor)"
 
 #: templates/listings/sort.php:14
 msgid "Date (old-new)"
-msgstr "Datum (oud-nieuw)"
+msgstr "Fecha (antiguo a nuevo)"
 
 #: templates/listings/sort.php:15
 msgid "Date (new-old)"
-msgstr "Datum (nieuw-oud)"
+msgstr "Fecha (nuevo a antiguo)"
 
 #: templates/single-vehicle/contact.php:14
 msgid "Email Us"
-msgstr "Email Ons"
+msgstr "Mándanos un email"
 
 #: templates/single-vehicle/contact.php:22
 msgid "Call Us"
-msgstr "Bel Ons"
+msgstr "Llámanos"
 
 #: templates/single-vehicle/content.php:8
 msgid "Vehicle Description"
-msgstr "Auto Omschrijving"
+msgstr "Descripción del Vehículo"
 
 #: templates/single-vehicle/data.php:8
 msgid "Vehicle Details"
-msgstr "Auto Details"
+msgstr "Detalles del Vehículo"
 
 #: templates/single-vehicle/expired.php:2
 msgid "Listing Expired"
-msgstr "Vermelding Verlopen"
+msgstr "Anuncio Expirado"
 
 #: templates/single-vehicle/expired.php:3
 msgid ""
 "This listing is expired, please go to your car dashboard for more "
 "information."
-msgstr "Deze vermelding is verlopen, ga naar uw dashboard voor meer informatie."
+msgstr "Este anuncio está caducado , por favor vaya a su tablero de coches para obtener más información. ."
 
 #: templates/single-vehicle/features.php:11
 msgid "Vehicle Features"
-msgstr "Auto Kenmerken"
+msgstr "Extras de Vehículos"
 
 #: templates/single-vehicle/pending.php:2
 msgid "Pending Review"
-msgstr "Wachtend op Review"
+msgstr "Pendiente de Revisión"
 
 #: templates/single-vehicle/pending.php:3
 msgid "Your submission is pending review, please check back later."
-msgstr "Uw vermelding is wachtend op review, controleer de status later opnieuw."
+msgstr "Su inscripción está pendiente de revisión, por favor vuelva más tarde."
 
 #: templates/single-vehicle/preview.php:3
 msgid ""
 "This is a preview of your listing, please note this listing is not published"
 " yet!"
-msgstr "This is een preview van uw vermelding, let er op dat deze vermelding nog niet gepubliceerd is!"
+msgstr "Esta es una vista previa de su anuncio, por favor tenga en cuenta que su anuncio no está publicado todavía!."
 
 #: templates/single-vehicle/preview.php:6
 msgid "Edit listing"
-msgstr "Bewerk vermelding"
+msgstr "Editar Anuncio"
 
 #: templates/submit-car-form/account-signin.php:4
 msgid "Your account"
-msgstr "Je account"
+msgstr "Su cuenta"
 
 #: templates/submit-car-form/account-signin.php:9
 msgid "You are currently signed in as <strong>%s</strong>."
-msgstr "Je bent op dit moment ingelogd als <strong>%s</strong>"
+msgstr "Actualmente está logeado como <strong>%s</strong>."
 
 #: templates/submit-car-form/account-signin.php:13
 msgid "Sign out"
-msgstr "Uitloggen"
+msgstr "Desconectar"
 
 #: templates/submit-car-form/account-signin.php:22
 msgid "Have an account?"
-msgstr "Heb je een account?"
+msgstr "Tiene cuenta?"
 
 #: templates/submit-car-form/account-signin.php:26
 msgid "Sign in"
-msgstr "Inloggen"
+msgstr "Logear"
 
 #: templates/submit-car-form/account-signin.php:30
 msgid ""
 "If you don&rsquo;t have an account you can create one below by entering your"
 " email address/username. Your account details will be confirmed via email."
-msgstr "Als je geen account hebt kan je er hieronder een aanmaken door je email adres / gebruikersnaam in te vullen. Je account details worden bevestigd via email."
+msgstr "Si no tiene una cuenta, puede crear una a continuación, introduzca su dirección de correo electrónico / nombre de usuario. Los detalles de su registro será confirmado por correo electrónico."
 
 #: templates/submit-car-form/account-signin.php:34
 msgid "You must sign in to create a new listing."
-msgstr "Je moet inloggen om een nieuwe vermelding te maken."
+msgstr "Debe logear para crear un nuevo anuncio."
 
 #: templates/submit-car-form/account-signin.php:42
 msgid "Username"
-msgstr "Gebruikersnaam"
+msgstr "Nombre de usuario"
 
 #: templates/submit-car-form/account-signin.php:55
 msgid "Your Email"
-msgstr "Je Email"
+msgstr "Su Email"
 
 #: templates/submit-car-form/car-features.php:1
 msgid "Car Features"
-msgstr "Auto Kenmerken"
+msgstr "Extras de Coches"
 
 #: templates/submit-car-form/disabled.php:2
 msgid "You do not have permission to post or edit this listing."
-msgstr "Je hebt geen rechten om deze vermelding te bewerken."
+msgstr "No tiene permisos para publicar o editar este anuncio."
 
 #: templates/submit-car-form/images.php:1
 msgid "Images"
-msgstr "Afbeeldingen"
+msgstr "Imágenes"
 
 #: templates/submit-car-form/images.php:23
 msgid "Current Images"
-msgstr "Huidige Afbeeldingen"
+msgstr "Imágenes actuales"
 
 #: templates/submit-car-form/images.php:37
 msgid "Upload New Images"
-msgstr "Voeg nieuwe afbeeldingen toe"
+msgstr "Sube Nuevas Imágenes"
 
 #: templates/submit-car-form/images.php:38
 msgid "Click here to upload your images"
-msgstr "Klik hier om je afbeeldingen te uploaden"
+msgstr "Click aquí para subir imágenes"
 
 #: templates/submit-car-form/images.php:39
 msgid ""
 "You can upload multiple images at the same time, the first image will be "
 "your thumbnail."
-msgstr "Je kan meerdere afbeeldingen tegelijk uploaden, de eerste afbeelding wordt je thumbnail."
+msgstr "Puede subir varias imágenes al mismo tiempo, la primera imágen será su imágen principal."
 
 #: templates/submit-car-form/step-empty-view.php:6
 msgid ""
 "You are redirected to the next step, %sclick here%s if nothing happens."
-msgstr "Je wordt doorgestuurd naar de volgende stap, %sklik hier%s als er niks gebeurd."
+msgstr "Será redireccionado en el siguiente paso, %sclick aquí%s si no ocurre nada."
 
 #: templates/vehicle-data/data-frdate.php:8
 msgid "Year"
-msgstr "Jaar"
+msgstr "Año"
 
 #: templates/vehicle-data/data-fuel_type.php:8
 msgid "Fuel"
-msgstr "Brandstof"
+msgstr "Combustible"
 
 #: templates/vehicle-data/data-power_kw.php:11
 msgid "Power"
-msgstr "Vermogen"
+msgstr "Potencia"
 
 #. Plugin Name of the plugin/theme
 msgid "WP Car Manager"
@@ -1430,7 +1430,7 @@ msgstr "http://www.wpcarmanager.com"
 #. Description of the plugin/theme
 msgid ""
 "The easiest way to manage, list and sell your cars online using WordPress."
-msgstr "De makkelijkste manier om je auto's te beheren, tonen en verkopen via WordPress."
+msgstr "La forma más fácil de administrar, listar y vender sus coches en línea usando WordPress ."
 
 #. Author of the plugin/theme
 msgid "Never5"
@@ -1443,54 +1443,54 @@ msgstr "http://www.never5.com"
 #: src/Taxonomies.php:15
 msgctxt "Taxonomy General Name"
 msgid "Features"
-msgstr "Kenmerken"
+msgstr "Extras"
 
 #: src/Taxonomies.php:86
 msgctxt "Taxonomy General Name"
 msgid "Makes"
-msgstr "Merken"
+msgstr "Marcas"
 
 #: src/Taxonomies.php:16
 msgctxt "Taxonomy Singular Name"
 msgid "Feature"
-msgstr "Kenmerk"
+msgstr "Extras"
 
 #: src/Taxonomies.php:87
 msgctxt "Taxonomy Singular Name"
 msgid "Make"
-msgstr "Merk"
+msgstr "Marca"
 
 #: src/Taxonomies.php:34
 msgctxt "taxonomy type slug"
 msgid "feature"
-msgstr "kermerk"
+msgstr "extra"
 
 #: src/Taxonomies.php:105
 msgctxt "taxonomy type slug"
 msgid "make"
-msgstr "merk"
+msgstr "marca"
 
 #: src/Vehicle/PostStatus.php:33
 msgctxt "post status"
 msgid "Preview"
-msgstr "Preview"
+msgstr "Vista Previa"
 
 #: src/Vehicle/PostStatus.php:43
 msgctxt "post status"
 msgid "Expired"
-msgstr "Verlopen"
+msgstr "Expirado"
 
 #: src/Vehicle/PostType.php:12
 msgctxt "Post Type General Name"
 msgid "Car Listings"
-msgstr "Auto's"
+msgstr "Anuncios de Coches"
 
 #: src/Vehicle/PostType.php:13
 msgctxt "Post Type Singular Name"
 msgid "Car"
-msgstr "Auto"
+msgstr "Coche"
 
 #: src/Vehicle/PostType.php:64
 msgctxt "post type slug"
 msgid "vehicle"
-msgstr "voertuig"
+msgstr "vehículo"
