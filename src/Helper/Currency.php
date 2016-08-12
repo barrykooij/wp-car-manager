@@ -169,6 +169,9 @@ abstract class Currency {
 			case 'VND' :
 				$currency_symbol = '&#8363;';
 				break;
+			case 'XAF':
+				$currency_symbol = 'CFA';
+				break;
 			case 'ZAR' :
 				$currency_symbol = '&#82;';
 				break;
@@ -198,7 +201,6 @@ abstract class Currency {
 		return array_unique(
 			apply_filters( 'wpcm_currencies',
 				array(
-					'AED' => __( 'United Arab Emirates Dirham', 'wp-car-manager' ),
 					'ARS' => __( 'Argentine Peso', 'wp-car-manager' ),
 					'AUD' => __( 'Australian Dollars', 'wp-car-manager' ),
 					'BDT' => __( 'Bangladeshi Taka', 'wp-car-manager' ),
@@ -206,6 +208,7 @@ abstract class Currency {
 					'BGN' => __( 'Bulgarian Lev', 'wp-car-manager' ),
 					'BIF' => __( 'Burundian Franc', 'wp-car-manager' ),
 					'CAD' => __( 'Canadian Dollars', 'wp-car-manager' ),
+					'XAF' => __( 'CFA Franc', 'wp-car-manager' ),
 					'CLP' => __( 'Chilean Peso', 'wp-car-manager' ),
 					'CNY' => __( 'Chinese Yuan', 'wp-car-manager' ),
 					'COP' => __( 'Colombian Peso', 'wp-car-manager' ),
@@ -214,6 +217,7 @@ abstract class Currency {
 					'DKK' => __( 'Danish Krone', 'wp-car-manager' ),
 					'DOP' => __( 'Dominican Peso', 'wp-car-manager' ),
 					'ETB' => __( 'Ethiopian Birr', 'wp-car-manager' ),
+					'EGP' => __( 'Egyptian Pound', 'wp-car-manager' ),
 					'EUR' => __( 'Euros', 'wp-car-manager' ),
 					'GHS' => __( 'Ghanaian Cedi', 'wp-car-manager' ),
 					'HKD' => __( 'Hong Kong Dollar', 'wp-car-manager' ),
@@ -250,9 +254,9 @@ abstract class Currency {
 					'TZS' => __( 'Tanzanian Shilling', 'wp-car-manager' ),
 					'UAH' => __( 'Ukrainian Hryvnia', 'wp-car-manager' ),
 					'UGX' => __( 'Ugandan Shilling', 'wp-car-manager' ),
+					'AED' => __( 'United Arab Emirates Dirham', 'wp-car-manager' ),
 					'USD' => __( 'US Dollars', 'wp-car-manager' ),
-					'VND' => __( 'Vietnamese Dong', 'wp-car-manager' ),
-					'EGP' => __( 'Egyptian Pound', 'wp-car-manager' )
+					'VND' => __( 'Vietnamese Dong', 'wp-car-manager' )
 				)
 			)
 		);
