@@ -34,6 +34,13 @@ Allow your visitors to add their own cars to your website! Simply add our `[wpcm
 
 [Find out more information about our plugin, documentation and extensions at our website](https://www.wpcarmanager.com/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=more-information)
 
+> #### WP Car Manager Extensions
+> Extend the core WP Car Manager plugin with its powerful extensions. All extensions come with one year of updates and support!<br />
+>
+> Some of our popular extensions include: [Makes and Models Sync](https://www.wpcarmanager.com/extensions/makes-models-sync/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=description-block-page-addon), [Paid Listings](https://www.wpcarmanager.com/extensions/paid-listings/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=description-block-email-lock) and [Share This](https://www.wpcarmanager.com/extensions/share-this/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=description-block-csv-importer).
+>
+> Want to see more? [Browse All Extensions](https://www.wpcarmanager.com/extensions/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=description-block-browse-all)
+
 This is the best car listing plugin for WordPress for car dealers, for people who want to setup their own car marketplace / listing website in WordPress or for those who simply want to list their car collection on their WordPress website.
 
 WP Car Manager integrates well with all WordPress theme (including car WordPress themes) that respect the WordPress standards. We will also offer WordPress car themes specifically created for WP Car Manager soon!
