@@ -26,7 +26,7 @@ class Onboarding {
 				<script type="text/javascript">
 					jQuery( function ( $ ) {
 						$( '.wpcm-notice' ).on( 'click', '.notice-dismiss', function ( event ) {
-							$.get( '<?php echo untrailingslashit( site_url( sprintf( '?%s=dismiss_notice', Ajax\Manager::ENDPOINT ) ) ); ?>', {
+							$.get( '<?php echo Ajax\Manager::get_ajax_url( 'dismiss_notice' ); ?>', {
 								id: $( this ).closest( '.wpcm-notice' ).data( 'id' ),
 								nonce: '<?php echo wp_create_nonce( 'wpcm_ajax_nonce_dismiss_notice' ) ?>'
 							}, function () {
@@ -66,7 +66,7 @@ class Onboarding {
 		);
 
 		wp_localize_script( 'wpcm_onboarding', 'wpcm', array(
-			'ajax_url_create_page' => untrailingslashit( site_url( sprintf( '?%s=create_page', Ajax\Manager::ENDPOINT ) ) ),
+			'ajax_url_create_page' => Ajax\Manager::get_ajax_url( 'create_page' ),
 			'nonce_create_page'    => wp_create_nonce( 'wpcm_ajax_nonce_create_page' ),
 			'lbl_creating'         => __( 'Creating', 'wp-car-manager' ) . '...',
 			'lbl_created'          => __( 'Page created', 'wp-car-manager' ),

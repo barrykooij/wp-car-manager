@@ -25,6 +25,15 @@ class Manager {
 	}
 
 	/**
+	 * @param string $action
+	 *
+	 * @return string
+	 */
+	public static function get_ajax_url( $action ) {
+		return untrailingslashit( home_url( sprintf( '?%s=%s', self::ENDPOINT, $action ) ) );
+	}
+
+	/**
 	 * Add AJAX actions
 	 */
 	private function add_ajax_actions() {

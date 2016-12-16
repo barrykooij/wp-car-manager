@@ -119,10 +119,10 @@ abstract class Assets {
 		);
 
 		wp_localize_script( 'wpcm_js_car_submission', 'wpcm', array(
-			'ajax_url_save'         => untrailingslashit( site_url( sprintf( '?%s=save_vehicle', Ajax\Manager::ENDPOINT ) ) ),
-			'ajax_url_get_models'   => untrailingslashit( site_url( sprintf( '?%s=get_models', Ajax\Manager::ENDPOINT ) ) ),
-			'ajax_url_post_images'  => untrailingslashit( site_url( sprintf( '?%s=save_images', Ajax\Manager::ENDPOINT ) ) ),
-			'ajax_url_delete_image' => untrailingslashit( site_url( sprintf( '?%s=delete_image', Ajax\Manager::ENDPOINT ) ) ),
+			'ajax_url_save'         => Ajax\Manager::get_ajax_url( 'save_vehicle' ),
+			'ajax_url_get_models'   => Ajax\Manager::get_ajax_url( 'get_models' ),
+			'ajax_url_post_images'  => Ajax\Manager::get_ajax_url( 'save_images' ),
+			'ajax_url_delete_image' => Ajax\Manager::get_ajax_url( 'delete_image' ),
 			'nonce_save'            => wp_create_nonce( 'wpcm_ajax_nonce_save_vehicle' ),
 			'nonce_models'          => wp_create_nonce( 'wpcm_ajax_nonce_get_models' ),
 			'nonce_delete_image'    => wp_create_nonce( 'wpcm_ajax_nonce_delete_image' ),
@@ -159,8 +159,8 @@ abstract class Assets {
 
 		// localize
 		wp_localize_script( 'wpcm_js_dashboard', 'wpcm', array(
-			'ajax_url_get_vehicles'   => untrailingslashit( site_url( sprintf( '?%s=get_dashboard', Ajax\Manager::ENDPOINT ) ) ),
-			'ajax_url_delete_vehicle' => untrailingslashit( site_url( sprintf( '?%s=delete_vehicle', Ajax\Manager::ENDPOINT ) ) ),
+			'ajax_url_get_vehicles'   => Ajax\Manager::get_ajax_url( 'get_dashboard' ),
+			'ajax_url_delete_vehicle' => Ajax\Manager::get_ajax_url( 'delete_vehicle' ),
 			'nonce_vehicles'          => wp_create_nonce( 'wpcm_ajax_nonce_get_dashboard' ),
 			'nonce_delete_vehicle'    => wp_create_nonce( 'wpcm_ajax_nonce_delete_vehicle' ),
 			'delete_confirm'          => __( 'Are you sure you want to delete %s?', 'wp-car-manager' ),
