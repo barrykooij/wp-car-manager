@@ -130,6 +130,9 @@ abstract class Currency {
 			case 'PHP' :
 				$currency_symbol = '&#8369;';
 				break;
+			case 'PKR' :
+				$currency_symbol = 'Rs.';
+				break;
 			case 'PLN' :
 				$currency_symbol = '&#122;&#322;';
 				break;
@@ -237,9 +240,10 @@ abstract class Currency {
 					'NOK' => __( 'Norwegian Krone', 'wp-car-manager' ),
 					'NPR' => __( 'Nepali Rupee', 'wp-car-manager' ),
 					'NZD' => __( 'New Zealand Dollar', 'wp-car-manager' ),
-					'PYG' => __( 'Paraguayan Guaraní', 'wp-car-manager' ),
 					'PHP' => __( 'Philippine Pesos', 'wp-car-manager' ),
+					'PKR' => __( 'Pakistani Rupee', 'wp-car-manager' ),
 					'PLN' => __( 'Polish Zloty', 'wp-car-manager' ),
+					'PYG' => __( 'Paraguayan Guaraní', 'wp-car-manager' ),
 					'GBP' => __( 'Pounds Sterling', 'wp-car-manager' ),
 					'RON' => __( 'Romanian Leu', 'wp-car-manager' ),
 					'RUB' => __( 'Russian Ruble', 'wp-car-manager' ),
