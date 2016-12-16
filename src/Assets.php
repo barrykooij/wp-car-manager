@@ -65,7 +65,8 @@ abstract class Assets {
 		);
 
 		wp_localize_script( 'wpcm_js_listings', 'wpcm', array(
-			'ajax_url'              => trailingslashit( site_url( '' ) ),
+			'ajax_url_get_vehicles' => Ajax\Manager::get_ajax_url( 'get_vehicle_results' ),
+			'ajax_url_get_models'   => Ajax\Manager::get_ajax_url( 'get_models' ),
 			'ajax_endpoint'         => Ajax\Manager::ENDPOINT,
 			'nonce_models'          => wp_create_nonce( 'wpcm_ajax_nonce_get_models' ),
 			'lbl_no_models_found'   => __( 'No models found', 'wp-car-manager' ),

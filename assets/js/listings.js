@@ -97,12 +97,9 @@ WPCM_Listings.prototype.updateModels = function () {
 			make: make_id
 		};
 
-		// add endpoint
-		args [wpcm.ajax_endpoint] = 'get_models';
-
 		// todo add spinner
 
-		jQuery.get( wpcm.ajax_url, args, function ( response ) {
+		jQuery.get( wpcm.ajax_url_get_models, args, function ( response ) {
 
 			// remove current options
 			select_model.attr( 'disabled', false ).find( 'option' ).remove();
@@ -178,14 +175,11 @@ WPCM_Listings.prototype.load_vehicles = function () {
 		args['filter_condition'] = this.condition;
 	}
 
-	// set AJAX endpoint
-	args [wpcm.ajax_endpoint] = 'get_vehicle_results';
-
 	// add spinner
 	this.listings.parent().append( jQuery( '<div>' ).addClass( 'wpcm-results-load-overlay' ) );
 	this.listings.parent().append( new WPCM_Spinner().getDOM() );
 
-	jQuery.getJSON( wpcm.ajax_url, args, function ( response ) {
+	jQuery.getJSON( wpcm.ajax_url_get_vehicles, args, function ( response ) {
 
 		// set listings
 		if ( response.listings ) {
