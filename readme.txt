@@ -76,6 +76,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 = 1.3.2: December 16, 2016 =
 * Tweak: AJAX url now uses home_url() instead of site_url().
+* Tweak: Fixed a bug where 2015 was the 'latest' year in date filter (latest is now current year).
 * Tweak: Added Pakistani Rupee.
 
 = 1.3.1: August 12, 2016 =
