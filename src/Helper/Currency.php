@@ -154,6 +154,9 @@ abstract class Currency {
 			case 'THB' :
 				$currency_symbol = '&#3647;';
 				break;
+			case 'TND' :
+				$currency_symbol = 'DT';
+				break;
 			case 'TRY' :
 				$currency_symbol = '&#8378;';
 				break;
@@ -253,6 +256,7 @@ abstract class Currency {
 					'SEK' => __( 'Swedish Krona', 'wp-car-manager' ),
 					'CHF' => __( 'Swiss Franc', 'wp-car-manager' ),
 					'THB' => __( 'Thai Baht', 'wp-car-manager' ),
+					'TND' => __( 'Tunisian Dinar', 'wp-car-manager' ),
 					'TRY' => __( 'Turkish Lira', 'wp-car-manager' ),
 					'TWD' => __( 'Taiwan New Dollars', 'wp-car-manager' ),
 					'TZS' => __( 'Tanzanian Shilling', 'wp-car-manager' ),
