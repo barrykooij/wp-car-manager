@@ -36,44 +36,51 @@ class Makes {
 
 				case 'edit_term':
 
-					// term id
-					$term_id = absint( $_POST['term_id'] );
-
-					// args
-					$args = array(
-						'name' => $_POST['name'],
-						'slug' => $_POST['slug']
-					);
-
-					// if make id is set, we set it as parent
+					// check if we're updating a model or a make
+					$res = false;
 					if ( isset( $_POST['make_id'] ) ) {
-						$args['parent'] = absint( $_POST['make_id'] );
+						// we're updating a model because a make_id is set
+						$make_id = absint( $_POST['make_id'] );
+
+						$res = wp_car_manager()->service( 'make_model_manager' )->update_model(
+							array(
+								'id'   => absint( $_POST['term_id'] ),
+								'name' => $_POST['name'],
+								'slug' => $_POST['slug']
+							),
+							$make_id
+						);
+					} else {
+						// we're updating a make
+						$res = wp_car_manager()->service( 'make_model_manager' )->update_make(
+							array(
+								'id'   => absint( $_POST['term_id'] ),
+								'name' => $_POST['name'],
+								'slug' => $_POST['slug']
+							)
+						);
 					}
 
-					// update
-					wp_update_term( $term_id, Taxonomies::MAKE_MODEL, array(
-						'name' => $args['name'],
-						'slug' => $args['slug']
-					) );
+					if ( false === $res ) {
+						wp_die( __( "Ran into an error while updating make/model. Please contact support for help.", 'wp-car-manager' ) );
+					}
+
 					break;
 				case 'add_term':
-
-					// args
-					$args = array(
-						'slug' => $_POST['slug']
-					);
-
-					// if make id is set, we set it as parent
+					
+					// check if we're inserting model or make
+					$res = false;
 					if ( isset( $_POST['make_id'] ) ) {
-						$args['parent'] = absint( $_POST['make_id'] );
+						// we're inserting a model because a make_id is set
+						$res = wp_car_manager()->service( 'make_model_manager' )->insert_model( absint( $_POST['make_id'] ), $_POST['name'], $_POST['slug'] );
+					} else {
+						// we're inserting a make
+						$res = wp_car_manager()->service( 'make_model_manager' )->insert_make( $_POST['name'], $_POST['slug'] );
 					}
 
-					// add term
-					wp_insert_term(
-						$_POST['name'],
-						Taxonomies::MAKE_MODEL,
-						$args
-					);
+					if ( false === $res ) {
+						wp_die( __( "Ran into an error while inserting make/model. Please contact support for help.", 'wp-car-manager' ) );
+					}
 
 					break;
 			}
