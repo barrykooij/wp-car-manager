@@ -3,8 +3,8 @@ Contributors: never5, barrykooij, hchouhan
 Donate link: http://www.barrykooij.com/donate/
 Tags: car, vehicle, motor, sell, car listings, cars, auto, car market, marketplace, car dealer, car classifieds, auto dealer, auto classifieds, autostock, selling cars, dealer, car-dealer, cardealer, automotive, sales, lots, auto, motorcycle, bike, boat, airplane, rvs, tractors, motorhomes, trailers, car sales
 Requires at least: 3.8
-Tested up to: 4.7
-Stable tag: 1.3.2
+Tested up to: 4.7.3
+Stable tag: 1.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,6 +80,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 * Tweak: Introduced insert_make() & update_make() methods in MakeModelManager.
 * Tweak: Introduced insert_model() & update_model() methods in MakeModelManager.
 * Tweak: Remove power_type since it's no longer used.
+* Tweak: Added Tunisian Dinar, props BesrourMS.
 
 = 1.3.2: December 16, 2016 =
 * Tweak: AJAX url now uses home_url() instead of site_url().
