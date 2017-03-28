@@ -74,6 +74,13 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 == Changelog ==
 
+= 1.3.x: x x, 2017 =
+* Tweak: Introduced get_make_by_name() method in MakeModelManager.
+* Tweak: Introduced get_model_by_name() method in MakeModelManager.
+* Tweak: Introduced insert_make() & update_make() methods in MakeModelManager.
+* Tweak: Introduced insert_model() & update_model() methods in MakeModelManager.
+* Tweak: Remove power_type since it's no longer used.
+
 = 1.3.2: December 16, 2016 =
 * Tweak: AJAX url now uses home_url() instead of site_url().
 * Tweak: Fixed a bug where 2015 was the 'latest' year in date filter (latest is now current year).
