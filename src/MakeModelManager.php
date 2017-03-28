@@ -273,17 +273,21 @@ class MakeModelManager {
 	 *
 	 * @return array
 	 */
-	public function get_model_by_name( $model_name, $make_id ) {
+	public function get_model_by_name( $model_name, $make_id = 0 ) {
 		$model = array( 'id' => 0, 'name' => '', 'slug' => '' );
 
-		// get terms
-		$terms = get_terms( Taxonomies::MAKE_MODEL, array(
+		$args = array(
 			'hide_empty'   => false,
 			'hierarchical' => false,
-			'parent'       => $make_id,
 			'name'         => $model_name
+		);
 
-		) );
+		if ( $make_id > 0 ) {
+			$args['parent'] = $make_id;
+		}
+
+		// get terms
+		$terms = get_terms( Taxonomies::MAKE_MODEL, $args );
 
 		if ( count( $terms ) > 0 ) {
 			$term  = array_shift( $terms );
