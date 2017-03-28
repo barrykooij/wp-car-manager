@@ -74,7 +74,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 == Changelog ==
 
-= 1.3.x: x x, 2017 =
+= 1.3.3: March 28, 2017 =
 * Tweak: Introduced get_make_by_name() method in MakeModelManager.
 * Tweak: Introduced get_model_by_name() method in MakeModelManager.
 * Tweak: Introduced insert_make() & update_make() methods in MakeModelManager.
