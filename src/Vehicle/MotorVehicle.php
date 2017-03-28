@@ -24,9 +24,6 @@ abstract class MotorVehicle extends Vehicle {
 	/** @var int */
 	private $power_kw;
 
-	/** @var String */
-	private $power_type;
-
 	/**
 	 * @return int
 	 */
@@ -133,27 +130,5 @@ abstract class MotorVehicle extends Vehicle {
 	 */
 	public function set_power_kw( $power_kw ) {
 		$this->power_kw = $power_kw;
-	}
-
-	/**
-	 * Get the formatted power type
-	 *
-	 * @return String
-	 */
-	public function get_formatted_power_type() {
-		$power_types = Data::get_power_types();
-		$power_type  = $this->get_power_type();
-		if ( isset( $power_types[ $power_type ] ) ) {
-			$power_type = $power_types[ $power_type ];
-		}
-
-		return $power_type;
-	}
-
-	/**
-	 * @param String $power_type
-	 */
-	public function set_power_type( $power_type ) {
-		$this->power_type = $power_type;
 	}
 }
