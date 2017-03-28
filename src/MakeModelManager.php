@@ -43,7 +43,7 @@ class MakeModelManager {
 		// get terms
 		$term = get_term_by( 'name', $make_name, Taxonomies::MAKE_MODEL );
 
-		if ( ! is_wp_error( $term ) && null !== $term ) {
+		if ( ! is_wp_error( $term ) && null !== $term && false !== $term ) {
 			$make = array(
 				'id'   => $term->term_id,
 				'name' => $term->name,
