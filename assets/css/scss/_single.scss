@@ -1,3 +1,9 @@
+.single-wpcm_vehicle {
+    .single-featured-image-header {
+      display: none;
+    }
+}
+
 .wpcm_vehicle {
 
   .wpcm-notice {
@@ -24,11 +30,16 @@
     }
   }
 
+  .posted-on {
+      display: none;
+  }
+
   .attachment-full,
   .entry-thumbnail,
   .attachment-post-thumbnail,
   .attachment-post-featured-image,
-  .size-post-featured-image {
+  .size-post-featured-image,
+  .wp-post-image {
     display: none;
   }
 
@@ -39,6 +50,10 @@
   .wpcm-images {
     position: relative;
     width: 100%;
+
+    .wp-post-image {
+      display: block;
+    }
 
     img.attachment-wpcm_vehicle_single.wp-post-image {
       width: 100%;
