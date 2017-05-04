@@ -4,7 +4,7 @@
 	</label>
 	<select id="wpcm-sort">
 		<?php foreach (
-			apply_filters( 'wpcm_filter_mileage', array(
+			apply_filters( 'wpcm_filter_sort', array(
 				'price-asc'    => __( 'Price (low-high)', 'wp-car-manager' ),
 				'price-desc'   => __( 'Price (high-low)', 'wp-car-manager' ),
 				'frdate-asc'   => __( 'Year (old-new)', 'wp-car-manager' ),
