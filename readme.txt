@@ -74,6 +74,11 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 == Changelog ==
 
+= 1.3.4: May 4, 2017 =
+* Tweak: Fixed incorrect filter in sort template. New filter: wpcm_filter_sort
+* Tweak: Fixed a display issue for listing overview pages.
+* Tweak: Some CSS tweaks to better hide incorrect theme single (header) images.
+
 = 1.3.3: March 28, 2017 =
 * Tweak: Introduced get_make_by_name() method in MakeModelManager.
 * Tweak: Introduced get_model_by_name() method in MakeModelManager.
