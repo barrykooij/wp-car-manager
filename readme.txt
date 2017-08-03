@@ -74,6 +74,9 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 == Changelog ==
 
+= 1.3.5: August 3, 2017 =
+* Tweak: Fixed incorrect 'Min Year' filter in overview. It was incorrectly filtering date_to, where it should filter date_from.
+
 = 1.3.4: May 4, 2017 =
 * Tweak: Fixed incorrect filter in sort template. New filter: wpcm_filter_sort
 * Tweak: Fixed a display issue for listing overview pages.
