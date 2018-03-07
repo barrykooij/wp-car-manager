@@ -29,10 +29,10 @@ class GetDashboard extends Ajax {
 
 		// get vehicles
 		$vehicle_manager = new Vehicle\Manager();
-		$vehicles        = $vehicle_manager->get_vehicles( array(), $sort, - 1, array(
+		$vehicles        = $vehicle_manager->get_vehicles( array(), $sort, - 1, apply_filters( 'wpcm_dashboard_get_vehicles_extra_args', array(
 			'author'      => get_current_user_id(),
 			'post_status' => apply_filters( 'wpcm_dashboard_post_status', array( 'publish', 'expired', 'pending' ) )
-		) );
+		) ) );
 
 		// check & loop
 		if ( count( $vehicles ) > 0 ) {
