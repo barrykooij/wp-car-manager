@@ -75,6 +75,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 == Changelog ==
 
 = 1.4.0: x =
+* Tweak: Fixed a bug where power kW and HP were not saved of frontend submissions.
 * Tweak: Date selectors now have better date ranges.
 * Tweak: Add post-thumbnails theme support if not already supported.
 
