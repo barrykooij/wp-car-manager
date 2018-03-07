@@ -97,6 +97,13 @@ final class Plugin extends Pimple\Container {
 			$manager->mark_vehicles_expired();
 		} );
 
+		// add theme support for post thumbnails
+		add_action( 'after_setup_theme', function () {
+			if ( ! current_theme_supports( 'post-thumbnails' ) ) {
+				add_theme_support( 'post-thumbnails' );
+			}
+		} );
+
 		if ( is_admin() ) {
 
 			// add admin menu
