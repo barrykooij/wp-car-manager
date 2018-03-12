@@ -101,9 +101,9 @@ if ( ! function_exists( 'wpcm_template_single_contact' ) ) {
 
 		// if email is empty, use contact email setting
 		if ( empty ( $email ) ) {
-			$email = wp_car_manager()->service( 'settings' )->get_option( 'contact_email' );	
+			$email = wp_car_manager()->service( 'settings' )->get_option( 'contact_email' );
 		}
-		
+
 
 		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/contact', '', array( 'vehicle' => $vehicle, 'email' => $email ) );
 	}
@@ -140,6 +140,24 @@ if ( ! function_exists( 'wpcm_template_vehicle_listings_filters_make' ) ) {
 		// fetch all makes if make attr is empty
 		if ( empty( $atts['make'] ) ) {
 			$makes = wp_car_manager()->service( 'make_model_manager' )->get_makes_map();
+
+			// check if need to filter out empty makes
+			if ( 1 === absint( wp_car_manager()->service( 'settings' )->get_option( 'listings_hide_empty_makes_models' ) ) ) {
+				foreach ( $makes as $make_id => $make_name ) {
+
+					// skip the label
+					if ( 0 == $make_id ) {
+						continue;
+					}
+
+					// unset if no vehicles are in this make
+					if ( 0 == wp_car_manager()->service( 'make_model_manager' )->get_vehicle_count( $make_id, 0 ) ) {
+						unset( $makes[ $make_id ] );
+					}
+
+				}
+			}
+
 		} else {
 			$term  = get_term_by( 'name', $atts['make'], 'wpcm_make_model' );
 			$makes = array( $term->term_id => $term->name );

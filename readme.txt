@@ -75,6 +75,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 == Changelog ==
 
 = 1.4.0: x =
+* Feature: Added option to hide empty makes and models on listing pages.
 * Tweak: Added Iranian Rial to currencies.
 * Tweak: Fixed a bug where power kW and HP were not saved of frontend submissions.
 * Tweak: Date selectors now have better date ranges.

@@ -2,6 +2,8 @@
 
 namespace Never5\WPCarManager;
 
+use Never5\WPCarManager\Vehicle\PostType;
+
 class MakeModelManager {
 
 	/**
@@ -99,6 +101,7 @@ class MakeModelManager {
 	public function get_makes_map() {
 		$makes     = $this->get_makes();
 		$makes_map = array( 0 => __( 'Select Make', 'wp-car-manager' ) );
+
 		if ( count( $makes ) > 0 ) {
 			foreach ( $makes as $make ) {
 				$makes_map[ $make['id'] ] = $make['name'];
@@ -339,6 +342,55 @@ class MakeModelManager {
 
 		// return models
 		return $models;
+	}
+
+	/**
+	 * @param int $make_id
+	 * @param int $model_id
+	 *
+	 * @return int
+	 */
+	public function get_vehicle_count( $make_id, $model_id ) {
+
+		// these need to be abs integers
+		$make_id  = absint( $make_id );
+		$model_id = absint( $model_id );
+
+		// build meta query
+		$meta_query = array();
+
+		if ( $make_id > 0 ) {
+			$meta_query[] = array(
+				'key'     => 'wpcm_make',
+				'value'   => $make_id,
+				'compare' => '=',
+				'type'    => 'NUMERIC'
+			);
+		}
+
+		if ( $model_id > 0 ) {
+			$meta_query[] = array(
+				'key'     => 'wpcm_model',
+				'value'   => $model_id,
+				'compare' => '=',
+				'type'    => 'NUMERIC'
+			);
+		}
+
+		// setup query args
+		$args = array(
+			'fields'      => 'ids',
+			'post_status' => 'publish',
+			'post_type'   => PostType::VEHICLE,
+			'meta_query'  => $meta_query
+		);
+
+		// do query
+		$query = new \WP_Query();
+		$res   = $query->query( $args );
+
+		// return count
+		return count( $res );
 	}
 
 }

@@ -101,6 +101,13 @@ class Settings {
 							'label' => __( 'Listings Per Page', 'wp-car-manager' ),
 							'desc'  => sprintf( __( 'The amount of listings per page. Enter %s to disable pagination.', 'wp-car-manager' ), '<code>-1</code>' )
 						),
+						array(
+							'name'     => 'listings_hide_empty_makes_models',
+							'label'    => __( 'Hide Empty Makes & Models', 'wp-car-manager' ),
+							'cb_label' => __( 'Hide empty makes and models from listing pages', 'wp-car-manager' ),
+							'desc'     => __( 'If enabled, makes and/or models that have vehicles will no longer be listed on your listing pages.', 'wp-car-manager' ),
+							'type'     => 'checkbox',
+						),
 
 					),
 				),
