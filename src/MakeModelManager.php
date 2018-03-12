@@ -66,7 +66,8 @@ class MakeModelManager {
 		$makes = array();
 
 		// get terms
-		$terms = get_terms( Taxonomies::MAKE_MODEL, array(
+		$terms = get_terms( array(
+			'taxonomy'     => Taxonomies::MAKE_MODEL,
 			'hide_empty'   => false,
 			'hierarchical' => false,
 			'parent'       => 0
@@ -314,7 +315,8 @@ class MakeModelManager {
 		$models = array();
 
 		// get terms
-		$terms = get_terms( Taxonomies::MAKE_MODEL, array(
+		$terms = get_terms( array(
+			'taxonomy'     => Taxonomies::MAKE_MODEL,
 			'hide_empty'   => false,
 			'hierarchical' => false,
 			'parent'       => $make_id
