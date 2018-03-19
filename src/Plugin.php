@@ -106,6 +106,12 @@ final class Plugin extends Pimple\Container {
 
 		if ( is_admin() ) {
 
+			// modify admin menu
+			add_action( 'admin_head', function () {
+				$menu = new Admin\Menu();
+				$menu->menu_pending_review_count_bubble();
+			} );
+
 			// add admin menu
 			add_action( 'admin_menu', function () {
 
