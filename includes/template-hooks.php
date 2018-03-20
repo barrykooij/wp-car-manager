@@ -39,6 +39,7 @@ add_action( 'wpcm_vehicle_summary', 'wpcm_template_single_contact', 30 );
 add_action( 'wpcm_vehicle_content', 'wpcm_template_single_data', 10 );
 add_action( 'wpcm_vehicle_content', 'wpcm_template_single_content', 20 );
 add_action( 'wpcm_vehicle_content', 'wpcm_template_single_features', 30 );
+add_action( 'wpcm_vehicle_content', 'wpcm_template_single_footnote', 99 );
 
 // Remove the power hp from data template parts as we display this in the power kw template part
 add_filter( 'wpcm_single_vehicle_data_fields', 'wpcm_template_data_remove_power_hp', 10, 2 );

@@ -108,7 +108,12 @@ class Settings {
 							'desc'     => __( 'If enabled, makes and/or models that have vehicles will no longer be listed on your listing pages.', 'wp-car-manager' ),
 							'type'     => 'checkbox',
 						),
-
+						array(
+							'name'     => 'listings_single_footnote',
+							'label'    => __( 'Listing Detail Footnote', 'wp-car-manager' ),
+							'desc'     => __( 'The footnote will be displayed at the bottom of all vehicle detail pages.', 'wp-car-manager' ),
+							'type'     => 'textarea',
+						),
 					),
 				),
 				'submission' => array(

@@ -85,6 +85,12 @@ if ( ! function_exists( 'wpcm_template_single_features' ) ) {
 	}
 }
 
+if ( ! function_exists( 'wpcm_template_single_footnote' ) ) {
+	function wpcm_template_single_footnote( $vehicle ) {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/footnote', '', array( 'vehicle' => $vehicle ) );
+	}
+}
+
 if ( ! function_exists( 'wpcm_template_single_contact' ) ) {
 	function wpcm_template_single_contact( $vehicle ) {
 
