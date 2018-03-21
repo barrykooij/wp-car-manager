@@ -51,36 +51,44 @@ class Manager {
 		// vehicle array
 		$vehicles = array();
 
+		// base meta query
+		$meta_query = array();
+
 		// translate $sort to \WP_Query sort
 		$sort_params = explode( '-', $sort );
 
+		/**
+		 * Default first sort entry is menu_order.
+		 * This puts 'featured' listings on top.
+		 * @TODO: Need to make it possible to show only featured listings or exclude them.
+		 * @TODO: Need to make it possible to keep mixed results but not stick featured to top.
+		 */
+		$order  = array( 'menu_order' => 'ASC' );
+
 		// order by variables
-		$orderby = 'meta_value';
-		$order   = ( 'desc' == array_pop( $sort_params ) ) ? 'DESC' : 'ASC';
+		$order_val   = ( 'desc' == array_pop( $sort_params ) ) ? 'DESC' : 'ASC';
 
 		// get sort value and meta key
 		$sort_val = array_shift( $sort_params );
 		$meta_key = 'wpcm_' . $sort_val;
 
-		// determine sort value type
-		switch ( $sort_val ) {
-			case 'price':
-				$meta_type = 'NUMERIC';
-				break;
-			case 'frdate':
-				$meta_type = 'DATE';
-				break;
-			case 'mileage':
-				$meta_type = 'NUMERIC';
-				break;
-			case 'date':
-				$orderby = 'date';
-				break;
-			default:
-				// force sort to ascending price if given sort isn't recognized
-				$meta_type = 'NUMERIC';
-				$meta_key  = 'wpcm_price';
-				$order     = 'ASC';
+		$sort_meta_entry = array(
+			'key'     => $meta_key,
+			'type'    => 'NUMERIC'
+		);
+
+		// set type to DATE for date
+		if( $sort_val == 'frdate' ) {
+			$sort_meta_entry['type'] = 'DATE';
+		}
+
+		// add date as a regular extra order entry
+		if( $sort_val == 'date') {
+			$order['date'] = $order_val;
+		}else {
+			// add an extra meta order entry
+			$meta_query['orderby_meta'] = $sort_meta_entry;
+			$order['orderby_meta'] = $order_val;
 		}
 
 		// \WP_Query arg
@@ -88,18 +96,8 @@ class Manager {
 			'post_status'    => 'publish',
 			'post_type'      => PostType::VEHICLE,
 			'posts_per_page' => intval( $per_page ),
-			'orderby'        => $orderby,
-			'order'          => $order
+			'orderby'        => $order,
 		);
-
-		// check if we're sorting by meta and if so, add the meta sort data
-		if ( 'meta_value' == $orderby ) {
-			$args['meta_type'] = $meta_type;
-			$args['meta_key']  = $meta_key;
-		}
-
-		// base meta query
-		$meta_query = array();
 
 		// check for make
 		if ( is_array( $filters ) && count( $filters ) > 0 ) {
@@ -254,6 +252,24 @@ class Manager {
 		wp_reset_postdata();
 
 		return true;
+	}
+
+	// update the vehicle order
+	public function update_vehicle_order( $vehicle_id ) {
+		global $wpdb;
+
+		// check if this vehicle is featured
+		$featured = absint( get_post_meta( $vehicle_id, 'wpcm_featured', true ) );
+
+		if( 1 === $featured ) {
+			$wpdb->update( $wpdb->posts, array( 'menu_order' => -1 ), array( 'ID' => $vehicle_id ) );
+		}else {
+			$wpdb->update( $wpdb->posts, array( 'menu_order' => 0 ), array( 'ID' => $vehicle_id, 'menu_order' => -1 ) );
+		}
+
+		// be gone cache
+		clean_post_cache( $vehicle_id );
+
 	}
 
 

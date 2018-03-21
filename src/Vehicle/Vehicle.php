@@ -53,6 +53,9 @@ abstract class Vehicle {
 	/** @var int */
 	private $sold;
 
+	/** @var  int */
+	private $featured;
+
 	/**
 	 * @return int
 	 */
@@ -365,6 +368,27 @@ abstract class Vehicle {
 	 */
 	public function is_sold() {
 		return ( '1' == $this->get_sold() );
+	}
+
+	/**
+	 * @return int
+	 */
+	public function get_featured() {
+		return $this->featured;
+	}
+
+	/**
+	 * @param int $featured
+	 */
+	public function set_featured( $featured ) {
+		$this->featured = $featured;
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function is_featured() {
+		return ( '1' == $this->get_featured() );
 	}
 
 }

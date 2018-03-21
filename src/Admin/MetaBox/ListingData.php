@@ -44,6 +44,12 @@ class ListingData extends MetaBox {
 					'key'      => 'sold',
 					'required' => false
 				),
+				'featured'  => array(
+					'type'     => 'checkbox',
+					'label'    => __( 'Featured', 'wp-car-manager' ),
+					'key'      => 'featured',
+					'required' => false
+				),
 			)
 		) );
 
@@ -64,6 +70,7 @@ class ListingData extends MetaBox {
 
 		// save
 		if ( isset( $_POST['wpcm-ld'] ) && count( $_POST['wpcm-ld'] ) > 0 ) {
+
 			foreach ( $_POST['wpcm-ld'] as $key => $val ) {
 				update_post_meta( $post->ID, 'wpcm_' . $key, $val );
 			}
@@ -72,6 +79,15 @@ class ListingData extends MetaBox {
 			if ( ! isset( $_POST['wpcm-ld']['sold'] ) ) {
 				update_post_meta( $post->ID, 'wpcm_sold', '0' );
 			}
+
+			// set featured to 0 if not set (checkbox)
+			if ( ! isset( $_POST['wpcm-ld']['featured'] ) ) {
+				update_post_meta( $post->ID, 'wpcm_featured', '0' );
+			}
+
+			// call for update of vehicle order here
+			$vehicle_manager = new Vehicle\Manager();
+			$vehicle_manager->update_vehicle_order( $post->ID );
 
 		}
 
