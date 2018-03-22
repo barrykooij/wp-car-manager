@@ -89,6 +89,9 @@ class Manager {
 			// add an extra meta order entry
 			$meta_query['orderby_meta'] = $sort_meta_entry;
 			$order['orderby_meta'] = $order_val;
+
+			// add a third sort parameter, date DESC. This way the newest listings with the given filter are shown on top.
+			$order['date'] = 'DESC';
 		}
 
 		// \WP_Query arg
