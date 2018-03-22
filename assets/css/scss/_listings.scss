@@ -71,6 +71,7 @@
         padding: 0;
         margin: 0;
         border-bottom: 1px solid #eee;
+
         a {
           display: block;
           padding: 1em 1em 1em 2em;
@@ -153,6 +154,14 @@
                 //font-size: 1.1em;
               }
             }
+          }
+        }
+
+        &.wpcm-listings-item-featured a {
+          background: #fefee5;
+
+          &:hover {
+            background-color: #fefed8;
           }
         }
 
