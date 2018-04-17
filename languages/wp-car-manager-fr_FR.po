@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: WP Car Manager\n"
 "Report-Msgid-Bugs-To: https://github.com/barrykooij/wp-car-manager/issues\n"
 "POT-Creation-Date: 2016-07-11 09:01:01+00:00\n"
-"PO-Revision-Date: 2016-07-11 09:05+0000\n"
+"PO-Revision-Date: 2017-09-22 20:56+0000\n"
 "Last-Translator: Barry Kooij <mail@barrykooij.nl>\n"
 "Language-Team: French (France) (http://www.transifex.com/barrykooijplugins/wp-car-manager/language/fr_FR/)\n"
 "MIME-Version: 1.0\n"
@@ -26,32 +26,32 @@ msgstr ""
 
 #: assets/views/meta-box/gallery.php:15 assets/views/meta-box/gallery.php:30
 msgid "Delete image"
-msgstr "Suprimer l' image"
+msgstr "Supprimer l'image"
 
 #: assets/views/meta-box/gallery.php:15 assets/views/meta-box/gallery.php:31
 #: templates/dashboard/buttons/delete.php:1
 #: templates/submit-car-form/images.php:28
 msgid "Delete"
-msgstr "Suprimer"
+msgstr "Supprimer"
 
 #: assets/views/meta-box/gallery.php:28
 msgid "Add Images to Gallery"
-msgstr "Ajouter images a la  Galerie"
+msgstr "Ajouter des photos à la Galerie"
 
 #: assets/views/meta-box/gallery.php:29
 msgid "Add to gallery"
-msgstr "Ajouter a la Galerie"
+msgstr "Ajouter à la Galerie"
 
 #: assets/views/meta-box/gallery.php:31
 msgid "Add gallery images"
-msgstr "Ajouter images a la Galerie"
+msgstr "Ajouter des photos à la Galerie"
 
 #: assets/views/meta-box/input/select-model.php:4
 #: templates/listings/filters/model.php:3
 #: templates/submit-car-form/form-fields/select-model.php:3
 #: templates/submit-car-form/form-fields/select-model.php:15
 msgid "Select Model"
-msgstr "Sélectioner Modèle"
+msgstr "Sélectionner le Modèle"
 
 #: assets/views/page/edit-make-model.php:16 assets/views/page/makes.php:16
 #: assets/views/page/makes.php:63 assets/views/page/makes.php:92
@@ -63,7 +63,7 @@ msgstr "Nom"
 #: assets/views/page/edit-make-model.php:19 assets/views/page/makes.php:95
 #: assets/views/page/models.php:96
 msgid "The name is how it appears on your site."
-msgstr "Le nom comme marquer sur votre site"
+msgstr "Le nom qui apparaîtra sur votre site"
 
 #: assets/views/page/edit-make-model.php:23 assets/views/page/makes.php:18
 #: assets/views/page/makes.php:64 assets/views/page/makes.php:98
@@ -77,15 +77,15 @@ msgstr "Slug"
 msgid ""
 "The “slug” is the URL-friendly version of the name. It is usually all "
 "lowercase and contains only letters, numbers, and hyphens."
-msgstr "Le \" Slug\" c'est le nom du page/titre ecrit dansl' URL en remplaçant les espaces par des tirets etc."
+msgstr "Le \" Slug\" c'est le nom de la page/du titre écrit dans l'URL en remplaçant les espaces par des tirets etc."
 
 #: assets/views/page/edit-make-model.php:32
 msgid "Update"
-msgstr "Mettre a Jour"
+msgstr "Mettre à Jour"
 
 #: assets/views/page/makes.php:49
 msgid "Configure Models"
-msgstr "Configurer Modèles"
+msgstr "Configurer les Modèles"
 
 #: assets/views/page/makes.php:55
 msgid "No Makes found"
@@ -109,7 +109,7 @@ msgstr ""
 #: assets/views/page/makes.php:82 assets/views/page/makes.php:105
 #: src/Taxonomies.php:93
 msgid "Add New Make"
-msgstr "Ajouter nouveau Marque"
+msgstr "Ajouter un nouveau constructeur"
 
 #: assets/views/page/models.php:55
 msgid "No Models found"
@@ -128,7 +128,7 @@ msgstr ""
 
 #: assets/views/page/models.php:81 assets/views/page/models.php:106
 msgid "Add New Model"
-msgstr "Ajouter nouveau Modèle"
+msgstr "Ajouter un nouveau Modèle"
 
 #: assets/views/page/settings.php:10 src/Admin/Page/Settings.php:11
 msgid "Settings"
@@ -144,11 +144,11 @@ msgstr "Sauvegarder les modifications"
 
 #: includes/template-functions.php:23
 msgid "Submit listing"
-msgstr ""
+msgstr "Soumettre l'annonce"
 
 #: includes/template-functions.php:199
 msgid "Listing Title"
-msgstr ""
+msgstr "Titre de l'annonce (ex. Tesla Model S P85 Signature)"
 
 #: includes/template-functions.php:219 src/Util/Onboarding.php:108
 msgid "Description"
@@ -158,15 +158,15 @@ msgstr ""
 msgid ""
 "A short description of the vehicle. Does not need to include features, these"
 " can be selected separately below."
-msgstr ""
+msgstr "Une courte description de votre véhicule. Les caractéristiques peuvent être précisées séparément ci-dessous."
 
 #: includes/template-functions.php:247 src/Admin/MetaBox/CarData.php:14
 msgid "Car Data"
-msgstr "Données Vehicule"
+msgstr "Données du Véhicule"
 
 #: includes/template-functions.php:255
 msgid "(optional)"
-msgstr ""
+msgstr "(optionnel)"
 
 #: src/Admin/CustomColumns.php:47 src/Vehicle/Data.php:29
 #: templates/listings/filters/make.php:2
@@ -196,7 +196,7 @@ msgstr "FR date"
 
 #: src/Admin/CustomColumns.php:52
 msgid "Expires"
-msgstr ""
+msgstr "Expire"
 
 #: src/Admin/CustomColumns.php:53
 msgid "Actions"
@@ -221,7 +221,7 @@ msgstr ""
 
 #: src/Admin/MetaBox/ListingData.php:43
 msgid "Sold?"
-msgstr ""
+msgstr "Vendu"
 
 #: src/Admin/MetaBox/ShortDescription.php:13
 msgid "Short Description"
@@ -236,11 +236,11 @@ msgstr "Extensions"
 msgid ""
 "Extend WP Car Manager with its powerful free and paid extensions. %sClick "
 "here to browse all extensions%s"
-msgstr "Améliorer WP Car Manager avec les option puissant payant.%Clique ici pour tous les extensions%s"
+msgstr "Améliorer WP Car Manager avec les options payantes. %Cliquez ici pour toutes les extensions%s"
 
 #: src/Admin/Page/Extensions.php:167
 msgid "Couldn't load extensions, please try again later."
-msgstr "Echec du chargement, reessayer plaus tard."
+msgstr "Echec du chargement, réessayer plus tard."
 
 #: src/Admin/Page/Makes.php:13 src/Taxonomies.php:88
 msgid "Makes & Models"
@@ -264,7 +264,7 @@ msgstr ""
 
 #: src/Ajax/CreatePage.php:51
 msgid "My Cars"
-msgstr ""
+msgstr "Mon annonce"
 
 #: src/Ajax/CreatePage.php:54 src/Vehicle/PostType.php:30
 msgid "Cars"
@@ -272,7 +272,7 @@ msgstr "Véhicules"
 
 #: src/Ajax/GetDashboard.php:67 src/Vehicle/PostStatus.php:202
 msgid "Expired"
-msgstr ""
+msgstr "Expiré"
 
 #: src/Ajax/SaveVehicle.php:33
 msgid "Missing vehicle ID."
@@ -300,11 +300,11 @@ msgstr ""
 
 #: src/Assets.php:71 src/Assets.php:129
 msgid "No models found"
-msgstr "Aucun model trouvé"
+msgstr "Aucun modèle trouvé"
 
 #: src/Assets.php:72 src/Assets.php:130 templates/listings/filters/model.php:4
 msgid "Select make first"
-msgstr "Sélectioner Modèle"
+msgstr "Sélectionner le Constructeur en 1er"
 
 #: src/Assets.php:132
 msgid "Submitting your data, please wait..."
@@ -321,7 +321,7 @@ msgstr ""
 
 #: src/Extension/Extension.php:152
 msgid "License successfully activated."
-msgstr "Licence activé avec succes."
+msgstr "Licence activée avec succès."
 
 #: src/Helper/Currency.php:201
 msgid "United Arab Emirates Dirham"
@@ -569,7 +569,7 @@ msgstr ""
 
 #: src/MakeModelManager.php:74 templates/listings/filters/make.php:3
 msgid "Select Make"
-msgstr "Sélectioner Marque"
+msgstr "Sélectionner le Constructeur"
 
 #: src/RoleManager.php:21
 msgid "Car Seller"
@@ -585,7 +585,7 @@ msgstr "Devises"
 
 #: src/Settings.php:44
 msgid "Choose the currency used in your price fields."
-msgstr "Choisir votre devise pour les Prix"
+msgstr "Choisir votre devise pour les prix"
 
 #: src/Settings.php:50
 msgid "Currency Position"
@@ -617,15 +617,15 @@ msgstr "Séparateur décimale"
 
 #: src/Settings.php:64
 msgid "The decimal separator of distance unites and prices."
-msgstr "Le séperateur pour les distances et prix."
+msgstr "Le séparateur pour les distances et prix."
 
 #: src/Settings.php:68
 msgid "Thousand Separator"
-msgstr "Séparateur de milliers"
+msgstr "Séparateur des milliers"
 
 #: src/Settings.php:69
 msgid "The thousand separator of displayed distance unites and prices."
-msgstr "Séparateur de milliers pour les distances et prix"
+msgstr "Séparateur des milliers pour les distances et prix"
 
 #: src/Settings.php:73
 msgid "Distance Unit"
@@ -755,11 +755,11 @@ msgstr "Adresse email"
 
 #: src/Settings.php:156
 msgid "Contact Phone Number"
-msgstr "Numéro téléphone Contact"
+msgstr "Numéro de téléphone du Contact"
 
 #: src/Settings.php:157
 msgid "The phone number people can call to."
-msgstr "Votre numéro téléphone"
+msgstr "Votre numéro de téléphone"
 
 #: src/Settings.php:163 src/Util/Onboarding.php:103
 msgid "Pages"
@@ -767,7 +767,7 @@ msgstr ""
 
 #: src/Settings.php:167
 msgid "Submit Car Page Form"
-msgstr ""
+msgstr "Soumettre le formulaire"
 
 #: src/Settings.php:168 src/Settings.php:175 src/Settings.php:182
 msgid "Select the page where you have placed the %s shortcode."
@@ -783,29 +783,29 @@ msgstr ""
 
 #: src/SubmitCarHandler.php:253
 msgid "Preview Car"
-msgstr ""
+msgstr "Voir l'annonce"
 
 #: src/SubmitCarHandler.php:329
 msgid "%s has been submitted successfully and will be visible once approved."
-msgstr ""
+msgstr "%s a été soumis et sera visible dès validation."
 
 #: src/SubmitCarHandler.php:333
 msgid ""
 "%s has been submitted successfully and will be visible once payment has been"
 " confirmed."
-msgstr ""
+msgstr "%s a été soumis et sera visible dès validation du paiement."
 
 #: src/SubmitCarHandler.php:336
 msgid "%s has been submitted successfully."
-msgstr ""
+msgstr "%s a été soumis avec succès."
 
 #: src/SubmitCarHandler.php:343
 msgid "View Listing"
-msgstr ""
+msgstr "Voir l'annonce"
 
 #: src/SubmitCarHandler.php:345
 msgid "View Dashboard"
-msgstr ""
+msgstr "Voir le tableau de bord"
 
 #: src/Taxonomies.php:17
 msgid "Features"
@@ -817,19 +817,19 @@ msgstr "Options & Equipements"
 
 #: src/Taxonomies.php:19
 msgid "Parent Feature"
-msgstr "Option Parent"
+msgstr "Option précédente"
 
 #: src/Taxonomies.php:20
 msgid "Parent Feature:"
-msgstr "Option Parent:"
+msgstr "Option précédente:"
 
 #: src/Taxonomies.php:21
 msgid "New Feature Name"
-msgstr "Nom Nouvelle Option "
+msgstr "Nom de la Nouvelle Option "
 
 #: src/Taxonomies.php:22
 msgid "Add New Feature"
-msgstr "Ajouter Nouvelle Option"
+msgstr "Ajouter une nouvelle Option"
 
 #: src/Taxonomies.php:23
 msgid "Edit Feature"
@@ -837,7 +837,7 @@ msgstr "Modifier Option"
 
 #: src/Taxonomies.php:24
 msgid "Update Feature"
-msgstr "Mettre a Jour Option"
+msgstr "Mettre à Jour Option"
 
 #: src/Taxonomies.php:25
 msgid "View Feature"
@@ -845,15 +845,15 @@ msgstr "Voir l'option"
 
 #: src/Taxonomies.php:26
 msgid "Separate features with commas"
-msgstr "Séparer les options avec vergules"
+msgstr "Séparer les options avec virgules"
 
 #: src/Taxonomies.php:27
 msgid "Add or remove features"
-msgstr "Ajouter ou Suprimer Options"
+msgstr "Ajouter ou Supprimer Options"
 
 #: src/Taxonomies.php:28 src/Taxonomies.php:99
 msgid "Choose from the most used"
-msgstr "Choisir les plus commun"
+msgstr "Choisir les plus communs"
 
 #: src/Taxonomies.php:29
 msgid "Popular features"
@@ -894,47 +894,47 @@ msgstr ""
 
 #: src/Taxonomies.php:89
 msgid "All Makes"
-msgstr "Tous les Marques"
+msgstr "Tous les Constructeurs"
 
 #: src/Taxonomies.php:90
 msgid "Parent Make"
-msgstr "Marque Parent"
+msgstr "Constructeur Parent"
 
 #: src/Taxonomies.php:91
 msgid "Parent Make:"
-msgstr "Parent Make :"
+msgstr "Parent Constructeur :"
 
 #: src/Taxonomies.php:92
 msgid "New Make Name"
-msgstr "Nom Nouvelle Marque"
+msgstr "Nom de nouveau Constructeur"
 
 #: src/Taxonomies.php:94
 msgid "Edit Make"
-msgstr "Modifier Marque"
+msgstr "Modifier Constructeur"
 
 #: src/Taxonomies.php:95
 msgid "Update Make"
-msgstr "Mettre a Jour Marque"
+msgstr "Mettre à Jour Constructeur"
 
 #: src/Taxonomies.php:96
 msgid "View Make"
-msgstr "Voir Marque"
+msgstr "Voir Constructeur"
 
 #: src/Taxonomies.php:97
 msgid "Separate makes with commas"
-msgstr "Séparer les marques avec vergules"
+msgstr "Séparer les constructeurs avec virgules"
 
 #: src/Taxonomies.php:98
 msgid "Add or remove makes"
-msgstr "Ajouter ou Suprimer Marques"
+msgstr "Ajouter ou Supprimer Constructeurs"
 
 #: src/Taxonomies.php:100
 msgid "Popular Makes"
-msgstr "Marques Populaires"
+msgstr "Constructeurs Populaires"
 
 #: src/Taxonomies.php:101
 msgid "Search Makes"
-msgstr "Recherche Marques"
+msgstr "Recherche Constructeur"
 
 #: src/UserManager.php:109
 msgid "Invalid email address."
@@ -1056,7 +1056,7 @@ msgstr "Condition"
 
 #: src/Vehicle/Data.php:41
 msgid "First Registration Date"
-msgstr "Premiere date d'immatriculation"
+msgstr "Première date d'immatriculation"
 
 #: src/Vehicle/Data.php:62
 msgid "Fuel Type"
@@ -1070,7 +1070,7 @@ msgstr ""
 
 #: src/Vehicle/Data.php:65
 msgid "Gas"
-msgstr ""
+msgstr "Essence"
 
 #: src/Vehicle/Data.php:69 templates/vehicle-data/data-color.php:8
 msgid "Color"
@@ -1078,7 +1078,7 @@ msgstr "Couleur"
 
 #: src/Vehicle/Data.php:72
 msgid "Grey"
-msgstr ""
+msgstr "Gris"
 
 #: src/Vehicle/Data.php:76 templates/vehicle-data/data-body_style.php:8
 msgid "Body Style"
@@ -1086,7 +1086,7 @@ msgstr "Carrosserie"
 
 #: src/Vehicle/Data.php:79
 msgid "Sedan"
-msgstr ""
+msgstr "Tricorps"
 
 #: src/Vehicle/Data.php:84 templates/vehicle-data/data-transmission.php:8
 msgid "Transmission"
@@ -1102,15 +1102,15 @@ msgstr "Puissance kW (Ch)"
 
 #: src/Vehicle/Data.php:100
 msgid "2.0 TDI"
-msgstr ""
+msgstr "2.0 TFSI"
 
 #: src/Vehicle/Data.php:104
 msgid "Power kW"
-msgstr ""
+msgstr "Puissance kW"
 
 #: src/Vehicle/Data.php:111
 msgid "Power hp"
-msgstr ""
+msgstr "Puissance CH"
 
 #: src/Vehicle/Data.php:126
 msgid "New"
@@ -1122,15 +1122,15 @@ msgstr "Occasion"
 
 #: src/Vehicle/Data.php:138
 msgid "Automatic"
-msgstr "Boite Automatic"
+msgstr "Boîte Automatique"
 
 #: src/Vehicle/Data.php:139
 msgid "Manual"
-msgstr "Boite Manuelle"
+msgstr "Boîte Manuelle"
 
 #: src/Vehicle/Data.php:140
 msgid "Semi-Automatic"
-msgstr ""
+msgstr "Boîte Semi-Automatique"
 
 #: src/Vehicle/PostStatus.php:38
 msgid "Preview <span class=\"count\">(%s)</span>"
@@ -1146,11 +1146,11 @@ msgstr[1] ""
 
 #: src/Vehicle/PostStatus.php:203 templates/single-vehicle/preview.php:2
 msgid "Preview"
-msgstr ""
+msgstr "Prévisualisation"
 
 #: src/Vehicle/PostType.php:16
 msgid "Parent Car:"
-msgstr "Voiture Parent"
+msgstr "Véhicule Parent"
 
 #: src/Vehicle/PostType.php:17
 msgid "All Car Listings"
@@ -1166,27 +1166,27 @@ msgstr ""
 
 #: src/Vehicle/PostType.php:20
 msgid "New Car"
-msgstr "New Voiture"
+msgstr "Nouveau Véhicule"
 
 #: src/Vehicle/PostType.php:21
 msgid "Edit Car"
-msgstr "Modifier Voiture"
+msgstr "Modifier Véhicule"
 
 #: src/Vehicle/PostType.php:22
 msgid "Update Car"
-msgstr "Mettre a jour Voiture"
+msgstr "Mettre à jour Véhicule"
 
 #: src/Vehicle/PostType.php:23
 msgid "View Car"
-msgstr "Voir Voiture"
+msgstr "Voir Véhicule"
 
 #: src/Vehicle/PostType.php:24
 msgid "Search Car"
-msgstr "Chercher Voiture"
+msgstr "Chercher Véhicule"
 
 #: src/Vehicle/PostType.php:25
 msgid "No cars found"
-msgstr "Aucun voiture trouvé"
+msgstr "Aucun véhicule trouvé"
 
 #: src/Vehicle/PostType.php:26
 msgid "Not found in Trash"
@@ -1194,23 +1194,23 @@ msgstr "Aucun résultat dans la poubelle"
 
 #: src/Vehicle/PostType.php:29
 msgid "vehicle"
-msgstr "vehicule"
+msgstr "véhicule"
 
 #: templates/dashboard/buttons/add-new.php:7
 msgid "Add New"
-msgstr ""
+msgstr "Ajouter une nouvelle annonce"
 
 #: templates/dashboard/buttons/edit.php:1
 msgid "Edit"
-msgstr ""
+msgstr "Editer"
 
 #: templates/dashboard/item.php:24
 msgid "Expires on"
-msgstr ""
+msgstr "Expire le"
 
 #: templates/dashboard/no-results.php:1 templates/listings/no-results.php:1
 msgid "We couldn't find any cars."
-msgstr "Aucun résultat de votre recherche"
+msgstr "Aucun résultat avec vos filtres"
 
 #: templates/dashboard/not-logged-in.php:1
 msgid "Please sign in to view your car listings"
@@ -1218,7 +1218,7 @@ msgstr ""
 
 #: templates/general/review-sign.php:1
 msgid "PENDING REVIEW"
-msgstr ""
+msgstr "VALIDATION EN COURS"
 
 #: templates/general/sold-sign.php:1
 msgid "SOLD"
@@ -1230,7 +1230,7 @@ msgstr "Résultats"
 
 #: templates/listings/filters/frdate.php:2
 msgid "Min Year"
-msgstr "Année a partir de"
+msgstr "Année à partir de"
 
 #: templates/listings/filters/frdate.php:3
 #: templates/listings/filters/frdate.php:4
@@ -1299,7 +1299,7 @@ msgstr "Description Vehicule"
 
 #: templates/single-vehicle/data.php:8
 msgid "Vehicle Details"
-msgstr "Détails Véhicule"
+msgstr "Détails du véhicule"
 
 #: templates/single-vehicle/expired.php:2
 msgid "Listing Expired"
@@ -1313,45 +1313,45 @@ msgstr ""
 
 #: templates/single-vehicle/features.php:11
 msgid "Vehicle Features"
-msgstr "Options Vehicule"
+msgstr "Options Véhicule"
 
 #: templates/single-vehicle/pending.php:2
 msgid "Pending Review"
-msgstr ""
+msgstr "Validation en cours"
 
 #: templates/single-vehicle/pending.php:3
 msgid "Your submission is pending review, please check back later."
-msgstr ""
+msgstr "Votre annonce est en cours de validation, revérifier plus tard svp."
 
 #: templates/single-vehicle/preview.php:3
 msgid ""
 "This is a preview of your listing, please note this listing is not published"
 " yet!"
-msgstr ""
+msgstr "Voici une vue de votre annonce, qui n'est pas publiée pour le moment."
 
 #: templates/single-vehicle/preview.php:6
 msgid "Edit listing"
-msgstr ""
+msgstr "Editer l'annonce"
 
 #: templates/submit-car-form/account-signin.php:4
 msgid "Your account"
-msgstr ""
+msgstr "Votre compte"
 
 #: templates/submit-car-form/account-signin.php:9
 msgid "You are currently signed in as <strong>%s</strong>."
-msgstr ""
+msgstr "Vous êtes connecté(e) en tant que <strong>%s</strong>."
 
 #: templates/submit-car-form/account-signin.php:13
 msgid "Sign out"
-msgstr ""
+msgstr "Se déconnecter"
 
 #: templates/submit-car-form/account-signin.php:22
 msgid "Have an account?"
-msgstr ""
+msgstr "Avez-vous un compte ?"
 
 #: templates/submit-car-form/account-signin.php:26
 msgid "Sign in"
-msgstr ""
+msgstr "Se connecter"
 
 #: templates/submit-car-form/account-signin.php:30
 msgid ""
@@ -1365,15 +1365,15 @@ msgstr ""
 
 #: templates/submit-car-form/account-signin.php:42
 msgid "Username"
-msgstr ""
+msgstr "Compte utilisateur"
 
 #: templates/submit-car-form/account-signin.php:55
 msgid "Your Email"
-msgstr ""
+msgstr "Votre email"
 
 #: templates/submit-car-form/car-features.php:1
 msgid "Car Features"
-msgstr ""
+msgstr "Caractéristiques du véhicule"
 
 #: templates/submit-car-form/disabled.php:2
 msgid "You do not have permission to post or edit this listing."
@@ -1381,25 +1381,25 @@ msgstr ""
 
 #: templates/submit-car-form/images.php:1
 msgid "Images"
-msgstr ""
+msgstr "Photos"
 
 #: templates/submit-car-form/images.php:23
 msgid "Current Images"
-msgstr ""
+msgstr "Photos actuelles"
 
 #: templates/submit-car-form/images.php:37
 msgid "Upload New Images"
-msgstr ""
+msgstr "Télécharger de nouvelles photos"
 
 #: templates/submit-car-form/images.php:38
 msgid "Click here to upload your images"
-msgstr ""
+msgstr "Cliquer ici pour ajouter de nouvelles photos"
 
 #: templates/submit-car-form/images.php:39
 msgid ""
 "You can upload multiple images at the same time, the first image will be "
 "your thumbnail."
-msgstr ""
+msgstr "Vous pouvez télécharger plusieurs photos en même temps, la première sera la photo de l'annonce."
 
 #: templates/submit-car-form/step-empty-view.php:6
 msgid ""
@@ -1429,7 +1429,7 @@ msgstr "http://www.wpcarmanager.com"
 #. Description of the plugin/theme
 msgid ""
 "The easiest way to manage, list and sell your cars online using WordPress."
-msgstr "Le plus facile extension pour lister en vendre vos vehicules en ligne en utilisant WordPress "
+msgstr "La plus simple extension pour vendre des voitures en ligne en utilisant WordPress "
 
 #. Author of the plugin/theme
 msgid "Never5"
@@ -1487,9 +1487,9 @@ msgstr ""
 #: src/Vehicle/PostType.php:13
 msgctxt "Post Type Singular Name"
 msgid "Car"
-msgstr "Voiture"
+msgstr "Véhicule"
 
 #: src/Vehicle/PostType.php:64
 msgctxt "post type slug"
 msgid "vehicle"
-msgstr "vehicule"
+msgstr "véhicule"
