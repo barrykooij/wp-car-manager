@@ -75,6 +75,8 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 == Changelog ==
 
 = 1.4.0: x =
+* Feature: Added featured listings. Featured listings stand out and will be sticky to the top of your listings.
+* Feature: Added the 'featured' attribute to the [wpcm_cars] shortcode. This allows you to show only featured listings (true) or display only non-featured listings (false).
 * Feature: Added option to hide empty makes and models on listing pages.
 * Feature: Added footnote element, allowing admin to append footnote text to all listings.
 * Tweak: Added Iranian Rial to currencies.

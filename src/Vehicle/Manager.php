@@ -52,7 +52,9 @@ class Manager {
 		$vehicles = array();
 
 		// base meta query
-		$meta_query = array();
+		$meta_query = array(
+			'relation' => 'AND'
+		);
 
 		// translate $sort to \WP_Query sort
 		$sort_params = explode( '-', $sort );
@@ -60,8 +62,6 @@ class Manager {
 		/**
 		 * Default first sort entry is menu_order.
 		 * This puts 'featured' listings on top.
-		 * @TODO: Need to make it possible to show only featured listings or exclude them.
-		 * @TODO: Need to make it possible to keep mixed results but not stick featured to top.
 		 */
 		$order  = array( 'menu_order' => 'ASC' );
 
@@ -147,6 +147,37 @@ class Manager {
 							$filter['value']   = '1';
 							$filter['compare'] = '!=';
 							$filter['type']    = 'CHAR';
+						}
+						break;
+					case 'featured':
+						$filter_val = ($filter_val=='true');
+						if ( true === $filter_val ) {
+							$filter['key']     = 'wpcm_featured';
+							$filter['value']   = '1';
+							$filter['compare'] = '=';
+							$filter['type']    = 'NUMERIC';
+						} else if ( false === $filter_val ) {
+
+							/*
+							 * This is a more tricky one because we're adding 2 entries.
+							 * The entries will be nested in their own group/array
+							 * The group will have an OR relation (where global MQ has AND).
+							 * We're adding it directly to $meta_query
+							 */
+							$meta_query[] = array(
+								'relation' => 'OR',
+								array(
+									'key'     => 'wpcm_featured',
+									'value'   => 0,
+									'compare' => '=',
+									'type'    => 'NUMERIC'
+								),
+								array(
+									'key'     => 'wpcm_featured',
+									'compare' => 'NOT EXISTS'
+								)
+							);
+
 						}
 						break;
 					default:

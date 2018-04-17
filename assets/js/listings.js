@@ -18,6 +18,7 @@ var WPCM_Listings = function ( tgt ) {
 	this.page = 1;
 	this.default_sort = jQuery( tgt ).data( 'sort' );
 	this.condition = jQuery( tgt ).data( 'condition' );
+	this.featured = jQuery( tgt ).data( 'featured' );
 
 	this.locked_make = 0;
 	if ( jQuery( tgt ).data( 'make_id' ) ) {
@@ -173,6 +174,10 @@ WPCM_Listings.prototype.load_vehicles = function () {
 
 	if ( '' != this.condition ) {
 		args['filter_condition'] = this.condition;
+	}
+
+	if ( undefined != this.featured ) {
+		args['filter_featured'] = this.featured;
 	}
 
 	// add spinner
