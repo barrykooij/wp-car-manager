@@ -44,6 +44,8 @@ class Cars extends Shortcode {
 			'order'        => 'DESC',
 			'make'         => '',
 			'make_id'      => '',
+			'model'        => '',
+			'model_id'     => '',
 			'sort'         => 'price-asc',
 			'condition'    => '',
 			'featured'     => null
@@ -71,8 +73,28 @@ class Cars extends Shortcode {
 			}
 		}
 
+		// check if we need to set a model id, note that you NEED to set a make to use this
+		if ( ! empty( $atts['model'] ) && empty( $atts['model_id'] ) && ! empty( $atts['make_id'] ) ) {
+
+			$model_terms = get_terms( array(
+				'taxonomy'   => 'wpcm_make_model',
+				'hide_empty' => false,
+				'name'       => $atts['model'],
+				'parent'     => $atts['make_id']
+			) );
+
+			if ( ! is_wp_error( $model_terms ) && is_array( $model_terms ) && count( $model_terms ) > 0 ) {
+				$model_term       = array_shift( $model_terms );
+				$atts['model_id'] = $model_term->term_id;
+			}
+		}
+
+		/*
+		 * TODO: toevoegen van model_id hieronder aan $data_atts
+		 */
+
 		// build data atts
-		$data_atts = array( 'sort', 'condition', 'make_id', 'featured' );
+		$data_atts = array( 'sort', 'condition', 'make_id', 'model_id', 'featured' );
 		$data_str  = '';
 		foreach ( $data_atts as $data_att ) {
 			if ( ! empty( $atts[ $data_att ] ) ) {
