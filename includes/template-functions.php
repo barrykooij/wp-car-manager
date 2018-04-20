@@ -434,6 +434,12 @@ if ( ! function_exists( 'wpcm_template_dashboard_button_renew' ) ) {
 	}
 }
 
+if ( ! function_exists( 'wpcm_template_dashboard_pagination' ) ) {
+	function wpcm_template_dashboard_pagination() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'dashboard/pagination-wrapper' );
+	}
+}
+
 /**
  ************************ GENERAL ************************
  */

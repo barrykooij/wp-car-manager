@@ -80,6 +80,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 * Feature: Added option to hide empty makes and models on listing pages.
 * Feature: Added footnote element, allowing admin to append footnote text to all listings.
 * Feature: Added model attribute to [wpcm_cars] shortcode. This way you can only display cars of given model.
+* Feature: Added pagination to the dashboard page.
 * Tweak: Improved the way the image overlay of car images is displayed on mobile.
 * Tweak: Added Iranian Rial to currencies.
 * Tweak: Fixed a bug where power kW and HP were not saved of frontend submissions.

@@ -11,6 +11,8 @@ var WPCM_Dashboard = function ( tgt ) {
 
 	this.is_updating = false;
 	this.listings = jQuery( tgt ).find( '.wpcm-dashboard-wrapper>.wpcm-dashboard-list:first' );
+	this.pagination = jQuery( tgt ).find( '.wpcm-dashboard-pagination:first' );
+	this.page = 1;
 
 	// load vehicles
 	this.load_vehicles();
@@ -32,19 +34,35 @@ WPCM_Dashboard.prototype.load_vehicles = function () {
 	// listings var
 	var listings = this.listings;
 
+	// pagination var
+	var pagination = this.pagination;
+
 	// default ajax args with nonce
 	var args = {
-		nonce: wpcm.nonce_vehicles
+		nonce: wpcm.nonce_vehicles,
+		page: this.page
 	};
 
 	// add spinner
 	this.listings.parent().append( jQuery( '<div>' ).addClass( 'wpcm-results-load-overlay' ) );
 	this.listings.parent().append( new WPCM_Spinner().getDOM() );
 
-	jQuery.get( wpcm.ajax_url_get_vehicles, args, function ( response ) {
+	jQuery.getJSON( wpcm.ajax_url_get_vehicles, args, function ( response ) {
 
-		// set response
-		listings.html( response );
+		// set listings
+		if ( response.listings ) {
+			// set response
+			listings.html( response.listings );
+		}
+
+		// set pagination
+		if ( response.pagination ) {
+			pagination.html( response.pagination );
+
+			instance.bind_pagination();
+		} else {
+			pagination.html( '' );
+		}
 
 		// remove spinner
 		listings.parent().find( '.wpcm-results-load-overlay' ).remove();
@@ -61,6 +79,31 @@ WPCM_Dashboard.prototype.load_vehicles = function () {
 
 	} );
 
+};
+
+WPCM_Dashboard.prototype.bind_pagination = function () {
+	var instance = this;
+
+	jQuery.each( jQuery( this.pagination ).find( 'a' ), function ( k, v ) {
+		jQuery( v ).click( function () {
+			var new_page = jQuery( v ).data( 'page' );
+
+			if ( new_page == 'next' ) {
+				new_page = instance.page + 1;
+			}
+
+			if ( new_page == 'prev' ) {
+				new_page = instance.page - 1;
+			}
+
+			// set new page
+			instance.page = new_page;
+
+			// trigger load_vehicles()
+			instance.load_vehicles();
+
+		} );
+	} );
 };
 
 WPCM_Dashboard.prototype.deleteVehicle = function ( row ) {

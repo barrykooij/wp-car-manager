@@ -144,6 +144,28 @@
     }
   }
 
+  .wpcm-dashboard-pagination {
+    width: 100%;
+    padding: 1em 0;
+    text-align: center;
+    ul {
+      overflow: hidden;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        display: inline;
+        list-style: none;
+        a, span {
+          padding: 0 .3em;
+        }
+        a  {
+          color: #428dcb;
+        }
+      }
+    }
+  }
+
 }
 
 /** MEDIA **/
