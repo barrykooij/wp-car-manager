@@ -1,4 +1,5 @@
 <?php
+
 namespace Never5\WPCarManager;
 
 abstract class Assets {
@@ -162,10 +163,14 @@ abstract class Assets {
 		wp_localize_script( 'wpcm_js_dashboard', 'wpcm', array(
 			'ajax_url_get_vehicles'   => Ajax\Manager::get_ajax_url( 'get_dashboard' ),
 			'ajax_url_delete_vehicle' => Ajax\Manager::get_ajax_url( 'delete_vehicle' ),
+			'ajax_url_profile_save'   => Ajax\Manager::get_ajax_url( 'profile_save' ),
 			'nonce_vehicles'          => wp_create_nonce( 'wpcm_ajax_nonce_get_dashboard' ),
 			'nonce_delete_vehicle'    => wp_create_nonce( 'wpcm_ajax_nonce_delete_vehicle' ),
+			'nonce_profile_save'      => wp_create_nonce( 'wpcm_ajax_nonce_profile_save' ),
 			'delete_confirm'          => __( 'Are you sure you want to delete %s?', 'wp-car-manager' ),
-			'error_delete_vehicle'    => __( 'Something went wrong when trying to delete your vehicle, please try again.', 'wp-car-manager' )
+			'error_delete_vehicle'    => __( 'Something went wrong when trying to delete your vehicle, please try again.', 'wp-car-manager' ),
+			'profile_btn_edit'        => __( 'Edit', 'wp-car-manager' ),
+			'profile_btn_save'        => __( 'Save Profile', 'wp-car-manager' )
 		) );
 
 		// do action wpcm_assets_frontend_vehicle_single

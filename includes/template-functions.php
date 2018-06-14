@@ -379,20 +379,24 @@ if ( ! function_exists( 'wpcm_template_submit_car_form_disabled' ) ) {
  ************************ DASHBOARD ************************
  */
 
-if ( ! function_exists( 'wpcm_template_dashboard_add_new_listing_button' ) ) {
-	function wpcm_template_dashboard_add_new_listing_button( $title ) {
-
-		if ( is_main_query() && in_the_loop() && Never5\WPCarManager\Helper\Pages::get_page_dashboard_id()  == get_the_ID() ) {
-			ob_start();
-			wp_car_manager()->service( 'template_manager' )->get_template_part( 'dashboard/buttons/add-new', '', array(
-				'submit_url' => Never5\WPCarManager\Helper\Pages::get_page_submit()
-			) );
-			$title .= ob_get_clean();
-		}
-
-		return $title;
+if ( ! function_exists( 'wpcm_template_dashboard_profile_title' ) ) {
+	function wpcm_template_dashboard_profile_title() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'dashboard/profile-title' );
 	}
 }
+
+if ( ! function_exists( 'wpcm_template_dashboard_profile' ) ) {
+	function wpcm_template_dashboard_profile() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'dashboard/profile' );
+	}
+}
+
+if ( ! function_exists( 'wpcm_template_dashboard_list_title' ) ) {
+	function wpcm_template_dashboard_list_title() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'dashboard/list-title' );
+	}
+}
+
 
 if ( ! function_exists( 'wpcm_template_dashboard_list_start' ) ) {
 	function wpcm_template_dashboard_list_start() {

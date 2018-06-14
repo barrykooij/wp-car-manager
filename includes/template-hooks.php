@@ -109,7 +109,23 @@ add_action( 'wpcm_submit_car_form_disabled', 'wpcm_template_submit_car_form_disa
 /**
  * Add new listing button on dashboard
  */
-add_action( 'the_title', 'wpcm_template_dashboard_add_new_listing_button' );
+//add_action( 'the_title', 'wpcm_template_dashboard_add_new_listing_button' );
+
+/**
+ * Vehicle Dashboard Profile Title
+ */
+//add_action( 'wpcm_before_profile', 'wpcm_template_dashboard_profile_title', 10 );
+add_action( 'wpcm_dashboard_profile', 'wpcm_template_dashboard_profile_title', 9 );
+
+/**
+ * Vehicle Dashboard Profile
+ */
+add_action( 'wpcm_dashboard_profile', 'wpcm_template_dashboard_profile', 10 );
+
+/**
+ * Vehicle Dashboard Results Title
+ */
+add_action( 'wpcm_before_dashboard_results', 'wpcm_template_dashboard_list_title', 10 );
 
 /**
  * Vehicle Dashboard Results

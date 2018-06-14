@@ -5,7 +5,84 @@ jQuery( function ( $ ) {
 			new WPCM_Dashboard( v );
 		} );
 	}
+
+	// setup profile
+	var dashboard_profile = $( '.wpcm-dashboard-profile:first' );
+	new WPCM_Dashboard_Profile( dashboard_profile );
+
 } );
+
+var WPCM_Dashboard_Profile = function ( wrapper ) {
+
+	this.is_editing = false;
+	this.is_updating = false;
+
+	this.wrapper = jQuery( wrapper );
+	this.fields_wrapper = this.wrapper.find( '.wpcm-dashboard-profile-fields:first' );
+	this.button = jQuery( this.wrapper.find( 'h2:first a:first' ) );
+
+	console.log( this.wrapper );
+	console.log( this.fields_wrapper );
+	console.log( this.button );
+
+	// setup
+	this.init();
+};
+
+WPCM_Dashboard_Profile.prototype.init = function () {
+
+	var instance = this;
+
+	this.button.click( function () {
+		if ( instance.is_editing ) {
+			instance.save();
+		} else {
+			instance.edit();
+		}
+	} );
+
+};
+
+WPCM_Dashboard_Profile.prototype.edit = function () {
+	if ( ! this.is_editing ) {
+		this.button.html( wpcm.profile_btn_save );
+		console.log( 'start edit profile' );
+		this.is_editing = true;
+
+		jQuery.each( this.fields_wrapper.find( '.wpcm-dashboard-profile-value' ), function ( k, v ) {
+			var cur_val = jQuery( v ).html();
+			jQuery( v ).html(
+				jQuery( '<input>' ).attr( 'type', 'text' ).addClass( 'wpcm-dashboard-profile-field' ).attr( 'data-key', jQuery( v ).data( 'key' ) ).val( cur_val )
+			);
+		} );
+	}
+};
+
+WPCM_Dashboard_Profile.prototype.save = function () {
+	var instance = this;
+
+	var profile_data = {};
+
+	jQuery.each( this.fields_wrapper.find( '.wpcm-dashboard-profile-value' ), function ( k, v ) {
+		var inp = jQuery( v ).find( 'input:first' );
+		profile_data[inp.data( 'key' )] = inp.val();
+	} );
+
+	// ajax post
+	jQuery.post( wpcm.ajax_url_profile_save, {
+		nonce: wpcm.nonce_profile_save,
+		data: profile_data
+	}, function ( response ) {
+		console.log( response );
+		instance.button.html( wpcm.profile_btn_edit );
+		instance.is_editing = false;
+	} );
+
+	/**
+	 * TODO: catch actual AJAX call and save data
+	 */
+
+};
 
 var WPCM_Dashboard = function ( tgt ) {
 
