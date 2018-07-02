@@ -21,10 +21,6 @@ var WPCM_Dashboard_Profile = function ( wrapper ) {
 	this.fields_wrapper = this.wrapper.find( '.wpcm-dashboard-profile-fields:first' );
 	this.button = jQuery( this.wrapper.find( 'h2:first a:first' ) );
 
-	console.log( this.wrapper );
-	console.log( this.fields_wrapper );
-	console.log( this.button );
-
 	// setup
 	this.init();
 };
@@ -32,6 +28,8 @@ var WPCM_Dashboard_Profile = function ( wrapper ) {
 WPCM_Dashboard_Profile.prototype.init = function () {
 
 	var instance = this;
+
+	this.load_data();
 
 	this.button.click( function () {
 		if ( instance.is_editing ) {
@@ -43,10 +41,25 @@ WPCM_Dashboard_Profile.prototype.init = function () {
 
 };
 
+WPCM_Dashboard_Profile.prototype.load_data = function () {
+
+	var args = {
+		nonce: wpcm.nonce_get_profile
+	};
+
+	jQuery.getJSON( wpcm.ajax_url_get_profile, args, function ( response ) {
+
+		var data = response.data;
+
+		jQuery( '#wpcm-dashboard-profile-field-email:first' ).find( '.wpcm-dashboard-profile-value:first' ).html( data.email );
+		jQuery( '#wpcm-dashboard-profile-field-phone:first' ).find( '.wpcm-dashboard-profile-value:first' ).html( data.phone );
+	} );
+
+};
+
 WPCM_Dashboard_Profile.prototype.edit = function () {
 	if ( ! this.is_editing ) {
 		this.button.html( wpcm.profile_btn_save );
-		console.log( 'start edit profile' );
 		this.is_editing = true;
 
 		jQuery.each( this.fields_wrapper.find( '.wpcm-dashboard-profile-value' ), function ( k, v ) {
@@ -69,18 +82,24 @@ WPCM_Dashboard_Profile.prototype.save = function () {
 	} );
 
 	// ajax post
-	jQuery.post( wpcm.ajax_url_profile_save, {
-		nonce: wpcm.nonce_profile_save,
+	jQuery.post( wpcm.ajax_url_save_profile, {
+		nonce: wpcm.nonce_save_profile,
 		data: profile_data
 	}, function ( response ) {
-		console.log( response );
-		instance.button.html( wpcm.profile_btn_edit );
-		instance.is_editing = false;
-	} );
 
-	/**
-	 * TODO: catch actual AJAX call and save data
-	 */
+		if ( response.success === false ) {
+			alert( response.errors.msg );
+		} else {
+			instance.button.html( wpcm.profile_btn_edit );
+
+			var data = response.data;
+
+			jQuery( '#wpcm-dashboard-profile-field-email:first' ).find( '.wpcm-dashboard-profile-value:first' ).html( data.email );
+			jQuery( '#wpcm-dashboard-profile-field-phone:first' ).find( '.wpcm-dashboard-profile-value:first' ).html( data.phone );
+
+			instance.is_editing = false;
+		}
+	} );
 
 };
 

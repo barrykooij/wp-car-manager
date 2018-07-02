@@ -73,6 +73,15 @@ class Manager {
 		// register DismissNotice
 		$dismiss_notice = new DismissNotice();
 		$dismiss_notice->register();
+
+		// register GetProfile
+		$get_profile = new GetProfile();
+		$get_profile->register();
+
+		// register SaveProfile
+		$save_profile = new SaveProfile();
+		$save_profile->register();
+
 	}
 
 	/**

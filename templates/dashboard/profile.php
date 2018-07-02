@@ -1,14 +1,14 @@
 <ul class="wpcm-dashboard-profile-fields">
-    <li>
+    <li id="wpcm-dashboard-profile-field-email">
         <label>
             <span class="wpcm-dashboard-profile-label">Email Address</span>
-            <span class="wpcm-dashboard-profile-value" data-key="email">barry@never5.com</span>
+            <span class="wpcm-dashboard-profile-value" data-key="email"></span>
         </label>
     </li>
-    <li>
+    <li id="wpcm-dashboard-profile-field-phone">
         <label>
             <span class="wpcm-dashboard-profile-label">Phone Number</span>
-            <span class="wpcm-dashboard-profile-value" data-key="phone">0611224477</span>
+            <span class="wpcm-dashboard-profile-value" data-key="phone"></span>
         </label>
     </li>
 </ul>
