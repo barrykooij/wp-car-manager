@@ -159,6 +159,13 @@ class Settings {
 					__( 'Contact', 'wp-car-manager' ),
 					array(
 						array(
+							'name'     => 'contact_use_car_seller_details',
+							'label'    => __( 'Use Seller Details', 'wp-car-manager' ),
+							'cb_label' => __( 'Use contact details of the car seller on listing pages.', 'wp-car-manager' ),
+							'desc'     => __( 'If enabled, the contact details of the seller will be used on the listings.', 'wp-car-manager' ),
+							'type'     => 'checkbox',
+						),
+						array(
 							'name'  => 'contact_email',
 							'label' => __( 'Contact Email Address', 'wp-car-manager' ),
 							'desc'  => __( 'The email address people can send an email to.', 'wp-car-manager' )

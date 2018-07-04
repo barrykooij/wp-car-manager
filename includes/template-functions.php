@@ -94,24 +94,28 @@ if ( ! function_exists( 'wpcm_template_single_footnote' ) ) {
 if ( ! function_exists( 'wpcm_template_single_contact' ) ) {
 	function wpcm_template_single_contact( $vehicle ) {
 
-		// get author		
-		$author = get_user_by( 'ID', $vehicle->get_author() );
+		// check if we need to use contact information of the author or the site owner
+		if ( 1 === absint( wp_car_manager()->service( 'settings' )->get_option( 'contact_use_car_seller_details' ) ) ) {
+			// get email address
+			$email = get_user_meta( $vehicle->get_author(), 'wpcm_email', true );
 
-		// default empty email
-		$email = '';
-
-		// check if listing creator is a 'car_seller'
-		if ( in_array( 'car_seller', (array) $author->roles ) ) {
-			$email = $author->user_email;
-		}
-
-		// if email is empty, use contact email setting
-		if ( empty ( $email ) ) {
+			// get phone number
+			$phone_number = get_user_meta( $vehicle->get_author(), 'wpcm_phone', true );
+		} else {
+			// get email address
 			$email = wp_car_manager()->service( 'settings' )->get_option( 'contact_email' );
+
+			// get phone number
+			$phone_number = wp_car_manager()->service( 'settings' )->get_option( 'contact_phone' );
 		}
 
-
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/contact', '', array( 'vehicle' => $vehicle, 'email' => $email ) );
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/contact', '',
+			array(
+				'vehicle'      => $vehicle,
+				'email'        => $email,
+				'phone_number' => $phone_number
+			)
+		);
 	}
 }
 
