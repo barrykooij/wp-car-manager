@@ -91,8 +91,8 @@ class SaveProfile extends Ajax {
 			 */
 			$return['success'] = true;
 			$return['data']    = array(
-				'email' => $data['email'],
-				'phone' => $data['phone']
+				'email' => esc_html( $data['email'] ),
+				'phone' => esc_html( $data['phone'] )
 			);
 
 		} catch ( SaveProfileException $e ) {

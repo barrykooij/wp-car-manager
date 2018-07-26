@@ -49,8 +49,8 @@ class GetProfile extends Ajax {
 			// data
 			$return['success'] = true;
 			$return['data']    = array(
-				'email' => get_user_meta( $user->ID, 'wpcm_email', true ),
-				'phone' => get_user_meta( $user->ID, 'wpcm_phone', true )
+				'email' => esc_html( get_user_meta( $user->ID, 'wpcm_email', true ) ),
+				'phone' => esc_html( get_user_meta( $user->ID, 'wpcm_phone', true ) )
 			);
 
 
