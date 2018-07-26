@@ -1,5 +1,51 @@
 .wpcm-dashboard {
 
+  h2 {
+    .wpcm-button-dashboard-profile-edit {
+      margin-left: 20px;
+      font-size: 16px;
+      padding: 10px 18px;
+      position: relative;
+      top: -6px;
+      color: #fff;
+    }
+  }
+
+  .wpcm-dashboard-profile {
+    padding: 0 0 20px;
+    margin: 0 0 20px;
+    border-bottom: 1px solid #eee;
+
+    ul.wpcm-dashboard-profile-fields {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      li {
+        list-style: none;
+        padding: 0 0 10px 0;
+
+        .wpcm-dashboard-profile-label {
+          display: block;
+          font-weight:bold;
+          font-size: .8em;
+        }
+
+        .wpcm-dashboard-profile-value {
+          input {
+            margin-top: 10px;
+          }
+        }
+
+        a.wpcm-button {
+          padding: 8px 12px;
+          margin: 0 0 0 10px;
+          font-size: .8em;
+        }
+      }
+    }
+  }
+
   .wpcm-dashboard-wrapper {
     position: relative;
 
@@ -144,6 +190,28 @@
     }
   }
 
+  .wpcm-dashboard-pagination {
+    width: 100%;
+    padding: 1em 0;
+    text-align: center;
+    ul {
+      overflow: hidden;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        display: inline;
+        list-style: none;
+        a, span {
+          padding: 0 .3em;
+        }
+        a  {
+          color: #428dcb;
+        }
+      }
+    }
+  }
+
 }
 
 /** MEDIA **/
@@ -151,6 +219,15 @@
 @media (min-width: 992px) {
 
   .wpcm-dashboard {
+
+    .wpcm-dashboard-profile {
+      ul {
+        li {
+          width: 50%;
+          float: left;
+        }
+      }
+    }
 
     .wpcm-dashboard-wrapper {
 

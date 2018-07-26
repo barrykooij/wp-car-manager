@@ -1,13 +1,13 @@
 # Copyright (C) 2016 Never5
 # This file is distributed under the GPL v2.
 # Translators:
-# Jason Lima <jasonalima@gmail.com>, 2016
+# Jason Lima <inactive+Jalima@transifex.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Car Manager\n"
 "Report-Msgid-Bugs-To: https://github.com/barrykooij/wp-car-manager/issues\n"
 "POT-Creation-Date: 2016-07-11 09:01:01+00:00\n"
-"PO-Revision-Date: 2016-07-11 09:05+0000\n"
+"PO-Revision-Date: 2017-09-22 18:14+0000\n"
 "Last-Translator: Barry Kooij <mail@barrykooij.nl>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/barrykooijplugins/wp-car-manager/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"

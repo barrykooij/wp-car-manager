@@ -71,9 +71,10 @@
         padding: 0;
         margin: 0;
         border-bottom: 1px solid #eee;
+
         a {
           display: block;
-          padding: 1em 1em 1em 2em;
+          padding: 15px 1em 15px 2em;
           border: 0;
           overflow: hidden;
           zoom: 1;
@@ -81,7 +82,7 @@
           line-height: 1.5em;
           text-decoration: none;
           font-weight: normal;
-          min-height: 100px;
+          min-height: 130px;
           box-sizing: border-box;
 
           &:hover {
@@ -129,6 +130,8 @@
             }
             p {
               color: #999;
+              padding: 0;
+              margin: 0;
             }
           }
 
@@ -153,6 +156,14 @@
                 //font-size: 1.1em;
               }
             }
+          }
+        }
+
+        &.wpcm-listings-item-featured a {
+          background: #fefee5;
+
+          &:hover {
+            background-color: #fefed8;
           }
         }
 

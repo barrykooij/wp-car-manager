@@ -83,6 +83,7 @@ jQuery( function ( $ ) {
 
 	// setup datepicker
 	$( '.wpcm-input-date' ).datepicker( {
+		yearRange: "1910:+1",
 		dateFormat: 'yy-mm-dd',
 		changeMonth: true,
 		changeYear: true

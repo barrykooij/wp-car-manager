@@ -1,0 +1,1495 @@
+# Copyright (C) 2016 Never5
+# This file is distributed under the GPL v2.
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Car Manager\n"
+"Report-Msgid-Bugs-To: https://github.com/barrykooij/wp-car-manager/issues\n"
+"POT-Creation-Date: 2016-07-11 09:01:01+00:00\n"
+"PO-Revision-Date: 2015-09-08 07:43+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Danish (http://www.transifex.com/barrykooijplugins/wp-car-manager/language/da/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: da\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: grunt-wp-i18n 0.4.9\n"
+
+#: src/Vehicle/Data.php:107
+msgid "125"
+msgstr ""
+
+#: src/Vehicle/Data.php:114
+msgid "170"
+msgstr ""
+
+#: assets/views/meta-box/gallery.php:15 assets/views/meta-box/gallery.php:30
+msgid "Delete image"
+msgstr ""
+
+#: assets/views/meta-box/gallery.php:15 assets/views/meta-box/gallery.php:31
+#: templates/dashboard/buttons/delete.php:1
+#: templates/submit-car-form/images.php:28
+msgid "Delete"
+msgstr ""
+
+#: assets/views/meta-box/gallery.php:28
+msgid "Add Images to Gallery"
+msgstr ""
+
+#: assets/views/meta-box/gallery.php:29
+msgid "Add to gallery"
+msgstr ""
+
+#: assets/views/meta-box/gallery.php:31
+msgid "Add gallery images"
+msgstr ""
+
+#: assets/views/meta-box/input/select-model.php:4
+#: templates/listings/filters/model.php:3
+#: templates/submit-car-form/form-fields/select-model.php:3
+#: templates/submit-car-form/form-fields/select-model.php:15
+msgid "Select Model"
+msgstr ""
+
+#: assets/views/page/edit-make-model.php:16 assets/views/page/makes.php:16
+#: assets/views/page/makes.php:63 assets/views/page/makes.php:92
+#: assets/views/page/models.php:16 assets/views/page/models.php:63
+#: assets/views/page/models.php:93
+msgid "Name"
+msgstr ""
+
+#: assets/views/page/edit-make-model.php:19 assets/views/page/makes.php:95
+#: assets/views/page/models.php:96
+msgid "The name is how it appears on your site."
+msgstr ""
+
+#: assets/views/page/edit-make-model.php:23 assets/views/page/makes.php:18
+#: assets/views/page/makes.php:64 assets/views/page/makes.php:98
+#: assets/views/page/models.php:18 assets/views/page/models.php:64
+#: assets/views/page/models.php:99
+msgid "Slug"
+msgstr ""
+
+#: assets/views/page/edit-make-model.php:26 assets/views/page/makes.php:101
+#: assets/views/page/models.php:102
+msgid ""
+"The “slug” is the URL-friendly version of the name. It is usually all "
+"lowercase and contains only letters, numbers, and hyphens."
+msgstr ""
+
+#: assets/views/page/edit-make-model.php:32
+msgid "Update"
+msgstr ""
+
+#: assets/views/page/makes.php:49
+msgid "Configure Models"
+msgstr ""
+
+#: assets/views/page/makes.php:55
+msgid "No Makes found"
+msgstr ""
+
+#: assets/views/page/makes.php:76
+msgid "What are Makes?"
+msgstr ""
+
+#: assets/views/page/makes.php:77
+msgid ""
+"On this page you manage your vehicles makes. You can add a new make with the"
+" form below and manage your existing makes on the right. To manage a make’s "
+"models, click the wheel button."
+msgstr ""
+
+#: assets/views/page/makes.php:78 assets/views/page/models.php:77
+msgid "You can read more about Makes and Models here"
+msgstr ""
+
+#: assets/views/page/makes.php:82 assets/views/page/makes.php:105
+#: src/Taxonomies.php:93
+msgid "Add New Make"
+msgstr ""
+
+#: assets/views/page/models.php:55
+msgid "No Models found"
+msgstr ""
+
+#: assets/views/page/models.php:75
+msgid "What are Models?"
+msgstr ""
+
+#: assets/views/page/models.php:76
+msgid ""
+"On this page you manage your vehicles models. You can add a new model with "
+"the form below and manage your existing models on the right. A model is "
+"always linked to one make."
+msgstr ""
+
+#: assets/views/page/models.php:81 assets/views/page/models.php:106
+msgid "Add New Model"
+msgstr ""
+
+#: assets/views/page/settings.php:10 src/Admin/Page/Settings.php:11
+msgid "Settings"
+msgstr ""
+
+#: assets/views/page/settings.php:32
+msgid "Settings successfully saved"
+msgstr ""
+
+#: assets/views/page/settings.php:106 src/SubmitCarHandler.php:253
+msgid "Save Changes"
+msgstr ""
+
+#: includes/template-functions.php:23
+msgid "Submit listing"
+msgstr ""
+
+#: includes/template-functions.php:199
+msgid "Listing Title"
+msgstr ""
+
+#: includes/template-functions.php:219 src/Util/Onboarding.php:108
+msgid "Description"
+msgstr ""
+
+#: includes/template-functions.php:226
+msgid ""
+"A short description of the vehicle. Does not need to include features, these"
+" can be selected separately below."
+msgstr ""
+
+#: includes/template-functions.php:247 src/Admin/MetaBox/CarData.php:14
+msgid "Car Data"
+msgstr ""
+
+#: includes/template-functions.php:255
+msgid "(optional)"
+msgstr ""
+
+#: src/Admin/CustomColumns.php:47 src/Vehicle/Data.php:29
+#: templates/listings/filters/make.php:2
+#: templates/vehicle-data/data-make.php:8
+msgid "Make"
+msgstr ""
+
+#: src/Admin/CustomColumns.php:48 src/Vehicle/Data.php:35
+#: templates/listings/filters/model.php:2
+#: templates/vehicle-data/data-model.php:8
+msgid "Model"
+msgstr ""
+
+#: src/Admin/CustomColumns.php:49 src/Vehicle/Data.php:48
+#: templates/vehicle-data/data-price.php:8
+msgid "Price"
+msgstr ""
+
+#: src/Admin/CustomColumns.php:50 src/Vehicle/Data.php:55
+#: templates/vehicle-data/data-mileage.php:8
+msgid "Mileage"
+msgstr ""
+
+#: src/Admin/CustomColumns.php:51
+msgid "FR Date"
+msgstr ""
+
+#: src/Admin/CustomColumns.php:52
+msgid "Expires"
+msgstr ""
+
+#: src/Admin/CustomColumns.php:53
+msgid "Actions"
+msgstr ""
+
+#: src/Admin/CustomColumns.php:91 src/Ajax/GetDashboard.php:61
+#: src/Ajax/GetVehicleResults.php:95 templates/single-vehicle/image.php:37
+msgid "Placeholder"
+msgstr ""
+
+#: src/Admin/MetaBox/Gallery.php:14
+msgid "Car Gallery"
+msgstr ""
+
+#: src/Admin/MetaBox/ListingData.php:14
+msgid "Listing Data"
+msgstr ""
+
+#: src/Admin/MetaBox/ListingData.php:37
+msgid "Expiry Date:"
+msgstr ""
+
+#: src/Admin/MetaBox/ListingData.php:43
+msgid "Sold?"
+msgstr ""
+
+#: src/Admin/MetaBox/ShortDescription.php:13
+msgid "Short Description"
+msgstr ""
+
+#: src/Admin/Page/Extensions.php:13 src/Admin/Page/Extensions.php:47
+#: src/Util/Onboarding.php:155
+msgid "Extensions"
+msgstr ""
+
+#: src/Admin/Page/Extensions.php:80
+msgid ""
+"Extend WP Car Manager with its powerful free and paid extensions. %sClick "
+"here to browse all extensions%s"
+msgstr ""
+
+#: src/Admin/Page/Extensions.php:167
+msgid "Couldn't load extensions, please try again later."
+msgstr ""
+
+#: src/Admin/Page/Makes.php:13 src/Taxonomies.php:88
+msgid "Makes & Models"
+msgstr ""
+
+#: src/Admin/Page/Makes.php:141
+msgid "Edit %s"
+msgstr ""
+
+#: src/Admin/Page/Makes.php:156
+msgid "%s Models"
+msgstr ""
+
+#: src/Admin/Page/Makes.php:163
+msgid "Makes"
+msgstr ""
+
+#: src/Ajax/CreatePage.php:46 src/Assets.php:131
+msgid "Submit Car"
+msgstr ""
+
+#: src/Ajax/CreatePage.php:51
+msgid "My Cars"
+msgstr ""
+
+#: src/Ajax/CreatePage.php:54 src/Vehicle/PostType.php:30
+msgid "Cars"
+msgstr ""
+
+#: src/Ajax/GetDashboard.php:67 src/Vehicle/PostStatus.php:202
+msgid "Expired"
+msgstr ""
+
+#: src/Ajax/SaveVehicle.php:33
+msgid "Missing vehicle ID."
+msgstr ""
+
+#: src/Ajax/SaveVehicle.php:49
+msgid "Not allowed to create/edit vehicle."
+msgstr ""
+
+#: src/Ajax/SaveVehicle.php:73
+msgid "Please enter a username."
+msgstr ""
+
+#: src/Ajax/SaveVehicle.php:78
+msgid "Please enter your email address."
+msgstr ""
+
+#: src/Ajax/SaveVehicle.php:106
+msgid "User could not log in, please contact support."
+msgstr ""
+
+#: src/Ajax/SaveVehicle.php:117
+msgid "Incorrect First Registration Date format"
+msgstr ""
+
+#: src/Assets.php:71 src/Assets.php:129
+msgid "No models found"
+msgstr ""
+
+#: src/Assets.php:72 src/Assets.php:130 templates/listings/filters/model.php:4
+msgid "Select make first"
+msgstr ""
+
+#: src/Assets.php:132
+msgid "Submitting your data, please wait..."
+msgstr ""
+
+#: src/Assets.php:166
+msgid "Are you sure you want to delete %s?"
+msgstr ""
+
+#: src/Assets.php:167
+msgid ""
+"Something went wrong when trying to delete your vehicle, please try again."
+msgstr ""
+
+#: src/Extension/Extension.php:152
+msgid "License successfully activated."
+msgstr ""
+
+#: src/Helper/Currency.php:201
+msgid "United Arab Emirates Dirham"
+msgstr ""
+
+#: src/Helper/Currency.php:202
+msgid "Argentine Peso"
+msgstr ""
+
+#: src/Helper/Currency.php:203
+msgid "Australian Dollars"
+msgstr ""
+
+#: src/Helper/Currency.php:204
+msgid "Bangladeshi Taka"
+msgstr ""
+
+#: src/Helper/Currency.php:205
+msgid "Brazilian Real"
+msgstr ""
+
+#: src/Helper/Currency.php:206
+msgid "Bulgarian Lev"
+msgstr ""
+
+#: src/Helper/Currency.php:207
+msgid "Burundian Franc"
+msgstr ""
+
+#: src/Helper/Currency.php:208
+msgid "Canadian Dollars"
+msgstr ""
+
+#: src/Helper/Currency.php:209
+msgid "Chilean Peso"
+msgstr ""
+
+#: src/Helper/Currency.php:210
+msgid "Chinese Yuan"
+msgstr ""
+
+#: src/Helper/Currency.php:211
+msgid "Colombian Peso"
+msgstr ""
+
+#: src/Helper/Currency.php:212
+msgid "Czech Koruna"
+msgstr ""
+
+#: src/Helper/Currency.php:213
+msgid "Djiboutian Franc"
+msgstr ""
+
+#: src/Helper/Currency.php:214
+msgid "Danish Krone"
+msgstr ""
+
+#: src/Helper/Currency.php:215
+msgid "Dominican Peso"
+msgstr ""
+
+#: src/Helper/Currency.php:216
+msgid "Ethiopian Birr"
+msgstr ""
+
+#: src/Helper/Currency.php:217
+msgid "Euros"
+msgstr ""
+
+#: src/Helper/Currency.php:218
+msgid "Ghanaian Cedi"
+msgstr ""
+
+#: src/Helper/Currency.php:219
+msgid "Hong Kong Dollar"
+msgstr ""
+
+#: src/Helper/Currency.php:220
+msgid "Croatia kuna"
+msgstr ""
+
+#: src/Helper/Currency.php:221
+msgid "Hungarian Forint"
+msgstr ""
+
+#: src/Helper/Currency.php:222
+msgid "Icelandic krona"
+msgstr ""
+
+#: src/Helper/Currency.php:223
+msgid "Indonesia Rupiah"
+msgstr ""
+
+#: src/Helper/Currency.php:224
+msgid "Indian Rupee"
+msgstr ""
+
+#: src/Helper/Currency.php:225
+msgid "Israeli Shekel"
+msgstr ""
+
+#: src/Helper/Currency.php:226
+msgid "Japanese Yen"
+msgstr ""
+
+#: src/Helper/Currency.php:227
+msgid "Kenyan Shilling"
+msgstr ""
+
+#: src/Helper/Currency.php:228
+msgid "Lao Kip"
+msgstr ""
+
+#: src/Helper/Currency.php:229
+msgid "South Korean Won"
+msgstr ""
+
+#: src/Helper/Currency.php:230
+msgid "Malaysian Ringgits"
+msgstr ""
+
+#: src/Helper/Currency.php:231
+msgid "Mexican Peso"
+msgstr ""
+
+#: src/Helper/Currency.php:232
+msgid "Nigerian Naira"
+msgstr ""
+
+#: src/Helper/Currency.php:233
+msgid "Norwegian Krone"
+msgstr ""
+
+#: src/Helper/Currency.php:234
+msgid "Nepali Rupee"
+msgstr ""
+
+#: src/Helper/Currency.php:235
+msgid "New Zealand Dollar"
+msgstr ""
+
+#: src/Helper/Currency.php:236
+msgid "Paraguayan Guaraní"
+msgstr ""
+
+#: src/Helper/Currency.php:237
+msgid "Philippine Pesos"
+msgstr ""
+
+#: src/Helper/Currency.php:238
+msgid "Polish Zloty"
+msgstr ""
+
+#: src/Helper/Currency.php:239
+msgid "Pounds Sterling"
+msgstr ""
+
+#: src/Helper/Currency.php:240
+msgid "Romanian Leu"
+msgstr ""
+
+#: src/Helper/Currency.php:241
+msgid "Russian Ruble"
+msgstr ""
+
+#: src/Helper/Currency.php:242
+msgid "Rwandan Franc"
+msgstr ""
+
+#: src/Helper/Currency.php:243
+msgid "Singapore Dollar"
+msgstr ""
+
+#: src/Helper/Currency.php:244
+msgid "South African rand"
+msgstr ""
+
+#: src/Helper/Currency.php:245
+msgid "Swedish Krona"
+msgstr ""
+
+#: src/Helper/Currency.php:246
+msgid "Swiss Franc"
+msgstr ""
+
+#: src/Helper/Currency.php:247
+msgid "Thai Baht"
+msgstr ""
+
+#: src/Helper/Currency.php:248
+msgid "Turkish Lira"
+msgstr ""
+
+#: src/Helper/Currency.php:249
+msgid "Taiwan New Dollars"
+msgstr ""
+
+#: src/Helper/Currency.php:250
+msgid "Tanzanian Shilling"
+msgstr ""
+
+#: src/Helper/Currency.php:251
+msgid "Ukrainian Hryvnia"
+msgstr ""
+
+#: src/Helper/Currency.php:252
+msgid "Ugandan Shilling"
+msgstr ""
+
+#: src/Helper/Currency.php:253
+msgid "US Dollars"
+msgstr ""
+
+#: src/Helper/Currency.php:254
+msgid "Vietnamese Dong"
+msgstr ""
+
+#: src/Helper/Currency.php:255
+msgid "Egyptian Pound"
+msgstr ""
+
+#: src/Helper/Format.php:69
+msgid "miles"
+msgstr ""
+
+#: src/Helper/Format.php:70
+msgid "km"
+msgstr ""
+
+#: src/Helper/Pages.php:16
+msgid "no page"
+msgstr ""
+
+#: src/Helper/Pagination.php:66
+msgid "&hellip;"
+msgstr ""
+
+#: src/Helper/Power.php:20
+msgid "kW"
+msgstr ""
+
+#: src/Helper/Power.php:21
+msgid "hp"
+msgstr ""
+
+#: src/MakeModelManager.php:74 templates/listings/filters/make.php:3
+msgid "Select Make"
+msgstr ""
+
+#: src/RoleManager.php:21
+msgid "Car Seller"
+msgstr ""
+
+#: src/Settings.php:39
+msgid "General"
+msgstr ""
+
+#: src/Settings.php:43
+msgid "Currency"
+msgstr ""
+
+#: src/Settings.php:44
+msgid "Choose the currency used in your price fields."
+msgstr ""
+
+#: src/Settings.php:50
+msgid "Currency Position"
+msgstr ""
+
+#: src/Settings.php:52
+msgid "The position of the currency symbol."
+msgstr ""
+
+#: src/Settings.php:55
+msgid "Left %s"
+msgstr ""
+
+#: src/Settings.php:56
+msgid "Right %s"
+msgstr ""
+
+#: src/Settings.php:57
+msgid "Left with space %s"
+msgstr ""
+
+#: src/Settings.php:58
+msgid "Right with space %s"
+msgstr ""
+
+#: src/Settings.php:63
+msgid "Decimal Separator"
+msgstr ""
+
+#: src/Settings.php:64
+msgid "The decimal separator of distance unites and prices."
+msgstr ""
+
+#: src/Settings.php:68
+msgid "Thousand Separator"
+msgstr ""
+
+#: src/Settings.php:69
+msgid "The thousand separator of displayed distance unites and prices."
+msgstr ""
+
+#: src/Settings.php:73
+msgid "Distance Unit"
+msgstr ""
+
+#: src/Settings.php:74
+msgid "The unit type your distances are in (e.g. Mileage)."
+msgstr ""
+
+#: src/Settings.php:77
+msgid "Miles"
+msgstr ""
+
+#: src/Settings.php:78
+msgid "Kilometers"
+msgstr ""
+
+#: src/Settings.php:83
+msgid "Date Format"
+msgstr ""
+
+#: src/Settings.php:84
+msgid "The way dates are formatted."
+msgstr ""
+
+#: src/Settings.php:90
+msgid "Listings"
+msgstr ""
+
+#: src/Settings.php:94
+msgid "Hide Sold Listings"
+msgstr ""
+
+#: src/Settings.php:95
+msgid "Hide sold listings from listing pages"
+msgstr ""
+
+#: src/Settings.php:96
+msgid ""
+"If enabled, listings marked as sold will no longer be listed on your listing"
+" pages."
+msgstr ""
+
+#: src/Settings.php:101
+msgid "Listings Per Page"
+msgstr ""
+
+#: src/Settings.php:102
+msgid "The amount of listings per page. Enter %s to disable pagination."
+msgstr ""
+
+#: src/Settings.php:108
+msgid "Submission"
+msgstr ""
+
+#: src/Settings.php:112
+msgid "Account Creation"
+msgstr ""
+
+#: src/Settings.php:113
+msgid "Allow account creation"
+msgstr ""
+
+#: src/Settings.php:114
+msgid ""
+"If enabled, non-logged in users will be able to create an account by "
+"entering their email address on the submission form."
+msgstr ""
+
+#: src/Settings.php:119
+msgid "Account Username"
+msgstr ""
+
+#: src/Settings.php:120
+msgid "Automatically Generate Username from Email Address"
+msgstr ""
+
+#: src/Settings.php:121
+msgid ""
+"If enabled, a username will be generated from the first part of the user "
+"email address. Otherwise, a username field will be shown."
+msgstr ""
+
+#: src/Settings.php:126
+msgid "Account Role"
+msgstr ""
+
+#: src/Settings.php:127
+msgid ""
+"If you enable registration on your submission form, choose a role for the "
+"new user."
+msgstr ""
+
+#: src/Settings.php:133
+msgid "Moderate New Listings"
+msgstr ""
+
+#: src/Settings.php:134
+msgid "New listing submissions require admin approval"
+msgstr ""
+
+#: src/Settings.php:135
+msgid "If enabled, new submissions will be inactive, pending admin approval."
+msgstr ""
+
+#: src/Settings.php:140
+msgid "Listing Duration"
+msgstr ""
+
+#: src/Settings.php:141
+msgid ""
+"How many %sdays%s listings are live before expiring. Can be left blank to "
+"never expire."
+msgstr ""
+
+#: src/Settings.php:147
+msgid "Contact"
+msgstr ""
+
+#: src/Settings.php:151
+msgid "Contact Email Address"
+msgstr ""
+
+#: src/Settings.php:152
+msgid "The email address people can send an email to."
+msgstr ""
+
+#: src/Settings.php:156
+msgid "Contact Phone Number"
+msgstr ""
+
+#: src/Settings.php:157
+msgid "The phone number people can call to."
+msgstr ""
+
+#: src/Settings.php:163 src/Util/Onboarding.php:103
+msgid "Pages"
+msgstr ""
+
+#: src/Settings.php:167
+msgid "Submit Car Page Form"
+msgstr ""
+
+#: src/Settings.php:168 src/Settings.php:175 src/Settings.php:182
+msgid "Select the page where you have placed the %s shortcode."
+msgstr ""
+
+#: src/Settings.php:174
+msgid "Car Dashboard Page"
+msgstr ""
+
+#: src/Settings.php:181
+msgid "Car Listings Page"
+msgstr ""
+
+#: src/SubmitCarHandler.php:253
+msgid "Preview Car"
+msgstr ""
+
+#: src/SubmitCarHandler.php:329
+msgid "%s has been submitted successfully and will be visible once approved."
+msgstr ""
+
+#: src/SubmitCarHandler.php:333
+msgid ""
+"%s has been submitted successfully and will be visible once payment has been"
+" confirmed."
+msgstr ""
+
+#: src/SubmitCarHandler.php:336
+msgid "%s has been submitted successfully."
+msgstr ""
+
+#: src/SubmitCarHandler.php:343
+msgid "View Listing"
+msgstr ""
+
+#: src/SubmitCarHandler.php:345
+msgid "View Dashboard"
+msgstr ""
+
+#: src/Taxonomies.php:17
+msgid "Features"
+msgstr ""
+
+#: src/Taxonomies.php:18
+msgid "All Features"
+msgstr ""
+
+#: src/Taxonomies.php:19
+msgid "Parent Feature"
+msgstr ""
+
+#: src/Taxonomies.php:20
+msgid "Parent Feature:"
+msgstr ""
+
+#: src/Taxonomies.php:21
+msgid "New Feature Name"
+msgstr ""
+
+#: src/Taxonomies.php:22
+msgid "Add New Feature"
+msgstr ""
+
+#: src/Taxonomies.php:23
+msgid "Edit Feature"
+msgstr ""
+
+#: src/Taxonomies.php:24
+msgid "Update Feature"
+msgstr ""
+
+#: src/Taxonomies.php:25
+msgid "View Feature"
+msgstr ""
+
+#: src/Taxonomies.php:26
+msgid "Separate features with commas"
+msgstr ""
+
+#: src/Taxonomies.php:27
+msgid "Add or remove features"
+msgstr ""
+
+#: src/Taxonomies.php:28 src/Taxonomies.php:99
+msgid "Choose from the most used"
+msgstr ""
+
+#: src/Taxonomies.php:29
+msgid "Popular features"
+msgstr ""
+
+#: src/Taxonomies.php:30
+msgid "Search features"
+msgstr ""
+
+#: src/Taxonomies.php:31 src/Taxonomies.php:102
+msgid "Not Found"
+msgstr ""
+
+#: src/Taxonomies.php:72
+msgid ""
+"WP Car Manager Features are the place to add all the 'features' your vehicle"
+" has so you don't have to re-type the same feature every time. Examples of "
+"commonly used features are %s, %s, %s and %s but you are free to enter any "
+"feature you like. Vehicle features are listed in a nice list on the vehicle "
+"detail page."
+msgstr ""
+
+#: src/Taxonomies.php:73
+msgid "ABS"
+msgstr ""
+
+#: src/Taxonomies.php:74
+msgid "Airbag"
+msgstr ""
+
+#: src/Taxonomies.php:75
+msgid "ESP"
+msgstr ""
+
+#: src/Taxonomies.php:76
+msgid "Radio"
+msgstr ""
+
+#: src/Taxonomies.php:89
+msgid "All Makes"
+msgstr ""
+
+#: src/Taxonomies.php:90
+msgid "Parent Make"
+msgstr ""
+
+#: src/Taxonomies.php:91
+msgid "Parent Make:"
+msgstr ""
+
+#: src/Taxonomies.php:92
+msgid "New Make Name"
+msgstr ""
+
+#: src/Taxonomies.php:94
+msgid "Edit Make"
+msgstr ""
+
+#: src/Taxonomies.php:95
+msgid "Update Make"
+msgstr ""
+
+#: src/Taxonomies.php:96
+msgid "View Make"
+msgstr ""
+
+#: src/Taxonomies.php:97
+msgid "Separate makes with commas"
+msgstr ""
+
+#: src/Taxonomies.php:98
+msgid "Add or remove makes"
+msgstr ""
+
+#: src/Taxonomies.php:100
+msgid "Popular Makes"
+msgstr ""
+
+#: src/Taxonomies.php:101
+msgid "Search Makes"
+msgstr ""
+
+#: src/UserManager.php:109
+msgid "Invalid email address."
+msgstr ""
+
+#: src/UserManager.php:119
+msgid "Your email address isn't correct."
+msgstr ""
+
+#: src/UserManager.php:124
+msgid "This email is already registered, please choose another one."
+msgstr ""
+
+#: src/Util/Onboarding.php:71
+msgid "Creating"
+msgstr ""
+
+#: src/Util/Onboarding.php:72
+msgid "Page created"
+msgstr ""
+
+#: src/Util/Onboarding.php:73 src/Util/Onboarding.php:118
+#: src/Util/Onboarding.php:127 src/Util/Onboarding.php:136
+msgid "Create Page"
+msgstr ""
+
+#: src/Util/Onboarding.php:83
+msgid ""
+"WP Car Manager is almost ready for use, %sclick here%s to setup the final "
+"settings."
+msgstr ""
+
+#: src/Util/Onboarding.php:99
+msgid "Setup"
+msgstr ""
+
+#: src/Util/Onboarding.php:100
+msgid ""
+"Thank you for using WP Car Manager! We'd like to help you setup the plugin "
+"correctly so you can start listing your cars as quickly as possible."
+msgstr ""
+
+#: src/Util/Onboarding.php:104
+msgid ""
+"WP Car Manager needs 3 pages setup with specific shortcodes to function "
+"correct. We can create and setup these pages for you at this moment or you "
+"can create them yourself and set them in the settings screen."
+msgstr ""
+
+#: src/Util/Onboarding.php:107
+msgid "Page"
+msgstr ""
+
+#: src/Util/Onboarding.php:114 src/Vehicle/PostType.php:14
+#: src/Vehicle/PostType.php:15
+msgid "Car Listings"
+msgstr ""
+
+#: src/Util/Onboarding.php:115
+msgid "The page containing your car listings"
+msgstr ""
+
+#: src/Util/Onboarding.php:123
+msgid "Submit Car Page"
+msgstr ""
+
+#: src/Util/Onboarding.php:124
+msgid "Users can submit their own listings via this page"
+msgstr ""
+
+#: src/Util/Onboarding.php:132
+msgid "Car Dashboard"
+msgstr ""
+
+#: src/Util/Onboarding.php:133
+msgid "An overview page of all cars created of logged in user"
+msgstr ""
+
+#: src/Util/Onboarding.php:143
+msgid "A Never5 Product"
+msgstr ""
+
+#: src/Util/Onboarding.php:148
+msgid ""
+"At %sNever5%s we create high quality premium WordPress plugins, with "
+"extensive support. We offer solutions in related posts, advanced download "
+"management, vehicle management and connecting post types."
+msgstr ""
+
+#: src/Util/Onboarding.php:150
+msgid "%sFollow Never5 on Twitter%s"
+msgstr ""
+
+#: src/Util/Onboarding.php:156
+msgid ""
+"Power up your WP Car Manager website with our official extensions. Our "
+"extensions allow you to add very specific functionality to your WP Car "
+"Manager installation and come with our premium support and updates."
+msgstr ""
+
+#: src/Util/Onboarding.php:159
+msgid "Read more about our extensions"
+msgstr ""
+
+#: src/Util/Onboarding.php:163
+msgid "What's next?"
+msgstr ""
+
+#: src/Util/Onboarding.php:165
+msgid ""
+"Now that you have created the required pages, it's time to setup your Makes "
+"& Models. You can %sread more about Makes & Models here%s or %screate them "
+"here%s."
+msgstr ""
+
+#: src/Vehicle/Data.php:22 templates/vehicle-data/data-condition.php:8
+msgid "Condition"
+msgstr ""
+
+#: src/Vehicle/Data.php:41
+msgid "First Registration Date"
+msgstr ""
+
+#: src/Vehicle/Data.php:62
+msgid "Fuel Type"
+msgstr ""
+
+#: src/Vehicle/Data.php:65 src/Vehicle/Data.php:72 src/Vehicle/Data.php:79
+#: src/Vehicle/Data.php:93 src/Vehicle/Data.php:100 src/Vehicle/Data.php:107
+#: src/Vehicle/Data.php:114
+msgid "e.g."
+msgstr ""
+
+#: src/Vehicle/Data.php:65
+msgid "Gas"
+msgstr ""
+
+#: src/Vehicle/Data.php:69 templates/vehicle-data/data-color.php:8
+msgid "Color"
+msgstr ""
+
+#: src/Vehicle/Data.php:72
+msgid "Grey"
+msgstr ""
+
+#: src/Vehicle/Data.php:76 templates/vehicle-data/data-body_style.php:8
+msgid "Body Style"
+msgstr ""
+
+#: src/Vehicle/Data.php:79
+msgid "Sedan"
+msgstr ""
+
+#: src/Vehicle/Data.php:84 templates/vehicle-data/data-transmission.php:8
+msgid "Transmission"
+msgstr ""
+
+#: src/Vehicle/Data.php:90 templates/vehicle-data/data-doors.php:8
+msgid "Doors"
+msgstr ""
+
+#: src/Vehicle/Data.php:97 templates/vehicle-data/data-engine.php:8
+msgid "Engine"
+msgstr ""
+
+#: src/Vehicle/Data.php:100
+msgid "2.0 TDI"
+msgstr ""
+
+#: src/Vehicle/Data.php:104
+msgid "Power kW"
+msgstr ""
+
+#: src/Vehicle/Data.php:111
+msgid "Power hp"
+msgstr ""
+
+#: src/Vehicle/Data.php:126
+msgid "New"
+msgstr ""
+
+#: src/Vehicle/Data.php:127
+msgid "Used"
+msgstr ""
+
+#: src/Vehicle/Data.php:138
+msgid "Automatic"
+msgstr ""
+
+#: src/Vehicle/Data.php:139
+msgid "Manual"
+msgstr ""
+
+#: src/Vehicle/Data.php:140
+msgid "Semi-Automatic"
+msgstr ""
+
+#: src/Vehicle/PostStatus.php:38
+msgid "Preview <span class=\"count\">(%s)</span>"
+msgid_plural "Preview <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Vehicle/PostStatus.php:49
+msgid "Expired <span class=\"count\">(%s)</span>"
+msgid_plural "Expired <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Vehicle/PostStatus.php:203 templates/single-vehicle/preview.php:2
+msgid "Preview"
+msgstr ""
+
+#: src/Vehicle/PostType.php:16
+msgid "Parent Car:"
+msgstr ""
+
+#: src/Vehicle/PostType.php:17
+msgid "All Car Listings"
+msgstr ""
+
+#: src/Vehicle/PostType.php:18
+msgid "Add New Car Listing"
+msgstr ""
+
+#: src/Vehicle/PostType.php:19
+msgid "Add New Listing"
+msgstr ""
+
+#: src/Vehicle/PostType.php:20
+msgid "New Car"
+msgstr ""
+
+#: src/Vehicle/PostType.php:21
+msgid "Edit Car"
+msgstr ""
+
+#: src/Vehicle/PostType.php:22
+msgid "Update Car"
+msgstr ""
+
+#: src/Vehicle/PostType.php:23
+msgid "View Car"
+msgstr ""
+
+#: src/Vehicle/PostType.php:24
+msgid "Search Car"
+msgstr ""
+
+#: src/Vehicle/PostType.php:25
+msgid "No cars found"
+msgstr ""
+
+#: src/Vehicle/PostType.php:26
+msgid "Not found in Trash"
+msgstr ""
+
+#: src/Vehicle/PostType.php:29
+msgid "vehicle"
+msgstr ""
+
+#: templates/dashboard/buttons/add-new.php:7
+msgid "Add New"
+msgstr ""
+
+#: templates/dashboard/buttons/edit.php:1
+msgid "Edit"
+msgstr ""
+
+#: templates/dashboard/item.php:24
+msgid "Expires on"
+msgstr ""
+
+#: templates/dashboard/no-results.php:1 templates/listings/no-results.php:1
+msgid "We couldn't find any cars."
+msgstr ""
+
+#: templates/dashboard/not-logged-in.php:1
+msgid "Please sign in to view your car listings"
+msgstr ""
+
+#: templates/general/review-sign.php:1
+msgid "PENDING REVIEW"
+msgstr ""
+
+#: templates/general/sold-sign.php:1
+msgid "SOLD"
+msgstr ""
+
+#: templates/listings/filters/button.php:2
+msgid "Show Results"
+msgstr ""
+
+#: templates/listings/filters/frdate.php:2
+msgid "Min Year"
+msgstr ""
+
+#: templates/listings/filters/frdate.php:3
+#: templates/listings/filters/frdate.php:4
+#: templates/listings/filters/mileage.php:3
+#: templates/listings/filters/mileage.php:4
+#: templates/listings/filters/price.php:3
+#: templates/listings/filters/price.php:4
+msgid "All"
+msgstr ""
+
+#: templates/listings/filters/mileage.php:2
+msgid "Max Mileage"
+msgstr ""
+
+#: templates/listings/filters/price.php:2
+msgid "Max Price"
+msgstr ""
+
+#: templates/listings/sort.php:3
+msgid "Sort by:"
+msgstr ""
+
+#: templates/listings/sort.php:8
+msgid "Price (low-high)"
+msgstr ""
+
+#: templates/listings/sort.php:9
+msgid "Price (high-low)"
+msgstr ""
+
+#: templates/listings/sort.php:10
+msgid "Year (old-new)"
+msgstr ""
+
+#: templates/listings/sort.php:11
+msgid "Year (new-old)"
+msgstr ""
+
+#: templates/listings/sort.php:12
+msgid "Mileage (low-high)"
+msgstr ""
+
+#: templates/listings/sort.php:13
+msgid "Mileage (high-low)"
+msgstr ""
+
+#: templates/listings/sort.php:14
+msgid "Date (old-new)"
+msgstr ""
+
+#: templates/listings/sort.php:15
+msgid "Date (new-old)"
+msgstr ""
+
+#: templates/single-vehicle/contact.php:14
+msgid "Email Us"
+msgstr ""
+
+#: templates/single-vehicle/contact.php:22
+msgid "Call Us"
+msgstr ""
+
+#: templates/single-vehicle/content.php:8
+msgid "Vehicle Description"
+msgstr ""
+
+#: templates/single-vehicle/data.php:8
+msgid "Vehicle Details"
+msgstr ""
+
+#: templates/single-vehicle/expired.php:2
+msgid "Listing Expired"
+msgstr ""
+
+#: templates/single-vehicle/expired.php:3
+msgid ""
+"This listing is expired, please go to your car dashboard for more "
+"information."
+msgstr ""
+
+#: templates/single-vehicle/features.php:11
+msgid "Vehicle Features"
+msgstr ""
+
+#: templates/single-vehicle/pending.php:2
+msgid "Pending Review"
+msgstr ""
+
+#: templates/single-vehicle/pending.php:3
+msgid "Your submission is pending review, please check back later."
+msgstr ""
+
+#: templates/single-vehicle/preview.php:3
+msgid ""
+"This is a preview of your listing, please note this listing is not published"
+" yet!"
+msgstr ""
+
+#: templates/single-vehicle/preview.php:6
+msgid "Edit listing"
+msgstr ""
+
+#: templates/submit-car-form/account-signin.php:4
+msgid "Your account"
+msgstr ""
+
+#: templates/submit-car-form/account-signin.php:9
+msgid "You are currently signed in as <strong>%s</strong>."
+msgstr ""
+
+#: templates/submit-car-form/account-signin.php:13
+msgid "Sign out"
+msgstr ""
+
+#: templates/submit-car-form/account-signin.php:22
+msgid "Have an account?"
+msgstr ""
+
+#: templates/submit-car-form/account-signin.php:26
+msgid "Sign in"
+msgstr ""
+
+#: templates/submit-car-form/account-signin.php:30
+msgid ""
+"If you don&rsquo;t have an account you can create one below by entering your"
+" email address/username. Your account details will be confirmed via email."
+msgstr ""
+
+#: templates/submit-car-form/account-signin.php:34
+msgid "You must sign in to create a new listing."
+msgstr ""
+
+#: templates/submit-car-form/account-signin.php:42
+msgid "Username"
+msgstr ""
+
+#: templates/submit-car-form/account-signin.php:55
+msgid "Your Email"
+msgstr ""
+
+#: templates/submit-car-form/car-features.php:1
+msgid "Car Features"
+msgstr ""
+
+#: templates/submit-car-form/disabled.php:2
+msgid "You do not have permission to post or edit this listing."
+msgstr ""
+
+#: templates/submit-car-form/images.php:1
+msgid "Images"
+msgstr ""
+
+#: templates/submit-car-form/images.php:23
+msgid "Current Images"
+msgstr ""
+
+#: templates/submit-car-form/images.php:37
+msgid "Upload New Images"
+msgstr ""
+
+#: templates/submit-car-form/images.php:38
+msgid "Click here to upload your images"
+msgstr ""
+
+#: templates/submit-car-form/images.php:39
+msgid ""
+"You can upload multiple images at the same time, the first image will be "
+"your thumbnail."
+msgstr ""
+
+#: templates/submit-car-form/step-empty-view.php:6
+msgid ""
+"You are redirected to the next step, %sclick here%s if nothing happens."
+msgstr ""
+
+#: templates/vehicle-data/data-frdate.php:8
+msgid "Year"
+msgstr ""
+
+#: templates/vehicle-data/data-fuel_type.php:8
+msgid "Fuel"
+msgstr ""
+
+#: templates/vehicle-data/data-power_kw.php:11
+msgid "Power"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WP Car Manager"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.wpcarmanager.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"The easiest way to manage, list and sell your cars online using WordPress."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Never5"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.never5.com"
+msgstr ""
+
+#: src/Taxonomies.php:15
+msgctxt "Taxonomy General Name"
+msgid "Features"
+msgstr ""
+
+#: src/Taxonomies.php:86
+msgctxt "Taxonomy General Name"
+msgid "Makes"
+msgstr ""
+
+#: src/Taxonomies.php:16
+msgctxt "Taxonomy Singular Name"
+msgid "Feature"
+msgstr ""
+
+#: src/Taxonomies.php:87
+msgctxt "Taxonomy Singular Name"
+msgid "Make"
+msgstr ""
+
+#: src/Taxonomies.php:34
+msgctxt "taxonomy type slug"
+msgid "feature"
+msgstr ""
+
+#: src/Taxonomies.php:105
+msgctxt "taxonomy type slug"
+msgid "make"
+msgstr ""
+
+#: src/Vehicle/PostStatus.php:33
+msgctxt "post status"
+msgid "Preview"
+msgstr ""
+
+#: src/Vehicle/PostStatus.php:43
+msgctxt "post status"
+msgid "Expired"
+msgstr ""
+
+#: src/Vehicle/PostType.php:12
+msgctxt "Post Type General Name"
+msgid "Car Listings"
+msgstr ""
+
+#: src/Vehicle/PostType.php:13
+msgctxt "Post Type Singular Name"
+msgid "Car"
+msgstr ""
+
+#: src/Vehicle/PostType.php:64
+msgctxt "post type slug"
+msgid "vehicle"
+msgstr ""

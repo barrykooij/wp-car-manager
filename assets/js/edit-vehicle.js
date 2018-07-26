@@ -24,6 +24,7 @@ jQuery( function ( $ ) {
     } );
 
     $( '.wpcm-date-field' ).datepicker( {
+	    yearRange: "1910:+1",
         dateFormat: 'yy-mm-dd',
         changeMonth: true,
         changeYear: true

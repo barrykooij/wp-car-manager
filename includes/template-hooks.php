@@ -39,6 +39,7 @@ add_action( 'wpcm_vehicle_summary', 'wpcm_template_single_contact', 30 );
 add_action( 'wpcm_vehicle_content', 'wpcm_template_single_data', 10 );
 add_action( 'wpcm_vehicle_content', 'wpcm_template_single_content', 20 );
 add_action( 'wpcm_vehicle_content', 'wpcm_template_single_features', 30 );
+add_action( 'wpcm_vehicle_content', 'wpcm_template_single_footnote', 99 );
 
 // Remove the power hp from data template parts as we display this in the power kw template part
 add_filter( 'wpcm_single_vehicle_data_fields', 'wpcm_template_data_remove_power_hp', 10, 2 );
@@ -108,7 +109,23 @@ add_action( 'wpcm_submit_car_form_disabled', 'wpcm_template_submit_car_form_disa
 /**
  * Add new listing button on dashboard
  */
-add_action( 'the_title', 'wpcm_template_dashboard_add_new_listing_button' );
+//add_action( 'the_title', 'wpcm_template_dashboard_add_new_listing_button' );
+
+/**
+ * Vehicle Dashboard Profile Title
+ */
+//add_action( 'wpcm_before_profile', 'wpcm_template_dashboard_profile_title', 10 );
+add_action( 'wpcm_dashboard_profile', 'wpcm_template_dashboard_profile_title', 9 );
+
+/**
+ * Vehicle Dashboard Profile
+ */
+add_action( 'wpcm_dashboard_profile', 'wpcm_template_dashboard_profile', 10 );
+
+/**
+ * Vehicle Dashboard Results Title
+ */
+add_action( 'wpcm_before_dashboard_results', 'wpcm_template_dashboard_list_title', 10 );
 
 /**
  * Vehicle Dashboard Results
@@ -122,3 +139,8 @@ add_action( 'wpcm_dashboard_results', 'wpcm_template_dashboard_list_end', 15 );
 add_action( 'wpcm_dashboard_item_actions', 'wpcm_template_dashboard_button_edit', 10 );
 add_action( 'wpcm_dashboard_item_actions', 'wpcm_template_dashboard_button_delete', 10 );
 //add_action( 'wpcm_dashboard_item_actions', 'wpcm_template_dashboard_button_renew', 10 );
+
+/**
+ * Vehicle Dashboard Pagination
+ */
+add_action( 'wpcm_after_dashboard_results', 'wpcm_template_dashboard_pagination', 10 );

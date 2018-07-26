@@ -15,7 +15,7 @@ class Data {
 	 */
 	public static function get_fields( $type = 'car' ) {
 
-		return array(
+		return apply_filters( 'wpcm_vehicle_fields', array(
 			'condition'    => array(
 				'type'     => 'select',
 				'options'  => self::get_conditions(),
@@ -113,7 +113,7 @@ class Data {
 				'required'    => false,
 				'placeholder' => __( 'e.g.', 'wp-car-manager' ) . ' ' . __( '170', 'wp-car-manager' )
 			),
-		);
+		), $type );
 	}
 
 	/**

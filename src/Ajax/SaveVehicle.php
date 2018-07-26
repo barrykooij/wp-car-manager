@@ -155,6 +155,8 @@ class SaveVehicle extends Ajax {
 			$vehicle->set_transmission( $data['transmission'] );
 			$vehicle->set_engine( $data['engine'] );
 			$vehicle->set_doors( $data['doors'] );
+			$vehicle->set_power_kw( $data['power_kw'] );
+			$vehicle->set_power_hp( $data['power_hp'] );
 
 			// set features
 			if ( isset( $data['features'] ) && count( $data['features'] ) > 0 ) {

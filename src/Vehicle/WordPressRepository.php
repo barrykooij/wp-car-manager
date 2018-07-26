@@ -26,6 +26,47 @@ class WordPressRepository implements VehicleRepository {
 	}
 
 	/**
+	 * Filter query arguments for wpcm_vehicle WP_Query queries
+	 *
+	 * @param array $args
+	 * @param int $limit
+	 * @param int $offset
+	 *
+	 * @return array
+	 */
+	private function filter_query_args( $args = array(), $limit = 0, $offset = 0 ) {
+
+		// limit must be int, not abs
+		$limit = intval( $limit );
+
+		// most be absint
+		$offset = absint( $offset );
+
+		// start with removing reserved keys
+		unset( $args['post_type'] );
+		unset( $args['posts_per_page'] );
+		unset( $args['offset'] );
+		unset( $args['paged'] );
+		unset( $args['nopaging'] );
+
+		// setup our reserved keys
+		$args['post_type']      = 'wpcm_vehicle';
+		$args['posts_per_page'] = - 1;
+
+		// set limit if set
+		if ( $limit > 0 ) {
+			$args['posts_per_page'] = $limit;
+		}
+
+		// set offset if set
+		if ( $offset > 0 ) {
+			$args['offset'] = $offset;
+		}
+
+		return $args;
+	}
+
+	/**
 	 * @param int $id
 	 *
 	 * @throws \Exception
@@ -53,17 +94,18 @@ class WordPressRepository implements VehicleRepository {
 		$data->condition         = get_post_meta( $post->ID, $pm_prefix . 'condition', true );
 		$data->make              = get_post_meta( $post->ID, $pm_prefix . 'make', true );
 		$data->model             = get_post_meta( $post->ID, $pm_prefix . 'model', true );
-		$data->price        = get_post_meta( $post->ID, $pm_prefix . 'price', true );
-		$data->color        = get_post_meta( $post->ID, $pm_prefix . 'color', true );
-		$data->mileage      = get_post_meta( $post->ID, $pm_prefix . 'mileage', true );
-		$data->fuel_type    = get_post_meta( $post->ID, $pm_prefix . 'fuel_type', true );
-		$data->transmission = get_post_meta( $post->ID, $pm_prefix . 'transmission', true );
-		$data->engine       = get_post_meta( $post->ID, $pm_prefix . 'engine', true );
-		$data->power_hp     = get_post_meta( $post->ID, $pm_prefix . 'power_hp', true );
-		$data->power_kw     = get_post_meta( $post->ID, $pm_prefix . 'power_kw', true );
-		$data->body_style   = get_post_meta( $post->ID, $pm_prefix . 'body_style', true );
-		$data->doors        = get_post_meta( $post->ID, $pm_prefix . 'doors', true );
-		$data->sold         = get_post_meta( $post->ID, $pm_prefix . 'sold', true );
+		$data->price             = get_post_meta( $post->ID, $pm_prefix . 'price', true );
+		$data->color             = get_post_meta( $post->ID, $pm_prefix . 'color', true );
+		$data->mileage           = get_post_meta( $post->ID, $pm_prefix . 'mileage', true );
+		$data->fuel_type         = get_post_meta( $post->ID, $pm_prefix . 'fuel_type', true );
+		$data->transmission      = get_post_meta( $post->ID, $pm_prefix . 'transmission', true );
+		$data->engine            = get_post_meta( $post->ID, $pm_prefix . 'engine', true );
+		$data->power_hp          = get_post_meta( $post->ID, $pm_prefix . 'power_hp', true );
+		$data->power_kw          = get_post_meta( $post->ID, $pm_prefix . 'power_kw', true );
+		$data->body_style        = get_post_meta( $post->ID, $pm_prefix . 'body_style', true );
+		$data->doors             = get_post_meta( $post->ID, $pm_prefix . 'doors', true );
+		$data->sold              = get_post_meta( $post->ID, $pm_prefix . 'sold', true );
+		$data->featured          = get_post_meta( $post->ID, $pm_prefix . 'featured', true );
 
 		// wrap frdate in try-catch in case someone enters an incorrect date
 		try {
@@ -86,6 +128,20 @@ class WordPressRepository implements VehicleRepository {
 
 		return $data;
 
+	}
+
+	/**
+	 * Returns number of rows for given filters
+	 *
+	 * @param array $filters
+	 *
+	 * @return int
+	 */
+	public function num_rows( $filters = array() ) {
+		$q = new \WP_Query();
+		$q->query( $this->filter_query_args( $filters ) );
+
+		return $q->found_posts;
 	}
 
 	/**
@@ -148,6 +204,9 @@ class WordPressRepository implements VehicleRepository {
 
 		// set sold
 		update_post_meta( $vehicle->get_id(), 'wpcm_sold', $vehicle->get_sold() );
+
+		// set featured
+		update_post_meta( $vehicle->get_id(), 'wpcm_featured', $vehicle->get_featured() );
 
 		// set vehicle meta-data
 		if ( ! empty( $fields ) ) {

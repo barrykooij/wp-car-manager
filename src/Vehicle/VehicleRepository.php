@@ -12,6 +12,15 @@ interface VehicleRepository {
 	public function retrieve( $id );
 
 	/**
+	 * Returns number of rows for given filters
+	 *
+	 * @param array $filters
+	 *
+	 * @return int
+	 */
+	public function num_rows( $filters=array() );
+
+	/**
 	 * @param Vehicle $vehicle
 	 *
 	 * @return bool

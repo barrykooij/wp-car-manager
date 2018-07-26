@@ -101,7 +101,19 @@ class Settings {
 							'label' => __( 'Listings Per Page', 'wp-car-manager' ),
 							'desc'  => sprintf( __( 'The amount of listings per page. Enter %s to disable pagination.', 'wp-car-manager' ), '<code>-1</code>' )
 						),
-
+						array(
+							'name'     => 'listings_hide_empty_makes_models',
+							'label'    => __( 'Hide Empty Makes & Models', 'wp-car-manager' ),
+							'cb_label' => __( 'Hide empty makes and models from listing pages', 'wp-car-manager' ),
+							'desc'     => __( 'If enabled, makes and/or models that have vehicles will no longer be listed on your listing pages.', 'wp-car-manager' ),
+							'type'     => 'checkbox',
+						),
+						array(
+							'name'     => 'listings_single_footnote',
+							'label'    => __( 'Listing Detail Footnote', 'wp-car-manager' ),
+							'desc'     => __( 'The footnote will be displayed at the bottom of all vehicle detail pages.', 'wp-car-manager' ),
+							'type'     => 'textarea',
+						),
 					),
 				),
 				'submission' => array(
@@ -146,6 +158,13 @@ class Settings {
 				'contact'    => array(
 					__( 'Contact', 'wp-car-manager' ),
 					array(
+						array(
+							'name'     => 'contact_use_car_seller_details',
+							'label'    => __( 'Use Seller Details', 'wp-car-manager' ),
+							'cb_label' => __( 'Use contact details of the car seller on listing pages.', 'wp-car-manager' ),
+							'desc'     => __( 'If enabled, the contact details of the seller will be used on the listings.', 'wp-car-manager' ),
+							'type'     => 'checkbox',
+						),
 						array(
 							'name'  => 'contact_email',
 							'label' => __( 'Contact Email Address', 'wp-car-manager' ),

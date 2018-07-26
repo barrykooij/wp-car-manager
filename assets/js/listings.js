@@ -18,10 +18,18 @@ var WPCM_Listings = function ( tgt ) {
 	this.page = 1;
 	this.default_sort = jQuery( tgt ).data( 'sort' );
 	this.condition = jQuery( tgt ).data( 'condition' );
+	this.featured = jQuery( tgt ).data( 'featured' );
 
+	// lock the overview to a single make
 	this.locked_make = 0;
 	if ( jQuery( tgt ).data( 'make_id' ) ) {
 		this.locked_make = jQuery( tgt ).data( 'make_id' );
+	}
+
+	// lock the overview to single model
+	this.locked_model = 0;
+	if ( jQuery( tgt ).data( 'model_id' ) ) {
+		this.locked_model = jQuery( tgt ).data( 'model_id' );
 	}
 
 	// init filters
@@ -164,6 +172,11 @@ WPCM_Listings.prototype.load_vehicles = function () {
 		args['filter_make'] = this.locked_make;
 	}
 
+	// if model is locked, it's locked
+	if ( this.locked_model > 0 ) {
+		args['filter_model'] = this.locked_model;
+	}
+
 	// set sort in args
 	if ( this.sort.length > 0 ) {
 		args['sort'] = this.sort.find( 'option:selected' ).val();
@@ -173,6 +186,10 @@ WPCM_Listings.prototype.load_vehicles = function () {
 
 	if ( '' != this.condition ) {
 		args['filter_condition'] = this.condition;
+	}
+
+	if ( undefined != this.featured ) {
+		args['filter_featured'] = this.featured;
 	}
 
 	// add spinner

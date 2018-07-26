@@ -51,36 +51,47 @@ class Manager {
 		// vehicle array
 		$vehicles = array();
 
+		// base meta query
+		$meta_query = array(
+			'relation' => 'AND'
+		);
+
 		// translate $sort to \WP_Query sort
 		$sort_params = explode( '-', $sort );
 
+		/**
+		 * Default first sort entry is menu_order.
+		 * This puts 'featured' listings on top.
+		 */
+		$order  = array( 'menu_order' => 'ASC' );
+
 		// order by variables
-		$orderby = 'meta_value';
-		$order   = ( 'desc' == array_pop( $sort_params ) ) ? 'DESC' : 'ASC';
+		$order_val   = ( 'desc' == array_pop( $sort_params ) ) ? 'DESC' : 'ASC';
 
 		// get sort value and meta key
 		$sort_val = array_shift( $sort_params );
 		$meta_key = 'wpcm_' . $sort_val;
 
-		// determine sort value type
-		switch ( $sort_val ) {
-			case 'price':
-				$meta_type = 'NUMERIC';
-				break;
-			case 'frdate':
-				$meta_type = 'DATE';
-				break;
-			case 'mileage':
-				$meta_type = 'NUMERIC';
-				break;
-			case 'date':
-				$orderby = 'date';
-				break;
-			default:
-				// force sort to ascending price if given sort isn't recognized
-				$meta_type = 'NUMERIC';
-				$meta_key  = 'wpcm_price';
-				$order     = 'ASC';
+		$sort_meta_entry = array(
+			'key'     => $meta_key,
+			'type'    => 'NUMERIC'
+		);
+
+		// set type to DATE for date
+		if( $sort_val == 'frdate' ) {
+			$sort_meta_entry['type'] = 'DATE';
+		}
+
+		// add date as a regular extra order entry
+		if( $sort_val == 'date') {
+			$order['date'] = $order_val;
+		}else {
+			// add an extra meta order entry
+			$meta_query['orderby_meta'] = $sort_meta_entry;
+			$order['orderby_meta'] = $order_val;
+
+			// add a third sort parameter, date DESC. This way the newest listings with the given filter are shown on top.
+			$order['date'] = 'DESC';
 		}
 
 		// \WP_Query arg
@@ -88,18 +99,8 @@ class Manager {
 			'post_status'    => 'publish',
 			'post_type'      => PostType::VEHICLE,
 			'posts_per_page' => intval( $per_page ),
-			'orderby'        => $orderby,
-			'order'          => $order
+			'orderby'        => $order,
 		);
-
-		// check if we're sorting by meta and if so, add the meta sort data
-		if ( 'meta_value' == $orderby ) {
-			$args['meta_type'] = $meta_type;
-			$args['meta_key']  = $meta_key;
-		}
-
-		// base meta query
-		$meta_query = array();
 
 		// check for make
 		if ( is_array( $filters ) && count( $filters ) > 0 ) {
@@ -146,6 +147,37 @@ class Manager {
 							$filter['value']   = '1';
 							$filter['compare'] = '!=';
 							$filter['type']    = 'CHAR';
+						}
+						break;
+					case 'featured':
+						$filter_val = ($filter_val=='true');
+						if ( true === $filter_val ) {
+							$filter['key']     = 'wpcm_featured';
+							$filter['value']   = '1';
+							$filter['compare'] = '=';
+							$filter['type']    = 'NUMERIC';
+						} else if ( false === $filter_val ) {
+
+							/*
+							 * This is a more tricky one because we're adding 2 entries.
+							 * The entries will be nested in their own group/array
+							 * The group will have an OR relation (where global MQ has AND).
+							 * We're adding it directly to $meta_query
+							 */
+							$meta_query[] = array(
+								'relation' => 'OR',
+								array(
+									'key'     => 'wpcm_featured',
+									'value'   => 0,
+									'compare' => '=',
+									'type'    => 'NUMERIC'
+								),
+								array(
+									'key'     => 'wpcm_featured',
+									'compare' => 'NOT EXISTS'
+								)
+							);
+
 						}
 						break;
 					default:
@@ -254,6 +286,24 @@ class Manager {
 		wp_reset_postdata();
 
 		return true;
+	}
+
+	// update the vehicle order
+	public function update_vehicle_order( $vehicle_id ) {
+		global $wpdb;
+
+		// check if this vehicle is featured
+		$featured = absint( get_post_meta( $vehicle_id, 'wpcm_featured', true ) );
+
+		if( 1 === $featured ) {
+			$wpdb->update( $wpdb->posts, array( 'menu_order' => -1 ), array( 'ID' => $vehicle_id ) );
+		}else {
+			$wpdb->update( $wpdb->posts, array( 'menu_order' => 0 ), array( 'ID' => $vehicle_id, 'menu_order' => -1 ) );
+		}
+
+		// be gone cache
+		clean_post_cache( $vehicle_id );
+
 	}
 
 

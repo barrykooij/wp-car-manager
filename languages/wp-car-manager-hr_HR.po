@@ -1,13 +1,14 @@
 # Copyright (C) 2016 Never5
 # This file is distributed under the GPL v2.
 # Translators:
+# i i <iivanleonardo@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Car Manager\n"
 "Report-Msgid-Bugs-To: https://github.com/barrykooij/wp-car-manager/issues\n"
 "POT-Creation-Date: 2016-07-11 09:01:01+00:00\n"
-"PO-Revision-Date: 2016-07-11 09:05+0000\n"
-"Last-Translator: Barry Kooij <mail@barrykooij.nl>\n"
+"PO-Revision-Date: 2017-09-23 00:37+0000\n"
+"Last-Translator: i i <iivanleonardo@gmail.com>\n"
 "Language-Team: Croatian (Croatia) (http://www.transifex.com/barrykooijplugins/wp-car-manager/language/hr_HR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,11 +19,11 @@ msgstr ""
 
 #: src/Vehicle/Data.php:107
 msgid "125"
-msgstr ""
+msgstr "125"
 
 #: src/Vehicle/Data.php:114
 msgid "170"
-msgstr ""
+msgstr "170"
 
 #: assets/views/meta-box/gallery.php:15 assets/views/meta-box/gallery.php:30
 msgid "Delete image"
@@ -40,7 +41,7 @@ msgstr "Dodaj slike u galeriju"
 
 #: assets/views/meta-box/gallery.php:29
 msgid "Add to gallery"
-msgstr ""
+msgstr "Dodaj u galeriju "
 
 #: assets/views/meta-box/gallery.php:31
 msgid "Add gallery images"
@@ -89,22 +90,22 @@ msgstr "Konfiguriraj modele"
 
 #: assets/views/page/makes.php:55
 msgid "No Makes found"
-msgstr ""
+msgstr "Marka vozila nije nađena"
 
 #: assets/views/page/makes.php:76
 msgid "What are Makes?"
-msgstr ""
+msgstr "Što je marka vozila"
 
 #: assets/views/page/makes.php:77
 msgid ""
 "On this page you manage your vehicles makes. You can add a new make with the"
 " form below and manage your existing makes on the right. To manage a make’s "
 "models, click the wheel button."
-msgstr ""
+msgstr "Na ovoj stranici upravljate vozilima. Možete dodati novu izradu s obrascem u nastavku i upravljati postojećim markama s desne strane. Da biste upravljali modela modela, kliknite gumb kotača."
 
 #: assets/views/page/makes.php:78 assets/views/page/models.php:77
 msgid "You can read more about Makes and Models here"
-msgstr ""
+msgstr "Više pročitajte o markama i modelima vozila"
 
 #: assets/views/page/makes.php:82 assets/views/page/makes.php:105
 #: src/Taxonomies.php:93
@@ -113,18 +114,18 @@ msgstr "Dodaj novog proizvođača"
 
 #: assets/views/page/models.php:55
 msgid "No Models found"
-msgstr ""
+msgstr "Model nije nađen"
 
 #: assets/views/page/models.php:75
 msgid "What are Models?"
-msgstr ""
+msgstr "Što su modeli?"
 
 #: assets/views/page/models.php:76
 msgid ""
 "On this page you manage your vehicles models. You can add a new model with "
 "the form below and manage your existing models on the right. A model is "
 "always linked to one make."
-msgstr ""
+msgstr "Na ovoj stranici upravljate svojim modelima vozila. Možete dodati novi model s obrazacom u nastavku i upravljati postojećim modelima s desne strane. Model je uvijek povezan s jednim izradom"
 
 #: assets/views/page/models.php:81 assets/views/page/models.php:106
 msgid "Add New Model"
@@ -349,7 +350,7 @@ msgstr "Bugarski Lev"
 
 #: src/Helper/Currency.php:207
 msgid "Burundian Franc"
-msgstr ""
+msgstr "Burundski franci"
 
 #: src/Helper/Currency.php:208
 msgid "Canadian Dollars"
@@ -373,7 +374,7 @@ msgstr "Češka Kruna"
 
 #: src/Helper/Currency.php:213
 msgid "Djiboutian Franc"
-msgstr ""
+msgstr "Dijabutanski franci"
 
 #: src/Helper/Currency.php:214
 msgid "Danish Krone"
@@ -385,7 +386,7 @@ msgstr "Dominikanski Peso"
 
 #: src/Helper/Currency.php:216
 msgid "Ethiopian Birr"
-msgstr ""
+msgstr "Etiopijski biri"
 
 #: src/Helper/Currency.php:217
 msgid "Euros"
@@ -393,7 +394,7 @@ msgstr "Euro"
 
 #: src/Helper/Currency.php:218
 msgid "Ghanaian Cedi"
-msgstr ""
+msgstr "Ghanski Cedi"
 
 #: src/Helper/Currency.php:219
 msgid "Hong Kong Dollar"
@@ -429,7 +430,7 @@ msgstr "Japanski Jen"
 
 #: src/Helper/Currency.php:227
 msgid "Kenyan Shilling"
-msgstr ""
+msgstr "Kenijski silinzi"
 
 #: src/Helper/Currency.php:228
 msgid "Lao Kip"
@@ -489,7 +490,7 @@ msgstr "Ruski Rubalj"
 
 #: src/Helper/Currency.php:242
 msgid "Rwandan Franc"
-msgstr ""
+msgstr "Ruandski franci"
 
 #: src/Helper/Currency.php:243
 msgid "Singapore Dollar"
@@ -521,7 +522,7 @@ msgstr "Tajvanski Novi Dolar"
 
 #: src/Helper/Currency.php:250
 msgid "Tanzanian Shilling"
-msgstr ""
+msgstr "Tanzanijski siling"
 
 #: src/Helper/Currency.php:251
 msgid "Ukrainian Hryvnia"
@@ -529,7 +530,7 @@ msgstr "Ukrainska Grivna"
 
 #: src/Helper/Currency.php:252
 msgid "Ugandan Shilling"
-msgstr ""
+msgstr "Ugandski silinzi"
 
 #: src/Helper/Currency.php:253
 msgid "US Dollars"
@@ -545,11 +546,11 @@ msgstr "Egipatska Funta"
 
 #: src/Helper/Format.php:69
 msgid "miles"
-msgstr ""
+msgstr "milje"
 
 #: src/Helper/Format.php:70
 msgid "km"
-msgstr ""
+msgstr "km"
 
 #: src/Helper/Pages.php:16
 msgid "no page"
@@ -557,15 +558,15 @@ msgstr "stranica ne postoji"
 
 #: src/Helper/Pagination.php:66
 msgid "&hellip;"
-msgstr ""
+msgstr "pomoc"
 
 #: src/Helper/Power.php:20
 msgid "kW"
-msgstr ""
+msgstr "kw"
 
 #: src/Helper/Power.php:21
 msgid "hp"
-msgstr ""
+msgstr "KS"
 
 #: src/MakeModelManager.php:74 templates/listings/filters/make.php:3
 msgid "Select Make"
@@ -653,33 +654,33 @@ msgstr "Način nakoji je datum formatiran."
 
 #: src/Settings.php:90
 msgid "Listings"
-msgstr ""
+msgstr "Stranice"
 
 #: src/Settings.php:94
 msgid "Hide Sold Listings"
-msgstr ""
+msgstr "sakrij prodane stranice"
 
 #: src/Settings.php:95
 msgid "Hide sold listings from listing pages"
-msgstr ""
+msgstr "Sakrij prodana vozila sa stranice"
 
 #: src/Settings.php:96
 msgid ""
 "If enabled, listings marked as sold will no longer be listed on your listing"
 " pages."
-msgstr ""
+msgstr "Ako je omogućeno, oglasi označeni kao prodani više neće biti navedeni na vašim stranicama."
 
 #: src/Settings.php:101
 msgid "Listings Per Page"
-msgstr ""
+msgstr "Broj vozila po stranici "
 
 #: src/Settings.php:102
 msgid "The amount of listings per page. Enter %s to disable pagination."
-msgstr ""
+msgstr "Broj vozila po stranici"
 
 #: src/Settings.php:108
 msgid "Submission"
-msgstr ""
+msgstr "Submisson"
 
 #: src/Settings.php:112
 msgid "Account Creation"
@@ -787,25 +788,25 @@ msgstr "Pretpregled vozila"
 
 #: src/SubmitCarHandler.php:329
 msgid "%s has been submitted successfully and will be visible once approved."
-msgstr ""
+msgstr "% je zaprimljen i bit ce vidljiv po odobrenju"
 
 #: src/SubmitCarHandler.php:333
 msgid ""
 "%s has been submitted successfully and will be visible once payment has been"
 " confirmed."
-msgstr ""
+msgstr "% je zaprimljen uspjesno i bit ce vidljiv kad uplata bude vidljiva"
 
 #: src/SubmitCarHandler.php:336
 msgid "%s has been submitted successfully."
-msgstr ""
+msgstr "% je zaprimljen uspjesno "
 
 #: src/SubmitCarHandler.php:343
 msgid "View Listing"
-msgstr ""
+msgstr "vidi vozila "
 
 #: src/SubmitCarHandler.php:345
 msgid "View Dashboard"
-msgstr ""
+msgstr "kontrolna ploča"
 
 #: src/Taxonomies.php:17
 msgid "Features"
@@ -874,23 +875,23 @@ msgid ""
 "commonly used features are %s, %s, %s and %s but you are free to enter any "
 "feature you like. Vehicle features are listed in a nice list on the vehicle "
 "detail page."
-msgstr ""
+msgstr "Značajke WP Car Managera su mjesto za dodavanje svih \"značajki\" vašeg vozila, tako da svaki put ne morate ponovno upisivati istu značajku. Primjeri često korištenih značajki su% s,% s,% s i% s, ali možete unijeti sve značajke koje vam se sviđaju. Značajke vozila navedene su u lijepom popisu na stranici pojedinosti o vozilu"
 
 #: src/Taxonomies.php:73
 msgid "ABS"
-msgstr ""
+msgstr "ABS"
 
 #: src/Taxonomies.php:74
 msgid "Airbag"
-msgstr ""
+msgstr "zračni jastuk "
 
 #: src/Taxonomies.php:75
 msgid "ESP"
-msgstr ""
+msgstr "ESP"
 
 #: src/Taxonomies.php:76
 msgid "Radio"
-msgstr ""
+msgstr "Radio "
 
 #: src/Taxonomies.php:89
 msgid "All Makes"
@@ -982,7 +983,7 @@ msgid ""
 "WP Car Manager needs 3 pages setup with specific shortcodes to function "
 "correct. We can create and setup these pages for you at this moment or you "
 "can create them yourself and set them in the settings screen."
-msgstr ""
+msgstr "WP Car Manager treba postavljanje 3 stranice s određenim kraticama za ispravno funkcioniranje. Te stranice možete kreirati i postaviti za vas u ovom trenutku ili ih sami izraditi i postaviti na zaslonu postavki."
 
 #: src/Util/Onboarding.php:107
 msgid "Page"
@@ -1041,14 +1042,14 @@ msgstr "Pročitajte više on našim dodacima"
 
 #: src/Util/Onboarding.php:163
 msgid "What's next?"
-msgstr ""
+msgstr "Što je sljedeće"
 
 #: src/Util/Onboarding.php:165
 msgid ""
 "Now that you have created the required pages, it's time to setup your Makes "
 "& Models. You can %sread more about Makes & Models here%s or %screate them "
 "here%s."
-msgstr ""
+msgstr "Sada kada ste stvorili potrebne stranice, vrijeme je da postavite svoje Makes & Models. Možete% sread više o Markama & Modelima ovdje% s ili% izgubiti ih ovdje% s."
 
 #: src/Vehicle/Data.php:22 templates/vehicle-data/data-condition.php:8
 msgid "Condition"
@@ -1106,11 +1107,11 @@ msgstr "2.0 TDI"
 
 #: src/Vehicle/Data.php:104
 msgid "Power kW"
-msgstr ""
+msgstr "Snaga kW"
 
 #: src/Vehicle/Data.php:111
 msgid "Power hp"
-msgstr ""
+msgstr "Snaga Ks"
 
 #: src/Vehicle/Data.php:126
 msgid "New"
@@ -1160,7 +1161,7 @@ msgstr "Popis svih vozila"
 
 #: src/Vehicle/PostType.php:18
 msgid "Add New Car Listing"
-msgstr ""
+msgstr "Dodaj novo vozilo "
 
 #: src/Vehicle/PostType.php:19
 msgid "Add New Listing"
@@ -1200,7 +1201,7 @@ msgstr "vozilo"
 
 #: templates/dashboard/buttons/add-new.php:7
 msgid "Add New"
-msgstr ""
+msgstr "Dodaj novo"
 
 #: templates/dashboard/buttons/edit.php:1
 msgid "Edit"
@@ -1220,11 +1221,11 @@ msgstr "Molimo prijavite se da biste mogli vidjeti popis vozila"
 
 #: templates/general/review-sign.php:1
 msgid "PENDING REVIEW"
-msgstr ""
+msgstr "recenzija"
 
 #: templates/general/sold-sign.php:1
 msgid "SOLD"
-msgstr ""
+msgstr "Prodano"
 
 #: templates/listings/filters/button.php:2
 msgid "Show Results"
@@ -1281,11 +1282,11 @@ msgstr "Prijeđeni kilometri (više-manje)"
 
 #: templates/listings/sort.php:14
 msgid "Date (old-new)"
-msgstr ""
+msgstr "Datum(staro-novo)"
 
 #: templates/listings/sort.php:15
 msgid "Date (new-old)"
-msgstr ""
+msgstr "Datum(novo-staro)"
 
 #: templates/single-vehicle/contact.php:14
 msgid "Email Us"
@@ -1406,7 +1407,7 @@ msgstr "Možete dodati više slika istovremeno, prva slika u nizu biti će posta
 #: templates/submit-car-form/step-empty-view.php:6
 msgid ""
 "You are redirected to the next step, %sclick here%s if nothing happens."
-msgstr ""
+msgstr "Preusmjereni ste na sljedeći korak,% kliknite ovdje% s ako se ništa ne dogodi."
 
 #: templates/vehicle-data/data-frdate.php:8
 msgid "Year"
@@ -1418,7 +1419,7 @@ msgstr "Gorivo"
 
 #: templates/vehicle-data/data-power_kw.php:11
 msgid "Power"
-msgstr ""
+msgstr "Snaga"
 
 #. Plugin Name of the plugin/theme
 msgid "WP Car Manager"

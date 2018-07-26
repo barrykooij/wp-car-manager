@@ -2,7 +2,7 @@
 Contributors: never5, barrykooij, hchouhan
 Donate link: http://www.barrykooij.com/donate/
 Tags: car, vehicle, motor, sell, car listings, cars, auto, car market, marketplace, car dealer, car classifieds, auto dealer, auto classifieds, autostock, selling cars, dealer, car-dealer, cardealer, automotive, sales, lots, auto, motorcycle, bike, boat, airplane, rvs, tractors, motorhomes, trailers, car sales
-Requires at least: 3.8
+Requires at least: 4.5
 Tested up to: 4.8.1
 Stable tag: 1.3.5
 License: GPLv2 or later
@@ -73,6 +73,23 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 3. Your cars will be displayed beautifully in our vehicle detail pages.
 
 == Changelog ==
+
+= 1.4.0: x =
+* Feature: Added featured listings. Featured listings stand out and will be sticky to the top of your listings.
+* Feature: Added the 'featured' attribute to the [wpcm_cars] shortcode. This allows you to show only featured listings (true) or display only non-featured listings (false).
+* Feature: Added option to hide empty makes and models on listing pages.
+* Feature: Added footnote element, allowing admin to append footnote text to all listings.
+* Feature: Added model attribute to [wpcm_cars] shortcode. This way you can only display cars of given model.
+* Feature: Added pagination to the dashboard page.
+* Feature: Users can now set their own email address and phone number in their dashboard.
+* Tweak: Improved the way the image overlay of car images is displayed on mobile.
+* Tweak: Added Iranian Rial to currencies.
+* Tweak: Fixed a bug where power kW and HP were not saved of frontend submissions.
+* Tweak: Date selectors now have better date ranges.
+* Tweak: Add post-thumbnails theme support if not already supported.
+* Tweak: Added 'wpcm_dashboard_get_vehicles_extra_args' filter.
+* Tweak: Fixed listing item height for items with low or no content.
+* Tweak: Updated many languages, thanks to all contributes on Transifex!
 
 = 1.3.5: August 3, 2017 =
 * Tweak: Fixed incorrect 'Min Year' filter in overview. It was incorrectly filtering date_to, where it should filter date_from.

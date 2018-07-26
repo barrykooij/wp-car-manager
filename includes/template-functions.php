@@ -85,27 +85,37 @@ if ( ! function_exists( 'wpcm_template_single_features' ) ) {
 	}
 }
 
+if ( ! function_exists( 'wpcm_template_single_footnote' ) ) {
+	function wpcm_template_single_footnote( $vehicle ) {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/footnote', '', array( 'vehicle' => $vehicle ) );
+	}
+}
+
 if ( ! function_exists( 'wpcm_template_single_contact' ) ) {
 	function wpcm_template_single_contact( $vehicle ) {
 
-		// get author		
-		$author = get_user_by( 'ID', $vehicle->get_author() );
+		// check if we need to use contact information of the author or the site owner
+		if ( 1 === absint( wp_car_manager()->service( 'settings' )->get_option( 'contact_use_car_seller_details' ) ) ) {
+			// get email address
+			$email = get_user_meta( $vehicle->get_author(), 'wpcm_email', true );
 
-		// default empty email
-		$email = '';
+			// get phone number
+			$phone_number = get_user_meta( $vehicle->get_author(), 'wpcm_phone', true );
+		} else {
+			// get email address
+			$email = wp_car_manager()->service( 'settings' )->get_option( 'contact_email' );
 
-		// check if listing creator is a 'car_seller'
-		if ( in_array( 'car_seller', (array) $author->roles ) ) {
-			$email = $author->user_email;
+			// get phone number
+			$phone_number = wp_car_manager()->service( 'settings' )->get_option( 'contact_phone' );
 		}
 
-		// if email is empty, use contact email setting
-		if ( empty ( $email ) ) {
-			$email = wp_car_manager()->service( 'settings' )->get_option( 'contact_email' );	
-		}
-		
-
-		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/contact', '', array( 'vehicle' => $vehicle, 'email' => $email ) );
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'single-vehicle/contact', '',
+			array(
+				'vehicle'      => $vehicle,
+				'email'        => $email,
+				'phone_number' => $phone_number
+			)
+		);
 	}
 }
 
@@ -140,6 +150,24 @@ if ( ! function_exists( 'wpcm_template_vehicle_listings_filters_make' ) ) {
 		// fetch all makes if make attr is empty
 		if ( empty( $atts['make'] ) ) {
 			$makes = wp_car_manager()->service( 'make_model_manager' )->get_makes_map();
+
+			// check if need to filter out empty makes
+			if ( 1 === absint( wp_car_manager()->service( 'settings' )->get_option( 'listings_hide_empty_makes_models' ) ) ) {
+				foreach ( $makes as $make_id => $make_name ) {
+
+					// skip the label
+					if ( 0 == $make_id ) {
+						continue;
+					}
+
+					// unset if no vehicles are in this make
+					if ( 0 == wp_car_manager()->service( 'make_model_manager' )->get_vehicle_count( $make_id, 0 ) ) {
+						unset( $makes[ $make_id ] );
+					}
+
+				}
+			}
+
 		} else {
 			$term  = get_term_by( 'name', $atts['make'], 'wpcm_make_model' );
 			$makes = array( $term->term_id => $term->name );
@@ -355,20 +383,24 @@ if ( ! function_exists( 'wpcm_template_submit_car_form_disabled' ) ) {
  ************************ DASHBOARD ************************
  */
 
-if ( ! function_exists( 'wpcm_template_dashboard_add_new_listing_button' ) ) {
-	function wpcm_template_dashboard_add_new_listing_button( $title ) {
-
-		if ( is_main_query() && in_the_loop() && Never5\WPCarManager\Helper\Pages::get_page_dashboard_id()  == get_the_ID() ) {
-			ob_start();
-			wp_car_manager()->service( 'template_manager' )->get_template_part( 'dashboard/buttons/add-new', '', array(
-				'submit_url' => Never5\WPCarManager\Helper\Pages::get_page_submit()
-			) );
-			$title .= ob_get_clean();
-		}
-
-		return $title;
+if ( ! function_exists( 'wpcm_template_dashboard_profile_title' ) ) {
+	function wpcm_template_dashboard_profile_title() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'dashboard/profile-title' );
 	}
 }
+
+if ( ! function_exists( 'wpcm_template_dashboard_profile' ) ) {
+	function wpcm_template_dashboard_profile() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'dashboard/profile' );
+	}
+}
+
+if ( ! function_exists( 'wpcm_template_dashboard_list_title' ) ) {
+	function wpcm_template_dashboard_list_title() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'dashboard/list-title' );
+	}
+}
+
 
 if ( ! function_exists( 'wpcm_template_dashboard_list_start' ) ) {
 	function wpcm_template_dashboard_list_start() {
@@ -407,6 +439,12 @@ if ( ! function_exists( 'wpcm_template_dashboard_button_renew' ) ) {
 				'vehicle' => $vehicle
 			) );
 		}
+	}
+}
+
+if ( ! function_exists( 'wpcm_template_dashboard_pagination' ) ) {
+	function wpcm_template_dashboard_pagination() {
+		wp_car_manager()->service( 'template_manager' )->get_template_part( 'dashboard/pagination-wrapper' );
 	}
 }
 
