@@ -74,6 +74,9 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 == Changelog ==
 
+= 1.4.1: July 31, 2018 =
+* Tweak: Only force int values when there is a value via frontend submission. This fixes that certain data is forced to 0 when left empty.
+
 = 1.4.0: July 26, 2018 =
 * Feature: Added featured listings. Featured listings stand out and will be sticky to the top of your listings.
 * Feature: Added the 'featured' attribute to the [wpcm_cars] shortcode. This allows you to show only featured listings (true) or display only non-featured listings (false).
