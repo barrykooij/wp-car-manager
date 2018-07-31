@@ -121,10 +121,15 @@ class SaveVehicle extends Ajax {
 			 * Data Sanitation
 			 */
 
+			// trim these values always
+			$data['mileage'] = trim( $data['mileage'] );
+			$data['price']   = trim( $data['price'] );
+			$data['doors']   = trim( $data['doors'] );
+
 			// Sanitize integer values
-			$data['mileage'] = intval( preg_replace( '/,|\./mi', '', $data['mileage'] ) );
-			$data['price']   = intval( preg_replace( '/,|\./mi', '', $data['price'] ) );
-			$data['doors']   = intval( $data['doors'] );
+			$data['mileage'] = ( '' != $data['mileage'] ) ? intval( preg_replace( '/,|\./mi', '', $data['mileage'] ) ) : '';
+			$data['price']   = ( '' != $data['price'] ) ? intval( preg_replace( '/,|\./mi', '', $data['price'] ) ) : '';
+			$data['doors']   = ( '' != $data['doors'] ) ? intval( $data['doors'] ) : '';
 
 			// create Vehicle object
 			/** @var Vehicle\Car $vehicle */
