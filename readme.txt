@@ -76,6 +76,7 @@ Upon installation the plugin should have created a page called 'Cars' (could be 
 
 = 1.4.1: July 31, 2018 =
 * Tweak: Only force int values when there is a value via frontend submission. This fixes that certain data is forced to 0 when left empty.
+* Tweak: Fixed a bug that caused the models select box on submit car page to not display all models.
 
 = 1.4.0: July 26, 2018 =
 * Feature: Added featured listings. Featured listings stand out and will be sticky to the top of your listings.

@@ -122,11 +122,11 @@ abstract class Assets {
 
 		wp_localize_script( 'wpcm_js_car_submission', 'wpcm', array(
 			'ajax_url_save'         => Ajax\Manager::get_ajax_url( 'save_vehicle' ),
-			'ajax_url_get_models'   => Ajax\Manager::get_ajax_url( 'get_models' ),
+			'ajax_url_get_models'   => Ajax\Manager::get_ajax_url( 'get_models_submit' ),
 			'ajax_url_post_images'  => Ajax\Manager::get_ajax_url( 'save_images' ),
 			'ajax_url_delete_image' => Ajax\Manager::get_ajax_url( 'delete_image' ),
 			'nonce_save'            => wp_create_nonce( 'wpcm_ajax_nonce_save_vehicle' ),
-			'nonce_models'          => wp_create_nonce( 'wpcm_ajax_nonce_get_models' ),
+			'nonce_models'          => wp_create_nonce( 'wpcm_ajax_nonce_get_models_submit' ),
 			'nonce_delete_image'    => wp_create_nonce( 'wpcm_ajax_nonce_delete_image' ),
 			'lbl_no_models_found'   => __( 'No models found', 'wp-car-manager' ),
 			'lbl_select_make_first' => __( 'Select make first', 'wp-car-manager' ),
