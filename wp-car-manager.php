@@ -6,9 +6,11 @@
     Version: 1.4.1
     Author: Never5
     Author URI: http://www.never5.com
-    License: GPL v2
+	Text Domain: wp-car-manager
 
-	Copyright 2018 - Never5
+	License: GPL v3
+
+	Copyright 2015-2019 - Never5
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
