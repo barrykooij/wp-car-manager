@@ -57,8 +57,7 @@ function __load_wp_car_manager() {
 require 'vendor/autoload.php';
 
 // check PHP version
-$updatePhp = new WPUpdatePhp( '5.3.0' );
-if ( $updatePhp->does_it_meet_required_php_version( PHP_VERSION ) ) {
+if ( version_compare( PHP_VERSION, '5.3.0' ) >= 0 ) {
 	// create plugin object
 	add_action( 'plugins_loaded', '__load_wp_car_manager', 20 );
 
