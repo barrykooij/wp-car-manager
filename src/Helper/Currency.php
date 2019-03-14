@@ -41,6 +41,9 @@ abstract class Currency {
 			case 'USD' :
 				$currency_symbol = '&#36;';
 				break;
+			case 'BAM':
+				$currency_symbol = 'MK';
+				break;
 			case 'BDT':
 				$currency_symbol = '&#2547;&nbsp;';
 				break;
@@ -239,6 +242,7 @@ abstract class Currency {
 					'IRR' => __( 'Iranian rial', 'wp-car-manager' ),
 					'JPY' => __( 'Japanese Yen', 'wp-car-manager' ),
 					'KES' => __( 'Kenyan Shilling', 'wp-car-manager'),
+					'BAM' => __( 'Konvertabilna Marka', 'wp-car-manager'),
 					'KIP' => __( 'Lao Kip', 'wp-car-manager' ),
 					'KRW' => __( 'South Korean Won', 'wp-car-manager' ),
 					'MYR' => __( 'Malaysian Ringgits', 'wp-car-manager' ),
