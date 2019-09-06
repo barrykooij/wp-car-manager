@@ -16,6 +16,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<span><?php _e( 'Name' ); ?></span></th>
 						<th scope="col" id="slug" class="manage-column column-slug desc">
 							<span><?php _e( 'Slug' ); ?></span></th>
+						<th scope="col" id="models" class="manage-column column-models desc">
+							<span><?php _e( 'Models' ); ?></span></th>
 						<th scope="col" id="actions" class="manage-column column-configure">&nbsp;</th>
 					</tr>
 					</thead>
@@ -43,6 +45,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 									</div>
 								</td>
 								<td class="slug column-slug"><?php echo $item['slug']; ?></td>
+								<td class="slug column-models">
+									<?php 
+										$wpcm_model_count = count( get_term_children( $item['id'], 'wpcm_make_model' ) );
+										$wpcm_total_models_text = sprintf( _n( '%s Model', '%s Models', $wpcm_model_count, 'wp-car-manager' ), $wpcm_model_count );
+                                						echo $wpcm_total_models_text;
+									?>
+								</td>
 								<td class="column-configure">
 									<a href="<?php echo add_query_arg( array( 'make' => $item['id'] ), admin_url( 'edit.php?post_type=wpcm_vehicle&page=wpcm-makes' ) ); ?>"
 									   class="dashicons dashicons-admin-generic wpcm-btn-configure wpcm-has-tip"
@@ -62,6 +71,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<th scope="col" class="manage-column column-name sortable desc">
 							<span><?php _e( 'Name' ); ?></span></th>
 						<th scope="col" class="manage-column column-slug desc"><span><?php _e( 'Slug' ); ?></span></th>
+						<th scope="col" class="manage-column column-models desc"><span><?php _e( 'Models' ); ?></span></th>
 						<th scope="col" id="actions" class="manage-column column-configure">&nbsp;</th>
 					</tr>
 					</tfoot>
