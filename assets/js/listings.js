@@ -19,6 +19,7 @@ var WPCM_Listings = function ( tgt ) {
 	this.default_sort = jQuery( tgt ).data( 'sort' );
 	this.condition = jQuery( tgt ).data( 'condition' );
 	this.featured = jQuery( tgt ).data( 'featured' );
+	this.per_page = jQuery( tgt ).data( 'per_page' );
 
 	// lock the overview to a single make
 	this.locked_make = 0;
@@ -190,6 +191,10 @@ WPCM_Listings.prototype.load_vehicles = function () {
 
 	if ( undefined != this.featured ) {
 		args['filter_featured'] = this.featured;
+	}
+
+	if ( undefined != this.per_page ) {
+		args['per_page'] = this.per_page;
 	}
 
 	// add spinner

@@ -38,8 +38,12 @@ class GetVehicleResults extends Ajax {
 		$sort = ( isset( $_GET['sort'] ) ) ? esc_attr( $_GET['sort'] ) : 'price-asc';
 
 		// set per page
-		$per_page = intval( wp_car_manager()->service( 'settings' )->get_option( 'listings_ppp' ) );
-
+		if (isset( $_GET['per_page'] ) ) {
+			$per_page = intval( esc_attr( $_GET['per_page'] ) );
+		} else {
+			$per_page = intval( wp_car_manager()->service( 'settings' )->get_option( 'listings_ppp' ) );
+		}
+		
 		// correct any funky zero listings per page. I mean, who wants 0 listings per page ...
 		if ( 0 === $per_page ) {
 			$per_page = - 1;

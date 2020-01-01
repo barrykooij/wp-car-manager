@@ -48,7 +48,8 @@ class Cars extends Shortcode {
 			'model_id'     => '',
 			'sort'         => 'price-asc',
 			'condition'    => '',
-			'featured'     => null
+			'featured'     => null,
+			'per_page'     => null
 		) ), $atts );
 
 		// make sure show_filters is a bool
@@ -94,7 +95,7 @@ class Cars extends Shortcode {
 		 */
 
 		// build data atts
-		$data_atts = array( 'sort', 'condition', 'make_id', 'model_id', 'featured' );
+		$data_atts = array( 'sort', 'condition', 'make_id', 'model_id', 'featured', 'per_page' );
 		$data_str  = '';
 		foreach ( $data_atts as $data_att ) {
 			if ( ! empty( $atts[ $data_att ] ) ) {
