@@ -59,7 +59,7 @@ class Extensions {
 					echo '<div id="message" class="updated">' . $response->message . '</div>' . PHP_EOL;
 				}
 
-				if ( count( $response ) > 0 && isset( $response->extensions ) && count( $response->extensions ) > 0 ) {
+				if ( count( (array) $response ) > 0 && isset( $response->extensions ) && count( $response->extensions ) > 0 ) {
 
 					// Extensions
 					$extensions = $response->extensions;
