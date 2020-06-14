@@ -166,7 +166,7 @@ class WordPressRepository implements VehicleRepository {
 				'post_author'  => $vehicle->get_author(),
 				'post_type'    => PostType::VEHICLE,
 				'post_status'  => $vehicle->get_status()
-			) );
+			), true );
 
 			if ( is_wp_error( $vehicle_id ) ) {
 				throw new \Exception( 'Unable to insert post in WordPress database' );
