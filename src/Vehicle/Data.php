@@ -135,9 +135,13 @@ class Data {
 	 */
 	public static function get_transmissions() {
 		return apply_filters( 'wpcm_transmissions', array(
-			'automatic'      => __( 'Automatic', 'wp-car-manager' ),
-			'manual'         => __( 'Manual', 'wp-car-manager' ),
-			'semi-automatic' => __( 'Semi-Automatic', 'wp-car-manager' )
+			'automatic'             => __( 'Automaticly Shifted Transmission', 'wp-car-manager' ), // A
+			'continuously-variable' => __( 'Continuously Variable Transmission', 'wp-car-manager' ), //C
+			'infinitely-variable'   => __( 'Infinitely Variable Transmission', 'wp-car-manager' ), //F
+			'semi-automatic'        => __( 'Semi-Automatic Transmission', 'wp-car-manager' ), // G
+			'manual'                => __( 'Manually Shifted Transmission', 'wp-car-manager' ), // H
+			'other' 		        => __( 'Other Transmission', 'wp-car-manager' ), // O
+			'wheel-hub-motor'       => __( 'Direct-Drive Mechanism', 'wp-car-manager' ), // W
 		) );
 	}
 
