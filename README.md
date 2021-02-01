@@ -1,18 +1,18 @@
-WP Car Manager
+# WP Car Manager
 
 The easiest way to manage, list and sell your cars online using WordPress.
 
-**PHP Requirement**
+### PHP Requirement
 
 This plugin requires PHP version 5.3 or higher.
 
-**Documentation**
+### Documentation
 For documentation, please visit our [Knowledge Base](http://www.wpcarmanager.com/kb/).
 
-**Support**
+### Support
 For support, please visit our [Contact Page](http://www.wpcarmanager.com/contact/).
 
-**License**
+### License
 
 GPLv2 or later.
 
@@ -29,7 +29,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-**Credits**
+### Credits
 Dependency Injection is done by [Pimple](https://github.com/silexphp/Pimple).
 Template structure heavily inspired by [WooCommerce](https://github.com/woothemes/woocommerce).
 Improved select experience by [Select2](https://github.com/select2/select2).
@@ -37,3 +37,10 @@ Image gallery created with [prettyPhoto](http://www.no-margin-for-errors.com/pro
 PHP version compatibility checks done by [WPupdatePHP](https://github.com/WPupdatePHP/wp-update-php).
 Steering Wheel icon made by [Freepik](http://www.flaticon.com/authors/freepik).
 Tooltips are done with [TippedJS](http://www.tippedjs.com/).
+
+# 3th Party Plugins
+
+Here you will find a selection of wp-car-manager extensions from 3th party developers.
+
+1) [FPCS WPCM Recent Cars](https://github.com/FPCSJames/fpcs-wpcm-recent-cars), A widget to show recently-added vehicles from WP Car Manager. **(Free)**
+1) [WP Car Manager - OpenData RDW Kenteken Voertuiginformatie](https://wordpress.org/plugins/wp-car-manager-opendata-rdw-kenteken-voertuiginformatie), Eenvoudig je advertentie voorzien van voertuiginformatie op basis van het nederlands kenteken. **(Free)**
