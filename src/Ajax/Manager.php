@@ -46,6 +46,10 @@ class Manager {
 		$get_models = new GetModels();
 		$get_models->register();
 
+		// register GetModels
+		$get_models_submit = new GetModelsSubmit();
+		$get_models_submit->register();
+
 		// register SaveVehicle
 		$save_vehicle = new SaveVehicle();
 		$save_vehicle->register();
